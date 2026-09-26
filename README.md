@@ -1,60 +1,44 @@
 # enoch-website
 
-에녹실용음악학원 — 인스타그램 카드뉴스 에이전트 팀
+에녹실용음악학원 시흥점(ENOCH MUSIC ACADEMY) 인스타그램 카드뉴스 제작 저장소. 기준 문서는 [CLAUDE.md](CLAUDE.md)입니다.
 
-## 팀 구성
+## 팀 (CLAUDE.md 6번)
 
 ```
-                 ┌──────────────────────────────┐
-  사용자 요청 ──▶ │  프로듀서 (/cardnews 스킬)      │  단계 연결 · 재작업 판단 · 최종 보고
-                 └──────────────┬───────────────┘
-   ① 기획         ② 리서치        ③ 카피          ④ 디자인  ─┐
- strategist ─▶ researcher ─▶ copywriter ─▶ designer      ├─▶ ⑥ 검수 reviewer ─┐
-                                        └▶ caption-writer ┘  (④⑤ 병렬)      │
-                                           ⑤ 캡션                          │
-                        ◀──────── 🔁 수정 요청 시 담당자에게 되돌림 (최대 2회) ─┘
+/cardnews <주제>  (프로듀서: 순서 연결 · 재작업 판단 · 보고)
+   │
+   ├─ 1 기획자      cardnews-strategist   → brief.md    장별 구성안, 사실 확인, 학원에 확인할 것
+   ├─ 2 카피라이터  cardnews-copywriter   → slides.json, caption.md
+   ├─ 3 디자이너    cardnews-designer     → 01.png ~    templates/ 로 출력, 눈으로 점검
+   └─ 4 검수자      cardnews-reviewer     → review.md   검수 체크리스트
+          └─ 수정 요청이면 담당에게 되돌림 (최대 2회)
 ```
-
-| 에이전트 | 역할 | 산출물 |
-|---|---|---|
-| `cardnews-strategist` | 편집장. 월간 캘린더, 주제·타깃·핵심 메시지 기획 | `calendar/YYYY-MM.md`, `brief.md` |
-| `cardnews-researcher` | 음악 이론·악기·입시·발매 사실 조사 및 검증 | `research.md` |
-| `cardnews-copywriter` | 커버 훅, 슬라이드 원고, CTA | `slides.json` |
-| `cardnews-designer` | 레이아웃·테마 결정, PNG 렌더링, 시각 검수 | `out/01.png ~`, `out/preview.html` |
-| `cardnews-caption-writer` | 캡션, 해시태그, alt 텍스트, 릴스·스토리 연계 | `caption.md` |
-| `cardnews-reviewer` | 이론 정확성·맞춤법·과장광고·저작권 최종 검수 | `review.md` |
-
-에이전트 정의: `.claude/agents/`, 오케스트레이션: `.claude/skills/cardnews/SKILL.md`
 
 ## 사용법 (Claude Code)
 
 ```text
-/cardnews 이번 달 콘텐츠 캘린더 짜줘
-/cardnews 드럼 루디먼트 필수 5종, 10월 7일 게시
-/cardnews 2026-09-28-two-five-one 커버 문구를 질문형으로 바꿔줘
+/cardnews ENOCH ISSUE No.02 리듬
+/cardnews 강사 소개 — 드럼 홍길동 (사진: images/강사/hong.jpg)
+/cardnews 다음 달 발행 계획 (주 2회)
+/cardnews output/ENOCH_ISSUE_01_화성 5장 문구 수정: ...
 ```
 
-직접 렌더링만 할 때:
+PNG만 다시 만들 때:
 
 ```bash
 npm install
-npx playwright install chromium        # 최초 1회
-npm run cardnews:render -- cardnews/projects/2026-09-28-two-five-one
+npx playwright install chromium   # 처음 한 번
+npm run cardnews:render -- output/ENOCH_ISSUE_01_화성
 ```
 
-## 폴더 구조
+## 폴더
 
 ```
-cardnews/
-  brand/        brand-guide.md (톤·페르소나·금지사항), brand.json (연락처·색상)
-  topics/       topic-bank.md (시리즈별 주제 풀, 사용 이력)
-  calendar/     월간 캘린더
-  templates/    card.css, SLIDES_SCHEMA.md (레이아웃 8종)
-  scripts/      render.mjs (slides.json → PNG)
-  projects/     게시물별 폴더 (brief / research / slides.json / caption / review / out)
+CLAUDE.md          기준 문서 (브랜드 정보, 원칙, 말투, 디자인, 검수 체크리스트)
+images/            실제 사진만 — 강사/ 공간/ 학생/ 로고/
+templates/         card.css (디자인), brand.json (카드에 들어가는 학원 정보), SLIDES_SCHEMA.md (레이아웃 8종)
+scripts/render.mjs slides.json → 1080×1350 PNG
+plans/             topic-bank.md (주제 목록), YYYY-MM.md (발행 계획)
+output/<주제>/     brief.md, slides.json, caption.md, review.md, 01.png ~
+.claude/           팀원 정의(agents/)와 제작 절차(skills/cardnews/)
 ```
-
-## 시작 전 할 일
-1. `cardnews/brand/brand.json`의 `TODO` 값(인스타 계정, 전화, 지역, 카카오톡 채널)을 실제 정보로 바꾸기
-2. 브랜드 컬러가 있다면 `brand.json`과 `cardnews/templates/card.css`의 `:root` 변수 수정
-3. 샘플 결과물 `cardnews/projects/2026-09-28-two-five-one/out/` 확인

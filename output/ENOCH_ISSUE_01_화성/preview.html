@@ -1,0 +1,191 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<title>ENOCH ISSUE No.01 화성</title><style>/* ENOCH 카드뉴스 템플릿 — 1080x1350, minimal / editorial / quiet luxury */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+:root {
+  --ivory: #F1EDE4;
+  --black: #111111;
+  --gray: #8A8A8A;
+  --white: #FFFFFF;
+}
+.theme-ivory { --bg: var(--ivory); --fg: var(--black); --sub: var(--gray); --rule: rgba(17,17,17,.22); }
+.theme-white { --bg: var(--white); --fg: var(--black); --sub: var(--gray); --rule: rgba(17,17,17,.18); }
+.theme-black { --bg: var(--black); --fg: var(--ivory); --sub: #9A968E; --rule: rgba(241,237,228,.24); }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #555; }
+body {
+  font-family: "Pretendard", "Pretendard Variable", "Noto Sans KR", "Apple SD Gothic Neo", "WenQuanYi Zen Hei", sans-serif;
+  word-break: keep-all;
+  -webkit-font-smoothing: antialiased;
+}
+.preview .card { margin: 40px auto; }
+
+.card {
+  position: relative; width: 1080px; height: 1350px; overflow: hidden;
+  background: var(--bg); color: var(--fg);
+  padding: 200px 96px 180px;
+  display: flex; flex-direction: column;
+}
+
+/* 머리말 · 꼬리말: 얇은 선 + 작은 영문 */
+.masthead, .colophon {
+  position: absolute; left: 96px; right: 96px;
+  display: flex; justify-content: space-between;
+  font-size: 20px; font-weight: 500; letter-spacing: 3px; color: var(--sub);
+}
+.colophon span:first-child, .masthead span:last-child { text-transform: uppercase; }
+.masthead { top: 72px; padding-bottom: 20px; border-bottom: 1px solid var(--rule); }
+.colophon { bottom: 72px; padding-top: 20px; border-top: 1px solid var(--rule); }
+.colophon .page { font-variant-numeric: tabular-nums; letter-spacing: 2px; }
+
+/* 타이포그래피 */
+.em { font-weight: 800; }
+.label { font-size: 22px; font-weight: 600; letter-spacing: 3px; color: var(--sub); margin-bottom: 36px; }
+.title { font-size: 64px; font-weight: 700; line-height: 1.3; letter-spacing: -1.5px; white-space: pre-line; }
+.body { margin-top: 48px; font-size: 36px; font-weight: 400; line-height: 1.75; letter-spacing: -0.5px; white-space: pre-line; }
+.note { margin-top: auto; font-size: 26px; line-height: 1.6; color: var(--sub); white-space: pre-line; }
+
+/* cover */
+.layout-cover { justify-content: flex-end; padding-bottom: 220px; }
+.layout-cover .issue-no { position: absolute; top: 150px; right: 88px; font-size: 300px; font-weight: 200; letter-spacing: -12px; line-height: 1; color: var(--fg); opacity: .9; }
+.layout-cover .en { font-size: 30px; font-weight: 500; letter-spacing: 8px; color: var(--sub); text-transform: uppercase; }
+.layout-cover .title { margin-top: 24px; font-size: 180px; font-weight: 800; letter-spacing: -6px; line-height: 1.05; }
+.layout-cover .subtitle { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--rule); font-size: 34px; line-height: 1.6; white-space: pre-line; }
+
+/* list: 선으로 나눈 행 */
+.rows { margin-top: 64px; border-top: 1px solid var(--fg); }
+.row { display: grid; grid-template-columns: 88px 1fr; padding: 36px 0; border-bottom: 1px solid var(--rule); }
+.row .n { font-size: 26px; font-weight: 500; color: var(--sub); padding-top: 8px; font-variant-numeric: tabular-nums; }
+.row .head { font-size: 38px; font-weight: 700; letter-spacing: -0.8px; }
+.row .text { margin-top: 12px; font-size: 30px; line-height: 1.6; color: var(--fg); opacity: .78; }
+
+/* chords: 세로 선으로 나눈 열 */
+.chords { margin-top: 72px; display: grid; border-top: 1px solid var(--fg); border-bottom: 1px solid var(--rule); }
+.chord { padding: 40px 28px 44px; border-left: 1px solid var(--rule); }
+.chord:first-child { border-left: 0; padding-left: 0; }
+.chord .roman { font-size: 24px; font-weight: 500; letter-spacing: 1px; color: var(--sub); }
+.chord .name { margin-top: 18px; font-size: 68px; font-weight: 700; letter-spacing: -2px; }
+.chord .notes { margin-top: 16px; font-size: 26px; color: var(--sub); letter-spacing: 1px; }
+.chord .fn { margin-top: 28px; font-size: 28px; font-weight: 600; }
+
+/* compare */
+.compare { margin-top: 64px; display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--fg); }
+.compare .col { padding: 40px 32px 0 0; }
+.compare .col + .col { padding: 40px 0 0 32px; border-left: 1px solid var(--rule); }
+.compare .head { font-size: 36px; font-weight: 700; margin-bottom: 28px; }
+.compare li { list-style: none; font-size: 29px; line-height: 1.6; margin-bottom: 16px; }
+
+/* closing */
+.layout-closing { justify-content: space-between; }
+.layout-closing .principle { font-size: 60px; font-weight: 700; line-height: 1.4; letter-spacing: -1.5px; white-space: pre-line; }
+.layout-closing .body { margin-top: 36px; }
+.sign { border-top: 1px solid var(--fg); padding-top: 40px; }
+.sign .signature { font-size: 40px; font-weight: 700; letter-spacing: -1px; }
+.sign .signature-en { margin-top: 10px; font-size: 22px; letter-spacing: 3px; color: var(--sub); text-transform: uppercase; }
+.info { margin-top: 44px; display: grid; grid-template-columns: 150px 1fr; row-gap: 14px; font-size: 25px; line-height: 1.5; }
+.info dt { color: var(--sub); }
+
+/* photo */
+.layout-photo { padding-top: 150px; }
+.photo { width: 100%; height: 720px; background-size: cover; background-position: center; }
+.photo-missing {
+  width: 100%; height: 720px; border: 1px dashed var(--sub);
+  display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 16px;
+  color: var(--sub); font-size: 28px; text-align: center;
+}
+.layout-photo .title { margin-top: 56px; font-size: 52px; }
+.layout-photo .body { margin-top: 24px; font-size: 30px; }
+
+/* instructor: 그리드 포스터 */
+.layout-instructor { padding: 150px 96px 150px; }
+.poster { flex: 1; display: grid; grid-template-rows: auto 1fr auto; border: 1px solid var(--fg); }
+.poster .top { display: grid; grid-template-columns: 1.1fr 1fr; border-bottom: 1px solid var(--fg); }
+.poster .top > div { padding: 22px 28px; font-size: 22px; letter-spacing: 3px; text-transform: uppercase; }
+.poster .top > div + div { border-left: 1px solid var(--fg); text-align: right; }
+.poster .mid { display: grid; grid-template-columns: 1.1fr 1fr; min-height: 0; }
+.poster .mid .photo, .poster .mid .photo-missing { height: 100%; border: 0; }
+.poster .mid .photo-missing { font-size: 22px; padding: 20px; }
+.poster .names { padding: 36px 28px; display: flex; flex-direction: column; justify-content: flex-end; border-left: 1px solid var(--fg); }
+.poster .name-en { font-size: 96px; font-weight: 800; line-height: .95; letter-spacing: -4px; text-transform: uppercase; word-break: normal; overflow-wrap: anywhere; }
+.poster .name-ko { margin-top: 28px; font-size: 40px; font-weight: 600; }
+.poster .role { margin-top: 12px; font-size: 26px; color: var(--sub); line-height: 1.5; white-space: pre-line; }
+.band { border-top: 1px solid var(--fg); overflow: hidden; white-space: nowrap; padding: 18px 0; font-size: 34px; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; }
+.meta { margin-top: 28px; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--rule); }
+.meta > div { padding: 20px 20px 0 0; font-size: 24px; line-height: 1.5; }
+.meta b { display: block; font-size: 18px; font-weight: 500; letter-spacing: 2px; color: var(--sub); margin-bottom: 6px; text-transform: uppercase; }
+</style></head>
+<body class="preview"><section class="card layout-cover theme-black" id="card-1">
+    <div class="masthead"><span>ENOCH ISSUE No.01</span><span>Harmony</span></div>
+    
+    <div class="issue-no">01</div>
+    <div class="en">Harmony</div>
+    <h1 class="title">화성</h1>
+    <p class="subtitle">코드를 외우기 전에,
+먼저 듣는 법.</p>
+    <div class="colophon"><span>ENOCH MUSIC ACADEMY</span><span class="page">01 / 06</span></div>
+  </section>
+<section class="card layout-point theme-ivory" id="card-2">
+    <div class="masthead"><span>ENOCH ISSUE No.01</span><span>Harmony</span></div>
+    <div class="label">01</div>
+    <h2 class="title">화성은 음이 겹쳐
+만드는 색입니다.</h2>
+    <p class="body">같은 멜로디라도
+아래에 어떤 코드가 놓이느냐에 따라
+밝게도, 쓸쓸하게도 들립니다.</p>
+    <div class="colophon"><span>ENOCH MUSIC ACADEMY</span><span class="page">02 / 06</span></div>
+  </section>
+<section class="card layout-chords theme-ivory" id="card-3">
+    <div class="masthead"><span>ENOCH ISSUE No.01</span><span>Harmony</span></div>
+    <div class="label">02</div>
+    <h2 class="title">코드는
+세 가지 역할로 읽습니다.</h2>
+    <div class="chords" style="grid-template-columns:repeat(3,1fr)"><div class="chord"><div class="roman">I</div>
+        <div class="name">C</div><div class="notes">C E G</div>
+        <div class="fn">머무름</div></div><div class="chord"><div class="roman">IV</div>
+        <div class="name">F</div><div class="notes">F A C</div>
+        <div class="fn">움직임</div></div><div class="chord"><div class="roman">V7</div>
+        <div class="name">G7</div><div class="notes">G B D F</div>
+        <div class="fn">당김</div></div></div>
+    <p class="body">조성이 있는 곡의 코드는
+대부분 이 세 역할로 설명할 수 있습니다.</p><p class="note">C 메이저 기준</p>
+    <div class="colophon"><span>ENOCH MUSIC ACADEMY</span><span class="page">03 / 06</span></div>
+  </section>
+<section class="card layout-point theme-ivory" id="card-4">
+    <div class="masthead"><span>ENOCH ISSUE No.01</span><span>Harmony</span></div>
+    <div class="label">03</div>
+    <h2 class="title">G7이 C로
+가고 싶어 하는 이유</h2>
+    <p class="body">G7 안의 <span class="em">B와 F</span>는 서로 부딪히는 음정입니다.
+B는 C로, F는 E로
+반음씩 움직이며 풀립니다.</p><p class="note">이 부딪힘을 트라이톤(증4도)이라고 부릅니다.</p>
+    <div class="colophon"><span>ENOCH MUSIC ACADEMY</span><span class="page">04 / 06</span></div>
+  </section>
+<section class="card layout-list theme-ivory" id="card-5">
+    <div class="masthead"><span>ENOCH ISSUE No.01</span><span>Harmony</span></div>
+    <div class="label">04</div>
+    <h2 class="title">ENOCH이 화성을
+가르치는 순서</h2>
+    <div class="rows"><div class="row"><div class="n">01</div><div>
+          <div class="head">듣기</div><div class="text">코드 이름보다 먼저, 두 소리의 차이를 구별합니다.</div></div></div><div class="row"><div class="n">02</div><div>
+          <div class="head">이유</div><div class="text">왜 그 코드로 가는지 말할 수 있을 때 다음으로 넘어갑니다.</div></div></div><div class="row"><div class="n">03</div><div>
+          <div class="head">손</div><div class="text">전공 악기로 직접 치고, 불러 봅니다.</div></div></div></div>
+    <div class="colophon"><span>ENOCH MUSIC ACADEMY</span><span class="page">05 / 06</span></div>
+  </section>
+<section class="card layout-closing theme-black" id="card-6">
+    <div class="masthead"><span>ENOCH ISSUE No.01</span><span>Harmony</span></div>
+    
+    <div><div class="principle">진도보다
+이해를 먼저 봅니다.</div>
+      </div>
+    <div class="sign">
+      <div class="signature">나만의 진짜 소리를 찾는 곳.</div>
+      <div class="signature-en">Find your own true sound.</div>
+      <dl class="info">
+        <dt>주소</dt><dd>경기도 시흥시 은행로 157 2층</dd>
+        <dt>전화</dt><dd>010 3949 3666</dd>
+        <dt>운영</dt><dd>평일 13:00–22:00 / 토 10:00–18:00 / 일요일 휴무</dd>
+        <dt>오시는 길</dt><dd>대야역 도보 10–15분, 성원아파트 정류장 앞</dd>
+      </dl></div>
+    <div class="colophon"><span>ENOCH MUSIC ACADEMY</span><span class="page">06 / 06</span></div>
+  </section></body></html>

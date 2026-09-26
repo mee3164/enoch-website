@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "cardnews:render": "node cardnews/scripts/render.mjs"
+    "cardnews:render": "node scripts/render.mjs"
   },
   "devDependencies": {
     "playwright": "^1.56.1"
