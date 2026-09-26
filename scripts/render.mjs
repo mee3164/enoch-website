@@ -43,13 +43,13 @@ function check(i, slide) {
 
 // 실제 사진만 사용한다. 파일이 없으면 자리표시자를 그리고 필요한 사진을 알린다.
 const mime = { ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".png": "image/png", ".webp": "image/webp" };
-async function photo(i, rel, cls = "photo") {
+async function photo(i, rel, cls = "photo", pos = "center") {
   if (!rel) return "";
   const file = path.resolve(root, rel);
   try {
     await access(file);
     const data = (await readFile(file)).toString("base64");
-    return `<div class="${cls}" style="background-image:url(data:${mime[path.extname(file).toLowerCase()] || "image/jpeg"};base64,${data})"></div>`;
+    return `<div class="${cls}" style="background-position:${pos};background-image:url(data:${mime[path.extname(file).toLowerCase()] || "image/jpeg"};base64,${data})"></div>`;
   } catch {
     warnings.push(`${i + 1}장: 사진 필요 — ${rel}`);
     return `<div class="photo-missing"><div>사진 필요</div><div>${esc(rel)}</div></div>`;
@@ -79,12 +79,41 @@ function keyboard(notes = []) {
   return svg + "</svg>";
 }
 
+// 박자 격자 (건반 도식과 같은 선 스타일). rows: [{name, hits: [1,3], accents?: [1], soft?: [2,4]}] — 칸 번호는 1부터
+// accents = 큰 검정 점(센박), hits = 검정 점, soft = 테두리만 (여린박)
+function beatgrid(b) {
+  const steps = b.steps || 8, per = b.perBeat || steps / 4, W = 888, labelW = 150, headH = b.headH || 48, rowH = b.rowH || 92;
+  const rows = b.rows || [], H = headH + rows.length * rowH, cw = (W - labelW) / steps;
+  const counts = per === 2 ? ["", "&"] : per === 3 ? ["", "&", "a"] : per === 4 ? ["", "e", "&", "a"] : [""];
+  let svg = `<svg width="${W}" height="${H + 2}" viewBox="0 0 ${W} ${H + 2}" font-family="IBM Plex Mono, DejaVu Sans Mono, monospace">`;
+  svg += `<rect x="0.75" y="0.75" width="${W - 1.5}" height="${H}" fill="none" stroke="var(--fg)" stroke-width="1.5"/>`;
+  svg += `<line x1="0" y1="${headH}" x2="${W}" y2="${headH}" stroke="var(--fg)" stroke-width="1.5"/>`;
+  svg += `<line x1="${labelW}" y1="0" x2="${labelW}" y2="${H}" stroke="var(--fg)" stroke-width="1.5"/>`;
+  for (let c = 0; c < steps; c++) {
+    const x = labelW + c * cw, strong = c % per === 0;
+    if (c) svg += `<line x1="${x}" y1="0" x2="${x}" y2="${H}" stroke="var(--fg)" stroke-width="${strong ? 1.5 : 0.6}" ${strong ? "" : 'opacity=".45"'}/>`;
+    const t = strong ? String(c / per + 1) : counts[c % per] || "";
+    svg += `<text x="${x + cw / 2}" y="${headH / 2 + 7}" text-anchor="middle" font-size="20" fill="var(--fg)" ${strong ? "" : 'opacity=".55"'}>${t}</text>`;
+  }
+  rows.forEach((r, k) => {
+    const y = headH + k * rowH;
+    if (k) svg += `<line x1="0" y1="${y}" x2="${W}" y2="${y}" stroke="var(--fg)" stroke-width="0.6" opacity=".45"/>`;
+    svg += `<text x="20" y="${y + rowH / 2 + 7}" font-size="19" letter-spacing="2" fill="var(--fg)">${esc(String(r.name).toUpperCase())}</text>`;
+    for (const h of r.soft || []) svg += `<circle cx="${labelW + (h - 1) * cw + cw / 2}" cy="${y + rowH / 2}" r="12" fill="none" stroke="var(--fg)" stroke-width="1.5"/>`;
+    for (const h of r.hits || []) {
+      const acc = (r.accents || []).includes(h);
+      svg += `<circle cx="${labelW + (h - 1) * cw + cw / 2}" cy="${y + rowH / 2}" r="${acc ? 17 : 12}" fill="var(--fg)"/>`;
+    }
+  });
+  return svg + "</svg>";
+}
+
 const layouts = {
   // 01 표지: 사진 + 큰 영문 + 부제 + 하단 반복 띠
   cover: async (s, i) => {
     const tick = s.ticker || deck.ticker || `${brand.nameEn}`;
     return `
-    ${s.image ? (await photo(i, s.image, "cover-photo")).replace('class="photo-missing"', 'class="photo-missing cover-photo"') : ""}
+    ${s.image ? (await photo(i, s.image, "cover-photo", s.imagePosition)).replace('class="photo-missing"', 'class="photo-missing cover-photo"') : ""}
     <div class="cover-en">${esc(s.en)}</div>
     <div class="cover-sub"><div class="ko"><b>${esc(s.ko || "")}</b>${s.sub ? ` — ${esc(s.sub)}` : ""}</div>
       ${s.issue ? `<div class="issue">${esc(s.issue).replace(/\n/g, "<br>")}</div>` : ""}</div>
@@ -118,6 +147,14 @@ const layouts = {
         ${keyboard(b.notes)}${b.caption ? `<div class="kb-cap">${rich(b.caption)}</div>` : ""}</div>`)
       .join("")}`,
 
+  // 박자 도식: 박자 격자 (1–2개). keyboard와 같은 자리에 쓴다
+  beats: (s) => `${kicker(s)}${title(s)}
+    ${(s.boards || [])
+      .map((b) => `<div class="kb"><div class="kb-head"><div class="en">${esc(b.en || "")} <span>${esc(b.ko || "")}</span></div>
+        <div class="notes">${esc(b.meter || "")}</div></div>
+        ${beatgrid(b)}${b.caption ? `<div class="kb-cap">${rich(b.caption)}</div>` : ""}</div>`)
+      .join("")}`,
+
   // 06·07 PARTS: 번호 + 큰 영문 + 한글 + 설명 (4행 이상이면 촘촘하게)
   parts: (s) => `${kicker(s)}${title(s)}
     <div class="rows">${(s.items || [])
@@ -142,7 +179,7 @@ const layouts = {
     <div class="closing-ko">${rich(s.principle || brand.signature).replace(/\n/g, "<br>")}</div>
     <div class="closing-en">${esc(s.principleEn || brand.signatureEn)}</div>
     <div class="closing-info"><div><div class="name">${esc(brand.name)}</div><div class="addr">${esc(brand.address)}</div></div>
-      <div class="right"><div class="tel">${esc(brand.phone)}</div><div class="subj">${esc(s.subjects || brand.subjects)}</div></div></div>`,
+      <div class="right"><div class="tel">${esc(brand.phone)}</div><div class="subj">${esc(s.subjects || brand.subjects).replace(/ · /g, " ·&nbsp;")}</div></div></div>`,
 
   // 범용: 한 장 한 메시지
   point: (s) => `${kicker(s)}${title(s)}<div style="margin-top:56px">${paras(s.body)}</div>`,

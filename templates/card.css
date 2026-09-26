@@ -100,9 +100,9 @@ body { font-family: var(--ko); word-break: keep-all; -webkit-font-smoothing: ant
 .r .t { margin-top: 14px; font-size: 25px; font-weight: 300; line-height: 1.68; color: var(--body); }
 
 /* ── keyboard (DIAGRAM) ─────────────────────── */
-.layout-keyboard { padding-top: 162px; }
-.layout-keyboard .kicker + .title { margin-top: 16px; }
-.layout-keyboard .title { font-size: 56px; line-height: 1.28; margin-bottom: 10px; }
+.layout-keyboard, .layout-beats { padding-top: 162px; }
+.layout-keyboard .kicker + .title, .layout-beats .kicker + .title { margin-top: 16px; }
+.layout-keyboard .title, .layout-beats .title { font-size: 56px; line-height: 1.28; margin-bottom: 10px; }
 .kb { margin-top: 30px; }
 .kb-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 20px; }
 .kb-head .en { font-family: var(--en); font-size: 36px; font-weight: 800; }

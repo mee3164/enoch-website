@@ -6,7 +6,7 @@
 {
   "title": "ENOCH ISSUE No.02 리듬",
   "masthead": "ISSUE No.02 — RHYTHM",          // 머리말 오른쪽 (왼쪽은 항상 ENOCH MUSIC ACADEMY)
-  "footer": "리듬  律動",                        // 꼬리말 왼쪽: 한글 + 한자(있으면)
+  "footer": "리듬",                              // 꼬리말 왼쪽: 한글 + 한자(한자어일 때만, 예 "화성  和聲")
   "ticker": "ENOCH ISSUE No.02 — RHYTHM — 리듬", // 표지 하단 반복 띠
   "theme": "ivory",                              // ivory | black (장마다 "theme"로 바꿈)
   "slides": [ ... ]
@@ -19,11 +19,12 @@
 
 | layout | 확정본 | 필드 | 테마 |
 |---|---|---|---|
-| `cover` | 01 | `image`, `en`(큰 영문), `ko`, `sub`, `issue`(예 `"ISSUE\nNo.01"`) | ivory |
+| `cover` | 01 | `image`, `imagePosition`?(예 `"30% center"`, 사진 자르는 위치), `en`(큰 영문), `ko`, `sub`, `issue`(예 `"ISSUE\nNo.01"`) | ivory |
 | `note` | 02 | `kicker`, `title`, `paragraphs`[] (2–3문단), `sign`?(기본 — ENOCH MUSIC ACADEMY, false면 숨김) | ivory |
 | `dictionary` | 03 | `kicker`, `word`, `hanja`?, `en`, `pos`?, `definition`, `terms`[{ko, en, text}] (2개) | black |
 | `numbers` | 04 | `kicker`(제목 오른쪽), `title`, `items`[{num, head, text}] (3개) | ivory |
 | `keyboard` | 05 | `kicker`, `title`, `boards`[{en, ko, notes: ["C","Eb","G"], caption}] (1–2개) | ivory |
+| `beats` | (05 변형) | `kicker`, `title`, `boards`[{en, ko, meter(예 `4/4`), steps(8·16·12), perBeat?, rows[{name, hits:[칸 번호], accents?:[큰 점], soft?:[테두리 점]}], caption, rowH?(행 높이, 기본 92), headH?(머리 칸 높이, 기본 48)}] (1–2개). 칸 번호는 1부터, 8칸이면 1·3·5·7이 1·2·3·4박. accents 칸은 hits에도 넣어야 큰 점이 된다 | ivory |
 | `parts` | 06·07 | `kicker`, `title`, `items`[{en, ko, text}] (3개, 4개면 자동으로 촘촘하게), `start`?(번호 시작) | ivory |
 | `steps` | 08 | `kicker`, `title`, `lead`?, `items`[{head, text}] (3개) | black |
 | `way` | 09 | `kicker`, `title`, `items`["문장"] (3개) | ivory |
