@@ -152,7 +152,7 @@ body { font-family: var(--ko); word-break: keep-all; -webkit-font-smoothing: ant
 .closing-info .subj { margin-top: 12px; font-size: 22px; font-weight: 300; line-height: 1.7; color: var(--body); }
 
 /* ── point (한 장 한 메시지, 범용) ─────────────── */
-.layout-point { padding-top: 262px; }
+.layout-point { padding-top: 308px; }
 .layout-point .body { margin-top: 56px; }
 
 /* ── chords (코드 진행, 범용) ───────────────── */
