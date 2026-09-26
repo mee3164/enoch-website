@@ -41,7 +41,9 @@ await mkdir(outDir, { recursive: true });
 
 for (const [i, f] of mine.entries()) {
   const layout = myLayouts[i];
-  let r = refLayouts[i] === layout ? i : refLayouts.indexOf(layout);
+  const nth = myLayouts.slice(0, i).filter((l) => l === layout).length;
+  const refIdx = refLayouts.map((l, k) => (l === layout ? k : -1)).filter((k) => k >= 0);
+  let r = refIdx.length ? refIdx[Math.min(nth, refIdx.length - 1)] : -1;
   if (r < 0) r = Math.min(i, refs.length - 1);
   const ref = refs[r];
   const cell = (src, label) => `<figure><figcaption>${label}</figcaption><img src="${src}"></figure>`;
