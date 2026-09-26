@@ -7,13 +7,12 @@
   "slides": [
     {
       "layout": "cover",
-      "image": "images/공간/IMG_5189.jpg",
-      "imagePosition": "2% 2%",
+      "image": "images/snare-drum-2661293_1280.jpeg",
+      "imagePosition": "50% 40%",
       "en": "Rhythm",
       "ko": "리듬",
       "sub": "소리가 시간 위에 놓이는 방식",
-      "issue": "ISSUE\nNo.02",
-      "imageSize": "380%"
+      "issue": "ISSUE\nNo.02"
     },
     {
       "layout": "note",
