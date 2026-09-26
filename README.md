@@ -20,7 +20,7 @@
 /cardnews ENOCH ISSUE No.02 리듬
 /cardnews 강사 소개 — 드럼 홍길동 (사진: images/강사/hong.jpg)
 /cardnews 다음 달 발행 계획 (주 2회)
-/cardnews output/ENOCH_ISSUE_01_화성 5장 문구 수정: ...
+/cardnews output/ENOCH_ISSUE_02_리듬 3장 문구 수정: ...
 ```
 
 PNG만 다시 만들 때:
@@ -28,7 +28,8 @@ PNG만 다시 만들 때:
 ```bash
 npm install
 npx playwright install chromium   # 처음 한 번
-npm run cardnews:render -- output/ENOCH_ISSUE_01_화성
+npm run cardnews:render -- output/<주제 폴더>
+node scripts/compare.mjs output/<주제 폴더>   # 확정본과 나란히 비교
 ```
 
 ## 폴더
@@ -36,8 +37,9 @@ npm run cardnews:render -- output/ENOCH_ISSUE_01_화성
 ```
 CLAUDE.md          기준 문서 (브랜드 정보, 원칙, 말투, 디자인, 검수 체크리스트)
 images/            실제 사진만 — 강사/ 공간/ 학생/ 로고/
-templates/         card.css (디자인), brand.json (카드에 들어가는 학원 정보), SLIDES_SCHEMA.md (레이아웃 8종)
-scripts/render.mjs slides.json → 1080×1350 PNG
+templates/         card.css (디자인), brand.json (학원 정보), SLIDES_SCHEMA.md (레이아웃)
+  reference/ENOCH_ISSUE_01/  확정본 10장 + slides.json — 이후 모든 편의 디자인 기준
+scripts/           render.mjs (slides.json → 1080×1350 PNG), compare.mjs (확정본과 나란히)
 plans/             topic-bank.md (주제 목록), YYYY-MM.md (발행 계획)
 output/<주제>/     brief.md, slides.json, caption.md, review.md, 01.png ~
 .claude/           팀원 정의(agents/)와 제작 절차(skills/cardnews/)

@@ -38,7 +38,7 @@ function check(i, slide) {
   }
   const text = JSON.stringify(slide);
   for (const w of BANNED) if (text.includes(w)) warnings.push(`${i + 1}장: 금지 표현 "${w}"`);
-  if (/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/u.test(text)) warnings.push(`${i + 1}장: 이모지 사용`);
+  if (/\p{Extended_Pictographic}/u.test(text.replace(/[♩♪♫♬♭♮♯©®™]/g, ""))) warnings.push(`${i + 1}장: 이모지 사용`);
 }
 
 // 실제 사진만 사용한다. 파일이 없으면 자리표시자를 그리고 필요한 사진을 알린다.
@@ -56,81 +56,122 @@ async function photo(i, rel, cls = "photo") {
   }
 }
 
-const label = (s) => (s.label ? `<div class="label">${esc(s.label)}</div>` : "");
-const note = (s) => (s.note ? `<p class="note">${rich(s.note)}</p>` : "");
+const kicker = (s) => (s.kicker ? `<div class="kicker">${esc(s.kicker)}</div>` : "");
+const title = (s) => (s.title ? `<h2 class="title">${rich(s.title)}</h2>` : "");
+const paras = (x) => (Array.isArray(x) ? x : x ? [x] : []).map((p) => `<p class="body">${rich(p)}</p>`).join("");
+const two = (n) => String(n).padStart(2, "0");
+
+// 한 옥타브 건반 (확정본 05장). notes: ["C","E","G"], ["C","Eb","G"] 등
+const WHITE = { C: 0, D: 1, E: 2, F: 3, G: 4, A: 5, B: 6 };
+const BLACK = { "C#": 1, Db: 1, "D#": 2, Eb: 2, "F#": 4, Gb: 4, "G#": 5, Ab: 5, "A#": 6, Bb: 6 };
+function keyboard(notes = []) {
+  const W = 888, H = 252, kw = W / 7, bw = 74, bh = 156;
+  const norm = (n) => String(n).replace("♭", "b").replace("♯", "#");
+  let svg = `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}"><rect x="0.75" y="0.75" width="${W - 1.5}" height="${H - 1.5}" fill="none" stroke="var(--fg)" stroke-width="1.5"/>`;
+  for (let k = 1; k < 7; k++) svg += `<line x1="${k * kw}" y1="0" x2="${k * kw}" y2="${H}" stroke="var(--fg)" stroke-width="1.5"/>`;
+  for (const b of [1, 2, 4, 5, 6]) svg += `<rect x="${b * kw - bw / 2}" y="0" width="${bw}" height="${bh}" fill="var(--fg)"/>`;
+  for (const raw of notes) {
+    const n = norm(raw);
+    if (n in WHITE) svg += `<circle cx="${WHITE[n] * kw + kw / 2}" cy="209" r="14" fill="var(--fg)"/>`;
+    else if (n in BLACK) svg += `<circle cx="${BLACK[n] * kw}" cy="123" r="13" fill="var(--bg)"/>`;
+    else warnings.push(`건반 음 이름 "${raw}"을 알 수 없습니다 (C, Eb, F# 형식)`);
+  }
+  return svg + "</svg>";
+}
 
 const layouts = {
-  cover: (s) => `
-    ${deck.issueNo ? `<div class="issue-no">${esc(deck.issueNo)}</div>` : ""}
-    ${s.en ? `<div class="en">${esc(s.en)}</div>` : ""}
-    <h1 class="title">${rich(s.title)}</h1>
-    ${s.subtitle ? `<p class="subtitle">${rich(s.subtitle)}</p>` : ""}`,
-
-  point: (s) => `${label(s)}
-    <h2 class="title">${rich(s.title)}</h2>
-    ${s.body ? `<p class="body">${rich(s.body)}</p>` : ""}${note(s)}`,
-
-  list: (s) => `${label(s)}
-    <h2 class="title">${rich(s.title)}</h2>
-    <div class="rows">${(s.items || [])
-      .map((it, n) => {
-        const o = typeof it === "string" ? { head: it } : it;
-        return `<div class="row"><div class="n">${String(n + 1).padStart(2, "0")}</div><div>
-          <div class="head">${rich(o.head || "")}</div>${o.text ? `<div class="text">${rich(o.text)}</div>` : ""}</div></div>`;
-      })
-      .join("")}</div>${note(s)}`,
-
-  chords: (s) => `${label(s)}
-    <h2 class="title">${rich(s.title)}</h2>
-    <div class="chords" style="grid-template-columns:repeat(${(s.chords || []).length},1fr)">${(s.chords || [])
-      .map(
-        (c) => `<div class="chord"><div class="roman">${esc(c.roman || "")}</div>
-        <div class="name">${esc(c.name)}</div><div class="notes">${esc(c.notes || "")}</div>
-        ${c.fn ? `<div class="fn">${esc(c.fn)}</div>` : ""}</div>`
-      )
-      .join("")}</div>
-    ${s.body ? `<p class="body">${rich(s.body)}</p>` : ""}${note(s)}`,
-
-  compare: (s) => {
-    const col = (c) => `<div class="col"><div class="head">${rich(c.head)}</div>
-      <ul>${(c.items || []).map((x) => `<li>${rich(x)}</li>`).join("")}</ul></div>`;
-    return `${label(s)}<h2 class="title">${rich(s.title)}</h2>
-    <div class="compare">${col(s.left)}${col(s.right)}</div>${note(s)}`;
+  // 01 표지: 사진 + 큰 영문 + 부제 + 하단 반복 띠
+  cover: async (s, i) => {
+    const tick = s.ticker || deck.ticker || `${brand.nameEn}`;
+    return `
+    ${s.image ? (await photo(i, s.image, "cover-photo")).replace('class="photo-missing"', 'class="photo-missing cover-photo"') : ""}
+    <div class="cover-en">${esc(s.en)}</div>
+    <div class="cover-sub"><div class="ko"><b>${esc(s.ko || "")}</b>${s.sub ? ` — ${esc(s.sub)}` : ""}</div>
+      ${s.issue ? `<div class="issue">${esc(s.issue).replace(/\n/g, "<br>")}</div>` : ""}</div>
+    <div class="ticker">${Array(6).fill(esc(tick)).join(" — ")}</div>`;
   },
 
-  photo: async (s, i) => `
-    ${await photo(i, s.image)}
-    ${s.title ? `<h2 class="title">${rich(s.title)}</h2>` : ""}
-    ${s.body ? `<p class="body">${rich(s.body)}</p>` : ""}`,
+  // 02 EDITOR'S NOTE: 제목 + 문단 + 서명
+  note: (s) => `${kicker(s)}${title(s)}${paras(s.paragraphs || s.body)}
+    ${s.sign !== false ? `<div class="sign">— ${esc(s.sign || brand.nameEn)}</div>` : ""}`,
 
+  // 03 DICTIONARY: 큰 단어 + 한자 + 영문·품사 + 정의 + 용어 행
+  dictionary: (s) => `${kicker(s)}
+    <div class="dict-word"><div class="ko">${esc(s.word)}</div>${s.hanja ? `<div class="hanja">${esc(s.hanja)}</div>` : ""}</div>
+    <div class="dict-en"><span class="en">${esc(s.en || "")}</span>${s.pos ? `<span class="pos">${esc(s.pos)}</span>` : ""}</div>
+    <p class="dict-def">${rich(s.definition || "")}</p>
+    ${s.terms ? `<div class="terms">${s.terms
+      .map((t) => `<div class="term"><div class="k">${esc(t.ko)}${t.en ? `<small>${esc(t.en)}</small>` : ""}</div><div class="v">${rich(t.text)}</div></div>`)
+      .join("")}</div>` : ""}`,
+
+  // 04 IN NUMBERS: 제목 + 오른쪽 키커 + 큰 숫자 행
+  numbers: (s) => `<div class="head-row"><h2 class="title">${rich(s.title)}</h2>${kicker(s)}</div>
+    <div class="rows">${(s.items || [])
+      .map((it) => `<div class="r"><div class="num">${esc(it.num)}</div><div><div class="h">${rich(it.head)}</div><div class="t">${rich(it.text || "")}</div></div></div>`)
+      .join("")}</div>`,
+
+  // 05 DIAGRAM: 건반 도식 (1–2개)
+  keyboard: (s) => `${kicker(s)}${title(s)}
+    ${(s.boards || [])
+      .map((b) => `<div class="kb"><div class="kb-head"><div class="en">${esc(b.en || "")} <span>${esc(b.ko || "")}</span></div>
+        <div class="notes">${esc((b.notes || []).join(" — ").replace(/b(?=\s|$)/g, "♭"))}</div></div>
+        ${keyboard(b.notes)}${b.caption ? `<div class="kb-cap">${rich(b.caption)}</div>` : ""}</div>`)
+      .join("")}`,
+
+  // 06·07 PARTS: 번호 + 큰 영문 + 한글 + 설명 (4행 이상이면 촘촘하게)
+  parts: (s) => `${kicker(s)}${title(s)}
+    <div class="rows">${(s.items || [])
+      .map((it, n) => `<div class="r"><div class="no">${esc(it.no || two((s.start || 1) + n))}</div><div>
+        <div class="part-en">${esc(it.en)}<span>${esc(it.ko || "")}</span></div><div class="part-t">${rich(it.text || "")}</div></div></div>`)
+      .join("")}</div>`,
+
+  // 08 STEPS: STEP 01 + 굵은 제목 + 설명
+  steps: (s) => `${kicker(s)}${title(s)}${s.lead ? `<p class="lead">${rich(s.lead)}</p>` : ""}
+    <div class="rows">${(s.items || [])
+      .map((it, n) => `<div class="r"><div class="step">STEP ${two(n + 1)}</div><div><div class="h">${rich(it.head)}</div><div class="t">${rich(it.text || "")}</div></div></div>`)
+      .join("")}</div>`,
+
+  // 09 THE ENOCH WAY: 번호 + 굵은 한 문장
+  way: (s) => `${kicker(s)}${title(s)}
+    <div class="rows">${(s.items || [])
+      .map((it, n) => `<div class="r"><div class="no">${two(n + 1)}</div><div class="s">${rich(typeof it === "string" ? it : it.text)}</div></div>`)
+      .join("")}</div>`,
+
+  // 10 마무리: 고스트 워드 + 시그니처 + 학원 정보
+  closing: (s) => `<div class="ghost">${esc(s.ghost || "ENOCH")}</div>
+    <div class="closing-ko">${rich(s.principle || brand.signature).replace(/\n/g, "<br>")}</div>
+    <div class="closing-en">${esc(s.principleEn || brand.signatureEn)}</div>
+    <div class="closing-info"><div><div class="name">${esc(brand.name)}</div><div class="addr">${esc(brand.address)}</div></div>
+      <div class="right"><div class="tel">${esc(brand.phone)}</div><div class="subj">${esc(s.subjects || brand.subjects)}</div></div></div>`,
+
+  // 범용: 한 장 한 메시지
+  point: (s) => `${kicker(s)}${title(s)}<div style="margin-top:56px">${paras(s.body)}</div>`,
+
+  // 범용: 코드 진행
+  chords: (s) => `${kicker(s)}${title(s)}
+    <div class="chords" style="grid-template-columns:repeat(${(s.chords || []).length},1fr)">${(s.chords || [])
+      .map((c) => `<div class="chord"><div class="roman">${esc(c.roman || "")}</div><div class="name">${esc(c.name)}</div>
+        <div class="notes">${esc(c.notes || "")}</div>${c.fn ? `<div class="fn">${esc(c.fn)}</div>` : ""}</div>`)
+      .join("")}</div>${paras(s.body)}`,
+
+  // 실제 사진 한 장
+  photo: async (s, i) => `${await photo(i, s.image)}${title(s)}${paras(s.body)}`,
+
+  // 강사 소개 포스터 (인용문 없음)
   instructor: async (s, i) => {
-    const band = Array(8).fill(esc(s.subject || "")).join(" · ");
+    const band = Array(8).fill(esc(s.subject || "")).join(" — ");
     return `<div class="poster">
       <div class="top"><div>${esc(s.subject || "")}</div><div>${esc(brand.nameEn)}</div></div>
       <div class="mid">${await photo(i, s.image)}
-        <div class="names"><div class="name-en">${esc(s.nameEn)}</div>
-          <div class="name-ko">${esc(s.nameKo)}</div>
+        <div class="names"><div class="name-en" style="font-size:${Math.min(92, Math.floor(560 / Math.max(...String(s.nameEn).split(/\s+/).map((w) => w.length))))}px">${esc(s.nameEn)}</div><div class="name-ko">${esc(s.nameKo)}</div>
           ${s.role ? `<div class="role">${rich(s.role)}</div>` : ""}</div></div>
       <div class="band">${band}</div></div>
     ${s.meta ? `<div class="meta">${s.meta.map((m) => `<div><b>${esc(m.k)}</b>${rich(m.v)}</div>`).join("")}</div>` : ""}`;
   },
-
-  closing: (s) => `
-    <div><div class="principle">${rich(s.principle || s.title || "")}</div>
-      ${s.body ? `<p class="body">${rich(s.body)}</p>` : ""}</div>
-    <div class="sign">
-      <div class="signature">${esc(brand.signature)}</div>
-      <div class="signature-en">${esc(brand.signatureEn)}</div>
-      <dl class="info">
-        <dt>주소</dt><dd>${esc(brand.address)}</dd>
-        <dt>전화</dt><dd>${esc(brand.phone)}</dd>
-        <dt>운영</dt><dd>${esc(brand.hours)}</dd>
-        ${s.directions !== false ? `<dt>오시는 길</dt><dd>${esc(brand.directions)}</dd>` : ""}
-      </dl></div>`,
 };
 
 const total = deck.slides.length;
-if (total < 5 || total > 7) warnings.push(`장수 ${total}장 (기본 5–7장)`);
+if (total < 5 || total > 10) warnings.push(`장수 ${total}장 (기본 5–7장, 확정본 No.01은 10장)`);
 
 const cards = [];
 for (const [i, s] of deck.slides.entries()) {
@@ -138,11 +179,13 @@ for (const [i, s] of deck.slides.entries()) {
   if (!fn) throw new Error(`${i + 1}장: 알 수 없는 layout "${s.layout}" (가능: ${Object.keys(layouts).join(", ")})`);
   check(i, s);
   const theme = s.theme || deck.theme || "ivory";
-  const bare = s.layout === "instructor";
-  cards.push(`<section class="card layout-${s.layout} theme-${theme}" id="card-${i + 1}">
-    ${bare ? "" : `<div class="masthead"><span>${esc(deck.masthead || brand.nameEn)}</span><span>${esc(deck.section || "")}</span></div>`}
+  const extra = s.layout === "parts" && (s.items || []).length > 3 ? " compact" : "";
+  const head = s.layout === "instructor" ? "" : `<div class="masthead"><span>${esc(brand.nameEn)}</span><span>${esc(deck.masthead || "")}</span></div>`;
+  const foot = s.layout === "cover" ? "" : `<div class="colophon"><span>${esc(deck.footer || "")}</span><span class="page">${two(i + 1)} / ${two(total)}</span></div>`;
+  cards.push(`<section class="card layout-${s.layout}${extra} theme-${theme}" id="card-${i + 1}">
+    ${head}
     ${await fn(s, i)}
-    <div class="colophon"><span>${esc(brand.nameEn)}</span><span class="page">${String(i + 1).padStart(2, "0")} / ${String(total).padStart(2, "0")}</span></div>
+    ${foot}
   </section>`);
 }
 

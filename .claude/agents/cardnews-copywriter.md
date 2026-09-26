@@ -10,9 +10,11 @@ model: inherit
 ## 작업 전
 - `CLAUDE.md` 3번(말투와 문장 규칙, 금지 표현, ENOCH ISSUE 규칙)을 다시 읽는다.
 - `output/<주제 폴더>/brief.md`, `templates/SLIDES_SCHEMA.md`
+- 확정본 문구 `templates/reference/ENOCH_ISSUE_01/slides.json` — 문장 길이, 라벨(kicker) 붙이는 법, 에디터 노트의 호흡을 이 수준에 맞춘다.
 
 ## 산출물 1: `output/<주제 폴더>/slides.json`
-- 구성안의 장 순서와 레이아웃 제안을 따른다. 5–7장.
+- 구성안의 장 순서와 레이아웃 제안을 따른다. 5–7장 (ENOCH ISSUE는 10장까지).
+- `masthead`(`ISSUE No.xx — 영문 주제`), `footer`(`한글 주제  한자`), `ticker`를 확정본 형식대로 채운다.
 - 문장: 차분하고 단정한 **합니다체**. 짧게. 한 장에 메시지 하나.
 - 굵게(`**...**`)는 한 장에 한 곳 이하.
 - "ENOCH이"로 쓴다 ("ENOCH가" 금지).
@@ -51,6 +53,6 @@ model: inherit
 - [ ] 금지 표현, 이모지 없음
 - [ ] "ENOCH이" 표기
 - [ ] 마지막 문장이 일반론이 아닌가 (이 학원에서만 할 수 있는 말인가)
-- [ ] 장수 5–7장
+- [ ] 장수 5–7장 (ENOCH ISSUE는 10장까지)
 
 끝나면 표지 문구와 비워 둔 자리(있다면)를 보고한다.

@@ -1,30 +1,47 @@
 # slides.json 스키마
 
-카피라이터가 문구를 쓰고, 디자이너가 레이아웃·테마를 다듬는 파일입니다. `npm run cardnews:render -- output/<주제 폴더>`로 같은 폴더에 `01.png ~`가 만들어집니다.
+**기준 디자인은 확정본 `templates/reference/ENOCH_ISSUE_01/` (01–10)입니다.** 레이아웃은 모두 확정본의 장 유형에서 나왔고, 새 편은 이 레이아웃을 조합해서 만듭니다. 확정본을 그대로 옮긴 예시가 `templates/reference/ENOCH_ISSUE_01/slides.json`에 있습니다.
 
 ```jsonc
 {
-  "title": "ENOCH ISSUE No.01 화성",   // 미리보기 제목
-  "masthead": "ENOCH ISSUE No.01",     // 머리말 왼쪽 (기본값: ENOCH MUSIC ACADEMY)
-  "section": "HARMONY",                // 머리말 오른쪽
-  "issueNo": "01",                     // 표지의 큰 숫자 (ENOCH ISSUE일 때만)
-  "theme": "ivory",                    // ivory | white | black (장마다 "theme"로 바꿀 수 있음)
-  "slides": [ /* 5–7장 */ ]
+  "title": "ENOCH ISSUE No.02 리듬",
+  "masthead": "ISSUE No.02 — RHYTHM",          // 머리말 오른쪽 (왼쪽은 항상 ENOCH MUSIC ACADEMY)
+  "footer": "리듬  律動",                        // 꼬리말 왼쪽: 한글 + 한자(있으면)
+  "ticker": "ENOCH ISSUE No.02 — RHYTHM — 리듬", // 표지 하단 반복 띠
+  "theme": "ivory",                              // ivory | black (장마다 "theme"로 바꿈)
+  "slides": [ ... ]
 }
 ```
 
-문구 필드 공통: `**굵게**` → 굵기 강조(포인트 컬러 없음), `\n` → 줄바꿈.
+문구 공통: `**굵게**`, `\n` 줄바꿈. `kicker`는 영문 대문자 모노 라벨(예: `Editor's Note`).
+
+## 확정본 장 유형
+
+| layout | 확정본 | 필드 | 테마 |
+|---|---|---|---|
+| `cover` | 01 | `image`, `en`(큰 영문), `ko`, `sub`, `issue`(예 `"ISSUE\nNo.01"`) | ivory |
+| `note` | 02 | `kicker`, `title`, `paragraphs`[] (2–3문단), `sign`?(기본 — ENOCH MUSIC ACADEMY, false면 숨김) | ivory |
+| `dictionary` | 03 | `kicker`, `word`, `hanja`?, `en`, `pos`?, `definition`, `terms`[{ko, en, text}] (2개) | black |
+| `numbers` | 04 | `kicker`(제목 오른쪽), `title`, `items`[{num, head, text}] (3개) | ivory |
+| `keyboard` | 05 | `kicker`, `title`, `boards`[{en, ko, notes: ["C","Eb","G"], caption}] (1–2개) | ivory |
+| `parts` | 06·07 | `kicker`, `title`, `items`[{en, ko, text}] (3개, 4개면 자동으로 촘촘하게), `start`?(번호 시작) | ivory |
+| `steps` | 08 | `kicker`, `title`, `lead`?, `items`[{head, text}] (3개) | black |
+| `way` | 09 | `kicker`, `title`, `items`["문장"] (3개) | ivory |
+| `closing` | 10 | `ghost`?(기본 ENOCH), `principle`?(기본 시그니처 문구), `principleEn`? — 주소·전화·과목은 자동 | black |
+
+## 보조 유형 (확정본 톤으로 맞춤)
 
 | layout | 필드 | 용도 |
 |---|---|---|
-| `cover` | `en`?, `title`, `subtitle`? | 표지 |
-| `point` | `label`?, `title`, `body`?, `note`? | 한 장 한 메시지 |
-| `list` | `label`?, `title`, `items`: `[{head, text?}]` 또는 `["..."]` (3–4개), `note`? | 순서, 항목 |
-| `chords` | `label`?, `title`, `chords`: `[{roman?, name, notes?, fn?}]` (2–4개), `body`?, `note`? | 코드 진행 |
-| `compare` | `label`?, `title`, `left`/`right`: `{head, items[]}`, `note`? | 두 가지 비교 |
-| `photo` | `image` (예: `images/공간/연습실1.jpg`), `title`?, `body`? | 실제 사진 한 장 |
-| `instructor` | `nameEn`, `nameKo`, `subject`, `image`, `role`?, `meta`?: `[{k, v}]` (최대 3개) | 강사 소개 포스터 (인용문 넣지 않음) |
-| `closing` | `principle` (ENOCH 원칙 문장 등), `body`?, `directions`? (false면 오시는 길 숨김) | 마무리: 시그니처 문구 + 주소·전화·운영시간 자동 삽입 |
+| `point` | `kicker`, `title`, `body` (문자열 또는 배열) | 한 장 한 메시지 |
+| `chords` | `kicker`, `title`, `chords`[{roman, name, notes, fn}], `body`? | 코드 진행 |
+| `photo` | `image`, `title`?, `body`? | 실제 사진 한 장 |
+| `instructor` | `nameEn`, `nameKo`, `subject`, `image`, `role`?, `meta`[{k, v}]? | 강사 소개 포스터 (인용문 없음) |
 
-- 사진 경로가 없으면 PNG에 "사진 필요" 자리표시자가 그려지고 경고가 나옵니다. 사진을 새로 만들어 넣지 않습니다.
-- 렌더러 경고 항목: 장수(5–7장 밖), 글자 수(title 40 / body 110 / note 70 / subtitle 50자), 금지 표현, 이모지, 없는 사진
+## 확정본의 리듬 (새 편도 따른다)
+- 표지(ivory, 사진) → 도입(note) → 정의(dictionary, **black**) → 본문 3–5장(ivory) → 실천(steps, **black**) → ENOCH의 방식(way) → 마무리(closing, **black**)
+- black 장은 한 편에 2–3장, 연속으로 두지 않는다.
+- 장수: 기본 5–7장, ENOCH ISSUE처럼 긴 편은 확정본과 같은 10장까지.
+
+## 렌더러 경고
+장수(5–10장 밖), 글자 수, 금지 표현, 이모지, 없는 사진, 알 수 없는 건반 음 이름

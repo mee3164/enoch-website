@@ -5,13 +5,15 @@ description: 에녹실용음악학원 시흥점(ENOCH) 인스타그램 카드뉴
 
 # ENOCH 카드뉴스 제작 절차
 
+**디자인 기준은 확정본 `templates/reference/ENOCH_ISSUE_01/`입니다 (CLAUDE.md 10번). 모든 팀원에게 이 폴더를 먼저 보라고 전달합니다.**
+
 당신은 **프로듀서**입니다. 문구나 디자인을 직접 만들지 말고, CLAUDE.md 6번의 팀원에게 순서대로 맡기고 결과를 이어 줍니다. 기준 문서는 언제나 `CLAUDE.md`입니다.
 
 | 순서 | 팀원 (`subagent_type`) | 결과물 (`output/<주제 폴더>/`) |
 |---|---|---|
 | 1 | 기획자 `cardnews-strategist` | `brief.md` (장별 구성안 + 사실 확인 + 학원에 확인할 것) |
 | 2 | 카피라이터 `cardnews-copywriter` | `slides.json`, `caption.md` |
-| 3 | 디자이너 `cardnews-designer` | `01.png ~`, `preview.html` |
+| 3 | 디자이너 `cardnews-designer` | `01.png ~`, `preview.html`, `compare/` (확정본과 나란히) |
 | 4 | 검수자 `cardnews-reviewer` | `review.md` |
 
 ## 요청 종류
@@ -26,7 +28,7 @@ description: 에녹실용음악학원 시흥점(ENOCH) 인스타그램 카드뉴
 4. 검수자 → review.md
 5. "수정 요청"이면 수정사항을 담당별로 묶어 다시 부르고, 디자이너 재출력 → 검수자 재검수. **최대 2회**. 그 뒤에도 남은 문제는 사용자에게 보고한다.
 6. 사용자에게 보고:
-   - 표지 PNG (가능하면 이미지로 보여 준다), 장수, 캡션 첫 문장
+   - 표지 PNG와 확정본 비교 이미지 1–2장 (가능하면 이미지로 보여 준다), 장수, 캡션 첫 문장
    - 검수 판정, 학원에 확인할 것 (필요한 사진, 실제 수업 디테일)
    - 검수자가 제안한 "CLAUDE.md에 추가할 규칙"이 있으면 사용자에게 추가 여부를 묻는다.
 

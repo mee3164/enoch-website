@@ -113,3 +113,14 @@
 - 카드에 들어가는 학원 정보는 `templates/brand.json`에서 읽는다. 1번 항목이 바뀌면 이 파일도 함께 고친다.
 - PNG 출력: `npm run cardnews:render -- output/<주제 폴더>` (처음 한 번 `npm install && npx playwright install chromium`)
 - 레이아웃 종류와 문구 필드: `templates/SLIDES_SCHEMA.md`
+- 확정본과 나란히 비교: `node scripts/compare.mjs output/<주제 폴더>` → `output/<주제 폴더>/compare/`
+
+## 10. 기준 디자인 (확정본)
+
+- ENOCH ISSUE No.01 화성 확정본(`templates/reference/ENOCH_ISSUE_01/01–10`)이 이후 모든 카드뉴스의 디자인 기준이다. 새 편은 이 결을 그대로 잇는다.
+- 머리말: 왼쪽 `ENOCH MUSIC ACADEMY`, 오른쪽 `ISSUE No.xx — 영문 주제` (모노 대문자) + 검은 실선. 꼬리말: 왼쪽 `한글 주제 + 한자`, 오른쪽 `02 / 10`.
+- 장 머리의 영문 라벨(EDITOR'S NOTE, DICTIONARY, IN NUMBERS 등)은 회색 모노 대문자. 제목은 굵은 한글, 본문은 가늘고 회색.
+- 영문 디스플레이(HARMONY, PIANO 등)는 굵은 그로테스크 산세리프 대문자.
+- 구성 리듬: 표지(사진) → 에디터 노트 → 사전(검정) → 본문 → 집에서 해보기(검정) → ENOCH의 방식 → 마무리(검정, ENOCH 고스트 문자 + 시그니처 + 주소·전화·과목).
+- 표지 사진은 흑백에 가까운 따뜻한 톤, 하단에 반복 텍스트 띠.
+- 확정본과 결이 다른 요소(포인트 컬러, 둥근 모서리, 그림자, 박스형 카드, 일러스트)는 넣지 않는다.
