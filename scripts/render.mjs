@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 // ENOCH 카드뉴스 렌더러: output/<주제>/slides.json → output/<주제>/preview.html + 01.png, 02.png ...
 // 사용법: node scripts/render.mjs output/<주제 폴더> [--html-only]
-import { readFile, writeFile, access } from "node:fs/promises";
+import { readFile, writeFile, access, readdir } from "node:fs/promises";
+import { createHash } from "node:crypto";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -206,6 +207,42 @@ const layouts = {
     ${s.meta ? `<div class="meta">${s.meta.map((m) => `<div><b>${esc(m.k)}</b>${rich(m.v)}</div>`).join("")}</div>` : ""}`;
   },
 };
+
+
+// CLAUDE.md 5번: ENOCH ISSUE 표지에 이전 편 사진을 다시 쓰지 않는다 (파일 내용으로 비교)
+async function coverHashes(dir) {
+  try {
+    const d = JSON.parse(await readFile(path.join(dir, "slides.json"), "utf8"));
+    const out = [];
+    for (const s of d.slides || []) {
+      if (s.layout !== "cover" || !s.image) continue;
+      try {
+        out.push({ img: s.image, hash: createHash("sha1").update(await readFile(path.resolve(root, s.image))).digest("hex") });
+      } catch {}
+    }
+    return out;
+  } catch {
+    return [];
+  }
+}
+{
+  const mine = await coverHashes(projectDir);
+  if (mine.length) {
+    const dirs = [];
+    for (const base of ["output", "templates/reference"]) {
+      try {
+        for (const e of await readdir(path.join(root, base), { withFileTypes: true }))
+          if (e.isDirectory()) dirs.push(path.join(root, base, e.name));
+      } catch {}
+    }
+    for (const dir of dirs) {
+      if (path.resolve(dir) === projectDir) continue;
+      for (const o of await coverHashes(dir))
+        for (const m of mine)
+          if (m.hash === o.hash) warnings.push(`표지 사진이 ${path.relative(root, dir)} 표지와 같습니다 (${m.img}) — 이전 편 사진은 다시 쓰지 않습니다`);
+    }
+  }
+}
 
 const total = deck.slides.length;
 if (total < 5 || total > 10) warnings.push(`장수 ${total}장 (기본 5–7장, 확정본 No.01은 10장)`);

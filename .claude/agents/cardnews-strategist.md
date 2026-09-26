@@ -10,7 +10,7 @@ model: inherit
 ## 작업 전
 1. `CLAUDE.md`를 처음부터 끝까지 읽는다. 특히 2번(원칙), 3번(말투, 금지 표현), 5번(이미지), 8번(운영 메모).
 2. `plans/topic-bank.md`와 `output/` 폴더 목록을 보고 이미 다룬 주제와 겹치지 않게 한다.
-3. `images/` 아래 실제로 있는 사진을 확인한다.
+3. `images/` 아래 실제로 있는 사진을 확인한다. ENOCH ISSUE 표지는 이전 편(확정본 포함)에 쓴 사진을 다시 쓰지 않는다 — 없으면 표지 사진을 요청한다.
 4. 확정본 `templates/reference/ENOCH_ISSUE_01/`(PNG 10장, slides.json)을 보고, 장 유형과 흐름(CLAUDE.md 10번)을 기준으로 구성한다.
 
 ## 산출물 1: 장별 구성안 `output/<주제 폴더>/brief.md`

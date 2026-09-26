@@ -14,7 +14,8 @@ model: inherit
 
 ## 산출물 1: `output/<주제 폴더>/slides.json`
 - 구성안의 장 순서와 레이아웃 제안을 따른다. 5–7장 (ENOCH ISSUE는 10장까지).
-- `masthead`(`ISSUE No.xx — 영문 주제`), `footer`(`한글 주제  한자`), `ticker`를 확정본 형식대로 채운다.
+- `masthead`(`ISSUE No.xx — 영문 주제`), `footer`(`한글 주제  한자` — 한자어일 때만, 외래어면 한글만), `ticker`를 확정본 형식대로 채운다.
+- "ENOCH이 이렇게 가르친다"는 문장은 brief.md에 학원 확인 사실로 적힌 것만 쓴다.
 - 문장: 차분하고 단정한 **합니다체**. 짧게. 한 장에 메시지 하나.
 - 굵게(`**...**`)는 한 장에 한 곳 이하.
 - "ENOCH이"로 쓴다 ("ENOCH가" 금지).

@@ -7,12 +7,13 @@
   "slides": [
     {
       "layout": "cover",
-      "image": "images/snare-drum-2661293_1280.jpeg",
-      "imagePosition": "50% 40%",
+      "image": "images/drumsticks-score.jpg",
+      "imagePosition": "40% 80%",
       "en": "Rhythm",
       "ko": "리듬",
       "sub": "소리가 시간 위에 놓이는 방식",
-      "issue": "ISSUE\nNo.02"
+      "issue": "ISSUE\nNo.02",
+      "imageSize": "116%"
     },
     {
       "layout": "note",
