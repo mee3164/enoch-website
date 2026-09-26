@@ -8,11 +8,12 @@
     {
       "layout": "cover",
       "image": "images/공간/IMG_5189.jpg",
-      "imagePosition": "0% center",
+      "imagePosition": "2% 2%",
       "en": "Rhythm",
       "ko": "리듬",
       "sub": "소리가 시간 위에 놓이는 방식",
-      "issue": "ISSUE\nNo.02"
+      "issue": "ISSUE\nNo.02",
+      "imageSize": "380%"
     },
     {
       "layout": "note",

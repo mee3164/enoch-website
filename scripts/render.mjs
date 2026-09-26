@@ -43,13 +43,13 @@ function check(i, slide) {
 
 // 실제 사진만 사용한다. 파일이 없으면 자리표시자를 그리고 필요한 사진을 알린다.
 const mime = { ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".png": "image/png", ".webp": "image/webp" };
-async function photo(i, rel, cls = "photo", pos = "center") {
+async function photo(i, rel, cls = "photo", pos = "center", size = "cover") {
   if (!rel) return "";
   const file = path.resolve(root, rel);
   try {
     await access(file);
     const data = (await readFile(file)).toString("base64");
-    return `<div class="${cls}" style="background-position:${pos};background-image:url(data:${mime[path.extname(file).toLowerCase()] || "image/jpeg"};base64,${data})"></div>`;
+    return `<div class="${cls}" style="background-size:${size};background-position:${pos};background-image:url(data:${mime[path.extname(file).toLowerCase()] || "image/jpeg"};base64,${data})"></div>`;
   } catch {
     warnings.push(`${i + 1}장: 사진 필요 — ${rel}`);
     return `<div class="photo-missing"><div>사진 필요</div><div>${esc(rel)}</div></div>`;
@@ -113,7 +113,7 @@ const layouts = {
   cover: async (s, i) => {
     const tick = s.ticker || deck.ticker || `${brand.nameEn}`;
     return `
-    ${s.image ? (await photo(i, s.image, "cover-photo", s.imagePosition)).replace('class="photo-missing"', 'class="photo-missing cover-photo"') : ""}
+    ${s.image ? (await photo(i, s.image, "cover-photo", s.imagePosition, s.imageSize)).replace('class="photo-missing"', 'class="photo-missing cover-photo"') : ""}
     <div class="cover-en">${esc(s.en)}</div>
     <div class="cover-sub"><div class="ko"><b>${esc(s.ko || "")}</b>${s.sub ? ` — ${esc(s.sub)}` : ""}</div>
       ${s.issue ? `<div class="issue">${esc(s.issue).replace(/\n/g, "<br>")}</div>` : ""}</div>

@@ -19,7 +19,7 @@
 
 | layout | 확정본 | 필드 | 테마 |
 |---|---|---|---|
-| `cover` | 01 | `image`, `imagePosition`?(예 `"30% center"`, 사진 자르는 위치), `en`(큰 영문), `ko`, `sub`, `issue`(예 `"ISSUE\nNo.01"`) | ivory |
+| `cover` | 01 | `image`, `imagePosition`?(예 `"30% center"`, 사진 자르는 위치), `imageSize`?(확대, 예 `"300%"` — 사진 폭 대비 배율, 기본 cover), `en`(큰 영문), `ko`, `sub`, `issue`(예 `"ISSUE\nNo.01"`) | ivory |
 | `note` | 02 | `kicker`, `title`, `paragraphs`[] (2–3문단), `sign`?(기본 — ENOCH MUSIC ACADEMY, false면 숨김) | ivory |
 | `dictionary` | 03 | `kicker`, `word`, `hanja`?, `en`, `pos`?, `definition`, `terms`[{ko, en, text}] (2개) | black |
 | `numbers` | 04 | `kicker`(제목 오른쪽), `title`, `items`[{num, head, text}] (3개) | ivory |
