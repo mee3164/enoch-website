@@ -125,7 +125,7 @@ const layouts = {
   typecover: (s) => {
     const tick = s.ticker || deck.ticker || `${brand.nameEn}`;
     return `${kicker(s)}
-    <div class="tc-en" style="font-size:${Math.min(150, Math.floor(1250 / Math.max(1, ...String(s.en || "").split("\n").map((l) => l.length))))}px">${esc(s.en || "")}</div>
+    <div class="tc-en" style="font-size:${Math.min(150, Math.floor(1480 / Math.max(1, ...String(s.en || "").split("\n").map((l) => l.length))))}px">${esc(s.en || "")}</div>
     <h1 class="tc-title">${rich(s.title || "")}</h1>
     ${s.sub ? `<p class="tc-sub">${rich(s.sub)}</p>` : ""}
     <div class="ticker">${Array(6).fill(esc(tick)).join(" — ")}</div>`;
