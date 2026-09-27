@@ -125,11 +125,18 @@ const layouts = {
   typecover: (s) => {
     const tick = s.ticker || deck.ticker || `${brand.nameEn}`;
     return `${kicker(s)}
-    <div class="tc-en">${esc(s.en || "")}</div>
+    <div class="tc-en" style="font-size:${Math.min(150, Math.floor(1250 / Math.max(1, ...String(s.en || "").split("\n").map((l) => l.length))))}px">${esc(s.en || "")}</div>
     <h1 class="tc-title">${rich(s.title || "")}</h1>
     ${s.sub ? `<p class="tc-sub">${rich(s.sub)}</p>` : ""}
     <div class="ticker">${Array(6).fill(esc(tick)).join(" — ")}</div>`;
   },
+
+  // 원칙 한 장: 큰 번호 + 실선 + 굵은 원칙 문장 + 영문 한 줄(선택) + 풀이
+  principle: (s) => `${kicker(s)}
+    <div class="pr-no">${esc(s.no || "")}</div>
+    <h2 class="pr-title">${rich(s.title || "")}</h2>
+    ${s.en ? `<div class="pr-en">${esc(s.en)}</div>` : ""}
+    ${s.body ? `<div class="pr-body">${paras(s.body)}</div>` : ""}`,
 
   // 02 EDITOR'S NOTE: 제목 + 문단 + 서명
   note: (s) => `${kicker(s)}${title(s)}${paras(s.paragraphs || s.body)}
