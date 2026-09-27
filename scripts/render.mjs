@@ -3,6 +3,7 @@
 // 사용법: node scripts/render.mjs output/<주제 폴더> [--html-only]
 import { readFile, writeFile, access, readdir } from "node:fs/promises";
 import { createHash } from "node:crypto";
+import { doodle, frame } from "./doodles.mjs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -294,6 +295,8 @@ for (const [i, s] of deck.slides.entries()) {
   cards.push(`<section class="card layout-${s.layout}${extra} theme-${theme}" id="card-${i + 1}">
     ${head}
     ${await fn(s, i)}
+    ${(s.doodles || []).map(doodle).join("")}
+    ${(s.frame ?? (["cover", "typecover", "closing", "instructor"].includes(s.layout) ? false : deck.frame)) ? frame(typeof (s.frame ?? deck.frame) === "object" ? (s.frame ?? deck.frame) : {}) : ""}
     ${foot}
   </section>`);
 }

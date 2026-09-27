@@ -51,3 +51,10 @@
 
 ## 파스텔 테마 (시안 단계 — CLAUDE.md 반영 전)
 `theme`: `sage`(세이지) · `blush`(블러시) · `mist`(미스트) · `butter`(버터) · `lilac`(라일락). 채도를 낮춘 배경 + 같은 계열의 짙은 글자.
+
+## 두들 (손그림 장식) · 손그림 테두리
+- 장마다 `"doodles": [{ "name", "x", "y", "size", "rotate"?, "fill"?, "color"?, "stroke"?, "opacity"? }]` — 좌표는 카드 왼쪽 위 기준 px. 글자 위에 겹치지 않게 빈 자리에 둔다.
+- `name`: spiral · note · notes · mic · drum · guitar · keys · headphones · ticket · score · route · shirt · moon · star · squiggle · heart
+- `fill`: 파스텔 이름(sage · blush · mist · butter · lilac · cream) 또는 색 코드
+- `"frame": true` (장 또는 덱 전체) — 카드 안쪽을 두르는 손그림 두 줄 테두리
+- 사람·강사·공간은 그리지 않는다. 사람과 공간은 실제 사진만 (CLAUDE.md 5번).
