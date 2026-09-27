@@ -1,0 +1,106 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><style>
+@font-face { font-family: "Pretendard"; src: url("file:///home/user/enoch-website/node_modules/pretendard/dist/web/variable/woff2/PretendardVariable.woff2") format("woff2"); font-weight: 100 900; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #555; font-family: "Pretendard", sans-serif; word-break: keep-all; -webkit-font-smoothing: antialiased; }
+.page { width: 1080px; min-height: 1350px; padding: 72px 80px 64px; background: #F1EDE4; color: #111; position: relative;
+  display: flex; flex-direction: column; margin: 0 auto 40px; overflow: hidden; }
+.page.black { background: #111; color: #F1EDE4; }
+.mono { font-family: "Pretendard", sans-serif; letter-spacing: 2.6px; text-transform: uppercase; }
+.head { display: flex; justify-content: space-between; font-size: 18px; font-weight: 500; padding-bottom: 18px; border-bottom: 2px solid currentColor; }
+.foot { margin-top: auto; padding-top: 40px; display: flex; justify-content: space-between; align-items: flex-end; font-size: 17px; color: #6E6A64; gap: 40px; }
+.black .foot { color: #9A958C; }
+.foot .note { line-height: 1.6; }
+.kicker { font-size: 20px; font-weight: 500; color: #6E6A64; margin-top: 64px; }
+.title { font-size: 60px; font-weight: 800; line-height: 1.28; letter-spacing: -2px; margin-top: 18px; white-space: pre-line; }
+.lead { font-size: 26px; font-weight: 400; color: #55524D; margin-top: 22px; line-height: 1.6; white-space: pre-line; }
+.tbd { color: #9A958C; font-weight: 400; font-style: normal; }
+.doodle-layer { position: absolute; inset: 0; pointer-events: none; }
+
+/* cover */
+.cover .title { font-size: 84px; letter-spacing: -3px; margin-top: 28px; }
+.cover .band { margin: 56px -80px 0; padding: 48px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 30px 48px; }
+.cover .band .item { border-top: 1.5px solid rgba(17,17,17,.8); padding-top: 16px; }
+.cover .band .no { font-size: 17px; color: #55524D; font-weight: 500; letter-spacing: 2px; }
+.cover .band .nm { font-size: 34px; font-weight: 800; margin-top: 6px; letter-spacing: -1px; }
+.cover .band .un { font-size: 20px; color: #55524D; margin-top: 6px; line-height: 1.45; }
+.cover .topics { margin-top: 40px; font-size: 24px; font-weight: 600; letter-spacing: 1px; }
+
+/* schedule table */
+table { width: 100%; border-collapse: collapse; margin-top: 44px; }
+th { text-align: left; font-size: 19px; font-weight: 600; color: #3B3833; padding: 16px 14px; letter-spacing: 1px; }
+td { font-size: 22px; line-height: 1.5; padding: 22px 14px; border-bottom: 1px solid rgba(17,17,17,.3); vertical-align: top; }
+td.sch { width: 250px; }
+td.sch b { display: block; font-size: 27px; font-weight: 800; letter-spacing: -.8px; }
+td.sch span { display: block; font-size: 17px; color: #6E6A64; margin-top: 4px; line-height: 1.4; }
+td.date { font-weight: 600; }
+
+/* school */
+.hero { margin: 48px -80px 0; padding: 52px 80px 48px; }
+.hero .no { font-size: 20px; font-weight: 600; letter-spacing: 3px; }
+.hero .nm { font-size: 72px; font-weight: 800; letter-spacing: -2.5px; margin-top: 14px; line-height: 1.15; }
+.hero .un { font-size: 26px; font-weight: 500; margin-top: 14px; line-height: 1.45; }
+.row { display: grid; grid-template-columns: 170px 1fr; gap: 28px; padding: 30px 0; border-bottom: 1px solid rgba(17,17,17,.28); }
+.row:last-of-type { border-bottom: none; }
+.row .lb { font-size: 19px; font-weight: 600; color: #6E6A64; letter-spacing: 1.5px; padding-top: 4px; }
+.row .ct { font-size: 23px; line-height: 1.6; }
+.row .ct b { font-weight: 700; }
+.bar { display: flex; height: 50px; margin-top: 10px; border: 1.5px solid #111; }
+.bar div { display: flex; align-items: center; padding: 0 16px; font-size: 19px; font-weight: 700; white-space: nowrap; overflow: hidden; }
+.bar div + div { border-left: 1.5px solid #111; }
+.tl { list-style: none; }
+.tl li { display: grid; grid-template-columns: 150px 1fr; gap: 16px; padding: 5px 0; }
+.tl li .ev { color: #55524D; font-weight: 500; }
+.tl li .dt { font-weight: 700; }
+.major { margin-bottom: 18px; }
+.major:last-child { margin-bottom: 0; }
+.major .mj { display: inline-block; font-size: 19px; font-weight: 700; padding: 3px 12px; margin-bottom: 8px; }
+.major ul, .checks { list-style: none; }
+.major li { padding-left: 20px; position: relative; font-size: 22px; line-height: 1.6; }
+.major li::before { content: ""; position: absolute; left: 2px; top: 16px; width: 8px; height: 1.5px; background: #111; }
+.checks li { padding-left: 38px; position: relative; font-size: 23px; line-height: 1.6; margin-bottom: 4px; }
+.checks li::before { content: ""; position: absolute; left: 0; top: 7px; width: 20px; height: 20px; border: 1.8px solid #111; }
+.small { font-size: 19px; color: #6E6A64; line-height: 1.55; margin-top: 8px; }
+
+/* checklist page */
+.cl { margin-top: 44px; display: grid; grid-template-columns: 1fr; gap: 0; }
+.cl .grp { padding: 30px 0; border-bottom: 1px solid rgba(17,17,17,.28); }
+.cl .grp h3 { font-size: 26px; font-weight: 800; margin-bottom: 14px; }
+
+/* closing */
+.black .kicker { color: #9A958C; }
+.black .lead { color: #C9C4BB; }
+.closing .ghost { position: absolute; right: -30px; bottom: 250px; font-size: 300px; font-weight: 900; color: #2A2825; letter-spacing: -12px; line-height: 1; }
+.closing .sig { font-size: 30px; font-weight: 700; margin-top: 80px; position: relative; }
+.closing .info { margin-top: 36px; font-size: 22px; line-height: 1.95; color: #C9C4BB; position: relative; }
+.closing .info b { display: inline-block; width: 80px; color: #9A958C; font-weight: 500; }
+</style></head><body><section class="page cover"><div class="head mono"><span>ENOCH MUSIC ACADEMY</span><span>2027 수시 · 실용음악 입시</span></div><div class="kicker mono">Admission Guide 2027</div><div class="title">2027학년도
+실용음악과 수시
+한눈에 보기</div>
+  <div class="band" style="background:#F1E8CB"><div class="item"><div class="no">01</div><div class="nm">서울예술대학교</div><div class="un">음악학부 실용음악전공</div></div><div class="item"><div class="no">02</div><div class="nm">동아방송예술대학교</div><div class="un">실용음악학부</div></div><div class="item"><div class="no">03</div><div class="nm">서경대학교</div><div class="un">실용음악학과</div></div><div class="item"><div class="no">04</div><div class="nm">호원대학교</div><div class="un">실용음악학부</div></div><div class="item"><div class="no">05</div><div class="nm">한양대학교</div><div class="un">ERICA 실용음악학과</div></div><div class="item"><div class="no">06</div><div class="nm">홍익대학교</div><div class="un">공연예술학부 실용음악전공</div></div></div><div class="topics">전형 · 일정 · 실기 과제 · 준비물</div><svg class="doodle-layer" width="1080" height="1350" viewBox="0 0 1080 1350"><svg class="doodle" viewBox="0 0 200 200" width="170" height="170"
+    style="position:absolute;left:800px;top:250px;transform:rotate(-8deg);opacity:1;color:var(--fg);overflow:visible;pointer-events:none">
+    <defs><filter id="wob1" x="-10%" y="-10%" width="120%" height="120%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="1"/>
+  <feDisplacementMap in="SourceGraphic" scale="5"/></filter></defs>
+    <g filter="url(#wob1)" stroke="var(--fg)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="50" cy="160" rx="26" ry="19" transform="rotate(-20 50 160)" fill="none"/>
+    <ellipse cx="140" cy="140" rx="26" ry="19" transform="rotate(-20 140 140)" fill="none"/>
+    <path d="M74 153 L74 40 L164 22 L164 133 M74 62 L164 44" fill="none"/></g></svg></svg><div class="foot"><div class="note">2026.09.27 각 대학 모집요강 기준<br>정확한 내용은 꼭 각 대학 입학처 모집요강에서 한 번 더 확인해 주세요.</div><div class="mono">01 / 09</div></div></section>
+<section class="page"><div class="head mono"><span>ENOCH MUSIC ACADEMY</span><span>2027 수시 · 실용음악 입시</span></div><div class="kicker mono">Schedule</div><div class="title">대학별 수시 일정</div><div class="lead">원서 접수부터 합격 발표까지
+한 장에 모았습니다.</div>
+  <table><thead><tr style="background:#F1E8CB"><th>대학</th><th>원서 접수</th><th>실기 고사</th><th>합격 발표</th></tr></thead><tbody><tr><td class="sch"><b>서울예술대학교</b><span>음악학부 실용음악전공</span></td><td class="date"><span class="tbd">요강 확인 필요</span></td><td class="date"><span class="tbd">요강 확인 필요</span></td><td class="date"><span class="tbd">요강 확인 필요</span></td></tr><tr><td class="sch"><b>동아방송예술대학교</b><span>실용음악학부</span></td><td class="date"><span class="tbd">요강 확인 필요</span></td><td class="date"><span class="tbd">요강 확인 필요</span></td><td class="date"><span class="tbd">요강 확인 필요</span></td></tr><tr><td class="sch"><b>서경대학교</b><span>실용음악학과</span></td><td class="date"><span class="tbd">요강 확인 필요</span></td><td class="date"><span class="tbd">요강 확인 필요</span></td><td class="date"><span class="tbd">요강 확인 필요</span></td></tr><tr><td class="sch"><b>호원대학교</b><span>실용음악학부</span></td><td class="date"><span class="tbd">요강 확인 필요</span></td><td class="date"><span class="tbd">요강 확인 필요</span></td><td class="date"><span class="tbd">요강 확인 필요</span></td></tr><tr><td class="sch"><b>한양대학교</b><span>ERICA 실용음악학과</span></td><td class="date"><span class="tbd">요강 확인 필요</span></td><td class="date"><span class="tbd">요강 확인 필요</span></td><td class="date"><span class="tbd">요강 확인 필요</span></td></tr><tr><td class="sch"><b>홍익대학교</b><span>공연예술학부 실용음악전공</span></td><td class="date"><span class="tbd">요강 확인 필요</span></td><td class="date"><span class="tbd">요강 확인 필요</span></td><td class="date"><span class="tbd">요강 확인 필요</span></td></tr></tbody></table><div class="foot"><div class="note">2026.09.27 각 대학 모집요강 기준<br>정확한 내용은 꼭 각 대학 입학처 모집요강에서 한 번 더 확인해 주세요.</div><div class="mono">02 / 09</div></div></section>
+<section class="page"><div class="head mono"><span>ENOCH MUSIC ACADEMY</span><span>2027 수시 · 실용음악 입시</span></div><div class="hero" style="background:#D9E1E8"><div class="no mono">University 01</div><div class="nm">서울예술대학교</div><div class="un">음악학부 실용음악전공</div></div>
+  <div style="margin-top:16px"><div class="row"><div class="lb">전형</div><div class="ct"><div><b>수시 실기 전형</b> · <span class="tbd">요강 확인 필요</span></div><div class="small"><span class="tbd">전형 요소·반영 비율 요강 확인 필요</span></div></div></div><div class="row"><div class="lb">수능 최저</div><div class="ct"><span class="tbd">요강 확인 필요</span></div></div><div class="row"><div class="lb">일정</div><div class="ct"><ul class="tl"><li><span class="ev">원서 접수</span><span class="dt"><span class="tbd">요강 확인 필요</span></span></li><li><span class="ev">실기 고사</span><span class="dt"><span class="tbd">요강 확인 필요</span></span></li><li><span class="ev">합격 발표</span><span class="dt"><span class="tbd">요강 확인 필요</span></span></li></ul></div></div><div class="row"><div class="lb">실기 과제</div><div class="ct"><div class="major"><span class="mj" style="background:#D9E1E8">보컬</span><ul><li><span class="tbd">요강 확인 필요</span></li></ul></div><div class="major"><span class="mj" style="background:#D9E1E8">기악</span><ul><li><span class="tbd">요강 확인 필요</span></li></ul></div><div class="major"><span class="mj" style="background:#D9E1E8">작곡</span><ul><li><span class="tbd">요강 확인 필요</span></li></ul></div></div></div><div class="row"><div class="lb">준비물</div><div class="ct"><ul class="checks"><li>수험표</li><li>신분증</li><li><span class="tbd">악기·음원 등 전공별 준비물 요강 확인 필요</span></li></ul></div></div></div><div class="foot"><div class="note">2026.09.27 각 대학 모집요강 기준<br>정확한 내용은 꼭 각 대학 입학처 모집요강에서 한 번 더 확인해 주세요.</div><div class="mono">03 / 09</div></div></section>
+<section class="page"><div class="head mono"><span>ENOCH MUSIC ACADEMY</span><span>2027 수시 · 실용음악 입시</span></div><div class="hero" style="background:#DCE2D3"><div class="no mono">University 02</div><div class="nm">동아방송예술대학교</div><div class="un">실용음악학부</div></div>
+  <div style="margin-top:16px"><div class="row"><div class="lb">전형</div><div class="ct"><div><b>수시 실기 전형</b> · <span class="tbd">요강 확인 필요</span></div><div class="small"><span class="tbd">전형 요소·반영 비율 요강 확인 필요</span></div></div></div><div class="row"><div class="lb">수능 최저</div><div class="ct"><span class="tbd">요강 확인 필요</span></div></div><div class="row"><div class="lb">일정</div><div class="ct"><ul class="tl"><li><span class="ev">원서 접수</span><span class="dt"><span class="tbd">요강 확인 필요</span></span></li><li><span class="ev">실기 고사</span><span class="dt"><span class="tbd">요강 확인 필요</span></span></li><li><span class="ev">합격 발표</span><span class="dt"><span class="tbd">요강 확인 필요</span></span></li></ul></div></div><div class="row"><div class="lb">실기 과제</div><div class="ct"><div class="major"><span class="mj" style="background:#DCE2D3">보컬</span><ul><li><span class="tbd">요강 확인 필요</span></li></ul></div><div class="major"><span class="mj" style="background:#DCE2D3">기악</span><ul><li><span class="tbd">요강 확인 필요</span></li></ul></div><div class="major"><span class="mj" style="background:#DCE2D3">작곡</span><ul><li><span class="tbd">요강 확인 필요</span></li></ul></div></div></div><div class="row"><div class="lb">준비물</div><div class="ct"><ul class="checks"><li>수험표</li><li>신분증</li><li><span class="tbd">악기·음원 등 전공별 준비물 요강 확인 필요</span></li></ul></div></div></div><div class="foot"><div class="note">2026.09.27 각 대학 모집요강 기준<br>정확한 내용은 꼭 각 대학 입학처 모집요강에서 한 번 더 확인해 주세요.</div><div class="mono">04 / 09</div></div></section>
+<section class="page"><div class="head mono"><span>ENOCH MUSIC ACADEMY</span><span>2027 수시 · 실용음악 입시</span></div><div class="hero" style="background:#F1E8CB"><div class="no mono">University 03</div><div class="nm">서경대학교</div><div class="un">예술대학 실용음악학과</div></div>
+  <div style="margin-top:16px"><div class="row"><div class="lb">전형</div><div class="ct"><div><b>수시 실기 전형</b> · <span class="tbd">요강 확인 필요</span></div><div class="small"><span class="tbd">전형 요소·반영 비율 요강 확인 필요</span></div></div></div><div class="row"><div class="lb">수능 최저</div><div class="ct"><span class="tbd">요강 확인 필요</span></div></div><div class="row"><div class="lb">일정</div><div class="ct"><ul class="tl"><li><span class="ev">원서 접수</span><span class="dt"><span class="tbd">요강 확인 필요</span></span></li><li><span class="ev">실기 고사</span><span class="dt"><span class="tbd">요강 확인 필요</span></span></li><li><span class="ev">합격 발표</span><span class="dt"><span class="tbd">요강 확인 필요</span></span></li></ul></div></div><div class="row"><div class="lb">실기 과제</div><div class="ct"><div class="major"><span class="mj" style="background:#F1E8CB">보컬</span><ul><li><span class="tbd">요강 확인 필요</span></li></ul></div><div class="major"><span class="mj" style="background:#F1E8CB">기악</span><ul><li><span class="tbd">요강 확인 필요</span></li></ul></div><div class="major"><span class="mj" style="background:#F1E8CB">작곡</span><ul><li><span class="tbd">요강 확인 필요</span></li></ul></div></div></div><div class="row"><div class="lb">준비물</div><div class="ct"><ul class="checks"><li>수험표</li><li>신분증</li><li><span class="tbd">악기·음원 등 전공별 준비물 요강 확인 필요</span></li></ul></div></div></div><div class="foot"><div class="note">2026.09.27 각 대학 모집요강 기준<br>정확한 내용은 꼭 각 대학 입학처 모집요강에서 한 번 더 확인해 주세요.</div><div class="mono">05 / 09</div></div></section>
+<section class="page"><div class="head mono"><span>ENOCH MUSIC ACADEMY</span><span>2027 수시 · 실용음악 입시</span></div><div class="hero" style="background:#EEDFD8"><div class="no mono">University 04</div><div class="nm">호원대학교</div><div class="un">실용음악학부</div></div>
+  <div style="margin-top:16px"><div class="row"><div class="lb">전형</div><div class="ct"><div><b>수시 실기 전형</b> · <span class="tbd">요강 확인 필요</span></div><div class="small"><span class="tbd">전형 요소·반영 비율 요강 확인 필요</span></div></div></div><div class="row"><div class="lb">수능 최저</div><div class="ct"><span class="tbd">요강 확인 필요</span></div></div><div class="row"><div class="lb">일정</div><div class="ct"><ul class="tl"><li><span class="ev">원서 접수</span><span class="dt"><span class="tbd">요강 확인 필요</span></span></li><li><span class="ev">실기 고사</span><span class="dt"><span class="tbd">요강 확인 필요</span></span></li><li><span class="ev">합격 발표</span><span class="dt"><span class="tbd">요강 확인 필요</span></span></li></ul></div></div><div class="row"><div class="lb">실기 과제</div><div class="ct"><div class="major"><span class="mj" style="background:#EEDFD8">보컬</span><ul><li><span class="tbd">요강 확인 필요</span></li></ul></div><div class="major"><span class="mj" style="background:#EEDFD8">기악</span><ul><li><span class="tbd">요강 확인 필요</span></li></ul></div><div class="major"><span class="mj" style="background:#EEDFD8">작곡</span><ul><li><span class="tbd">요강 확인 필요</span></li></ul></div></div></div><div class="row"><div class="lb">준비물</div><div class="ct"><ul class="checks"><li>수험표</li><li>신분증</li><li><span class="tbd">악기·음원 등 전공별 준비물 요강 확인 필요</span></li></ul></div></div></div><div class="foot"><div class="note">2026.09.27 각 대학 모집요강 기준<br>정확한 내용은 꼭 각 대학 입학처 모집요강에서 한 번 더 확인해 주세요.</div><div class="mono">06 / 09</div></div></section>
+<section class="page"><div class="head mono"><span>ENOCH MUSIC ACADEMY</span><span>2027 수시 · 실용음악 입시</span></div><div class="hero" style="background:#E3DDE9"><div class="no mono">University 05</div><div class="nm">한양대학교</div><div class="un">ERICA 예체능대학 실용음악학과</div></div>
+  <div style="margin-top:16px"><div class="row"><div class="lb">전형</div><div class="ct"><div><b>수시 실기 전형</b> · <span class="tbd">요강 확인 필요</span></div><div class="small"><span class="tbd">전형 요소·반영 비율 요강 확인 필요</span></div></div></div><div class="row"><div class="lb">수능 최저</div><div class="ct"><span class="tbd">요강 확인 필요</span></div></div><div class="row"><div class="lb">일정</div><div class="ct"><ul class="tl"><li><span class="ev">원서 접수</span><span class="dt"><span class="tbd">요강 확인 필요</span></span></li><li><span class="ev">실기 고사</span><span class="dt"><span class="tbd">요강 확인 필요</span></span></li><li><span class="ev">합격 발표</span><span class="dt"><span class="tbd">요강 확인 필요</span></span></li></ul></div></div><div class="row"><div class="lb">실기 과제</div><div class="ct"><div class="major"><span class="mj" style="background:#E3DDE9">보컬</span><ul><li><span class="tbd">요강 확인 필요</span></li></ul></div><div class="major"><span class="mj" style="background:#E3DDE9">기악</span><ul><li><span class="tbd">요강 확인 필요</span></li></ul></div><div class="major"><span class="mj" style="background:#E3DDE9">작곡</span><ul><li><span class="tbd">요강 확인 필요</span></li></ul></div></div></div><div class="row"><div class="lb">준비물</div><div class="ct"><ul class="checks"><li>수험표</li><li>신분증</li><li><span class="tbd">악기·음원 등 전공별 준비물 요강 확인 필요</span></li></ul></div></div></div><div class="foot"><div class="note">2026.09.27 각 대학 모집요강 기준<br>정확한 내용은 꼭 각 대학 입학처 모집요강에서 한 번 더 확인해 주세요.</div><div class="mono">07 / 09</div></div></section>
+<section class="page"><div class="head mono"><span>ENOCH MUSIC ACADEMY</span><span>2027 수시 · 실용음악 입시</span></div><div class="hero" style="background:#D9E1E8"><div class="no mono">University 06</div><div class="nm">홍익대학교</div><div class="un">공연예술학부 실용음악전공</div></div>
+  <div style="margin-top:16px"><div class="row"><div class="lb">전형</div><div class="ct"><div><b>수시 실기 전형</b> · <span class="tbd">요강 확인 필요</span></div><div class="small"><span class="tbd">전형 요소·반영 비율 요강 확인 필요</span></div></div></div><div class="row"><div class="lb">수능 최저</div><div class="ct"><span class="tbd">요강 확인 필요</span></div></div><div class="row"><div class="lb">일정</div><div class="ct"><ul class="tl"><li><span class="ev">원서 접수</span><span class="dt"><span class="tbd">요강 확인 필요</span></span></li><li><span class="ev">실기 고사</span><span class="dt"><span class="tbd">요강 확인 필요</span></span></li><li><span class="ev">합격 발표</span><span class="dt"><span class="tbd">요강 확인 필요</span></span></li></ul></div></div><div class="row"><div class="lb">실기 과제</div><div class="ct"><div class="major"><span class="mj" style="background:#D9E1E8">보컬</span><ul><li><span class="tbd">요강 확인 필요</span></li></ul></div><div class="major"><span class="mj" style="background:#D9E1E8">기악</span><ul><li><span class="tbd">요강 확인 필요</span></li></ul></div><div class="major"><span class="mj" style="background:#D9E1E8">작곡</span><ul><li><span class="tbd">요강 확인 필요</span></li></ul></div></div></div><div class="row"><div class="lb">준비물</div><div class="ct"><ul class="checks"><li>수험표</li><li>신분증</li><li><span class="tbd">악기·음원 등 전공별 준비물 요강 확인 필요</span></li></ul></div></div></div><div class="foot"><div class="note">2026.09.27 각 대학 모집요강 기준<br>정확한 내용은 꼭 각 대학 입학처 모집요강에서 한 번 더 확인해 주세요.</div><div class="mono">08 / 09</div></div></section>
+<section class="page black closing"><div class="head mono"><span>ENOCH MUSIC ACADEMY</span><span>2027 수시 · 실용음악 입시</span></div><div class="ghost">ENOCH</div><div class="kicker mono">With ENOCH</div><div class="title">시험장까지,
+하나씩 제대로
+준비하겠습니다.</div><div class="lead">기본기부터 연주, 그리고 실전까지.</div>
+  <div class="sig">나만의 진짜 소리를 찾는 곳.</div>
+  <div class="info"><div><b>학원</b>에녹실용음악학원 시흥점</div><div><b>주소</b>경기도 시흥시 은행로 157 2층</div><div><b>위치</b>대야역 도보 10–15분, 성원아파트 정류장 앞</div><div><b>전화</b>010 3949 3666</div><div><b>운영</b>평일 13:00–22:00 / 토 10:00–18:00 / 일요일 휴무</div></div><div class="foot"><div class="note">2026.09.27 각 대학 모집요강 기준<br>정확한 내용은 꼭 각 대학 입학처 모집요강에서 한 번 더 확인해 주세요.</div><div class="mono">09 / 09</div></div></section></body></html>
