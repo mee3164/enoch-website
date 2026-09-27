@@ -76,6 +76,7 @@ body { font-family: var(--ko); word-break: keep-all; -webkit-font-smoothing: ant
 .tc-i:nth-child(even) { padding-left: 28px; border-left: 1px solid var(--hair); }
 .tc-n { font-family: var(--mono); font-size: 20px; letter-spacing: 1px; color: var(--sub); }
 .tc-l { font-size: 30px; font-weight: 700; letter-spacing: -0.5px; }
+.tc-ghost { margin-top: 10px; font-family: var(--en); font-size: 460px; font-weight: 700; line-height: .78; letter-spacing: -20px; color: var(--ghost); }
 .tc-sub { margin-top: 28px; font-size: 32px; font-weight: 300; color: var(--sub); line-height: 1.6; white-space: pre-line; }
 
 /* ── principle (원칙 한 장) ─────────────────── */

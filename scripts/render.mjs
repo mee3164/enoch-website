@@ -129,6 +129,7 @@ const layouts = {
       .join("");
     return `${kicker(s)}
     ${idx ? `<div class="tc-index">${idx}</div>` : ""}
+    ${s.ghost ? `<div class="tc-ghost">${esc(s.ghost)}</div>` : ""}
     <div class="tc-en" style="font-size:${Math.min(150, Math.floor(1480 / Math.max(1, ...String(s.en || "").split("\n").map((l) => l.length))))}px">${esc(s.en || "")}</div>
     <h1 class="tc-title">${rich(s.title || "")}</h1>
     ${s.sub ? `<p class="tc-sub">${rich(s.sub)}</p>` : ""}

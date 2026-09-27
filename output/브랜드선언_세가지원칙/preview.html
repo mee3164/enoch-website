@@ -72,6 +72,12 @@ body { font-family: var(--ko); word-break: keep-all; -webkit-font-smoothing: ant
 .layout-typecover { padding-top: 250px; }
 .tc-en { margin-top: auto; font-family: var(--en); font-size: 150px; font-weight: 700; line-height: .9; letter-spacing: -4px; text-transform: uppercase; white-space: pre-line; }
 .tc-title { margin-top: 90px; padding-top: 44px; border-top: 1.5px solid var(--rule); font-size: 76px; font-weight: 800; line-height: 1.3; letter-spacing: -2.5px; white-space: pre-line; }
+.tc-index { margin-top: 44px; display: grid; grid-template-columns: 1fr 1fr; border-top: 1.5px solid var(--rule); }
+.tc-i { display: flex; align-items: baseline; gap: 22px; padding: 22px 0 20px; border-bottom: 1px solid var(--hair); }
+.tc-i:nth-child(even) { padding-left: 28px; border-left: 1px solid var(--hair); }
+.tc-n { font-family: var(--mono); font-size: 20px; letter-spacing: 1px; color: var(--sub); }
+.tc-l { font-size: 30px; font-weight: 700; letter-spacing: -0.5px; }
+.tc-ghost { margin-top: 10px; font-family: var(--en); font-size: 460px; font-weight: 700; line-height: .78; letter-spacing: -20px; color: var(--ghost); }
 .tc-sub { margin-top: 28px; font-size: 32px; font-weight: 300; color: var(--sub); line-height: 1.6; white-space: pre-line; }
 
 /* ── principle (원칙 한 장) ─────────────────── */
@@ -211,6 +217,8 @@ body { font-family: var(--ko); word-break: keep-all; -webkit-font-smoothing: ant
 <body class="preview"><section class="card layout-typecover theme-ivory" id="card-1">
     <div class="masthead"><span>ENOCH MUSIC ACADEMY</span><span>ENOCH — PRINCIPLES</span></div>
     <div class="kicker">01 — 03</div>
+    
+    <div class="tc-ghost">3</div>
     <div class="tc-en" style="font-size:148px">Principles</div>
     <h1 class="tc-title">원칙</h1>
     <p class="tc-sub">ENOCH이 지키는 세 가지</p>
