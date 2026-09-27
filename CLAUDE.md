@@ -137,3 +137,11 @@
 - 표지 사진은 흑백에 가까운 따뜻한 톤, 하단에 반복 텍스트 띠.
 - 확정본과 결이 다른 요소(둥근 모서리, 그림자, 박스형 카드)는 넣지 않는다. 파스텔 색면과 손그림 일러스트는 4·5번 규칙 안에서 쓸 수 있다.
 - ENOCH ISSUE 표지는 계속 실제 사진이다 (5번). 파스텔·두들은 본문 장과 다른 시리즈에서 쓴다.
+
+## 11. 네이버 블로그 팀
+
+- 블로그 글은 카드뉴스와 별도 팀이 만든다. 기준 문서: `blog/GUIDE.md` (블로그 팀은 이 CLAUDE.md 대신 GUIDE.md만 읽는다)
+- 요청은 `/blog <주제>`. 절차: `.claude/skills/blog/SKILL.md`
+- 팀원: `blog-planner`(기획·키워드) → `blog-writer`(작성) → `blog-editor`(검수)
+- 결과물: `blog/posts/<글번호>/` — `plan.md` → `draft.md` → `review.md` → `final.md`, 사진은 `photos/`
+- 1번 학원 정보가 바뀌면 `blog/GUIDE.md` 1번과 6번 안내 블록도 함께 고친다.
