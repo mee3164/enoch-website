@@ -13,6 +13,13 @@
   --en: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", var(--ko);
 }
 .theme-ivory { --bg: var(--ivory); --fg: var(--black); --body: #55524D; --sub: #6E6A64; --rule: rgba(17,17,17,.9); --hair: rgba(17,17,17,.55); --ghost: #E4DFD5; }
+/* 파스텔 테마 (시안) — 채도를 낮춘 톤. 글자는 짙은 같은 계열 */
+:root { --sage: #DCE2D3; --blush: #EEDFD8; --mist: #D9E1E8; --butter: #F1E8CB; --lilac: #E3DDE9; }
+.theme-sage   { --bg: var(--sage);   --fg: #1F2A22; --body: #4B5549; --sub: #6B7566; --rule: rgba(31,42,34,.85); --hair: rgba(31,42,34,.35); --ghost: #CCD4C2; }
+.theme-blush  { --bg: var(--blush);  --fg: #2B1F1C; --body: #5A4A45; --sub: #806A63; --rule: rgba(43,31,28,.85); --hair: rgba(43,31,28,.32); --ghost: #E3CFC6; }
+.theme-mist   { --bg: var(--mist);   --fg: #1B232B; --body: #46525D; --sub: #66727D; --rule: rgba(27,35,43,.85); --hair: rgba(27,35,43,.32); --ghost: #C9D3DC; }
+.theme-butter { --bg: var(--butter); --fg: #2A2517; --body: #5A5340; --sub: #7E765E; --rule: rgba(42,37,23,.85); --hair: rgba(42,37,23,.32); --ghost: #E6DAB2; }
+.theme-lilac  { --bg: var(--lilac);  --fg: #231E2A; --body: #534C5C; --sub: #756D7F; --rule: rgba(35,30,42,.85); --hair: rgba(35,30,42,.32); --ghost: #D6CEDF; }
 .theme-black { --bg: var(--black); --fg: var(--ivory); --body: #C9C4BB; --sub: #9A958C; --rule: rgba(241,237,228,.85); --hair: rgba(241,237,228,.28); --ghost: #2A2825; }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -86,6 +93,14 @@ body { font-family: var(--ko); word-break: keep-all; -webkit-font-smoothing: ant
 .pr-title { margin-top: 56px; font-size: 70px; font-weight: 800; line-height: 1.32; letter-spacing: -2px; white-space: pre-line; }
 .pr-en { margin-top: 22px; font-family: var(--en); font-size: 32px; font-weight: 400; color: var(--sub); letter-spacing: -0.3px; }
 .pr-body { margin-top: 48px; }
+
+/* principle 변형 (시안) */
+.pr-split .pr-block { margin: 0 -96px; padding: 60px 96px 56px; background: var(--block, var(--sage)); color: #1B1B1B; }
+.pr-split .pr-block .kicker { color: rgba(0,0,0,.55); }
+.pr-split .pr-no { border-bottom: 0; padding-bottom: 0; margin-top: 20px; }
+.pr-outline .pr-no { color: transparent; -webkit-text-stroke: 2px var(--fg); font-size: 380px; letter-spacing: -14px; }
+.pr-circle .pr-disc { position: absolute; top: 150px; right: 96px; width: 420px; height: 420px; border-radius: 50%; background: var(--block, var(--blush)); display: flex; align-items: center; justify-content: center; font-family: var(--en); font-size: 200px; font-weight: 800; letter-spacing: -8px; color: #1B1B1B; }
+.pr-circle .pr-title { margin-top: 400px; padding-top: 44px; border-top: 1.5px solid var(--rule); }
 
 /* ── note (EDITOR'S NOTE) ──────────────────── */
 .layout-note { padding-top: 308px; }
@@ -224,12 +239,33 @@ Day</div>
     <h1 class="tc-title">실기 전날·당일</h1>
     <p class="tc-sub">ENOCH이 안내하는 여섯 가지</p>
     <div class="ticker">EXAM SEASON — 실기 전날·당일 — ENOCH MUSIC ACADEMY — EXAM SEASON — 실기 전날·당일 — ENOCH MUSIC ACADEMY — EXAM SEASON — 실기 전날·당일 — ENOCH MUSIC ACADEMY — EXAM SEASON — 실기 전날·당일 — ENOCH MUSIC ACADEMY — EXAM SEASON — 실기 전날·당일 — ENOCH MUSIC ACADEMY — EXAM SEASON — 실기 전날·당일 — ENOCH MUSIC ACADEMY</div>
+    <svg class="doodle" viewBox="0 0 200 200" width="110" height="110"
+    style="position:absolute;left:860px;top:190px;transform:rotate(12deg);opacity:1;color:var(--fg);overflow:visible;pointer-events:none">
+    <defs><filter id="wob1" x="-10%" y="-10%" width="120%" height="120%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="1"/>
+  <feDisplacementMap in="SourceGraphic" scale="5"/></filter></defs>
+    <g filter="url(#wob1)" stroke="var(--fg)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M100 20 L112 86 L180 100 L112 114 L100 180 L88 114 L20 100 L88 86 Z" fill="none"/></g></svg>
+    
     
   </section>
 <section class="card layout-point theme-ivory" id="card-2">
     <div class="masthead"><span>ENOCH MUSIC ACADEMY</span><span>EXAM SEASON — AUDITION</span></div>
     <div class="kicker">Before the Exam</div><h2 class="title">시험장에서는
 곡에만 집중하도록.</h2><div style="margin-top:56px"><p class="body">실기장에서 보여 줄 것은 준비한 곡입니다. 수험표를 찾거나 길을 헤매는 데 마음을 쓰지 않도록, 준비물과 동선은 미리 챙겨 둡니다.</p><p class="body">그래서 ENOCH이 실기 전날과 당일, <span class="em">여섯 가지</span>를 안내합니다.</p></div>
+    <svg class="doodle" viewBox="0 0 200 200" width="190" height="190"
+    style="position:absolute;left:790px;top:930px;transform:rotate(8deg);opacity:1;color:var(--fg);overflow:visible;pointer-events:none">
+    <defs><filter id="wob2" x="-10%" y="-10%" width="120%" height="120%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="2"/>
+  <feDisplacementMap in="SourceGraphic" scale="5"/></filter></defs>
+    <g filter="url(#wob2)" stroke="var(--fg)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><rect x="70" y="18" width="60" height="90" rx="30" fill="#EEDFD8"/>
+    <path d="M78 50 H122 M78 70 H122 M52 88 Q52 140 100 140 Q148 140 148 88 M100 140 V180 M70 182 H130" fill="none"/></g></svg>
+    <svg class="doodle-frame" width="1080" height="1350" style="position:absolute;left:0;top:0;pointer-events:none">
+    <defs><filter id="wob3" x="-10%" y="-10%" width="120%" height="120%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="2" seed="3"/>
+  <feDisplacementMap in="SourceGraphic" scale="7"/></filter></defs>
+    <g filter="url(#wob3)" fill="none" stroke="var(--fg)" stroke-width="3">
+      <rect x="34" y="34" width="1012" height="1282"/>
+      <rect x="46" y="46" width="988" height="1258" stroke-width="1.6"/></g></svg>
     <div class="colophon"><span>실기  實技</span><span class="page">02 / 07</span></div>
   </section>
 <section class="card layout-parts theme-ivory" id="card-3">
@@ -239,6 +275,34 @@ Day</div>
         <div class="part-en">Ticket<span>수험표</span></div><div class="part-t">시험장에 들어갈 때 필요한 것. 챙겼는지 봅니다.</div></div></div><div class="r"><div class="no">02</div><div>
         <div class="part-en">Score<span>악보</span></div><div class="part-t">시험에서 쓸 악보. 학교 안내에 맞게 준비했는지 봅니다.</div></div></div><div class="r"><div class="no">03</div><div>
         <div class="part-en">Track<span>MR</span></div><div class="part-t">시험에서 틀 반주. 연습 때 맞춰 온 그 음원인지 확인합니다.</div></div></div></div>
+    <svg class="doodle" viewBox="0 0 200 200" width="130" height="130"
+    style="position:absolute;left:640px;top:405px;transform:rotate(-8deg);opacity:1;color:var(--fg);overflow:visible;pointer-events:none">
+    <defs><filter id="wob4" x="-10%" y="-10%" width="120%" height="120%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4"/>
+  <feDisplacementMap in="SourceGraphic" scale="5"/></filter></defs>
+    <g filter="url(#wob4)" stroke="var(--fg)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 60 H180 V88 Q164 100 180 112 V140 H20 V112 Q36 100 20 88 Z" fill="#F1E8CB"/>
+    <path d="M130 64 V136" fill="none" stroke-dasharray="6 8"/><path d="M42 88 H108 M42 112 H96" fill="none"/></g></svg><svg class="doodle" viewBox="0 0 200 200" width="125" height="125"
+    style="position:absolute;left:640px;top:615px;transform:rotate(6deg);opacity:1;color:var(--fg);overflow:visible;pointer-events:none">
+    <defs><filter id="wob5" x="-10%" y="-10%" width="120%" height="120%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="5"/>
+  <feDisplacementMap in="SourceGraphic" scale="5"/></filter></defs>
+    <g filter="url(#wob5)" stroke="var(--fg)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><rect x="36" y="16" width="128" height="168" fill="#D9E1E8"/>
+    <path d="M52 50 H148 M52 60 H148 M52 70 H148 M52 110 H148 M52 120 H148 M52 130 H148" fill="none" stroke-width="3"/>
+    <ellipse cx="80" cy="68" rx="9" ry="7" fill="currentColor"/><path d="M89 66 V36" fill="none"/>
+    <ellipse cx="120" cy="128" rx="9" ry="7" fill="currentColor"/><path d="M129 126 V96" fill="none"/></g></svg><svg class="doodle" viewBox="0 0 200 200" width="125" height="125"
+    style="position:absolute;left:640px;top:830px;transform:rotate(-4deg);opacity:1;color:var(--fg);overflow:visible;pointer-events:none">
+    <defs><filter id="wob6" x="-10%" y="-10%" width="120%" height="120%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="6"/>
+  <feDisplacementMap in="SourceGraphic" scale="5"/></filter></defs>
+    <g filter="url(#wob6)" stroke="var(--fg)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M40 130 V100 Q40 30 100 30 Q160 30 160 100 V130" fill="none"/>
+    <rect x="26" y="112" width="34" height="58" rx="12" fill="#EEDFD8"/><rect x="140" y="112" width="34" height="58" rx="12" fill="#EEDFD8"/></g></svg>
+    <svg class="doodle-frame" width="1080" height="1350" style="position:absolute;left:0;top:0;pointer-events:none">
+    <defs><filter id="wob7" x="-10%" y="-10%" width="120%" height="120%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="2" seed="7"/>
+  <feDisplacementMap in="SourceGraphic" scale="7"/></filter></defs>
+    <g filter="url(#wob7)" fill="none" stroke="var(--fg)" stroke-width="3">
+      <rect x="34" y="34" width="1012" height="1282"/>
+      <rect x="46" y="46" width="988" height="1258" stroke-width="1.6"/></g></svg>
     <div class="colophon"><span>실기  實技</span><span class="page">03 / 07</span></div>
   </section>
 <section class="card layout-parts theme-ivory" id="card-4">
@@ -247,18 +311,59 @@ Day</div>
     <div class="rows"><div class="r"><div class="no">04</div><div>
         <div class="part-en">Route<span>동선</span></div><div class="part-t">실기 보는 장소까지 가는 길과, 도착한 뒤의 동선을 미리 확인합니다.</div></div></div><div class="r"><div class="no">05</div><div>
         <div class="part-en">Outfit<span>옷차림</span></div><div class="part-t">나를 잘 보여 줄 수 있는 옷, 그리고 시험 볼 때 불편하지 않은 옷.</div></div></div></div>
+    <svg class="doodle" viewBox="0 0 200 200" width="140" height="140"
+    style="position:absolute;left:620px;top:425px;transform:rotate(0deg);opacity:1;color:var(--fg);overflow:visible;pointer-events:none">
+    <defs><filter id="wob8" x="-10%" y="-10%" width="120%" height="120%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="8"/>
+  <feDisplacementMap in="SourceGraphic" scale="5"/></filter></defs>
+    <g filter="url(#wob8)" stroke="var(--fg)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M30 170 Q60 120 100 140 Q150 165 150 100 Q150 50 100 60" fill="none" stroke-dasharray="10 10"/>
+    <path d="M100 20 Q130 20 130 50 Q130 72 100 100 Q70 72 70 50 Q70 20 100 20 Z" fill="none"/><circle cx="100" cy="50" r="10" fill="currentColor"/></g></svg><svg class="doodle" viewBox="0 0 200 200" width="130" height="130"
+    style="position:absolute;left:640px;top:655px;transform:rotate(6deg);opacity:1;color:var(--fg);overflow:visible;pointer-events:none">
+    <defs><filter id="wob9" x="-10%" y="-10%" width="120%" height="120%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="9"/>
+  <feDisplacementMap in="SourceGraphic" scale="5"/></filter></defs>
+    <g filter="url(#wob9)" stroke="var(--fg)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M70 30 L40 45 L20 85 L48 98 L55 80 V175 H145 V80 L152 98 L180 85 L160 45 L130 30 Q100 55 70 30 Z" fill="#DCE2D3"/></g></svg>
+    <svg class="doodle-frame" width="1080" height="1350" style="position:absolute;left:0;top:0;pointer-events:none">
+    <defs><filter id="wob10" x="-10%" y="-10%" width="120%" height="120%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="2" seed="10"/>
+  <feDisplacementMap in="SourceGraphic" scale="7"/></filter></defs>
+    <g filter="url(#wob10)" fill="none" stroke="var(--fg)" stroke-width="3">
+      <rect x="34" y="34" width="1012" height="1282"/>
+      <rect x="46" y="46" width="988" height="1258" stroke-width="1.6"/></g></svg>
     <div class="colophon"><span>실기  實技</span><span class="page">04 / 07</span></div>
   </section>
 <section class="card layout-point theme-black" id="card-5">
     <div class="masthead"><span>ENOCH MUSIC ACADEMY</span><span>EXAM SEASON — AUDITION</span></div>
     <div class="kicker">Checklist 06 — Condition</div><h2 class="title">마지막 항목은
 컨디션입니다.</h2><div style="margin-top:56px"><p class="body">실기는 몸으로 치르는 시험입니다. 목과 손, 호흡의 상태가 소리에 그대로 드러납니다.</p><p class="body">그래서 ENOCH이 챙길 것, 확인할 것과 함께 컨디션 관리도 안내합니다.</p></div>
+    <svg class="doodle" viewBox="0 0 200 200" width="200" height="200"
+    style="position:absolute;left:760px;top:170px;transform:rotate(-6deg);opacity:1;color:var(--fg);overflow:visible;pointer-events:none">
+    <defs><filter id="wob11" x="-10%" y="-10%" width="120%" height="120%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="11"/>
+  <feDisplacementMap in="SourceGraphic" scale="5"/></filter></defs>
+    <g filter="url(#wob11)" stroke="var(--fg)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M130 30 A72 72 0 1 0 170 140 A56 56 0 1 1 130 30 Z" fill="#E6DAB2"/>
+    <path d="M40 40 l6 14 l14 6 l-14 6 l-6 14 l-6 -14 l-14 -6 l14 -6 Z" fill="none"/></g></svg>
+    <svg class="doodle-frame" width="1080" height="1350" style="position:absolute;left:0;top:0;pointer-events:none">
+    <defs><filter id="wob12" x="-10%" y="-10%" width="120%" height="120%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="2" seed="12"/>
+  <feDisplacementMap in="SourceGraphic" scale="7"/></filter></defs>
+    <g filter="url(#wob12)" fill="none" stroke="var(--fg)" stroke-width="3">
+      <rect x="34" y="34" width="1012" height="1282"/>
+      <rect x="46" y="46" width="988" height="1258" stroke-width="1.6"/></g></svg>
     <div class="colophon"><span>실기  實技</span><span class="page">05 / 07</span></div>
   </section>
 <section class="card layout-point theme-ivory" id="card-6">
     <div class="masthead"><span>ENOCH MUSIC ACADEMY</span><span>EXAM SEASON — AUDITION</span></div>
     <div class="kicker">The ENOCH Way</div><h2 class="title">기본은
 건너뛰지 않습니다.</h2><div style="margin-top:56px"><p class="body">여섯 가지는 모두 알고 있는 것들입니다. <span class="em">알고 있어서, 건너뛰기 쉬운 것들</span>이기도 합니다.</p><p class="body">레슨에서 기본을 건너뛰지 않듯, 실기 전날과 당일에도 ENOCH이 이 여섯 가지를 다시 짚습니다.</p></div>
+    
+    <svg class="doodle-frame" width="1080" height="1350" style="position:absolute;left:0;top:0;pointer-events:none">
+    <defs><filter id="wob13" x="-10%" y="-10%" width="120%" height="120%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="2" seed="13"/>
+  <feDisplacementMap in="SourceGraphic" scale="7"/></filter></defs>
+    <g filter="url(#wob13)" fill="none" stroke="var(--fg)" stroke-width="3">
+      <rect x="34" y="34" width="1012" height="1282"/>
+      <rect x="46" y="46" width="988" height="1258" stroke-width="1.6"/></g></svg>
     <div class="colophon"><span>실기  實技</span><span class="page">06 / 07</span></div>
   </section>
 <section class="card layout-closing theme-black" id="card-7">
@@ -268,5 +373,7 @@ Day</div>
     <div class="closing-en">Find your own true sound.</div>
     <div class="closing-info"><div><div class="name">에녹실용음악학원 시흥점</div><div class="addr">경기도 시흥시 은행로 157 2층</div></div>
       <div class="right"><div class="tel">010 3949 3666</div><div class="subj">Vocal ·&nbsp;Guitar ·&nbsp;Drum ·&nbsp;Bass ·&nbsp;Piano ·&nbsp;MIDI ·&nbsp;Composition</div></div></div>
+    
+    
     <div class="colophon"><span>실기  實技</span><span class="page">07 / 07</span></div>
   </section></body></html>

@@ -1,5 +1,5 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8">
-<title>입시 시즌 — 실기 전날·당일 체크리스트</title><style>/* ENOCH 카드뉴스 템플릿 — 1080x1350
+<title>ENOCH 브랜드 선언 — 세 가지 원칙</title><style>/* ENOCH 카드뉴스 템플릿 — 1080x1350
    기준 디자인: templates/reference/ENOCH_ISSUE_01/ (확정본). 수치는 확정본에서 측정한 값이다. */
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap");
@@ -13,6 +13,13 @@
   --en: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", var(--ko);
 }
 .theme-ivory { --bg: var(--ivory); --fg: var(--black); --body: #55524D; --sub: #6E6A64; --rule: rgba(17,17,17,.9); --hair: rgba(17,17,17,.55); --ghost: #E4DFD5; }
+/* 파스텔 테마 (시안) — 채도를 낮춘 톤. 글자는 짙은 같은 계열 */
+:root { --sage: #DCE2D3; --blush: #EEDFD8; --mist: #D9E1E8; --butter: #F1E8CB; --lilac: #E3DDE9; }
+.theme-sage   { --bg: var(--sage);   --fg: #1F2A22; --body: #4B5549; --sub: #6B7566; --rule: rgba(31,42,34,.85); --hair: rgba(31,42,34,.35); --ghost: #CCD4C2; }
+.theme-blush  { --bg: var(--blush);  --fg: #2B1F1C; --body: #5A4A45; --sub: #806A63; --rule: rgba(43,31,28,.85); --hair: rgba(43,31,28,.32); --ghost: #E3CFC6; }
+.theme-mist   { --bg: var(--mist);   --fg: #1B232B; --body: #46525D; --sub: #66727D; --rule: rgba(27,35,43,.85); --hair: rgba(27,35,43,.32); --ghost: #C9D3DC; }
+.theme-butter { --bg: var(--butter); --fg: #2A2517; --body: #5A5340; --sub: #7E765E; --rule: rgba(42,37,23,.85); --hair: rgba(42,37,23,.32); --ghost: #E6DAB2; }
+.theme-lilac  { --bg: var(--lilac);  --fg: #231E2A; --body: #534C5C; --sub: #756D7F; --rule: rgba(35,30,42,.85); --hair: rgba(35,30,42,.32); --ghost: #D6CEDF; }
 .theme-black { --bg: var(--black); --fg: var(--ivory); --body: #C9C4BB; --sub: #9A958C; --rule: rgba(241,237,228,.85); --hair: rgba(241,237,228,.28); --ghost: #2A2825; }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -86,6 +93,14 @@ body { font-family: var(--ko); word-break: keep-all; -webkit-font-smoothing: ant
 .pr-title { margin-top: 56px; font-size: 70px; font-weight: 800; line-height: 1.32; letter-spacing: -2px; white-space: pre-line; }
 .pr-en { margin-top: 22px; font-family: var(--en); font-size: 32px; font-weight: 400; color: var(--sub); letter-spacing: -0.3px; }
 .pr-body { margin-top: 48px; }
+
+/* principle 변형 (시안) */
+.pr-split .pr-block { margin: 0 -96px; padding: 60px 96px 56px; background: var(--block, var(--sage)); color: #1B1B1B; }
+.pr-split .pr-block .kicker { color: rgba(0,0,0,.55); }
+.pr-split .pr-no { border-bottom: 0; padding-bottom: 0; margin-top: 20px; }
+.pr-outline .pr-no { color: transparent; -webkit-text-stroke: 2px var(--fg); font-size: 380px; letter-spacing: -14px; }
+.pr-circle .pr-disc { position: absolute; top: 150px; right: 96px; width: 420px; height: 420px; border-radius: 50%; background: var(--block, var(--blush)); display: flex; align-items: center; justify-content: center; font-family: var(--en); font-size: 200px; font-weight: 800; letter-spacing: -8px; color: #1B1B1B; }
+.pr-circle .pr-title { margin-top: 400px; padding-top: 44px; border-top: 1.5px solid var(--rule); }
 
 /* ── note (EDITOR'S NOTE) ──────────────────── */
 .layout-note { padding-top: 308px; }
@@ -215,58 +230,127 @@ body { font-family: var(--ko); word-break: keep-all; -webkit-font-smoothing: ant
 .meta b { display: block; font-family: var(--mono); font-size: 18px; font-weight: 400; letter-spacing: 2px; color: var(--sub); margin-bottom: 6px; text-transform: uppercase; }
 </style></head>
 <body class="preview"><section class="card layout-typecover theme-ivory" id="card-1">
-    <div class="masthead"><span>ENOCH MUSIC ACADEMY</span><span>EXAM SEASON — AUDITION</span></div>
-    <div class="kicker">Checklist 01–06</div>
-    <div class="tc-index"><div class="tc-i"><span class="tc-n">01</span><span class="tc-l">수험표</span></div><div class="tc-i"><span class="tc-n">02</span><span class="tc-l">악보</span></div><div class="tc-i"><span class="tc-n">03</span><span class="tc-l">MR</span></div><div class="tc-i"><span class="tc-n">04</span><span class="tc-l">동선</span></div><div class="tc-i"><span class="tc-n">05</span><span class="tc-l">옷차림</span></div><div class="tc-i"><span class="tc-n">06</span><span class="tc-l">컨디션</span></div></div>
+    <div class="masthead"><span>ENOCH MUSIC ACADEMY</span><span>ENOCH — PRINCIPLES</span></div>
+    <div class="kicker">01 — 03</div>
     
-    <div class="tc-en" style="font-size:150px">Exam
-Day</div>
-    <h1 class="tc-title">실기 전날·당일</h1>
-    <p class="tc-sub">ENOCH이 안내하는 여섯 가지</p>
-    <div class="ticker">EXAM SEASON — 실기 전날·당일 — ENOCH MUSIC ACADEMY — EXAM SEASON — 실기 전날·당일 — ENOCH MUSIC ACADEMY — EXAM SEASON — 실기 전날·당일 — ENOCH MUSIC ACADEMY — EXAM SEASON — 실기 전날·당일 — ENOCH MUSIC ACADEMY — EXAM SEASON — 실기 전날·당일 — ENOCH MUSIC ACADEMY — EXAM SEASON — 실기 전날·당일 — ENOCH MUSIC ACADEMY</div>
+    
+    <div class="tc-en" style="font-size:148px">Principles</div>
+    <h1 class="tc-title">원칙</h1>
+    <p class="tc-sub">ENOCH이 지키는 세 가지</p>
+    <div class="ticker">ENOCH — PRINCIPLES — 원칙 — ENOCH — PRINCIPLES — 원칙 — ENOCH — PRINCIPLES — 원칙 — ENOCH — PRINCIPLES — 원칙 — ENOCH — PRINCIPLES — 원칙 — ENOCH — PRINCIPLES — 원칙</div>
+    <svg class="doodle" viewBox="0 0 200 200" width="380" height="380"
+    style="position:absolute;left:560px;top:190px;transform:rotate(-10deg);opacity:1;color:var(--fg);overflow:visible;pointer-events:none">
+    <defs><filter id="wob1" x="-10%" y="-10%" width="120%" height="120%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="1"/>
+  <feDisplacementMap in="SourceGraphic" scale="5"/></filter></defs>
+    <g filter="url(#wob1)" stroke="var(--fg)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M100.0 100.0 L100.6 100.1 L101.1 100.3 L101.6 100.6 L102.0 101.1 L102.3 101.7 L102.5 102.3 L102.5 103.0 L102.4 103.8 L102.2 104.6 L101.7 105.3 L101.2 106.1 L100.4 106.7 L99.5 107.3 L98.5 107.7 L97.4 108.0 L96.2 108.1 L94.9 108.1 L93.5 107.8 L92.2 107.3 L90.9 106.6 L89.6 105.7 L88.5 104.6 L87.5 103.2 L86.6 101.7 L85.9 100.0 L85.5 98.2 L85.3 96.2 L85.4 94.2 L85.7 92.1 L86.3 90.1 L87.3 88.1 L88.5 86.1 L90.1 84.3 L91.9 82.7 L93.9 81.3 L96.2 80.1 L98.7 79.2 L101.3 78.7 L104.1 78.5 L107.0 78.6 L109.8 79.1 L112.7 80.1 L115.4 81.4 L118.0 83.1 L120.5 85.1 L122.7 87.5 L124.6 90.3 L126.2 93.3 L127.3 96.5 L128.1 100.0 L128.5 103.6 L128.3 107.3 L127.7 111.0 L126.6 114.6 L125.0 118.2 L123.0 121.6 L120.4 124.7 L117.5 127.5 L114.1 130.0 L110.4 132.1 L106.4 133.7 L102.2 134.8 L97.8 135.4 L93.3 135.4 L88.7 134.8 L84.2 133.6 L79.8 131.8 L75.6 129.5 L71.7 126.6 L68.1 123.1 L65.0 119.2 L62.3 114.9 L60.2 110.2 L58.7 105.2 L57.8 100.0 L57.6 94.6 L58.0 89.2 L59.2 83.8 L61.1 78.6 L63.6 73.5 L66.8 68.8 L70.6 64.5 L75.0 60.6 L79.9 57.2 L85.2 54.5 L90.9 52.5 L96.9 51.2 L103.1 50.6 L109.4 50.8 L115.6 51.9 L121.8 53.7 L127.7 56.3 L133.3 59.7 L138.5 63.8 L143.2 68.6 L147.3 74.0 L150.7 79.9 L153.4 86.3 L155.2 93.0 L156.3 100.0 L156.4 107.1 L155.6 114.3 L153.9 121.3 L151.3 128.2 L147.8 134.7 L143.5 140.8 L138.4 146.4 L132.6 151.3 L126.1 155.5 L119.1 158.8 L111.7 161.3 L104.0 162.9 L96.0 163.4 L88.0 163.0 L80.0 161.5 L72.2 159.0 L64.7 155.6 L57.7 151.1 L51.2 145.8 L45.4 139.7 L40.4 132.8 L36.2 125.3 L33.0 117.2 L30.8 108.7 L29.7 100.0 L29.7 91.1 L30.8 82.2 L33.1 73.5 L36.4 65.0 L40.8 57.0 L46.3 49.6 L52.7 42.8 L59.9 36.8 L67.9 31.8 L76.5 27.8 L85.7 24.9 L95.2 23.1 L104.9 22.5 L114.7 23.2 L124.3 25.1 L133.8 28.2 L142.8 32.6 L151.3 38.0 L159.0 44.6 L166.0 52.1 L172.0 60.4 L176.9 69.6 L180.6 79.3 L183.2 89.5 L184.4 100.0 L184.3 110.6 L182.8 121.3 L180.0 131.7 L175.9 141.7 L170.5 151.2 L164.0 160.1 L156.3 168.0 L147.6 175.0 L138.1 180.9 L127.8 185.6" fill="none"/></g></svg><svg class="doodle" viewBox="0 0 200 200" width="150" height="150"
+    style="position:absolute;left:430px;top:330px;transform:rotate(8deg);opacity:1;color:var(--fg);overflow:visible;pointer-events:none">
+    <defs><filter id="wob2" x="-10%" y="-10%" width="120%" height="120%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="2"/>
+  <feDisplacementMap in="SourceGraphic" scale="5"/></filter></defs>
+    <g filter="url(#wob2)" stroke="var(--fg)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="50" cy="160" rx="26" ry="19" transform="rotate(-20 50 160)" fill="#DCE2D3"/>
+    <ellipse cx="140" cy="140" rx="26" ry="19" transform="rotate(-20 140 140)" fill="#DCE2D3"/>
+    <path d="M74 153 L74 40 L164 22 L164 133 M74 62 L164 44" fill="none"/></g></svg>
+    
     
   </section>
-<section class="card layout-point theme-ivory" id="card-2">
-    <div class="masthead"><span>ENOCH MUSIC ACADEMY</span><span>EXAM SEASON — AUDITION</span></div>
-    <div class="kicker">Before the Exam</div><h2 class="title">시험장에서는
-곡에만 집중하도록.</h2><div style="margin-top:56px"><p class="body">실기장에서 보여 줄 것은 준비한 곡입니다. 수험표를 찾거나 길을 헤매는 데 마음을 쓰지 않도록, 준비물과 동선은 미리 챙겨 둡니다.</p><p class="body">그래서 ENOCH이 실기 전날과 당일, <span class="em">여섯 가지</span>를 안내합니다.</p></div>
-    <div class="colophon"><span>실기  實技</span><span class="page">02 / 07</span></div>
+<section class="card layout-note theme-ivory" id="card-2">
+    <div class="masthead"><span>ENOCH MUSIC ACADEMY</span><span>ENOCH — PRINCIPLES</span></div>
+    <div class="kicker">Declaration</div><h2 class="title">무엇을 가르치는지보다,
+어떻게 가르치는지.</h2><p class="body">음악 학원을 고를 때는 보통 과목과 시설, 강사 수를 먼저 봅니다. 그러나 같은 곡이라도 어떻게 가르치느냐에 따라 배우는 것이 달라집니다.</p><p class="body">ENOCH은 1:1로 수업합니다. 입시 · 취미 · 성인 · 전문, 과정은 달라도 수업에서 지키는 원칙은 같습니다.</p><p class="body">그 원칙 세 가지를 적어 둡니다.</p>
+    <div class="sign">— ENOCH MUSIC ACADEMY</div>
+    <svg class="doodle" viewBox="0 0 200 200" width="260" height="260"
+    style="position:absolute;left:96px;top:1080px;transform:rotate(0deg);opacity:1;color:var(--fg);overflow:visible;pointer-events:none">
+    <defs><filter id="wob3" x="-10%" y="-10%" width="120%" height="120%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="3"/>
+  <feDisplacementMap in="SourceGraphic" scale="5"/></filter></defs>
+    <g filter="url(#wob3)" stroke="var(--fg)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 110 Q35 70 60 110 T110 110 T160 110 T200 100" fill="none"/></g></svg>
+    <svg class="doodle-frame" width="1080" height="1350" style="position:absolute;left:0;top:0;pointer-events:none">
+    <defs><filter id="wob4" x="-10%" y="-10%" width="120%" height="120%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="2" seed="4"/>
+  <feDisplacementMap in="SourceGraphic" scale="7"/></filter></defs>
+    <g filter="url(#wob4)" fill="none" stroke="var(--fg)" stroke-width="3">
+      <rect x="34" y="34" width="1012" height="1282"/>
+      <rect x="46" y="46" width="988" height="1258" stroke-width="1.6"/></g></svg>
+    <div class="colophon"><span>원칙  原則</span><span class="page">02 / 06</span></div>
   </section>
-<section class="card layout-parts theme-ivory" id="card-3">
-    <div class="masthead"><span>ENOCH MUSIC ACADEMY</span><span>EXAM SEASON — AUDITION</span></div>
-    <div class="kicker">Checklist 01–03</div><h2 class="title">챙길 것</h2>
-    <div class="rows"><div class="r"><div class="no">01</div><div>
-        <div class="part-en">Ticket<span>수험표</span></div><div class="part-t">시험장에 들어갈 때 필요한 것. 챙겼는지 봅니다.</div></div></div><div class="r"><div class="no">02</div><div>
-        <div class="part-en">Score<span>악보</span></div><div class="part-t">시험에서 쓸 악보. 학교 안내에 맞게 준비했는지 봅니다.</div></div></div><div class="r"><div class="no">03</div><div>
-        <div class="part-en">Track<span>MR</span></div><div class="part-t">시험에서 틀 반주. 연습 때 맞춰 온 그 음원인지 확인합니다.</div></div></div></div>
-    <div class="colophon"><span>실기  實技</span><span class="page">03 / 07</span></div>
+<section class="card layout-principle theme-ivory" id="card-3">
+    <div class="masthead"><span>ENOCH MUSIC ACADEMY</span><span>ENOCH — PRINCIPLES</span></div>
+    <div class="pr-split" style="--block:var(--sage)"><div class="pr-block"><div class="kicker">Principle 01</div><div class="pr-no">01</div></div>
+      <h2 class="pr-title">진도보다 이해를
+먼저 봅니다.</h2>
+      <div class="pr-en">Understanding before progress.</div>
+      <div class="pr-body"><p class="body">진도는 넘긴 곡의 수로 셉니다. 그보다 먼저, 왜 그 소리가 나는지 알고 넘어갔는지를 봅니다.</p></div></div>
+    <svg class="doodle" viewBox="0 0 200 200" width="170" height="170"
+    style="position:absolute;left:780px;top:190px;transform:rotate(10deg);opacity:1;color:var(--fg);overflow:visible;pointer-events:none">
+    <defs><filter id="wob5" x="-10%" y="-10%" width="120%" height="120%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="5"/>
+  <feDisplacementMap in="SourceGraphic" scale="5"/></filter></defs>
+    <g filter="url(#wob5)" stroke="var(--fg)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="72" cy="150" rx="30" ry="22" transform="rotate(-20 72 150)" fill="#F6F1E7"/>
+    <path d="M100 142 L100 30 Q130 45 150 80" fill="none"/></g></svg>
+    <svg class="doodle-frame" width="1080" height="1350" style="position:absolute;left:0;top:0;pointer-events:none">
+    <defs><filter id="wob6" x="-10%" y="-10%" width="120%" height="120%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="2" seed="6"/>
+  <feDisplacementMap in="SourceGraphic" scale="7"/></filter></defs>
+    <g filter="url(#wob6)" fill="none" stroke="var(--fg)" stroke-width="3">
+      <rect x="34" y="34" width="1012" height="1282"/>
+      <rect x="46" y="46" width="988" height="1258" stroke-width="1.6"/></g></svg>
+    <div class="colophon"><span>원칙  原則</span><span class="page">03 / 06</span></div>
   </section>
-<section class="card layout-parts theme-ivory" id="card-4">
-    <div class="masthead"><span>ENOCH MUSIC ACADEMY</span><span>EXAM SEASON — AUDITION</span></div>
-    <div class="kicker">Checklist 04–05</div><h2 class="title">확인할 것</h2>
-    <div class="rows"><div class="r"><div class="no">04</div><div>
-        <div class="part-en">Route<span>동선</span></div><div class="part-t">실기 보는 장소까지 가는 길과, 도착한 뒤의 동선을 미리 확인합니다.</div></div></div><div class="r"><div class="no">05</div><div>
-        <div class="part-en">Outfit<span>옷차림</span></div><div class="part-t">나를 잘 보여 줄 수 있는 옷, 그리고 시험 볼 때 불편하지 않은 옷.</div></div></div></div>
-    <div class="colophon"><span>실기  實技</span><span class="page">04 / 07</span></div>
+<section class="card layout-principle theme-ivory" id="card-4">
+    <div class="masthead"><span>ENOCH MUSIC ACADEMY</span><span>ENOCH — PRINCIPLES</span></div>
+    <div class="pr-split" style="--block:var(--blush)"><div class="pr-block"><div class="kicker">Principle 02</div><div class="pr-no">02</div></div>
+      <h2 class="pr-title">같은 곡도,
+사람마다 다르게 가르칩니다.</h2>
+      <div class="pr-en">The same song, taught differently to each person.</div>
+      <div class="pr-body"><p class="body">사람마다 손과 목소리, 귀, 목표가 다릅니다. 그래서 같은 곡도 출발점과 순서를 사람에 맞춥니다.</p></div></div>
+    <svg class="doodle" viewBox="0 0 200 200" width="150" height="150"
+    style="position:absolute;left:790px;top:200px;transform:rotate(-8deg);opacity:1;color:var(--fg);overflow:visible;pointer-events:none">
+    <defs><filter id="wob7" x="-10%" y="-10%" width="120%" height="120%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7"/>
+  <feDisplacementMap in="SourceGraphic" scale="5"/></filter></defs>
+    <g filter="url(#wob7)" stroke="var(--fg)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M100 170 C20 110 30 40 80 45 Q95 48 100 70 Q105 48 120 45 C170 40 180 110 100 170 Z" fill="#F6F1E7"/></g></svg>
+    <svg class="doodle-frame" width="1080" height="1350" style="position:absolute;left:0;top:0;pointer-events:none">
+    <defs><filter id="wob8" x="-10%" y="-10%" width="120%" height="120%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="2" seed="8"/>
+  <feDisplacementMap in="SourceGraphic" scale="7"/></filter></defs>
+    <g filter="url(#wob8)" fill="none" stroke="var(--fg)" stroke-width="3">
+      <rect x="34" y="34" width="1012" height="1282"/>
+      <rect x="46" y="46" width="988" height="1258" stroke-width="1.6"/></g></svg>
+    <div class="colophon"><span>원칙  原則</span><span class="page">04 / 06</span></div>
   </section>
-<section class="card layout-point theme-black" id="card-5">
-    <div class="masthead"><span>ENOCH MUSIC ACADEMY</span><span>EXAM SEASON — AUDITION</span></div>
-    <div class="kicker">Checklist 06 — Condition</div><h2 class="title">마지막 항목은
-컨디션입니다.</h2><div style="margin-top:56px"><p class="body">실기는 몸으로 치르는 시험입니다. 목과 손, 호흡의 상태가 소리에 그대로 드러납니다.</p><p class="body">그래서 ENOCH이 챙길 것, 확인할 것과 함께 컨디션 관리도 안내합니다.</p></div>
-    <div class="colophon"><span>실기  實技</span><span class="page">05 / 07</span></div>
+<section class="card layout-principle theme-ivory" id="card-5">
+    <div class="masthead"><span>ENOCH MUSIC ACADEMY</span><span>ENOCH — PRINCIPLES</span></div>
+    <div class="pr-split" style="--block:var(--mist)"><div class="pr-block"><div class="kicker">Principle 03</div><div class="pr-no">03</div></div>
+      <h2 class="pr-title">기본은
+건너뛰지 않습니다.</h2>
+      <div class="pr-en">We don't skip the basics.</div>
+      <div class="pr-body"><p class="body">박, 음정, 자세, 호흡처럼 빨리 지나가고 싶은 자리가 기본입니다. 곡이 어려워질수록 다시 돌아오는 자리라서, 줄이지 않습니다.</p></div></div>
+    <svg class="doodle" viewBox="0 0 200 200" width="200" height="200"
+    style="position:absolute;left:760px;top:200px;transform:rotate(-6deg);opacity:1;color:var(--fg);overflow:visible;pointer-events:none">
+    <defs><filter id="wob9" x="-10%" y="-10%" width="120%" height="120%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="9"/>
+  <feDisplacementMap in="SourceGraphic" scale="5"/></filter></defs>
+    <g filter="url(#wob9)" stroke="var(--fg)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="60" width="172" height="90" fill="#F6F1E7"/>
+    <path d="M38 60 V150 M62 60 V150 M86 60 V150 M110 60 V150 M134 60 V150 M158 60 V150" fill="none"/>
+    <path d="M30 60 h14 v52 h-14 z M54 60 h14 v52 h-14 z M102 60 h14 v52 h-14 z M126 60 h14 v52 h-14 z M150 60 h14 v52 h-14 z" fill="currentColor"/></g></svg>
+    <svg class="doodle-frame" width="1080" height="1350" style="position:absolute;left:0;top:0;pointer-events:none">
+    <defs><filter id="wob10" x="-10%" y="-10%" width="120%" height="120%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="2" seed="10"/>
+  <feDisplacementMap in="SourceGraphic" scale="7"/></filter></defs>
+    <g filter="url(#wob10)" fill="none" stroke="var(--fg)" stroke-width="3">
+      <rect x="34" y="34" width="1012" height="1282"/>
+      <rect x="46" y="46" width="988" height="1258" stroke-width="1.6"/></g></svg>
+    <div class="colophon"><span>원칙  原則</span><span class="page">05 / 06</span></div>
   </section>
-<section class="card layout-point theme-ivory" id="card-6">
-    <div class="masthead"><span>ENOCH MUSIC ACADEMY</span><span>EXAM SEASON — AUDITION</span></div>
-    <div class="kicker">The ENOCH Way</div><h2 class="title">기본은
-건너뛰지 않습니다.</h2><div style="margin-top:56px"><p class="body">여섯 가지는 모두 알고 있는 것들입니다. <span class="em">알고 있어서, 건너뛰기 쉬운 것들</span>이기도 합니다.</p><p class="body">레슨에서 기본을 건너뛰지 않듯, 실기 전날과 당일에도 ENOCH이 이 여섯 가지를 다시 짚습니다.</p></div>
-    <div class="colophon"><span>실기  實技</span><span class="page">06 / 07</span></div>
-  </section>
-<section class="card layout-closing theme-black" id="card-7">
-    <div class="masthead"><span>ENOCH MUSIC ACADEMY</span><span>EXAM SEASON — AUDITION</span></div>
+<section class="card layout-closing theme-black" id="card-6">
+    <div class="masthead"><span>ENOCH MUSIC ACADEMY</span><span>ENOCH — PRINCIPLES</span></div>
     <div class="ghost">ENOCH</div>
     <div class="closing-ko">나만의 진짜 소리를<br>찾는 곳.</div>
     <div class="closing-en">Find your own true sound.</div>
     <div class="closing-info"><div><div class="name">에녹실용음악학원 시흥점</div><div class="addr">경기도 시흥시 은행로 157 2층</div></div>
       <div class="right"><div class="tel">010 3949 3666</div><div class="subj">Vocal ·&nbsp;Guitar ·&nbsp;Drum ·&nbsp;Bass ·&nbsp;Piano ·&nbsp;MIDI ·&nbsp;Composition</div></div></div>
-    <div class="colophon"><span>실기  實技</span><span class="page">07 / 07</span></div>
+    
+    
+    <div class="colophon"><span>원칙  原則</span><span class="page">06 / 06</span></div>
   </section></body></html>

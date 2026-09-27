@@ -34,7 +34,7 @@
 
 | layout | 필드 | 용도 |
 |---|---|---|
-| `principle` | `kicker`, `no`(예 `01`), `title`(원칙 문장), `en`?(영문 한 줄), `body`?(풀이, 문자열 또는 배열) | 원칙·선언 한 장에 하나 |
+| `principle` | `kicker`, `no`(예 `01`), `title`(원칙 문장), `en`?(영문 한 줄), `body`?(풀이, 문자열 또는 배열), `variant`?(`split` 위쪽 색면 · `outline` 외곽선 숫자 · `circle` 원 안 숫자), `block`?(색면·원 색: `sage` `blush` `mist` `butter` `lilac`) | 원칙·선언 한 장에 하나 |
 | `typecover` | `kicker`, `index`?(목차 항목 배열 — 위쪽 빈 자리에 2열 격자로), `ghost`?(위쪽 빈 자리에 흐린 큰 글자, 예 `"3"`), `en`(큰 영문, `\n` 가능 — 글자 수에 맞춰 크기 자동), `title`(굵은 한글), `sub`?, `ticker`? | 사진 없는 표지 — 정보형·철학·입시 편 (ENOCH ISSUE 표지에는 쓰지 않음) |
 | `point` | `kicker`, `title`, `body` (문자열 또는 배열) | 한 장 한 메시지 |
 | `chords` | `kicker`, `title`, `chords`[{roman, name, notes, fn}], `body`? | 코드 진행 |
@@ -48,3 +48,13 @@
 
 ## 렌더러 경고
 장수(5–10장 밖), 글자 수, 금지 표현, 이모지, 없는 사진, 알 수 없는 건반 음 이름
+
+## 파스텔 테마 (시안 단계 — CLAUDE.md 반영 전)
+`theme`: `sage`(세이지) · `blush`(블러시) · `mist`(미스트) · `butter`(버터) · `lilac`(라일락). 채도를 낮춘 배경 + 같은 계열의 짙은 글자.
+
+## 두들 (손그림 장식) · 손그림 테두리
+- 장마다 `"doodles": [{ "name", "x", "y", "size", "rotate"?, "fill"?, "color"?, "stroke"?, "opacity"? }]` — 좌표는 카드 왼쪽 위 기준 px. 글자 위에 겹치지 않게 빈 자리에 둔다.
+- `name`: spiral · note · notes · mic · drum · guitar · keys · headphones · ticket · score · route · shirt · moon · star · squiggle · heart
+- `fill`: 파스텔 이름(sage · blush · mist · butter · lilac · cream) 또는 색 코드
+- `"frame": true` (장 또는 덱 전체) — 카드 안쪽을 두르는 손그림 두 줄 테두리
+- 사람·강사·공간은 그리지 않는다. 사람과 공간은 실제 사진만 (CLAUDE.md 5번).
