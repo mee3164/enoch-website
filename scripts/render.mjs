@@ -137,11 +137,24 @@ const layouts = {
   },
 
   // 원칙 한 장: 큰 번호 + 실선 + 굵은 원칙 문장 + 영문 한 줄(선택) + 풀이
-  principle: (s) => `${kicker(s)}
+  principle: (s) => {
+    const block = s.block ? ` style="--block:var(--${esc(s.block)})"` : "";
+    if (s.variant === "split")
+      return `<div class="pr-split"${block}><div class="pr-block">${kicker(s)}<div class="pr-no">${esc(s.no || "")}</div></div>
+      <h2 class="pr-title">${rich(s.title || "")}</h2>
+      ${s.en ? `<div class="pr-en">${esc(s.en)}</div>` : ""}
+      ${s.body ? `<div class="pr-body">${paras(s.body)}</div>` : ""}</div>`;
+    if (s.variant === "circle")
+      return `<div class="pr-circle"${block}>${kicker(s)}<div class="pr-disc">${esc(s.no || "")}</div>
+      <h2 class="pr-title">${rich(s.title || "")}</h2>
+      ${s.en ? `<div class="pr-en">${esc(s.en)}</div>` : ""}
+      ${s.body ? `<div class="pr-body">${paras(s.body)}</div>` : ""}</div>`;
+    return `<div class="${s.variant === "outline" ? "pr-outline" : ""}">${kicker(s)}
     <div class="pr-no">${esc(s.no || "")}</div>
     <h2 class="pr-title">${rich(s.title || "")}</h2>
     ${s.en ? `<div class="pr-en">${esc(s.en)}</div>` : ""}
-    ${s.body ? `<div class="pr-body">${paras(s.body)}</div>` : ""}`,
+    ${s.body ? `<div class="pr-body">${paras(s.body)}</div>` : ""}</div>`;
+  },
 
   // 02 EDITOR'S NOTE: 제목 + 문단 + 서명
   note: (s) => `${kicker(s)}${title(s)}${paras(s.paragraphs || s.body)}
