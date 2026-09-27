@@ -121,6 +121,16 @@ const layouts = {
     <div class="ticker">${Array(6).fill(esc(tick)).join(" — ")}</div>`;
   },
 
+  // 사진 없는 표지 (정보형·철학 편): 키커 + 큰 영문 + 굵은 한글 제목 + 부제 + 하단 반복 띠
+  typecover: (s) => {
+    const tick = s.ticker || deck.ticker || `${brand.nameEn}`;
+    return `${kicker(s)}
+    <div class="tc-en">${esc(s.en || "")}</div>
+    <h1 class="tc-title">${rich(s.title || "")}</h1>
+    ${s.sub ? `<p class="tc-sub">${rich(s.sub)}</p>` : ""}
+    <div class="ticker">${Array(6).fill(esc(tick)).join(" — ")}</div>`;
+  },
+
   // 02 EDITOR'S NOTE: 제목 + 문단 + 서명
   note: (s) => `${kicker(s)}${title(s)}${paras(s.paragraphs || s.body)}
     ${s.sign !== false ? `<div class="sign">— ${esc(s.sign || brand.nameEn)}</div>` : ""}`,
@@ -255,7 +265,7 @@ for (const [i, s] of deck.slides.entries()) {
   const theme = s.theme || deck.theme || "ivory";
   const extra = s.layout === "parts" && (s.items || []).length > 3 ? " compact" : "";
   const head = s.layout === "instructor" ? "" : `<div class="masthead"><span>${esc(brand.nameEn)}</span><span>${esc(deck.masthead || "")}</span></div>`;
-  const foot = s.layout === "cover" ? "" : `<div class="colophon"><span>${esc(deck.footer || "")}</span><span class="page">${two(i + 1)} / ${two(total)}</span></div>`;
+  const foot = s.layout === "cover" || s.layout === "typecover" ? "" : `<div class="colophon"><span>${esc(deck.footer || "")}</span><span class="page">${two(i + 1)} / ${two(total)}</span></div>`;
   cards.push(`<section class="card layout-${s.layout}${extra} theme-${theme}" id="card-${i + 1}">
     ${head}
     ${await fn(s, i)}

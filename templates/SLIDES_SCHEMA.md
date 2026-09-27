@@ -34,6 +34,7 @@
 
 | layout | 필드 | 용도 |
 |---|---|---|
+| `typecover` | `kicker`, `en`(큰 영문, `\n` 가능), `title`(굵은 한글), `sub`?, `ticker`? | 사진 없는 표지 — 정보형·철학·입시 편 (ENOCH ISSUE 표지에는 쓰지 않음) |
 | `point` | `kicker`, `title`, `body` (문자열 또는 배열) | 한 장 한 메시지 |
 | `chords` | `kicker`, `title`, `chords`[{roman, name, notes, fn}], `body`? | 코드 진행 |
 | `photo` | `image`, `title`?, `body`? | 실제 사진 한 장 |
