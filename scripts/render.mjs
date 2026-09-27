@@ -124,7 +124,11 @@ const layouts = {
   // 사진 없는 표지 (정보형·철학 편): 키커 + 큰 영문 + 굵은 한글 제목 + 부제 + 하단 반복 띠
   typecover: (s) => {
     const tick = s.ticker || deck.ticker || `${brand.nameEn}`;
+    const idx = (s.index || [])
+      .map((t, n) => `<div class="tc-i"><span class="tc-n">${two(n + 1)}</span><span class="tc-l">${esc(t)}</span></div>`)
+      .join("");
     return `${kicker(s)}
+    ${idx ? `<div class="tc-index">${idx}</div>` : ""}
     <div class="tc-en" style="font-size:${Math.min(150, Math.floor(1480 / Math.max(1, ...String(s.en || "").split("\n").map((l) => l.length))))}px">${esc(s.en || "")}</div>
     <h1 class="tc-title">${rich(s.title || "")}</h1>
     ${s.sub ? `<p class="tc-sub">${rich(s.sub)}</p>` : ""}
