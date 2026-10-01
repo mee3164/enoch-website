@@ -1,0 +1,363 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<title>ENOCH — 환경 (음악하는 환경부터)</title><style>/* ENOCH 카드뉴스 템플릿 — 1080x1350
+   기준 디자인: templates/reference/ENOCH_ISSUE_01/ (확정본). 수치는 확정본에서 측정한 값이다. */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap");
+
+:root {
+  --ivory: #F1EDE4;
+  --black: #111111;
+  --gray: #8A8A8A;
+  --ko: "Pretendard", "Pretendard Variable", "Noto Sans KR", "Apple SD Gothic Neo", "WenQuanYi Zen Hei", sans-serif;
+  --mono: "IBM Plex Mono", "SF Mono", Menlo, "DejaVu Sans Mono", "WenQuanYi Zen Hei Mono", monospace;
+  --en: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", var(--ko);
+}
+.theme-ivory { --bg: var(--ivory); --fg: var(--black); --body: #55524D; --sub: #6E6A64; --rule: rgba(17,17,17,.9); --hair: rgba(17,17,17,.55); --ghost: #E4DFD5; }
+/* 파스텔 테마 (시안) — 채도를 낮춘 톤. 글자는 짙은 같은 계열 */
+:root { --sage: #DCE2D3; --blush: #EEDFD8; --mist: #D9E1E8; --butter: #F1E8CB; --lilac: #E3DDE9; }
+.theme-sage   { --bg: var(--sage);   --fg: #1F2A22; --body: #4B5549; --sub: #6B7566; --rule: rgba(31,42,34,.85); --hair: rgba(31,42,34,.35); --ghost: #CCD4C2; }
+.theme-blush  { --bg: var(--blush);  --fg: #2B1F1C; --body: #5A4A45; --sub: #806A63; --rule: rgba(43,31,28,.85); --hair: rgba(43,31,28,.32); --ghost: #E3CFC6; }
+.theme-mist   { --bg: var(--mist);   --fg: #1B232B; --body: #46525D; --sub: #66727D; --rule: rgba(27,35,43,.85); --hair: rgba(27,35,43,.32); --ghost: #C9D3DC; }
+.theme-butter { --bg: var(--butter); --fg: #2A2517; --body: #5A5340; --sub: #7E765E; --rule: rgba(42,37,23,.85); --hair: rgba(42,37,23,.32); --ghost: #E6DAB2; }
+.theme-lilac  { --bg: var(--lilac);  --fg: #231E2A; --body: #534C5C; --sub: #756D7F; --rule: rgba(35,30,42,.85); --hair: rgba(35,30,42,.32); --ghost: #D6CEDF; }
+.theme-black { --bg: var(--black); --fg: var(--ivory); --body: #C9C4BB; --sub: #9A958C; --rule: rgba(241,237,228,.85); --hair: rgba(241,237,228,.28); --ghost: #2A2825; }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #555; }
+body { font-family: var(--ko); word-break: keep-all; -webkit-font-smoothing: antialiased; }
+.preview .card { margin: 40px auto; }
+
+.card {
+  position: relative; width: 1080px; height: 1350px; overflow: hidden;
+  background: var(--bg); color: var(--fg);
+  padding: 118px 96px 120px;
+  display: flex; flex-direction: column;
+}
+
+/* ── 머리말 / 꼬리말 ───────────────────────────── */
+.masthead, .colophon {
+  position: absolute; left: 96px; right: 96px;
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: var(--mono); font-size: 20px; font-weight: 400; letter-spacing: 2.4px; color: var(--fg);
+}
+.masthead { top: 70px; height: 48px; border-bottom: 1.5px solid var(--rule); padding-bottom: 14px; align-items: flex-end; }
+.colophon { top: 1230px; height: 70px; border-top: 1.5px solid var(--rule); padding-top: 4px; }
+.colophon .page { letter-spacing: 3px; }
+
+/* ── 공통 타이포 ─────────────────────────────── */
+.kicker { font-family: var(--mono); font-size: 21px; letter-spacing: 3.2px; color: var(--sub); text-transform: uppercase; }
+.title { font-size: 64px; font-weight: 800; line-height: 1.34; letter-spacing: -2px; white-space: pre-line; }
+.kicker + .title { margin-top: 28px; }
+.lead { margin-top: 26px; font-size: 26px; font-weight: 300; color: var(--sub); }
+.body { font-size: 29px; font-weight: 300; line-height: 1.86; letter-spacing: -0.4px; color: var(--body); white-space: pre-line; }
+.body + .body { margin-top: 30px; }
+.em { font-weight: 700; color: var(--fg); }
+.mono { font-family: var(--mono); }
+
+/* 선으로 나눈 행 (IN NUMBERS / PARTS / STEPS / WAY 공통) */
+.rows { border-top: 1.5px solid var(--rule); }
+.rows > .r { border-bottom: 1.5px solid var(--rule); display: grid; }
+.theme-black .rows { border-top-color: var(--hair); }
+.theme-black .rows > .r { border-bottom-color: var(--hair); }
+
+/* ── cover ─────────────────────────────────── */
+.layout-cover { padding: 165px 96px 0; }
+.cover-photo { width: 888px; height: 790px; background-size: cover; background-position: center; filter: grayscale(1) sepia(.18) contrast(1.02); }
+.cover-photo.photo-missing { filter: none; }
+.cover-en { margin-top: 56px; font-family: var(--en); font-size: 162px; font-weight: 700; line-height: .86; letter-spacing: -3px; text-transform: uppercase; white-space: nowrap; }
+.cover-sub { margin-top: 40px; display: flex; justify-content: space-between; align-items: flex-end; }
+.cover-sub .ko { font-size: 40px; font-weight: 300; color: var(--sub); letter-spacing: -1px; }
+.cover-sub .ko b { font-weight: 700; color: var(--fg); }
+.cover-sub .issue { font-family: var(--mono); font-size: 20px; line-height: 1.5; letter-spacing: 2px; text-align: left; }
+.ticker {
+  position: absolute; left: 0; right: 0; top: 1278px; height: 72px;
+  border-top: 1.5px solid var(--rule); padding-top: 22px;
+  font-family: var(--mono); font-size: 21px; letter-spacing: 2.6px; white-space: nowrap; overflow: hidden;
+}
+
+/* ── typecover (사진 없는 표지) ─────────────── */
+.layout-typecover { padding-top: 250px; }
+.tc-en { margin-top: auto; font-family: var(--en); font-size: 150px; font-weight: 700; line-height: .9; letter-spacing: -4px; text-transform: uppercase; white-space: pre-line; }
+.tc-title { margin-top: 90px; padding-top: 44px; border-top: 1.5px solid var(--rule); font-size: 76px; font-weight: 800; line-height: 1.3; letter-spacing: -2.5px; white-space: pre-line; }
+.tc-index { margin-top: 44px; display: grid; grid-template-columns: 1fr 1fr; border-top: 1.5px solid var(--rule); }
+.tc-i { display: flex; align-items: baseline; gap: 22px; padding: 22px 0 20px; border-bottom: 1px solid var(--hair); }
+.tc-i:nth-child(even) { padding-left: 28px; border-left: 1px solid var(--hair); }
+.tc-n { font-family: var(--mono); font-size: 20px; letter-spacing: 1px; color: var(--sub); }
+.tc-l { font-size: 30px; font-weight: 700; letter-spacing: -0.5px; }
+.tc-ghost { margin-top: 10px; font-family: var(--en); font-size: 460px; font-weight: 700; line-height: .78; letter-spacing: -20px; color: var(--ghost); }
+.tc-sub { margin-top: 28px; font-size: 32px; font-weight: 300; color: var(--sub); line-height: 1.6; white-space: pre-line; }
+
+/* ── principle (원칙 한 장) ─────────────────── */
+.layout-principle { padding-top: 276px; }
+.pr-no { margin-top: 44px; font-family: var(--en); font-size: 260px; font-weight: 800; line-height: .8; letter-spacing: -10px; padding-bottom: 56px; border-bottom: 1.5px solid var(--rule); }
+.pr-title { margin-top: 56px; font-size: 70px; font-weight: 800; line-height: 1.32; letter-spacing: -2px; white-space: pre-line; }
+.pr-en { margin-top: 22px; font-family: var(--en); font-size: 32px; font-weight: 400; color: var(--sub); letter-spacing: -0.3px; }
+.pr-body { margin-top: 48px; }
+
+/* principle 변형 (시안) */
+.pr-split .pr-block { margin: 0 -96px; padding: 60px 96px 56px; background: var(--block, var(--sage)); color: #1B1B1B; }
+.pr-split .pr-block .kicker { color: rgba(0,0,0,.55); }
+.pr-split .pr-no { border-bottom: 0; padding-bottom: 0; margin-top: 20px; }
+.pr-outline .pr-no { color: transparent; -webkit-text-stroke: 2px var(--fg); font-size: 380px; letter-spacing: -14px; }
+.pr-circle .pr-disc { position: absolute; top: 150px; right: 96px; width: 420px; height: 420px; border-radius: 50%; background: var(--block, var(--blush)); display: flex; align-items: center; justify-content: center; font-family: var(--en); font-size: 200px; font-weight: 800; letter-spacing: -8px; color: #1B1B1B; }
+.pr-circle .pr-title { margin-top: 400px; padding-top: 44px; border-top: 1.5px solid var(--rule); }
+
+/* ── note (EDITOR'S NOTE) ──────────────────── */
+.layout-note { padding-top: 308px; }
+.layout-note .title { margin-top: 44px; margin-bottom: 60px; }
+.layout-note .body { max-width: 790px; }
+.layout-note .sign { margin-top: 64px; font-family: var(--mono); font-size: 20px; letter-spacing: 3px; }
+
+/* ── dictionary ─────────────────────────────── */
+.layout-dictionary { padding-top: 256px; }
+.dict-word { margin-top: 28px; display: flex; align-items: flex-end; gap: 44px; }
+.dict-word .ko { font-size: 196px; font-weight: 800; line-height: .95; letter-spacing: -6px; }
+.dict-word .hanja { font-size: 92px; font-weight: 300; color: var(--sub); line-height: 1; padding-bottom: 12px; }
+.dict-en { margin-top: 44px; display: flex; align-items: baseline; gap: 24px; padding-bottom: 32px; border-bottom: 1px solid var(--hair); }
+.dict-en .en { font-family: var(--en); font-size: 46px; font-weight: 700; letter-spacing: -0.5px; }
+.dict-en .pos { font-size: 22px; color: var(--sub); }
+.dict-def { margin-top: 44px; font-size: 38px; font-weight: 400; line-height: 1.68; letter-spacing: -0.8px; white-space: pre-line; }
+.terms { margin-top: auto; margin-bottom: 0; border-top: 1px solid var(--hair); }
+.term { display: grid; grid-template-columns: 324px 1fr; padding: 32px 0 28px; border-bottom: 1px solid var(--hair); }
+.term:last-child { border-bottom: 0; }
+.term .k { font-size: 29px; font-weight: 700; }
+.term .k small { display: block; margin-top: 6px; font-family: var(--en); font-size: 22px; font-weight: 400; color: var(--sub); }
+.term .v { font-size: 26px; font-weight: 300; line-height: 1.6; color: var(--body); }
+
+/* ── numbers (IN NUMBERS) ───────────────────── */
+.layout-numbers { padding-top: 226px; }
+.head-row { display: flex; justify-content: space-between; align-items: baseline; }
+.layout-numbers .title { font-size: 58px; }
+.layout-numbers .rows { margin-top: 104px; }
+.layout-numbers .r { grid-template-columns: 312px 1fr; min-height: 244px; align-items: center; }
+.num { font-family: var(--en); font-size: 192px; font-weight: 800; line-height: .8; letter-spacing: -8px; }
+.r .h { font-size: 34px; font-weight: 800; letter-spacing: -1px; }
+.r .t { margin-top: 14px; font-size: 25px; font-weight: 300; line-height: 1.68; color: var(--body); }
+
+/* ── keyboard (DIAGRAM) ─────────────────────── */
+.layout-keyboard, .layout-beats { padding-top: 162px; }
+.layout-keyboard .kicker + .title, .layout-beats .kicker + .title { margin-top: 16px; }
+.layout-keyboard .title, .layout-beats .title { font-size: 56px; line-height: 1.28; margin-bottom: 10px; }
+.kb { margin-top: 30px; }
+.kb-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 20px; }
+.kb-head .en { font-family: var(--en); font-size: 36px; font-weight: 800; }
+.kb-head .en span { font-family: var(--ko); font-size: 27px; font-weight: 700; }
+.kb-head .notes { font-family: var(--mono); font-size: 23px; letter-spacing: 3px; }
+.kb svg { display: block; }
+.kb-cap { margin-top: 22px; font-size: 26px; font-weight: 300; color: var(--body); }
+
+/* ── parts (ONE HARMONY, SEVEN PARTS) ───────── */
+.layout-parts { padding-top: 188px; }
+.layout-parts.compact { padding-top: 142px; }
+.layout-parts.compact .title { margin-top: 20px; }
+.layout-parts .rows { margin-top: 84px; }
+.layout-parts.compact .rows { margin-top: 28px; }
+.layout-parts .r { grid-template-columns: 122px 1fr; padding: 40px 0 30px; }
+.layout-parts.compact .r { padding: 28px 0 22px; }
+.layout-parts.compact .part-t { margin-top: 12px; line-height: 1.5; }
+.r .no { font-family: var(--mono); font-size: 21px; padding-top: 6px; }
+.part-en { font-family: var(--en); font-size: 84px; font-weight: 700; line-height: .95; letter-spacing: -3px; text-transform: uppercase; }
+.part-en span { font-family: var(--ko); font-size: 29px; font-weight: 400; letter-spacing: 0; color: var(--sub); text-transform: none; margin-left: 16px; }
+.part-t { margin-top: 18px; font-size: 28px; font-weight: 300; line-height: 1.6; color: var(--body); }
+
+/* ── steps (LISTEN AT HOME) ─────────────────── */
+.layout-steps { padding-top: 200px; }
+.layout-steps .rows { margin-top: 96px; }
+.layout-steps .r { grid-template-columns: 120px 1fr; padding: 36px 0 36px; }
+.r .step { font-family: var(--mono); font-size: 20px; letter-spacing: 1px; padding-top: 10px; white-space: nowrap; }
+
+/* ── way (THE ENOCH WAY) ────────────────────── */
+.layout-way { padding-top: 262px; }
+.layout-way .title { font-size: 70px; line-height: 1.3; }
+.layout-way .rows { margin-top: 150px; }
+.layout-way .r { grid-template-columns: 122px 1fr; min-height: 143px; align-items: center; }
+.layout-way .r .no { padding-top: 0; align-self: center; margin-top: -8px; }
+.r .s { font-size: 36px; font-weight: 700; letter-spacing: -1px; }
+
+/* ── closing ───────────────────────────────── */
+.layout-closing { padding-top: 280px; }
+.ghost { font-family: var(--en); font-size: 236px; font-weight: 700; line-height: .8; letter-spacing: -6px; color: var(--ghost); text-transform: uppercase; margin-left: 8px; white-space: nowrap; }
+.closing-ko { margin-top: 168px; font-size: 66px; font-weight: 800; line-height: 1.45; letter-spacing: -2px; }
+.closing-en { margin-top: 20px; font-family: var(--en); font-size: 44px; font-weight: 400; letter-spacing: -0.8px; color: var(--body); }
+.closing-info { position: absolute; left: 96px; right: 96px; top: 1033px; border-top: 1px solid var(--hair); padding-top: 38px; display: flex; justify-content: space-between; }
+.closing-info .name { font-size: 23px; font-weight: 700; }
+.closing-info .addr { margin-top: 12px; font-size: 22px; font-weight: 300; color: var(--body); }
+.closing-info .right { text-align: right; max-width: 440px; }
+.closing-info .tel { font-family: var(--mono); font-size: 23px; letter-spacing: 1.5px; }
+.closing-info .subj { margin-top: 12px; font-size: 22px; font-weight: 300; line-height: 1.7; color: var(--body); }
+
+/* ── point (한 장 한 메시지, 범용) ─────────────── */
+.layout-point { padding-top: 308px; }
+.layout-point .body { margin-top: 56px; }
+
+/* ── chords (코드 진행, 범용) ───────────────── */
+.layout-chords { padding-top: 226px; }
+.chords { margin-top: 90px; display: grid; border-top: 1.5px solid var(--rule); border-bottom: 1.5px solid var(--rule); }
+.chord { padding: 36px 24px 40px; border-left: 1px solid var(--hair); }
+.chord:first-child { border-left: 0; padding-left: 0; }
+.chord .roman { font-family: var(--mono); font-size: 20px; letter-spacing: 2px; color: var(--sub); }
+.chord .name { margin-top: 18px; font-family: var(--en); font-size: 72px; font-weight: 700; letter-spacing: -2px; }
+.chord .notes { margin-top: 14px; font-family: var(--mono); font-size: 21px; letter-spacing: 3px; }
+.chord .fn { margin-top: 24px; font-size: 26px; font-weight: 700; }
+.layout-chords .body { margin-top: 48px; }
+
+/* ── photo / photo-missing ─────────────────── */
+.layout-photo { padding-top: 165px; }
+.photo { width: 100%; height: 790px; background-size: cover; background-position: center; }
+.photo-missing {
+  width: 888px; height: 790px; border: 1px dashed var(--sub); background: transparent;
+  display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 14px;
+  font-family: var(--mono); font-size: 22px; letter-spacing: 1px; color: var(--sub); text-align: center;
+}
+.layout-photo .title { margin-top: 56px; font-size: 52px; }
+.layout-photo .body { margin-top: 20px; }
+
+/* ── instructor (강사 소개 포스터) ──────────── */
+.layout-instructor { padding: 150px 96px 150px; }
+.poster { flex: 1; display: grid; grid-template-rows: auto 1fr auto; border: 1.5px solid var(--rule); min-height: 0; }
+.poster .top { display: grid; grid-template-columns: 1.1fr 1fr; border-bottom: 1.5px solid var(--rule); }
+.poster .top > div { padding: 20px 26px; font-family: var(--mono); font-size: 20px; letter-spacing: 2.4px; text-transform: uppercase; }
+.poster .top > div + div { border-left: 1.5px solid var(--rule); text-align: right; }
+.poster .mid { display: grid; grid-template-columns: 1.1fr 1fr; min-height: 0; }
+.poster .mid .photo, .poster .mid .photo-missing { width: 100%; height: 100%; border: 0; filter: grayscale(1) sepia(.18); }
+.poster .names { padding: 36px 26px; display: flex; flex-direction: column; justify-content: flex-end; border-left: 1.5px solid var(--rule); }
+.poster .name-en { font-family: var(--en); font-size: 92px; font-weight: 700; line-height: .92; letter-spacing: -3px; text-transform: uppercase; overflow-wrap: anywhere; }
+.poster .name-ko { margin-top: 28px; font-size: 38px; font-weight: 700; }
+.poster .role { margin-top: 10px; font-size: 24px; font-weight: 300; color: var(--body); line-height: 1.5; white-space: pre-line; }
+.band { border-top: 1.5px solid var(--rule); overflow: hidden; white-space: nowrap; padding: 18px 0; font-family: var(--mono); font-size: 22px; letter-spacing: 2.6px; text-transform: uppercase; }
+.meta { margin-top: 28px; display: grid; grid-template-columns: repeat(3, 1fr); }
+.meta > div { font-size: 24px; line-height: 1.5; }
+.meta b { display: block; font-family: var(--mono); font-size: 18px; font-weight: 400; letter-spacing: 2px; color: var(--sub); margin-bottom: 6px; text-transform: uppercase; }
+</style></head>
+<body class="preview"><section class="card layout-typecover theme-ivory" id="card-1">
+    <div class="masthead"><span>ENOCH MUSIC ACADEMY</span><span>ENOCH — ENVIRONMENT</span></div>
+    <div class="kicker">ENOCH Talk</div>
+    
+    
+    <div class="tc-en" style="font-size:122px">Environment</div>
+    <h1 class="tc-title">환경</h1>
+    <p class="tc-sub">음악을 하려면,
+음악하는 환경부터요.</p>
+    <div class="ticker">ENOCH — ENVIRONMENT — 환경 — ENOCH — ENVIRONMENT — 환경 — ENOCH — ENVIRONMENT — 환경 — ENOCH — ENVIRONMENT — 환경 — ENOCH — ENVIRONMENT — 환경 — ENOCH — ENVIRONMENT — 환경</div>
+    <svg class="doodle" viewBox="0 0 200 200" width="290" height="290"
+    style="position:absolute;left:660px;top:190px;transform:rotate(-14deg);opacity:1;color:var(--fg);overflow:visible;pointer-events:none">
+    <defs><filter id="wob1" x="-10%" y="-10%" width="120%" height="120%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="1"/>
+  <feDisplacementMap in="SourceGraphic" scale="5"/></filter></defs>
+    <g filter="url(#wob1)" stroke="var(--fg)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M100.0 100.0 L100.6 100.1 L101.1 100.3 L101.6 100.6 L102.0 101.1 L102.3 101.7 L102.5 102.3 L102.5 103.0 L102.4 103.8 L102.2 104.6 L101.7 105.3 L101.2 106.1 L100.4 106.7 L99.5 107.3 L98.5 107.7 L97.4 108.0 L96.2 108.1 L94.9 108.1 L93.5 107.8 L92.2 107.3 L90.9 106.6 L89.6 105.7 L88.5 104.6 L87.5 103.2 L86.6 101.7 L85.9 100.0 L85.5 98.2 L85.3 96.2 L85.4 94.2 L85.7 92.1 L86.3 90.1 L87.3 88.1 L88.5 86.1 L90.1 84.3 L91.9 82.7 L93.9 81.3 L96.2 80.1 L98.7 79.2 L101.3 78.7 L104.1 78.5 L107.0 78.6 L109.8 79.1 L112.7 80.1 L115.4 81.4 L118.0 83.1 L120.5 85.1 L122.7 87.5 L124.6 90.3 L126.2 93.3 L127.3 96.5 L128.1 100.0 L128.5 103.6 L128.3 107.3 L127.7 111.0 L126.6 114.6 L125.0 118.2 L123.0 121.6 L120.4 124.7 L117.5 127.5 L114.1 130.0 L110.4 132.1 L106.4 133.7 L102.2 134.8 L97.8 135.4 L93.3 135.4 L88.7 134.8 L84.2 133.6 L79.8 131.8 L75.6 129.5 L71.7 126.6 L68.1 123.1 L65.0 119.2 L62.3 114.9 L60.2 110.2 L58.7 105.2 L57.8 100.0 L57.6 94.6 L58.0 89.2 L59.2 83.8 L61.1 78.6 L63.6 73.5 L66.8 68.8 L70.6 64.5 L75.0 60.6 L79.9 57.2 L85.2 54.5 L90.9 52.5 L96.9 51.2 L103.1 50.6 L109.4 50.8 L115.6 51.9 L121.8 53.7 L127.7 56.3 L133.3 59.7 L138.5 63.8 L143.2 68.6 L147.3 74.0 L150.7 79.9 L153.4 86.3 L155.2 93.0 L156.3 100.0 L156.4 107.1 L155.6 114.3 L153.9 121.3 L151.3 128.2 L147.8 134.7 L143.5 140.8 L138.4 146.4 L132.6 151.3 L126.1 155.5 L119.1 158.8 L111.7 161.3 L104.0 162.9 L96.0 163.4 L88.0 163.0 L80.0 161.5 L72.2 159.0 L64.7 155.6 L57.7 151.1 L51.2 145.8 L45.4 139.7 L40.4 132.8 L36.2 125.3 L33.0 117.2 L30.8 108.7 L29.7 100.0 L29.7 91.1 L30.8 82.2 L33.1 73.5 L36.4 65.0 L40.8 57.0 L46.3 49.6 L52.7 42.8 L59.9 36.8 L67.9 31.8 L76.5 27.8 L85.7 24.9 L95.2 23.1 L104.9 22.5 L114.7 23.2 L124.3 25.1 L133.8 28.2 L142.8 32.6 L151.3 38.0 L159.0 44.6 L166.0 52.1 L172.0 60.4 L176.9 69.6 L180.6 79.3 L183.2 89.5 L184.4 100.0 L184.3 110.6 L182.8 121.3 L180.0 131.7 L175.9 141.7 L170.5 151.2 L164.0 160.1 L156.3 168.0 L147.6 175.0 L138.1 180.9 L127.8 185.6" fill="none"/></g></svg><svg class="doodle" viewBox="0 0 200 200" width="110" height="110"
+    style="position:absolute;left:470px;top:470px;transform:rotate(18deg);opacity:1;color:var(--fg);overflow:visible;pointer-events:none">
+    <defs><filter id="wob2" x="-10%" y="-10%" width="120%" height="120%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="2"/>
+  <feDisplacementMap in="SourceGraphic" scale="5"/></filter></defs>
+    <g filter="url(#wob2)" stroke="var(--fg)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M100 20 L112 86 L180 100 L112 114 L100 180 L88 114 L20 100 L88 86 Z" fill="none"/></g></svg>
+    
+    
+  </section>
+<section class="card layout-point theme-ivory" id="card-2">
+    <div class="masthead"><span>ENOCH MUSIC ACADEMY</span><span>ENOCH — ENVIRONMENT</span></div>
+    <div class="kicker">People, and Music</div><h2 class="title">사람은
+머무는 곳을 닮아 가요.</h2><div style="margin-top:56px"><p class="body">자주 듣는 소리, 늘 손이 닿는 악기.
+노출되는 환경이 사람을 조금씩 바꿔요.</p><p class="body"><span class="em">음악도 그래요.</span></p></div>
+    <svg class="doodle" viewBox="0 0 200 200" width="240" height="240"
+    style="position:absolute;left:700px;top:880px;transform:rotate(-12deg);opacity:1;color:var(--fg);overflow:visible;pointer-events:none">
+    <defs><filter id="wob3" x="-10%" y="-10%" width="120%" height="120%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="3"/>
+  <feDisplacementMap in="SourceGraphic" scale="5"/></filter></defs>
+    <g filter="url(#wob3)" stroke="var(--fg)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M40 130 V100 Q40 30 100 30 Q160 30 160 100 V130" fill="none"/>
+    <rect x="26" y="112" width="34" height="58" rx="12" fill="#DCE2D3"/><rect x="140" y="112" width="34" height="58" rx="12" fill="#DCE2D3"/></g></svg><svg class="doodle" viewBox="0 0 200 200" width="140" height="140"
+    style="position:absolute;left:500px;top:1000px;transform:rotate(14deg);opacity:1;color:var(--fg);overflow:visible;pointer-events:none">
+    <defs><filter id="wob4" x="-10%" y="-10%" width="120%" height="120%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4"/>
+  <feDisplacementMap in="SourceGraphic" scale="5"/></filter></defs>
+    <g filter="url(#wob4)" stroke="var(--fg)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="50" cy="160" rx="26" ry="19" transform="rotate(-20 50 160)" fill="none"/>
+    <ellipse cx="140" cy="140" rx="26" ry="19" transform="rotate(-20 140 140)" fill="none"/>
+    <path d="M74 153 L74 40 L164 22 L164 133 M74 62 L164 44" fill="none"/></g></svg>
+    
+    <div class="colophon"><span>환경  環境</span><span class="page">02 / 07</span></div>
+  </section>
+<section class="card layout-point theme-black" id="card-3">
+    <div class="masthead"><span>ENOCH MUSIC ACADEMY</span><span>ENOCH — ENVIRONMENT</span></div>
+    <div class="kicker">That's Why</div><h2 class="title">음악을 제대로 하려면,
+음악하는 환경부터.</h2><div style="margin-top:56px"></div>
+    <svg class="doodle" viewBox="0 0 200 200" width="300" height="300"
+    style="position:absolute;left:640px;top:900px;transform:rotate(-10deg);opacity:1;color:#F1EDE4;overflow:visible;pointer-events:none">
+    <defs><filter id="wob5" x="-10%" y="-10%" width="120%" height="120%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="5"/>
+  <feDisplacementMap in="SourceGraphic" scale="5"/></filter></defs>
+    <g filter="url(#wob5)" stroke="#F1EDE4" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 110 Q35 70 60 110 T110 110 T160 110 T200 100" fill="none"/></g></svg>
+    
+    <div class="colophon"><span>환경  環境</span><span class="page">03 / 07</span></div>
+  </section>
+<section class="card layout-point theme-ivory" id="card-4">
+    <div class="masthead"><span>ENOCH MUSIC ACADEMY</span><span>ENOCH — ENVIRONMENT</span></div>
+    <div class="kicker">Practice Room</div><h2 class="title">운영시간 안에는
+연습실을 쓸 수 있어요.</h2><div style="margin-top:56px"><p class="body">ENOCH 수강생이라면요.</p><p class="body">평일 13:00–22:00 / 토 10:00–18:00 / 일요일 휴무</p></div>
+    <svg class="doodle" viewBox="0 0 200 200" width="250" height="250"
+    style="position:absolute;left:680px;top:900px;transform:rotate(-9deg);opacity:1;color:var(--fg);overflow:visible;pointer-events:none">
+    <defs><filter id="wob6" x="-10%" y="-10%" width="120%" height="120%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="6"/>
+  <feDisplacementMap in="SourceGraphic" scale="5"/></filter></defs>
+    <g filter="url(#wob6)" stroke="var(--fg)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="60" width="172" height="90" fill="#DCE2D3"/>
+    <path d="M38 60 V150 M62 60 V150 M86 60 V150 M110 60 V150 M134 60 V150 M158 60 V150" fill="none"/>
+    <path d="M30 60 h14 v52 h-14 z M54 60 h14 v52 h-14 z M102 60 h14 v52 h-14 z M126 60 h14 v52 h-14 z M150 60 h14 v52 h-14 z" fill="currentColor"/></g></svg><svg class="doodle" viewBox="0 0 200 200" width="160" height="160"
+    style="position:absolute;left:480px;top:960px;transform:rotate(12deg);opacity:1;color:var(--fg);overflow:visible;pointer-events:none">
+    <defs><filter id="wob7" x="-10%" y="-10%" width="120%" height="120%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7"/>
+  <feDisplacementMap in="SourceGraphic" scale="5"/></filter></defs>
+    <g filter="url(#wob7)" stroke="var(--fg)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><rect x="36" y="16" width="128" height="168" fill="none"/>
+    <path d="M52 50 H148 M52 60 H148 M52 70 H148 M52 110 H148 M52 120 H148 M52 130 H148" fill="none" stroke-width="3"/>
+    <ellipse cx="80" cy="68" rx="9" ry="7" fill="currentColor"/><path d="M89 66 V36" fill="none"/>
+    <ellipse cx="120" cy="128" rx="9" ry="7" fill="currentColor"/><path d="M129 126 V96" fill="none"/></g></svg>
+    
+    <div class="colophon"><span>환경  環境</span><span class="page">04 / 07</span></div>
+  </section>
+<section class="card layout-point theme-ivory" id="card-5">
+    <div class="masthead"><span>ENOCH MUSIC ACADEMY</span><span>ENOCH — ENVIRONMENT</span></div>
+    <div class="kicker">Atmosphere</div><h2 class="title">공간을 꾸릴 때
+분위기에 가장 신경 썼어요.</h2><div style="margin-top:56px"></div>
+    <svg class="doodle" viewBox="0 0 200 200" width="330" height="330"
+    style="position:absolute;left:660px;top:700px;transform:rotate(16deg);opacity:1;color:var(--fg);overflow:visible;pointer-events:none">
+    <defs><filter id="wob8" x="-10%" y="-10%" width="120%" height="120%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="8"/>
+  <feDisplacementMap in="SourceGraphic" scale="5"/></filter></defs>
+    <g filter="url(#wob8)" stroke="var(--fg)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M88 120 C40 110 40 190 95 186 C150 190 150 125 112 120 C120 100 110 92 100 96 C90 92 80 100 88 120 Z" fill="#DCE2D3"/>
+    <circle cx="100" cy="150" r="14" fill="none"/><path d="M100 96 L100 18 M92 18 H108 M94 186 V120 M106 186 V120" fill="none"/></g></svg><svg class="doodle" viewBox="0 0 200 200" width="240" height="240"
+    style="position:absolute;left:380px;top:870px;transform:rotate(-10deg);opacity:1;color:var(--fg);overflow:visible;pointer-events:none">
+    <defs><filter id="wob9" x="-10%" y="-10%" width="120%" height="120%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="9"/>
+  <feDisplacementMap in="SourceGraphic" scale="5"/></filter></defs>
+    <g filter="url(#wob9)" stroke="var(--fg)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M30 80 V150 Q100 185 170 150 V80" fill="#DCE2D3"/>
+    <ellipse cx="100" cy="80" rx="70" ry="24" fill="#F6F1E7"/>
+    <path d="M30 150 Q100 185 170 150 M50 95 L60 165 M100 104 V178 M150 95 L140 165 M70 20 L110 72 M150 18 L108 70" fill="none"/></g></svg>
+    
+    <div class="colophon"><span>환경  環境</span><span class="page">05 / 07</span></div>
+  </section>
+<section class="card layout-principle theme-ivory" id="card-6">
+    <div class="masthead"><span>ENOCH MUSIC ACADEMY</span><span>ENOCH — ENVIRONMENT</span></div>
+    <div class="pr-split" style="--block:var(--sage)"><div class="pr-block"><div class="kicker">Principle</div><div class="pr-no">02</div></div>
+      <h2 class="pr-title">같은 곡도,
+사람마다 다르게 가르칩니다.</h2>
+      <div class="pr-en">The same song, taught differently to each person.</div>
+      <div class="pr-body"><p class="body">그래서 입시 · 취미 · 성인 · 전문,
+모든 과정이 <span class="em">1:1 레슨</span>이에요.</p></div></div>
+    <svg class="doodle" viewBox="0 0 200 200" width="160" height="160"
+    style="position:absolute;left:820px;top:1000px;transform:rotate(14deg);opacity:1;color:var(--fg);overflow:visible;pointer-events:none">
+    <defs><filter id="wob10" x="-10%" y="-10%" width="120%" height="120%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="10"/>
+  <feDisplacementMap in="SourceGraphic" scale="5"/></filter></defs>
+    <g filter="url(#wob10)" stroke="var(--fg)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="72" cy="150" rx="30" ry="22" transform="rotate(-20 72 150)" fill="#DCE2D3"/>
+    <path d="M100 142 L100 30 Q130 45 150 80" fill="none"/></g></svg>
+    
+    <div class="colophon"><span>환경  環境</span><span class="page">06 / 07</span></div>
+  </section>
+<section class="card layout-closing theme-black" id="card-7">
+    <div class="masthead"><span>ENOCH MUSIC ACADEMY</span><span>ENOCH — ENVIRONMENT</span></div>
+    <div class="ghost">ENOCH</div>
+    <div class="closing-ko">나만의 진짜 소리를<br>찾는 곳.</div>
+    <div class="closing-en">Find your own true sound.</div>
+    <div class="closing-info"><div><div class="name">에녹실용음악학원 시흥점</div><div class="addr">경기도 시흥시 은행로 157 2층</div></div>
+      <div class="right"><div class="tel">010 3949 3666</div><div class="subj">Vocal ·&nbsp;Guitar ·&nbsp;Drum ·&nbsp;Bass ·&nbsp;Piano ·&nbsp;MIDI ·&nbsp;Composition</div></div></div>
+    
+    
+    <div class="colophon"><span>환경  環境</span><span class="page">07 / 07</span></div>
+  </section></body></html>

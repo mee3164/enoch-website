@@ -35,7 +35,7 @@
 | layout | 필드 | 용도 |
 |---|---|---|
 | `principle` | `kicker`, `no`(예 `01`), `title`(원칙 문장), `en`?(영문 한 줄), `body`?(풀이, 문자열 또는 배열), `variant`?(`split` 위쪽 색면 · `outline` 외곽선 숫자 · `circle` 원 안 숫자), `block`?(색면·원 색: `sage` `blush` `mist` `butter` `lilac`) | 원칙·선언 한 장에 하나 |
-| `typecover` | `kicker`, `index`?(목차 항목 배열 — 위쪽 빈 자리에 2열 격자로), `ghost`?(위쪽 빈 자리에 흐린 큰 글자, 예 `"3"`), `en`(큰 영문, `\n` 가능 — 글자 수에 맞춰 크기 자동), `title`(굵은 한글), `sub`?, `ticker`? | 사진 없는 표지 — 정보형·철학·입시 편 (ENOCH ISSUE 표지에는 쓰지 않음) |
+| `typecover` | `kicker`, `index`?(목차 항목 배열 — 위쪽 빈 자리에 2열 격자로), `ghost`?(위쪽 빈 자리에 흐린 큰 글자, 예 `"3"`), `en`(큰 영문, `\n` 가능 — 글자 수에 맞춰 크기 자동), `enSize`?(px, 넓은 글자가 많아 오른쪽 여백을 넘을 때만 직접 지정), `title`(굵은 한글), `sub`?, `ticker`? | 사진 없는 표지 — 정보형·철학·입시 편 (ENOCH ISSUE 표지에는 쓰지 않음) |
 | `point` | `kicker`, `title`, `body` (문자열 또는 배열) | 한 장 한 메시지 |
 | `chords` | `kicker`, `title`, `chords`[{roman, name, notes, fn}], `body`? | 코드 진행 |
 | `photo` | `image`, `title`?, `body`? | 실제 사진 한 장 |
