@@ -229,7 +229,7 @@ const layouts = {
       .join("")}</div>${paras(s.body)}`,
 
   // 실제 사진 한 장
-  photo: async (s, i) => `${await photo(i, s.image)}${title(s)}${paras(s.body)}`,
+  photo: async (s, i) => `${(await photo(i, s.image, "photo", s.imagePosition, s.imageSize)).replace('style="', s.imageHeight ? `style="height:${+s.imageHeight}px;` : 'style="')}${title(s)}${paras(s.body)}`,
 
   // 강사 소개 포스터 (인용문 없음)
   instructor: async (s, i) => {

@@ -74,54 +74,20 @@
       ]
     },
     {
-      "layout": "point",
-      "kicker": "Practice Room",
+      "layout": "photo",
       "title": "운영시간 안에는\n연습실을 쓸 수 있어요.",
       "body": [
         "ENOCH 수강생이라면요.",
         "평일 13:00–22:00 / 토 10:00–18:00 / 일요일 휴무"
       ],
-      "doodles": [
-        {
-          "name": "keys",
-          "x": 680,
-          "y": 900,
-          "size": 250,
-          "rotate": -9,
-          "fill": "sage"
-        },
-        {
-          "name": "score",
-          "x": 480,
-          "y": 960,
-          "size": 160,
-          "rotate": 12
-        }
-      ]
+      "image": "images/공간/복도_01.jpg",
+      "imageHeight": 660,
+      "imagePosition": "center 40%"
     },
     {
-      "_note": "사진 없는 예비안(point + guitar·drum 두들). images/공간/레슨실_01.jpg (대안: 연습실_01.jpg · 로비_01.jpg)가 들어오면 layout을 photo로 바꾸고 image에 경로를 넣는다. title은 그대로, body는 없음(넣는다면 \"ENOCH의 레슨실이에요.\" 한 줄), doodles는 지운다(사진 위 두들 없음). IMG_5189.jpg는 쓰지 않는다.",
-      "layout": "point",
-      "kicker": "Atmosphere",
+      "layout": "photo",
       "title": "공간을 꾸릴 때\n분위기에 가장 신경 썼어요.",
-      "doodles": [
-        {
-          "name": "guitar",
-          "x": 660,
-          "y": 700,
-          "size": 330,
-          "rotate": 16,
-          "fill": "sage"
-        },
-        {
-          "name": "drum",
-          "x": 380,
-          "y": 870,
-          "size": 240,
-          "rotate": -10,
-          "fill": "sage"
-        }
-      ]
+      "image": "images/공간/드럼룸_01.jpg"
     },
     {
       "layout": "principle",

@@ -38,7 +38,7 @@
 | `typecover` | `kicker`, `index`?(목차 항목 배열 — 위쪽 빈 자리에 2열 격자로), `ghost`?(위쪽 빈 자리에 흐린 큰 글자, 예 `"3"`), `en`(큰 영문, `\n` 가능 — 글자 수에 맞춰 크기 자동), `enSize`?(px, 넓은 글자가 많아 오른쪽 여백을 넘을 때만 직접 지정), `title`(굵은 한글), `sub`?, `ticker`? | 사진 없는 표지 — 정보형·철학·입시 편 (ENOCH ISSUE 표지에는 쓰지 않음) |
 | `point` | `kicker`, `title`, `body` (문자열 또는 배열) | 한 장 한 메시지 |
 | `chords` | `kicker`, `title`, `chords`[{roman, name, notes, fn}], `body`? | 코드 진행 |
-| `photo` | `image`, `title`?, `body`? | 실제 사진 한 장 |
+| `photo` | `image`, `imagePosition`?, `imageSize`?, `imageHeight`?(사진 높이 px, 기본 790 — 본문이 길면 줄인다), `title`?, `body`? | 실제 사진 한 장 |
 | `instructor` | `nameEn`, `nameKo`, `subject`, `image`, `role`?, `meta`[{k, v}]? | 강사 소개 포스터 (인용문 없음) |
 
 ## 확정본의 리듬 (새 편도 따른다)
