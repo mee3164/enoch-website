@@ -27,7 +27,8 @@ const val = (s) => (!s || String(s).includes(TBD) ? `<span class="tbd">${esc(s |
 const pastelOf = (p) => PASTEL[p] || PASTEL.sage;
 
 const warnings = [];
-const BANNED = ["최고", "1위", "유일", "합격 보장", "100%", "무조건", "완벽한", "특별한", "ENOCH가"];
+// "100%"는 반영 비율(실기 100%)에 쓰이므로 검사하지 않는다.
+const BANNED = ["최고", "1위", "유일", "합격 보장", "무조건", "완벽한", "특별한", "ENOCH가"];
 for (const w of BANNED) if (JSON.stringify(data).includes(w)) warnings.push(`금지 표현 "${w}"`);
 
 const css = `
@@ -70,6 +71,8 @@ td.date { font-weight: 600; }
 .hero { margin: 48px -80px 0; padding: 52px 80px 48px; }
 .hero .no { font-size: 20px; font-weight: 600; letter-spacing: 3px; }
 .hero .nm { font-size: 72px; font-weight: 800; letter-spacing: -2.5px; margin-top: 14px; line-height: 1.15; }
+.hero .part { margin-top: 26px; font-size: 20px; font-weight: 700; letter-spacing: 2px; display: inline-block; border-top: 2px solid #111; padding-top: 10px; }
+.hero .basis { margin-top: 16px; font-size: 19px; font-weight: 600; color: #6B4E45; }
 .hero .un { font-size: 26px; font-weight: 500; margin-top: 14px; line-height: 1.45; }
 .row { display: grid; grid-template-columns: 170px 1fr; gap: 28px; padding: 30px 0; border-bottom: 1px solid rgba(17,17,17,.28); }
 .row:last-of-type { border-bottom: none; }
@@ -80,7 +83,7 @@ td.date { font-weight: 600; }
 .bar div { display: flex; align-items: center; padding: 0 16px; font-size: 19px; font-weight: 700; white-space: nowrap; overflow: hidden; }
 .bar div + div { border-left: 1.5px solid #111; }
 .tl { list-style: none; }
-.tl li { display: grid; grid-template-columns: 150px 1fr; gap: 16px; padding: 5px 0; }
+.tl li { display: grid; grid-template-columns: 190px 1fr; gap: 16px; padding: 5px 0; }
 .tl li .ev { color: #55524D; font-weight: 500; }
 .tl li .dt { font-weight: 700; }
 .major { margin-bottom: 18px; }
@@ -109,7 +112,7 @@ td.date { font-weight: 600; }
 
 const total = data.pages.length;
 const head = (black) => `<div class="head mono"><span>${esc(brand.nameEn)}</span><span>${esc(data.header || "")}</span></div>`;
-const foot = (i, black) => `<div class="foot"><div class="note">${esc(data.asof)} 각 대학 모집요강 기준<br>정확한 내용은 꼭 각 대학 입학처 모집요강에서 한 번 더 확인해 주세요.</div><div class="mono">${String(i + 1).padStart(2, "0")} / ${String(total).padStart(2, "0")}</div></div>`;
+const foot = (i, black, basis) => `<div class="foot"><div class="note">${esc(data.asof)} ${esc(basis || "각 대학 모집요강 기준")}<br>정확한 내용은 꼭 각 대학 입학처 모집요강에서 한 번 더 확인해 주세요.</div><div class="mono">${String(i + 1).padStart(2, "0")} / ${String(total).padStart(2, "0")}</div></div>`;
 const doodles = (list = []) => (list.length ? `<svg class="doodle-layer" width="1080" height="1350" viewBox="0 0 1080 1350">${list.map((d) => doodle(d)).join("")}</svg>` : "");
 const schoolById = Object.fromEntries((data.schools || []).map((s) => [s.id, s]));
 
@@ -135,17 +138,19 @@ function school(p, i) {
   if (!s) throw new Error(`school 없음: ${p.school}`);
   const bg = pastelOf(s.pastel);
   const n = data.schools.indexOf(s) + 1;
+  // part: "a" = 전형·수능 최저·일정, "b" = 실기 과제·준비물·참고, 없으면 한 장에 모두
+  const A = p.part !== "b", B = p.part !== "a";
   const rows = [];
-  if (s.tracks?.length) {
+  if (A && s.tracks?.length) {
     rows.push(`<div class="row"><div class="lb">전형</div><div class="ct">${s.tracks.map((t) => `<div><b>${esc(t.name)}</b>${t.quota ? ` · ${val(t.quota)}` : ""}</div>${t.ratio?.length ? `<div class="bar">${t.ratio.map(([k, v], j) => `<div style="flex:${Math.max(v, 12)};${j === 0 ? `background:${bg}` : ""}">${esc(k)} ${v}%</div>`).join("")}</div>` : ""}${t.note ? `<div class="small">${val(t.note)}</div>` : ""}`).join('<div style="height:18px"></div>')}</div></div>`);
   }
-  if (s.csat !== undefined) rows.push(`<div class="row"><div class="lb">수능 최저</div><div class="ct">${val(s.csat)}</div></div>`);
-  if (s.schedule?.length) rows.push(`<div class="row"><div class="lb">일정</div><div class="ct"><ul class="tl">${s.schedule.map(([ev, dt]) => `<li><span class="ev">${esc(ev)}</span><span class="dt">${val(dt)}</span></li>`).join("")}</ul></div></div>`);
-  if (s.exams?.length) rows.push(`<div class="row"><div class="lb">실기 과제</div><div class="ct">${s.exams.map((e) => `<div class="major"><span class="mj" style="background:${bg}">${esc(e.major)}</span><ul>${e.items.map((x) => `<li>${val(x)}</li>`).join("")}</ul></div>`).join("")}</div></div>`);
-  if (s.bring?.length) rows.push(`<div class="row"><div class="lb">준비물</div><div class="ct"><ul class="checks">${s.bring.map((x) => `<li>${val(x)}</li>`).join("")}</ul></div></div>`);
-  if (s.notes?.length) rows.push(`<div class="row"><div class="lb">참고</div><div class="ct">${s.notes.map((x) => `<div class="small" style="margin-top:0">${val(x)}</div>`).join("")}</div></div>`);
-  return `<section class="page">${head()}<div class="hero" style="background:${bg}"><div class="no mono">University ${String(n).padStart(2, "0")}</div><div class="nm">${esc(s.name)}</div><div class="un">${esc(s.unit)}${s.campus ? ` · ${esc(s.campus)}` : ""}</div></div>
-  <div style="margin-top:16px">${rows.join("")}</div>${doodles(p.doodles)}${foot(i)}</section>`;
+  if (A && s.csat !== undefined) rows.push(`<div class="row"><div class="lb">수능 최저</div><div class="ct">${val(s.csat)}</div></div>`);
+  if (A && s.schedule?.length) rows.push(`<div class="row"><div class="lb">일정</div><div class="ct"><ul class="tl">${s.schedule.map(([ev, dt]) => `<li><span class="ev">${esc(ev)}</span><span class="dt">${val(dt)}</span></li>`).join("")}</ul></div></div>`);
+  if (B && s.exams?.length) rows.push(`<div class="row"><div class="lb">실기 과제</div><div class="ct">${s.exams.map((e) => `<div class="major"><span class="mj" style="background:${bg}">${esc(e.major)}</span><ul>${e.items.map((x) => `<li>${val(x)}</li>`).join("")}</ul></div>`).join("")}</div></div>`);
+  if (B && s.bring?.length) rows.push(`<div class="row"><div class="lb">준비물</div><div class="ct"><ul class="checks">${s.bring.map((x) => `<li>${val(x)}</li>`).join("")}</ul></div></div>`);
+  if (B && s.notes?.length) rows.push(`<div class="row"><div class="lb">참고</div><div class="ct">${s.notes.map((x) => `<div class="small" style="margin-top:0">${val(x)}</div>`).join("")}</div></div>`);
+  return `<section class="page">${head()}<div class="hero" style="background:${bg}"><div class="no mono">University ${String(n).padStart(2, "0")}</div><div class="nm">${esc(s.name)}</div><div class="un">${esc(s.unit)}${s.campus ? ` · ${esc(s.campus)}` : ""}</div>${s.basis ? `<div class="basis">${esc(s.basis)}</div>` : ""}${p.part ? `<div class="part mono">${p.part === "a" ? "전형 · 일정" : "실기 과제 · 준비물"}</div>` : ""}</div>
+  <div style="margin-top:16px">${rows.join("")}</div>${doodles(p.doodles)}${foot(i, false, s.basis)}</section>`;
 }
 
 function checklist(p, i) {
