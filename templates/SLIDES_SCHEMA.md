@@ -39,6 +39,7 @@
 | `point` | `kicker`, `title`, `body` (문자열 또는 배열) | 한 장 한 메시지 |
 | `chords` | `kicker`, `title`, `chords`[{roman, name, notes, fn}], `body`? | 코드 진행 |
 | `photo` | `image`, `imagePosition`?, `imageSize`?, `imageHeight`?(사진 높이 px, 기본 790 — 본문이 길면 줄인다), `title`?, `body`? | 실제 사진 한 장 |
+| `figure` | `kicker`, `title`, `src`(같은 폴더의 SVG/HTML 조각 파일), `note`?(아래 회색 주석 — 측정값이 아니면 "개념도"라고 밝힘) | 그래프·개념도·표 한 장 |
 | `instructor` | `nameEn`, `nameKo`, `subject`, `image`, `role`?, `meta`[{k, v}]? | 강사 소개 포스터 (인용문 없음) |
 
 ## 확정본의 리듬 (새 편도 따른다)

@@ -228,6 +228,9 @@ const layouts = {
         <div class="notes">${esc(c.notes || "")}</div>${c.fn ? `<div class="fn">${esc(c.fn)}</div>` : ""}</div>`)
       .join("")}</div>${paras(s.body)}`,
 
+  // 도표 한 장 — 같은 폴더의 SVG/HTML 조각(그래프·개념도)을 그대로 넣는다. 실제 측정값이 아니면 note에 "개념도"라고 밝힌다
+  figure: async (s) => `${kicker(s)}${title(s)}<div class="figure">${await readFile(path.join(projectDir, s.src), "utf8")}</div>${s.note ? `<p class="fig-note">${rich(s.note)}</p>` : ""}`,
+
   // 실제 사진 한 장
   photo: async (s, i) => `${(await photo(i, s.image, "photo", s.imagePosition, s.imageSize)).replace('style="', s.imageHeight ? `style="height:${+s.imageHeight}px;` : 'style="')}${title(s)}${paras(s.body)}`,
 
