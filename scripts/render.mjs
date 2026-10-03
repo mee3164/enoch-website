@@ -228,6 +228,11 @@ const layouts = {
         <div class="notes">${esc(c.notes || "")}</div>${c.fn ? `<div class="fn">${esc(c.fn)}</div>` : ""}</div>`)
       .join("")}</div>${paras(s.body)}`,
 
+  // 타이포그래피 한 장 (Magazine B "Quote of the Day" 결) — 사진 없음, 머리말·꼬리말 대신 위 라벨 / 가운데 문장 / 아래 출처
+  quote: (s) => `<div class="q-label">${esc(s.label || deck.label || brand.nameEn)}</div>
+    <h2 class="q-title"${s.size ? ` style="font-size:${+s.size}px"` : ""}>${rich(s.title)}</h2>
+    <div class="q-foot">${s.by ? `<div class="q-by">— ${esc(s.by)}</div>` : ""}${s.note ? `<div class="q-note">${rich(s.note)}</div>` : ""}</div>`,
+
   // 실제 사진 한 장
   photo: async (s, i) => `${(await photo(i, s.image, "photo", s.imagePosition, s.imageSize)).replace('style="', s.imageHeight ? `style="height:${+s.imageHeight}px;` : 'style="')}${title(s)}${paras(s.body)}`,
 
@@ -290,13 +295,13 @@ for (const [i, s] of deck.slides.entries()) {
   check(i, s);
   const theme = s.theme || deck.theme || "ivory";
   const extra = s.layout === "parts" && (s.items || []).length > 3 ? " compact" : "";
-  const head = s.layout === "instructor" ? "" : `<div class="masthead"><span>${esc(brand.nameEn)}</span><span>${esc(deck.masthead || "")}</span></div>`;
-  const foot = s.layout === "cover" || s.layout === "typecover" ? "" : `<div class="colophon"><span>${esc(deck.footer || "")}</span><span class="page">${two(i + 1)} / ${two(total)}</span></div>`;
+  const head = ["instructor", "quote"].includes(s.layout) ? "" : `<div class="masthead"><span>${esc(brand.nameEn)}</span><span>${esc(deck.masthead || "")}</span></div>`;
+  const foot = ["cover", "typecover", "quote"].includes(s.layout) ? "" : `<div class="colophon"><span>${esc(deck.footer || "")}</span><span class="page">${two(i + 1)} / ${two(total)}</span></div>`;
   cards.push(`<section class="card layout-${s.layout}${extra} theme-${theme}" id="card-${i + 1}">
     ${head}
     ${await fn(s, i)}
     ${(s.doodles || []).map(doodle).join("")}
-    ${(s.frame ?? (["cover", "typecover", "closing", "instructor"].includes(s.layout) ? false : deck.frame)) ? frame(typeof (s.frame ?? deck.frame) === "object" ? (s.frame ?? deck.frame) : {}) : ""}
+    ${(s.frame ?? (["cover", "typecover", "closing", "instructor", "quote"].includes(s.layout) ? false : deck.frame)) ? frame(typeof (s.frame ?? deck.frame) === "object" ? (s.frame ?? deck.frame) : {}) : ""}
     ${foot}
   </section>`);
 }
