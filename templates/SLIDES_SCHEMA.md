@@ -39,7 +39,7 @@
 | `point` | `kicker`, `title`, `body` (문자열 또는 배열) | 한 장 한 메시지 |
 | `chords` | `kicker`, `title`, `chords`[{roman, name, notes, fn}], `body`? | 코드 진행 |
 | `photo` | `image`, `imagePosition`?, `imageSize`?, `imageHeight`?(사진 높이 px, 기본 790 — 본문이 길면 줄인다), `title`?, `body`? | 실제 사진 한 장 |
-| `quote` | `title`(가운데 큰 문장, `\n`으로 2–3줄), `label`?(위 라벨, 기본 `ENOCH MUSIC ACADEMY` — 이슈 번호 등), `by`?(출처 한 줄, 앞에 — 자동), `note`?(아래 회색 정보), `size`?(문장 크기 px, 기본 96) | 타이포그래피 시리즈 — 사진·두들 없음, 머리말·꼬리말 대신 라벨/출처. 테마 `bluegray` 권장 |
+| `quote` | `title`(가운데 큰 문장, `\n`으로 2–3줄), `label`?(위 라벨, 기본 `ENOCH MUSIC ACADEMY` — 이슈 번호 등), `by`?(출처 한 줄, 앞에 — 자동), `note`?(아래 회색 정보), `body`?(문장 아래 짧은 본문, 36px), `size`?(문장 크기 px, 기본 96) | 타이포그래피 시리즈 — 사진·두들 없음, 머리말·꼬리말 대신 라벨/출처. 테마 `bluegray` 권장 |
 | `instructor` | `nameEn`, `nameKo`, `subject`, `image`, `role`?, `meta`[{k, v}]? | 강사 소개 포스터 (인용문 없음) |
 
 ## 확정본의 리듬 (새 편도 따른다)

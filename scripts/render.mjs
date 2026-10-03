@@ -231,6 +231,7 @@ const layouts = {
   // 타이포그래피 한 장 (Magazine B "Quote of the Day" 결) — 사진 없음, 머리말·꼬리말 대신 위 라벨 / 가운데 문장 / 아래 출처
   quote: (s) => `<div class="q-label">${esc(s.label || deck.label || brand.nameEn)}</div>
     <h2 class="q-title"${s.size ? ` style="font-size:${+s.size}px"` : ""}>${rich(s.title)}</h2>
+    ${s.body ? `<div class="q-body">${rich(Array.isArray(s.body) ? s.body.join("\n") : s.body)}</div>` : ""}
     <div class="q-foot">${s.by ? `<div class="q-by">— ${esc(s.by)}</div>` : ""}${s.note ? `<div class="q-note">${rich(s.note)}</div>` : ""}</div>`,
 
   // 실제 사진 한 장
