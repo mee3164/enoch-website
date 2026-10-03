@@ -1,0 +1,38 @@
+{
+  "title": "타이포그래피 시리즈 시안",
+  "masthead": "QUOTE",
+  "footer": "시안",
+  "theme": "bluegray",
+  "slides": [
+    {
+      "layout": "quote",
+      "label": "ENOCH MUSIC ACADEMY — PRINCIPLE 01",
+      "title": "진도보다\n이해를 먼저 봅니다.",
+      "by": "ENOCH의 원칙",
+      "note": "Understanding before progress."
+    },
+    {
+      "layout": "quote",
+      "label": "ENOCH MUSIC ACADEMY — PRINCIPLE 02",
+      "title": "같은 곡도,\n사람마다\n다르게 가르칩니다.",
+      "by": "ENOCH의 원칙",
+      "note": "The same song, taught differently to each person."
+    },
+    {
+      "layout": "quote",
+      "label": "ENOCH MUSIC ACADEMY — PRINCIPLE 03",
+      "title": "기본은\n건너뛰지 않습니다.",
+      "by": "ENOCH의 원칙",
+      "note": "We don't skip the basics."
+    },
+    {
+      "layout": "quote",
+      "label": "ENOCH MUSIC ACADEMY",
+      "title": "나만의\n진짜 소리를\n찾는 곳.",
+      "note": "경기도 시흥시 은행로 157 2층 · 010 3949 3666"
+    },
+    {
+      "layout": "closing"
+    }
+  ]
+}
