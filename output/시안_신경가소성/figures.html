@@ -1,0 +1,258 @@
+<!doctype html><html><head><meta charset="utf-8"><style>/* ENOCH 카드뉴스 템플릿 — 1080x1350
+   기준 디자인: templates/reference/ENOCH_ISSUE_01/ (확정본). 수치는 확정본에서 측정한 값이다. */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap");
+
+:root {
+  --ivory: #F1EDE4;
+  --black: #111111;
+  --gray: #8A8A8A;
+  --ko: "Pretendard", "Pretendard Variable", "Noto Sans KR", "Apple SD Gothic Neo", "WenQuanYi Zen Hei", sans-serif;
+  --mono: "IBM Plex Mono", "SF Mono", Menlo, "DejaVu Sans Mono", "WenQuanYi Zen Hei Mono", monospace;
+  --en: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", var(--ko);
+}
+.theme-ivory { --bg: var(--ivory); --fg: var(--black); --body: #55524D; --sub: #6E6A64; --rule: rgba(17,17,17,.9); --hair: rgba(17,17,17,.55); --ghost: #E4DFD5; }
+/* 파스텔 테마 (시안) — 채도를 낮춘 톤. 글자는 짙은 같은 계열 */
+:root { --sage: #DCE2D3; --blush: #EEDFD8; --mist: #D9E1E8; --butter: #F1E8CB; --lilac: #E3DDE9; }
+.theme-sage   { --bg: var(--sage);   --fg: #1F2A22; --body: #4B5549; --sub: #6B7566; --rule: rgba(31,42,34,.85); --hair: rgba(31,42,34,.35); --ghost: #CCD4C2; }
+.theme-blush  { --bg: var(--blush);  --fg: #2B1F1C; --body: #5A4A45; --sub: #806A63; --rule: rgba(43,31,28,.85); --hair: rgba(43,31,28,.32); --ghost: #E3CFC6; }
+.theme-mist   { --bg: var(--mist);   --fg: #1B232B; --body: #46525D; --sub: #66727D; --rule: rgba(27,35,43,.85); --hair: rgba(27,35,43,.32); --ghost: #C9D3DC; }
+.theme-butter { --bg: var(--butter); --fg: #2A2517; --body: #5A5340; --sub: #7E765E; --rule: rgba(42,37,23,.85); --hair: rgba(42,37,23,.32); --ghost: #E6DAB2; }
+.theme-lilac  { --bg: var(--lilac);  --fg: #231E2A; --body: #534C5C; --sub: #756D7F; --rule: rgba(35,30,42,.85); --hair: rgba(35,30,42,.32); --ghost: #D6CEDF; }
+.theme-black { --bg: var(--black); --fg: var(--ivory); --body: #C9C4BB; --sub: #9A958C; --rule: rgba(241,237,228,.85); --hair: rgba(241,237,228,.28); --ghost: #2A2825; }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #555; }
+body { font-family: var(--ko); word-break: keep-all; -webkit-font-smoothing: antialiased; }
+.preview .card { margin: 40px auto; }
+
+.card {
+  position: relative; width: 1080px; height: 1350px; overflow: hidden;
+  background: var(--bg); color: var(--fg);
+  padding: 118px 96px 120px;
+  display: flex; flex-direction: column;
+}
+
+/* ── 머리말 / 꼬리말 ───────────────────────────── */
+.masthead, .colophon {
+  position: absolute; left: 96px; right: 96px;
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: var(--mono); font-size: 20px; font-weight: 400; letter-spacing: 2.4px; color: var(--fg);
+}
+.masthead { top: 70px; height: 48px; border-bottom: 1.5px solid var(--rule); padding-bottom: 14px; align-items: flex-end; }
+.colophon { top: 1230px; height: 70px; border-top: 1.5px solid var(--rule); padding-top: 4px; }
+.colophon .page { letter-spacing: 3px; }
+
+/* ── 공통 타이포 ─────────────────────────────── */
+.kicker { font-family: var(--mono); font-size: 21px; letter-spacing: 3.2px; color: var(--sub); text-transform: uppercase; }
+.title { font-size: 64px; font-weight: 800; line-height: 1.34; letter-spacing: -2px; white-space: pre-line; }
+.kicker + .title { margin-top: 28px; }
+.lead { margin-top: 26px; font-size: 26px; font-weight: 300; color: var(--sub); }
+.body { font-size: 29px; font-weight: 300; line-height: 1.86; letter-spacing: -0.4px; color: var(--body); white-space: pre-line; }
+.body + .body { margin-top: 30px; }
+.em { font-weight: 700; color: var(--fg); }
+.mono { font-family: var(--mono); }
+
+/* 선으로 나눈 행 (IN NUMBERS / PARTS / STEPS / WAY 공통) */
+.rows { border-top: 1.5px solid var(--rule); }
+.rows > .r { border-bottom: 1.5px solid var(--rule); display: grid; }
+.theme-black .rows { border-top-color: var(--hair); }
+.theme-black .rows > .r { border-bottom-color: var(--hair); }
+
+/* ── cover ─────────────────────────────────── */
+.layout-cover { padding: 165px 96px 0; }
+.cover-photo { width: 888px; height: 790px; background-size: cover; background-position: center; filter: grayscale(1) sepia(.18) contrast(1.02); }
+.cover-photo.photo-missing { filter: none; }
+.cover-en { margin-top: 56px; font-family: var(--en); font-size: 162px; font-weight: 700; line-height: .86; letter-spacing: -3px; text-transform: uppercase; white-space: nowrap; }
+.cover-sub { margin-top: 40px; display: flex; justify-content: space-between; align-items: flex-end; }
+.cover-sub .ko { font-size: 40px; font-weight: 300; color: var(--sub); letter-spacing: -1px; }
+.cover-sub .ko b { font-weight: 700; color: var(--fg); }
+.cover-sub .issue { font-family: var(--mono); font-size: 20px; line-height: 1.5; letter-spacing: 2px; text-align: left; }
+.ticker {
+  position: absolute; left: 0; right: 0; top: 1278px; height: 72px;
+  border-top: 1.5px solid var(--rule); padding-top: 22px;
+  font-family: var(--mono); font-size: 21px; letter-spacing: 2.6px; white-space: nowrap; overflow: hidden;
+}
+
+/* ── typecover (사진 없는 표지) ─────────────── */
+.layout-typecover { padding-top: 250px; }
+.tc-en { margin-top: auto; font-family: var(--en); font-size: 150px; font-weight: 700; line-height: .9; letter-spacing: -4px; text-transform: uppercase; white-space: pre-line; }
+.tc-title { margin-top: 90px; padding-top: 44px; border-top: 1.5px solid var(--rule); font-size: 76px; font-weight: 800; line-height: 1.3; letter-spacing: -2.5px; white-space: pre-line; }
+.tc-index { margin-top: 44px; display: grid; grid-template-columns: 1fr 1fr; border-top: 1.5px solid var(--rule); }
+.tc-i { display: flex; align-items: baseline; gap: 22px; padding: 22px 0 20px; border-bottom: 1px solid var(--hair); }
+.tc-i:nth-child(even) { padding-left: 28px; border-left: 1px solid var(--hair); }
+.tc-n { font-family: var(--mono); font-size: 20px; letter-spacing: 1px; color: var(--sub); }
+.tc-l { font-size: 30px; font-weight: 700; letter-spacing: -0.5px; }
+.tc-ghost { margin-top: 10px; font-family: var(--en); font-size: 460px; font-weight: 700; line-height: .78; letter-spacing: -20px; color: var(--ghost); }
+.tc-sub { margin-top: 28px; font-size: 32px; font-weight: 300; color: var(--sub); line-height: 1.6; white-space: pre-line; }
+
+/* ── principle (원칙 한 장) ─────────────────── */
+.layout-principle { padding-top: 276px; }
+.pr-no { margin-top: 44px; font-family: var(--en); font-size: 260px; font-weight: 800; line-height: .8; letter-spacing: -10px; padding-bottom: 56px; border-bottom: 1.5px solid var(--rule); }
+.pr-title { margin-top: 56px; font-size: 70px; font-weight: 800; line-height: 1.32; letter-spacing: -2px; white-space: pre-line; }
+.pr-en { margin-top: 22px; font-family: var(--en); font-size: 32px; font-weight: 400; color: var(--sub); letter-spacing: -0.3px; }
+.pr-body { margin-top: 48px; }
+
+/* principle 변형 (시안) */
+.pr-split .pr-block { margin: 0 -96px; padding: 60px 96px 56px; background: var(--block, var(--sage)); color: #1B1B1B; }
+.pr-split .pr-block .kicker { color: rgba(0,0,0,.55); }
+.pr-split .pr-no { border-bottom: 0; padding-bottom: 0; margin-top: 20px; }
+/* 풀이가 두 문단 이상이면 색면을 위로 올려 꼬리말 실선과 간격을 지킨다 (한 문단인 기존 편은 영향 없음) */
+.layout-principle:has(.pr-split .body + .body) { padding-top: 206px; }
+.pr-outline .pr-no { color: transparent; -webkit-text-stroke: 2px var(--fg); font-size: 380px; letter-spacing: -14px; }
+.pr-circle .pr-disc { position: absolute; top: 150px; right: 96px; width: 420px; height: 420px; border-radius: 50%; background: var(--block, var(--blush)); display: flex; align-items: center; justify-content: center; font-family: var(--en); font-size: 200px; font-weight: 800; letter-spacing: -8px; color: #1B1B1B; }
+.pr-circle .pr-title { margin-top: 400px; padding-top: 44px; border-top: 1.5px solid var(--rule); }
+
+/* ── note (EDITOR'S NOTE) ──────────────────── */
+.layout-note { padding-top: 308px; }
+.layout-note .title { margin-top: 44px; margin-bottom: 60px; }
+.layout-note .body { max-width: 790px; }
+.layout-note .sign { margin-top: 64px; font-family: var(--mono); font-size: 20px; letter-spacing: 3px; }
+
+/* ── dictionary ─────────────────────────────── */
+.layout-dictionary { padding-top: 256px; }
+.dict-word { margin-top: 28px; display: flex; align-items: flex-end; gap: 44px; }
+.dict-word .ko { font-size: 196px; font-weight: 800; line-height: .95; letter-spacing: -6px; }
+.dict-word .hanja { font-size: 92px; font-weight: 300; color: var(--sub); line-height: 1; padding-bottom: 12px; }
+.dict-en { margin-top: 44px; display: flex; align-items: baseline; gap: 24px; padding-bottom: 32px; border-bottom: 1px solid var(--hair); }
+.dict-en .en { font-family: var(--en); font-size: 46px; font-weight: 700; letter-spacing: -0.5px; }
+.dict-en .pos { font-size: 22px; color: var(--sub); }
+.dict-def { margin-top: 44px; font-size: 38px; font-weight: 400; line-height: 1.68; letter-spacing: -0.8px; white-space: pre-line; }
+.terms { margin-top: auto; margin-bottom: 0; border-top: 1px solid var(--hair); }
+.term { display: grid; grid-template-columns: 324px 1fr; padding: 32px 0 28px; border-bottom: 1px solid var(--hair); }
+.term:last-child { border-bottom: 0; }
+.term .k { font-size: 29px; font-weight: 700; }
+.term .k small { display: block; margin-top: 6px; font-family: var(--en); font-size: 22px; font-weight: 400; color: var(--sub); }
+.term .v { font-size: 26px; font-weight: 300; line-height: 1.6; color: var(--body); }
+
+/* ── numbers (IN NUMBERS) ───────────────────── */
+.layout-numbers { padding-top: 226px; }
+.head-row { display: flex; justify-content: space-between; align-items: baseline; }
+.layout-numbers .title { font-size: 58px; }
+.layout-numbers .rows { margin-top: 104px; }
+.layout-numbers .r { grid-template-columns: 312px 1fr; min-height: 244px; align-items: center; }
+.num { font-family: var(--en); font-size: 192px; font-weight: 800; line-height: .8; letter-spacing: -8px; }
+.r .h { font-size: 34px; font-weight: 800; letter-spacing: -1px; }
+.r .t { margin-top: 14px; font-size: 25px; font-weight: 300; line-height: 1.68; color: var(--body); }
+
+/* ── keyboard (DIAGRAM) ─────────────────────── */
+.layout-keyboard, .layout-beats { padding-top: 162px; }
+.layout-keyboard .kicker + .title, .layout-beats .kicker + .title { margin-top: 16px; }
+.layout-keyboard .title, .layout-beats .title { font-size: 56px; line-height: 1.28; margin-bottom: 10px; }
+.kb { margin-top: 30px; }
+.kb-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 20px; }
+.kb-head .en { font-family: var(--en); font-size: 36px; font-weight: 800; }
+.kb-head .en span { font-family: var(--ko); font-size: 27px; font-weight: 700; }
+.kb-head .notes { font-family: var(--mono); font-size: 23px; letter-spacing: 3px; }
+.kb svg { display: block; }
+.kb-cap { margin-top: 22px; font-size: 26px; font-weight: 300; color: var(--body); }
+
+/* ── parts (ONE HARMONY, SEVEN PARTS) ───────── */
+.layout-parts { padding-top: 188px; }
+.layout-parts.compact { padding-top: 142px; }
+.layout-parts.compact .title { margin-top: 20px; }
+.layout-parts .rows { margin-top: 84px; }
+.layout-parts.compact .rows { margin-top: 28px; }
+.layout-parts .r { grid-template-columns: 122px 1fr; padding: 40px 0 30px; }
+.layout-parts.compact .r { padding: 28px 0 22px; }
+.layout-parts.compact .part-t { margin-top: 12px; line-height: 1.5; }
+.r .no { font-family: var(--mono); font-size: 21px; padding-top: 6px; }
+.part-en { font-family: var(--en); font-size: 84px; font-weight: 700; line-height: .95; letter-spacing: -3px; text-transform: uppercase; }
+.part-en span { font-family: var(--ko); font-size: 29px; font-weight: 400; letter-spacing: 0; color: var(--sub); text-transform: none; margin-left: 16px; }
+.part-t { margin-top: 18px; font-size: 28px; font-weight: 300; line-height: 1.6; color: var(--body); }
+
+/* ── steps (LISTEN AT HOME) ─────────────────── */
+.layout-steps { padding-top: 200px; }
+.layout-steps .rows { margin-top: 96px; }
+.layout-steps .r { grid-template-columns: 120px 1fr; padding: 36px 0 36px; }
+.r .step { font-family: var(--mono); font-size: 20px; letter-spacing: 1px; padding-top: 10px; white-space: nowrap; }
+
+/* ── way (THE ENOCH WAY) ────────────────────── */
+.layout-way { padding-top: 262px; }
+.layout-way .title { font-size: 70px; line-height: 1.3; }
+.layout-way .rows { margin-top: 150px; }
+.layout-way .r { grid-template-columns: 122px 1fr; min-height: 143px; align-items: center; }
+.layout-way .r .no { padding-top: 0; align-self: center; margin-top: -8px; }
+.r .s { font-size: 36px; font-weight: 700; letter-spacing: -1px; }
+
+/* ── closing ───────────────────────────────── */
+.layout-closing { padding-top: 280px; }
+.ghost { font-family: var(--en); font-size: 236px; font-weight: 700; line-height: .8; letter-spacing: -6px; color: var(--ghost); text-transform: uppercase; margin-left: 8px; white-space: nowrap; }
+.closing-ko { margin-top: 168px; font-size: 66px; font-weight: 800; line-height: 1.45; letter-spacing: -2px; }
+.closing-en { margin-top: 20px; font-family: var(--en); font-size: 44px; font-weight: 400; letter-spacing: -0.8px; color: var(--body); }
+.closing-info { position: absolute; left: 96px; right: 96px; top: 1033px; border-top: 1px solid var(--hair); padding-top: 38px; display: flex; justify-content: space-between; }
+.closing-info .name { font-size: 23px; font-weight: 700; }
+.closing-info .addr { margin-top: 12px; font-size: 22px; font-weight: 300; color: var(--body); }
+.closing-info .right { text-align: right; max-width: 440px; }
+.closing-info .tel { font-family: var(--mono); font-size: 23px; letter-spacing: 1.5px; }
+.closing-info .subj { margin-top: 12px; font-size: 22px; font-weight: 300; line-height: 1.7; color: var(--body); }
+
+/* ── point (한 장 한 메시지, 범용) ─────────────── */
+.layout-point { padding-top: 308px; }
+.layout-point .body { margin-top: 56px; }
+
+/* ── chords (코드 진행, 범용) ───────────────── */
+.layout-chords { padding-top: 226px; }
+.chords { margin-top: 90px; display: grid; border-top: 1.5px solid var(--rule); border-bottom: 1.5px solid var(--rule); }
+.chord { padding: 36px 24px 40px; border-left: 1px solid var(--hair); }
+.chord:first-child { border-left: 0; padding-left: 0; }
+.chord .roman { font-family: var(--mono); font-size: 20px; letter-spacing: 2px; color: var(--sub); }
+.chord .name { margin-top: 18px; font-family: var(--en); font-size: 72px; font-weight: 700; letter-spacing: -2px; }
+.chord .notes { margin-top: 14px; font-family: var(--mono); font-size: 21px; letter-spacing: 3px; }
+.chord .fn { margin-top: 24px; font-size: 26px; font-weight: 700; }
+.layout-chords .body { margin-top: 48px; }
+
+/* ── photo / photo-missing ─────────────────── */
+.layout-photo { padding-top: 165px; }
+.photo { width: 100%; height: 790px; background-size: cover; background-position: center; }
+.photo-missing {
+  width: 888px; height: 790px; border: 1px dashed var(--sub); background: transparent;
+  display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 14px;
+  font-family: var(--mono); font-size: 22px; letter-spacing: 1px; color: var(--sub); text-align: center;
+}
+.layout-photo .title { margin-top: 56px; font-size: 52px; }
+.layout-photo .body { margin-top: 20px; }
+
+/* ── instructor (강사 소개 포스터) ──────────── */
+.layout-instructor { padding: 150px 96px 150px; }
+.poster { flex: 1; display: grid; grid-template-rows: auto 1fr auto; border: 1.5px solid var(--rule); min-height: 0; }
+.poster .top { display: grid; grid-template-columns: 1.1fr 1fr; border-bottom: 1.5px solid var(--rule); }
+.poster .top > div { padding: 20px 26px; font-family: var(--mono); font-size: 20px; letter-spacing: 2.4px; text-transform: uppercase; }
+.poster .top > div + div { border-left: 1.5px solid var(--rule); text-align: right; }
+.poster .mid { display: grid; grid-template-columns: 1.1fr 1fr; min-height: 0; }
+.poster .mid .photo, .poster .mid .photo-missing { width: 100%; height: 100%; border: 0; filter: grayscale(1) sepia(.18); }
+.poster .names { padding: 36px 26px; display: flex; flex-direction: column; justify-content: flex-end; border-left: 1.5px solid var(--rule); }
+.poster .name-en { font-family: var(--en); font-size: 92px; font-weight: 700; line-height: .92; letter-spacing: -3px; text-transform: uppercase; overflow-wrap: anywhere; }
+.poster .name-ko { margin-top: 28px; font-size: 38px; font-weight: 700; }
+.poster .role { margin-top: 10px; font-size: 24px; font-weight: 300; color: var(--body); line-height: 1.5; white-space: pre-line; }
+.band { border-top: 1.5px solid var(--rule); overflow: hidden; white-space: nowrap; padding: 18px 0; font-family: var(--mono); font-size: 22px; letter-spacing: 2.6px; text-transform: uppercase; }
+.meta { margin-top: 28px; display: grid; grid-template-columns: repeat(3, 1fr); }
+.meta > div { font-size: 24px; line-height: 1.5; }
+.meta b { display: block; font-family: var(--mono); font-size: 18px; font-weight: 400; letter-spacing: 2px; color: var(--sub); margin-bottom: 6px; text-transform: uppercase; }
+
+.figtable{margin-top:64px;border-top:2px solid var(--rule)}
+.fr{display:grid;grid-template-columns:220px 1fr 1fr;gap:24px;padding:30px 0;border-bottom:1px solid var(--hair);font-size:30px;line-height:1.45;white-space:pre-line}
+.fh{font-family:var(--mono);font-size:20px;letter-spacing:3px;color:var(--sub);padding:20px 0}
+.fr .k{font-size:24px;color:var(--sub);padding-top:4px}
+.fnote{margin-top:auto;margin-bottom:34px;padding-top:14px;font-size:20px;color:var(--sub)} body{background:#555}</style></head><body><section class="card layout-point theme-ivory"><div class="masthead"><span>ENOCH MUSIC ACADEMY</span><span>ENOCH — PLATEAU</span></div>
+<div class="kicker">Learning Curve</div><h2 class="title">귀가 손보다
+먼저 자라요</h2><svg viewBox="0 0 860 560" width="860" height="560" style="display:block;margin-top:56px;font-family:var(--ko)">
+ <rect x="216.0" y="40" width="320.0" height="470" fill="#E4DFD5"/>
+ <text x="376.0" y="30" text-anchor="middle" font-size="22" fill="#55524D">정체기처럼 느껴지는 구간</text>
+ <line x1="40" y1="510" x2="850" y2="510" stroke="#111" stroke-width="2"/>
+ <line x1="40" y1="510" x2="40" y2="40" stroke="#111" stroke-width="2"/>
+ <text x="850" y="546" text-anchor="end" font-size="22" fill="#6E6A64">연습 기간 →</text>
+ <text x="52" y="58" font-size="22" fill="#6E6A64">실력 ↑</text>
+ <path d="M40.0 510.0 L48.0 490.0 L56.0 470.9 L64.0 452.6 L72.0 435.2 L80.0 418.5 L88.0 402.6 L96.0 387.4 L104.0 372.8 L112.0 358.9 L120.0 345.6 L128.0 332.9 L136.0 320.8 L144.0 309.2 L152.0 298.1 L160.0 287.6 L168.0 277.5 L176.0 267.8 L184.0 258.6 L192.0 249.7 L200.0 241.3 L208.0 233.2 L216.0 225.5 L224.0 218.2 L232.0 211.2 L240.0 204.4 L248.0 198.0 L256.0 191.9 L264.0 186.0 L272.0 180.4 L280.0 175.1 L288.0 170.0 L296.0 165.1 L304.0 160.4 L312.0 155.9 L320.0 151.7 L328.0 147.6 L336.0 143.7 L344.0 140.0 L352.0 136.4 L360.0 133.0 L368.0 129.8 L376.0 126.7 L384.0 123.7 L392.0 120.9 L400.0 118.2 L408.0 115.6 L416.0 113.1 L424.0 110.8 L432.0 108.5 L440.0 106.4 L448.0 104.3 L456.0 102.3 L464.0 100.5 L472.0 98.7 L480.0 96.9 L488.0 95.3 L496.0 93.7 L504.0 92.2 L512.0 90.8 L520.0 89.4 L528.0 88.1 L536.0 86.9 L544.0 85.7 L552.0 84.5 L560.0 83.4 L568.0 82.4 L576.0 81.4 L584.0 80.5 L592.0 79.5 L600.0 78.7 L608.0 77.8 L616.0 77.1 L624.0 76.3 L632.0 75.6 L640.0 74.9 L648.0 74.2 L656.0 73.6 L664.0 73.0 L672.0 72.4 L680.0 71.9 L688.0 71.3 L696.0 70.8 L704.0 70.3 L712.0 69.9 L720.0 69.4 L728.0 69.0 L736.0 68.6 L744.0 68.2 L752.0 67.9 L760.0 67.5 L768.0 67.2 L776.0 66.9 L784.0 66.6 L792.0 66.3 L800.0 66.0 L808.0 65.7 L816.0 65.5 L824.0 65.2 L832.0 65.0 L840.0 64.8" fill="none" stroke="#111" stroke-width="5" stroke-linecap="round"/>
+ <path d="M40.0 510.0 L48.0 502.8 L56.0 495.7 L64.0 488.7 L72.0 481.9 L80.0 475.1 L88.0 468.5 L96.0 462.0 L104.0 455.5 L112.0 449.2 L120.0 443.0 L128.0 436.8 L136.0 430.8 L144.0 424.9 L152.0 419.0 L160.0 413.3 L168.0 407.6 L176.0 402.1 L184.0 396.6 L192.0 391.2 L200.0 385.9 L208.0 380.7 L216.0 375.6 L224.0 370.5 L232.0 365.6 L240.0 360.7 L248.0 355.9 L256.0 351.1 L264.0 346.5 L272.0 341.9 L280.0 337.4 L288.0 332.9 L296.0 328.6 L304.0 324.3 L312.0 320.0 L320.0 315.9 L328.0 311.8 L336.0 307.8 L344.0 303.8 L352.0 299.9 L360.0 296.1 L368.0 292.3 L376.0 288.6 L384.0 284.9 L392.0 281.3 L400.0 277.8 L408.0 274.3 L416.0 270.9 L424.0 267.5 L432.0 264.2 L440.0 260.9 L448.0 257.7 L456.0 254.5 L464.0 251.4 L472.0 248.3 L480.0 245.3 L488.0 242.4 L496.0 239.4 L504.0 236.6 L512.0 233.8 L520.0 231.0 L528.0 228.2 L536.0 225.5 L544.0 222.9 L552.0 220.3 L560.0 217.7 L568.0 215.2 L576.0 212.7 L584.0 210.3 L592.0 207.9 L600.0 205.5 L608.0 203.2 L616.0 200.9 L624.0 198.6 L632.0 196.4 L640.0 194.2 L648.0 192.1 L656.0 190.0 L664.0 187.9 L672.0 185.8 L680.0 183.8 L688.0 181.9 L696.0 179.9 L704.0 178.0 L712.0 176.1 L720.0 174.2 L728.0 172.4 L736.0 170.6 L744.0 168.8 L752.0 167.1 L760.0 165.4 L768.0 163.7 L776.0 162.0 L784.0 160.4 L792.0 158.8 L800.0 157.2 L808.0 155.7 L816.0 154.1 L824.0 152.6 L832.0 151.1 L840.0 149.7" fill="none" stroke="#8A8A8A" stroke-width="5" stroke-dasharray="14 10" stroke-linecap="round"/>
+ <line x1="376.0" y1="134.7" x2="376.0" y2="280.6" stroke="#111" stroke-width="1.5"/>
+ <path d="M370.0 142.7 L376.0 132.7 L382.0 142.7 M370.0 272.6 L376.0 282.6 L382.0 272.6" fill="none" stroke="#111" stroke-width="1.5"/>
+ <text x="388.0" y="334.6" font-size="22" fill="#111">↑ 들리는 만큼 안 되는 차이</text>
+ <text x="846" y="50.0" text-anchor="end" font-size="26" font-weight="700" fill="#111">귀 (듣는 실력)</text>
+ <text x="846" y="229.2" text-anchor="end" font-size="26" font-weight="700" fill="#6E6A64">손 (연주 실력)</text>
+</svg><div style="display:flex;gap:36px;margin-top:22px;font-size:22px;color:#55524D"><span><svg width="48" height="10"><line x1="2" y1="5" x2="46" y2="5" stroke="#111" stroke-width="5" stroke-linecap="round"/></svg> 귀 (듣는 실력)</span><span><svg width="48" height="10"><line x1="2" y1="5" x2="46" y2="5" stroke="#8A8A8A" stroke-width="5" stroke-dasharray="12 8"/></svg> 손 (연주 실력)</span></div><div class="fnote">개념도 · ENOCH의 설명을 그린 그림이며 실제 측정값이 아닙니다</div>
+<div class="colophon"><span>정체기  停滯期</span><span class="page">A</span></div></section><section class="card layout-point theme-ivory"><div class="masthead"><span>ENOCH MUSIC ACADEMY</span><span>ENOCH — PLATEAU</span></div>
+<div class="kicker">Early vs. Middle</div><h2 class="title">초기와 중기,
+무엇이 다를까요</h2><div class="figtable"><div class="fr fh"><span></span><span>초기</span><span>중기</span></div><div class="fr"><span class="k">실력의 변화</span><span>눈에 띄게 늘어요</span><span>늘어도 작게 느껴져요</span></div><div class="fr"><span class="k">귀</span><span>아직 들리는 게 적어요</span><span>손보다 먼저 자라요</span></div><div class="fr"><span class="k">자주 듣는 말</span><span>재밌어요</span><span>실력이 안 늘어요</span></div><div class="fr"><span class="k">ENOCH에서는</span><span>기본을 건너뛰지 않아요</span><span>새 곡 트랜스크립션,
+맞는 연습법 찾기</span></div></div><div class="fnote">학습 곡선의 일반적인 흐름과 ENOCH의 설명을 정리한 표입니다</div>
+<div class="colophon"><span>정체기  停滯期</span><span class="page">B</span></div></section></body></html>
