@@ -39,7 +39,6 @@
 | `point` | `kicker`, `title`, `body` (문자열 또는 배열) | 한 장 한 메시지 |
 | `chords` | `kicker`, `title`, `chords`[{roman, name, notes, fn}], `body`? | 코드 진행 |
 | `photo` | `image`, `imagePosition`?, `imageSize`?, `imageHeight`?(사진 높이 px, 기본 790 — 본문이 길면 줄인다), `title`?, `body`? | 실제 사진 한 장 |
-| `quote` | `title`(가운데 큰 문장, `\n`으로 2–3줄), `label`?(위 라벨, 기본 `ENOCH MUSIC ACADEMY` — 이슈 번호 등), `by`?(출처 한 줄, 앞에 — 자동), `note`?(아래 회색 정보), `body`?(문장 아래 짧은 본문, 36px), `size`?(문장 크기 px, 기본 96) | 타이포그래피 시리즈 — 사진·두들 없음, 머리말·꼬리말 대신 라벨/출처. 테마 `bluegray` 권장 |
 | `instructor` | `nameEn`, `nameKo`, `subject`, `image`, `role`?, `meta`[{k, v}]? | 강사 소개 포스터 (인용문 없음) |
 
 ## 확정본의 리듬 (새 편도 따른다)
@@ -49,18 +48,6 @@
 
 ## 렌더러 경고
 장수(5–10장 밖), 글자 수, 금지 표현, 이모지, 없는 사진, 알 수 없는 건반 음 이름
-
-## 타이포그래피 시리즈 (quote · bluegray)
-Magazine B "Quote of the Day" 결. 사진 요소 없이 문장이 주인공.
-- 테마 `bluegray`: 배경 #B8C5D6, 글자는 검정(#111) · 회색(#4A4A4A)만.
-- 구조: 위 라벨 22px 모노 대문자 → 가운데 문장 96px 굵게, 위아래 여백 80px, 가운데 정렬 → 아래 출처 26px · 정보 22px 회색.
-  (요청 기준 12 / 48–56 / 11px은 작은 화면 기준 비율이라, 1080px 카드에서는 휴대폰 피드에서 읽히도록 약 2배로 잡았다. 장마다 `size`로 조절.)
-- 마무리 장은 `closing`(black) 또는 `quote`로 학원 정보를 `note`에 넣는다.
-
-```jsonc
-{ "layout": "quote", "theme": "bluegray", "label": "ENOCH MUSIC ACADEMY — PRINCIPLE 01",
-  "title": "진도보다\n이해를 먼저 봅니다.", "by": "ENOCH의 원칙", "note": "Understanding before progress." }
-```
 
 ## 파스텔 테마 (시안 단계 — CLAUDE.md 반영 전)
 `theme`: `sage`(세이지) · `blush`(블러시) · `mist`(미스트) · `butter`(버터) · `lilac`(라일락). 채도를 낮춘 배경 + 같은 계열의 짙은 글자.
