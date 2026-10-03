@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../templates/card.css">
+<style>
+  html, body { background: var(--ivory); }
+  .sheet { width: 1080px; height: 1350px; background: var(--bg); color: var(--fg); padding: 64px 72px 56px; display: flex; flex-direction: column; }
+  .head { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 18px; letter-spacing: 2.4px; padding-bottom: 18px; border-bottom: 2px solid var(--rule); }
+  .title { margin-top: 44px; display: flex; justify-content: space-between; align-items: flex-end; }
+  .title h1 { font-size: 46px; font-weight: 700; letter-spacing: -1px; line-height: 1.2; }
+  .title h1 span { display: block; font-size: 22px; font-weight: 400; color: var(--sub); letter-spacing: 0; margin-bottom: 10px; }
+  .en { font-family: var(--en); font-weight: 700; font-size: 92px; letter-spacing: -3px; line-height: .8; text-transform: uppercase; }
+  .rows { margin-top: 48px; border-top: 1px solid var(--hair); }
+  .row { display: grid; grid-template-columns: 212px 1fr; padding: 24px 0; border-bottom: 1px solid var(--hair); }
+  .lab { font-family: var(--mono); font-size: 16px; letter-spacing: 2.4px; color: var(--sub); text-transform: uppercase; padding-top: 6px; }
+  .val { font-size: 25px; font-weight: 600; line-height: 1.4; }
+  .val small { display: block; font-size: 19px; font-weight: 400; color: var(--body); margin-top: 4px; line-height: 1.5; }
+  .tel { font-family: var(--en); font-size: 34px; font-weight: 700; letter-spacing: .5px; }
+  .hours { display: grid; grid-template-columns: auto 1fr; column-gap: 20px; }
+  .hours b { font-weight: 400; color: var(--sub); font-size: 20px; padding-top: 3px; }
+  .bio { margin-top: 10px; list-style: none; display: grid; grid-template-columns: 1fr 1fr; column-gap: 28px; row-gap: 5px; }
+  .bio li { font-size: 18px; font-weight: 400; color: var(--body); line-height: 1.45; padding-left: 14px; position: relative; }
+  .bio li::before { content: ""; position: absolute; left: 0; top: 11px; width: 6px; height: 1px; background: var(--fg); }
+  .foot { margin-top: auto; display: flex; justify-content: space-between; font-size: 18px; color: var(--sub); padding-top: 16px; border-top: 2px solid var(--rule); }
+</style>
+</head>
+<body>
+<div class="sheet theme-ivory">
+  <div class="head"><span>ENOCH MUSIC ACADEMY</span><span>ANSAN — SAXOPHONE</span></div>
+
+  <div class="title">
+    <h1><span>색소폰 1:1 레슨</span>에녹실용음악학원 안산점</h1>
+    <div class="en">SAX</div>
+  </div>
+
+  <div class="rows">
+    <div class="row"><div class="lab">Address</div>
+      <div class="val">경기도 안산시 단원구 광덕대로 193 신양타운 8층
+        <small>고잔역 · NC백화점 건너편 신양타운 8층 · 건물 주차 가능</small></div></div>
+
+    <div class="row"><div class="lab">Contact</div>
+      <div class="val"><span class="tel">010 6565 3444</span>
+        <small>상담·악기 구입 문의는 전화로 안내합니다</small></div></div>
+
+    <div class="row"><div class="lab">Hours</div>
+      <div class="val hours"><b>평일</b><span>13:00 – 22:00</span><b>토요일</b><span>13:00 – 18:00</span><b>일요일</b><span>휴무</span></div></div>
+
+    <div class="row"><div class="lab">Lesson</div>
+      <div class="val">1:1 레슨 · 주 1회 1시간
+        <small>4회 단위 수강 · 수강료는 상담 때 안내합니다</small></div></div>
+
+    <div class="row"><div class="lab">Practice room</div>
+      <div class="val">수강생은 운영시간 안에 연습실을 자유롭게 쓸 수 있습니다
+        <small>악기 대여와 체험 레슨은 운영하지 않습니다</small></div></div>
+
+    <div class="row"><div class="lab">Instructor</div>
+      <div class="val">최성철 <span style="font-weight:400;color:var(--sub);font-size:20px">색소폰</span>
+        <ul class="bio">
+          <li>한양대 및 백석 음악 대학원 실용음악과 색소폰 전공</li>
+          <li>청담 씨티칼리지 실용예술 전문학교 실용음악과 학과장 역임</li>
+          <li>(주)엠파이브 TV 대표</li>
+          <li>부라보 색소폰 라이프 등 다수 기획 및 제작</li>
+          <li>창신대, 국제대, 경상대, 예원예대, 경남 예고 등 다수 출강</li>
+          <li>에녹 실용음악 학원 대표 (안산, 광명, 시흥, 일산, 행신, 소하 등 직영 운영)</li>
+          <li>언바란스 색소폰 클럽 원장</li>
+          <li>공연 및 각종 콘서트 수백여 회 기획 및 진행</li>
+        </ul></div></div>
+  </div>
+
+  <div class="foot"><span>에녹실용음악학원 안산점</span><span class="mono" style="font-size:16px;letter-spacing:2px">ENOCH ANSAN</span></div>
+</div>
+</body>
+</html>
