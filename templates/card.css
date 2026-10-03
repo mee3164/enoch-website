@@ -97,6 +97,8 @@ body { font-family: var(--ko); word-break: keep-all; -webkit-font-smoothing: ant
 .pr-split .pr-block { margin: 0 -96px; padding: 60px 96px 56px; background: var(--block, var(--sage)); color: #1B1B1B; }
 .pr-split .pr-block .kicker { color: rgba(0,0,0,.55); }
 .pr-split .pr-no { border-bottom: 0; padding-bottom: 0; margin-top: 20px; }
+/* 풀이가 두 문단 이상이면 색면을 위로 올려 꼬리말 실선과 간격을 지킨다 (한 문단인 기존 편은 영향 없음) */
+.layout-principle:has(.pr-split .body + .body) { padding-top: 206px; }
 .pr-outline .pr-no { color: transparent; -webkit-text-stroke: 2px var(--fg); font-size: 380px; letter-spacing: -14px; }
 .pr-circle .pr-disc { position: absolute; top: 150px; right: 96px; width: 420px; height: 420px; border-radius: 50%; background: var(--block, var(--blush)); display: flex; align-items: center; justify-content: center; font-family: var(--en); font-size: 200px; font-weight: 800; letter-spacing: -8px; color: #1B1B1B; }
 .pr-circle .pr-title { margin-top: 400px; padding-top: 44px; border-top: 1.5px solid var(--rule); }
