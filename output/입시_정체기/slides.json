@@ -9,7 +9,7 @@
       "layout": "typecover",
       "kicker": "Exam Prep",
       "en": "Plateau",
-      "title": "입시 4–6개월 차",
+      "title": "입시 4 – 6개월 차",
       "sub": "실력이 멈춘 것 같을 때",
       "doodles": [
         {
@@ -91,31 +91,15 @@
       ]
     },
     {
-      "layout": "point",
-      "kicker": "In This Season",
+      "layout": "photo",
       "title": "이 시기에 ENOCH은\n새로운 곡을\n트랜스크립션하게 해요.",
       "body": [
-        "트랜스크립션은 곡을 귀로 듣고 받아 적는 거예요.",
-        "그리고 그 학생에게 더 맞는 연습 방법을\n**같이 찾아봐요.**"
+        "트랜스크립션은 곡을 귀로 듣고 따 보는 거예요.",
+        "그리고 그 학생에게 더 맞는 연습 방법을 **같이 찾아봐요.**"
       ],
-      "doodles": [
-        {
-          "name": "score",
-          "x": 560,
-          "y": 960,
-          "size": 200,
-          "rotate": -8,
-          "fill": "lilac"
-        },
-        {
-          "name": "headphones",
-          "x": 800,
-          "y": 1000,
-          "size": 170,
-          "rotate": 12,
-          "fill": "lilac"
-        }
-      ]
+      "image": "images/공간/기타앰프_01.jpg",
+      "imageHeight": 500,
+      "imagePosition": "center 62%"
     },
     {
       "layout": "closing",
