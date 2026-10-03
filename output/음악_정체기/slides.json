@@ -1,0 +1,74 @@
+{
+  "title": "음악 실력 정체기 — 귀가 손보다 먼저 자라는 시기",
+  "masthead": "ENOCH — PLATEAU",
+  "footer": "정체기  停滯期",
+  "ticker": "PLATEAU — 정체기 — ENOCH MUSIC ACADEMY",
+  "theme": "ivory",
+  "slides": [
+    {
+      "layout": "typecover",
+      "kicker": "For Every Learner",
+      "en": "Plateau",
+      "title": "실력이 멈춘 것 같을 때",
+      "sub": "입시생도 취미생도,\n배우는 사람 대부분이 지나가는 시기예요.",
+      "index": [
+        "자주 듣는 말",
+        "뇌의 연결",
+        "학습 곡선",
+        "ENOCH의 방식"
+      ]
+    },
+    {
+      "layout": "point",
+      "theme": "black",
+      "kicker": "What We Hear",
+      "title": "\"실력이\n안 느껴져요\"",
+      "body": [
+        "\"선생님, 실력이 안 늘어요.\"\n\"그만하고 싶어요.\"\n\"다른 악기로 바꿀까요?\"",
+        "하지만 멈춘 게 아니에요.\n**아주 정상적인 과정이에요.**"
+      ]
+    },
+    {
+      "layout": "figure",
+      "kicker": "Neuroplasticity",
+      "title": "연습하면 뇌의\n연결이 바뀌어요 🧠",
+      "src": "fig_neuron.html",
+      "note": "개념도 · 실제 뉴런의 모양과 크기를 단순화한 그림입니다"
+    },
+    {
+      "layout": "figure",
+      "kicker": "Learning Curve",
+      "title": "귀가 손보다\n먼저 자라요",
+      "src": "fig_curve.html",
+      "note": "개념도 · ENOCH의 설명을 그린 그림이며 실제 측정값이 아닙니다"
+    },
+    {
+      "layout": "principle",
+      "theme": "ivory",
+      "kicker": "Principle",
+      "no": "01",
+      "title": "진도보다 이해를\n먼저 봅니다.",
+      "en": "Understanding before progress.",
+      "body": [
+        "실력이 없어서가 아니에요.\n**듣는 귀가 자란 결과예요.**",
+        "진도로 재면 멈춘 것 같은 시기도,\n귀는 자라고 있어요."
+      ],
+      "variant": "split",
+      "block": "lilac"
+    },
+    {
+      "layout": "photo",
+      "title": "이 시기에 ENOCH은\n새로운 곡을\n트랜스크립션하게 해요.",
+      "body": [
+        "트랜스크립션은 곡을 귀로 듣고 따 보는 거예요.",
+        "그리고 그 학생에게 더 맞는 연습 방법을 **같이 찾아봐요.**"
+      ],
+      "image": "images/공간/기타앰프_01.jpg",
+      "imageHeight": 500,
+      "imagePosition": "center 62%"
+    },
+    {
+      "layout": "closing"
+    }
+  ]
+}
