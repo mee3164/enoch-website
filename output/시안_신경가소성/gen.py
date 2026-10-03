@@ -36,11 +36,56 @@ extra = '''.figtable{margin-top:64px;border-top:2px solid var(--rule)}
 .fh{font-family:var(--mono);font-size:20px;letter-spacing:3px;color:var(--sub);padding:20px 0}
 .fr .k{font-size:24px;color:var(--sub);padding-top:4px}
 .fnote{margin-top:auto;margin-bottom:34px;padding-top:14px;font-size:20px;color:var(--sub)}'''
+
+# ---- C: 신경가소성 개념도 (뉴런 두 개의 연결이 연습에 따라 바뀌는 과정)
+def neuron_pair(stage):
+    ink = "#111"; y = 60
+    w_ax = {1: 1.6, 2: 3.2, 3: 4.6}[stage]
+    dash = ' stroke-dasharray="4 6"' if stage == 1 else ""
+    g = ""
+    for a in (120, 150, 180, 210, 240):
+        r = math.radians(a)
+        g += f'<line x1="40" y1="{y}" x2="{40+38*math.cos(r):.1f}" y2="{y-38*math.sin(r):.1f}" stroke="{ink}" stroke-width="1.6"/>'
+    g += f'<circle cx="40" cy="{y}" r="18" fill="#F1EDE4" stroke="{ink}" stroke-width="2"/><circle cx="40" cy="{y}" r="6" fill="{ink}"/>'
+    g += f'<line x1="58" y1="{y}" x2="292" y2="{y}" stroke="{ink}" stroke-width="{w_ax}"{dash}/>'
+    if stage >= 2:
+        n = 4 if stage == 2 else 6
+        seg = 200 / n
+        for k in range(n):
+            x = 72 + k*seg; hh = 14 if stage == 2 else 18
+            g += f'<rect x="{x:.1f}" y="{y-hh/2}" width="{seg-8:.1f}" height="{hh}" rx="{hh/2}" fill="#C9C4BB" stroke="{ink}" stroke-width="1.2"/>'
+    ends = {1: [0], 2: [-10, 10], 3: [-16, 0, 16]}[stage]
+    for dy in ends:
+        g += f'<path d="M292 {y} Q302 {y+dy} 312 {y+dy}" fill="none" stroke="{ink}" stroke-width="{max(1.4, w_ax-1.4):.1f}"{dash}/>'
+        g += f'<circle cx="314" cy="{y+dy}" r="{3 if stage==1 else 4.5}" fill="{ink}"/>'
+        g += f'<line x1="318" y1="{y+dy}" x2="340" y2="{y}" stroke="{ink}" stroke-width="1.2"/>'
+    g += f'<line x1="340" y1="{y}" x2="372" y2="{y}" stroke="{ink}" stroke-width="1.6"/>'
+    for a in (20, -20, 60, -60):
+        r = math.radians(a)
+        g += f'<line x1="390" y1="{y}" x2="{390+38*math.cos(r):.1f}" y2="{y-38*math.sin(r):.1f}" stroke="{ink}" stroke-width="1.6"/>'
+    g += f'<circle cx="390" cy="{y}" r="18" fill="#F1EDE4" stroke="{ink}" stroke-width="2"/><circle cx="390" cy="{y}" r="6" fill="{ink}"/>'
+    if stage == 3:
+        g += f'<path d="M130 {y-34} H190 M182 {y-40} L190 {y-34} L182 {y-28}" fill="none" stroke="{ink}" stroke-width="1.4"/>'
+        g += f'<text x="198" y="{y-28}" font-size="18" fill="#55524D">빠르게</text>'
+    return f'<svg width="440" height="120" viewBox="0 0 440 120">{g}</svg>'
+steps = [(1, "처음", "연결이 약해서 신호가\n잘 전해지지 않아요."),
+         (2, "반복", "자주 쓰는 연결이 굵어지고,\n신호 길이 수초로 감싸여요."),
+         (3, "익숙해짐", "신호가 빠르고 정확해져서,\n생각하지 않아도 손이 움직여요.")]
+neuro = '<p class="ndef">신경가소성(Neuroplasticity) — 쓰는 만큼 뇌의 연결이 바뀌는 성질</p><div class="nrows">' + "".join(
+    f'<div class="nrow"><div class="ndia">{neuron_pair(n)}</div><div class="ntxt"><b>0{n} {h}</b><span>{t}</span></div></div>' for n, h, t in steps) + '</div>'
+extra += """
+.ndef{margin-top:24px;font-size:26px;color:var(--body)}
+.nrows{margin-top:32px;border-top:2px solid var(--rule)}
+.nrow{display:grid;grid-template-columns:460px 1fr;align-items:center;gap:24px;padding:16px 0;border-bottom:1px solid var(--hair)}
+.ntxt b{display:block;font-family:var(--mono);font-weight:400;font-size:20px;letter-spacing:3px;color:var(--sub);margin-bottom:10px}
+.ntxt span{font-size:27px;line-height:1.5;white-space:pre-line}"""
+
 def card(n, kicker, title, inner, note):
     return f'''<section class="card layout-point theme-ivory"><div class="masthead"><span>ENOCH MUSIC ACADEMY</span><span>ENOCH — PLATEAU</span></div>
 <div class="kicker">{kicker}</div><h2 class="title">{title}</h2>{inner}<div class="fnote">{note}</div>
 <div class="colophon"><span>정체기  停滯期</span><span class="page">{n}</span></div></section>'''
 html = f'<!doctype html><html><head><meta charset="utf-8"><style>{CSS}{extra} body{{background:#555}}</style></head><body>' + \
   card("A", "Learning Curve", "귀가 손보다\n먼저 자라요", svg + legend, "개념도 · ENOCH의 설명을 그린 그림이며 실제 측정값이 아닙니다") + \
-  card("B", "Early vs. Middle", "초기와 중기,\n무엇이 다를까요", table, "학습 곡선의 일반적인 흐름과 ENOCH의 설명을 정리한 표입니다") + '</body></html>'
+  card("B", "Early vs. Middle", "초기와 중기,\n무엇이 다를까요", table, "학습 곡선의 일반적인 흐름과 ENOCH의 설명을 정리한 표입니다") + \
+  card("C", "Neuroplasticity", "연습하면\n뇌의 연결이 바뀌어요", neuro, "개념도 · 실제 뉴런의 모양과 크기를 단순화한 그림입니다") + '</body></html>'
 open("figures.html", "w").write(html)
