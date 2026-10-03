@@ -230,3 +230,9 @@ body { font-family: var(--ko); word-break: keep-all; -webkit-font-smoothing: ant
 .meta > div { font-size: 24px; line-height: 1.5; }
 .meta b { display: block; font-family: var(--mono); font-size: 18px; font-weight: 400; letter-spacing: 2px; color: var(--sub); margin-bottom: 6px; text-transform: uppercase; }
 
+
+/* ── figure: 그래프·개념도 한 장 ───────────── */
+.layout-figure { padding-top: 196px; }
+.layout-figure .figure { margin-top: 24px; }
+.layout-figure .figure > svg:first-child { width: 100%; height: auto; max-height: 520px; }
+.fig-note { margin-top: auto; margin-bottom: 40px; font-size: 20px; color: var(--sub); }
