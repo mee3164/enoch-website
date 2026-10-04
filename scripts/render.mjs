@@ -292,7 +292,7 @@ for (const [i, s] of deck.slides.entries()) {
   if (!fn) throw new Error(`${i + 1}장: 알 수 없는 layout "${s.layout}" (가능: ${Object.keys(layouts).join(", ")})`);
   check(i, s);
   const theme = s.theme || deck.theme || "ivory";
-  const extra = s.layout === "parts" && (s.items || []).length > 3 ? " compact" : "";
+  const extra = s.layout === "parts" && ((s.items || []).length > 3 || s.compact) ? " compact" : "";
   const head = s.layout === "instructor" ? "" : `<div class="masthead"><span>${esc(brand.nameEn)}</span><span>${esc(deck.masthead || "")}</span></div>`;
   const foot = s.layout === "cover" || s.layout === "typecover" ? "" : `<div class="colophon"><span>${esc(deck.footer || "")}</span><span class="page">${two(i + 1)} / ${two(total)}</span></div>`;
   cards.push(`<section class="card layout-${s.layout}${extra} theme-${theme}" id="card-${i + 1}">
