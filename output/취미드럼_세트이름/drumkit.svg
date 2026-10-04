@@ -87,9 +87,9 @@
 <line x1="456" y1="150" x2="512" y2="223" stroke="#111" stroke-width="1.2"/><circle cx="512" cy="223" r="4" fill="#111"/>
 <circle cx="444" cy="140" r="19" fill="#111"/><text x="444" y="147" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="20" font-weight="500" fill="#F1EDE4">3</text>
 <text x="444" y="96" text-anchor="middle" font-family="Pretendard, 'Noto Sans KR', sans-serif" font-size="25" font-weight="600" letter-spacing="-0.5" fill="#111">탐(하이·미드)</text>
-<line x1="850" y1="282" x2="826" y2="318" stroke="#111" stroke-width="1.2"/><circle cx="826" cy="318" r="4" fill="#111"/>
-<circle cx="850" cy="262" r="19" fill="#111"/><text x="850" y="269" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="20" font-weight="500" fill="#F1EDE4">5</text>
-<text x="818" y="270" text-anchor="end" font-family="Pretendard, 'Noto Sans KR', sans-serif" font-size="25" font-weight="600" letter-spacing="-0.5" fill="#111">하이햇</text>
+<line x1="768" y1="280" x2="826" y2="318" stroke="#111" stroke-width="1.2"/><circle cx="826" cy="318" r="4" fill="#111"/>
+<circle cx="760" cy="262" r="19" fill="#111"/><text x="760" y="269" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="20" font-weight="500" fill="#F1EDE4">5</text>
+<text x="790" y="270" text-anchor="start" font-family="Pretendard, 'Noto Sans KR', sans-serif" font-size="25" font-weight="600" letter-spacing="-0.5" fill="#111">하이햇</text>
 <line x1="770" y1="79" x2="712" y2="150" stroke="#111" stroke-width="1.2"/><circle cx="712" cy="150" r="4" fill="#111"/>
 <circle cx="770" cy="60" r="19" fill="#111"/><text x="770" y="67" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="20" font-weight="500" fill="#F1EDE4">6</text>
 <text x="800" y="69" text-anchor="start" font-family="Pretendard, 'Noto Sans KR', sans-serif" font-size="25" font-weight="600" letter-spacing="-0.5" fill="#111">크래시</text>
