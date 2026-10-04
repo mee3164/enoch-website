@@ -1,0 +1,76 @@
+{
+  "title": "LESSON — 드럼 세트, 이름부터 알아볼까요",
+  "masthead": "LESSON — DRUM KIT",
+  "footer": "드럼 세트",
+  "ticker": "LESSON — DRUM KIT — 드럼 세트 — ENOCH MUSIC ACADEMY",
+  "theme": "ivory",
+  "slides": [
+    {
+      "layout": "cover",
+      "image": "images/공간/드럼세트_01.jpg",
+      "imagePosition": "50% 96%",
+      "en": "Drum Kit",
+      "ko": "드럼 세트, 이름부터",
+      "sub": "처음 드럼을 배우는 분께",
+      "issue": "LESSON\nDRUM"
+    },
+    {
+      "layout": "dictionary",
+      "theme": "black",
+      "kicker": "Dictionary",
+      "word": "드럼 세트",
+      "en": "Drum Kit",
+      "pos": "명사",
+      "definition": "북과 심벌 여러 개를, 한 사람이 앉아서 두 손과 두 발로 함께 연주하도록 모아 둔 악기.",
+      "terms": [
+        { "ko": "북", "en": "Drums", "text": "막을 쳐서 소리 내요. 베이스드럼 · 스네어 · 탐 · 플로어탐." },
+        { "ko": "심벌", "en": "Cymbals", "text": "금속 판을 쳐서 소리 내요. 하이햇 · 크래시 · 라이드." }
+      ]
+    },
+    {
+      "layout": "figure",
+      "kicker": "Diagram",
+      "title": "드럼 세트,\n번호로 한눈에 봐요.",
+      "src": "drumkit.svg",
+      "note": "개념도 · 일반적인 드럼 세트를 단순화한 그림이에요. 오른손잡이 기준의 흔한 배치이고, 세트마다 구성과 위치가 달라요."
+    },
+    {
+      "layout": "parts",
+      "kicker": "Drum Kit, Seven Parts — 1/2",
+      "title": "발로 치는 북 하나,\n손으로 치는 북 여럿.",
+      "start": 1,
+      "items": [
+        { "en": "Bass Drum", "ko": "베이스드럼(킥)", "text": "바닥에 놓인 가장 큰 북. 발 페달로 치고, 낮게 '쿵' 울려요." },
+        { "en": "Snare", "ko": "스네어", "text": "연주자 바로 앞의 북. 아랫면의 가는 철사 줄 덕에 '짝' 짧게 울려요. 많은 곡에서 2·4박을 맡아요." },
+        { "en": "Tom", "ko": "탐(하이·미드)", "text": "베이스드럼 위나 스탠드에 달린 작은 북 둘. 하이가 더 높아요. 필인(구간을 잇는 짧은 연주)에서 많이 써요." },
+        { "en": "Floor Tom", "ko": "플로어탐", "text": "다리를 세워 바닥에 두는 큰 탐. 탐 가운데 가장 낮게 울려요." }
+      ]
+    },
+    {
+      "layout": "parts",
+      "kicker": "Drum Kit, Seven Parts — 2/2",
+      "title": "심벌은 셋,\n하는 일이 다 달라요.",
+      "start": 5,
+      "items": [
+        { "en": "Hi-Hat", "ko": "하이햇", "text": "심벌 두 장을 마주 붙인 것. 페달을 밟으면 닫혀 '칙' 짧게, 떼면 열려 길게 울려요." },
+        { "en": "Crash", "ko": "크래시", "text": "'촤앙' 하고 터지는 심벌. 곡이 시작되거나 구간이 바뀌는 자리에서 강조로 많이 써요." },
+        { "en": "Ride", "ko": "라이드", "text": "크고 묵직한 심벌. '팅' 하는 또렷한 소리로 일정한 리듬을 새겨요." }
+      ]
+    },
+    {
+      "layout": "point",
+      "kicker": "The ENOCH Way",
+      "title": "기본은\n건너뛰지 않습니다.",
+      "body": [
+        "부품 이름도 기본이에요. 이름을 알면 \"하이햇 닫고\", \"플로어탐으로\" 같은 말을 바로 따라갈 수 있어요.",
+        "ENOCH의 레슨은 모든 과정 **1:1**이에요. 수강생은 운영시간 안에 연습실을 쓸 수 있어요."
+      ]
+    },
+    {
+      "layout": "closing",
+      "theme": "black",
+      "ghost": "ENOCH",
+      "principle": "나만의 진짜 소리를\n찾는 곳."
+    }
+  ]
+}
