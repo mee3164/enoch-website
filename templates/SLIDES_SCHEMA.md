@@ -26,8 +26,8 @@
 | `keyboard` | 05 | `kicker`, `title`, `boards`[{en, ko, notes: ["C","Eb","G"], caption}] (1–2개) | ivory |
 | `beats` | (05 변형) | `kicker`, `title`, `boards`[{en, ko, meter(예 `4/4`), steps(8·16·12), perBeat?, rows[{name, hits:[칸 번호], accents?:[큰 점], soft?:[테두리 점]}], caption, rowH?(행 높이, 기본 92), headH?(머리 칸 높이, 기본 48)}] (1–2개). 칸 번호는 1부터, 8칸이면 1·3·5·7이 1·2·3·4박. accents 칸은 hits에도 넣어야 큰 점이 된다 | ivory |
 | `parts` | 06·07 | `kicker`, `title`, `items`[{en, ko, text}] (3개, 4개면 자동으로 촘촘하게), `compact`?(true면 3개여도 촘촘하게 — 설명이 두 줄이라 넘칠 때, 같은 편 4항목 장과 결을 맞출 때), `start`?(번호 시작) | ivory |
-| `steps` | 08 | `kicker`, `title`, `lead`?, `items`[{head, text}] (3개) | black |
-| `way` | 09 | `kicker`, `title`, `items`["문장"] (3개) | ivory |
+| `steps` | 08 | `kicker`, `title`, `lead`?, `items`[{head, text}] (3개), `compact`?(true면 줄 간격을 좁힘 — 설명이 세 줄씩이라 꼬리말 실선에 닿을 때) | black |
+| `way` | 09 | `kicker`, `title`, `items`["문장"] (3개, 4개면 자동으로 촘촘하게), `compact`?(true면 3개여도 촘촘하게 — 제목이 세 줄일 때) | ivory |
 | `closing` | 10 | `ghost`?(기본 ENOCH), `principle`?(기본 시그니처 문구), `principleEn`? — 주소·전화·과목은 자동 | black |
 
 ## 보조 유형 (확정본 톤으로 맞춤)
