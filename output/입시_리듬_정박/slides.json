@@ -32,7 +32,7 @@
     },
     {
       "layout": "steps",
-      "theme": "black",
+      "theme": "ivory",
       "kicker": "Practice",
       "title": "무게가 옮겨 가는 걸\n몸으로 느끼는 세 단계",
       "items": [
@@ -52,18 +52,7 @@
       "compact": true
     },
     {
-      "layout": "principle",
-      "kicker": "The ENOCH Way",
-      "no": "01",
-      "title": "진도보다 이해를\n먼저 봅니다.",
-      "en": "Understanding before progress.",
-      "body": [
-        "**악기가 달라도, 리듬의 원리는 하나예요.**",
-        "보컬의 프레이즈도, 베이스의 한 음도,\n드럼의 필인도 정박을 향해 모여요.\n셔플·스윙·보사노바·펑크, 강세 자리는 달라도\n모든 음이 박을 기준으로 자리를 찾아요.",
-        "입시 상담 010 3949 3666"
-      ],
-      "variant": "split",
-      "block": "butter"
+      "layout": "closing"
     }
   ]
 }
