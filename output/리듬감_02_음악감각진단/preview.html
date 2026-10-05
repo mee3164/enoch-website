@@ -1,0 +1,378 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<title>입시 — 리듬감 시리즈 #2 음악 감각 진단</title><style>/* ENOCH 카드뉴스 템플릿 — 1080x1350
+   기준 디자인: templates/reference/ENOCH_ISSUE_01/ (확정본). 수치는 확정본에서 측정한 값이다. */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap");
+
+:root {
+  --ivory: #F1EDE4;
+  --black: #111111;
+  --gray: #8A8A8A;
+  --ko: "Pretendard", "Pretendard Variable", "Noto Sans KR", "Apple SD Gothic Neo", "WenQuanYi Zen Hei", sans-serif;
+  --mono: "IBM Plex Mono", "SF Mono", Menlo, "DejaVu Sans Mono", "WenQuanYi Zen Hei Mono", monospace;
+  --en: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", var(--ko);
+}
+.theme-ivory { --bg: var(--ivory); --fg: var(--black); --body: #55524D; --sub: #6E6A64; --rule: rgba(17,17,17,.9); --hair: rgba(17,17,17,.55); --ghost: #E4DFD5; }
+/* 파스텔 테마 (시안) — 채도를 낮춘 톤. 글자는 짙은 같은 계열 */
+:root { --sage: #DCE2D3; --blush: #EEDFD8; --mist: #D9E1E8; --butter: #F1E8CB; --lilac: #E3DDE9; }
+.theme-sage   { --bg: var(--sage);   --fg: #1F2A22; --body: #4B5549; --sub: #6B7566; --rule: rgba(31,42,34,.85); --hair: rgba(31,42,34,.35); --ghost: #CCD4C2; }
+.theme-blush  { --bg: var(--blush);  --fg: #2B1F1C; --body: #5A4A45; --sub: #806A63; --rule: rgba(43,31,28,.85); --hair: rgba(43,31,28,.32); --ghost: #E3CFC6; }
+.theme-mist   { --bg: var(--mist);   --fg: #1B232B; --body: #46525D; --sub: #66727D; --rule: rgba(27,35,43,.85); --hair: rgba(27,35,43,.32); --ghost: #C9D3DC; }
+.theme-butter { --bg: var(--butter); --fg: #2A2517; --body: #5A5340; --sub: #7E765E; --rule: rgba(42,37,23,.85); --hair: rgba(42,37,23,.32); --ghost: #E6DAB2; }
+.theme-lilac  { --bg: var(--lilac);  --fg: #231E2A; --body: #534C5C; --sub: #756D7F; --rule: rgba(35,30,42,.85); --hair: rgba(35,30,42,.32); --ghost: #D6CEDF; }
+.theme-black { --bg: var(--black); --fg: var(--ivory); --body: #C9C4BB; --sub: #9A958C; --rule: rgba(241,237,228,.85); --hair: rgba(241,237,228,.28); --ghost: #2A2825; }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #555; }
+body { font-family: var(--ko); word-break: keep-all; -webkit-font-smoothing: antialiased; }
+.preview .card { margin: 40px auto; }
+
+.card {
+  position: relative; width: 1080px; height: 1350px; overflow: hidden;
+  background: var(--bg); color: var(--fg);
+  padding: 118px 96px 120px;
+  display: flex; flex-direction: column;
+}
+
+/* ── 머리말 / 꼬리말 ───────────────────────────── */
+.masthead, .colophon {
+  position: absolute; left: 96px; right: 96px;
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: var(--mono); font-size: 20px; font-weight: 400; letter-spacing: 2.4px; color: var(--fg);
+}
+.masthead { top: 70px; height: 48px; border-bottom: 1.5px solid var(--rule); padding-bottom: 14px; align-items: flex-end; }
+.colophon { top: 1230px; height: 70px; border-top: 1.5px solid var(--rule); padding-top: 4px; }
+.colophon .page { letter-spacing: 3px; }
+
+/* ── 공통 타이포 ─────────────────────────────── */
+.kicker { font-family: var(--mono); font-size: 21px; letter-spacing: 3.2px; color: var(--sub); text-transform: uppercase; }
+.title { font-size: 64px; font-weight: 800; line-height: 1.34; letter-spacing: -2px; white-space: pre-line; }
+.kicker + .title { margin-top: 28px; }
+.lead { margin-top: 26px; font-size: 26px; font-weight: 300; color: var(--sub); }
+.body { font-size: 29px; font-weight: 300; line-height: 1.86; letter-spacing: -0.4px; color: var(--body); white-space: pre-line; }
+.body + .body { margin-top: 30px; }
+.em { font-weight: 700; color: var(--fg); }
+.mono { font-family: var(--mono); }
+
+/* 선으로 나눈 행 (IN NUMBERS / PARTS / STEPS / WAY 공통) */
+.rows { border-top: 1.5px solid var(--rule); }
+.rows > .r { border-bottom: 1.5px solid var(--rule); display: grid; }
+.theme-black .rows { border-top-color: var(--hair); }
+.theme-black .rows > .r { border-bottom-color: var(--hair); }
+
+/* ── cover ─────────────────────────────────── */
+.layout-cover { padding: 165px 96px 0; }
+.cover-photo { width: 888px; height: 790px; background-size: cover; background-position: center; filter: grayscale(1) sepia(.18) contrast(1.02); }
+.cover-photo.photo-missing { filter: none; }
+.cover-en { margin-top: 56px; font-family: var(--en); font-size: 162px; font-weight: 700; line-height: .86; letter-spacing: -3px; text-transform: uppercase; white-space: nowrap; }
+.cover-sub { margin-top: 40px; display: flex; justify-content: space-between; align-items: flex-end; }
+.cover-sub .ko { font-size: 40px; font-weight: 300; color: var(--sub); letter-spacing: -1px; }
+.cover-sub .ko b { font-weight: 700; color: var(--fg); }
+.cover-sub .issue { font-family: var(--mono); font-size: 20px; line-height: 1.5; letter-spacing: 2px; text-align: left; }
+.ticker {
+  position: absolute; left: 0; right: 0; top: 1278px; height: 72px;
+  border-top: 1.5px solid var(--rule); padding-top: 22px;
+  font-family: var(--mono); font-size: 21px; letter-spacing: 2.6px; white-space: nowrap; overflow: hidden;
+}
+
+/* ── typecover (사진 없는 표지) ─────────────── */
+.layout-typecover { padding-top: 250px; }
+.tc-en { margin-top: auto; font-family: var(--en); font-size: 150px; font-weight: 700; line-height: .9; letter-spacing: -4px; text-transform: uppercase; white-space: pre-line; }
+.tc-title { margin-top: 90px; padding-top: 44px; border-top: 1.5px solid var(--rule); font-size: 76px; font-weight: 800; line-height: 1.3; letter-spacing: -2.5px; white-space: pre-line; }
+.tc-index { margin-top: 44px; display: grid; grid-template-columns: 1fr 1fr; border-top: 1.5px solid var(--rule); }
+.tc-i { display: flex; align-items: baseline; gap: 22px; padding: 22px 0 20px; border-bottom: 1px solid var(--hair); }
+.tc-i:nth-child(even) { padding-left: 28px; border-left: 1px solid var(--hair); }
+.tc-n { font-family: var(--mono); font-size: 20px; letter-spacing: 1px; color: var(--sub); }
+.tc-l { font-size: 30px; font-weight: 700; letter-spacing: -0.5px; }
+.tc-ghost { margin-top: 10px; font-family: var(--en); font-size: 460px; font-weight: 700; line-height: .78; letter-spacing: -20px; color: var(--ghost); }
+.tc-sub { margin-top: 28px; font-size: 32px; font-weight: 300; color: var(--sub); line-height: 1.6; white-space: pre-line; }
+
+/* ── principle (원칙 한 장) ─────────────────── */
+.layout-principle { padding-top: 276px; }
+.pr-no { margin-top: 44px; font-family: var(--en); font-size: 260px; font-weight: 800; line-height: .8; letter-spacing: -10px; padding-bottom: 56px; border-bottom: 1.5px solid var(--rule); }
+.pr-title { margin-top: 56px; font-size: 70px; font-weight: 800; line-height: 1.32; letter-spacing: -2px; white-space: pre-line; }
+.pr-en { margin-top: 22px; font-family: var(--en); font-size: 32px; font-weight: 400; color: var(--sub); letter-spacing: -0.3px; }
+.pr-body { margin-top: 48px; }
+
+/* principle 변형 (시안) */
+.pr-split .pr-block { margin: 0 -96px; padding: 60px 96px 56px; background: var(--block, var(--sage)); color: #1B1B1B; }
+.pr-split .pr-block .kicker { color: rgba(0,0,0,.55); }
+.pr-split .pr-no { border-bottom: 0; padding-bottom: 0; margin-top: 20px; }
+/* 풀이가 두 문단 이상이면 색면을 위로 올려 꼬리말 실선과 간격을 지킨다 (두 문단: 음악_정체기·입시_정체기 등에 적용 / 한 문단인 편은 영향 없음) */
+.layout-principle:has(.pr-split .body + .body) { padding-top: 206px; }
+/* 풀이가 세 문단(풀이 + CTA 등)이면 색면과 간격을 한 단계 더 줄인다 */
+.layout-principle:has(.pr-split .body + .body + .body) { padding-top: 168px; }
+.layout-principle:has(.pr-split .body + .body + .body) .pr-block { padding: 44px 96px 40px; }
+.layout-principle:has(.pr-split .body + .body + .body) .pr-no { font-size: 220px; margin-top: 12px; }
+.layout-principle:has(.pr-split .body + .body + .body) .pr-title { margin-top: 44px; }
+.layout-principle:has(.pr-split .body + .body + .body) .pr-body { margin-top: 32px; }
+.pr-outline .pr-no { color: transparent; -webkit-text-stroke: 2px var(--fg); font-size: 380px; letter-spacing: -14px; }
+.pr-circle .pr-disc { position: absolute; top: 150px; right: 96px; width: 420px; height: 420px; border-radius: 50%; background: var(--block, var(--blush)); display: flex; align-items: center; justify-content: center; font-family: var(--en); font-size: 200px; font-weight: 800; letter-spacing: -8px; color: #1B1B1B; }
+.pr-circle .pr-title { margin-top: 400px; padding-top: 44px; border-top: 1.5px solid var(--rule); }
+
+/* ── note (EDITOR'S NOTE) ──────────────────── */
+.layout-note { padding-top: 308px; }
+.layout-note .title { margin-top: 44px; margin-bottom: 60px; }
+.layout-note .body { max-width: 790px; }
+.layout-note .sign { margin-top: 64px; font-family: var(--mono); font-size: 20px; letter-spacing: 3px; }
+
+/* ── dictionary ─────────────────────────────── */
+.layout-dictionary { padding-top: 256px; }
+.dict-word { margin-top: 28px; display: flex; align-items: flex-end; gap: 44px; }
+.dict-word .ko { font-size: 196px; font-weight: 800; line-height: .95; letter-spacing: -6px; }
+.dict-word .hanja { font-size: 92px; font-weight: 300; color: var(--sub); line-height: 1; padding-bottom: 12px; }
+.dict-en { margin-top: 44px; display: flex; align-items: baseline; gap: 24px; padding-bottom: 32px; border-bottom: 1px solid var(--hair); }
+.dict-en .en { font-family: var(--en); font-size: 46px; font-weight: 700; letter-spacing: -0.5px; }
+.dict-en .pos { font-size: 22px; color: var(--sub); }
+.dict-def { margin-top: 44px; font-size: 38px; font-weight: 400; line-height: 1.68; letter-spacing: -0.8px; white-space: pre-line; }
+.terms { margin-top: auto; margin-bottom: 0; border-top: 1px solid var(--hair); }
+.term { display: grid; grid-template-columns: 324px 1fr; padding: 32px 0 28px; border-bottom: 1px solid var(--hair); }
+.term:last-child { border-bottom: 0; }
+.term .k { font-size: 29px; font-weight: 700; }
+.term .k small { display: block; margin-top: 6px; font-family: var(--en); font-size: 22px; font-weight: 400; color: var(--sub); }
+.term .v { font-size: 26px; font-weight: 300; line-height: 1.6; color: var(--body); }
+
+/* ── numbers (IN NUMBERS) ───────────────────── */
+.layout-numbers { padding-top: 226px; }
+.head-row { display: flex; justify-content: space-between; align-items: baseline; }
+.layout-numbers .title { font-size: 58px; }
+.layout-numbers .rows { margin-top: 104px; }
+.layout-numbers .r { grid-template-columns: 312px 1fr; min-height: 244px; align-items: center; }
+.num { font-family: var(--en); font-size: 192px; font-weight: 800; line-height: .8; letter-spacing: -8px; }
+.r .h { font-size: 34px; font-weight: 800; letter-spacing: -1px; }
+.r .t { margin-top: 14px; font-size: 25px; font-weight: 300; line-height: 1.68; color: var(--body); }
+
+/* ── keyboard (DIAGRAM) ─────────────────────── */
+.layout-keyboard, .layout-beats { padding-top: 162px; }
+.layout-keyboard .kicker + .title, .layout-beats .kicker + .title { margin-top: 16px; }
+.layout-keyboard .title, .layout-beats .title { font-size: 56px; line-height: 1.28; margin-bottom: 10px; }
+.kb { margin-top: 30px; }
+.kb-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 20px; }
+.kb-head .en { font-family: var(--en); font-size: 36px; font-weight: 800; }
+.kb-head .en span { font-family: var(--ko); font-size: 27px; font-weight: 700; }
+.kb-head .notes { font-family: var(--mono); font-size: 23px; letter-spacing: 3px; }
+.kb svg { display: block; }
+.kb-cap { margin-top: 22px; font-size: 26px; font-weight: 300; color: var(--body); }
+
+/* ── parts (ONE HARMONY, SEVEN PARTS) ───────── */
+.layout-parts { padding-top: 188px; }
+.layout-parts.compact { padding-top: 142px; }
+.layout-parts.compact .title { margin-top: 20px; }
+.layout-parts .rows { margin-top: 84px; }
+.layout-parts.compact .rows { margin-top: 28px; }
+.layout-parts .r { grid-template-columns: 122px 1fr; padding: 40px 0 30px; }
+.layout-parts.compact .r { padding: 28px 0 22px; }
+.layout-parts.compact .part-t { margin-top: 12px; line-height: 1.5; }
+.r .no { font-family: var(--mono); font-size: 21px; padding-top: 6px; }
+.part-en { font-family: var(--en); font-size: 84px; font-weight: 700; line-height: .95; letter-spacing: -3px; text-transform: uppercase; }
+.part-en span { font-family: var(--ko); font-size: 29px; font-weight: 400; letter-spacing: 0; color: var(--sub); text-transform: none; margin-left: 16px; }
+.part-t { margin-top: 18px; font-size: 28px; font-weight: 300; line-height: 1.6; color: var(--body); }
+
+/* ── steps (LISTEN AT HOME) ─────────────────── */
+.layout-steps { padding-top: 200px; }
+.layout-steps .rows { margin-top: 96px; }
+.layout-steps .r { grid-template-columns: 120px 1fr; padding: 36px 0 36px; }
+.r .step { font-family: var(--mono); font-size: 20px; letter-spacing: 1px; padding-top: 10px; white-space: nowrap; }
+/* compact: 설명이 길어 마지막 단계가 꼬리말 실선에 닿을 때 (slides.json "compact": true) */
+.layout-steps.compact .rows { margin-top: 56px; }
+.layout-steps.compact .r { padding: 26px 0 26px; }
+
+/* ── way (THE ENOCH WAY) ────────────────────── */
+.layout-way { padding-top: 262px; }
+.layout-way .title { font-size: 70px; line-height: 1.3; }
+.layout-way .rows { margin-top: 150px; }
+.layout-way .r { grid-template-columns: 122px 1fr; min-height: 143px; align-items: center; }
+.layout-way .r .no { padding-top: 0; align-self: center; margin-top: -8px; }
+.r .s { font-size: 36px; font-weight: 700; letter-spacing: -1px; }
+/* compact: 항목 4개(자동) 또는 제목 3줄일 때 — 꼬리말 실선과 간격을 지킨다 */
+.layout-way.compact { padding-top: 200px; }
+.layout-way.compact .rows { margin-top: 72px; }
+.layout-way.compact .r { min-height: 118px; }
+
+/* ── closing ───────────────────────────────── */
+.layout-closing { padding-top: 280px; }
+.ghost { font-family: var(--en); font-size: 236px; font-weight: 700; line-height: .8; letter-spacing: -6px; color: var(--ghost); text-transform: uppercase; margin-left: 8px; white-space: nowrap; }
+.closing-ko { margin-top: 168px; font-size: 66px; font-weight: 800; line-height: 1.45; letter-spacing: -2px; }
+.closing-en { margin-top: 20px; font-family: var(--en); font-size: 44px; font-weight: 400; letter-spacing: -0.8px; color: var(--body); }
+.closing-info { position: absolute; left: 96px; right: 96px; top: 1033px; border-top: 1px solid var(--hair); padding-top: 38px; display: flex; justify-content: space-between; }
+.closing-info .name { font-size: 23px; font-weight: 700; }
+.closing-info .addr { margin-top: 12px; font-size: 22px; font-weight: 300; color: var(--body); }
+.closing-info .right { text-align: right; max-width: 440px; }
+.closing-info .tel { font-family: var(--mono); font-size: 23px; letter-spacing: 1.5px; }
+.closing-info .subj { margin-top: 12px; font-size: 22px; font-weight: 300; line-height: 1.7; color: var(--body); }
+
+/* ── point (한 장 한 메시지, 범용) ─────────────── */
+.layout-point { padding-top: 308px; }
+.layout-point .body { margin-top: 56px; }
+
+/* ── chords (코드 진행, 범용) ───────────────── */
+.layout-chords { padding-top: 226px; }
+.chords { margin-top: 90px; display: grid; border-top: 1.5px solid var(--rule); border-bottom: 1.5px solid var(--rule); }
+.chord { padding: 36px 24px 40px; border-left: 1px solid var(--hair); }
+.chord:first-child { border-left: 0; padding-left: 0; }
+.chord .roman { font-family: var(--mono); font-size: 20px; letter-spacing: 2px; color: var(--sub); }
+.chord .name { margin-top: 18px; font-family: var(--en); font-size: 72px; font-weight: 700; letter-spacing: -2px; }
+.chord .notes { margin-top: 14px; font-family: var(--mono); font-size: 21px; letter-spacing: 3px; }
+.chord .fn { margin-top: 24px; font-size: 26px; font-weight: 700; }
+.layout-chords .body { margin-top: 48px; }
+
+/* ── photo / photo-missing ─────────────────── */
+.layout-photo { padding-top: 165px; }
+.photo { width: 100%; height: 790px; background-size: cover; background-position: center; }
+.photo-missing {
+  width: 888px; height: 790px; border: 1px dashed var(--sub); background: transparent;
+  display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 14px;
+  font-family: var(--mono); font-size: 22px; letter-spacing: 1px; color: var(--sub); text-align: center;
+}
+.layout-photo .title { margin-top: 56px; font-size: 52px; }
+.layout-photo .body { margin-top: 20px; }
+
+/* ── instructor (강사 소개 포스터) ──────────── */
+.layout-instructor { padding: 150px 96px 150px; }
+.poster { flex: 1; display: grid; grid-template-rows: auto 1fr auto; border: 1.5px solid var(--rule); min-height: 0; }
+.poster .top { display: grid; grid-template-columns: 1.1fr 1fr; border-bottom: 1.5px solid var(--rule); }
+.poster .top > div { padding: 20px 26px; font-family: var(--mono); font-size: 20px; letter-spacing: 2.4px; text-transform: uppercase; }
+.poster .top > div + div { border-left: 1.5px solid var(--rule); text-align: right; }
+.poster .mid { display: grid; grid-template-columns: 1.1fr 1fr; min-height: 0; }
+.poster .mid .photo, .poster .mid .photo-missing { width: 100%; height: 100%; border: 0; filter: grayscale(1) sepia(.18); }
+.poster .names { padding: 36px 26px; display: flex; flex-direction: column; justify-content: flex-end; border-left: 1.5px solid var(--rule); }
+.poster .name-en { font-family: var(--en); font-size: 92px; font-weight: 700; line-height: .92; letter-spacing: -3px; text-transform: uppercase; overflow-wrap: anywhere; }
+.poster .name-ko { margin-top: 28px; font-size: 38px; font-weight: 700; }
+.poster .role { margin-top: 10px; font-size: 24px; font-weight: 300; color: var(--body); line-height: 1.5; white-space: pre-line; }
+.band { border-top: 1.5px solid var(--rule); overflow: hidden; white-space: nowrap; padding: 18px 0; font-family: var(--mono); font-size: 22px; letter-spacing: 2.6px; text-transform: uppercase; }
+.meta { margin-top: 28px; display: grid; grid-template-columns: repeat(3, 1fr); }
+.meta > div { font-size: 24px; line-height: 1.5; }
+.meta b { display: block; font-family: var(--mono); font-size: 18px; font-weight: 400; letter-spacing: 2px; color: var(--sub); margin-bottom: 6px; text-transform: uppercase; }
+
+
+/* ── figure: 그래프·개념도 한 장 ───────────── */
+.layout-figure { padding-top: 196px; }
+.layout-figure .figure { margin-top: 24px; }
+.layout-figure .figure > svg:first-child { width: 100%; height: auto; max-height: 520px; }
+.fig-note { margin-top: auto; margin-bottom: 40px; font-size: 20px; color: var(--sub); white-space: pre-line; }
+</style></head>
+<body class="preview"><section class="card layout-typecover theme-ivory" id="card-1">
+    <div class="masthead"><span>ENOCH MUSIC ACADEMY</span><span>EXAM PREP — RHYTHM SERIES #2</span></div>
+    <div class="kicker">Music Sense</div>
+    
+    
+    <div class="tc-en" style="font-size:132px">Self-Check</div>
+    <h1 class="tc-title">뭐가 부족한지는 아는데,
+정확히 뭘 고쳐야 할까요?</h1>
+    <p class="tc-sub">&quot;리듬이 약해&quot;, &quot;감이 없어&quot;. 이런 말만으로는
+무엇부터 연습할지 알기 어려워요.
+막연한 느낌을 항목으로 나눠 보는 것, 그게 진단이에요.</p>
+    <div class="ticker">EXAM PREP — RHYTHM SERIES #2 — SELF-CHECK — 음악 감각 진단 — ENOCH MUSIC ACADEMY — EXAM PREP — RHYTHM SERIES #2 — SELF-CHECK — 음악 감각 진단 — ENOCH MUSIC ACADEMY — EXAM PREP — RHYTHM SERIES #2 — SELF-CHECK — 음악 감각 진단 — ENOCH MUSIC ACADEMY — EXAM PREP — RHYTHM SERIES #2 — SELF-CHECK — 음악 감각 진단 — ENOCH MUSIC ACADEMY — EXAM PREP — RHYTHM SERIES #2 — SELF-CHECK — 음악 감각 진단 — ENOCH MUSIC ACADEMY — EXAM PREP — RHYTHM SERIES #2 — SELF-CHECK — 음악 감각 진단 — ENOCH MUSIC ACADEMY</div>
+    
+    
+    
+  </section>
+<section class="card layout-parts compact theme-ivory" id="card-2">
+    <div class="masthead"><span>ENOCH MUSIC ACADEMY</span><span>EXAM PREP — RHYTHM SERIES #2</span></div>
+    <div class="kicker">Four Senses</div><h2 class="title">음악 감각, 네 가지로 나눠 봐요</h2>
+    <div class="rows"><div class="r"><div class="no">01</div><div>
+        <div class="part-en">Time<span>박자감</span></div><div class="part-t">템포를 일정하게 지키고, 박의 위치를 아는 감각. <span class="em">입시에서</span> MR이나 반주에 맞추는 실기의 바탕이에요.</div></div></div><div class="r"><div class="no">02</div><div>
+        <div class="part-en">Rhythm<span>리듬감</span></div><div class="part-t">음의 길이·강약·무게로 흐름을 만드는 감각. <span class="em">입시에서</span> 같은 박자 안에서도 연주를 살아 있게 만들어요.</div></div></div><div class="r"><div class="no">03</div><div>
+        <div class="part-en">Pitch<span>음정감</span></div><div class="part-t">음의 높낮이를 정확히 듣고 유지하는 감각. <span class="em">입시에서</span> 짧은 연주 안에서도 작은 어긋남이 바로 들려요.</div></div></div><div class="r"><div class="no">04</div><div>
+        <div class="part-en">Musicality<span>음악성</span></div><div class="part-t">셈여림·프레이즈·음색으로 곡을 표현하는 힘. <span class="em">입시에서</span> 기술 위에 나만의 소리를 얹는 부분이에요.</div></div></div></div>
+    
+    
+    <div class="colophon"><span>음악 감각 진단</span><span class="page">02 / 05</span></div>
+  </section>
+<section class="card layout-figure theme-ivory" id="card-3">
+    <div class="masthead"><span>ENOCH MUSIC ACADEMY</span><span>EXAM PREP — RHYTHM SERIES #2</span></div>
+    <div class="kicker">Self-Check 1/2</div><h2 class="title">나에게 해당하는지
+체크해 보세요</h2><div class="figure"><style>
+.layout-figure:has(.ck) { padding-top: 162px; }
+.layout-figure:has(.ck) .kicker + .title { margin-top: 16px; }
+.layout-figure .figure:has(.ck) { margin-top: 30px; }
+.ck-sec + .ck-sec { margin-top: 30px; }
+.ck-h { display: flex; align-items: baseline; gap: 16px; padding-bottom: 12px; border-bottom: 1.5px solid var(--rule); }
+.ck-h b { font-size: 34px; font-weight: 800; letter-spacing: -1px; }
+.ck-h span { font-family: var(--mono); font-size: 20px; letter-spacing: 2.4px; color: var(--sub); text-transform: uppercase; }
+.ck-i { display: flex; align-items: center; gap: 22px; padding: 9px 0; border-bottom: 1px solid var(--hair); font-size: 27px; font-weight: 400; line-height: 1.45; letter-spacing: -0.5px; color: var(--fg); }
+.ck-i::before { content: ""; flex: 0 0 26px; height: 26px; border: 2px solid #111; }
+.ck-w { margin-top: 12px; padding: 12px 22px; background: var(--butter); font-size: 26px; font-weight: 300; line-height: 1.55; color: #2A2517; letter-spacing: -0.4px; }
+.ck-w b { font-weight: 800; }
+/* 이 편의 2장 "입시에서"·5장 "진단 → 이해 → 개선" 강조를 굵게 — 같은 preview 안에서만 적용 */
+.layout-principle .pr-body .em, .layout-parts .part-t .em { font-weight: 800; }
+.ck-msg { margin-top: 30px; padding-top: 20px; border-top: 1.5px solid var(--rule); font-size: 34px; font-weight: 800; line-height: 1.45; letter-spacing: -1px; }
+</style>
+<div class="ck">
+  <div class="ck-sec">
+    <div class="ck-h"><b>박자감</b><span>Tempo</span></div>
+    <div class="ck-i">음악을 틀면 박을 바로 찾아 셀 수 있다</div>
+    <div class="ck-i">메트로놈을 끄고 1분 연주한 뒤 다시 켜도 박이 맞는다</div>
+    <div class="ck-i">쉼표에서도 박을 놓치지 않는다</div>
+    <div class="ck-w"><b>약하다면 →</b> 메트로놈 소리를 2·4박에만 남기고,<br>나머지 박을 스스로 채워 봐요.</div>
+  </div>
+  <div class="ck-sec">
+    <div class="ck-h"><b>리듬감</b><span>Rhythm</span></div>
+    <div class="ck-i">녹음을 들어 보면, 박이 맞으면서 딱딱하게 들리지 않는다</div>
+    <div class="ck-i">정박과 사이 음의 무게를 다르게 연주할 수 있다</div>
+    <div class="ck-i">8분음표를 스트레이트와 셔플로 바꿔 연주할 수 있다</div>
+    <div class="ck-w"><b>약하다면 →</b> 리듬감 시리즈 #1의 무게 이동 연습<br>(발 → 목소리 → 악기)부터 해 봐요.</div>
+  </div>
+</div>
+</div>
+    
+    
+    <div class="colophon"><span>음악 감각 진단</span><span class="page">03 / 05</span></div>
+  </section>
+<section class="card layout-figure theme-ivory" id="card-4">
+    <div class="masthead"><span>ENOCH MUSIC ACADEMY</span><span>EXAM PREP — RHYTHM SERIES #2</span></div>
+    <div class="kicker">Self-Check 2/2</div><h2 class="title">체크가 적어도 괜찮아요</h2><div class="figure"><style>
+.layout-figure:has(.ck) { padding-top: 162px; }
+.layout-figure:has(.ck) .kicker + .title { margin-top: 16px; }
+.layout-figure .figure:has(.ck) { margin-top: 30px; }
+.ck-sec + .ck-sec { margin-top: 30px; }
+.ck-h { display: flex; align-items: baseline; gap: 16px; padding-bottom: 12px; border-bottom: 1.5px solid var(--rule); }
+.ck-h b { font-size: 34px; font-weight: 800; letter-spacing: -1px; }
+.ck-h span { font-family: var(--mono); font-size: 20px; letter-spacing: 2.4px; color: var(--sub); text-transform: uppercase; }
+.ck-i { display: flex; align-items: center; gap: 22px; padding: 9px 0; border-bottom: 1px solid var(--hair); font-size: 27px; font-weight: 400; line-height: 1.45; letter-spacing: -0.5px; color: var(--fg); }
+.ck-i::before { content: ""; flex: 0 0 26px; height: 26px; border: 2px solid #111; }
+.ck-w { margin-top: 12px; padding: 12px 22px; background: var(--butter); font-size: 26px; font-weight: 300; line-height: 1.55; color: #2A2517; letter-spacing: -0.4px; }
+.ck-w b { font-weight: 800; }
+/* 이 편의 2장 "입시에서"·5장 "진단 → 이해 → 개선" 강조를 굵게 — 같은 preview 안에서만 적용 */
+.layout-principle .pr-body .em, .layout-parts .part-t .em { font-weight: 800; }
+.ck-msg { margin-top: 30px; padding-top: 20px; border-top: 1.5px solid var(--rule); font-size: 34px; font-weight: 800; line-height: 1.45; letter-spacing: -1px; }
+.layout-principle .pr-no{margin-left:-40px;}
+.layout-parts .rows > .r:last-child{border-bottom:0;}
+</style>
+<div class="ck">
+  <div class="ck-sec">
+    <div class="ck-h"><b>음정감</b><span>Pitch</span></div>
+    <div class="ck-i">기준음을 듣고 같은 음을 바로 찾을 수 있다</div>
+    <div class="ck-i">소리 내기 전에 다음 음을 머릿속으로 불러 볼 수 있다</div>
+    <div class="ck-i">녹음을 들으면 어긋난 음을 스스로 찾아낸다</div>
+    <div class="ck-w"><b>약하다면 →</b> 피아노로 기준음을 듣고 따라 낸 뒤,<br>녹음해서 어긋난 음을 튜너로 확인해 봐요.</div>
+  </div>
+  <div class="ck-sec">
+    <div class="ck-h"><b>음악성</b><span>Musicality</span></div>
+    <div class="ck-i">같은 구절을 두 번 연주할 때 표현을 다르게 할 수 있다</div>
+    <div class="ck-i">숨 쉬는 자리, 프레이즈의 끝을 알고 연주한다</div>
+    <div class="ck-i">곡이 무엇을 말하는지 한 문장으로 설명할 수 있다</div>
+    <div class="ck-w"><b>약하다면 →</b> 좋아하는 연주를 한 구절씩 따라 하며,<br>셈여림과 호흡을 비교해 봐요.</div>
+  </div>
+  <div class="ck-msg">진단은 점수가 아니라,<br>어디서 시작할지 알려 주는 지도예요.</div>
+</div>
+</div>
+    
+    
+    <div class="colophon"><span>음악 감각 진단</span><span class="page">04 / 05</span></div>
+  </section>
+<section class="card layout-principle theme-ivory" id="card-5">
+    <div class="masthead"><span>ENOCH MUSIC ACADEMY</span><span>EXAM PREP — RHYTHM SERIES #2</span></div>
+    <div class="pr-split" style="--block:var(--butter)"><div class="pr-block"><div class="kicker">The ENOCH Way</div><div class="pr-no">→</div></div>
+      <h2 class="pr-title">진단 다음은,
+이해와 개선이에요</h2>
+      
+      <div class="pr-body"><p class="body">ENOCH에서 선생님의 역할은 진단을 내리고,
+보완하고 고쳐 나갈 방법을
+이해하기 쉽게 설명하는 거예요.</p><p class="body"><span class="em">진단 → 이해 → 개선.</span>
+모든 과정이 1:1 수업이라,
+같은 진단도 사람마다 다른 방법으로 풀어 가요.</p><p class="body">리듬감 시리즈는 계속돼요.</p></div></div>
+    
+    
+    <div class="colophon"><span>음악 감각 진단</span><span class="page">05 / 05</span></div>
+  </section></body></html>
