@@ -97,7 +97,7 @@ body { font-family: var(--ko); word-break: keep-all; -webkit-font-smoothing: ant
 .pr-split .pr-block { margin: 0 -96px; padding: 60px 96px 56px; background: var(--block, var(--sage)); color: #1B1B1B; }
 .pr-split .pr-block .kicker { color: rgba(0,0,0,.55); }
 .pr-split .pr-no { border-bottom: 0; padding-bottom: 0; margin-top: 20px; }
-/* 풀이가 두 문단 이상이면 색면을 위로 올려 꼬리말 실선과 간격을 지킨다 (한 문단인 기존 편은 영향 없음) */
+/* 풀이가 두 문단 이상이면 색면을 위로 올려 꼬리말 실선과 간격을 지킨다 (두 문단: 음악_정체기·입시_정체기 등에 적용 / 한 문단인 편은 영향 없음) */
 .layout-principle:has(.pr-split .body + .body) { padding-top: 206px; }
 /* 풀이가 세 문단(풀이 + CTA 등)이면 색면과 간격을 한 단계 더 줄인다 */
 .layout-principle:has(.pr-split .body + .body + .body) { padding-top: 168px; }
