@@ -100,6 +100,12 @@ body { font-family: var(--ko); word-break: keep-all; -webkit-font-smoothing: ant
 .pr-split .pr-no { border-bottom: 0; padding-bottom: 0; margin-top: 20px; }
 /* 풀이가 두 문단 이상이면 색면을 위로 올려 꼬리말 실선과 간격을 지킨다 (한 문단인 기존 편은 영향 없음) */
 .layout-principle:has(.pr-split .body + .body) { padding-top: 206px; }
+/* 풀이가 세 문단(풀이 + CTA 등)이면 색면과 간격을 한 단계 더 줄인다 */
+.layout-principle:has(.pr-split .body + .body + .body) { padding-top: 168px; }
+.layout-principle:has(.pr-split .body + .body + .body) .pr-block { padding: 44px 96px 40px; }
+.layout-principle:has(.pr-split .body + .body + .body) .pr-no { font-size: 220px; margin-top: 12px; }
+.layout-principle:has(.pr-split .body + .body + .body) .pr-title { margin-top: 44px; }
+.layout-principle:has(.pr-split .body + .body + .body) .pr-body { margin-top: 32px; }
 .pr-outline .pr-no { color: transparent; -webkit-text-stroke: 2px var(--fg); font-size: 380px; letter-spacing: -14px; }
 .pr-circle .pr-disc { position: absolute; top: 150px; right: 96px; width: 420px; height: 420px; border-radius: 50%; background: var(--block, var(--blush)); display: flex; align-items: center; justify-content: center; font-family: var(--en); font-size: 200px; font-weight: 800; letter-spacing: -8px; color: #1B1B1B; }
 .pr-circle .pr-title { margin-top: 400px; padding-top: 44px; border-top: 1.5px solid var(--rule); }
@@ -167,6 +173,9 @@ body { font-family: var(--ko); word-break: keep-all; -webkit-font-smoothing: ant
 .layout-steps .rows { margin-top: 96px; }
 .layout-steps .r { grid-template-columns: 120px 1fr; padding: 36px 0 36px; }
 .r .step { font-family: var(--mono); font-size: 20px; letter-spacing: 1px; padding-top: 10px; white-space: nowrap; }
+/* compact: 설명이 길어 마지막 단계가 꼬리말 실선에 닿을 때 (slides.json "compact": true) */
+.layout-steps.compact .rows { margin-top: 56px; }
+.layout-steps.compact .r { padding: 26px 0 26px; }
 
 /* ── way (THE ENOCH WAY) ────────────────────── */
 .layout-way { padding-top: 262px; }
@@ -175,6 +184,10 @@ body { font-family: var(--ko); word-break: keep-all; -webkit-font-smoothing: ant
 .layout-way .r { grid-template-columns: 122px 1fr; min-height: 143px; align-items: center; }
 .layout-way .r .no { padding-top: 0; align-self: center; margin-top: -8px; }
 .r .s { font-size: 36px; font-weight: 700; letter-spacing: -1px; }
+/* compact: 항목 4개(자동) 또는 제목 3줄일 때 — 꼬리말 실선과 간격을 지킨다 */
+.layout-way.compact { padding-top: 200px; }
+.layout-way.compact .rows { margin-top: 72px; }
+.layout-way.compact .r { min-height: 118px; }
 
 /* ── closing ───────────────────────────────── */
 .layout-closing { padding-top: 280px; }
@@ -236,7 +249,7 @@ body { font-family: var(--ko); word-break: keep-all; -webkit-font-smoothing: ant
 .layout-figure { padding-top: 196px; }
 .layout-figure .figure { margin-top: 24px; }
 .layout-figure .figure > svg:first-child { width: 100%; height: auto; max-height: 520px; }
-.fig-note { margin-top: auto; margin-bottom: 40px; font-size: 20px; color: var(--sub); }
+.fig-note { margin-top: auto; margin-bottom: 40px; font-size: 20px; color: var(--sub); white-space: pre-line; }
 </style></head>
 <body class="preview"><section class="card layout-cover theme-ivory" id="card-1">
     <div class="masthead"><span>ENOCH MUSIC ACADEMY</span><span>LESSON — DRUM KIT</span></div>
