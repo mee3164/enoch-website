@@ -2,13 +2,13 @@
   "title": "입시 — 박자는 맞는데, 왜 느낌이 안 살까요? (정박의 중력)",
   "masthead": "EXAM PREP — RHYTHM",
   "footer": "정박  正拍",
-  "ticker": "EXAM PREP — ON-BEAT — 정박 — ENOCH MUSIC ACADEMY",
+  "ticker": "EXAM PREP — GRAVITY — 정박 — ENOCH MUSIC ACADEMY",
   "theme": "ivory",
   "slides": [
     {
       "layout": "typecover",
       "kicker": "Rhythm, Feel",
-      "en": "On-Beat",
+      "en": "Gravity",
       "title": "박자는 맞는데,\n왜 느낌이 안 살까요?",
       "sub": "메트로놈에 정확히 맞췄는데도\n\"딱딱하다\"는 말을 들을 때"
     },
@@ -25,10 +25,10 @@
     },
     {
       "layout": "figure",
-      "kicker": "On-Beat",
+      "kicker": "Gravity",
       "title": "정박의 중력에,\n나머지 음이 빨려 들어가요",
       "src": "fig_gravity.svg",
-      "note": "개념도 · 정박(On-beat) — 박이 '쿵' 떨어지는 자리.\n그 사이의 음들은 다음 정박을 향해 끌려가듯 모여들어요."
+      "note": "개념도 · 정박 — 박이 '쿵' 떨어지는 자리.\n그 사이의 음들은 다음 정박을 향해 끌려가듯 모여들어요."
     },
     {
       "layout": "steps",
