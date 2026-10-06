@@ -12,6 +12,7 @@ model: inherit
 - `blog/posts/<글번호>/plan.md`
 - `blog/posts/<글번호>/photos/` 파일 목록 (Glob)
 - 수정 단계라면 `blog/posts/<글번호>/review.md`
+- 같은 구조의 키워드 글이면(`blog/SEO-PLAN.md`) 직전 같은 계열 글의 `final.md` — 문장 틀이 겹치지 않게 확인용으로만 (GUIDE.md 4번)
 
 ## 산출물: `blog/posts/<글번호>/draft.md`
 
