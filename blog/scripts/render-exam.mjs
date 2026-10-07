@@ -113,7 +113,8 @@ td.date { font-weight: 600; }
 const total = data.pages.length;
 const head = (black) => `<div class="head mono"><span>${esc(brand.nameEn)}</span><span>${esc(data.header || "")}</span></div>`;
 const foot = (i, black, basis) => `<div class="foot"><div class="note">${esc(data.asof)} ${esc(basis || "각 대학 모집요강 기준")}<br>정확한 내용은 꼭 각 대학 입학처 모집요강에서 한 번 더 확인해 주세요.</div><div class="mono">${String(i + 1).padStart(2, "0")} / ${String(total).padStart(2, "0")}</div></div>`;
-const doodles = (list = []) => (list.length ? `<svg class="doodle-layer" width="1080" height="1350" viewBox="0 0 1080 1350">${list.map((d) => doodle(d)).join("")}</svg>` : "");
+// doodle()은 위치가 지정된 svg를 직접 돌려준다. 다른 svg 안에 넣지 않는다.
+const doodles = (list = []) => list.map((d) => doodle({ color: "#111", ...d })).join("");
 const schoolById = Object.fromEntries((data.schools || []).map((s) => [s.id, s]));
 
 function cover(p, i) {
