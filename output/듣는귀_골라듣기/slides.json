@@ -1,16 +1,16 @@
 {
-  "title": "학부모 편 — 음악을 많이 들으면, 귀가 좋아질까요?",
-  "masthead": "FOR PARENTS — LISTENING",
+  "title": "LESSON — 음악을 많이 들으면, 귀가 좋아질까요?",
+  "masthead": "LESSON — LISTENING",
   "footer": "듣는 귀",
-  "ticker": "FOR PARENTS — LISTENING — 듣는 귀 — ENOCH MUSIC ACADEMY",
+  "ticker": "LESSON — LISTENING — 듣는 귀 — ENOCH MUSIC ACADEMY",
   "theme": "ivory",
   "slides": [
     {
       "layout": "typecover",
-      "kicker": "For Parents",
+      "kicker": "Ear Training",
       "en": "Listening",
       "title": "매일 음악을 듣는데,\n왜 귀는 그대로일까요?",
-      "sub": "\"음악을 좋아하니까, 많이 들으면 되겠지.\"\n많은 부모님이 그렇게 생각하세요.\n그런데 귀는 듣는 양보다, 듣는 방법으로 자라요."
+      "sub": "음악은 매일 듣는데,\n귀가 좋아진 것 같지는 않을 때.\n귀는 듣는 양보다, 듣는 방법으로 자라요."
     },
     {
       "layout": "figure",
@@ -42,7 +42,7 @@
         },
         {
           "head": "한 줄로 적기",
-          "text": "\"후렴에서 드럼이 커진다\"처럼 들은 것을 한 줄로 적어요. 부모님이 같이 듣고 이야기 나눠도 좋아요."
+          "text": "\"후렴에서 드럼이 커진다\"처럼 들은 것을 한 줄로 적어요. 적어 둔 줄이 쌓이면, 내 귀가 어디까지 듣는지 보여요."
         }
       ]
     },
@@ -55,7 +55,7 @@
       "title": "같은 곡도,\n사람마다 다르게 가르칩니다",
       "en": "The same song, taught differently to each person.",
       "body": [
-        "같은 곡을 들어도\n어떤 아이는 리듬이, 어떤 아이는 멜로디가 들려요.",
+        "같은 곡을 들어도\n사람마다 귀에 들어오는 소리가 달라요.",
         "ENOCH은 모든 과정이 **1:1 수업**이라,\n한 사람의 귀가 지금 무엇을 듣는지에 맞춰 수업해요."
       ]
     },
