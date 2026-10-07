@@ -1,0 +1,22 @@
+<style>
+.pc { display: grid; grid-template-columns: 1fr 1fr; border-top: 1.5px solid var(--rule); margin-top: 6px; }
+.pc > div { padding: 26px 0 0; }
+.pc > div + div { padding-left: 36px; border-left: 1px solid var(--hair); background: var(--mist); padding-right: 24px; }
+.pc .h { font-family: var(--mono); font-size: 19px; letter-spacing: 2.2px; color: var(--sub); text-transform: uppercase; }
+.pc .h b { display: block; margin-top: 6px; font-family: inherit; font-size: 34px; letter-spacing: -1px; color: var(--fg); text-transform: none; font-weight: 800; }
+.pc svg { display: block; width: 100%; height: auto; margin: 26px 0 18px; }
+.pc p { margin: 0 0 26px; font-size: 27px; line-height: 1.5; letter-spacing: -0.5px; font-weight: 300; color: var(--fg); }
+.pc p b { font-weight: 800; }
+</style>
+<div class="pc">
+  <div>
+    <div class="h">Absolute Pitch<b>절대음감</b></div>
+    <svg viewBox="0 0 400 200"><circle cx="110" cy="100" r="22" fill="#111"/><line x1="150" y1="100" x2="230" y2="100" stroke="#111" stroke-width="2"/><path d="M222 92 L234 100 L222 108" fill="none" stroke="#111" stroke-width="2"/><text x="250" y="114" font-size="40" font-weight="800" fill="#111">"솔"</text></svg>
+    <p>음 <b>하나</b>를 듣고<br>이름을 맞혀요.</p>
+  </div>
+  <div>
+    <div class="h">Relative Pitch<b>상대음감</b></div>
+    <svg viewBox="0 0 400 200"><circle cx="70" cy="150" r="22" fill="#111"/><circle cx="300" cy="60" r="22" fill="#111"/><path d="M96 142 Q 190 60 274 66" fill="none" stroke="#111" stroke-width="2" stroke-dasharray="7 7"/><text x="150" y="178" font-size="30" font-weight="600" fill="#111">사이의 거리</text></svg>
+    <p>음과 음 <b>사이의 거리</b>를<br>들어요.</p>
+  </div>
+</div>
