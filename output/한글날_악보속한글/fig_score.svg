@@ -1,0 +1,34 @@
+<svg viewBox="0 0 888 470" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, 'Noto Sans KR', sans-serif">
+<style>.lb{font-size:28px;font-weight:800;fill:#111}.en{font-family:ui-monospace,monospace;font-size:15px;letter-spacing:2px;fill:#8A8A8A}.ld{stroke:#8A8A8A;stroke-width:1.2;fill:none}.st{stroke:#111;stroke-width:2}</style>
+<!-- 오선 -->
+<g stroke="#111" stroke-width="1.6"><line x1="20" y1="200" x2="858" y2="200"/><line x1="20" y1="220" x2="858" y2="220"/><line x1="20" y1="240" x2="858" y2="240"/><line x1="20" y1="260" x2="858" y2="260"/><line x1="20" y1="280" x2="858" y2="280"/></g>
+<!-- 세로줄 -->
+<g stroke="#111" stroke-width="2"><line x1="20" y1="200" x2="20" y2="280"/><line x1="300" y1="200" x2="300" y2="280"/><line x1="580" y1="200" x2="580" y2="280"/><line x1="842" y1="200" x2="842" y2="280"/></g>
+<rect x="850" y="200" width="8" height="80" fill="#111"/>
+<circle cx="828" cy="230" r="5" fill="#111"/><circle cx="828" cy="250" r="5" fill="#111"/>
+<!-- 1마디: 2분음표 둘 + 붙임줄 -->
+<g><ellipse cx="110" cy="260" rx="13" ry="9" transform="rotate(-20 110 260)" fill="none" stroke="#111" stroke-width="3.2"/><line class="st" x1="122" y1="257" x2="122" y2="195"/>
+<ellipse cx="220" cy="260" rx="13" ry="9" transform="rotate(-20 220 260)" fill="none" stroke="#111" stroke-width="3.2"/><line class="st" x1="232" y1="257" x2="232" y2="195"/>
+<path d="M114 278 Q165 304 216 278" fill="none" stroke="#111" stroke-width="2.6"/></g>
+<!-- 2마디: 4분음표 넷 + 이음줄 -->
+<g fill="#111"><ellipse cx="350" cy="260" rx="13" ry="9" transform="rotate(-20 350 260)"/><line class="st" x1="362" y1="257" x2="362" y2="195"/>
+<ellipse cx="410" cy="250" rx="13" ry="9" transform="rotate(-20 410 250)"/><line class="st" x1="422" y1="247" x2="422" y2="185"/>
+<ellipse cx="470" cy="240" rx="13" ry="9" transform="rotate(-20 470 240)"/><line class="st" x1="482" y1="237" x2="482" y2="175"/>
+<ellipse cx="530" cy="230" rx="13" ry="9" transform="rotate(-20 530 230)"/><line class="st" x1="542" y1="227" x2="542" y2="165"/></g>
+<path d="M356 182 Q450 108 546 150" fill="none" stroke="#111" stroke-width="2.6"/>
+<!-- 3마디: 온음표 + 늘임표 -->
+<ellipse cx="700" cy="230" rx="16" ry="10" transform="rotate(-20 700 230)" fill="none" stroke="#111" stroke-width="4.5"/>
+<path d="M676 180 A24 24 0 0 1 724 180" fill="none" stroke="#111" stroke-width="3"/><circle cx="700" cy="174" r="3.6" fill="#111"/>
+<!-- 셈여림 -->
+<text x="342" y="340" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-weight="700" font-size="38" fill="#111">p</text>
+<text x="690" y="340" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-weight="700" font-size="38" fill="#111">f</text>
+<!-- 위쪽 이름표 -->
+<path class="ld" d="M30 112 V102 H290 V112"/>
+<text class="lb" x="160" y="58" text-anchor="middle">마디</text><text class="en" x="160" y="82" text-anchor="middle">MEASURE</text>
+<text class="lb" x="450" y="58" text-anchor="middle">이음줄</text><text class="en" x="450" y="82" text-anchor="middle">SLUR</text><path class="ld" d="M450 92 V118"/>
+<text class="lb" x="700" y="58" text-anchor="middle">늘임표</text><text class="en" x="700" y="82" text-anchor="middle">FERMATA</text><path class="ld" d="M700 92 V150"/>
+<!-- 아래쪽 이름표 -->
+<path class="ld" d="M165 304 V392"/><text class="lb" x="165" y="424" text-anchor="middle">붙임줄</text><text class="en" x="165" y="450" text-anchor="middle">TIE</text>
+<path class="ld" d="M352 352 L500 392 M698 352 L540 392"/><text class="lb" x="520" y="424" text-anchor="middle">셈여림</text><text class="en" x="520" y="450" text-anchor="middle">DYNAMICS</text>
+<path class="ld" d="M846 292 V392"/><text class="lb" x="828" y="424" text-anchor="middle">도돌이표</text><text class="en" x="828" y="450" text-anchor="middle">REPEAT</text>
+</svg>

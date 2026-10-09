@@ -1,0 +1,66 @@
+{
+  "title": "한글날 — 악보 속에도 한글이 있어요",
+  "masthead": "HANGUL DAY — NOTATION",
+  "footer": "악보 속 한글",
+  "ticker": "HANGUL DAY — 10.09 — 악보 속 한글 — ENOCH MUSIC ACADEMY",
+  "theme": "ivory",
+  "slides": [
+    {
+      "layout": "typecover",
+      "kicker": "10.09 Hangul Day",
+      "en": "Hangul",
+      "title": "악보 속에도\n한글이 있어요",
+      "sub": "마디, 셈여림, 늘임표, 도돌이표.\n기호마다 붙은 우리말 이름을 알면,\n그 기호가 하는 일이 보여요."
+    },
+    {
+      "layout": "figure",
+      "kicker": "Map",
+      "title": "한 줄 악보에 붙은\n우리말 이름",
+      "src": "fig_score.svg",
+      "note": "늘임표 — 음을 알맞게 늘여요.  도돌이표 — 돌아가서 한 번 더 연주해요.\n셈여림 — p는 여리게, f는 세게."
+    },
+    {
+      "layout": "figure",
+      "kicker": "Tie & Slur",
+      "title": "모양은 닮았지만,\n하는 일이 달라요",
+      "src": "fig_tie.html"
+    },
+    {
+      "layout": "steps",
+      "theme": "black",
+      "kicker": "Try at Home",
+      "title": "악보 한 장을\n우리말로 읽어 봐요",
+      "items": [
+        {
+          "head": "이름 붙이기",
+          "text": "지금 연습하는 곡의 악보에서 기호를 찾아, 우리말 이름을 연필로 적어요."
+        },
+        {
+          "head": "뜻으로 읽기",
+          "text": "\"여기서 여리게, 이 음은 늘여서, 끝나면 처음으로\"처럼 기호를 문장으로 소리 내어 읽어요."
+        },
+        {
+          "head": "연주로 확인",
+          "text": "읽은 대로 연주하고 녹음해 들어 봐요. 적어 둔 대로 소리가 나는지 확인해요."
+        }
+      ]
+    },
+    {
+      "layout": "principle",
+      "variant": "split",
+      "block": "sage",
+      "kicker": "The ENOCH Way",
+      "no": "01",
+      "title": "진도보다\n이해를 먼저 봅니다",
+      "en": "Understanding before progress.",
+      "body": [
+        "기호의 이름만 외우는 것과,\n그 기호가 하는 일을 아는 것은 달라요.",
+        "ENOCH은 모든 과정이 **1:1 수업**이라,\n한 사람이 이해한 만큼에서 다음으로 넘어가요."
+      ]
+    },
+    {
+      "layout": "closing",
+      "theme": "black"
+    }
+  ]
+}
