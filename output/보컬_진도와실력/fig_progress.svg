@@ -1,0 +1,18 @@
+<svg viewBox="0 0 888 470" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, 'Noto Sans KR', sans-serif">
+<line x1="40" y1="410" x2="860" y2="410" stroke="#111" stroke-width="1.6"/>
+<line x1="40" y1="40" x2="40" y2="410" stroke="#111" stroke-width="1.6"/>
+<text x="860" y="448" text-anchor="end" font-family="ui-monospace,monospace" font-size="16" letter-spacing="2" fill="#8A8A8A">TIME</text>
+<!-- 진도: 계단 -->
+<path d="M40 380 H160 V320 H280 V260 H400 V200 H520 V140 H640 V80 H760" fill="none" stroke="#111" stroke-width="3.5"/>
+<g fill="#111"><circle cx="160" cy="320" r="6"/><circle cx="280" cy="260" r="6"/><circle cx="400" cy="200" r="6"/><circle cx="520" cy="140" r="6"/><circle cx="640" cy="80" r="6"/></g>
+<text x="772" y="72" font-size="30" font-weight="800" fill="#111">진도</text>
+<text x="772" y="98" font-family="ui-monospace,monospace" font-size="15" letter-spacing="2" fill="#8A8A8A">SONGS DONE</text>
+<!-- 실력: 완만한 곡선 -->
+<path d="M40 390 C 220 386, 380 372, 520 340 S 720 270, 760 236" fill="none" stroke="#C9A99B" stroke-width="10" stroke-linecap="round"/>
+<text x="772" y="246" font-size="30" font-weight="800" fill="#111">실력</text>
+<text x="772" y="272" font-family="ui-monospace,monospace" font-size="15" letter-spacing="2" fill="#8A8A8A">VOICE</text>
+<!-- 틈 -->
+<line x1="520" y1="150" x2="520" y2="400" stroke="#8A8A8A" stroke-width="1.4" stroke-dasharray="6 6"/>
+<text x="536" y="364" font-size="24" font-weight="600" fill="#111">"그대로인 것 같다"</text>
+<text x="536" y="392" font-size="22" font-weight="300" fill="#8A8A8A">느낌이 생기는 자리</text>
+</svg>
