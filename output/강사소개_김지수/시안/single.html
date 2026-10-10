@@ -62,6 +62,16 @@
 #M .ko .lab{margin-left:16px;vertical-align:middle}
 #M .cv{position:absolute;left:60px;right:60px;top:1430px;border-top:2px solid var(--black);padding-top:22px;display:flex;justify-content:space-between;font-size:26px;line-height:1.6;font-weight:300}
 #M .cv .lab{padding-top:6px}
+
+/* N — 심플: 사진 한 장 + 라임은 과목 표시 하나만 */
+#N .noise{opacity:.14}
+#N .head{border:0}
+#N .ph{position:absolute;left:60px;right:60px;top:300px;height:880px;background-size:cover;background-position:56% 40%}
+#N .chip{position:absolute;left:60px;top:1240px;background:var(--lime);padding:10px 18px;font-size:18px}
+#N .en{position:absolute;left:56px;top:1306px;font-size:124px;letter-spacing:-3px}
+#N .ko{position:absolute;left:62px;top:1434px;font-size:38px;font-weight:300}
+#N .cv{position:absolute;left:60px;right:60px;top:1520px;border-top:1px solid rgba(17,17,17,.5);padding-top:24px;display:flex;justify-content:space-between;font-size:25px;line-height:1.65;font-weight:300}
+#N .cv .lab{text-align:right;padding-top:5px;line-height:1.9}
 </style></head><body>
 <section class="s" id="J">
   <div class="head mono"><span>ENOCH Music Academy</span><span>Teacher — Vocal</span></div>
@@ -105,6 +115,14 @@
   <div class="en">KIM JISU</div>
   <div class="ko">김지수<span class="lab">Vocal</span></div>
   <div class="cv"><div>서울예술대학교 졸업<br>이무진 세션</div><div class="lab" style="text-align:right">All lessons 1:1<br>ENOCH Music Academy</div></div>
+</section>
+<section class="s" id="N">
+  <div class="head mono"><span>ENOCH Music Academy</span><span>Teacher</span></div>
+  <div class="ph"></div>
+  <div class="chip mono">Vocal</div>
+  <div class="en">KIM JISU</div>
+  <div class="ko">김지수</div>
+  <div class="cv"><div>서울예술대학교 졸업<br>이무진 세션</div><div class="lab">All lessons 1:1<br>ENOCH Music Academy</div></div>
 </section>
 <script>
 for(const s of document.querySelectorAll("section")){s.insertAdjacentHTML("afterbegin",`<svg class="noise" width="1080" height="1920"><filter id="n${s.id}"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .4  0 0 0 0 .38  0 0 0 0 .35  0 0 0 .55 0"/></filter><rect width="100%" height="100%" filter="url(#n${s.id})"/></svg>`)}
