@@ -1,0 +1,107 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><style>
+:root{--ivory:#F1EDE4;--black:#111;--sub:#6E6A64;--mist:#D9E1E8;--sage:#DCE2D3;
+--ko:"Pretendard","Noto Sans KR","WenQuanYi Zen Hei",sans-serif;--mono:"IBM Plex Mono","DejaVu Sans Mono",monospace;--en:"Helvetica Neue",Helvetica,Arial,"Liberation Sans",var(--ko);}
+*{box-sizing:border-box;margin:0;padding:0}
+.s{width:1080px;height:1920px;position:relative;overflow:hidden;font-family:var(--ko);margin-bottom:40px}
+.ph{background-image:url(../../../images/강사/김지수_01.png);background-size:cover;filter:grayscale(1) sepia(.18) contrast(1.05)}
+.mono{font-family:var(--mono);letter-spacing:3px;text-transform:uppercase}
+
+/* A — 시네마: 사진 전면 + 하단 그라데이션 위 글자 */
+#a{background:#0d0d0d;color:var(--ivory)}
+#a .ph{position:absolute;inset:0;background-position:56% 50%;background-size:auto 100%;filter:grayscale(1) sepia(.2) contrast(1.08) brightness(.92)}
+#a .fade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,13,13,.55) 0%,rgba(13,13,13,0) 18%,rgba(13,13,13,0) 48%,rgba(13,13,13,.92) 70%,#0d0d0d 100%)}
+#a .top{position:absolute;left:80px;right:80px;top:210px;display:flex;justify-content:space-between;font-size:20px;color:rgba(241,237,228,.85)}
+#a .bot{position:absolute;left:80px;right:80px;top:1250px}
+#a .lab{font-size:20px;color:rgba(241,237,228,.6)}
+#a .en{margin-top:22px;font-family:var(--en);font-weight:700;font-size:150px;line-height:.86;letter-spacing:-4px}
+#a .ko{margin-top:28px;font-size:36px;font-weight:300;letter-spacing:6px}
+#a .rule{margin-top:40px;height:1px;background:rgba(241,237,228,.5)}
+#a .cv{margin-top:26px;font-size:28px;line-height:1.7;font-weight:300;color:rgba(241,237,228,.9)}
+
+/* B — 블랙 미니멀: 여백 큰 액자 + 자간 넓은 이름 */
+#b{background:var(--black);color:var(--ivory)}
+#b .top{position:absolute;left:96px;right:96px;top:210px;text-align:center;font-size:20px;color:rgba(241,237,228,.7)}
+#b .ph{position:absolute;left:150px;right:150px;top:330px;height:880px;background-position:57% 45%}
+#b .en{position:absolute;left:0;right:0;top:1290px;text-align:center;font-family:var(--en);font-size:64px;letter-spacing:28px;padding-left:28px;font-weight:400}
+#b .ko{position:absolute;left:0;right:0;top:1390px;text-align:center;font-size:30px;letter-spacing:10px;font-weight:300;color:rgba(241,237,228,.8)}
+#b .line{position:absolute;left:50%;top:1460px;width:1px;height:60px;background:rgba(241,237,228,.5)}
+#b .cv{position:absolute;left:0;right:0;top:1550px;text-align:center;font-size:26px;line-height:1.8;font-weight:300;color:rgba(241,237,228,.85)}
+#b .sub{position:absolute;left:0;right:0;top:1660px;text-align:center;font-size:18px;color:rgba(241,237,228,.5)}
+
+/* C — 에디토리얼 그리드: 세로 사진 + 세로 이름 + 번호 칸 */
+#c{background:var(--ivory);color:var(--black)}
+#c .top{position:absolute;left:80px;right:80px;top:200px;display:flex;justify-content:space-between;font-size:20px;padding-bottom:20px;border-bottom:1.5px solid var(--black)}
+#c .ph{position:absolute;left:80px;width:640px;top:290px;height:1000px;background-position:52% 40%;background-size:auto 110%}
+#c .vert{position:absolute;left:740px;top:290px;width:260px;height:1000px;border-left:1px solid rgba(17,17,17,.45);display:flex;flex-direction:column;justify-content:space-between;padding-left:28px}
+#c .vert .en{writing-mode:vertical-rl;font-family:var(--en);font-weight:700;font-size:150px;line-height:.86;letter-spacing:-2px;margin-left:-14px}
+#c .vert .lab{font-size:18px;color:var(--sub)}
+#c .grid{position:absolute;left:80px;right:80px;top:1320px;display:grid;grid-template-columns:1fr 1fr;border-top:1.5px solid var(--black)}
+#c .cell{padding:22px 0 26px;border-bottom:1px solid rgba(17,17,17,.45)}
+#c .cell+.cell{padding-left:28px;border-left:1px solid rgba(17,17,17,.45)}
+#c .cell b{display:block;font-family:var(--mono);font-weight:400;font-size:17px;letter-spacing:2.4px;color:var(--sub);margin-bottom:10px}
+#c .cell span{font-size:30px;font-weight:300;line-height:1.5}
+#c .cell .big{font-size:44px;font-weight:700;letter-spacing:-1px}
+#c .full{grid-column:1/3;padding-left:0!important;border-left:0!important}
+#c .sig{position:absolute;left:80px;right:80px;top:1640px;display:flex;justify-content:space-between;font-size:18px;color:var(--sub)}
+
+/* D — 파스텔 색면: 미스트 블록 + 고스트 VOCAL */
+#d{background:var(--ivory);color:var(--black)}
+#d .block{position:absolute;left:0;right:0;top:0;height:1180px;background:var(--mist)}
+#d .ghost{position:absolute;left:60px;top:250px;font-family:var(--en);font-weight:700;font-size:250px;letter-spacing:-8px;color:#C9D3DC;line-height:1}
+#d .top{position:absolute;left:96px;right:96px;top:200px;display:flex;justify-content:space-between;font-size:20px}
+#d .ph{position:absolute;left:240px;right:96px;top:430px;height:960px;background-position:55% 40%;background-size:auto 105%}
+#d .no{position:absolute;left:96px;top:1080px;font-size:18px;color:var(--sub);writing-mode:vertical-rl;transform:rotate(180deg)}
+#d .en{position:absolute;left:96px;top:1440px;font-family:var(--en);font-weight:700;font-size:96px;letter-spacing:-2px;line-height:1}
+#d .ko{position:absolute;left:100px;top:1556px;font-size:34px;font-weight:300}
+#d .ko b{font-weight:700;margin-right:16px}
+#d .cv{position:absolute;right:96px;top:1452px;text-align:right;font-size:26px;line-height:1.75;font-weight:300}
+#d .cv i{display:block;font-style:normal;font-family:var(--mono);font-size:17px;letter-spacing:2.4px;color:var(--sub);margin-bottom:8px}
+#d .sig{position:absolute;left:96px;right:96px;top:1650px;padding-top:18px;border-top:1px solid rgba(17,17,17,.45);display:flex;justify-content:space-between;font-size:18px;color:var(--sub)}
+</style></head><body>
+
+<section class="s" id="a">
+  <div class="ph"></div><div class="fade"></div>
+  <div class="top mono"><span>ENOCH Music Academy</span><span>Teacher</span></div>
+  <div class="bot">
+    <div class="lab mono">Vocal — 보컬</div>
+    <div class="en">KIM<br>JISU</div>
+    <div class="ko">김지수</div>
+    <div class="rule"></div>
+    <div class="cv">서울예술대학교 졸업<br>이무진 세션</div>
+  </div>
+</section>
+
+<section class="s" id="b">
+  <div class="top mono">ENOCH Music Academy — Teacher</div>
+  <div class="ph"></div>
+  <div class="en">KIM JISU</div>
+  <div class="ko">김지수 · 보컬</div>
+  <div class="line"></div>
+  <div class="cv">서울예술대학교 졸업<br>이무진 세션</div>
+  <div class="sub mono">All lessons 1:1</div>
+</section>
+
+<section class="s" id="c">
+  <div class="top mono"><span>ENOCH Music Academy</span><span>Teacher — Vocal</span></div>
+  <div class="ph"></div>
+  <div class="vert"><div class="lab mono">Vocal</div><div class="en">KIM JISU</div><div class="lab mono">ENOCH</div></div>
+  <div class="grid">
+    <div class="cell"><b>NAME</b><span class="big">김지수</span></div>
+    <div class="cell"><b>SUBJECT</b><span class="big">Vocal</span></div>
+    <div class="cell full"><b>CAREER</b><span>서울예술대학교 졸업 · 이무진 세션</span></div>
+  </div>
+  <div class="sig mono"><span>All lessons 1:1</span><span>나만의 진짜 소리를 찾는 곳</span></div>
+</section>
+
+<section class="s" id="d">
+  <div class="block"></div>
+  <div class="ghost">VOCAL</div>
+  <div class="top mono"><span>ENOCH Music Academy</span><span>Teacher</span></div>
+  <div class="ph"></div>
+  <div class="no mono">Teacher — Vocal</div>
+  <div class="en">KIM JISU</div>
+  <div class="ko"><b>김지수</b>보컬</div>
+  <div class="cv"><i>CAREER</i>서울예술대학교 졸업<br>이무진 세션</div>
+  <div class="sig mono"><span>All lessons 1:1</span><span>ENOCH Music Academy</span></div>
+</section>
+</body></html>
