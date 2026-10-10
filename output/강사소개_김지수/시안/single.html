@@ -1,0 +1,112 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><style>
+:root{--ivory:#F1EDE4;--black:#111;--sub:#6E6A64;--lime:#DDE37C;
+--ko:"Pretendard","Noto Sans KR","WenQuanYi Zen Hei",sans-serif;--mono:"IBM Plex Mono","DejaVu Sans Mono",monospace;--en:"Helvetica Neue",Helvetica,Arial,"Liberation Sans",var(--ko);}
+*{box-sizing:border-box;margin:0;padding:0}
+.s{width:1080px;height:1920px;position:relative;overflow:hidden;background:var(--ivory);color:var(--black);font-family:var(--ko);margin-bottom:40px}
+.noise{position:absolute;inset:0;opacity:.22;mix-blend-mode:multiply;pointer-events:none;z-index:5}
+.mono{font-family:var(--mono);letter-spacing:3px;text-transform:uppercase}
+.ph{background-image:url(../../../images/강사/김지수_01.png);background-repeat:no-repeat;filter:saturate(.82) contrast(1.04) sepia(.08)}
+.head{position:absolute;left:0;right:0;top:236px;padding:0 60px 18px;display:flex;justify-content:space-between;font-size:19px}
+.en{font-family:var(--en);font-weight:700;letter-spacing:-3px;line-height:.88}
+.lab{font-family:var(--mono);font-size:17px;letter-spacing:2.4px;color:var(--sub);text-transform:uppercase}
+.band{background:var(--lime);display:flex;align-items:center;white-space:nowrap;font-size:22px;overflow:hidden;border-top:2px solid var(--black);border-bottom:2px solid var(--black)}
+.band span{padding-left:40px;word-spacing:20px}
+.L{border-top:2px solid var(--black)}
+
+/* J — 이름 띠 위, 사진 한 장 크게 가운데 */
+#J .g{position:absolute;left:0;right:0;top:280px}
+#J .nm{background:var(--lime);padding:46px 60px 40px;border-top:2px solid var(--black);display:flex;justify-content:space-between;align-items:flex-end}
+#J .nm .en{font-size:132px}
+#J .nm .ko{font-size:44px;font-weight:300;text-align:right}
+#J .nm .ko .lab{display:block;margin-bottom:10px}
+#J .ph{height:760px;background-size:cover;background-position:56% 40%;border-top:2px solid var(--black);border-bottom:2px solid var(--black)}
+#J .row{display:flex;border-bottom:2px solid var(--black)}
+#J .row>div{padding:30px 60px;font-size:27px;font-weight:300;line-height:1.6}
+#J .row>div:first-child{width:280px;border-right:2px solid var(--black)}
+#J .row>div:first-child .lab{padding-top:8px}
+
+/* K — 세로 사진 왼쪽, 오른쪽 라임 정보 기둥 */
+#K .g{position:absolute;left:0;right:0;top:280px;height:1300px;display:flex;border-top:2px solid var(--black);border-bottom:2px solid var(--black)}
+#K .ph{width:620px;background-size:auto 100%;background-position:58% 50%;border-right:2px solid var(--black)}
+#K .col{flex:1;background:var(--lime);display:flex;flex-direction:column}
+#K .col>div{padding:36px 40px;border-bottom:2px solid var(--black)}
+#K .col .nm{flex:1;display:flex;flex-direction:column;justify-content:flex-end}
+#K .col .en{font-size:108px}
+#K .col .ko{margin-top:20px;font-size:40px;font-weight:300}
+#K .col .cv{font-size:25px;line-height:1.65;font-weight:300}
+#K .col .cv .lab{margin-bottom:8px}
+#K .col>div:last-child{border-bottom:0}
+#K .foot{position:absolute;left:60px;right:60px;top:1612px;display:flex;justify-content:space-between;font-size:22px;font-weight:300}
+#K .foot .lab{padding-top:5px}
+
+/* L — 띠가 위, 사진 가운데, 아래 2칸 그리드 */
+#L .band{position:absolute;left:0;right:0;top:280px;height:80px}
+#L .ph{position:absolute;left:0;right:0;top:360px;height:720px;background-size:cover;background-position:56% 42%;border-bottom:2px solid var(--black)}
+#L .grid{position:absolute;left:0;right:0;top:1080px;display:grid;grid-template-columns:1fr 360px;border-bottom:2px solid var(--black)}
+#L .grid>div{padding:40px 60px 36px}
+#L .grid>div+div{border-left:2px solid var(--black);padding:40px 40px 36px}
+#L .en{font-size:128px}
+#L .ko{margin-top:22px;font-size:42px;font-weight:300}
+#L .sub{font-size:40px;font-family:var(--en);font-weight:700;letter-spacing:-1px;margin-top:10px}
+#L .cv{position:absolute;left:60px;right:60px;top:1500px;font-size:27px;line-height:1.65;font-weight:300}
+#L .cv .lab{margin-bottom:8px}
+#L .foot{position:absolute;left:60px;right:60px;top:1630px;padding-top:18px;border-top:1px solid rgba(17,17,17,.45);display:flex;justify-content:space-between;font-size:20px;font-weight:300}
+
+/* M — 라임 바탕, 검은 선 액자 사진 + 사진 아래에 걸친 큰 이름 */
+#M{background:var(--lime)}
+#M .head{border-bottom:2px solid var(--black)}
+#M .frame{position:absolute;left:60px;right:60px;top:330px;height:900px;border:2px solid var(--black);padding:18px;background:var(--ivory)}
+#M .frame .ph{width:100%;height:100%;background-size:cover;background-position:56% 40%}
+#M .en{position:absolute;left:54px;top:1170px;font-size:168px;z-index:2;letter-spacing:-5px}
+#M .ko{position:absolute;left:62px;top:1340px;font-size:42px;font-weight:300}
+#M .ko .lab{margin-left:16px;vertical-align:middle}
+#M .cv{position:absolute;left:60px;right:60px;top:1430px;border-top:2px solid var(--black);padding-top:22px;display:flex;justify-content:space-between;font-size:26px;line-height:1.6;font-weight:300}
+#M .cv .lab{padding-top:6px}
+</style></head><body>
+<section class="s" id="J">
+  <div class="head mono"><span>ENOCH Music Academy</span><span>Teacher — Vocal</span></div>
+  <div class="g">
+    <div class="nm"><div class="en">KIM<br>JISU</div><div class="ko"><span class="lab">Vocal</span>김지수</div></div>
+    <div class="ph"></div>
+    <div class="row"><div><div class="lab">Career</div></div><div>서울예술대학교 졸업<br>이무진 세션</div></div>
+    <div class="band mono" style="height:84px;border-top:0"><span>VOCAL LESSON — 1:1 — ENOCH TEACHERS — VOCAL LESSON — 1:1 — ENOCH TEACHERS</span></div>
+  </div>
+</section>
+
+<section class="s" id="K">
+  <div class="head mono"><span>ENOCH Music Academy</span><span>Teacher — Vocal</span></div>
+  <div class="g">
+    <div class="ph"></div>
+    <div class="col">
+      <div><div class="lab">Vocal — 보컬</div></div>
+      <div class="nm"><div class="en">KIM<br>JISU</div><div class="ko">김지수</div></div>
+      <div class="cv"><div class="lab">Career</div>서울예술대학교 졸업<br>이무진 세션</div>
+      <div><div class="lab">All lessons 1:1</div></div>
+    </div>
+  </div>
+  <div class="foot"><span>나만의 진짜 소리를 찾는 곳.</span><span class="lab">ENOCH Music Academy</span></div>
+</section>
+
+<section class="s" id="L">
+  <div class="head mono"><span>ENOCH Music Academy</span><span>Teacher</span></div>
+  <div class="band mono"><span>VOCAL LESSON — 1:1 — ENOCH TEACHERS — VOCAL LESSON — 1:1 — ENOCH TEACHERS</span></div>
+  <div class="ph"></div>
+  <div class="grid">
+    <div><div class="en">KIM<br>JISU</div><div class="ko">김지수</div></div>
+    <div style="background:var(--lime)"><div class="lab">Subject</div><div class="sub">Vocal</div><div class="lab" style="margin-top:34px">Lesson</div><div class="sub" style="font-size:34px">1:1</div></div>
+  </div>
+  <div class="cv"><div class="lab">Career</div>서울예술대학교 졸업 · 이무진 세션</div>
+  <div class="foot"><span>나만의 진짜 소리를 찾는 곳.</span><span class="lab">ENOCH Music Academy</span></div>
+</section>
+
+<section class="s" id="M">
+  <div class="head mono"><span>ENOCH Music Academy</span><span>Teacher — Vocal</span></div>
+  <div class="frame"><div class="ph"></div></div>
+  <div class="en">KIM JISU</div>
+  <div class="ko">김지수<span class="lab">Vocal</span></div>
+  <div class="cv"><div>서울예술대학교 졸업<br>이무진 세션</div><div class="lab" style="text-align:right">All lessons 1:1<br>ENOCH Music Academy</div></div>
+</section>
+<script>
+for(const s of document.querySelectorAll("section")){s.insertAdjacentHTML("afterbegin",`<svg class="noise" width="1080" height="1920"><filter id="n${s.id}"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .4  0 0 0 0 .38  0 0 0 0 .35  0 0 0 .55 0"/></filter><rect width="100%" height="100%" filter="url(#n${s.id})"/></svg>`)}
+</script>
+</body></html>
