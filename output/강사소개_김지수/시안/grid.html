@@ -19,6 +19,7 @@
 .intro b{font-family:var(--mono);font-weight:400;font-size:17px;letter-spacing:2.4px;color:var(--sub);display:block;margin-bottom:6px}
 .r3{height:600px}
 .r3 .p1{width:330px;background-size:auto 150%;background-position:18% 72%}
+#H .r3 .p1{background-size:auto 260%;background-position:22% 8%}
 .r3 .p2{flex:1;background-size:cover;background-position:60% 45%}
 .band{height:88px;background:var(--accent);display:flex;align-items:center;white-space:nowrap;font-size:22px;border-bottom:2px solid var(--black);overflow:hidden}
 .band span{padding-left:40px;word-spacing:20px}
@@ -41,7 +42,7 @@
 </section>
 </template>
 <script>
-const acc={E:"#DCE2D3",F:"#F1E8CB",G:"#DDE37C"};
+const acc={E:"#DCE2D3",F:"#F1E8CB",G:"#DDE37C",H:"#DDE37C"};
 for(const [k,c] of Object.entries(acc)){const n=document.getElementById("t").content.cloneNode(true);const s=n.querySelector("section");s.id=k;s.style.setProperty("--accent",c);s.querySelector("filter").id="n"+k;s.querySelector("rect").setAttribute("filter","url(#n"+k+")");document.body.appendChild(n);}
 </script>
 </body></html>
