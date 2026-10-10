@@ -16,6 +16,7 @@ const LESSONS = [
   ["VOICE", "보컬"],
   ["GROOVE", "드럼"],
   ["STRINGS", "기타"],
+  ["BASS LINE", "베이스"],
   ["JAZZ KEYS", "재즈피아노"],
   ["HARMONY", "화성학"],
   ["SONGWRITING", "작곡"],
@@ -32,7 +33,7 @@ body { font-family: "Pretendard", sans-serif; word-break: keep-all; -webkit-font
 h1 { margin-top: 12px; font-size: 96px; font-weight: 800; letter-spacing: -4px; line-height: 1; }
 .lead { margin-top: 20px; font-size: 30px; font-weight: 300; letter-spacing: -.8px; }
 .list { margin-top: 48px; border-top: 1px solid rgba(241,237,228,.8); }
-.row { display: grid; grid-template-columns: 56px 1fr auto; align-items: baseline; padding: 28px 0; border-bottom: 1px solid rgba(241,237,228,.2); }
+.row { display: grid; grid-template-columns: 56px 1fr auto; align-items: baseline; padding: 23px 0; border-bottom: 1px solid rgba(241,237,228,.2); }
 .n { font-size: 14px; font-weight: 500; letter-spacing: 2px; color: #8F8A82; }
 .name { font-size: 46px; font-weight: 800; letter-spacing: -1.2px; line-height: 1.1; }
 .name small { font-size: 46px; font-weight: 200; letter-spacing: -1px; color: #8F8A82; margin-right: 14px; }
