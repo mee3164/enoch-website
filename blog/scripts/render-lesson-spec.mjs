@@ -41,7 +41,7 @@ h1 { margin-top: 14px; font-size: 92px; font-weight: 800; letter-spacing: -4px; 
 </style></head><body><section class="page">
   <div class="top"><span>${brand.nameEn}</span><span>Lesson Spec</span></div>
   <div class="en">The ENOCH Lesson</div>
-  <h1>레슨 한 번에<br>담긴 것</h1>
+  <h1>ENOCH<br>레슨의 구성</h1>
   <div class="lead">${brand.signature}</div>
   <div class="list">
     ${ROWS.map(([k, e, v], i) => `<div class="row"><div class="n">${String(i + 1).padStart(2, "0")}</div><div class="k"><b>${k}</b><i>${e}</i></div><div class="v">${v}</div></div>`).join("")}
