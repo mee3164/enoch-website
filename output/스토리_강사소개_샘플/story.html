@@ -1,0 +1,39 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><style>
+:root{--ivory:#F1EDE4;--black:#111;--sub:#6E6A64;--hair:rgba(17,17,17,.45);
+--ko:"Pretendard","Noto Sans KR","WenQuanYi Zen Hei",sans-serif;--mono:"IBM Plex Mono","DejaVu Sans Mono",monospace;--en:"Helvetica Neue",Helvetica,Arial,"Liberation Sans",var(--ko);}
+*{box-sizing:border-box;margin:0;padding:0}
+.s{width:1080px;height:1920px;background:var(--ivory);color:var(--black);font-family:var(--ko);position:relative;overflow:hidden;margin-bottom:40px}
+.top{position:absolute;left:96px;right:96px;top:200px;display:flex;justify-content:space-between;font-family:var(--mono);font-size:22px;letter-spacing:3px;padding-bottom:22px;border-bottom:1.5px solid var(--black)}
+.ph{position:absolute;left:0;right:0;top:300px;height:700px;background:url(../../images/강사/보컬_샘플_01.png) 58% 40%/cover;filter:grayscale(1) sepia(.18) contrast(1.04)}
+.band{position:absolute;left:0;right:0;top:1000px;height:64px;background:var(--black);color:var(--ivory);font-family:var(--mono);font-size:22px;letter-spacing:4px;white-space:nowrap;display:flex;align-items:center}
+.band span{padding-left:24px}
+.no{position:absolute;right:96px;top:1100px;font-family:var(--mono);font-size:22px;letter-spacing:3px;color:var(--sub)}
+.en{position:absolute;left:92px;top:1102px;font-family:var(--en);font-weight:700;font-size:112px;line-height:.9;letter-spacing:-3px;text-transform:uppercase}
+.ko{position:absolute;left:96px;top:1320px;font-size:40px;font-weight:700;letter-spacing:-1px}
+.ko small{font-weight:300;color:var(--sub);margin-left:18px;font-size:34px}
+.grid{position:absolute;left:96px;right:96px;top:1400px;border-top:1.5px solid var(--black)}
+.r{display:grid;grid-template-columns:200px 1fr;border-bottom:1px solid var(--hair);padding:16px 0;font-size:26px;line-height:1.45}
+.r b{font-family:var(--mono);font-weight:400;font-size:19px;letter-spacing:2.4px;color:var(--sub);padding-top:6px}
+.r span{font-weight:300}
+.ph-note{color:#9C978E}
+/* 하이라이트 커버 */
+.cv{display:flex;align-items:center;justify-content:center}
+.cv .c{width:560px;height:560px;border-radius:50%;border:2px solid var(--black);display:flex;flex-direction:column;align-items:center;justify-content:center}
+.cv .c b{font-family:var(--en);font-size:260px;line-height:1;font-weight:700}
+.cv .c span{font-family:var(--mono);font-size:26px;letter-spacing:6px;margin-top:10px}
+</style></head><body>
+<section class="s" id="story">
+  <div class="top"><div>ENOCH MUSIC ACADEMY</div><div>TEACHER — VOCAL</div></div>
+  <div class="ph"></div>
+  <div class="band"><span>VOCAL — 보컬 — ENOCH TEACHERS — VOCAL — 보컬 — ENOCH TEACHERS — VOCAL — 보컬</span></div>
+  <div class="no">01 / 20+</div>
+  <div class="en">Name<br>Surname</div>
+  <div class="ko">강사 이름<small>Vocal</small></div>
+  <div class="grid">
+    <div class="r"><b>COURSE</b><span>입시 · 취미 · 성인</span></div>
+    <div class="r"><b>CAREER</b><span class="ph-note">약력 첫째 줄 (확인된 사실만)<br>약력 둘째 줄<br>약력 셋째 줄</span></div>
+    <div class="r"><b>LESSON</b><span>모든 과정 1:1 레슨</span></div>
+  </div>
+</section>
+<section class="s cv" id="cover"><div class="c"><b>T</b><span>TEACHER</span></div></section>
+</body></html>
