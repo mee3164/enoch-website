@@ -33,21 +33,29 @@ body { font-family: "Pretendard", sans-serif; word-break: keep-all; -webkit-font
 h1 { margin-top: 12px; font-size: 96px; font-weight: 800; letter-spacing: -4px; line-height: 1; }
 .lead { margin-top: 20px; font-size: 30px; font-weight: 300; letter-spacing: -.8px; }
 .list { margin-top: 48px; border-top: 1px solid rgba(241,237,228,.8); }
-.row { display: grid; grid-template-columns: 56px 1fr auto; align-items: baseline; padding: 23px 0; border-bottom: 1px solid rgba(241,237,228,.2); }
+.row { display: grid; grid-template-columns: 56px 1fr auto; align-items: baseline; padding: 17px 0; border-bottom: 1px solid rgba(241,237,228,.2); }
 .n { font-size: 14px; font-weight: 500; letter-spacing: 2px; color: #8F8A82; }
 .name { font-size: 46px; font-weight: 800; letter-spacing: -1.2px; line-height: 1.1; }
 .name small { font-size: 46px; font-weight: 200; letter-spacing: -1px; color: #8F8A82; margin-right: 14px; }
 .ko { font-size: 22px; font-weight: 500; color: #F1EDE4; }
 .ko span { color: #8F8A82; font-weight: 400; margin-right: 8px; }
+.also { margin-top: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.also div { border-top: 1px solid rgba(241,237,228,.5); padding-top: 14px; }
+.also b { display: block; font-size: 24px; font-weight: 700; letter-spacing: -.3px; }
+.also span { display: block; margin-top: 4px; font-size: 17px; color: #8F8A82; }
 .foot { margin-top: auto; padding-top: 28px; display: flex; justify-content: space-between; align-items: flex-end; font-size: 15px; color: #8F8A82; line-height: 1.7; }
 .foot b { color: #F1EDE4; font-weight: 600; }
 </style></head><body><section class="page">
   <div class="top"><span>${brand.nameEn}</span><span>Lessons</span></div>
   <div class="en">The ENOCH Lessons</div>
   <h1>ENOCH 레슨</h1>
-  <div class="lead">모든 과정 1:1 레슨</div>
+  <div class="lead">1:1 레슨을 기본으로 합니다</div>
   <div class="list">
     ${LESSONS.map(([en, ko], i) => `<div class="row"><div class="n">${String(i + 1).padStart(2, "0")}</div><div class="name"><small>ENOCH</small>${en}</div><div class="ko"><span>1:1</span>${ko} 수업</div></div>`).join("")}
+  </div>
+  <div class="also">
+    <div><b>ENOCH DUO</b><span>2:1 레슨 · 원하는 분 신청</span></div>
+    <div><b>ENOCH SESSION</b><span>단체 특강</span></div>
   </div>
   <div class="foot"><span>${brand.signature}<br>${brand.address}</span><span><b>${brand.phone}</b></span></div>
 </section></body></html>`;

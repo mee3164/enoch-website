@@ -12,7 +12,7 @@ const out = path.resolve(process.argv[2] || path.join(root, "blog/assets/academy
 const brand = JSON.parse(await readFile(path.join(root, "templates/brand.json"), "utf8"));
 const fontUrl = pathToFileURL(path.join(root, "node_modules/pretendard/dist/web/variable/woff2/PretendardVariable.woff2")).href;
 const PASTEL = "#E3DDE9";
-const SUBJECTS = ["보컬", "기타", "드럼", "베이스", "피아노", "미디", "작곡"];
+const SUBJECTS = ["보컬", "기타", "드럼", "베이스", "재즈피아노", "미디", "작곡", "화성학"];
 const COURSES = ["입시", "취미", "성인", "전문"];
 
 const css = `
@@ -24,20 +24,20 @@ body { font-family: "Pretendard", sans-serif; word-break: keep-all; -webkit-font
 .kicker { font-size: 22px; font-weight: 500; color: #6E6A64; margin-top: 52px; }
 .title { font-size: 70px; font-weight: 800; letter-spacing: -2.6px; line-height: 1.18; margin-top: 12px; }
 .lead { font-size: 28px; font-weight: 500; color: #3B3833; margin-top: 18px; }
-.band { margin: 38px -80px 0; padding: 40px 80px 36px; background: ${PASTEL}; }
+.band { margin: 30px -80px 0; padding: 32px 80px 30px; background: ${PASTEL}; }
 .sec { display: grid; grid-template-columns: 150px 1fr; align-items: center; padding: 18px 0; border-bottom: 1.5px solid rgba(17,17,17,.75); }
 .sec:first-child { border-top: 1.5px solid rgba(17,17,17,.75); }
 .lb { font-size: 22px; font-weight: 700; color: #3B3833; }
 .chips { display: flex; flex-wrap: wrap; gap: 10px 12px; }
-.chip { font-size: 30px; font-weight: 800; padding: 6px 18px; border: 2px solid #111; background: #F1EDE4; }
+.chip { font-size: 28px; font-weight: 800; padding: 4px 16px; border: 2px solid #111; background: #F1EDE4; }
 .one { font-size: 32px; font-weight: 800; }
 .info { margin-top: 26px; }
 .row { display: grid; grid-template-columns: 150px 1fr; padding: 13px 0; border-bottom: 1px solid rgba(17,17,17,.3); font-size: 24px; line-height: 1.5; }
 .row .k { font-weight: 700; color: #3B3833; }
 .row .v b { font-weight: 800; }
-.prin { margin-top: 30px; }
+.prin { margin-top: 24px; margin-bottom: 20px; }
 .prin .t { font-size: 20px; font-weight: 700; color: #6E6A64; margin-bottom: 8px; }
-.prin .p { font-size: 27px; font-weight: 700; line-height: 1.6; }
+.prin .p { font-size: 25px; font-weight: 700; line-height: 1.6; }
 .prin .p span { color: #8A8A8A; font-weight: 600; margin-right: 12px; }
 .foot { margin-top: auto; display: flex; justify-content: space-between; align-items: flex-end; font-size: 20px; color: #6E6A64; }
 .foot b { color: #111; font-size: 24px; }
@@ -49,9 +49,9 @@ const html = `<!doctype html><html lang="ko"><head><meta charset="utf-8"><style>
   <div class="title">과목·과정 한눈에 보기</div>
   <div class="lead">${brand.signature}</div>
   <div class="band">
-    <div class="sec"><div class="lb">과목 7</div><div class="chips">${SUBJECTS.map((s) => `<span class="chip">${s}</span>`).join("")}</div></div>
+    <div class="sec"><div class="lb">과목 ${SUBJECTS.length}</div><div class="chips">${SUBJECTS.map((s) => `<span class="chip">${s}</span>`).join("")}</div></div>
     <div class="sec"><div class="lb">과정 4</div><div class="chips">${COURSES.map((s) => `<span class="chip">${s}</span>`).join("")}</div></div>
-    <div class="sec"><div class="lb">수업</div><div class="one">모든 과정 1:1 레슨</div></div>
+    <div class="sec"><div class="lb">수업</div><div class="one">1:1 레슨을 기본으로 합니다</div></div>
   </div>
   <div class="info">
     <div class="row"><div class="k">연습실</div><div class="v">수강생은 운영시간 안에 <b>하루 1회, 1시간</b> 자유 이용</div></div>

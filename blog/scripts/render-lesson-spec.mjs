@@ -13,7 +13,7 @@ const brand = JSON.parse(await readFile(path.join(root, "templates/brand.json"),
 const fontUrl = pathToFileURL(path.join(root, "node_modules/pretendard/dist/web/variable/woff2/PretendardVariable.woff2")).href;
 
 const ROWS = [
-  ["1:1", "Private", "선생님 한 명, 학생 한 명.<br>모든 과정이 1:1 레슨입니다."],
+  ["1:1", "Private", "선생님 한 명, 학생 한 명이 기본입니다.<br>함께 배우고 싶다면 2:1도 신청할 수 있습니다."],
   ["원칙", "Principles", "진도보다 이해를 먼저 봅니다.<br>같은 곡도, 사람마다 다르게 가르칩니다.<br>기본은 건너뛰지 않습니다."],
   ["소리 기록", "Recording", "보컬 레슨에서는 녹음해서<br>내 소리를 직접 들어 봅니다."],
   ["장비", "Equipment", "콘덴서 마이크 · 팝필터 · 헤드폰 · 스피커"],
@@ -46,7 +46,7 @@ h1 { margin-top: 14px; font-size: 92px; font-weight: 800; letter-spacing: -4px; 
   <div class="list">
     ${ROWS.map(([k, e, v], i) => `<div class="row"><div class="n">${String(i + 1).padStart(2, "0")}</div><div class="k"><b>${k}</b><i>${e}</i></div><div class="v">${v}</div></div>`).join("")}
   </div>
-  <div class="foot"><span>Vocal · Guitar · Drum · Bass · Piano · MIDI · 작곡<br>${brand.address}</span><span><b>${brand.phone}</b></span></div>
+  <div class="foot"><span>Vocal · Guitar · Drum · Bass · Jazz Piano · MIDI · 작곡 · 화성학<br>${brand.address}</span><span><b>${brand.phone}</b></span></div>
 </section></body></html>`;
 
 const tmp = path.join(os.tmpdir(), "enoch-lesson-spec.html");

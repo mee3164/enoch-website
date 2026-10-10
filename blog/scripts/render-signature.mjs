@@ -43,7 +43,7 @@ const page = (t) => `<section class="page">
     <div class="row"><div class="k">Address</div><div class="v">경기도 시흥시 은행로 157 2층<br>(대야역 도보 10–15분, 성원아파트 정류장 앞)</div></div>
     <div class="row"><div class="k">Contact</div><div class="v"><b>010 3949 3666</b></div></div>
     <div class="row"><div class="k">Hours</div><div class="v">평일 13:00–22:00 / 토 10:00–18:00 / 일요일 휴무</div></div>
-    <div class="row"><div class="k">Lessons</div><div class="v">Vocal · Guitar · Drum · Bass · Piano · MIDI · 작곡<br><b>— 모든 과정 1:1 레슨</b></div></div>
+    <div class="row"><div class="k">Lessons</div><div class="v">Vocal · Guitar · Drum · Bass · Jazz Piano · MIDI · 작곡 · 화성학<br><b>— 1:1 레슨을 기본으로 합니다</b></div></div>
   </div>
   <div class="foot"><span>Private Lessons</span><span>1:1</span></div>
 </section>`;
