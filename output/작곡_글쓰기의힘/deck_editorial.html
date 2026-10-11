@@ -1,0 +1,179 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><style>
+@font-face{font-family:P;src:url(../../templates/fonts/Pretendard-Regular.woff2);font-weight:400}
+@font-face{font-family:P;src:url(../../templates/fonts/Pretendard-Medium.woff2);font-weight:500}
+@font-face{font-family:P;src:url(../../templates/fonts/Pretendard-SemiBold.woff2);font-weight:600}
+@font-face{font-family:P;src:url(../../templates/fonts/Pretendard-Bold.woff2);font-weight:700}
+@font-face{font-family:S;src:url(../../templates/fonts/dm-serif-display-latin-400-normal.woff2)}
+:root{--bk:#0B0B0B;--lime:#E1F06B;--card:#F1EFE8;--ink:#141414;--g:#6F6C66}
+*{box-sizing:border-box;margin:0;padding:0}
+.s{width:1080px;height:1350px;position:relative;overflow:hidden;background:var(--bk);color:#F3F1EC;font-family:P,sans-serif;margin-bottom:40px}
+.ring{position:absolute;border:1.5px solid rgba(225,240,107,.45);border-radius:50%}
+.glow{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(225,240,107,.10),rgba(225,240,107,0) 70%)}
+.top{position:absolute;left:84px;right:84px;top:84px;display:flex;justify-content:space-between;align-items:center}
+.wm{font-family:S,serif;font-size:62px;letter-spacing:-2px;line-height:1}
+.tag{font-size:26px;font-weight:600}
+.hl{position:absolute;left:80px;top:250px;color:var(--lime);font-size:96px;font-weight:700;letter-spacing:-5px;line-height:1.14}
+.card{position:absolute;left:84px;right:84px;background:var(--card);color:var(--ink);border-radius:44px;padding:50px 52px 44px}
+.card .ch{display:flex;justify-content:space-between;align-items:center}
+.card .wm{font-size:44px}
+.card .rd{font-size:24px;font-weight:500}
+.meta{margin-top:34px;font-size:22px;font-weight:500;letter-spacing:2px;color:var(--g)}
+.ct{margin-top:14px;font-size:58px;font-weight:700;letter-spacing:-2.5px;line-height:1.2}
+.chips{margin-top:24px;display:flex;gap:26px;align-items:center;font-size:27px;font-weight:500}
+.chips span{display:flex;align-items:center;gap:12px}
+.chips i{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:19px;font-weight:700}
+.body{margin-top:28px;font-size:31px;font-weight:500;line-height:1.62;letter-spacing:-.8px}
+.body b{font-weight:700}
+.btns{margin-top:32px;display:flex;gap:16px}
+.btns span{padding:18px 34px;border-radius:40px;font-size:27px;font-weight:700}
+.b1{background:#E2DFD7}.b2{background:var(--ink);color:#F3F1EC}
+.cf{margin-top:30px;display:flex;justify-content:space-between;font-size:20px;color:var(--g)}
+.foot{position:absolute;left:84px;right:84px;bottom:56px;display:flex;justify-content:space-between;font-size:21px;color:rgba(243,241,236,.55)}
+.row{display:flex;gap:22px;align-items:flex-start;padding:20px 0;border-top:1.5px solid #D9D5CB}
+.row:first-of-type{border-top:0}
+.row .n{flex:0 0 46px;height:46px;border-radius:50%;background:var(--lime);display:flex;align-items:center;justify-content:center;font-size:21px;font-weight:700}
+.row .t{font-size:30px;font-weight:500;line-height:1.5;letter-spacing:-.6px}
+.cmp{margin-top:26px}
+.cmp .q{padding:22px 26px;border-radius:24px;font-size:31px;font-weight:600;line-height:1.5;letter-spacing:-.8px}
+.cmp .q small{display:block;font-size:20px;font-weight:600;letter-spacing:2px;color:var(--g);margin-bottom:6px}
+.cmp .q1{background:#E2DFD7;color:#6F6C66}
+.cmp .q2{background:var(--lime);margin-top:14px}
+
+/* 에디토리얼 버전: 기존 ENOCH 구성 + 라임·Pretendard만 가져옴 */
+@font-face{font-family:M;src:local("DejaVu Sans Mono")}
+.ring,.glow,.btns,.card .ch{display:none!important}
+.top{top:72px;padding-bottom:20px;border-bottom:1.5px solid rgba(243,241,236,.85)}
+.top .wm{font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace;font-size:22px;letter-spacing:3px}
+.top .wm{text-transform:uppercase}.top .wm::after{content:" MUSIC ACADEMY"}
+.chips i{color:#111}
+.top .tag{font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace;font-size:22px;font-weight:400;letter-spacing:3px;text-transform:uppercase}
+.hl{font-size:92px}
+.card{background:transparent;color:#F3F1EC;border-radius:0;padding:36px 0 0;border-top:1.5px solid rgba(243,241,236,.85);left:84px;right:84px}
+.meta{color:#9A958C;font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace;font-size:20px;letter-spacing:3px}
+.ct{color:#F3F1EC}
+.body{color:#C9C4BB;font-weight:400}
+.body b{color:#F3F1EC}
+.chips{color:#C9C4BB}
+.row{border-top-color:rgba(243,241,236,.22)}
+.row .t{color:#F3F1EC;font-weight:400}
+.row .n{color:#111}
+.cmp .q{border-radius:0}
+.cmp .q1{background:transparent;border:1.5px solid rgba(243,241,236,.3);color:#9A958C}
+.cmp .q1 small{color:#9A958C}
+.cmp .q2{color:#111}
+.cmp .q2 small{color:#4a4a2a}
+.cf{color:#F3F1EC!important}.cf span span{color:#9A958C!important}
+.foot{bottom:60px;padding-top:20px;border-top:1.5px solid rgba(243,241,236,.85);color:#F3F1EC;font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace;font-size:20px;letter-spacing:2px}
+.foot span:first-child{font-family:P,sans-serif;letter-spacing:0}
+</style></head><body>
+
+<!-- 1 표지 -->
+<section class="s" id="c1">
+  <div class="glow" style="left:-300px;top:900px;width:900px;height:900px"></div>
+  <div class="ring" style="left:760px;top:120px;width:620px;height:620px"></div>
+  <div class="top"><div class="wm">enoch</div><div class="tag">Songwriting — Note</div></div>
+  <div class="hl">곡은,<br>문장에서 시작돼요.</div>
+  <div class="card" style="top:560px">
+    <div class="ch"><div class="wm">enoch</div><div class="rd">글 읽기</div></div>
+    <div class="meta">SONGWRITING · NOTE</div>
+    <div class="ct">작곡과 글쓰기</div>
+    <div class="chips"><span><i style="background:var(--lime)">R</i>READ</span><span><i style="background:#A9C3EE">W</i>WRITE</span></div>
+    <div class="body">좋은 멜로디도, 하고 싶은 말이 있어야 남아요.<br>매일 읽고 쓰는 사람이 곡을 쓸 때 생기는 일.</div>
+    <div class="btns"><span class="b1">저장</span><span class="b2">공유하기 ↗</span></div>
+  </div>
+  <div class="foot"><span>작곡과 글쓰기</span><span>01 / 07</span></div>
+</section>
+
+<!-- 2 말 -->
+<section class="s" id="c2">
+  <div class="ring" style="left:-260px;top:620px;width:560px;height:560px"></div>
+  <div class="top"><div class="wm">enoch</div><div class="tag">WHY WORDS</div></div>
+  <div class="hl" style="top:220px">멜로디만큼,<br>말이 필요해요.</div>
+  <div class="card" style="top:560px">
+    <div class="meta" style="margin-top:0">01 · STORY</div>
+    <div class="ct">같은 코드,<br>다른 곡</div>
+    <div class="body">같은 코드 진행으로도 수많은 곡이 만들어져요.<br>곡을 다르게 만드는 건 그 안에 담긴 이야기예요.<br><b>무엇을 말하고 싶은지</b>가 곡의 방향을 정해요.</div>
+  </div>
+  <div class="foot"><span>작곡과 글쓰기</span><span>02 / 07</span></div>
+</section>
+
+<!-- 3 읽기 -->
+<section class="s" id="c3">
+  <div class="ring" style="left:700px;top:-200px;width:640px;height:640px"></div>
+  <div class="top"><div class="wm">enoch</div><div class="tag">READ</div></div>
+  <div class="hl" style="top:220px">읽는 만큼,<br>쓸 수 있는 말이<br>늘어나요.</div>
+  <div class="card" style="top:640px">
+    <div class="meta" style="margin-top:0">02 · READING</div>
+    <div class="ct">가사는 짧은 글이에요</div>
+    <div class="body">한 줄 안에 장면 하나를 담아야 해요.<br>많이 읽은 사람은 같은 감정을<br><b>다르게 말하는 방법</b>을 더 많이 알고 있어요.</div>
+  </div>
+  <div class="foot"><span>작곡과 글쓰기</span><span>03 / 07</span></div>
+</section>
+
+<!-- 4 쓰기 -->
+<section class="s" id="c4">
+  <div class="glow" style="left:500px;top:-300px;width:900px;height:900px"></div>
+  <div class="top"><div class="wm">enoch</div><div class="tag">WRITE</div></div>
+  <div class="hl" style="top:220px">매일 쓰면,<br>내 말투가 생겨요.</div>
+  <div class="card" style="top:540px">
+    <div class="meta" style="margin-top:0">03 · DAILY</div>
+    <div class="ct">하루 세 줄</div>
+    <div style="margin-top:20px">
+      <div class="row"><span class="n">1</span><span class="t">오늘 본 장면 하나</span></div>
+      <div class="row"><span class="n">2</span><span class="t">그때 든 감정 하나</span></div>
+      <div class="row"><span class="n">3</span><span class="t">그 감정을 다른 말로 한 번 더</span></div>
+    </div>
+    <div class="body" style="margin-top:18px;color:var(--g)">쌓인 노트가 가사의 재료가 돼요.</div>
+  </div>
+  <div class="foot"><span>작곡과 글쓰기</span><span>04 / 07</span></div>
+</section>
+
+<!-- 5 세계관 -->
+<section class="s" id="c5">
+  <div class="ring" style="left:-200px;top:-180px;width:560px;height:560px"></div>
+  <div class="top"><div class="wm">enoch</div><div class="tag">MY WORLD</div></div>
+  <div class="hl" style="top:220px">나의 세계관은<br>디테일로 드러나요.</div>
+  <div class="card" style="top:540px">
+    <div class="meta" style="margin-top:0">04 · DETAIL</div>
+    <div class="ct">같은 그리움, 다른 문장</div>
+    <div class="cmp">
+      <div class="q q1"><small>누구나 쓰는 문장</small>너무 보고 싶어</div>
+      <div class="q q2"><small>나만 쓸 수 있는 문장</small>네가 두고 간 우산을<br>아직 현관에 세워 둬요</div>
+    </div>
+    <div class="body" style="margin-top:22px;font-size:28px;color:var(--g)">내가 본 것, 내가 쓰는 단어가 곡을 나답게 만들어요.</div>
+  </div>
+  <div class="foot"><span>작곡과 글쓰기</span><span>05 / 07</span></div>
+</section>
+
+<!-- 6 해보기 -->
+<section class="s" id="c6">
+  <div class="ring" style="left:720px;top:820px;width:620px;height:620px"></div>
+  <div class="top"><div class="wm">enoch</div><div class="tag">TRY THIS WEEK</div></div>
+  <div class="hl" style="top:220px">이번 주,<br>노트 한 권.</div>
+  <div class="card" style="top:540px">
+    <div class="meta" style="margin-top:0">05 · PRACTICE</div>
+    <div class="ct">읽고, 바꾸고, 소리 내기</div>
+    <div style="margin-top:20px">
+      <div class="row"><span class="n">1</span><span class="t">읽다가 마음에 남은 한 줄을 옮겨 적어요</span></div>
+      <div class="row"><span class="n">2</span><span class="t">그 문장을 내 말로 바꿔 써요</span></div>
+      <div class="row"><span class="n">3</span><span class="t">소리 내어 읽고, 리듬이 좋은 단어에 밑줄.<br>그 리듬이 멜로디의 힌트가 돼요</span></div>
+    </div>
+  </div>
+  <div class="foot"><span>작곡과 글쓰기</span><span>06 / 07</span></div>
+</section>
+
+<!-- 7 ENOCH -->
+<section class="s" id="c7">
+  <div class="glow" style="left:-200px;top:700px;width:1000px;height:1000px"></div>
+  <div class="ring" style="left:640px;top:-160px;width:600px;height:600px"></div>
+  <div class="top"><div class="wm">enoch</div><div class="tag">The ENOCH Way</div></div>
+  <div class="hl" style="top:220px">나만의 진짜 소리는,<br>나만의 문장에서.</div>
+  <div class="card" style="top:540px">
+    <div class="ch"><div class="wm">enoch</div><div class="rd">THE ENOCH WAY</div></div>
+    <div class="ct" style="margin-top:30px">같은 곡도,<br>사람마다 다르게 가르칩니다.</div>
+    <div class="body">ENOCH 작곡 수업은 모든 과정이 <b>1:1</b>이라,<br>한 사람의 이야기에 맞춰 수업해요.</div>
+    <div class="cf" style="margin-top:34px;font-size:23px;color:var(--ink)"><span>에녹실용음악학원 시흥점<br><span style="color:var(--g)">경기도 시흥시 은행로 157 2층</span></span><span style="text-align:right">010 3949 3666<br><span style="color:var(--g)">Vocal · Guitar · Drum · Bass · Piano · MIDI · 작곡</span></span></div>
+  </div>
+  <div class="foot"><span>작곡과 글쓰기</span><span>07 / 07</span></div>
+</section>
+</body></html>
