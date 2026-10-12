@@ -9,3 +9,4 @@
 ## 학원에 확인할 것
 - 수업에서 옛 음악 듣기·카피를 실제로 하는지. 하면 7장에 사실로 넣을 수 있음.
 - 장비·기술 용어는 영어로 표기 (Drum Machine, Synthesizer, Talk Box) — 원장님 요청 2026-10-12.
+- 음악 용어 전부 영어 표기 (Funk, Soul, Neo Soul, Groove, Record, Rhythm, Riff, Vocal, Chorus, Reggae, Bass, Brass, Phrasing, Drum) — 원장님 요청 2026-10-12. '1:1 레슨'은 브랜드 문구라 그대로.
