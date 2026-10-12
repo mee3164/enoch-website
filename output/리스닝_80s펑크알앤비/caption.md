@@ -1,9 +1,9 @@
 # 캡션: ENOCH LISTENING — 80년대 펑크 · R&B 여섯 장
 
 ## 본문
-옛 레코드에서 배우는 그루브.
+그루브를 배우는 여섯 장의 레코드.
 
-크러쉬도, 나얼도 옛 레코드를 모읍니다. 80년대는 드럼머신과 신시사이저가 R&B 한가운데로 들어온 때라, 지금 듣는 소리의 뿌리가 많이 남아 있거든요.
+80년대는 드럼머신과 신시사이저가 R&B 한가운데로 들어온 때라, 지금 듣는 소리의 뿌리가 많이 남아 있거든요.
 
 01 Stevie Wonder — Hotter Than July (1980)
 02 Marvin Gaye — Midnight Love (1982)
@@ -22,9 +22,9 @@
 #펑크 #Funk #알앤비 #RnB #명반추천 #LP #그루브 #리듬공부 #실용음악 #시흥실용음악학원 #에녹실용음악학원
 
 ## 대체 텍스트
-1. 오른쪽에 걸친 검은 LP 그림, "옛 레코드에서 배우는 그루브", "크러쉬도, 나얼도 옛 레코드를 모읍니다."
-2. "드럼머신과 신스, 지금 소리의 뿌리". 크러쉬가 인터뷰에서 좋아한다고 밝힌 아티스트, 나얼의 곡 「1985」.
-3. LP 그림과 함께 01 Stevie Wonder Hotter Than July, 02 Marvin Gaye Midnight Love. 들을 곡과 들어 볼 것.
+1. 앨범 자켓 여섯 장 격자와 "그루브를 배우는 여섯 장의 레코드".
+2. "드럼머신과 신스, 지금 소리의 뿌리". 들어 볼 것 세 가지: 베이스, 드럼, 보컬.
+3. 앨범 자켓과 함께 01 Stevie Wonder Hotter Than July, 02 Marvin Gaye Midnight Love. 들을 곡과 들어 볼 것.
 4. 03 James Ingram It's Your Night, 04 Luther Vandross Never Too Much.
 5. 05 Rick James Street Songs, 06 Zapp Zapp.
 6. 검정 장 "한 곡을, 세 번 들어 보기": 처음엔 그냥 / 한 악기만 / 따라 하기.
