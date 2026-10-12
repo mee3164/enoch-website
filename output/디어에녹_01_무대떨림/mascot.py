@@ -1,4 +1,4 @@
-# ENOCH 마스코트 '노트' — 8분음표 모양 단순 선 그림 (SVG 조각 생성)
+# ENOCH 대표 캐릭터 '에녹이' — 8분음표 모양 단순 선 그림 (SVG 조각 생성)
 def mascot(x=0, y=0, s=1.0, face="smile", arms="down", sweat=False, shake=False, flip=False, ink="#111"):
     k = 6/s if s else 6
     g = []
@@ -13,6 +13,8 @@ def mascot(x=0, y=0, s=1.0, face="smile", arms="down", sweat=False, shake=False,
         g.append('<path d="M-88 10 C -120 30, -125 60, -118 80"/><path d="M 92 0 C 120 20, 128 50, 122 72"/>')
     elif arms == "up":
         g.append('<path d="M-88 -10 C -130 -40, -140 -80, -130 -110"/><path d="M 92 -20 C 130 -60, 140 -90, 132 -120"/>')
+    elif arms == "wave":
+        g.append('<path d="M-88 10 C -120 30, -125 60, -118 80"/><path d="M 92 -20 C 130 -60, 140 -90, 132 -120"/>')
     front = None
     if arms == "front":
         front = '<path d="M-90 10 C -120 0, -138 -20, -142 -44"/><path d="M 94 -6 C 124 -16, 140 -36, 144 -60"/><g fill="#FFFDF7"><circle cx="-142" cy="-52" r="12"/><circle cx="144" cy="-68" r="12"/></g>'
