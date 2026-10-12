@@ -27,7 +27,7 @@ Neo Soul
 
 앨범 이미지 출처: Apple Music · 앨범 아트워크의 저작권은 각 음반사에 있습니다.
 
-#Funk #Funk #알앤비 #RnB #Neo Soul #NeoSoul #명반추천 #LP #Groove #Rhythm공부 #실용음악 #시흥실용음악학원 #에녹실용음악학원
+#Funk #펑크 #RnB #알앤비 #NeoSoul #네오소울 #명반추천 #LP #Groove #리듬공부 #실용음악 #시흥실용음악학원 #에녹실용음악학원
 
 ## 대체 텍스트
 1. 앨범 자켓 일곱 장과 "7 RECORDS" 칸이 있는 격자, "Groove를 배우는 일곱 장의 Record".
