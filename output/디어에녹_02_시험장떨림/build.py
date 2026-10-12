@@ -50,7 +50,9 @@ practice = (
     f'<g {ST}><path d="M580 760 V 500"/><path d="M540 760 h 80"/><path d="M500 500 h 160 l -20 -110 h -120 z" fill="#FFFDF7"/>'
     '<path d="M535 425 h 90 M 530 455 h 100" stroke-width="3"/></g>'
     f'<g {ST}><path d="M120 200 v 40"/><path d="M90 300 a 30 34 0 0 1 60 0"/><rect x="80" y="296" width="18" height="36" rx="8" fill="#FFFDF7"/><rect x="142" y="296" width="18" height="36" rx="8" fill="#FFFDF7"/></g>'
-    + note(420, 220, 1.6) + note(700, 180, 1.3) + note(760, 330, 1.1) + note(200, 520, 1.2)
+    f'<g {ST} transform="translate(780,600) rotate(-8)"><path d="M0 -300 V -60" stroke-width="7"/><rect x="-14" y="-330" width="28" height="40" rx="6" fill="#FFFDF7"/>'
+    '<path d="M0 -100 C -46 -100, -50 -40, -26 -20 C -70 0, -66 100, 0 100 C 66 100, 70 0, 26 -20 C 50 -40, 46 -100, 0 -100 Z" fill="#FFFDF7"/><circle cx="0" cy="-30" r="16"/><path d="M-20 40 h 40"/></g>'
+    + note(420, 220, 1.6) + note(700, 180, 1.3) + note(640, 330, 1.1) + note(200, 520, 1.2)
 )
 # 시험장: 심사석, 바닥 표시, 시계
 def exam(dim=False):
@@ -63,6 +65,8 @@ def exam(dim=False):
         o.append(f'<text x="{x}" y="348" font-family="P" font-size="22" font-weight="700" text-anchor="middle" fill="#111">심사</text>')
         o.append(f'<g {ST} stroke-width="3"><path d="M{x-40} 400 h 60 M {x-40} 424 h 44"/></g>')
     o.append(f'<g {ST}><circle cx="760" cy="140" r="52" fill="#FFFDF7"/><path d="M760 140 V 108 M 760 140 L 784 152"/></g>')
+    o.append(f'<g {ST}><path d="M250 640 v 120 M 330 640 v 120 M 240 640 h 100"/><path d="M250 640 V 560"/></g>')
+    o.append(f'<g {ST}><path d="M620 760 V 600"/><path d="M590 760 h 60"/><rect x="606" y="556" width="28" height="48" rx="14" fill="#FFFDF7"/></g>')
     o.append(f'<g {ST}><path d="M380 760 l 128 0 M 444 730 v 60" stroke-width="7"/></g>')
     o.append('<text x="444" y="840" font-family="P" font-size="26" font-weight="700" text-anchor="middle" fill="#111">07</text>')
     return ''.join(o)
@@ -82,12 +86,12 @@ S.append(f'''<section class="s" id="t1">{H()}
 # 2 연습실
 S.append(f'''<section class="s" id="t2">{H()}
 <div class="panel">{svg(practice)}<div class="bub" style="left:50px;top:50px">연습실</div></div>
-{say("연습실에선 노래가 술술 나와요.", "익숙한 방, 익숙한 마이크. 몇 번을 다시 불러도 괜찮은 곳이거든요.", "happy")}
+{say("연습실에선 노래도 연주도 술술 나와요.", "익숙한 방, 익숙한 악기. 몇 번을 다시 해도 괜찮은 곳이거든요.", "happy")}
 {F(2)}</section>''')
 # 3 시험장
 S.append(f'''<section class="s" id="t3">{H()}
 <div class="panel">{svg(exam())}<div class="bub" style="left:50px;top:50px">시험장</div></div>
-{say("그런데 시험장 문을 여는 순간.", "처음 보는 방, 심사석, 한 번뿐인 기회.", "nervous", "down")}
+{say("그런데 시험장 문을 여는 순간.", "처음 보는 방, 심사석, 낯선 마이크와 의자. 한 번뿐인 기회.", "nervous", "down")}
 {F(3)}</section>''')
 # 4 머릿속
 S.append(f'''<section class="s" id="t4">{H()}
@@ -106,8 +110,8 @@ row = lambda n, t, d, last=False: f'<div style="display:flex;gap:32px;padding:30
 S.append(f'''<section class="s dark" id="t6">{H("TRY THIS WEEK")}
 <div style="position:absolute;left:92px;top:200px;font-size:80px;font-weight:700;letter-spacing:-4px;line-height:1.2">시험장을,<br>미리 만나 보기</div>
 <div style="position:absolute;left:96px;right:96px;top:480px">
-{row(1,'딱 한 번만','오늘의 연습 중 한 번은 다시 부르지 않기로 정해 보세요.<br>실수해도 끝까지.')}
-{row(2,'처음 보는 사람 앞에서','익숙하지 않은 사람 앞에서 부르면, 시험장의 낯섦과 조금 가까워져요.')}
+{row(1,'딱 한 번만','연습 중 한 번은 다시 하지 않기로 정해 보세요.<br>노래든 연주든, 실수해도 끝까지.')}
+{row(2,'처음 보는 사람 앞에서','익숙하지 않은 사람 앞에서 노래하거나 연주해 보면,<br>시험장의 낯섦과 조금 가까워져요.')}
 {row(3,'들어가는 순간부터','문을 열고 들어가서 첫 음을 내기까지. 그 순서도 연습의 일부입니다.',True)}
 </div>
 <svg width="200" height="220" style="position:absolute;right:70px;top:150px">{mascot(100,150,0.55,"smile","wave",ink="#F1EDE4")}</svg>
