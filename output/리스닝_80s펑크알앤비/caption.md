@@ -1,16 +1,22 @@
-# 캡션: ENOCH LISTENING — 80년대 펑크 · R&B 여섯 장
+# 캡션: ENOCH LISTENING — 그루브를 배우는 일곱 장의 레코드
 
 ## 본문
-그루브를 배우는 여섯 장의 레코드.
+그루브를 배우는 일곱 장의 레코드.
 
-80년대는 드럼머신과 신시사이저가 R&B 한가운데로 들어온 때라, 지금 듣는 소리의 뿌리가 많이 남아 있거든요.
+80년대엔 Drum Machine과 Synthesizer가 R&B 한가운데로 들어왔습니다. 90년대 후반 네오소울은 옛 소울과 펑크의 결을 다시 꺼내 왔고요. 시대는 달라도, 그루브를 듣는 귀는 같아요.
 
+80s R&B
 01 Stevie Wonder — Hotter Than July (1980)
 02 Marvin Gaye — Midnight Love (1982)
 03 James Ingram — It's Your Night (1983)
-04 Luther Vandross — Never Too Much (1981)
-05 Rick James — Street Songs (1981)
-06 Zapp — Zapp (1980)
+
+80s Funk
+04 Rick James — Street Songs (1981)
+05 Zapp — Zapp (1980)
+
+Neo Soul
+06 Erykah Badu — Baduizm (1997)
+07 Musiq Soulchild — Aijuswanaseing (2000)
 
 듣는 법은 간단합니다. 한 곡을 세 번. 처음엔 그냥, 두 번째는 베이스나 드럼만, 세 번째는 한 소절 따라 해 보기. 노래든 연주든 박은 여기서 배워요.
 
@@ -19,13 +25,15 @@
 에녹실용음악학원 시흥점
 경기도 시흥시 은행로 157 2층 · 010 3949 3666
 
-#펑크 #Funk #알앤비 #RnB #명반추천 #LP #그루브 #리듬공부 #실용음악 #시흥실용음악학원 #에녹실용음악학원
+앨범 이미지 출처: Apple Music · 앨범 아트워크의 저작권은 각 음반사에 있습니다.
+
+#펑크 #Funk #알앤비 #RnB #네오소울 #NeoSoul #명반추천 #LP #그루브 #리듬공부 #실용음악 #시흥실용음악학원 #에녹실용음악학원
 
 ## 대체 텍스트
-1. 앨범 자켓 여섯 장 격자와 "그루브를 배우는 여섯 장의 레코드".
-2. "드럼머신과 신스, 지금 소리의 뿌리". 들어 볼 것 세 가지: 베이스, 드럼, 보컬.
-3. 앨범 자켓과 함께 01 Stevie Wonder Hotter Than July, 02 Marvin Gaye Midnight Love. 들을 곡과 들어 볼 것.
-4. 03 James Ingram It's Your Night, 04 Luther Vandross Never Too Much.
-5. 05 Rick James Street Songs, 06 Zapp Zapp.
+1. 앨범 자켓 일곱 장과 "7 RECORDS" 칸이 있는 격자, "그루브를 배우는 일곱 장의 레코드".
+2. "80년대의 리듬, 네오소울까지". 들어 볼 것 세 가지: Bass, Drums, Voice.
+3. 80s R&B: Stevie Wonder Hotter Than July, Marvin Gaye Midnight Love, James Ingram It's Your Night. 자켓과 들을 곡, 들어 볼 것.
+4. 80s Funk: Rick James Street Songs, Zapp Zapp.
+5. Neo Soul: Erykah Badu Baduizm, Musiq Soulchild Aijuswanaseing.
 6. 검정 장 "한 곡을, 세 번 들어 보기": 처음엔 그냥 / 한 악기만 / 따라 하기.
 7. 검정 장 원칙 3 "기본은 건너뛰지 않습니다", 모든 과정 1:1, 주소·전화·과목.
