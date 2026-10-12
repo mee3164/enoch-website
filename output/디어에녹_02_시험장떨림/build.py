@@ -102,24 +102,25 @@ S.append(f'''<section class="s" id="t4">{H()}
 S.append(f'''<section class="s" id="t5">{H("ENOCH'S ANSWER")}
 <div class="k" style="position:absolute;left:96px;top:200px">에녹이의 답 · Answer</div>
 <div style="position:absolute;left:92px;top:250px;font-size:78px;font-weight:700;letter-spacing:-4px;line-height:1.22">실력이 없어서가 아니라,<br><mark>낯설어서</mark>입니다</div>
-<div class="p" style="position:absolute;left:96px;right:96px;top:560px">연습실은 매일 가는 곳이고,<br>시험장은 그날 처음 보는 곳.<br>게다가 한 번뿐이라는 생각이 더해지면 몸이 먼저 굳어요.<br><br>떨림을 없애기보다, <b>시험장과 비슷한 상황에<br>미리 익숙해지는 것</b>이 도움이 됩니다.</div>
-<svg width="300" height="300" style="position:absolute;right:80px;top:930px">{mascot(150,190,0.8,"calm","hug")}</svg>
+<div class="p" style="position:absolute;left:96px;right:96px;top:560px">연습실은 매일 가는 곳이고,<br>시험장은 그날 처음 보는 곳.<br>게다가 한 번뿐이라는 생각이 더해지면 몸이 먼저 굳어요.<br><br>떨림을 없애기보다, <b>시험장과 비슷한 상황에<br>미리 익숙해지는 것</b>이 도움이 됩니다.<br><br>그리고 떨린다는 건, 그만큼 잘하고 싶다는 뜻이기도 해요.</div>
+<svg width="260" height="260" style="position:absolute;right:70px;top:970px">{mascot(130,165,0.7,"calm","hug")}</svg>
 {F(5)}</section>''')
 # 6 해보기
-row = lambda n, t, d, last=False: f'<div style="display:flex;gap:32px;padding:30px 0;border-top:1px solid rgba(241,237,228,.3){";border-bottom:1px solid rgba(241,237,228,.3)" if last else ""}"><span class="num">{n}</span><div><div style="font-size:36px;font-weight:700">{t}</div><div style="margin-top:10px;font-size:28px;color:#C9C4BB;line-height:1.5">{d}</div></div></div>'
+row = lambda n, t, d, last=False: f'<div style="display:flex;gap:32px;padding:26px 0;border-top:1px solid rgba(241,237,228,.3){";border-bottom:1px solid rgba(241,237,228,.3)" if last else ""}"><span class="num">{n}</span><div><div style="font-size:36px;font-weight:700">{t}</div><div style="margin-top:10px;font-size:28px;color:#C9C4BB;line-height:1.5">{d}</div></div></div>'
 S.append(f'''<section class="s dark" id="t6">{H("TRY THIS WEEK")}
 <div style="position:absolute;left:92px;top:200px;font-size:80px;font-weight:700;letter-spacing:-4px;line-height:1.2">시험장을,<br>미리 만나 보기</div>
-<div style="position:absolute;left:96px;right:96px;top:480px">
-{row(1,'딱 한 번만','연습 중 한 번은 다시 하지 않기로 정해 보세요.<br>노래든 연주든, 실수해도 끝까지.')}
+<div style="position:absolute;left:96px;right:96px;top:440px">
+{row(1,'카메라 켜고, 딱 한 번만','휴대폰으로 녹화하면서 한 번은 다시 하지 않기.<br>노래든 연주든, 실수해도 끝까지.')}
 {row(2,'처음 보는 사람 앞에서','익숙하지 않은 사람 앞에서 노래하거나 연주해 보면,<br>시험장의 낯섦과 조금 가까워져요.')}
-{row(3,'들어가는 순간부터','문을 열고 들어가서 첫 음을 내기까지. 그 순서도 연습의 일부입니다.',True)}
+{row(3,'들어가는 순간부터','문을 열고 들어가서 첫 음을 내기까지. 그 순서도 연습입니다.')}
+{row(4,'시작 전 한 숨','첫 음 전에 숨을 길게 내쉬어 보세요. 몸이 조금 내려앉아요.',True)}
 </div>
 <svg width="200" height="220" style="position:absolute;right:70px;top:150px">{mascot(100,150,0.55,"smile","wave",ink="#F1EDE4")}</svg>
 {F(6)}</section>''')
 # 7 마무리
 S.append(f'''<section class="s dark" id="t7">{H("THE ENOCH WAY")}
 <div style="position:absolute;left:92px;top:200px;font-size:80px;font-weight:700;letter-spacing:-4px;line-height:1.2">고민,<br><span style="color:var(--lime)">보내 주세요.</span></div>
-<div class="p" style="position:absolute;left:96px;right:96px;top:470px;color:#C9C4BB">음악 하면서 생긴 고민을 스토리 질문으로 받습니다.<br>골라서, 에녹이가 Dear ENOCH로 답할게요.<br><br>같은 곡도, 사람마다 다르게 가르칩니다.<br>입시 과정도 모두 <b style="color:#F1EDE4">1:1</b>.</div>
+<div class="p" style="position:absolute;left:96px;right:96px;top:470px;color:#C9C4BB">음악 하면서 생긴 고민을 스토리 질문으로 받습니다.<br>골라서, 에녹이가 Dear ENOCH로 답할게요.<br><br>같은 곡도, 사람마다 다르게 가르칩니다.<br>ENOCH 입시 과정은 모두 <b style="color:#F1EDE4">1:1</b>,<br><b style="color:#F1EDE4">모의고사</b>도 진행합니다.</div>
 <svg width="320" height="400" style="position:absolute;right:90px;top:760px">{mascot(160,260,0.95,"happy","up",ink="#F1EDE4")}</svg>
 <div style="position:absolute;left:96px;top:1040px;font-size:22px;line-height:1.6">에녹실용음악학원 시흥점<br><span style="color:#9A958C">경기도 시흥시 은행로 157 2층 · 010 3949 3666</span></div>
 {F(7)}</section>''')
