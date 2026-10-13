@@ -58,7 +58,7 @@ CSS = '''*{box-sizing:border-box;margin:0;padding:0}
 #full .row .n{font-size:16px}#full .row .t{font-size:21px}#full .row .d{font-size:18px}
 '''
 H = lambda r="ENOCH PRODUCING": f'<div class="hd"><span>ENOCH MUSIC ACADEMY</span><span>{r}</span></div>'
-F = lambda n, t=5: f'<div class="ft"><span>SUNO PRODUCING — 앨범 제작 과정</span><span>0{n} / 0{t}</span></div>'
+F = lambda n, t=5: f'<div class="ft"><span>ENOCH PRODUCING — 앨범 제작 과정</span><span>0{n} / 0{t}</span></div>'
 
 def step(i, top, start, hl_last=False):
     no, en, ko, rows = STEPS[i]
@@ -71,12 +71,12 @@ def step(i, top, start, hl_last=False):
 S = []
 S.append(f'''<section class="s" id="c1">{H()}
 <div class="k" style="position:absolute;left:96px;top:190px">Album Course · ENOCH MUSIC ACADEMY</div>
-<div style="position:absolute;left:88px;top:260px;font-family:var(--en);font-weight:700;font-size:150px;letter-spacing:-6px;line-height:.9">SUNO<br>PRODUCING</div>
+<div style="position:absolute;left:88px;top:260px;font-family:var(--en);font-weight:700;font-size:150px;letter-spacing:-6px;line-height:.9">ENOCH<br>PRODUCING</div>
 <div style="position:absolute;left:92px;top:560px;font-family:var(--en);font-weight:300;font-size:140px;letter-spacing:-6px;line-height:.9;color:var(--g)">16 SESSIONS</div>
 <div style="position:absolute;left:96px;right:96px;top:860px;border-top:1.5px solid var(--bk);display:grid;grid-template-columns:repeat(4,1fr)">''' + ''.join(f'<div style="padding-top:16px;font-family:var(--en);font-size:20px;font-weight:700;letter-spacing:.5px">{no}&nbsp;&nbsp;{en.upper()}</div>' for no,en,_,_ in STEPS) + f'''</div>
 <div class="h" style="position:absolute;left:92px;top:960px;font-size:72px;letter-spacing:-3.2px;line-height:1.16">16회 만에,<br><em>내 이름의 한 곡</em></div>
 <div class="p" style="position:absolute;left:96px;top:1150px;font-size:26px">주제를 정하는 날부터 음원이 발매되는 날까지.</div>
-<div style="position:absolute;left:0;right:0;bottom:0;height:64px;background:var(--bk);color:var(--iv);font-family:var(--mono);font-size:20px;letter-spacing:4px;white-space:nowrap;display:flex;align-items:center"><span style="padding-left:30px">DIRECTION — WRITING — ARRANGEMENT — RELEASE — SUNO PRODUCING — DIRECTION — WRITING — ARRANGEMENT — RELEASE</span></div>
+<div style="position:absolute;left:0;right:0;bottom:0;height:64px;background:var(--bk);color:var(--iv);font-family:var(--mono);font-size:20px;letter-spacing:4px;white-space:nowrap;display:flex;align-items:center"><span style="padding-left:30px">DIRECTION — WRITING — ARRANGEMENT — RELEASE — ENOCH PRODUCING — DIRECTION — WRITING — ARRANGEMENT — RELEASE</span></div>
 </section>''')
 S.append(f'''<section class="s" id="c2">{H()}
 <div class="k" style="position:absolute;left:96px;top:200px">The Course</div>
@@ -94,12 +94,12 @@ S.append(f'''<section class="s" id="c4">{H("CURRICULUM 03 — 04")}
 S.append(f'''<section class="s dark" id="c5">{H("THE ENOCH WAY")}
 <div style="position:absolute;left:84px;top:150px;font-family:var(--en);font-weight:700;font-size:240px;letter-spacing:-8px;color:#2A2825;line-height:1">ENOCH</div>
 <div class="h" style="position:absolute;left:92px;top:450px">같은 도구라도,<br><span style="color:var(--bt)">이야기는 한 사람의 것.</span></div>
-<div class="p" style="position:absolute;left:96px;right:96px;top:720px">같은 곡도, 사람마다 다르게 가르칩니다.<br>SUNO PRODUCING 과정도 처음부터 끝까지 <b>1:1</b>입니다.</div>
+<div class="p" style="position:absolute;left:96px;right:96px;top:720px">같은 곡도, 사람마다 다르게 가르칩니다.<br>ENOCH PRODUCING 과정도 처음부터 끝까지 <b>1:1</b>입니다.</div>
 <div style="position:absolute;left:96px;right:96px;top:1040px;padding-top:22px;border-top:1px solid rgba(241,237,228,.3);display:flex;justify-content:space-between;font-size:22px;line-height:1.6"><span>에녹실용음악학원 시흥점<br><span style="color:#9A958C">경기도 시흥시 은행로 157 2층</span></span><span style="text-align:right;font-family:var(--mono)">010 3949 3666<br><span style="color:#9A958C;font-family:P,sans-serif;font-size:19px">Vocal · Guitar · Drum · Bass · Piano · MIDI · 작곡</span></span></div>
 {F(5)}</section>''')
 # 블로그·플레이스용 한 장 요약
-S.append(f'''<section class="s" id="full">{H("SUNO PRODUCING — 16 SESSIONS")}
-<div class="h" style="position:absolute;left:92px;top:150px;font-size:54px;letter-spacing:-2.2px"><span style="font-family:var(--en)">SUNO PRODUCING</span> <em>앨범 제작 과정</em></div>
+S.append(f'''<section class="s" id="full">{H("ENOCH PRODUCING — 16 SESSIONS")}
+<div class="h" style="position:absolute;left:92px;top:150px;font-size:54px;letter-spacing:-2.2px"><span style="font-family:var(--en)">ENOCH PRODUCING</span> <em>앨범 제작 과정</em></div>
 {step(0, 250, 1)}{step(1, 490, 5)}{step(2, 730, 9)}{step(3, 970, 13, True)}
 <div style="position:absolute;left:96px;right:96px;bottom:60px;display:flex;justify-content:space-between;font-size:20px;padding-top:18px;border-top:1.5px solid var(--bk)"><span>에녹실용음악학원 시흥점 · 모든 과정 1:1</span><span style="font-family:var(--mono)">010 3949 3666</span></div>
 </section>''')
