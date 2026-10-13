@@ -28,8 +28,8 @@ CSS = '''*{box-sizing:border-box;margin:0;padding:0}
 TOTAL = 7
 HD = lambda r="ENOCH BOOK — 01": f'<div class="hd"><span>ENOCH MUSIC ACADEMY</span><span>{r}</span></div>'
 FT = lambda n: f'<div class="ft"><span>완전한 연주 — 1단계</span><span>0{n} / 0{TOTAL}</span></div>'
-SRC = '<div class="src">인용 출처: 케니 워너, 『완전한 연주』, 이혜주 옮김. 쪽수는 각 인용 아래 표기.</div>'
-SRC_PHOTO = '<div class="src">책 사진: ENOCH 촬영 · 『완전한 연주』 케니 워너 지음, 이혜주 옮김.</div>'
+SRC = '<div class="src">인용 출처: 케니 워너, 『완전한 연주』, 이혜주 옮김, 현익출판. 쪽수는 각 인용 아래 표기.</div>'
+SRC_PHOTO = '<div class="src">책 사진: ENOCH 촬영 · 『완전한 연주』 케니 워너 지음, 이혜주 옮김, 현익출판.</div>'
 
 # 위에서 본 그랜드 피아노 + 손그림 잎 (표지를 베끼지 않은 ENOCH 선 그림)
 PIANO = '''<svg width="380" height="440" viewBox="0 0 380 440"><g fill="none" stroke="#111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
@@ -51,7 +51,7 @@ S.append(f'''<section class="s" id="b1">{HD()}
 <img src="../../images/책/완전한연주_표지.jpg" style="position:absolute;left:600px;top:200px;width:390px;height:520px;object-fit:cover;object-position:50% 45%;display:block">
 <div class="k" style="position:absolute;left:96px;top:200px">ENOCH Book · 01</div>
 <div class="h" style="position:absolute;left:92px;top:250px;width:440px;font-size:80px;letter-spacing:-4px;line-height:1.18">시험장에서<br>떨릴 때,<br><em>펼쳐 볼 책</em></div>
-<div class="p" style="position:absolute;left:96px;top:820px;width:400px">『완전한 연주』<br>케니 워너 지음<br>이혜주 옮김</div>
+<div class="p" style="position:absolute;left:96px;top:820px;width:400px">『완전한 연주』<br>케니 워너 지음<br>이혜주 옮김 · 현익출판</div>
 <div class="p" style="position:absolute;left:600px;top:790px;width:390px;font-size:26px;color:#4F4858">연주 불안을 겪는 음악가에게<br>전하는 마음의 지혜</div>
 {FT(1)}{SRC_PHOTO}</section>''')
 
