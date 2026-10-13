@@ -47,12 +47,11 @@ def quote(text, page, top, left=96, right=96):
 
 S = []
 S.append(f"""<section class="s" id="b1">{HD()}
-<div style="position:absolute;left:560px;right:0;top:118px;bottom:0;background:var(--li)"></div>
-<div style="position:absolute;left:620px;top:330px">{PIANO}</div>
-<div class="k" style="position:absolute;left:96px;top:200px">Before the Exam</div>
-<div class="h" style="position:absolute;left:92px;top:250px;width:470px;font-size:84px;letter-spacing:-4.2px;line-height:1.18">시험장에서<br>떨릴 때,<br><em>해 볼 3가지</em></div>
-<div class="p" style="position:absolute;left:96px;top:880px;width:440px">대기실에서, 이름 불리기 전<br>2분이면 할 수 있어요.</div>
-{FT(1)}</section>""")
+<img src="../../images/학생/모의고사_01.png" style="position:absolute;left:96px;right:96px;top:150px;width:888px;height:650px;object-fit:cover;object-position:50% 58%;display:block;filter:saturate(.75) contrast(1.02)">
+<div class="k" style="position:absolute;left:96px;top:840px">Before the Exam</div>
+<div class="h" style="position:absolute;left:92px;top:885px;font-size:86px;letter-spacing:-4.2px;line-height:1.16">시험장에서 떨릴 때,<br><em>해 볼 3가지</em></div>
+<div class="p" style="position:absolute;left:96px;top:1120px;font-size:27px">대기실에서, 이름 불리기 전 2분이면 할 수 있어요.</div>
+{FT(1)}<div class="src">사진: ENOCH 입시 모의고사</div></section>""")
 
 S.append(f"""<section class="s" id="b2">{HD()}
 <div class="k" style="position:absolute;left:96px;top:200px">Why</div>
