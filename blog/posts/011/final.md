@@ -2,7 +2,9 @@
 ENOCH TEACHERS · 보컬 이수인
 
 # 본문
-[사진: blog/posts/011/images/card-01.png / 대표 이미지. 무대에서 노래하는 이수인 선생님, SOO IN LEE / 이수인 / 보컬]
+[사진: blog/posts/011/images/thumbnail.png / 대표 사진(썸네일). 에디터에서 "대표"로 지정]
+
+[사진: blog/posts/011/images/card-01.png / 무대에서 노래하는 이수인 선생님, SOO IN LEE / 이수인 / 보컬]
 
 ENOCH TEACHERS는
 에녹실용음악학원 시흥점의 선생님을
