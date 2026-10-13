@@ -25,7 +25,7 @@ CSS = '''*{box-sizing:border-box;margin:0;padding:0}
 .q .pg{margin-top:18px;font-size:20px;letter-spacing:-.2px;color:#6E6878}
 .q:before{content:"“";position:absolute;left:30px;top:-46px;font-family:S,serif;font-size:150px;line-height:1;color:#8E84A0}
 '''
-TOTAL = 7
+TOTAL = 6
 HD = lambda r="ENOCH NOTE — STAGE FRIGHT": f'<div class="hd"><span>ENOCH MUSIC ACADEMY</span><span>{r}</span></div>'
 FT = lambda n: f'<div class="ft"><span>힘을 빼는 연습</span><span>0{n} / 0{TOTAL}</span></div>'
 SRC = '<div class="src">인용 출처: 케니 워너, 『완전한 연주』, 이혜주 옮김, 현익출판. 쪽수는 각 인용 아래 표기.</div>'
@@ -91,21 +91,11 @@ S.append(f"""<section class="s dark" id="b5">{HD("TIP 03")}
 <div style="margin-top:18px;font-size:20px;color:#9A958C">— 케니 워너, 『완전한 연주』 185쪽</div></div>
 {FT(5)}<div class="src" style="color:#6E6A64">인용 출처: 케니 워너, 『완전한 연주』, 이혜주 옮김, 현익출판.</div></section>""")
 
-S.append(f"""<section class="s" id="b6">{HD("FROM THE BOOK")}
-<div style="position:absolute;left:0;width:520px;top:118px;height:640px;background:var(--li)"></div>
-<img src="../../images/책/완전한연주_표지.jpg" style="position:absolute;left:96px;top:220px;width:340px;height:454px;object-fit:cover;object-position:50% 45%;display:block">
-<div class="k" style="position:absolute;left:600px;top:220px">From the Book</div>
-<div class="h" style="position:absolute;left:596px;top:270px;font-size:60px;letter-spacing:-2.6px">이 이야기가<br><em>나온 책</em></div>
-<div class="p" style="position:absolute;left:600px;right:80px;top:470px;font-size:27px">『완전한 연주』<br>케니 워너 지음<br>이혜주 옮김 · 현익출판</div>
-<div class="p" style="position:absolute;left:600px;right:80px;top:680px;font-size:25px">재즈 피아니스트가 연주 불안을 겪는 음악가에게 쓴 책. 오늘 이야기는 4장 '단계적 연습'의 1단계에서 가져왔어요.</div>
-{quote("1단계는 당신을 내면의 자신에게<br>소개하는 훈련이다.", "181쪽", 900)}
-{FT(6)}{SRC_PHOTO}</section>""")
-
-S.append(f"""<section class="s dark" id="b7">{HD("THE ENOCH WAY")}
+S.append(f"""<section class="s dark" id="b6">{HD("THE ENOCH WAY")}
 <div style="position:absolute;left:92px;top:150px;font-family:'Helvetica Neue',Arial,sans-serif;font-weight:700;font-size:240px;letter-spacing:-8px;color:#2A2825">ENOCH</div>
 <div class="h" style="position:absolute;left:92px;top:450px">떨릴수록,<br><span style="color:var(--li)">힘을 빼는 연습.</span></div>
 <div class="p" style="position:absolute;left:96px;right:96px;top:740px">같은 곡도, 사람마다 다르게 가르칩니다.<br>ENOCH 입시 과정은 모두 1:1.<br>시험장에서도 연습한 만큼 연주할 수 있도록,<br>주기적으로 모의고사를 진행합니다.</div>
 <div style="position:absolute;left:96px;right:96px;top:1040px;padding-top:22px;border-top:1px solid rgba(241,237,228,.3);display:flex;justify-content:space-between;font-size:22px;line-height:1.6"><span>에녹실용음악학원 시흥점<br><span style="color:#9A958C">경기도 시흥시 은행로 157 2층</span></span><span style="text-align:right;font-family:var(--mono)">010 3949 3666<br><span style="color:#9A958C;font-family:P,sans-serif;font-size:19px">Vocal · Guitar · Drum · Bass · Piano · MIDI · 작곡</span></span></div>
-{FT(7)}</section>""")
+{FT(6)}</section>""")
 
 open('deck.html', 'w').write(f'<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>힘을 빼는 연습</title><style>{FONT}{CSS}</style></head><body>' + ''.join(S) + '</body></html>')
