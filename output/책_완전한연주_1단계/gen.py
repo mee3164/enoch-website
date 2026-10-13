@@ -78,9 +78,10 @@ S.append(f"""<section class="s" id="b3">{HD()}
 S.append(f"""<section class="s" id="b4">{HD()}
 <div class="k" style="position:absolute;left:96px;top:200px">Tip 02</div>
 <div class="h" style="position:absolute;left:92px;top:250px">머리부터 발끝까지,<br><em>힘 빼기</em></div>
-<div class="p" style="position:absolute;left:96px;right:96px;top:520px">머리 꼭대기, 어깨, 손가락, 발끝까지 한 곳씩.<br><b>피아노</b> — 손가락을 건반에 그냥 떨어뜨리듯.<br><b>보컬</b> — 발을 단단히 딛고, 내쉬는 숨이 노래가 된다고.</div>
-{quote("우리는 지금 힘들이지 않는<br>동작의 수월성을 배우는 중이다.", "케니 워너, 『완전한 연주』 188쪽", 880)}
-{FT(4)}{SRC}</section>""")
+<div class="p" style="position:absolute;left:96px;right:96px;top:480px">머리 꼭대기, 어깨, 손가락, 발끝까지 한 곳씩. 악기 앞에서는,</div>
+<div style="position:absolute;left:96px;right:96px;top:560px;border-top:1.5px solid #111"><div style="display:flex;gap:30px;padding:20px 0;border-bottom:1px solid rgba(17,17,17,.15)"><span style="width:200px;flex:none;font-size:27px;font-weight:700;letter-spacing:-.6px">피아노 · 작곡</span><span class="p" style="font-size:27px;line-height:1.5">손가락을 건반에 그냥 떨어뜨리듯.</span></div><div style="display:flex;gap:30px;padding:20px 0;border-bottom:1px solid rgba(17,17,17,.15)"><span style="width:200px;flex:none;font-size:27px;font-weight:700;letter-spacing:-.6px">보컬</span><span class="p" style="font-size:27px;line-height:1.5">발을 단단히 딛고, 내쉬는 숨이 노래가 된다고.</span></div><div style="display:flex;gap:30px;padding:20px 0;border-bottom:1px solid rgba(17,17,17,.15)"><span style="width:200px;flex:none;font-size:27px;font-weight:700;letter-spacing:-.6px">기타 · 베이스</span><span class="p" style="font-size:27px;line-height:1.5">줄을 누르는 손과 어깨를 한 번 털어 내듯.</span></div><div style="display:flex;gap:30px;padding:20px 0;border-bottom:1px solid rgba(17,17,17,.15)"><span style="width:200px;flex:none;font-size:27px;font-weight:700;letter-spacing:-.6px">드럼</span><span class="p" style="font-size:27px;line-height:1.5">스틱을 꽉 쥐지 말고, 튀어 오르게 두듯.</span></div></div>
+{quote("우리는 지금 힘들이지 않는<br>동작의 수월성을 배우는 중이다.", "케니 워너, 『완전한 연주』 188쪽", 960)}
+{FT(4)}<div class="src">인용: 케니 워너, 『완전한 연주』, 이혜주 옮김, 현익출판. 피아노·보컬은 책 요약, 기타·베이스·드럼은 같은 생각을 ENOCH이 옮겨 쓴 것.</div></section>""")
 
 S.append(f"""<section class="s dark" id="b5">{HD("TIP 03")}
 <div class="h" style="position:absolute;left:92px;top:200px">잘해야 한다는 생각,<br><em>잠깐 내려놓기</em></div>
