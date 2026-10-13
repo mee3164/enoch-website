@@ -16,6 +16,6 @@ ENOCH TEACHERS. 드럼, 한상희 선생님.
 
 ## 대체 텍스트
 1. 흑백 톤 프로필 사진과 오른쪽 격자(Drum · 1:1 · 대표 약력 4줄), 큰 영문 이름 HAN SANG HEE, 한상희 드럼, 하단 반복 텍스트 띠.
-2. 약력 표: Education, Awards, Band, PERC%NT.
-3. 약력 표: Live, Recording.
+2. 약력 표: Live, Recording.
+3. 약력 표: Education, Awards, Band, PERC%NT.
 4. 검정 장 "무대에서 쌓은 박을, 1:1로." 원칙 2, 모든 과정 1:1, 주소·전화·과목.
