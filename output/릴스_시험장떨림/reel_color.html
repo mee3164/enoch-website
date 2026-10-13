@@ -1,0 +1,92 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>릴스 시험장 떨림 컬러</title><style>
+@font-face{font-family:P;src:url(../../templates/fonts/Pretendard-Light.woff2);font-weight:300}
+@font-face{font-family:P;src:url(../../templates/fonts/Pretendard-Regular.woff2);font-weight:400}
+@font-face{font-family:P;src:url(../../templates/fonts/Pretendard-SemiBold.woff2);font-weight:600}
+@font-face{font-family:P;src:url(../../templates/fonts/Pretendard-Bold.woff2);font-weight:700}
+:root{--iv:#F1EDE4;--bk:#111;--g:#8A8A8A;--li:#E3DDE9;--mono:"IBM Plex Mono","DejaVu Sans Mono",monospace;--en:"Helvetica Neue",Helvetica,Arial,"Liberation Sans",P,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1080px;height:1920px;overflow:hidden;background:#111;font-family:P,sans-serif;word-break:keep-all}
+.sc{position:absolute;inset:0;opacity:0;animation:scene var(--d) linear var(--s) both}
+.iv{background:var(--iv);color:var(--bk)}.bk{background:#111;color:var(--iv)}
+.c1{background:#E3DDE9;color:#111}.c2{background:#F1E8CB;color:#111}.c3{background:#DCE2D3;color:#111}.c4{background:#D9E1E8;color:#111}
+.c1 .k,.c2 .k,.c3 .k,.c4 .k{color:#6E6A64}
+@keyframes scene{0%{opacity:0}6%{opacity:1}94%{opacity:1}100%{opacity:0}}
+.r{opacity:0;animation:rise .7s cubic-bezier(.2,.7,.2,1) var(--t) both}
+@keyframes rise{from{opacity:0;transform:translateY(46px)}to{opacity:1;transform:none}}
+.ln{position:absolute;left:96px;right:96px;height:1.5px;background:currentColor;transform-origin:left;animation:grow .8s ease var(--t) both}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.k{font-family:var(--mono);font-size:24px;letter-spacing:4px;color:var(--g);text-transform:uppercase}
+.h{font-size:118px;font-weight:700;letter-spacing:-5px;line-height:1.12}
+.h em{font-style:normal;font-weight:300}
+.p{font-size:40px;line-height:1.6;letter-spacing:-1px}
+.num{font-family:var(--en);font-weight:700;font-size:260px;letter-spacing:-10px;line-height:.85}
+.abs{position:absolute;left:96px;right:96px}
+.ph{position:absolute;inset:0;background:url(../../images/학생/모의고사_01.png) 50% 55%/cover;filter:saturate(.7) contrast(1.05) brightness(.62);animation:zoom 3.4s linear var(--s) both}
+@keyframes zoom{from{transform:scale(1.02)}to{transform:scale(1.14)}}
+.curve{stroke-dasharray:1400;stroke-dashoffset:1400;animation:draw 2.2s ease var(--t) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.row{display:flex;gap:40px;padding:28px 0;border-bottom:1px solid rgba(17,17,17,.18);font-size:40px;letter-spacing:-1px}
+.row b{width:270px;flex:none;font-weight:700}
+.row span{color:#55524D}
+.bar{position:absolute;left:0;top:0;height:8px;background:#111;animation:prog 20s linear both}
+@keyframes prog{from{width:0}to{width:100%}}
+</style></head><body>
+
+<!-- S1 0–2.7 -->
+<section class="sc c1" style="--s:0s;--d:2.9s">
+  <div class="abs k r" style="top:470px;--t:.1s">ENOCH NOTE · Before the Exam</div>
+  <div class="ln" style="top:530px;--t:.15s"></div>
+  <div class="abs h r" style="top:600px;font-size:150px;letter-spacing:-7px;--t:.25s">시험장에서<br>떨릴 때,</div>
+  <div class="abs h r" style="top:950px;font-size:150px;letter-spacing:-7px;font-weight:300;--t:.75s">해 볼 3가지</div>
+</section>
+
+<!-- S2 2.6–5.4 -->
+<section class="sc bk" style="--s:2.6s;--d:2.9s">
+  <div class="ph" style="--s:2.6s"></div>
+  <div class="abs k r" style="top:1060px;color:#C9C4BB;--t:3.0s">대기실에서</div>
+  <div class="abs h r" style="top:1110px;font-size:120px;--t:3.15s">이름 불리기 전,<br><em>2분</em></div>
+  <div class="abs r" style="top:1460px;font-size:24px;color:#C9C4BB;--t:3.4s">사진 · ENOCH 입시 모의고사</div>
+</section>
+
+<!-- S3 5.3–9.3 -->
+<section class="sc c2" style="--s:5.3s;--d:4.1s">
+  <div class="abs num r" style="top:330px;--t:5.45s">01</div>
+  <div class="abs h r" style="top:620px;--t:5.65s">길게,<br><em>내쉬기</em></div>
+  <svg class="abs" style="top:960px" width="888" height="260" viewBox="0 0 888 260"><path class="curve" style="--t:6.1s" d="M10 220 C 120 220, 170 40, 250 40 C 420 40, 640 220, 878 220" fill="none" stroke="#111" stroke-width="5" stroke-linecap="round"/></svg>
+  <div class="abs p r" style="top:1260px;--t:6.6s">깊이 들이쉬고,<br><b>들이쉰 것보다 더 길게.</b></div>
+</section>
+
+<!-- S4 9.2–13.4 -->
+<section class="sc c3" style="--s:9.2s;--d:4.3s">
+  <div class="abs num r" style="top:330px;--t:9.35s">02</div>
+  <div class="abs h r" style="top:620px;font-size:104px;--t:9.55s">머리부터 발끝까지,<br><em>힘 빼기</em></div>
+  <div class="ln" style="top:910px;color:#111;--t:9.9s"></div>
+  <div class="abs" style="top:912px">
+    <div class="row r" style="--t:10.1s"><b>피아노 · 작곡</b><span>건반에 그냥 떨어뜨리듯</span></div>
+    <div class="row r" style="--t:10.55s"><b>보컬</b><span>내쉬는 숨이 노래가 되듯</span></div>
+    <div class="row r" style="--t:11.0s"><b>기타 · 베이스</b><span>손과 어깨를 털어 내듯</span></div>
+    <div class="row r" style="--t:11.45s"><b>드럼</b><span>스틱이 튀어 오르게 두듯</span></div>
+  </div>
+</section>
+
+<!-- S5 13.3–16.9 -->
+<section class="sc c4" style="--s:13.3s;--d:3.7s">
+  <div class="abs num r" style="top:330px;--t:13.45s">03</div>
+  <div class="abs h r" style="top:620px;font-size:104px;--t:13.65s">잘해야 한다는 생각,<br><em>잠깐 내려놓기</em></div>
+  <div class="abs r" style="top:980px;background:#F1EDE4;padding:50px 56px;--t:14.3s">
+    <div style="font-size:52px;font-weight:600;line-height:1.45;letter-spacing:-1.5px">“위대한 연주자가 되려는<br>욕구를 떠나보내라”</div>
+    <div style="margin-top:22px;font-size:26px;color:#6E6A64">— 케니 워너, 『완전한 연주』 185쪽 · 이혜주 옮김, 현익출판</div>
+  </div>
+</section>
+
+<!-- S6 16.8–20 -->
+<section class="sc bk" style="--s:16.8s;--d:3.4s;animation-name:scenein">
+  <div class="abs r" style="top:330px;font-family:var(--en);font-weight:700;font-size:250px;letter-spacing:-9px;color:#2A2825;line-height:1;--t:16.9s">ENOCH</div>
+  <div class="abs h r" style="top:640px;font-size:110px;--t:17.1s">떨릴수록,<br><span style="color:var(--li)">힘을 빼는 연습.</span></div>
+  <div class="abs p r" style="top:960px;color:#C9C4BB;--t:17.6s">시험장에서도 연습한 만큼 연주할 수 있도록,<br>주기적으로 모의고사를 진행합니다.</div>
+  <div class="ln" style="top:1250px;color:rgba(241,237,228,.4);--t:18.0s"></div>
+  <div class="abs r" style="top:1280px;font-size:30px;line-height:1.6;--t:18.2s">에녹실용음악학원 시흥점<br><span style="color:#9A958C">경기도 시흥시 은행로 157 2층 · 010 3949 3666</span></div>
+</section>
+<style>@keyframes scenein{0%{opacity:0}8%{opacity:1}100%{opacity:1}}</style>
+<div class="bar"></div>
+</body></html>
