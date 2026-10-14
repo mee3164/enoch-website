@@ -35,8 +35,8 @@ S = []
 S.append(f"""<section class="s" id="c1">{HD()}
 <img src="../../images/공간/무대_01.png" style="position:absolute;left:96px;top:150px;width:888px;height:650px;object-fit:cover;object-position:50% 52%;display:block;filter:saturate(.55) contrast(1.02)">
 <div class="k a" style="left:96px;top:840px">Dynamics</div>
-<div class="h a" style="left:92px;top:885px;font-size:86px;letter-spacing:-4.2px;line-height:1.16">음은 다 맞는데,<br><em>왜 밋밋할까?</em></div>
-<div class="p a" style="left:96px;top:1120px;font-size:27px">답은 소리의 크기, 다이나믹에 있습니다.</div>
+<div class="h a" style="left:92px;top:885px;font-size:86px;letter-spacing:-4.2px;line-height:1.16">후렴이<br><em>안 터지는 이유</em></div>
+<div class="p a" style="left:96px;top:1120px;font-size:27px">답은 후렴이 아니라, 곡 전체에 있습니다.</div>
 {FT(1)}</section>""")
 
 # 02 사전 (검정)
@@ -45,7 +45,7 @@ bars = ''.join(f'<div style="display:flex;align-items:flex-end;flex-direction:co
 S.append(f"""<section class="s dark" id="c2">{HD("DICTIONARY")}
 <div class="a" style="left:92px;top:190px;font-family:var(--en);font-weight:700;font-size:150px;letter-spacing:-6px;line-height:1">DYNAMICS</div>
 <div class="a" style="left:96px;top:370px;font-size:44px;font-weight:700;letter-spacing:-1.5px">다이나믹 <span style="font-weight:300;color:#9A958C;font-size:36px">셈여림</span></div>
-<div class="p a" style="left:96px;right:96px;top:450px">소리의 세고 여림. 같은 음, 같은 박자라도<br>크기가 달라지면 전혀 다른 말처럼 들려요.</div>
+<div class="p a" style="left:96px;right:96px;top:450px">소리의 세고 여림. 곡 안에서는 크기와 에너지가<br>오르내리는 흐름 전체를 말해요.</div>
 <div class="a" style="left:96px;right:96px;top:700px;display:flex;justify-content:space-between;align-items:flex-end;height:420px">{bars}</div>
 {FT(2)}</section>""")
 
@@ -65,44 +65,43 @@ S.append(f"""<section class="s" id="c3">{HD()}
 <g font-family="P" font-size="20" fill="#55524D">{lbl}</g></svg>
 {FT(3)}</section>""")
 
-# 04 솔로 기승전결
-ks=[("기","起","짧은 동기 하나로 시작. 여백을 남겨 둡니다.",50),("승","承","그 동기를 반복하고 조금씩 바꾸며 쌓아요.",100),("전","轉","가장 높거나, 가장 큰 순간.",190),("결","結","다시 내려와 숨을 고르며 닫기.",70)]
-bars4=''.join(f'<div style="flex:1;height:{h}px;background:{"#D9E1E8" if a=="전" else "#DCD6CB"}"></div>' for a,b,c,h in ks)
-cols=''.join(f'<div style="flex:1;border-top:1.5px solid #111;padding-top:22px"><div style="font-size:64px;font-weight:700;letter-spacing:-2px">{a}<span style="font-size:24px;font-weight:300;color:#8A8A8A;margin-left:10px">{b}</span></div><div style="margin-top:14px;font-size:25px;line-height:1.55;color:#55524D;letter-spacing:-.5px">{c}</div></div>' for a,b,c,h in ks)
+# 04 크기 · 밀도 · 음역
+lev=[("01","크기","Volume","같은 구간을 더 세게, 더 여리게."),("02","밀도","Density","음의 개수, 리듬의 촘촘함, 함께 연주하는 악기 수."),("03","음역","Register","낮고 좁게 머물다가, 높고 넓게 열기.")]
+rows4=''.join(f'<div class="row" style="padding:30px 0"><span class="n" style="width:250px">{n} &nbsp;{k} <span style="font-family:var(--mono);font-weight:400;font-size:17px;letter-spacing:2px;color:#8A8A8A;display:block;margin-top:6px">{e.upper()}</span></span><span class="t" style="font-size:29px">{t}</span></div>' for n,k,e,t in lev)
 S.append(f"""<section class="s" id="c4">{HD()}
-<div class="k a" style="left:96px;top:200px">Solo</div>
-<div class="h a" style="left:92px;top:250px">처음부터 다 보여 주면,<br><em>갈 곳이 없어요</em></div>
-<div class="p a" style="left:96px;right:96px;top:520px">솔로도 한 편의 이야기. 기승전결이 있을 때, 듣는 사람이 따라옵니다.</div>
-<div class="a" style="left:96px;right:96px;top:640px;height:200px;display:flex;gap:28px;align-items:flex-end">{bars4}</div>
-<div class="a" style="left:96px;right:96px;top:860px;display:flex;gap:28px;align-items:flex-start">{cols}</div>
+<div class="k a" style="left:96px;top:200px">Three Levers</div>
+<div class="h a" style="left:92px;top:250px">볼륨만으로는,<br><em>터지지 않아요</em></div>
+<div class="p a" style="left:96px;right:96px;top:520px">곡의 에너지는 세 가지가 함께 움직일 때 커집니다.</div>
+<div class="a" style="left:96px;right:96px;top:640px;border-top:1.5px solid #111">{rows4}</div>
 {FT(4)}</section>""")
 
-# 05 공통 연습 (검정)
+# 05 곡에 지도 그리기 (검정)
 S.append(f"""<section class="s dark" id="c5">{HD("TRY AT HOME")}
 <div class="k a" style="left:96px;top:200px;color:#9A958C">Practice</div>
-<div class="h a" style="left:92px;top:250px">한 소절을,<br><em>세 가지 크기로</em></div>
+<div class="h a" style="left:92px;top:250px">연습하는 곡에,<br><em>지도를 그려 보기</em></div>
 <div class="a" style="left:96px;right:96px;top:540px;border-top:1.5px solid rgba(241,237,228,.6)">
-<div class="row"><span class="n">01 &nbsp;세 번</span><span class="t">같은 소절을 <b>여리게 · 보통 · 세게</b>, 세 번 연주해 보세요.</span></div>
-<div class="row"><span class="n">02 &nbsp;템포 그대로</span><span class="t">메트로놈을 켜 두기. 세지면 빨라지고, 여려지면 느려지기 쉽거든요.</span></div>
-<div class="row"><span class="n">03 &nbsp;녹음</span><span class="t">녹음해서 들어 보기. 생각한 차이보다 실제 차이는 작게 들립니다.</span></div>
-<div class="row"><span class="n">04 &nbsp;곡에 옮기기</span><span class="t">연습하는 곡에 크기를 연필로 적어 두고, 그 표시대로 한 번.</span></div>
+<div class="row"><span class="n">01 &nbsp;나누기</span><span class="t">인트로 · 벌스 · 프리코러스 · 후렴 · 브리지로 구간을 나눠 적기.</span></div>
+<div class="row"><span class="n">02 &nbsp;숫자 적기</span><span class="t">구간마다 에너지를 <b>1부터 10까지</b> 숫자로. 전부 8이면 지도가 없는 거예요.</span></div>
+<div class="row"><span class="n">03 &nbsp;정점 하나</span><span class="t">가장 큰 곳을 하나 정하기. 거기까지 아껴 두는 게 핵심입니다.</span></div>
+<div class="row"><span class="n">04 &nbsp;녹음</span><span class="t">처음부터 끝까지 녹음해서, 적은 숫자대로 오르내리는지 들어 보기.</span></div>
 </div>
 {FT(5)}</section>""")
 
 # 06 악기별
-parts=[("보컬","한 음을 길게 내며 작게 → 크게 → 작게. 크기가 바뀌어도 음정과 음색이 흔들리지 않는지 들어 보기."),("기타","볼륨 노브는 그대로, 피킹 세기만으로 같은 리프를 세 단계로. 게인이 높으면 차이가 줄어드니 클린 톤에서."),("베이스","먼저 고르게. 한 줄에서 8분음표를 같은 세기로, 손가락마다 크기가 튀지 않는지. 그다음 세 단계로."),("드럼","스틱 높이로 세기를 나누기. 악센트는 높게, 고스트 노트는 낮게. 하이햇과 심벌이 킥 · 스네어를 덮지 않게."),("피아노","보이싱 안에서도 크기를 나누기. 탑 노트(멜로디)는 또렷하게, 내성은 한 단계 작게.")]
+parts=[("보컬","벌스는 말하듯 가깝게, 후렴은 소리를 열고 길게."),("기타","벌스는 뮤트나 아르페지오로 비우고, 후렴은 오픈 코드 스트로크로 채우기."),("베이스","벌스는 긴 음 · 적은 음으로, 후렴은 8분음표로 밀어 주기."),("드럼","벌스는 하이햇 · 크로스 스틱, 후렴은 라이드 · 크래시와 오픈 하이햇으로."),("피아노","벌스는 가운데 음역에서 적게, 후렴은 보이싱을 넓히고 왼손 옥타브로.")]
 rows=''.join(f'<div class="row"><span class="n">{a}</span><span class="t">{b}</span></div>' for a,b in parts)
 S.append(f"""<section class="s" id="c6">{HD()}
-<div class="k a" style="left:96px;top:200px">By Instrument</div>
-<div class="h a" style="left:92px;top:250px">악기마다,<br><em>크기를 바꾸는 손</em></div>
-<div class="a" style="left:96px;right:96px;top:540px;border-top:1.5px solid #111">{rows}</div>
+<div class="k a" style="left:96px;top:200px">Verse → Chorus</div>
+<div class="h a" style="left:92px;top:250px">벌스에서 비워 두면,<br><em>후렴이 커집니다</em></div>
+<div class="p a" style="left:96px;top:500px;font-size:24px;color:#8A8A8A">예를 들면, 이렇게.</div>
+<div class="a" style="left:96px;right:96px;top:570px;border-top:1.5px solid #111">{rows}</div>
 {FT(6)}</section>""")
 
 # 07 마무리 (검정)
 S.append(f"""<section class="s dark" id="c7">{HD("THE ENOCH WAY")}
 <div class="a" style="left:92px;top:150px;font-family:var(--en);font-weight:700;font-size:240px;letter-spacing:-8px;color:#2A2825;line-height:1">ENOCH</div>
-<div class="h a" style="left:92px;top:450px">크기를 다룰 때,<br><span style="color:var(--mi)">소리가 말을 합니다.</span></div>
-<div class="p a" style="left:96px;right:96px;top:740px">기본은 건너뛰지 않습니다.<br>ENOCH 레슨은 입시 · 취미 · 성인 · 전문, 모든 과정이 1:1.</div>
+<div class="h a" style="left:92px;top:450px">언제 크게 칠지 알 때,<br><span style="color:var(--mi)">후렴이 터집니다.</span></div>
+<div class="p a" style="left:96px;right:96px;top:740px">진도보다 이해를 먼저 봅니다.<br>ENOCH 레슨은 입시 · 취미 · 성인 · 전문, 모든 과정이 1:1.</div>
 <div class="a" style="left:96px;right:96px;top:1040px;padding-top:22px;border-top:1px solid rgba(241,237,228,.3);display:flex;justify-content:space-between;font-size:22px;line-height:1.6"><span>에녹실용음악학원 시흥점<br><span style="color:#9A958C">경기도 시흥시 은행로 157 2층</span></span><span style="text-align:right;font-family:var(--mono)">010 3949 3666<br><span style="color:#9A958C;font-family:P,sans-serif;font-size:19px">Vocal · Guitar · Drum · Bass · Piano · MIDI · 작곡</span></span></div>
 {FT(7)}</section>""")
 
