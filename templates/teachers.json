@@ -1,0 +1,45 @@
+{
+  "_note": "ENOCH TEACHERS 강사 정보 (홈페이지·블로그·카드뉴스 공용). 학원이 준 카드 원문만 그대로 넣는다. 수식어·추측 금지. consent는 블로그·홈페이지에 실명·사진을 쓰는 데 대한 선생님 본인 동의(확인 전이면 null). 순서는 블로그 게시 순서.",
+  "teachers": [
+    {
+      "id": "lee-soo-in",
+      "nameKo": "이수인",
+      "nameEn": "SOO IN LEE",
+      "subject": "보컬",
+      "subjectEn": "Vocal",
+      "lessonName": "ENOCH VOICE",
+      "profile": [
+        { "label": "EDUCATION", "lines": ["호원대학교 실용음악과 보컬 전공"] },
+        { "label": "ALBUM · DUET", "lines": ["김조한 6집 [Once in a Lifetime] 수록곡", "「Lover & Friend」 듀엣"] },
+        { "label": "CHORUS SESSION", "lines": ["조성모 · 김조한 · 김태우 · 알리 · 더원 · DK · 서인영 등", "방송 · 콘서트 코러스 세션"] }
+      ],
+      "photo": "blog/posts/011/images/card-01.png",
+      "thumbnail": "blog/posts/011/images/thumbnail.png",
+      "cards": ["blog/posts/011/images/card-01.png", "blog/posts/011/images/card-02.png", "blog/posts/011/images/card-03.png", "blog/posts/011/images/card-04.png", "blog/posts/011/images/card-05.png"],
+      "cardsMissing": ["06", "07"],
+      "blogPost": "blog/posts/011/final.md",
+      "consent": null,
+      "source": "원장님 제공 강사 소개 카드 (2026-10-13)"
+    },
+    {
+      "id": "kim-hyeokjae",
+      "nameKo": "김혁재",
+      "nameEn": "KIM HYEOKJAE",
+      "subject": "베이스",
+      "subjectEn": "Bass",
+      "lessonName": "ENOCH BASS LINE",
+      "profile": [
+        { "label": "EDUCATION", "lines": ["명지전문대학 실용음악과 졸업"] },
+        { "label": "BAND · BASSIST", "lines": ["밴드 24아워즈 베이시스트", "정규 · EP · 싱글", "작사 · 편곡 · 녹음 및 발매"] },
+        { "label": "SESSION · LIVE", "lines": ["MEMI", "EP · 싱글 레코딩 세션", "페스티벌", "해외 투어"] }
+      ],
+      "photo": "blog/posts/012/images/card-01.png",
+      "thumbnail": "blog/posts/012/images/thumbnail.png",
+      "cards": ["blog/posts/012/images/card-01.png", "blog/posts/012/images/card-02.png", "blog/posts/012/images/card-03.png", "blog/posts/012/images/card-04.png", "blog/posts/012/images/card-05.png"],
+      "cardsMissing": ["06", "07"],
+      "blogPost": "blog/posts/012/final.md",
+      "consent": null,
+      "source": "원장님 제공 강사 소개 카드 (2026-10-13)"
+    }
+  ]
+}
