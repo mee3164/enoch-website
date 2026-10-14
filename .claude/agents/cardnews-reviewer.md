@@ -31,6 +31,9 @@ model: inherit
 - [ ] 캡션 첫 문단에 ENOCH이 실제로 하는 일이 한 문장 들어갔는가 — 다른 학원 이름을 넣어도 말이 되면 불합격
 - [ ] 캡션에도 같은 규칙이 지켜졌는가
 
+## 블로그 (블로그를 만들었을 때)
+- `templates/BLOG_GUIDE.md` 4번 체크리스트를 review.md에 "## 블로그" 항목으로 따로 적는다. `blog.md`와 `blog_01.png ~`를 모두 연다.
+
 ## 산출물: `output/<주제 폴더>/review.md`
 
 ```markdown
