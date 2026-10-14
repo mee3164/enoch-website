@@ -137,6 +137,7 @@
 ## 9. 제작 도구 (에이전트 팀)
 
 - 제작 요청은 `/cardnews <주제>`로 시작한다. 절차: `.claude/skills/cardnews/SKILL.md`
+- 블로그(네이버 블로그 이미지 + 본문)도 같은 팀이 만든다. 규칙: `templates/BLOG_GUIDE.md` → `blog.html` · `blog_01.png ~` · `blog.md` (2026-10-14)
 - 팀원 정의: `.claude/agents/` — `cardnews-strategist`(기획자), `cardnews-copywriter`(카피라이터), `cardnews-designer`(디자이너), `cardnews-reviewer`(검수자)
 - 주제 목록과 발행 계획: `plans/topic-bank.md`, `plans/YYYY-MM.md`
 - 한 편의 작업 파일은 모두 `output/<주제 폴더>/`에 둔다: `brief.md`(구성안) → `slides.json`(문구) → `01.png ~`(완성본) → `caption.md` → `review.md`
