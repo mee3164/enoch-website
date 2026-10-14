@@ -66,7 +66,7 @@ S.append(f"""<section class="s" id="c3">{HD()}
 {FT(3)}</section>""")
 
 # 04 솔로 기승전결
-ks=[("기","起","짧은 동기 하나로 시작. 여백을 남겨 둡니다.",50),("승","承","그 동기를 반복하고 조금씩 바꾸며 쌓아요.",100),("전","轉","가장 높고, 가장 큰 순간.",190),("결","結","다시 내려와 숨을 고르며 닫기.",70)]
+ks=[("기","起","짧은 동기 하나로 시작. 여백을 남겨 둡니다.",50),("승","承","그 동기를 반복하고 조금씩 바꾸며 쌓아요.",100),("전","轉","가장 높거나, 가장 큰 순간.",190),("결","結","다시 내려와 숨을 고르며 닫기.",70)]
 bars4=''.join(f'<div style="flex:1;height:{h}px;background:{"#D9E1E8" if a=="전" else "#DCD6CB"}"></div>' for a,b,c,h in ks)
 cols=''.join(f'<div style="flex:1;border-top:1.5px solid #111;padding-top:22px"><div style="font-size:64px;font-weight:700;letter-spacing:-2px">{a}<span style="font-size:24px;font-weight:300;color:#8A8A8A;margin-left:10px">{b}</span></div><div style="margin-top:14px;font-size:25px;line-height:1.55;color:#55524D;letter-spacing:-.5px">{c}</div></div>' for a,b,c,h in ks)
 S.append(f"""<section class="s" id="c4">{HD()}
@@ -90,7 +90,7 @@ S.append(f"""<section class="s dark" id="c5">{HD("TRY AT HOME")}
 {FT(5)}</section>""")
 
 # 06 악기별
-parts=[("보컬","작게 불러도 음정과 발음이 흐려지지 않게. 같은 음을 작게, 크게 번갈아."),("기타","피킹 세기만 바꿔 같은 리프를. 크기와 함께 소리의 결도 달라져요."),("베이스","오른손 세기와 음 길이. 짧게 끊으면 작게, 길게 두면 크게 들리기도 합니다."),("드럼","같은 비트에서 세게 칠 곳과 살짝 칠 곳을 나눠 보기. 하이햇만 바꿔도 달라져요."),("피아노","멜로디는 또렷하게, 반주는 한 단계 작게. 두 손이 같은 크기가 되지 않게.")]
+parts=[("보컬","한 음을 길게 내며 작게 → 크게 → 작게. 크기가 바뀌어도 음정과 음색이 흔들리지 않는지 들어 보기."),("기타","볼륨 노브는 그대로, 피킹 세기만으로 같은 리프를 세 단계로. 게인이 높으면 차이가 줄어드니 클린 톤에서."),("베이스","먼저 고르게. 한 줄에서 8분음표를 같은 세기로, 손가락마다 크기가 튀지 않는지. 그다음 세 단계로."),("드럼","스틱 높이로 세기를 나누기. 악센트는 높게, 고스트 노트는 낮게. 하이햇과 심벌이 킥 · 스네어를 덮지 않게."),("피아노","보이싱 안에서도 크기를 나누기. 탑 노트(멜로디)는 또렷하게, 내성은 한 단계 작게.")]
 rows=''.join(f'<div class="row"><span class="n">{a}</span><span class="t">{b}</span></div>' for a,b in parts)
 S.append(f"""<section class="s" id="c6">{HD()}
 <div class="k a" style="left:96px;top:200px">By Instrument</div>
