@@ -99,7 +99,7 @@ STAGE · SESSION
 EDUCATION
 백석예술대학교 졸업
 
-[사진: blog/posts/015/images/card-08.png / LESSON 1:1 (수정 카드 수령 필요)]
+[사진: blog/posts/015/images/card-08.png / LESSON 1:1 — 입시 · 취미 · 성인 · 전문, 1:1 레슨을 기본으로 합니다. (수정 카드, 2026-10-14)]
 
 [사진: blog/posts/015/images/card-09.png / THE ENOCH WAY — 직접 만들고 발매해 온 음악, 1:1로. (카드 수령 필요)]
 

@@ -168,17 +168,17 @@
         "blog/posts/015/images/card-02.png",
         "blog/posts/015/images/card-03.png",
         "blog/posts/015/images/card-04.png",
-        "blog/posts/015/images/card-05.png"
+        "blog/posts/015/images/card-05.png",
+        "blog/posts/015/images/card-08.png"
       ],
       "cardsMissing": [
         "06",
         "07",
-        "08",
         "09"
       ],
       "blogPost": "blog/posts/015/final.md",
       "consent": null,
-      "source": "원장님 제공 강사 소개 카드 (2026-10-14). card-08에 '모든 과정이 1:1' 문구 — 수정 필요"
+      "source": "원장님 제공 강사 소개 카드 (2026-10-14). card-08은 \"1:1 레슨을 기본으로\" 문구로 다시 만든 판"
     }
   ]
 }
