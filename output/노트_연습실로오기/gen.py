@@ -49,21 +49,33 @@ S.append(f"""<section class="s" id="c1">{HD()}
 <div class="p a" style="left:96px;top:1120px;font-size:27px">의지보다 먼저, 장소가 행동을 정합니다.</div>
 {FT(1)}<div class="src">사진: ENOCH 연습실 복도</div></section>""")
 
-# 02 보이지 않는 손 + 레빈 공식
-S.append(f"""<section class="s" id="c2">{HD()}
-<div class="k a" style="left:96px;top:200px">Behavior = f (Person, Environment)</div>
-<div class="a" style="left:92px;top:250px;font-family:var(--en);font-weight:700;font-size:150px;letter-spacing:-5px;line-height:1">B = <i style="font-family:Georgia,serif">f</i>(P, E)</div>
-<div class="p a" style="left:96px;right:96px;top:440px">행동은 사람과, 그 사람을 둘러싼 환경이 함께 만든다는 공식.<br>1936년 심리학자 쿠르트 레빈의 말입니다.</div>
-{quote("환경은 인간의 행동을 형성하는<br>보이지 않는 손이다.", "『아주 작은 습관의 힘』 116쪽", 720)}
-{FT(2)}{SRC('116쪽.')}</section>""")
+# 02 IN NUMBERS — 병원 식당 실험
+S.append(f"""<section class="s" id="c2">{HD("IN NUMBERS")}
+<div class="k a" style="left:96px;top:200px">An Experiment</div>
+<div class="h a" style="left:92px;top:250px">생수를 잘 보이는 곳에<br><em>두었을 뿐인데</em></div>
+<div class="p a" style="left:96px;right:96px;top:520px">미국 매사추세츠 제너럴 병원 식당. 탄산음료만 있던 냉장고에 생수를 넣고,<br>음식 배식대 옆에도 생수 바구니를 두었습니다. 사람들에게는 알리지 않았어요.</div>
+<div class="a" style="left:96px;right:96px;top:760px;display:flex;border-top:1.5px solid #111">
+<div style="flex:1;padding:34px 0 0;border-right:1px solid rgba(17,17,17,.15)"><div class="k">Soda · 3 Months</div><div style="font-family:var(--en);font-weight:700;font-size:150px;letter-spacing:-6px;line-height:1.05;margin-top:10px">−11.4<span style="font-size:70px">%</span></div><div class="p" style="font-size:26px">탄산음료 판매</div></div>
+<div style="flex:1;padding:34px 0 0 44px"><div class="k">Water · 3 Months</div><div style="font-family:var(--en);font-weight:700;font-size:150px;letter-spacing:-6px;line-height:1.05;margin-top:10px">+25.8<span style="font-size:70px">%</span></div><div class="p" style="font-size:26px">생수 판매</div></div></div>
+{FT(2)}{SRC('114–115쪽 (앤 손다이크 연구팀의 병원 식당 연구).')}</section>""")
 
-# 03 집이 어려운 이유
+# 03 집 vs 연습실 그림
+def room(x, title, items, door_label):
+    g=f'<g transform="translate({x},0)"><rect x="0" y="40" width="400" height="400" fill="none" stroke="#111" stroke-width="3"/><path d="M250 440 v-14 M330 440 v-14" stroke="#111" stroke-width="3"/><text x="290" y="470" text-anchor="middle" font-size="20" fill="#55524D">{door_label}</text><text x="0" y="22" font-size="26" font-weight="700" fill="#111">{title}</text>'
+    for (ix,iy,w,h,fill,label) in items:
+        g+=f'<rect x="{ix}" y="{iy}" width="{w}" height="{h}" fill="{fill}" stroke="#111" stroke-width="2"/><text x="{ix+w/2}" y="{iy+h/2+7}" text-anchor="middle" font-size="19" fill="#111">{label}</text>'
+    return g+'</g>'
+GR='#CFC9BE'; BU='#F1E8CB'
+home=room(0,'집',[(20,60,200,80,GR,'소파'),(300,60,80,140,GR,'침대'),(20,300,140,60,GR,'TV'),(200,200,90,50,GR,'휴대폰'),(240,320,140,90,'none','<tspan fill="#8A8A8A">악기 케이스</tspan>')],'현관')
+prac=room(488,'연습실',[(40,80,200,90,BU,'악기'),(270,90,100,60,BU,'보면대'),(150,240,100,80,BU,'의자'),(40,340,140,50,BU,'메트로놈')],'문')
+SVG=f'<svg width="888" height="480" viewBox="0 0 888 480" font-family="P,sans-serif">{home}{prac}</svg>'
 S.append(f"""<section class="s" id="c3">{HD()}
-<div class="k a" style="left:96px;top:200px">Why Not Home</div>
+<div class="k a" style="left:96px;top:200px">Cues Around You</div>
 <div class="h a" style="left:92px;top:250px">집에는,<br><em>다른 신호가 너무 많아요</em></div>
-<div class="p a" style="left:96px;right:96px;top:520px">소파는 쉬는 곳, 침대는 눕는 곳, 휴대폰은 늘 손이 가는 곳.<br>악기를 꺼내기도 전에, 공간이 먼저 다른 일을 시킵니다.</div>
-{quote("늘 비디오게임을 하던 거실에서는<br>주의를 분산시키는 것이 없다 해도<br>공부하기 어렵다.", "『아주 작은 습관의 힘』 123쪽", 830)}
-{FT(3)}{SRC('123쪽.')}</section>""")
+<div class="a" style="left:96px;top:500px">{SVG}</div>
+<div class="a" style="left:96px;right:96px;top:1010px;display:flex;gap:40px;font-size:22px;color:#55524D"><span><span style="display:inline-block;width:18px;height:18px;background:#CFC9BE;border:1.5px solid #111;vertical-align:middle;margin-right:10px"></span>다른 일을 부르는 신호</span><span><span style="display:inline-block;width:18px;height:18px;background:#F1E8CB;border:1.5px solid #111;vertical-align:middle;margin-right:10px"></span>연습을 부르는 신호</span></div>
+<div class="a" style="left:96px;right:96px;top:1080px;padding-top:18px;border-top:1px solid rgba(17,17,17,.15);font-size:22px;color:#55524D;letter-spacing:-.3px"><b style="color:#111;font-family:var(--en)">B = <i style="font-family:Georgia,serif">f</i>(P, E)</b> &nbsp;행동은 사람과 환경이 함께 만든다 — 쿠르트 레빈, 1936</div>
+{FT(3)}{SRC('116쪽 (레빈의 공식). 그림은 ENOCH이 책의 식당 배치도를 참고해 새로 그린 것.')}</section>""")
 
 # 04 한 공간 한 가지 일
 S.append(f"""<section class="s" id="c4">{HD()}
