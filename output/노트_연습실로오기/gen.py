@@ -66,7 +66,7 @@ def room(x, title, items, door_label):
         g+=f'<rect x="{ix}" y="{iy}" width="{w}" height="{h}" fill="{fill}" stroke="#111" stroke-width="2"/><text x="{ix+w/2}" y="{iy+h/2+7}" text-anchor="middle" font-size="19" fill="#111">{label}</text>'
     return g+'</g>'
 GR='#CFC9BE'; BU='#F1E8CB'
-home=room(0,'집',[(20,60,200,80,GR,'소파'),(300,60,80,140,GR,'침대'),(20,300,140,60,GR,'TV'),(200,200,90,50,GR,'휴대폰'),(240,320,140,90,'none','<tspan fill="#8A8A8A">악기 케이스</tspan>')],'현관')
+home=room(0,'집',[(20,60,200,80,GR,'소파'),(300,60,80,140,GR,'침대'),(100,180,180,110,GR,'스마트폰'),(240,320,140,90,'none','<tspan fill="#8A8A8A">악기 케이스</tspan>')],'현관')
 prac=room(488,'연습실',[(40,80,200,90,BU,'악기'),(270,90,100,60,BU,'보면대'),(150,240,100,80,BU,'의자'),(40,340,140,50,BU,'메트로놈')],'문')
 SVG=f'<svg width="888" height="480" viewBox="0 0 888 480" font-family="P,sans-serif">{home}{prac}</svg>'
 S.append(f"""<section class="s" id="c3">{HD()}

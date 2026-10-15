@@ -31,7 +31,7 @@ body{width:1080px;height:1920px;overflow:hidden;background:#F1EDE4;font-family:P
 @keyframes pop{from{opacity:0;transform:scale(.4) rotate(-8deg)}to{opacity:1;transform:none}}
 .drop{opacity:0;animation:drop .6s cubic-bezier(.3,1.4,.4,1) var(--t) both}
 @keyframes drop{from{opacity:0;transform:translateY(-160px)}to{opacity:1;transform:none}}
-.buzz{animation:buzz .12s linear var(--t2) 20 both}
+.buzz{animation:buzz .12s linear var(--t2) 26 both}
 @keyframes buzz{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
 .flick{animation:flick .3s steps(2) var(--t2) 10 both}
 @keyframes flick{0%{background:#CFC9BE}50%{background:#E9E4DA}}
@@ -95,8 +95,8 @@ body{width:1080px;height:1920px;overflow:hidden;background:#F1EDE4;font-family:P
 <section class="sc" style="--s:7.9s;--d:16.1s;background:#F1EDE4;z-index:3">
   <div class="a k r" style="top:300px;--t:8.20s">Cues at Home</div>
   <div class="ln" style="top:350px;height:92px"><div class="li" style="font-size:76px;font-weight:700;color:#111;--t:8.30s;">집에는,</div></div><div class="ln" style="top:436px;height:92px"><div class="li" style="font-size:76px;font-weight:300;color:#111;--t:8.42s;">다른 신호가 너무 많아요</div></div>
-  <div class="room dr" style="left:140px;top:650px;--t:7.90s"><div class="rt">집</div><div class="it pop" style="left:30px;top:40px;width:330px;height:120px;background:#CFC9BE;color:#111;--t:8.40s"><div class="in " style="--t2:8.90s">소파</div></div><div class="it pop" style="left:470px;top:40px;width:170px;height:240px;background:#CFC9BE;color:#111;--t:8.70s"><div class="in " style="--t2:9.20s">침대</div></div><div class="it pop" style="left:220px;top:300px;width:170px;height:80px;background:#CFC9BE;color:#111;--t:9.00s"><div class="in buzz" style="--t2:9.50s">휴대폰</div></div><div class="it pop" style="left:30px;top:480px;width:250px;height:100px;background:#CFC9BE;color:#111;--t:9.30s"><div class="in flick" style="--t2:9.80s">TV</div></div><div class="it pop" style="left:420px;top:470px;width:220px;height:140px;background:transparent;color:#9A958C;--t:9.60s"><div class="in fade" style="--t2:10.10s">악기 케이스</div></div><div class="door"></div></div>
-  <div class="a r" style="top:1395px;font-size:36px;color:#55524D;--t:10.4s">악기를 꺼내기도 전에, 공간이 다른 일을 먼저 시킵니다.</div>
+  <div class="room dr" style="left:140px;top:650px;--t:7.90s"><div class="rt">집</div><div class="it pop" style="left:30px;top:40px;width:330px;height:120px;background:#CFC9BE;color:#111;--t:8.40s"><div class="in " style="--t2:8.90s;">소파</div></div><div class="it pop" style="left:470px;top:40px;width:170px;height:240px;background:#CFC9BE;color:#111;--t:8.70s"><div class="in " style="--t2:9.20s;">침대</div></div><div class="it pop" style="left:170px;top:250px;width:260px;height:190px;background:#CFC9BE;color:#111;--t:9.00s"><div class="in buzz" style="--t2:9.50s;font-size:40px;font-weight:700;">스마트폰</div></div><div class="it pop" style="left:420px;top:470px;width:220px;height:140px;background:transparent;color:#9A958C;--t:9.30s"><div class="in fade" style="--t2:9.80s;">악기 케이스</div></div><div class="door"></div></div>
+  <div class="a r" style="top:1395px;font-size:36px;color:#55524D;--t:10.4s">악기를 꺼내기도 전에, 스마트폰이 먼저 손에 잡힙니다.</div>
 </section>
 
 <section class="sc" style="--s:12.3s;--d:11.7s;background:#F1EDE4;z-index:4">
@@ -115,14 +115,14 @@ body{width:1080px;height:1920px;overflow:hidden;background:#F1EDE4;font-family:P
 </section>
 
 <section class="sc" style="--s:20.4s;--d:4.6s;background:#111;z-index:6"><div class="shot" style="--t:20.60s;z-index:1"><img src="../../images/공간/미디룸_01.jpg" style="object-position:50% 40%;--t:20.60s"></div>
-<div class="lab" style="--t:20.85s;--t3:21.95s;z-index:10"><div class="k" style="color:#F1E8CB">MIDI ROOM</div><div style="font-size:84px;font-weight:700;letter-spacing:-3.5px;color:#F1EDE4;margin-top:8px">미디는 미디만</div></div>
+<div class="lab" style="--t:20.85s;--t3:21.95s;z-index:10"><div class="k" style="color:#F1E8CB">MIDI ROOM</div><div style="font-size:84px;font-weight:700;letter-spacing:-3.5px;color:#F1EDE4;margin-top:8px">만들고</div></div>
 <div class="shot" style="--t:21.95s;z-index:2"><img src="../../images/공간/보컬부스_01.jpg" style="object-position:50% 45%;--t:21.95s"></div>
-<div class="lab" style="--t:22.20s;--t3:23.30s;z-index:11"><div class="k" style="color:#F1E8CB">VOCAL ROOM</div><div style="font-size:84px;font-weight:700;letter-spacing:-3.5px;color:#F1EDE4;margin-top:8px">노래는 노래만</div></div>
+<div class="lab" style="--t:22.20s;--t3:23.30s;z-index:11"><div class="k" style="color:#F1E8CB">VOCAL ROOM</div><div style="font-size:84px;font-weight:700;letter-spacing:-3.5px;color:#F1EDE4;margin-top:8px">부르고</div></div>
 <div class="shot" style="--t:23.30s;z-index:3"><img src="../../images/공간/피아노_01.jpg" style="object-position:55% 50%;--t:23.30s"></div>
-<div class="lab" style="--t:23.55s;z-index:12"><div class="k" style="color:#F1E8CB">PIANO ROOM</div><div style="font-size:84px;font-weight:700;letter-spacing:-3.5px;color:#F1EDE4;margin-top:8px">피아노는 피아노만</div></div>
+<div class="lab" style="--t:23.55s;z-index:12"><div class="k" style="color:#F1E8CB">PIANO ROOM</div><div style="font-size:84px;font-weight:700;letter-spacing:-3.5px;color:#F1EDE4;margin-top:8px">연주하고</div></div>
 <div style="position:absolute;left:0;right:0;top:0;height:760px;background:linear-gradient(rgba(10,10,10,.85),rgba(10,10,10,0));z-index:15"></div><div style="position:absolute;left:0;right:0;top:1050px;height:500px;background:linear-gradient(rgba(10,10,10,0),rgba(10,10,10,.75) 40%,rgba(10,10,10,.75) 70%,rgba(10,10,10,0));z-index:9"></div>
-<div class="ln" style="top:330px;height:110px;z-index:20"><div class="li" style="font-size:80px;font-weight:700;color:#F1EDE4;--t:20.7s">방마다,</div></div>
-<div class="ln" style="top:420px;height:110px;z-index:20"><div class="li" style="font-size:80px;font-weight:300;color:#F1EDE4;--t:20.85s">한 가지 일만.</div></div>
+<div class="ln" style="top:330px;height:110px;z-index:20"><div class="li" style="font-size:80px;font-weight:700;color:#F1EDE4;--t:20.7s">들어오면,</div></div>
+<div class="ln" style="top:420px;height:110px;z-index:20"><div class="li" style="font-size:80px;font-weight:300;color:#F1EDE4;--t:20.85s">음악만.</div></div>
 <div class="src" style="color:#9A958C;z-index:20">사진: ENOCH 미디룸 · 보컬 부스 · 피아노</div>
 </section>
 <section class="sc" style="--s:24.8s;--d:3.7s;background:#111;color:#F1EDE4;z-index:7">
