@@ -54,7 +54,7 @@ body{width:1080px;height:1920px;overflow:hidden;background:#F1EDE4;font-family:P
 .bar2{flex:1;transform-origin:bottom;animation:gy 1.2s cubic-bezier(.2,.7,.2,1) var(--t) both}
 @keyframes gy{from{transform:scaleY(var(--f))}to{transform:scaleY(var(--to))}}
 .src{position:absolute;left:96px;right:96px;top:1560px;font-size:20px;color:#8A8A8A}
-.prog{position:absolute;left:0;top:0;height:8px;background:#111;animation:prog 24s linear both;z-index:9}
+.prog{position:absolute;left:0;top:0;height:8px;background:#111;animation:prog 28.5s linear both;z-index:9}
 @keyframes prog{from{width:0}to{width:100%}}
 .kb{animation:kb 4.6s linear 16.2s both}
 @keyframes kb{from{transform:scale(1.18) translateY(30px)}to{transform:scale(1)}}
@@ -63,6 +63,14 @@ body{width:1080px;height:1920px;overflow:hidden;background:#F1EDE4;font-family:P
 .ghost span{display:inline-block;opacity:0;animation:rise .5s cubic-bezier(.2,.7,.2,1) var(--t) both}
 .blob{position:absolute;border-radius:50%;background:#E8DCB0;animation:pulse 1.6s ease-in-out 0s infinite alternate}
 @keyframes pulse{from{transform:scale(1)}to{transform:scale(1.12)}}
+.shot{position:absolute;inset:0;overflow:hidden;clip-path:inset(100% 0 0 0);animation:shotin .6s cubic-bezier(.7,0,.2,1) var(--t) both}
+@keyframes shotin{to{clip-path:inset(0 0 0 0)}}
+.shot img{width:1080px;height:1920px;object-fit:cover;filter:saturate(.8) brightness(.62);animation:kb2 2.2s linear var(--t) both}
+@keyframes kb2{from{transform:scale(1.15)}to{transform:scale(1.02)}}
+.lab{position:absolute;left:96px;right:96px;top:1180px;opacity:0;animation:labin .5s cubic-bezier(.2,.7,.2,1) var(--t) both, labgo .25s linear var(--t3,99s) forwards}
+@keyframes labgo{to{opacity:0}}
+@keyframes labin{from{opacity:0;transform:translateX(-60px)}to{opacity:1;transform:none}}
+.labout{display:none}
 </style></head><body>
 
 <section class="sc first" style="background:#F1E8CB;z-index:1;animation:hide 0s linear 3.9s both">
@@ -106,11 +114,22 @@ body{width:1080px;height:1920px;overflow:hidden;background:#F1EDE4;font-family:P
   <div class="ln" style="top:1000px;height:119px"><div class="li" style="font-size:96px;font-weight:700;color:#F1EDE4;--t:17.30s;">연습실 문을 여는</div></div><div class="ln" style="top:1113px;height:119px"><div class="li" style="font-size:96px;font-weight:700;color:#F1EDE4;--t:17.48s;">것까지가,</div></div><div class="ln" style="top:1226px;height:119px"><div class="li" style="font-size:96px;font-weight:700;color:#F1EDE4;--t:17.66s;"><span style="color:#F1E8CB">연습입니다.</span></div></div>
 </section>
 
-<section class="sc" style="--s:20.6s;--d:3.4s;background:#111;color:#F1EDE4;z-index:6">
-  <div class="a ghost" style="top:330px;font-family:var(--en);font-weight:700;font-size:250px;letter-spacing:-9px;color:#2A2825;line-height:1"><span style="--t:20.80s">E</span><span style="--t:20.87s">N</span><span style="--t:20.94s">O</span><span style="--t:21.01s">C</span><span style="--t:21.08s">H</span></div>
-  <div class="ln" style="top:640px;height:84px"><div class="li" style="font-size:60px;font-weight:700;color:#F1EDE4;--t:21.00s;">운영시간 내</div></div><div class="ln" style="top:718px;height:84px"><div class="li" style="font-size:60px;font-weight:700;color:#F1EDE4;--t:21.12s;">자유로운 연습실 이용이</div></div><div class="ln" style="top:796px;height:84px"><div class="li" style="font-size:60px;font-weight:700;color:#F1EDE4;--t:21.24s;"><span style="color:#F1E8CB">가능합니다.</span></div></div>
-  <div class="a r" style="top:920px;font-size:36px;line-height:1.7;color:#C9C4BB;--t:21.6s">입시 · 취미 · 성인 · 전문, 모든 과정 1:1</div>
-  <div class="a r" style="top:1180px;padding-top:26px;border-top:1px solid rgba(241,237,228,.3);font-size:32px;line-height:1.7;--t:21.9s">에녹실용음악학원 시흥점<br><span style="color:#9A958C">경기도 시흥시 은행로 157 2층 · 010 3949 3666</span></div>
+<section class="sc" style="--s:20.4s;--d:4.6s;background:#111;z-index:6"><div class="shot" style="--t:20.60s;z-index:1"><img src="../../images/공간/미디룸_01.jpg" style="object-position:50% 40%;--t:20.60s"></div>
+<div class="lab" style="--t:20.85s;--t3:21.95s;z-index:10"><div class="k" style="color:#F1E8CB">MIDI ROOM</div><div style="font-size:84px;font-weight:700;letter-spacing:-3.5px;color:#F1EDE4;margin-top:8px">미디는 미디만</div></div>
+<div class="shot" style="--t:21.95s;z-index:2"><img src="../../images/공간/보컬부스_01.jpg" style="object-position:50% 45%;--t:21.95s"></div>
+<div class="lab" style="--t:22.20s;--t3:23.30s;z-index:11"><div class="k" style="color:#F1E8CB">VOCAL ROOM</div><div style="font-size:84px;font-weight:700;letter-spacing:-3.5px;color:#F1EDE4;margin-top:8px">노래는 노래만</div></div>
+<div class="shot" style="--t:23.30s;z-index:3"><img src="../../images/공간/피아노_01.jpg" style="object-position:55% 50%;--t:23.30s"></div>
+<div class="lab" style="--t:23.55s;z-index:12"><div class="k" style="color:#F1E8CB">PIANO ROOM</div><div style="font-size:84px;font-weight:700;letter-spacing:-3.5px;color:#F1EDE4;margin-top:8px">피아노는 피아노만</div></div>
+<div style="position:absolute;left:0;right:0;top:0;height:760px;background:linear-gradient(rgba(10,10,10,.85),rgba(10,10,10,0));z-index:15"></div><div style="position:absolute;left:0;right:0;top:1050px;height:500px;background:linear-gradient(rgba(10,10,10,0),rgba(10,10,10,.75) 40%,rgba(10,10,10,.75) 70%,rgba(10,10,10,0));z-index:9"></div>
+<div class="ln" style="top:330px;height:110px;z-index:20"><div class="li" style="font-size:80px;font-weight:700;color:#F1EDE4;--t:20.7s">방마다,</div></div>
+<div class="ln" style="top:420px;height:110px;z-index:20"><div class="li" style="font-size:80px;font-weight:300;color:#F1EDE4;--t:20.85s">한 가지 일만.</div></div>
+<div class="src" style="color:#9A958C;z-index:20">사진: ENOCH 미디룸 · 보컬 부스 · 피아노</div>
+</section>
+<section class="sc" style="--s:24.8s;--d:3.7s;background:#111;color:#F1EDE4;z-index:7">
+  <div class="a ghost" style="top:330px;font-family:var(--en);font-weight:700;font-size:250px;letter-spacing:-9px;color:#2A2825;line-height:1"><span style="--t:25.00s">E</span><span style="--t:25.07s">N</span><span style="--t:25.14s">O</span><span style="--t:25.21s">C</span><span style="--t:25.28s">H</span></div>
+  <div class="ln" style="top:640px;height:84px"><div class="li" style="font-size:60px;font-weight:700;color:#F1EDE4;--t:25.20s;">운영시간 내</div></div><div class="ln" style="top:718px;height:84px"><div class="li" style="font-size:60px;font-weight:700;color:#F1EDE4;--t:25.32s;">자유로운 연습실 이용이</div></div><div class="ln" style="top:796px;height:84px"><div class="li" style="font-size:60px;font-weight:700;color:#F1EDE4;--t:25.44s;"><span style="color:#F1E8CB">가능합니다.</span></div></div>
+  <div class="a r" style="top:920px;font-size:36px;line-height:1.7;color:#C9C4BB;--t:25.80s">입시 · 취미 · 성인 · 전문, 모든 과정 1:1</div>
+  <div class="a r" style="top:1180px;padding-top:26px;border-top:1px solid rgba(241,237,228,.3);font-size:32px;line-height:1.7;--t:26.10s">에녹실용음악학원 시흥점<br><span style="color:#9A958C">경기도 시흥시 은행로 157 2층 · 010 3949 3666</span></div>
 </section>
 <div class="prog"></div>
 </body></html>
