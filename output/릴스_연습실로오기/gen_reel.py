@@ -122,8 +122,8 @@ body{{width:1080px;height:1920px;overflow:hidden;background:#111;font-family:P,s
   {mont}
   <div class="shade" style="top:0;height:760px;background:linear-gradient(rgba(10,10,10,.85),rgba(10,10,10,0));z-index:15"></div>
   <div class="shade" style="top:1050px;height:500px;background:linear-gradient(rgba(10,10,10,0),rgba(10,10,10,.75) 40%,rgba(10,10,10,.75) 70%,rgba(10,10,10,0));z-index:9"></div>
-  <div class="ln" style="top:330px;height:120px;z-index:20"><div class="li" style="font-size:96px;font-weight:700;color:#F1EDE4;--t:{M0+.2:.2f}s">연습실에 들어오면,</div></div>
-  <div class="ln" style="top:440px;height:120px;z-index:20"><div class="li" style="font-size:96px;font-weight:300;color:#F1EDE4;--t:{M0+.32:.2f}s">음악만.</div></div>
+  <div class="ln" style="top:330px;height:120px;z-index:20"><div class="li" style="font-size:96px;font-weight:700;color:#F1EDE4;--t:{M0+.2:.2f}s">연습실은,</div></div>
+  <div class="ln" style="top:440px;height:120px;z-index:20"><div class="li" style="font-size:96px;font-weight:300;color:#F1EDE4;--t:{M0+.32:.2f}s">음악하는 곳.</div></div>
   <div class="src" style="color:#9A958C;z-index:20">사진: ENOCH 미디룸 · 보컬 부스 · 드럼룸 · 피아노</div>
 </section>
 
