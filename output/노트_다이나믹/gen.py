@@ -88,12 +88,12 @@ S.append(f"""<section class="s dark" id="c5">{HD("TRY AT HOME")}
 {FT(5)}</section>""")
 
 # 06 악기별
-parts=[("보컬","벌스는 말하듯 가깝게, 후렴은 소리를 열고 길게."),("기타","벌스는 뮤트나 아르페지오로 비우고, 후렴은 오픈 코드 스트로크로 채우기."),("베이스","벌스는 긴 음 · 적은 음으로, 후렴은 8분음표로 밀어 주기."),("드럼","벌스는 하이햇 · 크로스 스틱, 후렴은 라이드 · 크래시와 오픈 하이햇으로."),("피아노","벌스는 가운데 음역에서 적게, 후렴은 보이싱을 넓히고 왼손 옥타브로.")]
+parts=[("보컬","곡의 이야기를 전하는 자리. 벌스부터 힘을 다 쓰면, 후렴에서 할 말이 남지 않아요."),("기타","공간을 채우는 악기. 얼마나 채우고 비우느냐가 곡의 넓이를 정합니다."),("베이스","곡의 무게를 받치는 자리. 베이스가 움직이기 시작하면, 곡 전체가 앞으로 나아가요."),("드럼","곡의 에너지가 가장 먼저 드러나는 악기. 드럼이 바뀌면, 듣는 사람은 구간이 바뀐 걸 바로 느낍니다."),("피아노","음역이 가장 넓은 악기. 어느 음역에 손을 두느냐로 곡의 높이와 밀도가 달라지거든요.")]
 rows=''.join(f'<div class="row"><span class="n">{a}</span><span class="t">{b}</span></div>' for a,b in parts)
 S.append(f"""<section class="s" id="c6">{HD()}
-<div class="k a" style="left:96px;top:200px">Verse → Chorus</div>
-<div class="h a" style="left:92px;top:250px">벌스에서 비워 두면,<br><em>후렴이 커집니다</em></div>
-<div class="p a" style="left:96px;top:500px;font-size:24px;color:#8A8A8A">예를 들면, 이렇게.</div>
+<div class="k a" style="left:96px;top:200px">By Instrument</div>
+<div class="h a" style="left:92px;top:250px">악기마다,<br><em>다이나믹이 맡은 일</em></div>
+<div class="p a" style="left:96px;right:96px;top:480px;font-size:26px">한 악기만 커져서는 곡이 커지지 않습니다. 모두가 함께 오르내릴 때.</div>
 <div class="a" style="left:96px;right:96px;top:570px;border-top:1.5px solid #111">{rows}</div>
 {FT(6)}</section>""")
 
