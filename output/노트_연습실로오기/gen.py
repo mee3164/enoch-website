@@ -82,7 +82,7 @@ S.append(f"""<section class="s" id="c4">{HD()}
 <div class="k a" style="left:96px;top:200px">One Space, One Thing</div>
 <div class="a" style="left:92px;top:250px;font-size:120px;font-weight:700;letter-spacing:-6px;line-height:1.1">한 공간에서는<br><span style="font-weight:300">한 가지 일만</span></div>
 <div class="a" style="left:96px;top:540px;font-size:22px;color:#7A7262">— 『아주 작은 습관의 힘』 124쪽</div>
-<div class="p a" style="left:96px;right:96px;top:640px">연습실은 연습만 하는 곳.<br>문을 열고 들어오면, 무엇을 해야 할지 몸이 먼저 알거든요.<br><b>들어오는 순간이, 연습의 시작입니다.</b></div>
+<div class="p a" style="left:96px;right:96px;top:640px">연습실은 음악하는 곳.<br>문을 열고 들어오면, 무엇을 해야 할지 몸이 먼저 알거든요.<br><b>들어오는 순간이, 연습의 시작입니다.</b></div>
 <div class="a" style="left:96px;right:96px;top:1000px;height:120px;background:var(--bu);display:flex;align-items:center;padding:0 48px;font-size:28px;letter-spacing:-.5px">새로운 환경에서 새로운 습관을 만들기 쉽다. <span style="color:#7A7262;font-size:20px;margin-left:16px">— 6장 요약</span></div>
 {FT(4)}{SRC('124쪽, 6장 요약.')}</section>""")
 
