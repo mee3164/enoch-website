@@ -43,31 +43,33 @@ def body(kind):
 <div class="a k" style="top:{180+o}px">Mission Scholarship · 선교 장학</div>
 <div class="a" style="top:{225+o}px;font-size:{74 if kind=='feed' else 78}px;font-weight:700;letter-spacing:-3.4px;line-height:1.2">달란트를<br><span style="font-weight:300">멋지게 피워낼 수 있도록</span></div>
 <div class="a" style="top:{430+o if kind=='feed' else 470+o}px;font-size:28px;color:#55524D;letter-spacing:-.5px">에녹실용음악학원이 작은 응원을 더합니다.</div>
+<div class="a" style="top:{482+o if kind=='feed' else 528+o}px;font-size:{23 if kind=='feed' else 25}px;line-height:1.6;color:#8A8A8A;letter-spacing:-.4px">음악을 통해 찬양과 일상의 기쁨을 더하고 싶으셨던 기독교인 학생분들을 위해,<br>선교의 마음을 담아 장학 이벤트를 준비했습니다.</div>
 <div style="position:absolute;right:{70 if kind=='feed' else 60}px;top:{150+o if kind=='feed' else 170+o}px">{d}</div>
-<div class="a" style="top:{500+o if kind=='feed' else 580+o}px;display:flex;align-items:flex-end;gap:28px;background:var(--sg);padding:26px 40px 30px;left:96px;right:96px">
+<div class="a" style="top:{572+o if kind=='feed' else 640+o}px;display:flex;align-items:flex-end;gap:28px;background:var(--sg);padding:26px 40px 30px;left:96px;right:96px">
   <div style="font-family:var(--en);font-weight:700;font-size:{big}px;letter-spacing:-10px;line-height:.85">40<span style="font-size:{big//2}px;letter-spacing:-4px">%</span></div>
   <div style="padding-bottom:16px"><div class="k" style="color:#5E6B55">3 Months · Hobby Class</div><div style="font-size:34px;font-weight:700;letter-spacing:-1px;margin-top:8px">취미반 수강료 지원</div><div style="font-size:24px;color:#55524D;margin-top:6px">악기 · 보컬, 3개월간</div></div>
 </div>
-<div class="a" style="top:{800+o if kind=='feed' else 940+o}px;border-top:1.5px solid #111">{rows}<div style="padding-top:16px;font-size:21px;color:#8A8A8A">* 인원 한정으로, 선착순 조기 마감될 수 있습니다.</div></div>
+<div class="a" style="top:{835+o if kind=='feed' else 960+o}px;border-top:1.5px solid #111">{rows}<div style="padding-top:16px;font-size:21px;color:#8A8A8A">* 인원 한정으로, 선착순 조기 마감될 수 있습니다.</div></div>
 <div class="a" style="top:{1235+o if kind=='feed' else 1400+o}px;padding-top:18px;border-top:1.5px solid #111;display:flex;justify-content:space-between;font-size:21px;line-height:1.55"><span><b>에녹실용음악학원 시흥점</b><br><span style="color:#55524D">경기도 시흥시 은행로 157 2층</span></span><span style="text-align:right;font-family:var(--mono)">010 3949 3666<br><span style="font-family:P,sans-serif;color:#55524D;font-size:19px">Vocal · Guitar · Drum · Bass · Piano · MIDI · 작곡</span></span></div>
 </section>'''
 
 def kakao():
     d = DOODLE.format(w=190, h=241)
-    rows='''<div class="row" style="padding:13px 0"><span class="n">혜택</span><span class="t" style="font-size:24px"><b>취미반 3개월 수강료 40% 지원</b> &nbsp;<i>월 <s style="color:#8A8A8A">18만 원</s> → <b style="color:#111">월 10.8만 원</b></i></span></div>
-<div class="row" style="padding:13px 0"><span class="n">대상</span><span class="t" style="font-size:24px">교회 담임목사님 추천서 또는 세례증명서를 제출할 수 있는 분</span></div>
-<div class="row" style="padding:13px 0"><span class="n">신청</span><span class="t" style="font-size:24px">네이버 톡톡 · 카카오톡 채널 <i>· 방문 시 추천서 또는 세례증명서 지참</i></span></div>'''
+    rows='''<div class="row" style="padding:11px 0"><span class="n">혜택</span><span class="t" style="font-size:24px"><b>취미반 3개월 수강료 40% 지원</b> &nbsp;<i>월 <s style="color:#8A8A8A">18만 원</s> → <b style="color:#111">월 10.8만 원</b></i></span></div>
+<div class="row" style="padding:11px 0"><span class="n">대상</span><span class="t" style="font-size:24px">교회 담임목사님 추천서 또는 세례증명서를 제출할 수 있는 분</span></div>
+<div class="row" style="padding:11px 0"><span class="n">신청</span><span class="t" style="font-size:24px">네이버 톡톡 · 카카오톡 채널 <i>· 방문 시 추천서 또는 세례증명서 지참</i></span></div>'''
     return f'''<section class="s" id="kakao" style="height:1080px">
 <div class="hd" style="top:56px;left:80px;right:80px;font-size:19px"><span>ENOCH MUSIC ACADEMY</span><span>SCHOLARSHIP</span></div>
 <div class="a k" style="top:140px;left:80px;font-size:18px">Mission Scholarship · 선교 장학</div>
 <div class="a" style="top:178px;left:80px;font-size:64px;font-weight:700;letter-spacing:-3px;line-height:1.2">달란트를<br><span style="font-weight:300">멋지게 피워낼 수 있도록</span></div>
-<div class="a" style="top:348px;left:80px;font-size:25px;color:#55524D">에녹실용음악학원이 작은 응원을 더합니다.</div>
+<div class="a" style="top:346px;left:80px;font-size:25px;color:#55524D">에녹실용음악학원이 작은 응원을 더합니다.</div>
+<div class="a" style="top:390px;left:80px;font-size:21px;line-height:1.55;color:#8A8A8A;letter-spacing:-.3px">음악을 통해 찬양과 일상의 기쁨을 더하고 싶으셨던 기독교인 학생분들을 위해,<br>선교의 마음을 담아 장학 이벤트를 준비했습니다.</div>
 <div style="position:absolute;right:70px;top:110px">{d}</div>
-<div class="a" style="top:410px;left:80px;right:80px;display:flex;align-items:flex-end;gap:26px;background:var(--sg);padding:22px 36px 26px">
-  <div style="font-family:var(--en);font-weight:700;font-size:170px;letter-spacing:-8px;line-height:.85">40<span style="font-size:85px;letter-spacing:-3px">%</span></div>
+<div class="a" style="top:480px;left:80px;right:80px;display:flex;align-items:flex-end;gap:26px;background:var(--sg);padding:20px 36px 22px">
+  <div style="font-family:var(--en);font-weight:700;font-size:150px;letter-spacing:-7px;line-height:.85">40<span style="font-size:75px;letter-spacing:-3px">%</span></div>
   <div style="padding-bottom:12px"><div class="k" style="color:#5E6B55;font-size:18px">3 Months · Hobby Class</div><div style="font-size:32px;font-weight:700;letter-spacing:-1px;margin-top:6px">취미반 수강료 지원</div><div style="font-size:22px;color:#55524D;margin-top:4px">악기 · 보컬, 3개월간</div></div>
 </div>
-<div class="a" style="top:648px;left:80px;right:80px;border-top:1.5px solid #111">{rows}<div style="padding-top:12px;font-size:19px;color:#8A8A8A">* 인원 한정으로, 선착순 조기 마감될 수 있습니다.</div></div>
+<div class="a" style="top:695px;left:80px;right:80px;border-top:1.5px solid #111">{rows}<div style="padding-top:12px;font-size:19px;color:#8A8A8A">* 인원 한정으로, 선착순 조기 마감될 수 있습니다.</div></div>
 <div class="a" style="top:965px;left:80px;right:80px;padding-top:16px;border-top:1.5px solid #111;display:flex;justify-content:space-between;font-size:20px;line-height:1.5"><span><b>에녹실용음악학원 시흥점</b><br><span style="color:#55524D">경기도 시흥시 은행로 157 2층</span></span><span style="text-align:right;font-family:var(--mono)">010 3949 3666<br><span style="font-family:P,sans-serif;color:#55524D;font-size:18px">Vocal · Guitar · Drum · Bass · Piano · MIDI · 작곡</span></span></div>
 </section>'''
 open('poster.html','w').write(f'<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>선교 장학 포스터</title><style>{FONT}{CSS}</style></head><body>{body("feed")}{body("story")}{kakao()}</body></html>')
