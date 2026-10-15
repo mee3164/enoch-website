@@ -1,7 +1,7 @@
 # 릴스: 왜 집에선 연습이 안 될까? (reel.html 생성) — 사진 먼저, 짧은 컷, 18초
 import os
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
-T = 18.6
+T = 20.9
 def lines(txts, top, start, size, weights, color='#111', lh=1.14, gap=.1):
     out=''; y=top
     for i,t in enumerate(txts):
@@ -16,10 +16,10 @@ def room(x,y,title,items,start,fill):
         fs = 'font-size:44px;font-weight:700;' if label=='스마트폰' else ''
         out+=f'<div class="it pop" style="left:{ix}px;top:{iy}px;width:{w}px;height:{h}px;background:{f};color:{col};--t:{start+.2*i:.2f}s"><div class="in {anim}" style="--t2:{start+.2*i+.35:.2f}s;{fs}">{label}</div></div>'
     return out+'<div class="door"></div></div>'
-home=room(140,620,'집',[(30,40,330,120,'소파',''),(470,40,170,240,'침대',''),(170,250,260,190,'스마트폰','buzz'),(420,470,220,140,'악기 케이스','fade')],5.0,'#CFC9BE')
+home=room(140,620,'집',[(30,40,330,120,'소파',''),(470,40,170,240,'침대',''),(170,250,260,190,'스마트폰','buzz'),(420,470,220,140,'악기 케이스','fade')],7.3,'#CFC9BE')
 
 SHOTS=[('미디룸_01.jpg','MIDI','만들고','50% 40%'),('보컬부스_01.jpg','VOCAL','부르고','50% 45%'),('드럼룸_01.jpg','DRUM','두드리고','50% 55%'),('피아노_01.jpg','PIANO','연주하고','55% 50%')]
-M0=7.6; STEP=1.05
+M0=9.9; STEP=1.05
 mont=''
 for i,(f,en,ko,pos) in enumerate(SHOTS):
     t=M0+.15+i*STEP
@@ -37,8 +37,8 @@ html=f'''<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>릴�
 :root{{--en:"Helvetica Neue",Helvetica,Arial,"Liberation Sans",P,sans-serif;--mono:"IBM Plex Mono","DejaVu Sans Mono",monospace}}
 *{{box-sizing:border-box;margin:0;padding:0}}
 body{{width:1080px;height:1920px;overflow:hidden;background:#111;font-family:P,sans-serif;word-break:keep-all;color:#111}}
-.sc{{position:absolute;inset:0;animation:wipe var(--d) cubic-bezier(.7,0,.2,1) var(--s) both;clip-path:inset(0 0 0 100%)}}
-@keyframes wipe{{0%{{clip-path:inset(0 0 0 100%)}}12%{{clip-path:inset(0 0 0 0)}}100%{{clip-path:inset(0 0 0 0)}}}}
+.sc{{position:absolute;inset:0;animation:wipe .55s cubic-bezier(.7,0,.2,1) var(--s) both;clip-path:inset(0 0 0 100%)}}
+@keyframes wipe{{from{{clip-path:inset(0 0 0 100%)}}to{{clip-path:inset(0 0 0 0)}}}}
 .a{{position:absolute;left:96px;right:96px}}
 .k{{font-family:var(--mono);font-size:26px;letter-spacing:4px;text-transform:uppercase;color:#6E6A64}}
 .r{{opacity:0;animation:rise .5s cubic-bezier(.2,.7,.2,1) var(--t) both}}
@@ -64,7 +64,7 @@ body{{width:1080px;height:1920px;overflow:hidden;background:#111;font-family:P,s
 @keyframes fd{{to{{opacity:.3;filter:blur(1.5px)}}}}
 .door{{position:absolute;right:120px;bottom:-4px;width:120px;height:4px;background:#F1EDE4}}
 .num{{font-family:var(--en);font-weight:700;letter-spacing:-8px;line-height:1}}
-.cnt{{animation:cnt 1.1s cubic-bezier(.2,.7,.2,1) var(--t) both;counter-reset:n var(--n)}}
+.cnt{{animation:cnt 1.3s cubic-bezier(.2,.7,.2,1) var(--t) both;counter-reset:n var(--n)}}
 .cnt:before{{content:counter(n)}}
 @keyframes cnt{{from{{--n:0}}to{{--n:25}}}}
 .grow{{transform-origin:left;animation:gx 1.1s cubic-bezier(.2,.7,.2,1) var(--t) both}}
@@ -89,6 +89,13 @@ body{{width:1080px;height:1920px;overflow:hidden;background:#111;font-family:P,s
 @keyframes labgo{{to{{opacity:0}}}}
 .ghost span{{display:inline-block;opacity:0;animation:rise .45s cubic-bezier(.2,.7,.2,1) var(--t) both}}
 .shade{{position:absolute;left:0;right:0}}
+@property --m{{syntax:'<integer>';inherits:false;initial-value:0}}
+.cnt2{{animation:cnt2 1.1s cubic-bezier(.2,.7,.2,1) var(--t) both;counter-reset:m var(--m)}}
+.cnt2:before{{content:"−" counter(m)}}
+@keyframes cnt2{{from{{--m:0}}to{{--m:11}}}}
+.bars{{position:absolute;left:96px;right:96px;top:1240px;height:160px;display:flex;align-items:flex-end;gap:40px}}
+.bar2{{flex:1;transform-origin:bottom;animation:gy 1.1s cubic-bezier(.2,.7,.2,1) var(--t) both}}
+@keyframes gy{{from{{transform:scaleY(var(--f))}}to{{transform:scaleY(var(--to))}}}}
 </style></head><body>
 
 <!-- 01 훅: 사진 위 질문 (첫 프레임부터 보임) -->
@@ -101,20 +108,21 @@ body{{width:1080px;height:1920px;overflow:hidden;background:#111;font-family:P,s
   <div class="a r" style="top:1050px;font-size:44px;color:#F1EDE4;--t:.9s">답은, 의지가 아니라 <b style="color:#F1E8CB">장소</b>에 있어요.</div>
 </section>
 
-<!-- 02 실험 숫자 -->
+<!-- 02 실험 숫자 (4.5초) -->
 <section class="sc" style="--s:2.4s;--d:{T-2.4}s;background:#F1EDE4;z-index:2">
   <div class="a k r" style="top:330px;--t:2.6s">An Experiment</div>
-  {lines(['생수를 잘 보이는 곳에','두었을 뿐인데'],390,2.65,84,[700,300])}
-  <div class="a r" style="top:700px;border-top:3px solid #111;padding-top:30px;--t:3.1s"><div class="k">Water · 3 Months</div><div class="num" style="font-size:280px;margin-top:10px">+<span class="cnt" style="--t:3.2s"></span>.8<span style="font-size:130px">%</span></div><div style="font-size:42px;color:#55524D;margin-top:6px">생수 판매가 늘었어요</div></div>
-  <div class="a grow" style="top:1260px;height:60px;background:#F1E8CB;border:3px solid #111;--t:3.2s"></div>
-  <div class="src">병원 식당 실험 · 제임스 클리어, 『아주 작은 습관의 힘』 114–115쪽 (이한이 옮김, 비즈니스북스)</div>
+  {lines(['병원 식당에서,','생수를 잘 보이는 곳에','두었을 뿐인데'],390,2.7,76,[700,300,300])}
+  <div class="a r" style="top:820px;border-top:3px solid #111;padding-top:30px;--t:3.5s"><div class="k">Water · 3 Months</div><div class="num" style="font-size:260px;margin-top:10px">+<span class="cnt" style="--t:3.7s"></span>.8<span style="font-size:120px">%</span></div><div style="font-size:40px;color:#55524D;margin-top:6px">생수 판매</div></div>
+  <div class="a r" style="top:1450px;font-size:34px;color:#55524D;--t:4.4s"><span class="k">Soda</span> <span style="font-family:var(--en);font-weight:700;font-size:64px;letter-spacing:-3px;color:#111;margin-left:16px"><span class="cnt2" style="--t:4.6s"></span>.4%</span> &nbsp;탄산음료 판매</div>
+  <div class="bars"><div class="bar2" style="height:160px;background:#F1E8CB;border:2.5px solid #111;--t:3.7s;--f:.2;--to:1"></div><div class="bar2" style="height:160px;background:#CFC9BE;border:2.5px solid #111;--t:4.6s;--f:1;--to:.55"></div></div>
+  <div class="src" style="top:1610px">제임스 클리어, 『아주 작은 습관의 힘』 114–115쪽 (이한이 옮김, 비즈니스북스)</div>
 </section>
 
 <!-- 03 집: 스마트폰 -->
-<section class="sc" style="--s:4.6s;--d:{T-4.6}s;background:#F1EDE4;z-index:3">
-  {lines(['집에는,','스마트폰이 있으니까요'],330,4.8,84,[700,300])}
+<section class="sc" style="--s:6.9s;--d:{T-6.9}s;background:#F1EDE4;z-index:3">
+  {lines(['집은,','쉬는 곳이니까요'],330,7.1,84,[700,300])}
   {home}
-  <div class="a r" style="top:1380px;font-size:38px;color:#55524D;--t:6.2s">악기를 꺼내기도 전에, 스마트폰이 먼저 손에 잡힙니다.</div>
+  <div class="a r" style="top:1380px;font-size:38px;color:#55524D;--t:8.5s">소파에 기대면, 악기보다 스마트폰이 먼저 손에 잡힙니다.</div>
 </section>
 
 <!-- 04 공간 사진 몽타주 -->
