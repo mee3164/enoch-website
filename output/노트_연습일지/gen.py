@@ -36,7 +36,7 @@ S=[]
 S.append(f"""<section class="s" id="c1">{HD()}
 <img src="../../images/학생/연습일지_01.png" style="position:absolute;left:96px;top:150px;width:888px;height:620px;object-fit:cover;object-position:50% 42%;display:block;filter:saturate(.7) contrast(1.03)">
 <div class="k a" style="left:96px;top:810px">Practice Log</div>
-<div class="h a" style="left:92px;top:855px;font-size:84px;letter-spacing:-4.2px;line-height:1.18">어제 뭘 연습했는지,<br><em>기억나세요?</em></div>
+<div class="h a" style="left:92px;top:855px;font-size:84px;letter-spacing:-4.2px;line-height:1.18">잘하는 입시생은,<br><em>연습을 적습니다</em></div>
 <div class="p a" style="left:96px;top:1100px;font-size:28px">입시생이 연습일지를 꼭 써야 하는 이유</div>
 {FT(1)}<div class="a" style="left:96px;bottom:26px;font-size:13px;color:#A8A39A">사진: 연습일지</div></section>""")
 # 02 이유 3가지
