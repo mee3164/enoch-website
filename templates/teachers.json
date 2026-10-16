@@ -179,6 +179,102 @@
       "blogPost": "blog/posts/015/final.md",
       "consent": null,
       "source": "원장님 제공 강사 소개 카드 (2026-10-14). card-08은 \"1:1 레슨을 기본으로\" 문구로 다시 만든 판"
+    },
+    {
+      "id": "kim-gunyu",
+      "nameKo": "김건유",
+      "nameEn": "KIM GUNYU",
+      "subject": "기타",
+      "subjectEn": "Guitar",
+      "lessonName": "ENOCH STRINGS",
+      "profile": [
+        {
+          "label": "STAGE · LIVE",
+          "lines": [
+            "2016·17 자라섬 재즈페스티벌",
+            "2016·17 한양대학교 입학식 연주",
+            "제94회 연세콘서트 시리즈 한양대학교 재즈빅밴드",
+            "'굿바이마이파더' 기타리스트 출연",
+            "노놀 라이브 '성현주편'",
+            "호텔 코리아나 '명곡 리마스터'",
+            "CTS · GOOD TV",
+            "제주도 '신나는 음악여행'"
+          ]
+        },
+        {
+          "label": "RECORDING SESSION",
+          "lines": [
+            "장세아 · 이승아 · 5inch · 진찬희 · 현서 · 성현주 · 나현 · 위시(W.ish) · Cindy Park · Antonio Kim · 상우 · 한태오 · 박희정 · 우성혜(BeckyWoo) · 채한성 · 더 세븐스 데이 · 김신 · 김영미 · 김에스더 외",
+            "녹음 세션 참여 아티스트"
+          ]
+        },
+        {
+          "label": "RECORDING · TRACK LIST",
+          "lines": [
+            "장세아 라랄라세아 · 샤르르 크리스마스 · 두근두근 내인생 · 오늘 더 사랑",
+            "진찬희 봄에 지는 꽃",
+            "현서 CAT",
+            "성현주 참 고마웠어",
+            "나현 할리퀸 · Here I Am",
+            "위시(W.ish) 거북목 · 비눗방울 · 가벼운 안부",
+            "Cindy Park Dirty Martini",
+            "Antonio Kim We Dance",
+            "상우 나 또는 너에게 해주고 싶은 말",
+            "한태오 I Miss You",
+            "박희정 사랑아 사람아 (feat. 완이화)",
+            "우성혜 예수 사랑하심은 · 주기도문",
+            "채한성 리멤버 1885",
+            "더 세븐스 데이 요셉의 노래",
+            "김신 상한 마음 가지고 옵니다 · 내 가야할 길",
+            "김영미 너는 혼자가 아니야 · 묵상",
+            "김에스더 주님을 사랑합니다",
+            "5inch 우리의 계절"
+          ]
+        },
+        {
+          "label": "OST · PROJECT",
+          "lines": [
+            "이승아 '오후 두시의 캠퍼스 OST'",
+            "단편영화 '하고싶다' · '구라청춘' OST",
+            "부천문화재단 크로스오버 프로젝트 '한걸음'",
+            "인천 '입구들' 전시음악작가",
+            "TR 워십 'Life, Strength, Hope' · 'The Way' 앨범 전곡 참여",
+            "건유 '우리는 지금' '고민상담' '은하수' '하루'"
+          ]
+        },
+        {
+          "label": "ABROAD",
+          "lines": [
+            "일본 이즈카 코스모스 아트센터 공연",
+            "우크라이나 난민 공연 in 폴란드",
+            "TR워십 폴란드 · 베트남 · 태국 · 몽골 · 일본"
+          ]
+        },
+        {
+          "label": "EDUCATION",
+          "lines": [
+            "한양대학교 실용음악과"
+          ]
+        }
+      ],
+      "photo": "blog/posts/016/images/card-01.png",
+      "thumbnail": "blog/posts/016/images/thumbnail.png",
+      "cards": [
+        "blog/posts/016/images/card-01.png",
+        "blog/posts/016/images/card-02.png",
+        "blog/posts/016/images/card-03.png",
+        "blog/posts/016/images/card-04.png",
+        "blog/posts/016/images/card-05.png",
+        "blog/posts/016/images/card-08.png"
+      ],
+      "cardsMissing": [
+        "06",
+        "07",
+        "09"
+      ],
+      "blogPost": "blog/posts/016/final.md",
+      "consent": null,
+      "source": "원장님 제공 강사 소개 카드 (2026-10-16). card-08은 '1:1 레슨을 기본으로' 문구로 다시 만든 판"
     }
   ]
 }
