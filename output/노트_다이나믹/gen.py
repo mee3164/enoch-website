@@ -35,8 +35,8 @@ S = []
 S.append(f"""<section class="s" id="c1">{HD()}
 <img src="../../images/공간/무대_01.png" style="position:absolute;left:96px;top:150px;width:888px;height:650px;object-fit:cover;object-position:50% 52%;display:block;filter:saturate(.55) contrast(1.02)">
 <div class="k a" style="left:96px;top:840px">Dynamics</div>
-<div class="h a" style="left:92px;top:885px;font-size:86px;letter-spacing:-4.2px;line-height:1.16">후렴이<br><em>안 터지는 이유</em></div>
-<div class="p a" style="left:96px;top:1120px;font-size:27px">답은 후렴이 아니라, 곡 전체에 있습니다.</div>
+<div class="h a" style="left:92px;top:885px;font-size:86px;letter-spacing:-4.2px;line-height:1.16">클라이맥스를<br><em>살리는 3가지</em></div>
+<div class="p a" style="left:96px;top:1120px;font-size:27px">크기 · 밀도 · 음역. 답은 곡 전체에 있습니다.</div>
 {FT(1)}</section>""")
 
 # 02 사전 (검정)
@@ -50,13 +50,13 @@ S.append(f"""<section class="s dark" id="c2">{HD("DICTIONARY")}
 {FT(2)}</section>""")
 
 # 03 곡 전체
-secs = [("Intro",40),("Verse",55),("Pre",95),("Chorus",175),("Verse 2",70),("Bridge",110),("Last Chorus",205),("Outro",45)]
+secs = [("Intro",40),("Theme",55),("Build",95),("Climax",175),("Break",70),("Build",110),("Final Climax",205),("Outro",45)]
 W=888; step=W/len(secs)
 pts=' '.join(f'{step*i+step/2:.0f},{260-h}' for i,(n,h) in enumerate(secs))
 lbl=''.join(f'<text x="{step*i+step/2:.0f}" y="300" text-anchor="middle">{n}</text>' for i,(n,h) in enumerate(secs))
 S.append(f"""<section class="s" id="c3">{HD()}
 <div class="k a" style="left:96px;top:200px">The Whole Song</div>
-<div class="h a" style="left:92px;top:250px">후렴이 크게 들리는 건,<br><em>벌스가 작아서</em></div>
+<div class="h a" style="left:92px;top:250px">클라이맥스가 크려면,<br><em>그 앞이 작아야 합니다</em></div>
 <div class="p a" style="left:96px;right:96px;top:520px">처음부터 끝까지 같은 크기면, 가장 중요한 순간이 묻혀 버립니다.<br>곡 전체를 하나의 선으로 그려 보세요. <b>어디서 낮추고, 어디서 터뜨릴지.</b></div>
 <svg width="888" height="320" viewBox="0 0 888 320" class="a" style="left:96px;top:800px">
 <rect x="{step*6:.0f}" y="0" width="{step:.0f}" height="270" fill="#D9E1E8"/>
@@ -80,7 +80,7 @@ S.append(f"""<section class="s dark" id="c5">{HD("TRY AT HOME")}
 <div class="k a" style="left:96px;top:200px;color:#9A958C">Practice</div>
 <div class="h a" style="left:92px;top:250px">연습하는 곡에,<br><em>지도를 그려 보기</em></div>
 <div class="a" style="left:96px;right:96px;top:540px;border-top:1.5px solid rgba(241,237,228,.6)">
-<div class="row"><span class="n">01 &nbsp;나누기</span><span class="t">인트로 · 벌스 · 프리코러스 · 후렴 · 브리지로 구간을 나눠 적기.</span></div>
+<div class="row"><span class="n">01 &nbsp;나누기</span><span class="t">Intro · Theme · Build · Climax · Outro처럼 구간을 나눠 적기.</span></div>
 <div class="row"><span class="n">02 &nbsp;숫자 적기</span><span class="t">구간마다 에너지를 <b>1부터 10까지</b> 숫자로. 전부 8이면 지도가 없는 거예요.</span></div>
 <div class="row"><span class="n">03 &nbsp;정점 하나</span><span class="t">가장 큰 곳을 하나 정하기. 거기까지 아껴 두는 게 핵심입니다.</span></div>
 <div class="row"><span class="n">04 &nbsp;녹음</span><span class="t">처음부터 끝까지 녹음해서, 적은 숫자대로 오르내리는지 들어 보기.</span></div>
@@ -88,7 +88,7 @@ S.append(f"""<section class="s dark" id="c5">{HD("TRY AT HOME")}
 {FT(5)}</section>""")
 
 # 06 악기별
-parts=[("보컬","곡의 이야기를 전하는 자리. 벌스부터 힘을 다 쓰면, 후렴에서 할 말이 남지 않아요."),("기타","공간을 채우는 악기. 얼마나 채우고 비우느냐가 곡의 넓이를 정합니다."),("베이스","곡의 무게를 받치는 자리. 베이스가 움직이기 시작하면, 곡 전체가 앞으로 나아가요."),("드럼","곡의 에너지가 가장 먼저 드러나는 악기. 드럼이 바뀌면, 듣는 사람은 구간이 바뀐 걸 바로 느낍니다."),("피아노","음역이 가장 넓은 악기. 어느 음역에 손을 두느냐로 곡의 높이와 밀도가 달라지거든요.")]
+parts=[("보컬","곡의 이야기를 전하는 자리. 처음부터 힘을 다 쓰면, 클라이맥스에서 할 말이 남지 않아요."),("기타","공간을 채우는 악기. 얼마나 채우고 비우느냐가 곡의 넓이를 정합니다."),("베이스","곡의 무게를 받치는 자리. 베이스가 움직이기 시작하면, 곡 전체가 앞으로 나아가요."),("드럼","곡의 에너지가 가장 먼저 드러나는 악기. 드럼이 바뀌면, 듣는 사람은 구간이 바뀐 걸 바로 느낍니다."),("피아노","음역이 가장 넓은 악기. 어느 음역에 손을 두느냐로 곡의 높이와 밀도가 달라지거든요.")]
 rows=''.join(f'<div class="row"><span class="n">{a}</span><span class="t">{b}</span></div>' for a,b in parts)
 S.append(f"""<section class="s" id="c6">{HD()}
 <div class="k a" style="left:96px;top:200px">By Instrument</div>
@@ -100,7 +100,7 @@ S.append(f"""<section class="s" id="c6">{HD()}
 # 07 마무리 (검정)
 S.append(f"""<section class="s dark" id="c7">{HD("THE ENOCH WAY")}
 <div class="a" style="left:92px;top:150px;font-family:var(--en);font-weight:700;font-size:240px;letter-spacing:-8px;color:#2A2825;line-height:1">ENOCH</div>
-<div class="h a" style="left:92px;top:450px">언제 크게 칠지 알 때,<br><span style="color:var(--mi)">후렴이 터집니다.</span></div>
+<div class="h a" style="left:92px;top:450px">언제 크게 칠지 알 때,<br><span style="color:var(--mi)">곡이 터집니다.</span></div>
 <div class="p a" style="left:96px;right:96px;top:740px">진도보다 이해를 먼저 봅니다.<br>ENOCH 레슨은 입시 · 취미 · 성인 · 전문, 모든 과정이 1:1.</div>
 <div class="a" style="left:96px;right:96px;top:1040px;padding-top:22px;border-top:1px solid rgba(241,237,228,.3);display:flex;justify-content:space-between;font-size:22px;line-height:1.6"><span>에녹실용음악학원 시흥점<br><span style="color:#9A958C">경기도 시흥시 은행로 157 2층</span></span><span style="text-align:right;font-family:var(--mono)">010 3949 3666<br><span style="color:#9A958C;font-family:P,sans-serif;font-size:19px">Vocal · Guitar · Drum · Bass · Piano · MIDI · 작곡</span></span></div>
 {FT(7)}</section>""")
