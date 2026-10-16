@@ -33,11 +33,11 @@ FT=lambda n: f'<div class="ft"><span>연습일지</span><span>0{n} / 0{TOTAL}</s
 S=[]
 # 01 표지
 S.append(f"""<section class="s" id="c1">{HD()}
-<img src="../../images/공간/피아노_01.jpg" style="position:absolute;left:96px;top:150px;width:888px;height:620px;object-fit:cover;object-position:50% 50%;display:block;filter:saturate(.6) contrast(1.02)">
-<div class="k a" style="left:96px;top:810px">For Exam Students</div>
-<div class="h a" style="left:92px;top:855px;font-size:84px;letter-spacing:-4.2px;line-height:1.18">같은 시간 연습했는데,<br><em>왜 나만 제자리일까?</em></div>
+<img src="../../images/학생/연습일지_01.png" style="position:absolute;left:96px;top:150px;width:888px;height:620px;object-fit:cover;object-position:50% 42%;display:block;filter:saturate(.7) contrast(1.03)">
+<div class="k a" style="left:96px;top:810px">Practice Log</div>
+<div class="h a" style="left:92px;top:855px;font-size:84px;letter-spacing:-4.2px;line-height:1.18">어제 뭘 연습했는지,<br><em>기억나세요?</em></div>
 <div class="p a" style="left:96px;top:1100px;font-size:28px">입시생이 연습일지를 꼭 써야 하는 이유</div>
-{FT(1)}<div class="a" style="left:96px;bottom:26px;font-size:13px;color:#A8A39A">사진: ENOCH 피아노</div></section>""")
+{FT(1)}<div class="a" style="left:96px;bottom:26px;font-size:13px;color:#A8A39A">사진: 연습일지</div></section>""")
 # 02 이유 3가지
 S.append(f"""<section class="s" id="c2">{HD()}
 <div class="k a" style="left:96px;top:200px">Why · 3 Reasons</div>
@@ -60,14 +60,16 @@ S.append(f"""<section class="s" id="c3">{HD()}
   <div style="margin-top:14px;font-size:30px;font-weight:700;letter-spacing:-.6px;line-height:2.1">② 방금 연습한 것<br>③ 잘된 것 · 안 된 것<br>④ 다음에 할 것</div>
 </div>
 {FT(3)}</section>""")
-# 04 기록 루틴 5단계 (검정)
-steps=[("01","찍기","연습 전, 지금 상태를 녹음 · 녹화 (Before)"),("02","듣고 적기","들으면서 안 되는 곳을 일지에"),("03","한 가지만","그중 하나만 골라 집중 연습"),("04","다시 찍기","같은 부분을 다시 녹음 · 녹화 (After)"),("05","비교하기","전과 후를 나란히 듣고, 다음 목표 적기")]
-rows=''.join(f'<div class="row" style="padding:20px 0"><span class="n" style="font-size:36px;color:#F1E8CB">{n}</span><span class="t"><b style="font-size:30px">{a}</b>{b}</span></div>' for n,a,b in steps)
-S.append(f"""<section class="s dark" id="c4">{HD("ROUTINE")}
-<div class="k a" style="left:96px;top:200px;color:#9A958C">Record → Compare</div>
-<div class="h a" style="left:92px;top:250px">기록이 연습을 바꾸는,<br><em>5단계</em></div>
+# 04 악기별 첫 연습 (검정)
+inst=[("Vocal","보컬","가볍게 소리 내기 5분","음역 스케일 10분","곡에서 막힌 구간"),
+("Guitar","기타","손 풀기 · 크로매틱 10분","스케일 · 코드 전환 15분","곡에서 막힌 구간"),
+("Drum","드럼","패드 스트로크 10분","그루브 15분","곡에서 막힌 구간"),
+("Piano","피아노","손가락 · 스케일 10분","코드 · 보이싱 15분","곡에서 막힌 구간")]
+rows=''.join(f'<div class="row" style="padding:22px 0;align-items:flex-start"><span style="width:170px;flex:none"><span class="k" style="color:#F1E8CB;font-size:17px">{e}</span><br><b style="font-size:32px;color:#F1EDE4">{k}</b></span><span style="font-size:25px;line-height:1.75;color:#C9C4BB;letter-spacing:-.4px">☐ {a1}<br>☐ {a2}<br>☐ {a3} <span style="color:#8C8C8C">· 메트로놈</span></span></div>' for e,k,a1,a2,a3 in inst)
+S.append(f"""<section class="s dark" id="c4">{HD("BY INSTRUMENT")}
+<div class="k a" style="left:96px;top:200px;color:#9A958C">Warm Up → Focus</div>
+<div class="h a" style="left:92px;top:250px">악기별 연습일지,<br><em>첫 줄은 이렇게</em></div>
 <div class="a" style="left:96px;right:96px;top:500px;border-top:1.5px solid rgba(241,237,228,.6)">{rows}</div>
-<div class="a" style="left:96px;right:96px;top:1190px;font-size:22px;color:#9A958C">05에서 적은 목표가, 다음 날의 01이 됩니다. ↺</div>
 {FT(4)}</section>""")
 # 05 목표 거꾸로
 S.append(f"""<section class="s" id="c5">{HD()}
