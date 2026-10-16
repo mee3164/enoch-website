@@ -72,8 +72,23 @@ C4 = f"""<section class="s dark" id="c4">{HD("BEFORE · AFTER")}
 <div class="paper rv" style="left:96px;right:96px;top:800px;height:300px;padding:30px 44px;--t:2.7s">""" + ''.join(f'<div class="hand wr" style="font-size:31px;line-height:1.95;--t:{3.0+i*.75:.2f}s;--w:.7s">{g}</div>' for i,g in enumerate(GOOD)) + f"""</div>
 {FT(4)}</section>"""
 S.append(C4)
+# 05 기록이 쌓이면 보이는 것 — motion_05.html에서 같은 마크업에 애니메이션
+days=[("월",70),("화",72),("수",75),("목",75),("금",80),("토",82),("일",85)]
+W,H=820,360; x0=40; step=(W-80)/6
+def y(v): return 70+(85-v)/(85-65)*(H-120)
+pts=' '.join(f'{x0+i*step:.0f},{y(v):.0f}' for i,(d,v) in enumerate(days))
+dots=''.join(f'<g class="pt" style="--t:{1.2+i*.25:.2f}s"><circle cx="{x0+i*step:.0f}" cy="{y(v):.0f}" r="{9 if i<6 else 13}" fill="{"#111" if i<6 else "#F1E8CB"}" stroke="#111" stroke-width="3"/><text x="{x0+i*step:.0f}" y="{y(v)-22:.0f}" text-anchor="middle" font-size="24" font-weight="700" fill="#111">{v}</text></g><text x="{x0+i*step:.0f}" y="{H+10}" text-anchor="middle" font-size="24" fill="#55524D">{d}</text>' for i,(d,v) in enumerate(days))
+GRAPH=f'<svg width="{W}" height="{H+30}" viewBox="0 0 {W} {H+30}" font-family="P,sans-serif"><path d="M0 {H-30} H {W}" stroke="#111" stroke-width="1.5"/><polyline class="ln2" points="{pts}" fill="none" stroke="#111" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" pathLength="1"/>{dots}</svg>'
+C5 = f"""<section class="s" id="c5">{HD()}
+<div class="k a" style="left:96px;top:200px">One Week · Same 8 Bars</div>
+<div class="h a" style="left:92px;top:250px">기록이 쌓이면,<br><em>나아진 게 보입니다</em></div>
+<div class="a rv" style="left:96px;right:96px;top:540px;font-size:24px;color:#55524D;--t:.3s"><span class="k" style="font-size:18px">BPM</span> &nbsp;B파트 8마디, 일주일 동안 적은 템포</div>
+<div class="a" style="left:130px;top:610px">{GRAPH}</div>
+<div class="p a rv" style="left:96px;right:96px;top:1060px;font-size:28px;--t:3.2s">어제보다 나아진 게 눈에 보이면, <b>오늘도 하게 되거든요.</b></div>
+{FT(5)}</section>"""
+S.append(C5)
 # 05 목표 거꾸로
-S.append(f"""<section class="s" id="c5">{HD()}
+S.append(f"""<section class="s" id="c6">{HD()}
 <div class="k a" style="left:96px;top:200px">Goal Setting</div>
 <div class="h a" style="left:92px;top:250px">목표는,<br><em>거꾸로 세웁니다</em></div>
 <div class="a" style="left:96px;right:96px;top:540px;display:flex;flex-direction:column;gap:18px">
@@ -82,22 +97,6 @@ S.append(f"""<section class="s" id="c5">{HD()}
   <div style="border-top:1.5px solid #111;padding:24px 0;display:flex;justify-content:space-between;align-items:center"><div><div class="k">This Month</div><div style="font-size:34px;font-weight:700;margin-top:6px">이번 달</div></div><div style="font-size:26px;color:#55524D">암보 · 녹음해 보기 · 모의고사</div></div>
   <div style="text-align:center;font-size:30px;color:#8A8A8A;line-height:1">↓</div>
   <div style="border-top:1.5px solid #111;border-bottom:1.5px solid #111;background:var(--bu);padding:24px 30px;display:flex;justify-content:space-between;align-items:center"><div><div class="k" style="color:#7A7262">Today</div><div style="font-size:34px;font-weight:700;margin-top:6px">오늘</div></div><div style="font-size:26px;color:#55524D">30분 단위로, 무엇을 어떻게</div></div>
-</div>
-{FT(5)}</section>""")
-# 06 실제 예시
-S.append(f"""<section class="s" id="c6">{HD()}
-<div class="k a" style="left:96px;top:200px">Example</div>
-<div class="h a" style="left:92px;top:250px">예를 들면,<br><em>이렇게 적어요</em></div>
-<div class="paper" style="left:96px;right:96px;top:520px;height:470px;padding:36px 46px">
-  <div style="display:flex;justify-content:space-between;font-family:var(--mono);font-size:20px;letter-spacing:2px;color:#8A8A8A"><span>10 / 16 · 입시곡 1</span><span>90 MIN</span></div>
-  <div class="hand" style="margin-top:22px;background:var(--bu);padding:14px 20px;font-size:28px"><b>목표</b> &nbsp;B파트 8마디, 템포가 흔들린다</div>
-  <div class="hand" style="margin-top:22px;font-size:27px;line-height:1.95">
-    <span style="font-family:var(--mono);font-size:20px;color:#8A8A8A">30분</span> &nbsp;전체 한 번 녹음 → 들으며 체크<br>
-    <span style="font-family:var(--mono);font-size:20px;color:#8A8A8A">30분</span> &nbsp;B파트만, 메트로놈 70부터 천천히<br>
-    <span style="font-family:var(--mono);font-size:20px;color:#8A8A8A">30분</span> &nbsp;80까지 올리고 다시 녹음<br>
-    <b>잘된 것</b> &nbsp;박이 안정됨 &nbsp;·&nbsp; <b>안 된 것</b> &nbsp;마지막 두 마디<br>
-    <b>다음에</b> &nbsp;마지막 두 마디부터, 80으로 시작
-  </div>
 </div>
 {FT(6)}</section>""")
 # 07 마무리
@@ -119,3 +118,9 @@ ANIM = """.rv{opacity:0;animation:rv .5s cubic-bezier(.2,.7,.2,1) var(--t) both}
 .paper.rv{animation-name:rv}
 """
 open('motion_04.html','w').write(f'<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>연습일지 4장 모션</title><style>{FONT}{CSS}{ANIM}body{{margin:0}}.s{{margin:0}}</style></head><body>'+C4+'</body></html>')
+
+ANIM5 = ANIM + """.ln2{stroke-dasharray:1;stroke-dashoffset:1;animation:dl 1.9s ease-in-out .9s both}
+@keyframes dl{to{stroke-dashoffset:0}}
+.pt{opacity:0;animation:rv .35s cubic-bezier(.2,.9,.3,1.3) var(--t) both;transform-box:fill-box;transform-origin:center}
+"""
+open('motion_05.html','w').write(f'<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>연습일지 5장 모션</title><style>{FONT}{CSS}{ANIM5}body{{margin:0}}.s{{margin:0}}</style></head><body>'+C5+'</body></html>')
