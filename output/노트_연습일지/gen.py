@@ -26,6 +26,7 @@ CSS='''*{box-sizing:border-box;margin:0;padding:0}
 .dark .row .t{color:#C9C4BB}.dark .row .t b{color:var(--iv)}
 .paper{position:absolute;background:#FBF8F1 linear-gradient(rgba(17,17,17,.06) 1px,transparent 1px) 0 0/100% 44px;border:1.5px solid #111}
 .hand{font-family:P,sans-serif;font-weight:400;color:#2B2A27}
+.strike{position:absolute;left:40px;right:440px;top:56px;height:4px;background:#B23A2E;opacity:.85}
 '''
 TOTAL=7
 HD=lambda r="ENOCH NOTE — PRACTICE LOG": f'<div class="hd"><span>ENOCH MUSIC ACADEMY</span><span>{r}</span></div>'
@@ -60,17 +61,17 @@ S.append(f"""<section class="s" id="c3">{HD()}
   <div style="margin-top:14px;font-size:30px;font-weight:700;letter-spacing:-.6px;line-height:2.1">② 방금 연습한 것<br>③ 잘된 것 · 안 된 것<br>④ 다음에 할 것</div>
 </div>
 {FT(3)}</section>""")
-# 04 악기별 첫 연습 (검정)
-inst=[("Vocal","보컬","가볍게 소리 내기 5분","음역 스케일 10분","곡에서 막힌 구간"),
-("Guitar","기타","손 풀기 · 크로매틱 10분","스케일 · 코드 전환 15분","곡에서 막힌 구간"),
-("Drum","드럼","패드 스트로크 10분","그루브 15분","곡에서 막힌 구간"),
-("Piano","피아노","손가락 · 스케일 10분","코드 · 보이싱 15분","곡에서 막힌 구간")]
-rows=''.join(f'<div class="row" style="padding:22px 0;align-items:flex-start"><span style="width:170px;flex:none"><span class="k" style="color:#F1E8CB;font-size:17px">{e}</span><br><b style="font-size:32px;color:#F1EDE4">{k}</b></span><span style="font-size:25px;line-height:1.75;color:#C9C4BB;letter-spacing:-.4px">☐ {a1}<br>☐ {a2}<br>☐ {a3} <span style="color:#8C8C8C">· 메트로놈</span></span></div>' for e,k,a1,a2,a3 in inst)
-S.append(f"""<section class="s dark" id="c4">{HD("BY INSTRUMENT")}
-<div class="k a" style="left:96px;top:200px;color:#9A958C">Warm Up → Focus</div>
-<div class="h a" style="left:92px;top:250px">악기별 연습일지,<br><em>첫 줄은 이렇게</em></div>
-<div class="a" style="left:96px;right:96px;top:500px;border-top:1.5px solid rgba(241,237,228,.6)">{rows}</div>
-{FT(4)}</section>""")
+# 04 그냥 쓴 일지 vs 잘 쓴 일지 (검정) — motion_04.html에서 같은 마크업에 애니메이션
+GOOD=["<span style='font-family:var(--mono);font-size:20px;color:#8A8A8A;letter-spacing:2px'>10 / 16 · 90 MIN</span>","B파트 8마디, 템포 <b>70 → 80</b>","마지막 두 마디가 흔들림","내일은 <b>그 두 마디부터, 80으로</b>"]
+C4 = f"""<section class="s dark" id="c4">{HD("BEFORE · AFTER")}
+<div class="k a" style="left:96px;top:200px;color:#9A958C">Same Day, Two Logs</div>
+<div class="h a" style="left:92px;top:250px">"연습함"은,<br><em>일지가 아닙니다</em></div>
+<div class="a k rv" style="left:96px;top:520px;color:#9A958C;--t:.5s">그냥 쓴 일지</div>
+<div class="paper rv" style="left:96px;right:96px;top:560px;height:150px;padding:34px 44px;background:#E9E5DC;--t:.6s"><div class="hand wr" style="font-size:32px;color:#55524D;--t:.9s;--w:1.1s">오늘 3시간 연습함. 잘 안 됨.</div><div class="strike" style="--t:2.2s"></div></div>
+<div class="a k rv" style="left:96px;top:760px;color:#F1E8CB;--t:2.6s">잘 쓴 일지</div>
+<div class="paper rv" style="left:96px;right:96px;top:800px;height:300px;padding:30px 44px;--t:2.7s">""" + ''.join(f'<div class="hand wr" style="font-size:31px;line-height:1.95;--t:{3.0+i*.75:.2f}s;--w:.7s">{g}</div>' for i,g in enumerate(GOOD)) + f"""</div>
+{FT(4)}</section>"""
+S.append(C4)
 # 05 목표 거꾸로
 S.append(f"""<section class="s" id="c5">{HD()}
 <div class="k a" style="left:96px;top:200px">Goal Setting</div>
@@ -107,3 +108,14 @@ S.append(f"""<section class="s dark" id="c7">{HD("THE ENOCH WAY")}
 <div class="a" style="left:96px;right:96px;top:1040px;padding-top:22px;border-top:1px solid rgba(241,237,228,.3);display:flex;justify-content:space-between;font-size:22px;line-height:1.6"><span>에녹실용음악학원 시흥점<br><span style="color:#9A958C">경기도 시흥시 은행로 157 2층</span></span><span style="text-align:right;font-family:var(--mono)">010 3949 3666<br><span style="color:#9A958C;font-family:P,sans-serif;font-size:19px">Vocal · Guitar · Drum · Bass · Piano · MIDI · 작곡</span></span></div>
 {FT(7)}</section>""")
 open('deck.html','w').write(f'<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>연습일지</title><style>{FONT}{CSS}</style></head><body>'+''.join(S)+'</body></html>')
+
+# 모션 버전 (4장만, 1080x1350 영상용)
+ANIM = """.rv{opacity:0;animation:rv .5s cubic-bezier(.2,.7,.2,1) var(--t) both}
+@keyframes rv{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.wr{clip-path:inset(0 100% 0 0);animation:wr var(--w) linear var(--t) both}
+@keyframes wr{to{clip-path:inset(0 0 0 0)}}
+.strike{transform-origin:left;transform:scaleX(0);animation:st .45s ease-out var(--t) both}
+@keyframes st{to{transform:scaleX(1)}}
+.paper.rv{animation-name:rv}
+"""
+open('motion_04.html','w').write(f'<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>연습일지 4장 모션</title><style>{FONT}{CSS}{ANIM}body{{margin:0}}.s{{margin:0}}</style></head><body>'+C4+'</body></html>')
