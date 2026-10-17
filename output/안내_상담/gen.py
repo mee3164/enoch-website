@@ -52,7 +52,7 @@ S.append(f"""<section class="s" id="c2">{HD("HOW IT WORKS")}
 <div class="k a" style="left:96px;top:200px">How It Works · 2 Steps</div>
 <div class="h a" style="left:92px;top:250px">상담은,<br><em>시간 예약부터</em></div>
 <div class="a" style="left:96px;right:96px;top:560px;border-top:1.5px solid #111">
-<div class="step"><span class="n">01</span><div><b>방문 상담 시간 예약</b><span>편한 곳으로 연락 주세요.</span><br><span class="ch">카카오톡 채널</span><span class="ch">네이버 톡톡</span><span class="ch">상담 전화</span></div></div>
+<div class="step"><span class="n">01</span><div><b>방문 상담 시간 예약</b><span>편한 곳으로 연락 주세요.</span><br><span class="ch">카카오톡 채널</span><span class="ch">네이버 톡톡</span><span class="ch">체험수업 예약</span><span class="ch">상담 전화</span><span class="ch">DM</span></div></div>
 <div class="step"><span class="n">02</span><div><b>학원에서 방문 상담</b><span>예약한 시간에 학원에서 직접 이야기 나눠요.</span></div></div>
 </div>
 {FT(2)}</section>""")
@@ -77,7 +77,7 @@ S.append(f"""<section class="s" id="c4">{HD("TAKE IT EASY")}
 S.append(f"""<section class="s dark" id="c5">{HD("CONTACT")}
 <div class="a" style="left:92px;top:150px;font-family:var(--en);font-weight:700;font-size:240px;letter-spacing:-8px;color:#2A2825;line-height:1">ENOCH</div>
 <div class="h a" style="left:92px;top:450px">궁금한 마음이면,<br><span style="font-weight:300">충분합니다.</span></div>
-<div class="p a" style="left:96px;right:96px;top:720px">카카오톡 채널 · 네이버 톡톡 · 전화<br>편한 곳으로 방문 상담 시간을 잡아 주세요.</div>
+<div class="p a" style="left:96px;right:96px;top:720px">카카오톡 채널 · 네이버 톡톡 · 체험수업 예약 · 전화 · DM<br>편한 곳으로 방문 상담 시간을 잡아 주세요.</div>
 {INFO}
 {FT(5)}</section>""")
 open('deck.html','w').write(f'<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>상담 안내</title><style>{FONT}{CSS}</style></head><body>'+''.join(S)+'</body></html>')
