@@ -120,8 +120,8 @@ S.append(f"""<section class="s" id="c6">{HD("THE ENOCH WAY")}
 # 07 마무리
 S.append(f"""<section class="s dark" id="c7">{HD("CONTACT")}
 <div class="a" style="left:92px;top:150px;font-family:var(--en);font-weight:700;font-size:240px;letter-spacing:-8px;color:#2A2825;line-height:1">ENOCH</div>
-<div class="h a" style="left:92px;top:450px">{DAYS}일 뒤의 나에게,<br><span style="font-weight:300;color:var(--bu)">한 곡을.</span></div>
-<div class="p a" style="left:96px;right:96px;top:720px">카카오톡 채널 · 네이버 톡톡 · 체험수업 예약 · 상담 전화 · DM<br>나만의 진짜 소리를 찾는 곳.</div>
+<div class="h a" style="left:92px;top:450px">나만의 진짜 소리,<br><span style="font-weight:300;color:var(--bu)">올해부터.</span></div>
+<div class="p a" style="left:96px;right:96px;top:720px">카카오톡 채널 · 네이버 톡톡 · 체험수업 예약 · 상담 전화 · DM<br>미뤄 둔 그 한 곡, 상담부터 편하게 시작하세요.</div>
 {INFO}
 {FT(7)}</section>""")
 open('deck.html','w').write(f'<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>{DAYS}일</title><style>{FONT}{CSS}</style></head><body>'+''.join(S)+'</body></html>')
