@@ -1,4 +1,4 @@
-# ENOCH NOTE — 남은 날짜 (deck.html 생성)
+# ENOCH NOTE — 73일 (deck.html 생성)
 # 올리는 날에 맞춰: python3 gen.py 2026-10-21
 import os
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
@@ -32,70 +32,96 @@ CSS='''*{box-sizing:border-box;margin:0;padding:0}
 import sys
 from datetime import date
 POST=date.fromisoformat(sys.argv[1]) if len(sys.argv)>1 else date(2026,10,19)
-DAYS=(date(POST.year,12,31)-POST).days
-WEEKS=DAYS//7
-CSS+='''.dots{display:grid;grid-template-columns:repeat(7,40px);gap:16px 18px}
-.dots i{width:40px;height:40px;border-radius:50%;border:2px solid #111;display:block}
-.dots i.f{background:#111}
-.wk{font-family:var(--mono);font-size:17px;letter-spacing:2px;color:var(--g);height:40px;line-height:40px}
-.bu{background:var(--bu)}
+END=date(POST.year,12,31)
+DAYS=(END-POST).days
+CSS+='''.bu{background:var(--bu)}
+.tb{display:grid;grid-template-columns:130px 1fr 1fr;border-top:1.5px solid #111}
+.tb>div{padding:24px 18px 24px 0;border-bottom:1px solid rgba(17,17,17,.15);font-size:26px;line-height:1.5;letter-spacing:-.5px}
+.tb .m{font-family:var(--mono);font-size:20px;letter-spacing:2px;color:var(--g);padding-top:30px}
+.tb .hh{font-family:var(--mono);font-size:18px;letter-spacing:3px;text-transform:uppercase;padding:18px 0}
+.tb .y{color:#111;font-weight:500}
+.tb .n{color:#9A958C}
+.step{display:grid;grid-template-columns:360px 1fr;padding:26px 0;border-bottom:1px solid rgba(17,17,17,.15);align-items:baseline}
+.step b{font-family:var(--en);font-size:38px;letter-spacing:-1.5px}
+.step span{font-size:27px;color:var(--b);letter-spacing:-.5px}
 '''
-TOTAL=6
-HD=lambda r="BEFORE THE YEAR ENDS": f'<div class="hd"><span>ENOCH MUSIC ACADEMY</span><span>{r}</span></div>'
-FT=lambda n: f'<div class="ft"><span>남은 날짜</span><span>0{n} / 0{TOTAL}</span></div>'
+TOTAL=7
+HD=lambda r=f"{DAYS} DAYS LEFT": f'<div class="hd"><span>ENOCH MUSIC ACADEMY</span><span>{r}</span></div>'
+FT=lambda n: f'<div class="ft"><span>{DAYS}일</span><span>0{n} / 0{TOTAL}</span></div>'
 INFO='<div class="a" style="left:96px;right:96px;top:1040px;padding-top:22px;border-top:1px solid rgba(241,237,228,.3);display:flex;justify-content:space-between;font-size:22px;line-height:1.6"><span>에녹실용음악학원 시흥점<br><span style="color:#9A958C">경기도 시흥시 은행로 157 2층</span></span><span style="text-align:right;font-family:var(--mono)">010 3949 3666<br><span style="color:#9A958C;font-family:P,sans-serif;font-size:19px">Vocal · Guitar · Drum · Bass · Piano · MIDI · 작곡</span></span></div>'
 S=[]
 # 01 표지
 S.append(f"""<section class="s" id="c1">{HD()}
-<img src="../../images/공간/기타앰프_01.jpg" style="position:absolute;left:96px;top:150px;width:888px;height:620px;object-fit:cover;object-position:50% 88%;display:block;filter:saturate(.8) contrast(1.03)">
-<div class="k a" style="left:96px;top:810px">{DAYS} Days Left</div>
-<div class="h a" style="left:92px;top:855px;font-size:84px;letter-spacing:-4.2px;line-height:1.18">올해,<br><em>아직 {DAYS}일 남았습니다</em></div>
-<div class="p a" style="left:96px;top:1100px;font-size:28px">올해가 가기 전에, 한 곡.</div>
+<img src="../../images/기타/라이프_악보카페_01.png" style="position:absolute;left:96px;top:150px;width:888px;height:640px;object-fit:cover;object-position:60% 52%;display:block;filter:saturate(.85)">
+<div class="k a" style="left:96px;top:830px">{DAYS} Days Left · {POST.year}</div>
+<div class="h a" style="left:92px;top:875px;font-size:76px;letter-spacing:-3.8px;line-height:1.2">{DAYS}일 뒤, 두 사람은<br><em>다른 12월을 보냅니다</em></div>
+<div class="p a" style="left:96px;top:1100px;font-size:28px">올해가 가기 전에, 배우고 싶었던 그것.</div>
 {FT(1)}</section>""")
-# 02 73일 = 10주
-rows=''
-n=0
-for w in range((DAYS+6)//7):
-    cnt=min(7,DAYS-n); n+=cnt
-    rows+=f'<span class="wk">W{w+1:02d}</span>'+''.join('<i></i>' for _ in range(cnt))+''.join('<span></span>' for _ in range(7-cnt))
-S.append(f"""<section class="s" id="c2">{HD(f"{DAYS} DAYS = {WEEKS} WEEKS")}
-<div class="k a" style="left:96px;top:200px">In Weeks</div>
-<div class="h a" style="left:92px;top:250px">{DAYS}일은,<br><em>{WEEKS}주입니다</em></div>
-<div class="p a" style="left:96px;top:480px;width:380px">일주일에 한 번이면,<br><b>{WEEKS}번.</b><br><br>하루씩 세면 짧아 보여도,<br>한 주씩 세면 꽤 길어요.</div>
-<div class="a dots" style="right:96px;top:250px;grid-template-columns:70px repeat(7,40px)">{rows}</div>
+# 02 매년 같은 말
+S.append(f"""<section class="s dark" id="c2">{HD("EVERY AUTUMN")}
+<div class="k a" style="left:96px;top:200px">Every Autumn</div>
+<div class="h a" style="left:92px;top:250px">매년 이맘때,<br><em>같은 말을 합니다</em></div>
+<div class="a" style="left:88px;top:520px;font-size:150px;font-weight:300;letter-spacing:-7px;line-height:1">“내년엔 꼭.”</div>
+<div class="p a" style="left:96px;right:96px;top:800px">배우고 싶었던 악기, 불러 보고 싶었던 노래.<br>그 마음은 사라지지 않아요.<br>해마다 <b>1월로 미뤄질 뿐</b>입니다.</div>
 {FT(2)}</section>""")
-# 03 한 곡
-S.append(f"""<section class="s" id="c3">{HD("ONE SONG")}
-<div class="k a" style="left:96px;top:200px">Just One Song</div>
-<div class="h a" style="left:92px;top:250px">목표는,<br><em>한 곡이면 충분합니다</em></div>
-<div class="a" style="left:96px;right:96px;top:540px;border-top:1.5px solid #111">
-<div class="row"><span class="n" style="width:230px;font-size:30px;letter-spacing:0;padding-top:6px">VOCAL</span><span class="t">좋아하는 노래, 처음부터 끝까지 불러 보기</span></div>
-<div class="row"><span class="n" style="width:230px;font-size:30px;letter-spacing:0;padding-top:6px">GUITAR</span><span class="t">코드 몇 개로, 한 곡 쳐 보기</span></div>
-<div class="row"><span class="n" style="width:230px;font-size:30px;letter-spacing:0;padding-top:6px">DRUM</span><span class="t">좋아하는 곡에 맞춰, 끝까지 쳐 보기</span></div>
-<div class="row"><span class="n" style="width:230px;font-size:30px;letter-spacing:0;padding-top:6px">PIANO</span><span class="t">한 곡을, 두 손으로 쳐 보기</span></div>
-<div class="row"><span class="n" style="width:230px;font-size:30px;letter-spacing:0;padding-top:6px">작곡 · MIDI</span><span class="t">내 곡 하나, 끝까지 만들어 보기</span></div>
+# 03 표
+S.append(f"""<section class="s" id="c3">{HD("SAME DAYS, DIFFERENT DECEMBER")}
+<div class="k a" style="left:96px;top:200px">Same {DAYS} Days</div>
+<div class="h a" style="left:92px;top:250px">같은 {DAYS}일,<br><em>다른 12월</em></div>
+<div class="a tb" style="left:96px;right:96px;top:520px">
+<div class="hh"></div><div class="hh">시작한 사람</div><div class="hh" style="color:var(--g)">미룬 사람</div>
+<div class="m">10월</div><div class="y">첫 레슨.<br>악기를 처음 잡아 본 날</div><div class="n">'언젠가' 하며<br>영상만 저장</div>
+<div class="m">11월</div><div class="y">연습실 가는 길이<br>익숙해짐</div><div class="n">바빠서,<br>다음 달부터</div>
+<div class="m">12월</div><div class="y">좋아하는 곡 한 소절을<br>끝까지</div><div class="n">연말이니까,<br>내년부터</div>
+<div class="m">12.31</div><div class="y"><b>올해 시작한 게<br>하나 있는 사람</b></div><div class="n">다시,<br>"내년엔 꼭"</div>
 </div>
 {FT(3)}</section>""")
-# 04 내년은 두 번째 곡부터
-S.append(f"""<section class="s" id="c4">{HD("SONG No.2")}
-<div class="bu a" style="left:96px;right:96px;top:150px;height:540px"></div>
-<div class="a" style="left:140px;top:200px;font-family:var(--mono);font-size:22px;letter-spacing:4px;color:#55524D">JANUARY {POST.year+1}</div>
-<div class="a" style="left:132px;top:300px;font-family:var(--en);font-weight:700;font-size:200px;letter-spacing:-9px;line-height:.9">SONG<br><span style="font-weight:300">No.2</span></div>
-<div class="h a" style="left:92px;top:760px">올해 시작하면,<br><em>내년은 두 번째 곡부터</em></div>
-<div class="p a" style="left:96px;right:96px;top:1010px">1월 1일에 "올해는 꼭" 하고 다짐하는 대신,<br>지금 첫 곡을 시작해 보세요.</div>
+# 04 취향
+S.append(f"""<section class="s" id="c4">{HD("YOUR OWN TASTE")}
+<img src="../../images/기타/라이프_가방악보_01.png" style="position:absolute;left:96px;top:150px;width:888px;height:640px;object-fit:cover;object-position:50% 50%;display:block;filter:saturate(.85)">
+<div class="k a" style="left:96px;top:830px">Your Own Taste</div>
+<div class="h a" style="left:92px;top:875px">취향은,<br><em>가방 속에서 보입니다</em></div>
+<div class="p a" style="left:96px;right:96px;top:1080px;font-size:28px">노트북 옆에 악보 한 장, 가방 속에 재즈 책 한 권.<br>듣기만 하던 음악이, 내가 하는 음악이 되는 순간이에요.</div>
 {FT(4)}</section>""")
-# 05 ENOCH
-S.append(f"""<section class="s" id="c5">{HD("THE ENOCH WAY")}
-<div class="k a" style="left:96px;top:200px">1:1 Lesson</div>
-<div class="a" style="left:88px;top:250px;font-family:var(--en);font-weight:700;font-size:330px;letter-spacing:-12px;line-height:.9">1:1</div>
-<div class="h a" style="left:92px;top:600px">처음이어도,<br><em>내 속도로</em></div>
-<div class="p a" style="left:96px;right:96px;top:850px">같은 곡도, 사람마다 다르게 가르칩니다.<br>입시 · 취미 · 성인 · 전문, <b>모든 과정이 1:1</b>이에요.</div>
+# 05 그래프
+x1=780
+def X(d): return x1*d/DAYS
+pts=[(0,300),(10,292),(20,270),(30,262),(40,228),(50,214),(60,170),(DAYS,120)]
+path='M'+' L'.join(f'{X(d):.0f},{y}' for d,y in pts if d<=DAYS)
+ticks=''
+for lab,d in [(f'{POST.month}.{POST.day}',0),('11.1',(date(POST.year,11,1)-POST).days),('12.1',(date(POST.year,12,1)-POST).days),('12.31',DAYS)]:
+    if d>=0: ticks+=f'<line x1="{X(d):.0f}" y1="300" x2="{X(d):.0f}" y2="312" stroke="#111" stroke-width="1.5"/><text x="{X(d):.0f}" y="342" text-anchor="middle" font-family="IBM Plex Mono,DejaVu Sans Mono,monospace" font-size="18" fill="#55524D">{lab}</text>'
+S.append(f"""<section class="s" id="c5">{HD("SMALL, BUT STEADY")}
+<div class="bu a" style="left:96px;right:96px;top:150px;height:470px"></div>
+<svg class="a" style="left:150px;top:190px;overflow:visible" width="800" height="380" viewBox="0 0 800 380">
+<line x1="0" y1="300" x2="{x1}" y2="300" stroke="#111" stroke-width="1.5"/>
+<path d="M0,300 L{x1},300" stroke="#8A8A8A" stroke-width="5" stroke-dasharray="2 12" stroke-linecap="round" fill="none"/>
+<path d="{path}" stroke="#111" stroke-width="5" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="{x1}" cy="120" r="10" fill="#111"/>
+<text x="{x1-20}" y="95" text-anchor="end" font-family="P,sans-serif" font-size="24" font-weight="700" fill="#111">시작한 사람</text>
+<text x="{x1-20}" y="285" text-anchor="end" font-family="P,sans-serif" font-size="22" fill="#8A8A8A">미룬 사람</text>
+{ticks}
+</svg>
+<div class="h a" style="left:92px;top:680px">서툰 것 하나를,<br><em>곁에 두면</em></div>
+<div class="p a" style="left:96px;right:96px;top:920px">처음 몇 주는 티가 나지 않습니다.<br>그래도 하나씩 쌓이면, 12월의 나는 10월의 나와 분명히 다르거든요.<br>기준은 남이 아니라, <b>지난달의 나</b>예요.</div>
 {FT(5)}</section>""")
-# 06 마무리
-S.append(f"""<section class="s dark" id="c6">{HD("CONTACT")}
+# 06 ENOCH
+S.append(f"""<section class="s" id="c6">{HD("THE ENOCH WAY")}
+<div class="k a" style="left:96px;top:200px">The ENOCH Way</div>
+<div class="h a" style="left:92px;top:250px">퇴근 후에도,<br><em>늦지 않습니다</em></div>
+<div class="a" style="left:96px;right:96px;top:520px;border-top:1.5px solid #111">
+<div class="step"><b>MON–FRI 22:00</b><span>평일은 밤 10시까지 열려 있어요</span></div>
+<div class="step"><b>SAT 10–18</b><span>주말에 시작해도 됩니다</span></div>
+<div class="step"><b>1:1</b><span>입시 · 취미 · 성인 · 전문, 모든 과정</span></div>
+<div class="step"><b>PRACTICE ROOM</b><span>운영시간 내 자유로운 연습실 이용</span></div>
+</div>
+<div class="p a" style="left:96px;right:96px;top:1080px">같은 곡도, 사람마다 다르게 가르칩니다.</div>
+{FT(6)}</section>""")
+# 07 마무리
+S.append(f"""<section class="s dark" id="c7">{HD("CONTACT")}
 <div class="a" style="left:92px;top:150px;font-family:var(--en);font-weight:700;font-size:240px;letter-spacing:-8px;color:#2A2825;line-height:1">ENOCH</div>
-<div class="h a" style="left:92px;top:450px">올해가 가기 전에,<br><span style="font-weight:300;color:var(--bu)">첫 곡을.</span></div>
+<div class="h a" style="left:92px;top:450px">{DAYS}일 뒤의 나에게,<br><span style="font-weight:300;color:var(--bu)">한 곡을.</span></div>
 <div class="p a" style="left:96px;right:96px;top:720px">카카오톡 채널 · 네이버 톡톡 · 체험수업 예약 · 상담 전화 · DM<br>나만의 진짜 소리를 찾는 곳.</div>
 {INFO}
-{FT(6)}</section>""")
-open('deck.html','w').write(f'<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>남은 날짜</title><style>{FONT}{CSS}</style></head><body>'+''.join(S)+'</body></html>')
+{FT(7)}</section>""")
+open('deck.html','w').write(f'<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>{DAYS}일</title><style>{FONT}{CSS}</style></head><body>'+''.join(S)+'</body></html>')
