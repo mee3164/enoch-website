@@ -77,11 +77,11 @@ S.append(f"""<section class="s" id="c3">{HD("SAME DAYS, DIFFERENT DECEMBER")}
 </div>
 {FT(3)}</section>""")
 # 04 취향
-S.append(f"""<section class="s" id="c4">{HD("YOUR OWN TASTE")}
+S.append(f"""<section class="s" id="c4">{HD("AFTER WORK")}
 <img src="../../images/기타/라이프_가방악보_01.png" style="position:absolute;left:96px;top:150px;width:888px;height:640px;object-fit:cover;object-position:50% 50%;display:block;filter:saturate(.85)">
-<div class="k a" style="left:96px;top:830px">Your Own Taste</div>
-<div class="h a" style="left:92px;top:875px">취향은,<br><em>가방 속에서 보입니다</em></div>
-<div class="p a" style="left:96px;right:96px;top:1080px;font-size:28px">노트북 옆에 악보 한 장, 가방 속에 재즈 책 한 권.<br>듣기만 하던 음악이, 내가 하는 음악이 되는 순간이에요.</div>
+<div class="k a" style="left:96px;top:830px">After Work</div>
+<div class="h a" style="left:92px;top:875px">퇴근 후의 나를,<br><em>설명하는 것 하나</em></div>
+<div class="p a" style="left:96px;right:96px;top:1080px;font-size:28px">누군가는 달리고, 누군가는 필름을 감아요. 그리고 누군가는 악기를 꺼냅니다.<br>일 말고, 내가 고른 것 하나.</div>
 {FT(4)}</section>""")
 # 05 그래프
 x1=780
