@@ -54,7 +54,7 @@ S=[]
 S.append(f"""<section class="s" id="c1">{HD()}
 <img src="../../images/기타/라이프_악보카페_01.png" style="position:absolute;left:96px;top:150px;width:888px;height:640px;object-fit:cover;object-position:60% 52%;display:block;filter:saturate(.85)">
 <div class="k a" style="left:96px;top:830px">{DAYS} Days Left · {POST.year}</div>
-<div class="h a" style="left:92px;top:875px;font-size:76px;letter-spacing:-3.8px;line-height:1.2">{DAYS}일 뒤, 두 사람은<br><em>다른 12월을 보냅니다</em></div>
+<div class="h a" style="left:92px;top:875px;font-size:76px;letter-spacing:-3.8px;line-height:1.2">올해 남은 {DAYS}일,<br><em>미뤄 둔 한 곡이 있다면</em></div>
 <div class="p a" style="left:96px;top:1100px;font-size:28px">올해가 가기 전에, 배우고 싶었던 그것.</div>
 {FT(1)}</section>""")
 # 02 매년 같은 말
