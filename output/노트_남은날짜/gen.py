@@ -107,7 +107,9 @@ S.append(f"""<section class="s" id="c5">{HD("SMALL, BUT STEADY")}
 {FT(5)}</section>""")
 # 06 ENOCH
 S.append(f"""<section class="s" id="c6">{HD("THE ENOCH WAY")}
-<img src="../../images/공간/상담실_01.jpg" style="position:absolute;left:96px;top:150px;width:888px;height:450px;object-fit:cover;object-position:50% 37%;display:block;filter:saturate(.85) contrast(1.02)">
+<img src="../../images/공간/피아노룸_01.jpg" style="position:absolute;top:150px;width:288px;height:450px;object-fit:cover;display:block;filter:saturate(.85) contrast(1.02);left:96px;object-position:82% 55%">
+<img src="../../images/공간/드럼룸_02.jpg" style="position:absolute;top:150px;width:288px;height:450px;object-fit:cover;display:block;filter:saturate(.85) contrast(1.02);left:396px;object-position:50% 60%">
+<img src="../../images/공간/보컬부스_02.jpg" style="position:absolute;top:150px;width:288px;height:450px;object-fit:cover;display:block;filter:saturate(.85) contrast(1.02);left:696px;object-position:58% 55%">
 <div class="h a" style="left:92px;top:630px">퇴근 후에도,<br><em>늦지 않습니다</em></div>
 <div class="a" style="left:96px;right:96px;top:840px;border-top:1.5px solid #111">
 <div class="step" style="padding:18px 0"><b style="font-size:32px">MON–FRI 22:00</b><span style="font-size:25px">평일은 밤 10시까지 열려 있어요</span></div>
