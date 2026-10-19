@@ -52,7 +52,7 @@ INFO='<div class="a" style="left:96px;right:96px;top:1040px;padding-top:22px;bor
 S=[]
 # 01 표지
 S.append(f"""<section class="s" id="c1">{HD()}
-<img src="../../images/기타/라이프_악보카페_01.png" style="position:absolute;left:96px;top:150px;width:888px;height:640px;object-fit:cover;object-position:60% 52%;display:block;filter:saturate(.85)">
+<img src="../../images/기타/라이프_악보카페_01.png" style="position:absolute;left:96px;top:150px;width:888px;height:640px;object-fit:cover;object-position:60% 52%;display:block;filter:grayscale(.3) sepia(.12) saturate(.9) contrast(1.03)">
 <div class="k a" style="left:96px;top:830px">{DAYS} Days Left · {POST.year}</div>
 <div class="h a" style="left:92px;top:875px;font-size:76px;letter-spacing:-3.8px;line-height:1.2">올해 남은 {DAYS}일,<br><em>미뤄 둔 한 곡이 있다면</em></div>
 <div class="p a" style="left:96px;top:1100px;font-size:28px">올해가 가기 전에, 배우고 싶었던 그것.</div>
@@ -78,7 +78,7 @@ S.append(f"""<section class="s" id="c3">{HD("SAME DAYS, DIFFERENT DECEMBER")}
 {FT(3)}</section>""")
 # 04 취향
 S.append(f"""<section class="s" id="c4">{HD("YOUR OWN SOUND")}
-<img src="../../images/기타/라이프_가방악보_01.png" style="position:absolute;left:96px;top:150px;width:888px;height:640px;object-fit:cover;object-position:50% 56%;display:block;filter:saturate(.85)">
+<img src="../../images/기타/라이프_가방악보_01.png" style="position:absolute;left:96px;top:150px;width:888px;height:640px;object-fit:cover;object-position:50% 56%;display:block;filter:grayscale(.3) sepia(.12) saturate(.9) contrast(1.03)">
 <div class="k a" style="left:96px;top:830px">Your Own Sound</div>
 <div class="h a" style="left:92px;top:875px">잘하려고가 아니라,<br><em>나다워지려고</em></div>
 <div class="p a" style="left:96px;right:96px;top:1080px;font-size:28px">누군가는 달리고, 누군가는 책장을 넘겨요. 그리고 누군가는 악기를 꺼냅니다.<br>일 말고, 내가 고른 것 하나.</div>
@@ -107,9 +107,9 @@ S.append(f"""<section class="s" id="c5">{HD("SMALL, BUT STEADY")}
 {FT(5)}</section>""")
 # 06 ENOCH
 S.append(f"""<section class="s" id="c6">{HD("THE ENOCH WAY")}
-<img src="../../images/공간/피아노룸_01.jpg" style="position:absolute;top:150px;width:288px;height:450px;object-fit:cover;display:block;filter:saturate(.85) contrast(1.02);left:96px;object-position:82% 55%">
-<img src="../../images/공간/드럼룸_02.jpg" style="position:absolute;top:150px;width:288px;height:450px;object-fit:cover;display:block;filter:saturate(.85) contrast(1.02);left:396px;object-position:50% 60%">
-<img src="../../images/공간/보컬부스_02.jpg" style="position:absolute;top:150px;width:288px;height:450px;object-fit:cover;display:block;filter:saturate(.85) contrast(1.02);left:696px;object-position:58% 55%">
+<img src="../../images/공간/피아노룸_01.jpg" style="position:absolute;top:150px;width:288px;height:450px;object-fit:cover;display:block;filter:grayscale(.55) sepia(.18) saturate(.9) contrast(1.04) brightness(1.02);left:96px;object-position:82% 55%">
+<img src="../../images/공간/드럼룸_02.jpg" style="position:absolute;top:150px;width:288px;height:450px;object-fit:cover;display:block;filter:grayscale(.55) sepia(.18) saturate(.9) contrast(1.04) brightness(1.02);left:396px;object-position:50% 60%">
+<img src="../../images/공간/보컬부스_02.jpg" style="position:absolute;top:150px;width:288px;height:450px;object-fit:cover;display:block;filter:grayscale(.55) sepia(.18) saturate(.9) contrast(1.04) brightness(1.3);left:696px;object-position:58% 55%">
 <div class="h a" style="left:92px;top:630px">퇴근 후에도,<br><em>늦지 않습니다</em></div>
 <div class="a" style="left:96px;right:96px;top:840px;border-top:1.5px solid #111">
 <div class="step" style="padding:18px 0"><b style="font-size:32px">MON–FRI 22:00</b><span style="font-size:25px">평일은 밤 10시까지 열려 있어요</span></div>
