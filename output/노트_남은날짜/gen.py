@@ -107,15 +107,15 @@ S.append(f"""<section class="s" id="c5">{HD("SMALL, BUT STEADY")}
 {FT(5)}</section>""")
 # 06 ENOCH
 S.append(f"""<section class="s" id="c6">{HD("THE ENOCH WAY")}
-<div class="k a" style="left:96px;top:200px">The ENOCH Way</div>
-<div class="h a" style="left:92px;top:250px">퇴근 후에도,<br><em>늦지 않습니다</em></div>
-<div class="a" style="left:96px;right:96px;top:520px;border-top:1.5px solid #111">
-<div class="step"><b>MON–FRI 22:00</b><span>평일은 밤 10시까지 열려 있어요</span></div>
-<div class="step"><b>SAT 10–18</b><span>주말에 시작해도 됩니다</span></div>
-<div class="step"><b>1:1</b><span>입시 · 취미 · 성인 · 전문, 모든 과정</span></div>
-<div class="step"><b>PRACTICE ROOM</b><span>운영시간 내 자유로운 연습실 이용</span></div>
+<img src="../../images/공간/상담실_01.jpg" style="position:absolute;left:96px;top:150px;width:888px;height:450px;object-fit:cover;object-position:50% 37%;display:block;filter:saturate(.85) contrast(1.02)">
+<div class="h a" style="left:92px;top:630px">퇴근 후에도,<br><em>늦지 않습니다</em></div>
+<div class="a" style="left:96px;right:96px;top:840px;border-top:1.5px solid #111">
+<div class="step" style="padding:18px 0"><b style="font-size:32px">MON–FRI 22:00</b><span style="font-size:25px">평일은 밤 10시까지 열려 있어요</span></div>
+<div class="step" style="padding:18px 0"><b style="font-size:32px">SAT 10–18</b><span style="font-size:25px">주말에 시작해도 됩니다</span></div>
+<div class="step" style="padding:18px 0"><b style="font-size:32px">1:1</b><span style="font-size:25px">입시 · 취미 · 성인 · 전문, 모든 과정</span></div>
+<div class="step" style="padding:18px 0"><b style="font-size:32px">PRACTICE ROOM</b><span style="font-size:25px">운영시간 내 자유로운 연습실 이용</span></div>
 </div>
-<div class="p a" style="left:96px;right:96px;top:1080px">같은 곡도, 사람마다 다르게 가르칩니다.</div>
+<div class="p a" style="left:96px;right:96px;top:1170px;font-size:26px">같은 곡도, 사람마다 다르게 가르칩니다.</div>
 {FT(6)}</section>""")
 # 07 마무리
 S.append(f"""<section class="s dark" id="c7">{HD("CONTACT")}
