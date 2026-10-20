@@ -1,0 +1,140 @@
+# ENOCH NOTE — 입시 스트레스 (deck.html 생성)
+import os
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+FONT='''@font-face{font-family:P;src:url(../../templates/fonts/Pretendard-Light.woff2);font-weight:300}
+@font-face{font-family:P;src:url(../../templates/fonts/Pretendard-Regular.woff2);font-weight:400}
+@font-face{font-family:P;src:url(../../templates/fonts/Pretendard-Medium.woff2);font-weight:500}
+@font-face{font-family:P;src:url(../../templates/fonts/Pretendard-Bold.woff2);font-weight:700}'''
+CSS='''*{box-sizing:border-box;margin:0;padding:0}
+:root{--iv:#F1EDE4;--bk:#111;--g:#8A8A8A;--b:#55524D;--bu:#F1E8CB;--mono:"IBM Plex Mono","DejaVu Sans Mono",monospace;--en:"Helvetica Neue",Helvetica,Arial,"Liberation Sans",P,sans-serif}
+.s{width:1080px;height:1350px;position:relative;overflow:hidden;background:var(--iv);color:var(--bk);font-family:P,sans-serif;margin-bottom:40px;word-break:keep-all}
+.s.dark{background:var(--bk);color:var(--iv)}
+.hd{position:absolute;left:96px;right:96px;top:72px;display:flex;justify-content:space-between;font-family:var(--mono);font-size:21px;letter-spacing:3px;padding-bottom:20px;border-bottom:1.5px solid currentColor}
+.ft{position:absolute;left:96px;right:96px;bottom:60px;display:flex;justify-content:space-between;font-family:var(--mono);font-size:20px;letter-spacing:2px;padding-top:20px;border-top:1.5px solid currentColor}
+.ft span:first-child{font-family:P,sans-serif;letter-spacing:0;font-size:21px}
+.k{font-family:var(--mono);font-size:20px;letter-spacing:3px;color:var(--g);text-transform:uppercase}
+.h{font-size:72px;font-weight:700;letter-spacing:-3.2px;line-height:1.22}
+.h em{font-style:normal;font-weight:300}
+.p{font-size:30px;line-height:1.75;color:var(--b);letter-spacing:-.6px}.p b{color:var(--bk)}
+.dark .p{color:#C9C4BB}.dark .p b{color:var(--iv)}
+.a{position:absolute}
+.row{display:flex;gap:30px;padding:26px 0;border-bottom:1px solid rgba(17,17,17,.15)}
+.dark .row{border-bottom-color:rgba(241,237,228,.16)}
+.row .n{width:90px;flex:none;font-family:var(--en);font-size:44px;font-weight:700;letter-spacing:-2px;line-height:1}
+.row .t{font-size:28px;line-height:1.55;color:var(--b);letter-spacing:-.5px}
+.row .t b{color:var(--bk);font-size:32px;display:block;margin-bottom:4px}
+.dark .row .t{color:#C9C4BB}.dark .row .t b{color:var(--iv)}
+.paper{position:absolute;background:#FBF8F1 linear-gradient(rgba(17,17,17,.06) 1px,transparent 1px) 0 0/100% 44px;border:1.5px solid #111}
+.hand{font-family:P,sans-serif;font-weight:400;color:#2B2A27}
+.strike{position:absolute;left:40px;right:440px;top:56px;height:4px;background:#B23A2E;opacity:.85}
+'''
+CSS+='''.sg{background:#DCE2D3}
+.chips{display:flex;flex-wrap:wrap;gap:14px}
+.chips span{padding:12px 24px;border:1.5px solid #111;font-size:27px;letter-spacing:-.5px}
+.grid4{display:grid;grid-template-columns:1fr 1fr;border-top:1.5px solid #111}
+.grid4>div{padding:40px 28px 44px 0;border-bottom:1px solid rgba(17,17,17,.15)}
+.grid4>div:nth-child(odd){border-right:1px solid rgba(17,17,17,.15)}
+.grid4>div:nth-child(even){padding-left:28px}
+.grid4 .e{font-family:var(--en);font-size:30px;font-weight:700;letter-spacing:-1px}
+.grid4 .t{font-size:30px;font-weight:700;margin:10px 0 8px;letter-spacing:-.8px}
+.grid4 .d{font-size:26px;line-height:1.55;color:var(--b);letter-spacing:-.4px}
+.chk{border-top:1.5px solid #111}
+.chk div{display:flex;gap:22px;align-items:baseline;padding:22px 0;border-bottom:1px solid rgba(17,17,17,.15);font-size:29px;letter-spacing:-.6px}
+.chk i{font-style:normal;font-family:var(--mono);font-size:20px;color:var(--g);width:40px}
+.chk small{font-size:23px;color:var(--g)}
+.tt{display:grid;grid-template-columns:150px repeat(7,1fr);gap:6px}
+.tt .h{font-family:var(--mono);font-size:18px;letter-spacing:2px;color:var(--g);text-align:center;padding-bottom:6px}
+.tt .l{font-size:22px;display:flex;align-items:center}
+.tt .c{height:66px;border:1px solid rgba(17,17,17,.2)}
+.tt .c.p{background:#111}
+.tt .c.r{background:#DCE2D3;border-color:#DCE2D3}
+.slot{display:flex;gap:18px;align-items:flex-end;font-family:var(--mono);font-size:22px;color:var(--g)}
+.slot span{flex:1;border-bottom:1.5px solid #111;height:44px}
+'''
+TOTAL=8
+HD=lambda r="ENOCH NOTE — MIND CARE": f'<div class="hd"><span>ENOCH MUSIC ACADEMY</span><span>{r}</span></div>'
+FT=lambda n: f'<div class="ft"><span>입시 스트레스</span><span>0{n} / 0{TOTAL}</span></div>'
+S=[]
+# 01 표지
+S.append(f"""<section class="s" id="c1">{HD()}
+<img src="../../images/기타/웰니스_피아노커피_01.jpg" style="position:absolute;left:96px;top:150px;width:888px;height:640px;object-fit:cover;object-position:50% 60%;display:block;filter:saturate(.85) contrast(1.02)">
+<div class="k a" style="left:96px;top:830px">Mind Care · For Exam</div>
+<div class="h a" style="left:92px;top:875px;font-size:80px;letter-spacing:-4px;line-height:1.18">나를 아는 입시생은,<br><em>덜 흔들립니다</em></div>
+<div class="p a" style="left:96px;top:1110px;font-size:28px">입시 스트레스를 다루는 법</div>
+{FT(1)}</section>""")
+# 02 당연함
+S.append(f"""<section class="s dark" id="c2">{HD("IT'S NORMAL")}
+<div class="k a" style="left:96px;top:200px">It's Normal</div>
+<div class="h a" style="left:92px;top:250px">입시 스트레스는,<br><em>이상한 게 아닙니다</em></div>
+<div class="a" style="left:96px;right:96px;top:540px;border-top:1.5px solid rgba(241,237,228,.5)">
+<div class="row"><span class="n">01</span><span class="t"><b>시험</b>한 번의 무대로 정해진다는 부담</span></div>
+<div class="row"><span class="n">02</span><span class="t"><b>비교</b>옆 연습실 소리, SNS 속 다른 수험생</span></div>
+<div class="row"><span class="n">03</span><span class="t"><b>기다림</b>결과를 알 수 없는 시간</span></div>
+</div>
+<div class="p a" style="left:96px;right:96px;top:1080px">없애려 애쓰기보다, <b>풀어 주는 법</b>을 아는 게 중요해요.</div>
+{FT(2)}</section>""")
+# 03 나를 알기
+S.append(f"""<section class="s" id="c3">{HD("KNOW YOURSELF")}
+<div class="k a" style="left:96px;top:200px">Know Yourself</div>
+<div class="h a" style="left:92px;top:250px">나를 잘 알수록,<br><em>덜 비교합니다</em></div>
+<div class="p a" style="left:96px;right:96px;top:470px">남의 기준으로 나를 재면 끝이 없거든요.<br>내 기준이 생기면, 흔들림이 줄어듭니다.</div>
+<div class="paper" style="left:96px;right:96px;top:640px;height:500px;padding:34px 44px">
+<div class="k" style="color:#55524D">나에 대해 적어 보기</div>
+<div class="hand" style="margin-top:22px;font-size:29px;line-height:2.85">① 내 소리의 좋은 점<br>② 집중이 잘 되는 시간<br>③ 지칠 때 나타나는 신호<br>④ 기분이 풀리는 것</div>
+</div>
+{FT(3)}</section>""")
+# 04 해소법
+S.append(f"""<section class="s" id="c4">{HD("YOUR OWN WAY")}
+<div class="k a" style="left:96px;top:200px">Your Own Way</div>
+<div class="h a" style="left:92px;top:250px">무엇을 하면 풀리는지,<br><em>알고 있나요?</em></div>
+<div class="a chips" style="left:96px;right:96px;top:500px"><span>걷기</span><span>샤워</span><span>좋아하는 음악</span><span>친구와 수다</span><span>그림 그리기</span><span>짧은 낮잠</span><span>일기 쓰기</span><span>방 정리</span></div>
+<div class="p a" style="left:96px;right:96px;top:720px">사람마다 다릅니다. 나에게 맞는 목록 세 개를 미리 만들어 두세요.<br>지칠 때, 고민하지 않고 꺼낼 수 있도록.</div>
+<div class="a" style="left:96px;right:96px;top:900px;display:flex;flex-direction:column;gap:26px">
+<div class="slot">1<span></span></div><div class="slot">2<span></span></div><div class="slot">3<span></span></div>
+</div>
+{FT(4)}</section>""")
+# 05 몸과 마음
+S.append(f"""<section class="s" id="c5">{HD("BODY & MIND")}
+<div class="k a" style="left:96px;top:200px">Body &amp; Mind</div>
+<div class="h a" style="left:92px;top:250px">몸이 풀리면,<br><em>마음도 풀립니다</em></div>
+<div class="a grid4" style="left:96px;right:96px;top:520px">
+<div><div class="e">STRETCH</div><div class="t">스트레칭</div><div class="d">연습 전후로 목, 어깨,<br>손목을 천천히 풀어 주기</div></div>
+<div><div class="e">BREATHE</div><div class="t">호흡</div><div class="d">들이쉬는 것보다 길게,<br>천천히 내쉬기</div></div>
+<div><div class="e">MEDITATE</div><div class="t">명상</div><div class="d">눈을 감고 5분,<br>숨에만 집중하기</div></div>
+<div><div class="e">MOVE</div><div class="t">좋아하는 운동</div><div class="d">잘하는 것보다,<br>좋아서 꾸준히 할 수 있는 것<br>걷기 · 요가 · 수영</div></div>
+</div>
+{FT(5)}</section>""")
+# 06 식습관
+S.append(f"""<section class="s" id="c6">{HD("EAT WELL")}
+<div class="sg a" style="left:96px;right:96px;top:150px;height:300px"></div>
+<div class="a" style="left:132px;top:210px;font-family:var(--en);font-weight:300;font-size:150px;letter-spacing:-6px;line-height:1">EAT WELL</div>
+<div class="h a" style="left:92px;top:500px">컨디션은,<br><em>식탁에서도 만들어집니다</em></div>
+<div class="a chk" style="left:96px;right:96px;top:740px">
+<div><i>01</i>끼니 거르지 않기</div>
+<div><i>02</i>물 자주 마시기</div>
+<div><i>03</i>오후 늦게는 카페인 줄이기 <small>(잠에 영향을 줍니다)</small></div>
+<div><i>04</i>자극적인 음식과 늦은 야식 줄이기</div>
+<div><i>05</i>시험 앞두고 처음 먹어 보는 음식 피하기</div>
+</div>
+{FT(6)}</section>""")
+# 07 쉬는 시간
+days=['MON','TUE','WED','THU','FRI','SAT','SUN']
+prac=[1,1,1,1,1,1,0]; rest=[0,0,1,0,0,1,1]
+tt='<div></div>'+''.join(f'<div class="h">{d}</div>' for d in days)
+tt+='<div class="l">연습</div>'+''.join(f'<div class="c{" p" if x else ""}"></div>' for x in prac)
+tt+='<div class="l">나를 위한<br>시간</div>'+''.join(f'<div class="c{" r" if x else ""}"></div>' for x in rest)
+S.append(f"""<section class="s" id="c7">{HD("TIME FOR ME")}
+<div class="k a" style="left:96px;top:200px">Time for Me</div>
+<div class="h a" style="left:92px;top:250px">쉬는 시간도,<br><em>일정에 넣으세요</em></div>
+<div class="a tt" style="left:96px;right:96px;top:540px">{tt}</div>
+<div class="a" style="left:96px;top:760px;display:flex;gap:30px;font-size:21px;color:var(--b)"><span><span style="display:inline-block;width:18px;height:18px;background:#111;vertical-align:-2px"></span>&nbsp; 연습</span><span><span style="display:inline-block;width:18px;height:18px;background:#DCE2D3;vertical-align:-2px"></span>&nbsp; 나를 위한 시간</span></div>
+<div class="p a" style="left:96px;right:96px;top:880px">쉬는 건 게으른 게 아니라, 다음 연습을 위한 준비입니다.<br>연습처럼 시간을 정해 두고, 그 시간만큼은 <b>마음 편히</b> 쉬어 보세요.</div>
+{FT(7)}</section>""")
+# 08 마무리
+S.append(f"""<section class="s dark" id="c8">{HD("THE ENOCH WAY")}
+<div class="a" style="left:92px;top:150px;font-family:var(--en);font-weight:700;font-size:240px;letter-spacing:-8px;color:#2A2825;line-height:1">ENOCH</div>
+<div class="h a" style="left:92px;top:450px">나를 아는 것에서,<br><span style="font-weight:300;color:#DCE2D3">나만의 소리가 시작됩니다.</span></div>
+<div class="p a" style="left:96px;right:96px;top:720px">같은 곡도, 사람마다 다르게 가르칩니다. 입시 과정은 모두 <b>1:1</b>.<br>시험장에서도 연습한 만큼 연주할 수 있도록,<br>주기적으로 모의고사를 진행합니다.</div>
+<div class="a" style="left:96px;right:96px;top:1040px;padding-top:22px;border-top:1px solid rgba(241,237,228,.3);display:flex;justify-content:space-between;font-size:22px;line-height:1.6"><span>에녹실용음악학원 시흥점<br><span style="color:#9A958C">경기도 시흥시 은행로 157 2층</span></span><span style="text-align:right;font-family:var(--mono)">010 3949 3666<br><span style="color:#9A958C;font-family:P,sans-serif;font-size:19px">Vocal · Guitar · Drum · Bass · Piano · MIDI · 작곡</span></span></div>
+{FT(8)}</section>""")
+open('deck.html','w').write(f'<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>입시 스트레스</title><style>{FONT}{CSS}</style></head><body>'+''.join(S)+'</body></html>')
