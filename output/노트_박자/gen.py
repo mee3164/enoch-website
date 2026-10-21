@@ -1,0 +1,145 @@
+# ENOCH NOTE — 박자 (deck.html 생성)
+import os
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+FONT='''@font-face{font-family:P;src:url(../../templates/fonts/Pretendard-Light.woff2);font-weight:300}
+@font-face{font-family:P;src:url(../../templates/fonts/Pretendard-Regular.woff2);font-weight:400}
+@font-face{font-family:P;src:url(../../templates/fonts/Pretendard-Medium.woff2);font-weight:500}
+@font-face{font-family:P;src:url(../../templates/fonts/Pretendard-Bold.woff2);font-weight:700}'''
+CSS='''*{box-sizing:border-box;margin:0;padding:0}
+:root{--iv:#F1EDE4;--bk:#111;--g:#8A8A8A;--b:#55524D;--bu:#F1E8CB;--mono:"IBM Plex Mono","DejaVu Sans Mono",monospace;--en:"Helvetica Neue",Helvetica,Arial,"Liberation Sans",P,sans-serif}
+.s{width:1080px;height:1350px;position:relative;overflow:hidden;background:var(--iv);color:var(--bk);font-family:P,sans-serif;margin-bottom:40px;word-break:keep-all}
+.s.dark{background:var(--bk);color:var(--iv)}
+.hd{position:absolute;left:96px;right:96px;top:72px;display:flex;justify-content:space-between;font-family:var(--mono);font-size:21px;letter-spacing:3px;padding-bottom:20px;border-bottom:1.5px solid currentColor}
+.ft{position:absolute;left:96px;right:96px;bottom:60px;display:flex;justify-content:space-between;font-family:var(--mono);font-size:20px;letter-spacing:2px;padding-top:20px;border-top:1.5px solid currentColor}
+.ft span:first-child{font-family:P,sans-serif;letter-spacing:0;font-size:21px}
+.k{font-family:var(--mono);font-size:20px;letter-spacing:3px;color:var(--g);text-transform:uppercase}
+.h{font-size:72px;font-weight:700;letter-spacing:-3.2px;line-height:1.22}
+.h em{font-style:normal;font-weight:300}
+.p{font-size:30px;line-height:1.75;color:var(--b);letter-spacing:-.6px}.p b{color:var(--bk)}
+.dark .p{color:#C9C4BB}.dark .p b{color:var(--iv)}
+.a{position:absolute}
+.row{display:flex;gap:30px;padding:26px 0;border-bottom:1px solid rgba(17,17,17,.15)}
+.dark .row{border-bottom-color:rgba(241,237,228,.16)}
+.row .n{width:90px;flex:none;font-family:var(--en);font-size:44px;font-weight:700;letter-spacing:-2px;line-height:1}
+.row .t{font-size:28px;line-height:1.55;color:var(--b);letter-spacing:-.5px}
+.row .t b{color:var(--bk);font-size:32px;display:block;margin-bottom:4px}
+.dark .row .t{color:#C9C4BB}.dark .row .t b{color:var(--iv)}
+.paper{position:absolute;background:#FBF8F1 linear-gradient(rgba(17,17,17,.06) 1px,transparent 1px) 0 0/100% 44px;border:1.5px solid #111}
+.hand{font-family:P,sans-serif;font-weight:400;color:#2B2A27}
+.strike{position:absolute;left:40px;right:440px;top:56px;height:4px;background:#B23A2E;opacity:.85}
+'''
+CSS+='''.mi{background:#D9E1E8}
+.dots{display:flex;align-items:center;gap:22px}
+.d{border-radius:50%;border:2.5px solid #111;flex:none}
+.d.s{width:64px;height:64px;background:#111}
+.d.m{width:48px;height:48px;background:#8A8A8A;border-color:#8A8A8A}
+.d.w{width:40px;height:40px}
+.d.x{width:26px;height:26px;background:#111}
+.d.y{width:26px;height:26px}
+.bar{width:2px;height:80px;background:#111;margin:0 6px}
+.grp{display:flex;gap:14px;align-items:center;padding:16px 22px;border:1.5px solid #111;border-radius:60px}
+.lab{font-family:var(--mono);font-size:20px;letter-spacing:2px;color:var(--g)}
+.sig{font-family:var(--en);font-weight:700;line-height:.82;letter-spacing:-10px;text-align:center}
+.sig hr{border:0;height:14px;color:inherit;background:currentColor;margin:18px 0}
+.lrow{display:grid;grid-template-columns:150px 1fr;align-items:center;padding:34px 0;border-bottom:1px solid rgba(17,17,17,.15)}
+.lrow .big{font-family:var(--en);font-weight:700;font-size:64px;letter-spacing:-3px}
+.cap{font-size:25px;color:var(--b);margin-top:14px;letter-spacing:-.4px}
+'''
+TOTAL=7
+HD=lambda r="ENOCH NOTE — METER": f'<div class="hd"><span>ENOCH MUSIC ACADEMY</span><span>{r}</span></div>'
+FT=lambda n: f'<div class="ft"><span>박자</span><span>0{n} / 0{TOTAL}</span></div>'
+S=[]
+# 01 표지 (타이포)
+S.append(f"""<section class="s" id="c1">{HD()}
+<div class="a sig" style="left:96px;top:180px;width:420px;font-size:350px">3<hr>4</div>
+<div class="a" style="left:680px;top:200px;right:96px;border-top:1.5px solid #111;padding-top:22px">
+<div class="lab">Meter</div>
+<div style="margin-top:30px;display:flex;gap:18px;align-items:center"><span class="d s"></span><span class="d w"></span><span class="d w"></span></div>
+<div class="lab" style="margin-top:22px">쿵 · 짝 · 짝</div>
+</div>
+<div class="k a" style="left:96px;top:930px">Music Theory · Meter</div>
+<div class="h a" style="left:92px;top:975px;font-size:84px;letter-spacing:-4.2px;line-height:1.18">왈츠는,<br><em>왜 세 박일까</em></div>
+{FT(1)}</section>""")
+# 02 박자란
+eq=''.join('<span class="d y"></span>' for _ in range(12))
+grp='<span class="bar"></span>'.join(''.join(['<span class="d x" style="width:40px;height:40px"></span>']+['<span class="d y"></span>']*3) for _ in range(3))
+S.append(f"""<section class="s" id="c2">{HD("BEAT & METER")}
+<div class="k a" style="left:96px;top:200px">Beat &amp; Meter</div>
+<div class="h a" style="left:92px;top:250px">박자는,<br><em>박을 묶는 방법입니다</em></div>
+<div class="p a" style="left:96px;right:96px;top:480px">음악에는 일정하게 뛰는 맥박, <b>박</b>이 있어요.<br>이 박을 몇 개씩 묶느냐가 <b>박자</b>. 묶음 하나가 한 마디입니다.</div>
+<div class="a" style="left:96px;right:96px;top:720px;border-top:1.5px solid #111;padding-top:40px">
+<div class="lab">박 — 똑같이 뛰는 맥박</div>
+<div class="dots" style="margin-top:22px;gap:30px">{eq}</div>
+<div class="lab" style="margin-top:70px">박자 — 넷씩 묶으면 4박자</div>
+<div class="dots" style="margin-top:22px;gap:20px">{grp}</div>
+</div>
+{FT(2)}</section>""")
+# 03 박자표 (검정)
+S.append(f"""<section class="s dark" id="c3">{HD("TIME SIGNATURE")}
+<div class="k a" style="left:96px;top:200px">Time Signature</div>
+<div class="h a" style="left:92px;top:250px">악보 맨 앞의<br><em>숫자 두 개</em></div>
+<div class="a sig" style="left:96px;top:520px;width:300px;font-size:230px;color:#F1EDE4">4<hr>4</div>
+<div class="a" style="left:520px;right:96px;top:560px">
+<div style="border-top:1px solid rgba(241,237,228,.4);padding:26px 0"><div class="lab">위 숫자</div><div style="font-size:34px;font-weight:700;margin-top:10px">한 마디에 박이 몇 개</div></div>
+<div style="border-top:1px solid rgba(241,237,228,.4);border-bottom:1px solid rgba(241,237,228,.4);padding:26px 0"><div class="lab">아래 숫자</div><div style="font-size:34px;font-weight:700;margin-top:10px">어떤 음표가 한 박인지</div><div style="font-size:24px;color:#C9C4BB;margin-top:8px">4 = 4분음표, 8 = 8분음표</div></div>
+</div>
+<div class="p a" style="left:96px;right:96px;top:1060px">4/4는 한 마디에 4분음표 네 박, 3/4는 세 박이에요.</div>
+{FT(3)}</section>""")
+# 04 강약
+S.append(f"""<section class="s" id="c4">{HD("STRONG & WEAK")}
+<div class="k a" style="left:96px;top:200px">Strong &amp; Weak</div>
+<div class="h a" style="left:92px;top:250px">같은 박도,<br><em>세기가 다릅니다</em></div>
+<div class="a" style="left:96px;right:96px;top:510px;border-top:1.5px solid #111">
+<div class="lrow"><span class="big">4/4</span><div><div class="dots"><span class="d s"></span><span class="d w"></span><span class="d m"></span><span class="d w"></span></div><div class="cap">강 · 약 · 중강 · 약 — 대부분의 대중음악</div></div></div>
+<div class="lrow"><span class="big">3/4</span><div><div class="dots"><span class="d s"></span><span class="d w"></span><span class="d w"></span></div><div class="cap">강 · 약 · 약 — 쿵 짝 짝, 왈츠</div></div></div>
+</div>
+<div class="p a" style="left:96px;right:96px;top:1000px">왈츠가 빙글 도는 듯 들리는 건,<br><b>센 박이 세 박마다</b> 돌아오기 때문이거든요.</div>
+{FT(4)}</section>""")
+# 05 3/4 vs 6/8
+g2=''.join('<span class="grp">'+''.join(['<span class="d x"></span>' if i==0 and j==0 else ('<span class="d x" style="background:#8A8A8A;border-color:#8A8A8A"></span>' if False else '<span class="d y"></span>') for i in range(2)])+'</span>' for j in range(3))
+g2=''
+for j in range(3):
+    g2+='<span class="grp">'+('<span class="d x"></span>' if j==0 else '<span class="d x" style="background:#8A8A8A;border-color:#8A8A8A"></span>')+'<span class="d y"></span></span>'
+g3=''
+for j in range(2):
+    g3+='<span class="grp">'+('<span class="d x"></span>' if j==0 else '<span class="d x" style="background:#8A8A8A;border-color:#8A8A8A"></span>')+'<span class="d y"></span><span class="d y"></span></span>'
+S.append(f"""<section class="s" id="c5">{HD("3/4 & 6/8")}
+<div class="k a" style="left:96px;top:200px">Six Eighths</div>
+<div class="h a" style="left:92px;top:250px">3/4와 6/8,<br><em>여섯 개를 묶는 법</em></div>
+<div class="a" style="left:96px;right:96px;top:510px;border-top:1.5px solid #111">
+<div class="lrow"><span class="big">3/4</span><div><div class="dots" style="gap:16px">{g2}</div><div class="cap">둘씩 세 묶음 — 세 박</div></div></div>
+<div class="lrow"><span class="big">6/8</span><div><div class="dots" style="gap:16px">{g3}</div><div class="cap">셋씩 두 묶음 — 크게 두 박</div></div></div>
+</div>
+<div class="p a" style="left:96px;right:96px;top:1000px">같은 8분음표 여섯 개도, 묶는 방법에 따라 느낌이 달라져요.<br>6/8은 <b>크게 두 박으로 흔들리듯</b> 들립니다.</div>
+{FT(5)}</section>""")
+# 06 집에서 해보기 (지휘 선)
+def cond(pts,start):
+    # pts: list of (x,y,label); start point
+    d=f'M{start[0]},{start[1]} '
+    prev=start
+    for i,(x,y,l) in enumerate(pts):
+        cx=(prev[0]+x)/2+(25 if i%2 else -25); cy=(prev[1]+y)/2+40
+        d+=f'Q{cx},{cy} {x},{y} '
+        prev=(x,y)
+    circ=''.join(f'<circle cx="{x}" cy="{y}" r="22" fill="#111"/><text x="{x}" y="{y+8}" text-anchor="middle" font-family="Helvetica Neue,Arial,sans-serif" font-weight="700" font-size="22" fill="#F1EDE4">{l}</text>' for x,y,l in pts)
+    return f'<path d="{d}" fill="none" stroke="#111" stroke-width="4" stroke-linecap="round"/>{circ}'
+three=cond([(140,300,1),(250,230,2),(140,60,3)],(140,40))
+four=cond([(150,300,1),(40,230,2),(260,230,3),(150,60,4)],(150,40))
+S.append(f"""<section class="s" id="c6">{HD("TRY AT HOME")}
+<div class="mi a" style="left:96px;right:96px;top:150px;height:520px"></div>
+<svg class="a" style="left:150px;top:190px" width="300" height="360" viewBox="0 0 300 360">{three}</svg>
+<svg class="a" style="left:560px;top:190px" width="320" height="360" viewBox="0 0 320 360">{four}</svg>
+<div class="a lab" style="left:150px;top:600px;color:#55524D">3박 — 아래 · 오른쪽 · 위</div>
+<div class="a lab" style="left:560px;top:600px;color:#55524D">4박 — 아래 · 왼쪽 · 오른쪽 · 위</div>
+<div class="k a" style="left:96px;top:730px">Try at Home</div>
+<div class="h a" style="left:92px;top:780px">박자는,<br><em>손으로 그려 보면 압니다</em></div>
+<div class="p a" style="left:96px;right:96px;top:1010px">좋아하는 노래를 틀고, '하나'에 손을 아래로 내려 보세요.<br>세 번 만에 제자리로 오면 3박, 네 번이면 4박입니다.</div>
+{FT(6)}</section>""")
+# 07 마무리
+S.append(f"""<section class="s dark" id="c7">{HD("THE ENOCH WAY")}
+<div class="a" style="left:92px;top:150px;font-family:var(--en);font-weight:700;font-size:240px;letter-spacing:-8px;color:#2A2825;line-height:1">ENOCH</div>
+<div class="h a" style="left:92px;top:450px">기본은,<br><span style="font-weight:300;color:#D9E1E8">건너뛰지 않습니다.</span></div>
+<div class="p a" style="left:96px;right:96px;top:720px">박을 몸으로 아는 것에서, 연주가 시작됩니다.<br>진도보다 이해를 먼저 봅니다. 모든 과정 <b>1:1</b>.</div>
+<div class="a" style="left:96px;right:96px;top:1040px;padding-top:22px;border-top:1px solid rgba(241,237,228,.3);display:flex;justify-content:space-between;font-size:22px;line-height:1.6"><span>에녹실용음악학원 시흥점<br><span style="color:#9A958C">경기도 시흥시 은행로 157 2층</span></span><span style="text-align:right;font-family:var(--mono)">010 3949 3666<br><span style="color:#9A958C;font-family:P,sans-serif;font-size:19px">Vocal · Guitar · Drum · Bass · Piano · MIDI · 작곡</span></span></div>
+{FT(7)}</section>""")
+open('deck.html','w').write(f'<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>박자</title><style>{FONT}{CSS}</style></head><body>'+''.join(S)+'</body></html>')
