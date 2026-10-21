@@ -30,35 +30,37 @@ CSS='''*{box-sizing:border-box;margin:0;padding:0}
 '''
 CSS+='''.mi{background:#D9E1E8}
 .dots{display:flex;align-items:center;gap:22px}
-.d{border-radius:50%;border:2.5px solid #111;flex:none}
+.d{border-radius:50%;border:1.5px solid #111;flex:none}
 .d.s{width:64px;height:64px;background:#111}
 .d.m{width:48px;height:48px;background:#8A8A8A;border-color:#8A8A8A}
 .d.w{width:40px;height:40px}
 .d.x{width:26px;height:26px;background:#111}
 .d.y{width:26px;height:26px}
 .bar{width:2px;height:80px;background:#111;margin:0 6px}
-.grp{display:flex;gap:14px;align-items:center;padding:16px 22px;border:1.5px solid #111;border-radius:60px}
+.grp{display:flex;gap:14px;align-items:center;padding:14px 20px;border:1px solid rgba(17,17,17,.35);border-radius:60px}
 .lab{font-family:var(--mono);font-size:20px;letter-spacing:2px;color:var(--g)}
-.sig{font-family:var(--en);font-weight:700;line-height:.82;letter-spacing:-10px;text-align:center}
-.sig hr{border:0;height:14px;color:inherit;background:currentColor;margin:18px 0}
+.sig{font-family:var(--en);font-weight:300;line-height:.82;letter-spacing:-10px;text-align:center}
+.sig hr{border:0;height:4px;color:inherit;background:currentColor;margin:18px 0}
 .lrow{display:grid;grid-template-columns:150px 1fr;align-items:center;padding:34px 0;border-bottom:1px solid rgba(17,17,17,.15)}
-.lrow .big{font-family:var(--en);font-weight:700;font-size:64px;letter-spacing:-3px}
+.lrow .big{font-family:var(--en);font-weight:300;font-size:64px;letter-spacing:-3px}
 .cap{font-size:25px;color:var(--b);margin-top:14px;letter-spacing:-.4px}
 '''
 TOTAL=7
 HD=lambda r="ENOCH NOTE — METER": f'<div class="hd"><span>ENOCH MUSIC ACADEMY</span><span>{r}</span></div>'
 FT=lambda n: f'<div class="ft"><span>박자</span><span>0{n} / 0{TOTAL}</span></div>'
 S=[]
-# 01 표지 (타이포)
+# 01 표지 (쿵 짝 짝 원)
 S.append(f"""<section class="s" id="c1">{HD()}
-<div class="a sig" style="left:96px;top:180px;width:420px;font-size:350px">3<hr>4</div>
-<div class="a" style="left:680px;top:200px;right:96px;border-top:1.5px solid #111;padding-top:22px">
-<div class="lab">Meter</div>
-<div style="margin-top:30px;display:flex;gap:18px;align-items:center"><span class="d s"></span><span class="d w"></span><span class="d w"></span></div>
-<div class="lab" style="margin-top:22px">쿵 · 짝 · 짝</div>
-</div>
-<div class="k a" style="left:96px;top:930px">Music Theory · Meter</div>
-<div class="h a" style="left:92px;top:975px;font-size:84px;letter-spacing:-4.2px;line-height:1.18">왈츠는,<br><em>왜 세 박일까</em></div>
+<div class="a" style="left:96px;top:190px;width:470px;height:470px;border-radius:50%;background:#111"></div>
+<div class="a" style="left:640px;top:530px;width:130px;height:130px;border-radius:50%;border:2px solid #111"></div>
+<div class="a" style="left:854px;top:530px;width:130px;height:130px;border-radius:50%;border:2px solid #111"></div>
+<div class="a lab" style="left:96px;top:700px;width:470px;text-align:center">쿵</div>
+<div class="a lab" style="left:640px;top:700px;width:130px;text-align:center">짝</div>
+<div class="a lab" style="left:854px;top:700px;width:130px;text-align:center">짝</div>
+<div class="a" style="left:640px;top:200px;font-family:var(--en);font-weight:300;font-size:150px;letter-spacing:-6px;line-height:1">3/4</div>
+<div class="a" style="left:96px;right:96px;top:790px;border-top:1.5px solid #111"></div>
+<div class="k a" style="left:96px;top:840px">Music Theory · Meter</div>
+<div class="h a" style="left:92px;top:885px;font-size:84px;letter-spacing:-4.2px;line-height:1.18">왈츠는,<br><em>왜 세 박일까</em></div>
 {FT(1)}</section>""")
 # 02 박자란
 eq=''.join('<span class="d y"></span>' for _ in range(12))
@@ -113,18 +115,9 @@ S.append(f"""<section class="s" id="c5">{HD("3/4 & 6/8")}
 <div class="p a" style="left:96px;right:96px;top:1000px">같은 8분음표 여섯 개도, 묶는 방법에 따라 느낌이 달라져요.<br>6/8은 <b>크게 두 박으로 흔들리듯</b> 들립니다.</div>
 {FT(5)}</section>""")
 # 06 집에서 해보기 (지휘 선)
-def cond(pts,start):
-    # pts: list of (x,y,label); start point
-    d=f'M{start[0]},{start[1]} '
-    prev=start
-    for i,(x,y,l) in enumerate(pts):
-        cx=(prev[0]+x)/2+(25 if i%2 else -25); cy=(prev[1]+y)/2+40
-        d+=f'Q{cx},{cy} {x},{y} '
-        prev=(x,y)
-    circ=''.join(f'<circle cx="{x}" cy="{y}" r="22" fill="#111"/><text x="{x}" y="{y+8}" text-anchor="middle" font-family="Helvetica Neue,Arial,sans-serif" font-weight="700" font-size="22" fill="#F1EDE4">{l}</text>' for x,y,l in pts)
-    return f'<path d="{d}" fill="none" stroke="#111" stroke-width="4" stroke-linecap="round"/>{circ}'
-three=cond([(140,300,1),(250,230,2),(140,60,3)],(140,40))
-four=cond([(150,300,1),(40,230,2),(260,230,3),(150,60,4)],(150,40))
+def lbl(x,y,l): return f'<circle cx="{x}" cy="{y}" r="20" fill="#111"/><text x="{x}" y="{y+7}" text-anchor="middle" font-family="Helvetica Neue,Arial,sans-serif" font-weight="500" font-size="20" fill="#F1EDE4">{l}</text>'
+three='<path d="M150,30 C150,150 150,250 150,300 C165,265 225,235 250,200 C232,150 172,92 150,52" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>'+lbl(150,300,1)+lbl(250,200,2)+lbl(150,52,3)
+four='<path d="M160,30 C160,160 160,260 160,300 C140,262 72,240 40,210 C110,252 222,252 280,210 C252,150 182,92 160,52" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>'+lbl(160,300,1)+lbl(40,210,2)+lbl(280,210,3)+lbl(160,52,4)
 S.append(f"""<section class="s" id="c6">{HD("TRY AT HOME")}
 <div class="mi a" style="left:96px;right:96px;top:150px;height:520px"></div>
 <svg class="a" style="left:150px;top:190px" width="300" height="360" viewBox="0 0 300 360">{three}</svg>
