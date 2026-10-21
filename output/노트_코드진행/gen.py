@@ -62,7 +62,7 @@ S.append(f"""<section class="s dark" id="c1">{HD()}
 <div class="X" style="left:470px;top:500px;font-size:360px;color:#D9E1E8">IV</div>
 <div class="a" style="right:96px;top:190px;text-align:right;font-family:var(--mono);font-size:22px;letter-spacing:3px;color:#8C8C8C;line-height:1.9">C<br>G<br>Am<br>F</div>
 <div class="lab a" style="left:96px;top:930px">Chord Progression</div>
-<div class="h a" style="left:92px;top:975px;font-size:80px;letter-spacing:-4px;line-height:1.18">이 진행,<br><em>분명 들어 봤을 거예요</em></div>
+<div class="h a" style="left:92px;top:975px;font-size:80px;letter-spacing:-4px;line-height:1.18">수많은 노래가,<br><em>이 네 개로 만들어졌습니다</em></div>
 {FT(1)}</section>""")
 # 02 진행이란
 S.append(f"""<section class="s" id="c2">{HD("WHAT IS A PROGRESSION")}
@@ -108,7 +108,7 @@ S.append(f"""<section class="s dark" id="c5">{HD("PROGRESSION 01")}
 <div><div class="X" style="position:relative;font-size:250px;color:#F1EDE4">Am</div><div class="lab" style="margin-top:20px;text-transform:none;font-size:26px">vi</div></div>
 <div><div class="X" style="position:relative;font-size:250px;color:#F1EDE4">F</div><div class="lab" style="margin-top:20px;text-transform:none;font-size:26px">IV</div></div>
 </div>
-<div class="p a" style="left:96px;right:96px;top:1000px">셀 수 없이 많은 노래가 이 네 코드로 만들어졌어요.<br>비틀스의 「Let It Be」도 이 진행으로 시작합니다.</div>
+<div class="p a" style="left:96px;right:96px;top:1000px">키를 바꿔도, 장르를 바꿔도 같은 순서.<br>비틀스의 「Let It Be」도 이 진행으로 시작합니다.</div>
 {FT(5)}</section>""")
 # 06 캐논 진행
 cn=[('C','I'),('G','V'),('Am','vi'),('Em','iii'),('F','IV'),('C','I'),('F','IV'),('G','V')]
