@@ -35,7 +35,7 @@ CSS+='''.bl{background:#EEDFD8}
 .q .t{font-size:32px;font-weight:700;letter-spacing:-.8px}
 .q .t span{display:block;height:44px;border-bottom:1.5px dashed rgba(17,17,17,.35);margin-top:18px}
 '''
-TOTAL=7
+TOTAL=8
 HD=lambda r="ENOCH NOTE — AFTER THE STAGE": f'<div class="hd"><span>ENOCH MUSIC ACADEMY</span><span>{r}</span></div>'
 FT=lambda n: f'<div class="ft"><span>끝난 뒤에 하는 연습</span><span>0{n} / 0{TOTAL}</span></div>'
 INFO='<div class="a" style="left:96px;right:96px;top:1040px;padding-top:22px;border-top:1px solid rgba(241,237,228,.3);display:flex;justify-content:space-between;font-size:22px;line-height:1.6"><span>에녹실용음악학원 시흥점<br><span style="color:#9A958C">경기도 시흥시 은행로 157 2층</span></span><span style="text-align:right;font-family:var(--mono)">010 3949 3666<br><span style="color:#9A958C;font-family:P,sans-serif;font-size:19px">Vocal · Guitar · Drum · Bass · Piano · MIDI · 작곡</span></span></div>'
@@ -96,11 +96,25 @@ S.append(f"""<section class="s" id="c6">{HD("TAKE YOUR TIME")}
 </div>
 <div class="p a" style="left:96px;right:96px;top:880px">마음이 조금 가라앉았을 때 적어도 늦지 않아요.<br>쉬는 것도, 다음 무대를 위한 시간이거든요.</div>
 {FT(6)}</section>""")
-# 07 마무리
-S.append(f"""<section class="s dark" id="c7">{HD("THE ENOCH WAY")}
+# 07 앞으로
+S.append(f"""<section class="s" id="c7">{HD("WHAT COMES NEXT")}
+<div class="k a" style="left:96px;top:200px">What Comes Next</div>
+<div class="h a" style="left:92px;top:250px">돌아보는 이유는,<br><em>앞으로 가기 위해서입니다</em></div>
+<div class="a" style="left:96px;right:96px;top:540px;display:grid;grid-template-columns:1fr 70px 1fr 70px 1.4fr;align-items:end;border-bottom:1.5px solid #111;padding-bottom:34px">
+<div><div class="k">Then</div><div style="font-size:40px;font-weight:300;color:#9A958C;margin-top:14px">그날</div></div>
+<div style="font-family:var(--en);font-size:44px;color:#B9B4AC;padding-bottom:4px">→</div>
+<div><div class="k">Now</div><div style="font-size:40px;font-weight:400;margin-top:14px">오늘</div></div>
+<div style="font-family:var(--en);font-size:44px;color:#111;padding-bottom:4px">→</div>
+<div><div class="k" style="color:#111">Next</div><div style="font-size:64px;font-weight:700;letter-spacing:-2px;margin-top:10px;line-height:1">다음 무대</div></div>
+</div>
+<div class="p a" style="left:96px;right:96px;top:760px">그날은 이미 지나갔지만, 다음 무대는 아직 오지 않았어요.<br><b>적어 둔 한 줄이, 다음 연습의 첫 줄이 됩니다.</b></div>
+<div class="a" style="left:96px;right:96px;top:960px;font-size:40px;font-weight:700;letter-spacing:-1.2px;line-height:1.4">중요한 건 지나간 결과보다,<br><span style="font-weight:300">지금부터의 연습입니다.</span></div>
+{FT(7)}</section>""")
+# 08 마무리
+S.append(f"""<section class="s dark" id="c8">{HD("THE ENOCH WAY")}
 <div class="a" style="left:92px;top:150px;font-family:var(--en);font-weight:700;font-size:240px;letter-spacing:-8px;color:#2A2825;line-height:1">ENOCH</div>
 <div class="h a" style="left:92px;top:450px">그날의 무대도,<br><span style="font-weight:300;color:#EEDFD8">나의 소리였습니다.</span></div>
-<div class="p a" style="left:96px;right:96px;top:720px">진도보다 이해를 먼저 봅니다.<br>나만의 진짜 소리를 찾는 곳.</div>
+<div class="p a" style="left:96px;right:96px;top:720px">다음 무대는, 지금부터 준비하면 됩니다.<br>진도보다 이해를 먼저 봅니다.</div>
 {INFO}
-{FT(7)}</section>""")
+{FT(8)}</section>""")
 open('deck.html','w').write(f'<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>끝난 뒤에 하는 연습</title><style>{FONT}{CSS}</style></head><body>'+''.join(S)+'</body></html>')
