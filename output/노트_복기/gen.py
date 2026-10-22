@@ -49,10 +49,12 @@ S.append(f"""<section class="s" id="c1">{HD()}
 {FT(1)}</section>""")
 # 02 결과와 상관없이
 S.append(f"""<section class="s dark" id="c2">{HD("WHATEVER THE RESULT")}
+<div class="a" style="left:0;right:0;top:560px;height:790px;background:url(../../images/공간/무대_02.jpg) 50% 70%/cover;filter:grayscale(.5) brightness(.55)"></div>
+<div class="a" style="left:0;right:0;top:560px;height:790px;background:linear-gradient(#111 0%,rgba(17,17,17,.55) 35%,rgba(17,17,17,.35) 70%,#111 100%)"></div>
 <div class="k a" style="left:96px;top:200px">Whatever the Result</div>
 <div class="h a" style="left:92px;top:250px">그날의 무대는,<br><em>한 번뿐이었습니다</em></div>
-<div class="p a" style="left:96px;right:96px;top:560px">결과는 이미 정해졌어요.<br>하지만 그날을 <b>어떻게 기억할지</b>는, 아직 내가 정할 수 있습니다.</div>
-<div class="p a" style="left:96px;right:96px;top:800px;font-size:28px;color:#9A958C">어떤 결과였든, 돌아볼 가치가 있는 무대였거든요.</div>
+<div class="p a" style="left:96px;right:96px;top:470px">결과는 이미 정해졌어요.<br>하지만 그날을 <b>어떻게 기억할지</b>는, 아직 내가 정할 수 있습니다.</div>
+<div class="p a" style="left:96px;right:96px;top:1080px;font-size:28px;color:#DCD7CD">어떤 결과였든, 돌아볼 가치가 있는 무대였거든요.</div>
 {FT(2)}</section>""")
 # 03 혼내는 시간이 아닙니다
 S.append(f"""<section class="s" id="c3">{HD("NOT TO BLAME")}
