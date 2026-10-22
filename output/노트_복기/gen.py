@@ -114,7 +114,7 @@ S.append(f"""<section class="s" id="c7">{HD("WHAT COMES NEXT")}
 S.append(f"""<section class="s dark" id="c8">{HD("THE ENOCH WAY")}
 <div class="a" style="left:92px;top:150px;font-family:var(--en);font-weight:700;font-size:240px;letter-spacing:-8px;color:#2A2825;line-height:1">ENOCH</div>
 <div class="h a" style="left:92px;top:450px">그날의 무대도,<br><span style="font-weight:300;color:#EEDFD8">나의 소리였습니다.</span></div>
-<div class="p a" style="left:96px;right:96px;top:720px">다음 무대는, 지금부터 준비하면 됩니다.<br>진도보다 이해를 먼저 봅니다.</div>
+<div class="p a" style="left:96px;right:96px;top:720px">결과 다음 날에도, <b>레슨은 계속됩니다.</b><br>다음 무대는, 지금부터 함께 준비하면 돼요.<br>진도보다 이해를 먼저 봅니다.</div>
 {INFO}
 {FT(8)}</section>""")
 open('deck.html','w').write(f'<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>끝난 뒤에 하는 연습</title><style>{FONT}{CSS}</style></head><body>'+''.join(S)+'</body></html>')
