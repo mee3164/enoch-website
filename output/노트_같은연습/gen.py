@@ -41,94 +41,77 @@ CSS+='''.X{font-family:var(--en);font-weight:700;letter-spacing:-.05em;line-heig
 .step .t{font-size:31px;font-weight:700;letter-spacing:-.8px}
 .step .t span{display:block;font-size:24px;font-weight:400;color:var(--b);margin-top:8px}
 '''
-TOTAL=8
+TOTAL=7
 HD=lambda r="ENOCH NOTE — PRACTICE & MIND": f'<div class="hd"><span>ENOCH MUSIC ACADEMY</span><span>{r}</span></div>'
 FT=lambda n: f'<div class="ft"><span>같은 연습, 다른 결과</span><span>0{n} / 0{TOTAL}</span></div>'
 INFO='<div class="a" style="left:96px;right:96px;top:1040px;padding-top:22px;border-top:1px solid rgba(241,237,228,.3);display:flex;justify-content:space-between;font-size:22px;line-height:1.6"><span>에녹실용음악학원 시흥점<br><span style="color:#9A958C">경기도 시흥시 은행로 157 2층</span></span><span style="text-align:right;font-family:var(--mono)">010 3949 3666<br><span style="color:#9A958C;font-family:P,sans-serif;font-size:19px">Vocal · Guitar · Drum · Bass · Piano · MIDI · 작곡</span></span></div>'
+BIG=lambda txt: f'<div class="a" style="left:92px;right:96px;top:250px;font-size:72px;font-weight:700;letter-spacing:-3px;line-height:1.25">{txt}</div>'
 S=[]
 # 01 표지
 S.append(f"""<section class="s dark" id="c1">{HD()}
-<div class="a k" style="left:96px;top:190px">Singing Accuracy</div>
-<div class="a X" style="left:80px;top:240px;font-size:330px;color:#F1EDE4">80</div>
-<div class="a" style="left:560px;top:250px;font-size:30px;color:#C9C4BB;line-height:1.5">“신난다”고<br>말하고 부른 노래</div>
-<div class="a X" style="left:80px;top:540px;font-size:330px;color:#55524D">53</div>
-<div class="a" style="left:560px;top:550px;font-size:30px;color:#77736C;line-height:1.5">“불안하다”고<br>말하고 부른 노래</div>
-<div class="k a" style="left:96px;top:910px">Music &amp; Mind · 3 Studies</div>
-<div class="h a" style="left:92px;top:955px;font-size:80px;letter-spacing:-4px;line-height:1.18">같은 연습,<br><em>다른 결과</em></div>
+<div class="a X" style="left:80px;top:220px;font-size:330px;color:#F1EDE4">80</div>
+<div class="a" style="left:560px;top:250px;font-size:34px;color:#C9C4BB;line-height:1.5">“신난다”</div>
+<div class="a X" style="left:80px;top:520px;font-size:330px;color:#55524D">53</div>
+<div class="a" style="left:560px;top:550px;font-size:34px;color:#77736C;line-height:1.5">“불안하다”</div>
+<div class="h a" style="left:92px;top:930px;font-size:80px;letter-spacing:-4px;line-height:1.18">노래 전 한마디가,<br><em>점수를 바꿨습니다</em></div>
 {FT(1)}</section>""")
-# 02 Brooks
-bars=[('신난다',80,'#111'),('차분하다 외',69,'#8A8A8A'),('불안하다',53,'#C9C4BB')]
-bh=''.join(f'<div class="bar"><span class="l">{l}</span><span class="b" style="width:{v}%;background:{c}"></span><span class="v">{v}%</span></div>' for l,v,c in bars)
+# 02 연구1
 S.append(f"""<section class="s" id="c2">{HD("STUDY 01 · SINGING")}
-<div class="k a" style="left:96px;top:200px">Study 01 · Singing</div>
-<div class="h a" style="left:92px;top:250px">노래 전에 한 말이,<br><em>정확도를 바꿨습니다</em></div>
-<div class="p a" style="left:96px;right:96px;top:480px">노래방 게임으로 노래를 부르기 전, 한 문장을 말하게 했어요.<br>“신난다”, “차분하다”, “불안하다”. 게임이 매긴 정확도는 이랬습니다.</div>
-<div class="a" style="left:96px;right:96px;top:680px;border-top:1.5px solid #111;padding-top:44px">{bh}</div>
-<div class="src">Brooks (2014), Journal of Experimental Psychology: General · 113명 · 음정·박자·성량 기준, 수치는 약</div>
+<div class="k a" style="left:96px;top:200px">Study 01</div>
+{BIG('노래하기 전에<br><span style="font-weight:300">뭐라고 말했나요?</span>')}
+<div class="a" style="left:96px;right:96px;top:600px">
+<div class="bar"><span class="l">“신난다”</span><span class="b" style="width:80%;background:#111"></span><span class="v">80</span></div>
+<div class="bar"><span class="l">“불안하다”</span><span class="b" style="width:53%;background:#C9C4BB"></span><span class="v">53</span></div>
+</div>
+<div class="p a" style="left:96px;right:96px;top:860px">같은 노래인데, <b>한마디</b>에 따라 정확도가 달랐어요.</div>
+<div class="src">Brooks (2014) · 노래방 게임 정확도 · 약</div>
 {FT(2)}</section>""")
-# 03 떨림=설렘
-S.append(f"""<section class="s dark" id="c3">{HD("ANXIOUS = EXCITED")}
-<div class="k a" style="left:96px;top:200px">Reappraisal</div>
-<div class="h a" style="left:92px;top:250px">떨림을 없애지 말고,<br><span style="font-weight:300">설렘이라고 불러 보세요</span></div>
-<div class="a" style="left:96px;right:96px;top:560px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(241,237,228,.3);border-bottom:1px solid rgba(241,237,228,.3);padding:50px 0">
-<div style="text-align:center;flex:1"><div class="X" style="font-size:72px;color:#77736C;text-decoration:line-through">불안</div></div>
-<div style="font-family:var(--en);font-size:60px;color:#77736C">→</div>
-<div style="text-align:center;flex:1"><div class="X" style="font-size:72px;color:#F1EDE4">설렘</div></div>
+# 03 설렘
+S.append(f"""<section class="s dark" id="c3">{HD("ANXIOUS → EXCITED")}
+<div class="a" style="left:96px;right:96px;top:330px;text-align:center">
+<div class="X" style="font-size:150px;color:#55524D;text-decoration:line-through;text-decoration-thickness:6px">불안</div>
+<div style="font-family:var(--en);font-size:70px;color:#77736C;margin:40px 0">↓</div>
+<div class="X" style="font-size:150px;color:#F1EDE4">설렘</div>
 </div>
-<div class="p a" style="left:96px;right:96px;top:850px">두근거림은 둘 다 같아요. 그래서 차분해지려 애쓰는 것보다,<br>같은 두근거림을 <b>설렘</b>으로 바꿔 부르는 쪽이 더 쉬웠다는 연구입니다.</div>
+<div class="a c" style="left:0;right:0;top:960px;text-align:center;font-size:40px;font-weight:300;color:#DCD7CD">떨릴 땐, <b style="color:#F1EDE4;font-weight:700">“설렌다”</b>고 말해 보세요.</div>
 {FT(3)}</section>""")
-# 04 Duke
+# 04 연구2
 S.append(f"""<section class="s" id="c4">{HD("STUDY 02 · PIANO")}
-<div class="k a" style="left:96px;top:200px">Study 02 · Piano Practice</div>
-<div class="h a" style="left:92px;top:250px">얼마나가 아니라,<br><em>어떻게</em></div>
-<div class="p a" style="left:96px;right:96px;top:470px">피아노 전공생 17명이 같은 세 마디를 연습하고, 다음 날 다시 쳤어요.</div>
+<div class="k a" style="left:96px;top:200px">Study 02</div>
+{BIG('오래 친 사람보다,<br><span style="font-weight:300">고친 사람이 잘 쳤습니다</span>')}
 <div class="a" style="left:96px;right:96px;top:600px;display:grid;grid-template-columns:1fr 1fr;border-top:1.5px solid #111">
-<div style="padding:34px 30px 34px 0;border-right:1px solid rgba(17,17,17,.15)"><div class="k">상관없었던 것</div><div style="font-size:40px;font-weight:300;color:#9A958C;margin-top:18px;line-height:1.4;text-decoration:line-through">연습한 시간<br>반복한 횟수</div></div>
-<div style="padding:34px 0 34px 30px"><div class="k" style="color:#111">달랐던 것</div><div style="font-size:40px;font-weight:700;margin-top:18px;line-height:1.4">틀린 곳을 짚어<br>고칠 때까지</div></div>
+<div style="padding:40px 30px 40px 0;border-right:1px solid rgba(17,17,17,.15)"><div style="font-size:90px;color:#C9C4BB">✕</div><div style="font-size:40px;font-weight:300;color:#9A958C;margin-top:10px">오래 반복</div></div>
+<div style="padding:40px 0 40px 30px"><div style="font-size:90px">○</div><div style="font-size:40px;font-weight:700;margin-top:10px">틀린 두 마디</div></div>
 </div>
-<div class="p a" style="left:96px;right:96px;top:920px">다음 날 잘 친 사람들은, 오래 친 사람이 아니라<br><b>어려운 곳을 정확히 찾아 고친 사람</b>이었습니다.</div>
-<div class="src">Duke, Simmons &amp; Cash (2009), Journal of Research in Music Education · 관찰 연구</div>
+<div class="src">Duke, Simmons &amp; Cash (2009) · 피아노 전공생 17명</div>
 {FT(4)}</section>""")
-# 05 Pascual-Leone
+# 05 연구3
 S.append(f"""<section class="s" id="c5">{HD("STUDY 03 · MENTAL PRACTICE")}
-<div class="mi a" style="left:0;right:0;top:150px;height:440px"></div>
-<div class="a" style="left:96px;right:96px;top:210px;display:grid;grid-template-columns:1fr 1fr;gap:40px">
-<div><div class="k" style="color:#55524D">Group A</div><div style="font-size:44px;font-weight:700;margin-top:14px">손으로 연습</div><div style="font-size:24px;color:#55524D;margin-top:10px">하루 2시간 · 5일</div></div>
-<div><div class="k" style="color:#55524D">Group B</div><div style="font-size:44px;font-weight:700;margin-top:14px">머릿속으로 연습</div><div style="font-size:24px;color:#55524D;margin-top:10px">손은 움직이지 않고</div></div>
+<div class="mi a" style="left:0;right:0;top:620px;height:380px"></div>
+<div class="k a" style="left:96px;top:200px">Study 03</div>
+{BIG('머릿속으로만 쳐도,<br><span style="font-weight:300">뇌는 연습합니다</span>')}
+<div class="a" style="left:96px;right:96px;top:690px;display:flex;justify-content:space-around;text-align:center">
+<div><div class="X" style="font-size:110px">PLAY</div><div style="font-size:32px;font-weight:600;margin-top:22px">손으로 연습</div></div>
+<div style="font-family:var(--en);font-size:80px;padding-top:6px">≈</div>
+<div><div class="X" style="font-size:110px;font-weight:300">IMAGINE</div><div style="font-size:32px;font-weight:600;margin-top:22px">머릿속으로 연습</div></div>
 </div>
-<div class="a" style="left:96px;right:96px;top:440px;font-size:30px;font-weight:600">→ 두 그룹 모두, 손가락을 맡는 뇌 영역에 변화</div>
-<div class="k a" style="left:96px;top:650px">Study 03 · Mental Practice</div>
-<div class="h a" style="left:92px;top:700px">머릿속 연습도,<br><em>연습입니다</em></div>
-<div class="p a" style="left:96px;right:96px;top:940px">다섯 손가락 피아노 연습을 상상만 한 그룹에서도 비슷한 변화가 나타났어요.<br>손으로 하는 연습을 대신하는 게 아니라, <b>더해 주는</b> 연습입니다.</div>
-<div class="src">Pascual-Leone 외 (1995), Journal of Neurophysiology</div>
+<div class="src">Pascual-Leone 외 (1995) · 비슷한 뇌 변화가 나타남</div>
 {FT(5)}</section>""")
-# 06 정리
-S.append(f"""<section class="s dark" id="c6">{HD("WHAT THEY SHARE")}
-<div class="k a" style="left:96px;top:200px">What They Share</div>
-<div class="h a" style="left:92px;top:250px">차이를 만든 건,<br><span style="font-weight:300">마음을 어디에 두었는가</span></div>
-<div class="a" style="left:96px;right:96px;top:560px;border-top:1px solid rgba(241,237,228,.4)">
-<div class="row"><span class="n">01</span><span class="t"><b>떨림을 어떻게 부르는가</b>불안 대신, 설렘</span></div>
-<div class="row"><span class="n">02</span><span class="t"><b>어디를 연습하는가</b>오래 말고, 틀린 그곳</span></div>
-<div class="row"><span class="n">03</span><span class="t"><b>언제 연습하는가</b>악기 앞이 아닐 때도</span></div>
-</div>
-{FT(6)}</section>""")
-# 07 해 보기
-S.append(f"""<section class="s" id="c7">{HD("TRY TODAY")}
+# 06 해 보기
+S.append(f"""<section class="s" id="c6">{HD("TRY TODAY")}
 <div class="bu a" style="left:0;right:0;top:150px;height:300px"></div>
 <div class="a" style="left:96px;top:215px;font-family:var(--en);font-weight:300;font-size:130px;letter-spacing:-5px;line-height:1">Try today.</div>
-<div class="k a" style="left:96px;top:500px">Small Habits from Research</div>
-<div class="h a" style="left:92px;top:545px">오늘 연습에,<br><em>하나만 더해 보세요</em></div>
-<div class="a" style="left:96px;right:96px;top:780px">
-<div class="step"><span class="n">01</span><span class="t">시작 전, “설렌다” 한마디<span>두근거림은 그대로 두고, 이름만 바꿔서</span></span></div>
-<div class="step"><span class="n">02</span><span class="t">가장 안 되는 두 마디부터<span>처음부터 끝까지보다, 그곳을 고칠 때까지</span></span></div>
-<div class="step" style="border-bottom:1.5px solid #111"><span class="n">03</span><span class="t">돌아오는 길에, 한 번 떠올리기<span>악기 없이도 곡을 머릿속으로 따라가 보기</span></span></div>
+<div class="a" style="left:96px;right:96px;top:560px">
+<div class="step"><span class="n">01</span><span class="t" style="font-size:40px">“설렌다” 한마디</span></div>
+<div class="step"><span class="n">02</span><span class="t" style="font-size:40px">틀린 곳부터</span></div>
+<div class="step" style="border-bottom:1.5px solid #111"><span class="n">03</span><span class="t" style="font-size:40px">머릿속으로 한 번 더</span></div>
 </div>
-{FT(7)}</section>""")
-# 08 마무리
-S.append(f"""<section class="s dark" id="c8">{HD("THE ENOCH WAY")}
+{FT(6)}</section>""")
+# 07 마무리
+S.append(f"""<section class="s dark" id="c7">{HD("THE ENOCH WAY")}
 <div class="a" style="left:92px;top:150px;font-family:var(--en);font-weight:700;font-size:240px;letter-spacing:-8px;color:#2A2825;line-height:1">ENOCH</div>
-<div class="h a" style="left:92px;top:450px">같은 곡도,<br><span style="font-weight:300;color:#F1E8CB">사람마다 다르게 가르칩니다.</span></div>
-<div class="p a" style="left:96px;right:96px;top:720px">연습의 양보다, 연습을 대하는 마음까지.<br>진도보다 이해를 먼저 봅니다. 모든 과정 <b>1:1</b>.</div>
+<div class="h a" style="left:92px;top:450px">연습의 양보다,<br><span style="font-weight:300;color:#F1E8CB">연습하는 마음까지.</span></div>
+<div class="p a" style="left:96px;right:96px;top:720px">같은 곡도, 사람마다 다르게 가르칩니다.<br>모든 과정 <b>1:1</b>.</div>
 {INFO}
-{FT(8)}</section>""")
+{FT(7)}</section>""")
 open('deck.html','w').write(f'<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>같은 연습, 다른 결과</title><style>{FONT}{CSS}</style></head><body>'+''.join(S)+'</body></html>')
