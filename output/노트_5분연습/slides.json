@@ -1,0 +1,53 @@
+{
+  "title": "ENOCH NOTE — 5분 연습",
+  "masthead": "ENOCH NOTE — PRACTICE",
+  "footer": "5분 연습",
+  "ticker": "ENOCH NOTE — FIVE MINUTES — 5분 연습",
+  "theme": "ivory",
+  "slides": [
+    {
+      "layout": "photo",
+      "image": "images/공간/피아노룸_01.jpg",
+      "imageHeight": 760,
+      "title": "연습은,\n5분이면 시작됩니다.",
+      "body": "시작의 기준을 낮추는 것도 실력입니다."
+    },
+    {
+      "layout": "point",
+      "kicker": "Too Big to Start",
+      "title": "한 시간은 해야\n연습 같다는 생각.",
+      "body": [
+        "곡은 처음부터 끝까지, 최소 한 시간은 앉아서.",
+        "기준이 거창해지면, 악기 앞에 앉는 것부터 어려워져요.",
+        "그렇게 미룬 날이 하루, 이틀 쌓입니다."
+      ]
+    },
+    {
+      "layout": "point",
+      "theme": "butter",
+      "kicker": "Five Minutes",
+      "title": "5분이면\n할 수 있는 연습.",
+      "body": [
+        "막히는 두 마디만 한 번.",
+        "어제 고친 곳을 다시 한 번.",
+        "**짧아도, 오늘 악기에 닿았다는 것.**"
+      ],
+      "doodles": [{ "name": "note", "x": 820, "y": 900, "size": 150, "rotate": 10, "fill": "cream" }]
+    },
+    {
+      "layout": "point",
+      "kicker": "Practice Room",
+      "title": "5분이라도,\n들러서 치고 가세요.",
+      "body": [
+        "ENOCH 수강생은 운영시간 안에 연습실을 자유롭게 이용할 수 있습니다.",
+        "평일 13:00–22:00 · 토 10:00–18:00"
+      ]
+    },
+    {
+      "layout": "closing",
+      "theme": "black",
+      "ghost": "ENOCH",
+      "principle": "준비가 다 된 날보다,\n시작한 오늘."
+    }
+  ]
+}
