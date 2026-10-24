@@ -1,9 +1,8 @@
-# 칠판 설명 영상 "같은 연습, 다른 결과" — 에녹이 진행 (1080×1920, 릴스)
+# 칠판 설명 영상 (에녹이 모양은 ../디어에녹_01_무대떨림/mascot.py 기준)
+# "같은 연습, 다른 결과" — 에녹이 진행 (1080×1920, 릴스)
 # python3 gen.py → video.html (브라우저에서 열면 재생) → node record.mjs 로 MP4
 import sys, os
 HERE = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, os.path.join(HERE, '../디어에녹_01_무대떨림'))
-from mascot import mascot
 
 INK = '#111'; SAGE = '#DCE2D3'; GRAY = '#8A8A8A'; IV = '#F1EDE4'
 END = 14.5
@@ -115,17 +114,40 @@ S.append(show(
     + pen(540, 740, '먼저 봅니다.', 84, 12.5, 0.45)
     + draw(star(250, 880, 26), 13.0, 0.3, sw=4)
     + draw('M790 860 c 30 -10 50 10 40 30 c -10 20 -40 15 -40 -5 c 0 -25 40 -35 60 -15', 13.1, 0.35, sw=4)
-    + fade(f'<text x="540" y="975" font-size="26" letter-spacing="8" text-anchor="middle" font-family="P" font-weight="500" fill="{GRAY}">ENOCH MUSIC ACADEMY</text>', 13.3)
     , 12, END + 1))
 
-# ── 에녹이 (오른쪽 아래, 장면마다 표정) ─────────
+# ── 에녹이 (오른쪽 아래) — 말할 때 입이 열리고, 지시봉으로 칠판을 가리킨다 ──
 MX, MY, MS = 835, 1240, 0.82
-def m(a, b, **kw):
-    return show(mascot(MX, MY, MS, **kw), a, b)
-M = (m(0, 3, face='calm', arms='down') + m(3, 5.2, face='smile', arms='down')
-     + m(5.2, 9.5, face='smile', arms='wave', flip=True) + m(9.5, 12, face='smile', arms='down')
-     + m(12, END + 1, face='happy', arms='up'))
-
+SHX, SHY = MX - 80 * MS, MY - 6 * MS          # 왼쪽 어깨 (지시봉 팔의 회전 중심)
+def body():
+    g = [f'<g transform="translate({MX},{MY}) scale({MS})" stroke="{INK}" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none">',
+         '<path d="M70 -10 V -250"/><path d="M70 -250 C 110 -220, 140 -200, 120 -140"/>',
+         '<path d="M-30 58 L -38 110 M 30 58 L 36 110"/><path d="M-38 110 h -26 M 36 110 h 26"/>',
+         '<path d="M 92 0 C 120 20, 128 50, 122 72"/>',
+         '<ellipse cx="0" cy="0" rx="95" ry="70" transform="rotate(-18)" fill="#FFFDF7"/>',
+         '<g stroke="none" fill="#DDE37C"><ellipse cx="-50" cy="22" rx="16" ry="10"/><ellipse cx="44" cy="4" rx="16" ry="10"/></g>',
+         # 눈: 뜬 눈 / 깜빡 / 웃는 눈
+         '<g id="eo" fill="#111" stroke="none"><ellipse cx="-30" cy="-8" rx="7" ry="9"/><ellipse cx="22" cy="-22" rx="7" ry="9"/></g>',
+         '<path id="ec" d="M-38 -6 h 16 M 14 -20 h 16" stroke-width="5" opacity="0"/>',
+         '<path id="eh" d="M-38 -4 q 8 -10 16 0 M 14 -18 q 8 -10 16 0" stroke-width="5" opacity="0"/>',
+         # 입: 다문 입 / 벌린 입
+         '<path id="mc" d="M-14 16 Q 0 28 14 10" stroke-width="5"/>',
+         '<g id="mo" opacity="0"><path d="M-16 10 Q 0 6 16 4 Q 18 30 0 34 Q -18 32 -16 10 Z" fill="#111" stroke-width="4"/>'
+         '<path d="M-8 28 Q 0 22 9 27" stroke="#EEDFD8" stroke-width="5"/></g>',
+         '</g>']
+    return ''.join(g)
+arm = (f'<g id="arm" transform="translate({SHX:.0f} {SHY:.0f}) rotate(-120)">'
+       f'<path d="M0 0 C 22 -10, 44 -6, 64 0" stroke="{INK}" stroke-width="5" fill="none" stroke-linecap="round"/>'
+       f'<path id="stk" d="M70 0 L420 0" stroke="#7A6A55" stroke-width="7" stroke-linecap="round"/>'
+       f'<circle id="tip" cx="422" cy="0" r="8" fill="{INK}"/>'
+       f'<circle cx="68" cy="0" r="12" fill="#FFFDF7" stroke="{INK}" stroke-width="5"/></g>')
+M = arm + body()
+# 지시봉이 가리킬 곳 (초, x, y) — 칠판에 그림이 그려지는 자리를 따라간다
+POINT = [(0, 540, 520), (0.55, 500, 670), (0.8, 500, 830), (1.6, 870, 690), (2.0, 870, 830),
+         (3.1, 540, 500), (3.7, 540, 660),
+         (5.3, 330, 530), (5.7, 680, 515), (6.8, 540, 740), (7.9, 540, 890),
+         (9.6, 540, 580), (10.3, 540, 790),
+         (12.1, 540, 610), (12.5, 540, 730)]
 SUBS = [(0, 3, '같은 시간 연습해도, 결과는 다릅니다.'),
         (3, 5.2, '피아노 전공생 17명을 지켜본 연구에서'),
         (5.2, 7.2, '오래 친 사람보다'),
@@ -165,7 +187,7 @@ text[font-family=N]{{font-family:'Nanum Pen Script'}}
 </div>
 <div id="warm"></div>
 <script>
-const END={END};
+const END={END}; const SUBT={[[a,b] for a,b,_ in SUBS]}; const POINT={[list(p) for p in POINT]}; const SH=[{SHX},{SHY}];
 const cl=x=>Math.max(0,Math.min(1,x)); const ease=p=>1-Math.pow(1-p,2);
 function render(t){{
   for(const e of document.querySelectorAll('[data-k]')){{
@@ -176,7 +198,29 @@ function render(t){{
       else if(k==='wipe')e.setAttribute('width',p*e.dataset.w);
       else if(k==='fade')e.setAttribute('opacity',p);}}
   }}
-  document.getElementById('mb').setAttribute('transform',`translate(0 ${{(Math.sin(t*Math.PI*2/1.4)*5).toFixed(2)}})`);
+  document.getElementById('mb').setAttribute('transform',`translate(0 ${{(Math.sin(t*Math.PI*2/1.4)*4).toFixed(2)}})`);
+  // 말하기: 자막이 떠 있는 동안 입을 여닫는다
+  let talk=false; for(const [a,b] of SUBT) if(t>a+0.1&&t<b-0.45) talk=true;
+  const syl=Math.floor(t*9); const open=talk&&((syl*7919+13)%5)<3;
+  document.getElementById('mo').setAttribute('opacity',open?1:0);
+  document.getElementById('mc').setAttribute('opacity',open?0:1);
+  // 눈: 마지막 장면은 웃는 눈, 그 전에는 가끔 깜빡
+  const happy=t>=12.6, blink=!happy&&(t%2.6)>2.48;
+  document.getElementById('eh').setAttribute('opacity',happy?1:0);
+  document.getElementById('ec').setAttribute('opacity',blink?1:0);
+  document.getElementById('eo').setAttribute('opacity',(!happy&&!blink)?1:0);
+  // 지시봉: 어깨에서 목표 지점 방향으로 돌린다
+  const ang=([,x,y])=>Math.atan2(y-SH[1],x-SH[0])*180/Math.PI;
+  let i=0; while(i+1<POINT.length&&POINT[i+1][0]<=t) i++;
+  const prev=i>0?ang(POINT[i-1]):ang(POINT[0]), cur=ang(POINT[i]);
+  const p=ease(cl((t-POINT[i][0])/0.35));
+  const wob=Math.sin(t*Math.PI*2/0.9)*1.5;
+  // 지시봉 길이: 목표 바로 앞(약 70px)에서 멈춰 글자를 가리지 않게
+  const dist=([,x,y])=>Math.hypot(x-SH[0],y-SH[1]);
+  const L=Math.max(260,Math.min(430,(dist(POINT[i>0?i-1:0])+(dist(POINT[i])-dist(POINT[i>0?i-1:0]))*p)-70));
+  document.getElementById('stk').setAttribute('d',`M70 0 L${{L.toFixed(1)}} 0`);
+  document.getElementById('tip').setAttribute('cx',(L+2).toFixed(1));
+  document.getElementById('arm').setAttribute('transform',`translate(${{SH[0]}} ${{SH[1]}}) rotate(${{(prev+(cur-prev)*p+wob).toFixed(2)}})`);
 }}
 document.getElementById('warm').textContent=[...document.querySelectorAll('text')].map(e=>e.textContent).join('');
 window.render=render;
