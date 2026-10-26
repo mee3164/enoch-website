@@ -1,0 +1,20 @@
+[
+  {"id": "kimilhyo", "nameKo": "김일효", "nameEn": "KIM IL HYO", "subject": "Vocal", "photo": "images/강사/김일효_01.jpg", "focus": [0.61, 0.5], "zoom": 2.0,
+   "career": ["불후의 명곡 · 유희열의 스케치북 코러스 세션 참여 다수", "서영은 「비오는 압구정」 코러스 세션", "서울신학대학교 출강", "부천 여월중학교 · 서울 배화여자중학교 출강", "재즈 라이브 — 합정 Jazzda", "이태원 번 라운지 시가바 · 용산 드래곤시티호텔", "문화예술공동체 더뮤엘", "그림책 콘서트 객원 보컬 참여 다수"]},
+  {"id": "kimjisu", "nameKo": "김지수", "nameEn": "KIM JISU", "subject": "Vocal", "photo": "images/강사/김지수_01.png",
+   "career": ["서울예술대학교 졸업", "이무진 세션"]},
+  {"id": "leesooin", "nameKo": "이수인", "nameEn": "LEE SOO IN", "subject": "Vocal", "photo": "images/강사/이수인_01.jpg",
+   "career": ["호원대 실용음악과 보컬 전공", "김조한 6집 〈Lover & Friend〉 듀엣", "조성모 · 김조한 · 김태우 · 알리 · 더원", "DK · 서인영 등 코러스 세션"]},
+  {"id": "kimgunyu", "nameKo": "김건유", "nameEn": "KIM GUNYU", "subject": "Guitar", "photo": "images/강사/김건유_01.jpg",
+   "career": ["한양대학교 실용음악과", "자라섬 재즈페스티벌 2016 · 2017", "연세콘서트 한양대학교 재즈빅밴드", "'굿바이마이파더' 기타리스트 출연", "노놀 라이브 '성현주편' · 호텔 코리아나 '명곡 리마스터'", "장세아 · 이승아 · 5inch 녹음 세션", "단편영화 '하고싶다' '구라청춘' OST", "일본 · 폴란드 등 해외 공연"]},
+  {"id": "moonyulim", "nameKo": "문유림", "nameEn": "MOON YULIM", "subject": "Guitar", "photo": "images/강사/문유림_01.jpg",
+   "career": ["팀 으마카세 편곡 · 기타 세션", "리아노 · 미도호 · 나구 · 김나비 등", "싱어송라이터 앨범 기타 세션"]},
+  {"id": "hansanghee", "nameKo": "한상희", "nameEn": "HAN SANG HEE", "subject": "Drum", "photo": "images/강사/한상희_01.jpg",
+   "career": ["경희대 대학원 실용음악과 출강 (전)", "호원대 실용음악과 졸업 (Drum Major)", "경향 실용음악 콩쿠르 드럼 1위", "검정치마 전속 세션 · 윤종신 전국투어"]},
+  {"id": "kimjinkyung", "nameKo": "김진경", "nameEn": "KIM JIN KYUNG", "subject": "Bass", "photo": "images/강사/김진경_01.jpg",
+   "career": ["옥상달빛 정규 3집 「40」 6트랙 · 「찾아주세요」 녹음", "신지훈 단독콘서트 「별과 추억과 시」 · 「눈이 녹은 자리」", "EBS 스페이스 공감 신지훈편", "권인하 단독콘서트 「포효」", "『타브탈출 베이스기타』 책 출간"]},
+  {"id": "kimhyeokjae", "nameKo": "김혁재", "nameEn": "KIM HYEOKJAE", "subject": "Bass", "photo": "images/강사/김혁재_01.jpg",
+   "career": ["명지전문대 실용음악과 졸업", "밴드 24아워즈 베이시스트", "정규 · EP · 싱글 작사 · 편곡 · 발매", "MEMI 세션 베이시스트 · 해외 투어"]},
+  {"id": "kimgunwoo", "nameKo": "김건우", "nameEn": "KIM GUNWOO", "subject": "MIDI", "photo": "images/강사/김건우_01.jpg",
+   "career": ["네이버 웹툰 〈이츠마인〉 삽입곡", "유튜버 찰스 · 닥터후 곡 작사 · 작곡 · 편곡", "KFN 라디오 로고송 작곡 · 편곡", "네이버 뮤지션리그 일간 7위", "유튜브 쇼츠 BGM — 쏘영 · 고기남자 · 지뻔뻔 외", "크리에이터미디어대전 2026 공연", "정규 · EP · 싱글 다수 발매", "백석예술대학교 졸업"]}
+]

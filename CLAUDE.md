@@ -157,6 +157,7 @@
 - PNG 출력: `npm run cardnews:render -- output/<주제 폴더>` (처음 한 번 `npm install && npx playwright install chromium`)
 - 레이아웃 종류와 문구 필드: `templates/SLIDES_SCHEMA.md`
 - 확정본과 나란히 비교: `node scripts/compare.mjs output/<주제 폴더>` → `output/<주제 폴더>/compare/`
+- 모바일 홈페이지: `site/` (`python3 site/build.py` → `site/dist/`). 강사 추가·상담 링크는 `site/README.md`
 
 ## 10. 기준 디자인 (확정본)
 
