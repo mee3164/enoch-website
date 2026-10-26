@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mee3164.github.io/enoch-website/sitemap.xml

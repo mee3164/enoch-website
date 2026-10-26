@@ -1,0 +1,30 @@
+# site/dist/ 를 GitHub Pages로 공개 → https://mee3164.github.io/enoch-website/
+# 처음 한 번: 저장소 Settings → Pages → Source를 "GitHub Actions"로 바꾼다.
+name: Deploy site
+on:
+  push:
+    branches: [main]
+    paths: ["site/dist/**", ".github/workflows/pages.yml"]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: rm -f site/dist/artifact.html   # claude.ai 미리보기용 파일은 공개하지 않음
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/dist
+      - id: deployment
+        uses: actions/deploy-pages@v4
