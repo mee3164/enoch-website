@@ -291,3 +291,13 @@ page = f'''<!doctype html>
 </html>'''
 open(os.path.join(DIST, 'index.html'), 'w').write(page)
 print('site/dist/index.html', f'teachers {len(T)}')
+
+# ── 미리보기용 (claude.ai 링크): 문서 껍데기를 뺀 같은 페이지 → dist/artifact.html ──
+import re
+head = page[page.index('<head>') + 6:page.index('</head>')]
+body = page[page.index('<body>') + 6:page.index('</body>')]
+head = re.sub(r'<meta charset[^>]*>\s*|<meta name="viewport"[^>]*>\s*', '', head)
+head = re.sub(r'<title>.*?</title>', '<title>에녹실용음악학원 홈페이지</title>', head, count=1, flags=re.S)
+head = head.replace('header{position:sticky;top:0;', 'header{position:sticky;top:env(safe-area-inset-top,0px);')
+head = head.replace('body{background:var(--iv);', 'body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:25;background:#F1EDE4}\nbody{background:var(--iv);')
+open(os.path.join(DIST, 'artifact.html'), 'w').write(head + body)
