@@ -259,7 +259,8 @@ page = f'''<!doctype html>
 <meta property="og:type" content="website">
 <meta property="og:title" content="{e(B['name'])}">
 <meta property="og:description" content="{e(DESC)}">
-<meta property="og:image" content="{HERO}">
+<meta property="og:image" content="{SITE_URL}{HERO}">
+{f'<link rel="canonical" href="{SITE_URL}">' if SITE_URL else ''}
 <meta property="og:locale" content="ko_KR">
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
 <style>{CSS}</style>
@@ -290,6 +291,9 @@ page = f'''<!doctype html>
 </body>
 </html>'''
 open(os.path.join(DIST, 'index.html'), 'w').write(page)
+if SITE_URL:
+    open(os.path.join(DIST, 'robots.txt'), 'w').write(f'User-agent: *\nAllow: /\nSitemap: {SITE_URL}sitemap.xml\n')
+    open(os.path.join(DIST, 'sitemap.xml'), 'w').write(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>{SITE_URL}</loc></url></urlset>\n')
 print('site/dist/index.html', f'teachers {len(T)}')
 
 # ── 미리보기용 (claude.ai 링크): 문서 껍데기를 뺀 같은 페이지 → dist/artifact.html ──
