@@ -103,12 +103,12 @@ cards.push(`<section class="c">${svg(
 <p class="body"><b>지금, 잘하고 있어요.</b></p>
 ${FOOT(5)}</section>`);
 
-// 06 마무리 (검정)
+// 06 마무리 (검정) — 학원 사진 두 장
 cards.push(`<section class="c dark">${svg(
-  grid({ x: 830, y: 460, count: 1, cell: 130, cols: 1, states: [3], ink: IV, num: false }) +
-  doodle({ name: "star", x: 855, y: 482, size: 82, rotate: 10, fill: "cream", color: IV, stroke: 6 })
+  grid({ x: 860, y: 640, count: 1, cell: 120, cols: 1, states: [3], ink: IV, num: false }) +
+  doodle({ name: "star", x: 879, y: 660, size: 80, rotate: 10, fill: "cream", color: IV, stroke: 6 })
 )}${HEAD}
-<p class="ghost">ENOCH</p>
+<div class="pics"><img src="../../images/공간/기타존_01.jpg" style="object-position:40% 60%"><img src="../../images/공간/미디룸_02.jpg" style="object-position:30% 70%"></div>
 <h2 class="close">하루 한 칸을<br>채울 자리.</h2>
 <p class="body">ENOCH 수강생은 운영시간 안에 연습실을 자유롭게 이용할 수 있습니다.<br>같은 곡도, 사람마다 다르게 가르칩니다.</p>
 <div class="info"><div><p>${brand.name}</p><p>${brand.address}</p></div><div class="r"><p class="tel">${brand.phone}</p><p>${brand.subjects}</p></div></div>
@@ -136,8 +136,8 @@ h2{position:absolute;left:96px;top:196px;font-size:60px;line-height:1.28;font-we
 .body b{color:${BK};font-weight:700;font-size:34px}
 .c .body{top:1090px}
 .dark .ghost{position:absolute;left:84px;top:110px;font-size:250px;font-weight:700;letter-spacing:-8px;color:#222}
-.dark h2.close{top:470px}
-.dark .body{top:690px;bottom:auto;color:#bbb;font-size:30px}
+.dark h2.close{top:640px}\n.pics{position:absolute;left:96px;right:96px;top:140px;height:440px;display:grid;grid-template-columns:1fr 1fr;gap:16px}.pics img{width:100%;height:440px;display:block;object-fit:cover;filter:saturate(.7) contrast(1.02)}
+.dark .body{top:830px;bottom:auto;color:#bbb;font-size:30px}
 .info{position:absolute;left:96px;right:96px;bottom:150px;display:flex;justify-content:space-between;font-size:20px;color:#bbb;line-height:1.7;border-top:1px solid #444;padding-top:20px}
 .info .r{text-align:right}.info .tel{font-family:var(--mono);font-size:24px;color:${IV};letter-spacing:2px}
 `;
