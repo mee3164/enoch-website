@@ -4,7 +4,6 @@ import { writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 import { createRequire } from "node:module";
-import { doodle } from "../../scripts/doodles.mjs";
 
 const dir = path.dirname(fileURLToPath(import.meta.url));
 const require = createRequire(path.join(dir, "../../package.json"));
@@ -47,9 +46,7 @@ const GX = 193, GY0 = 470;
 const cards = [];
 // 01 표지
 cards.push(`<section class="c">${svg(
-  grid({ x: GX, y: GY0, states: S("o"), ring: [] }) +
-  doodle({ name: "star", x: 900, y: 1075, size: 100, rotate: -12, fill: "cream" }) +
-  doodle({ name: "notes", x: 790, y: 150, size: 190, rotate: 8, fill: "sage" })
+  grid({ x: GX, y: GY0, states: S("o"), ring: [] })
 )}${HEAD}
 <p class="kick">Day by Day</p>
 <h1 class="big">오늘은,<br>한 칸.</h1>
@@ -58,8 +55,7 @@ ${FOOT(1)}</section>`);
 
 // 02 빠진 날
 cards.push(`<section class="c">${svg(
-  grid({ x: GX, y: GY0, states: S("###.##.##o"), ring: [3, 6] }) +
-  doodle({ name: "heart", x: 900, y: 1080, size: 100, rotate: 10, fill: "sage" })
+  grid({ x: GX, y: GY0, states: S("###.##.##o"), ring: [3, 6] })
 )}${HEAD}
 <p class="kick">Missed Days</p>
 <h2>빠진 날이 있어도,<br>채운 칸은<br>지워지지 않습니다.</h2>
@@ -68,8 +64,7 @@ ${FOOT(2)}</section>`);
 
 // 03 잘 안 된 날
 cards.push(`<section class="c">${svg(
-  grid({ x: GX, y: GY0, states: S("###.##.####~##o"), ring: [11] }) +
-  doodle({ name: "guitar", x: 860, y: 1050, size: 150, rotate: 14, fill: "sage" })
+  grid({ x: GX, y: GY0, states: S("###.##.####~##o"), ring: [11] })
 )}${HEAD}
 <p class="kick">On Shaky Days</p>
 <h2>잘 안 된 날도<br>한 칸입니다.</h2>
@@ -82,9 +77,7 @@ const small = (x, y, st, label) =>
   `<text x="${x}" y="${y - 22}" font-size="24" font-family="var(--mono)" letter-spacing="3" fill="${GY}">${label}</text>`;
 cards.push(`<section class="c">${svg(
   small(96, 520, "##.#.##.#.##.##o", "MY DAYS") +
-  small(572, 520, "######.#####.###~##o", "SOMEONE ELSE") +
-  doodle({ name: "drum", x: 810, y: 170, size: 170, rotate: -8, fill: "sage" }) +
-  doodle({ name: "mic", x: 860, y: 1050, size: 140, rotate: 12, fill: "sage" })
+  small(572, 520, "######.#####.###~##o", "SOMEONE ELSE")
 )}${HEAD}
 <p class="kick">Your Own Pace</p>
 <h2>칸을 채우는 속도는<br>사람마다 다릅니다.</h2>
@@ -93,10 +86,7 @@ ${FOOT(4)}</section>`);
 
 // 05 한 달 뒤
 cards.push(`<section class="c">${svg(
-  grid({ x: GX, y: GY0, states: S("###.##.####~########.####~###o") }) +
-  doodle({ name: "star", x: 560, y: 210, size: 110, rotate: 14, fill: "cream" }) +
-  doodle({ name: "keys", x: 850, y: 1065, size: 140, rotate: -6, fill: "sage" }) +
-  doodle({ name: "notes", x: 790, y: 160, size: 170, rotate: -10, fill: "sage" })
+  grid({ x: GX, y: GY0, states: S("###.##.####~########.####~###o") })
 )}${HEAD}
 <p class="kick">A Month Later</p>
 <h2>한 달 뒤,<br>이만큼.</h2>
@@ -105,8 +95,7 @@ ${FOOT(5)}</section>`);
 
 // 06 마무리 (검정) — 사진 한 장
 cards.push(`<section class="c dark">${svg(
-  grid({ x: 860, y: 640, count: 1, cell: 120, cols: 1, states: [3], ink: IV, num: false }) +
-  doodle({ name: "star", x: 879, y: 660, size: 80, rotate: 10, fill: "cream", color: IV, stroke: 6 })
+  grid({ x: 860, y: 640, count: 1, cell: 120, cols: 1, states: [3], ink: IV, num: false })
 )}${HEAD}
 <div class="pics"><img src="../../images/기타/라이프_악보카페_02.jpg" style="object-position:50% 32%"></div>
 <h2 class="close">하루 한 칸을<br>채울 자리.</h2>
