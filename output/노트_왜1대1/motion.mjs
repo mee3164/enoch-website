@@ -1,4 +1,4 @@
-// 그래프가 있는 2·4장을 움직이는 영상으로 → 02_motion.mp4 · 04_motion.mp4 (1080×1350, 6초, 마지막 장면에서 멈춤)
+// 그래프가 있는 2·4장을 움직이는 영상으로 → 02_motion.mp4(6초) · 04_motion.mp4(4초) (1080×1350, 마지막 장면에서 멈춤)
 // 먼저 node gen.mjs 로 deck.html을 만든 뒤 실행
 import { execFileSync } from "node:child_process";
 import { mkdirSync, rmSync } from "node:fs";
@@ -39,11 +39,11 @@ await p.evaluate(() => {
   const s4 = secs[3], svg4 = s4.querySelector(".fig svg");
   const P4 = prep(svg4, (el, i) => {
     const tag = el.tagName;
-    if (i === 0) return ["draw", 0.3, 1.4];
-    if (i === 1) return ["draw", 1.6, 1.4];
-    if (tag === "circle") return ["fade", i === 2 ? 1.6 : 2.9, 0.4];
+    if (i === 0) return ["draw", 0.15, 0.8];
+    if (i === 1) return ["draw", 0.9, 0.8];
+    if (tag === "circle") return ["fade", i === 2 ? 0.9 : 1.65, 0.3];
     if (tag === "line") return ["fade", 0, 0.4];
-    if (tag === "text") return ["fade", el.textContent.startsWith("A") ? 1.7 : el.textContent.startsWith("B") ? 3.0 : 0, 0.5];
+    if (tag === "text") return ["fade", el.textContent.startsWith("A") ? 0.95 : el.textContent.startsWith("B") ? 1.7 : 0, 0.35];
     return ["fade", 0, 0.3];
   });
   const apply = (P, t) => P.forEach(({ el, kind, t0, d }) => {
@@ -59,7 +59,7 @@ await p.evaluate(() => {
 for (const which of [2, 4]) {
   const fr = path.join(dir, `_frames${which}`); rmSync(fr, { recursive: true, force: true }); mkdirSync(fr);
   const el = (await p.$$(".c"))[which - 1];
-  for (let i = 0; i < FPS * DUR; i++) {
+  for (let i = 0; i < FPS * (which === 4 ? 4 : DUR); i++) {
     await p.evaluate(([w, t]) => window.renderAt(w, t), [which, i / FPS]);
     await el.screenshot({ path: path.join(fr, String(i).padStart(4, "0") + ".png") });
   }
