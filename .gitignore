@@ -1,3 +1,6 @@
 node_modules/
 .DS_Store
 __pycache__/
+
+# 게시 동의 확인 전 수강생 사진 (공개 저장소에 올리지 않음)
+images/학생/드럼레슨_01.jpg
