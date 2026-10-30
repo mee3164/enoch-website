@@ -63,12 +63,12 @@ function hills() {
 }
 
 const cards = [];
-// 01 표지
-cards.push(`<section class="c">${HEAD("ENOCH NOTE — WHY 1:1")}
-<img class="cover" src="src/cover.jpg">
-<p class="kick k1">Why 1:1</p>
-<h1>1:1로 배우면<br>빨리 느는 이유,</h1>
-<p class="h1sub">알고 나면 납득되는 3가지</p>
+// 01 표지 — 사진 전면, 글자는 덜어낸 버전
+cards.push(`<section class="c dark cov">
+<img class="bgfull" src="src/cover_full.jpg"><div class="shade"></div>
+${HEAD("ENOCH NOTE — WHY 1:1")}
+<h1 class="covt">1:1로 배우면<br>빨리 느는 이유,</h1>
+<p class="covs">알고 나면 납득되는 3가지</p>
 ${FOOT(1)}</section>`);
 
 // 02 블룸
@@ -119,6 +119,12 @@ cards.push(`<section class="c dark">${HEAD("THE ENOCH WAY")}
 ${FOOT(6)}</section>`);
 
 const CSS = `
+.cov .hd,.cov .ft,.cov .covt,.cov .covs{z-index:2}
+.bgfull{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05) brightness(.92)}
+.shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(17,17,17,.45) 0%,rgba(17,17,17,0) 20%,rgba(17,17,17,0) 52%,rgba(17,17,17,.82) 82%)}
+.covt{position:absolute;left:96px;bottom:250px;font-size:76px;line-height:1.2;font-weight:700;letter-spacing:-2px}
+.covs{position:absolute;left:96px;bottom:180px;font-size:36px;font-weight:300;color:#ddd}
+
 @font-face{font-family:P;src:url(../../templates/fonts/Pretendard-Light.woff2);font-weight:300}
 @font-face{font-family:P;src:url(../../templates/fonts/Pretendard-Regular.woff2);font-weight:400}
 @font-face{font-family:P;src:url(../../templates/fonts/Pretendard-SemiBold.woff2);font-weight:600}
