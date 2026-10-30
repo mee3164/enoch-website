@@ -83,7 +83,7 @@ ${FOOT(2)}</section>`);
 // 03 피드백
 cards.push(`<section class="c">${HEAD("STUDY 02 — FEEDBACK")}
 <p class="kick">Study 02</p>
-<h2 class="big2">틀린 그 순간,<br>그 사람에게 맞는 한마디.</h2>
+<h2 class="big2">혼자서는 들리지 않는 것을,<br>옆에서 들어 주는 사람.</h2>
 <img class="hand" src="src/hand.jpg">
 <p class="body">배움에 영향을 주는 요인을 모아 본 연구에서, 피드백은 효과가 큰 쪽에 꼽힙니다. 특히 <b>무엇을, 어떻게 고칠지</b> 알려 주는 피드백이 효과가 컸어요.</p>
 <p class="note n3">Hattie &amp; Timperley (2007) · 196개 연구를 모은 분석</p>
