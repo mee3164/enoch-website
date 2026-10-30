@@ -1,4 +1,4 @@
-// 1:1로 배우면 빨리 느는 이유, 연구가 말하는 3가지 (1080×1350 × 6)
+// 1:1로 배우면 빨리 느는 이유, 알고 나면 납득되는 3가지 (1080×1350 × 6)
 // node output/노트_왜1대1/gen.mjs → deck.html + 01.png ~ 06.png
 // 사진: src/ (레슨 영상에서 얼굴이 나오지 않게 자른 장면 — 공개 저장소에는 올리지 않음)
 import { writeFileSync } from "node:fs";
@@ -68,7 +68,7 @@ cards.push(`<section class="c">${HEAD("ENOCH NOTE — WHY 1:1")}
 <img class="cover" src="src/cover.jpg">
 <p class="kick k1">Why 1:1</p>
 <h1>1:1로 배우면<br>빨리 느는 이유,</h1>
-<p class="h1sub">연구가 말하는 3가지</p>
+<p class="h1sub">알고 나면 납득되는 3가지</p>
 ${FOOT(1)}</section>`);
 
 // 02 블룸
