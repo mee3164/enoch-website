@@ -1,0 +1,64 @@
+{
+  "title": "ENOCH NOTE — 배우고 싶다는 마음도, 재능",
+  "masthead": "ENOCH NOTE — START",
+  "footer": "마음도 재능",
+  "ticker": "ENOCH NOTE — START — 배우고 싶다는 마음",
+  "theme": "ivory",
+  "slides": [
+    {
+      "layout": "photo",
+      "image": "images/공간/기타존_01.jpg",
+      "imagePosition": "40% 60%",
+      "imageHeight": 760,
+      "title": "배우고 싶다는 마음도,\n재능입니다.",
+      "body": "시간은 어차피 흐르니까요."
+    },
+    {
+      "layout": "point",
+      "kicker": "Time Passes",
+      "title": "시간은\n어차피 흐릅니다.",
+      "body": [
+        "배워도, 미뤄도 1년은 똑같이 지나갑니다.",
+        "달라지는 건, 그 1년 동안 쌓인 것.",
+        "**같은 시간, 다른 1년이에요.**"
+      ]
+    },
+    {
+      "layout": "point",
+      "theme": "sage",
+      "kicker": "One Year Later",
+      "title": "1년 뒤,\n두 사람.",
+      "body": [
+        "한 사람은 아직 \"언젠가\"를 말합니다.",
+        "한 사람은 좋아하는 곡 하나를 끝까지 칩니다.",
+        "**둘을 가른 건, 시작한 날 하나.**"
+      ]
+    },
+    {
+      "layout": "point",
+      "kicker": "The Wanting",
+      "title": "하고 싶다는 마음이\n오래 가게 합니다.",
+      "body": [
+        "귀에 남는 소리, 자꾸 따라 부르게 되는 노래.",
+        "그 끌림이 있어야 연습이 이어지거든요.",
+        "**그래서 그 마음도 재능입니다.**"
+      ]
+    },
+    {
+      "layout": "point",
+      "kicker": "Not Too Late",
+      "title": "늦었다고\n느껴질 때.",
+      "body": [
+        "악기를 처음 잡는 날은 사람마다 다릅니다.",
+        "오늘 시작하면, 1년 뒤의 나는 1년을 배운 사람.",
+        "ENOCH은 입시 · 취미 · 성인 · 전문, **모든 과정을 1:1로** 가르칩니다."
+      ]
+    },
+    {
+      "layout": "closing",
+      "theme": "black",
+      "ghost": "ENOCH",
+      "principle": "배우고 싶은 마음이 있다면,\n오늘부터."
+    }
+  ]
+}
