@@ -1,0 +1,95 @@
+{
+  "title": "ENOCH NOTE — 뇌가 기억하는 연습",
+  "masthead": "ENOCH NOTE — HOW PRACTICE STAYS",
+  "footer": "뇌가 기억하는 연습",
+  "ticker": "ENOCH NOTE — HOW PRACTICE STAYS",
+  "theme": "ivory",
+  "slides": [
+    {
+      "layout": "photo",
+      "image": "output/노트_기억하는연습/src/cover_bw.jpg",
+      "imagePosition": "50% 50%",
+      "imageHeight": 760,
+      "title": "어제 연습한 곳,\n왜 오늘 또 틀릴까요?",
+      "body": "뇌가 기억하는 연습, 6단계"
+    },
+    {
+      "layout": "steps",
+      "theme": "black",
+      "kicker": "Six Steps — 1/2",
+      "title": "기억은,\n순서대로 만들어집니다.",
+      "items": [
+        {
+          "head": "입력",
+          "text": "오늘 붙잡을 부분을 정하고, 천천히 듣고 봅니다."
+        },
+        {
+          "head": "구조화",
+          "text": "마디, 코드, 패턴으로 나눠 봅니다. 덩어리로 묶으면 기억하기 쉬워요."
+        },
+        {
+          "head": "저장",
+          "text": "한 번에 몰아서보다, 간격을 두고 다시 칩니다."
+        }
+      ]
+    },
+    {
+      "layout": "point",
+      "kicker": "Spacing",
+      "title": "잊을 때쯤,\n다시.",
+      "body": [
+        "같은 시간이라도, 하루에 몰아서보다 며칠에 나눠 할 때 더 오래 남는다는 연구가 많습니다.",
+        "잊을 때쯤 다시 떠올리는 순간, 기억은 한 번 더 단단해져요.",
+        "**오늘 친 두 마디, 내일과 모레 한 번씩 더.**"
+      ]
+    },
+    {
+      "layout": "steps",
+      "theme": "black",
+      "kicker": "Six Steps — 2/2",
+      "title": "떠올리고, 고치고,\n굳힙니다.",
+      "items": [
+        {
+          "head": "회상",
+          "text": "악보를 덮고, 기억만으로 쳐 봅니다."
+        },
+        {
+          "head": "수정",
+          "text": "녹음해서 듣고, 틀린 곳만 골라 고칩니다."
+        },
+        {
+          "head": "강화",
+          "text": "다음 날 다시 쳐서, 손에 굳힙니다."
+        }
+      ]
+    },
+    {
+      "layout": "point",
+      "theme": "sage",
+      "kicker": "Recall",
+      "title": "악보를 덮고,\n쳐 보세요.",
+      "body": [
+        "다시 읽는 것보다 떠올려 보는 쪽이 더 오래 남는다는 학습 연구가 있습니다.",
+        "덮고 쳤을 때 막히는 곳, 그곳이 다음에 연습할 자리예요.",
+        "**틀리는 건 실패가 아니라, 위치를 알려 주는 신호입니다.**"
+      ]
+    },
+    {
+      "layout": "point",
+      "kicker": "Sleep",
+      "title": "자고 나면,\n손이 기억합니다.",
+      "body": [
+        "새로 익힌 손동작이 잠을 자고 난 뒤 더 정확해졌다는 연구가 있습니다.",
+        "늦게까지 몰아서 치기보다, 오늘 연습하고 잘 자는 것도 연습의 일부.",
+        "**진도보다 이해를 먼저 봅니다.**"
+      ]
+    },
+    {
+      "layout": "closing",
+      "theme": "black",
+      "ghost": "ENOCH",
+      "principle": "연습은,\n순서가 남깁니다.",
+      "principleEn": "모든 과정, 1:1 레슨입니다."
+    }
+  ]
+}
