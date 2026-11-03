@@ -24,25 +24,20 @@
       ]
     },
     {
-      "layout": "point",
-      "kicker": "Not for Show",
+      "layout": "photo",
+      "image": "output/노트_나의소리/src/score_bw.jpg",
+      "imagePosition": "50% 50%",
+      "imageHeight": 620,
       "title": "잘해 보이는 곡보다,\n나에게 맞는 곡.",
-      "body": [
-        "이 정도는 불러야 할 것 같은 곡, 다들 연습하는 곡.",
-        "부를 때 목소리가 편해지고, 자꾸 다시 듣게 되는 곡은 따로 있습니다.",
-        "**그 곡이 내 소리의 단서예요.**"
-      ]
+      "body": "이 정도는 불러야 할 것 같은 곡, 다들 연습하는 곡. 부를 때 목소리가 편해지고, 자꾸 다시 듣게 되는 곡은 따로 있습니다. **그 곡이 내 소리의 단서예요.**"
     },
     {
-      "layout": "point",
-      "theme": "sage",
-      "kicker": "Quiet Time",
+      "layout": "photo",
+      "image": "output/노트_나의소리/src/booth_bw.jpg",
+      "imagePosition": "50% 55%",
+      "imageHeight": 620,
       "title": "내 소리를 듣는,\n조용한 시간.",
-      "body": [
-        "다른 소리를 잠시 끄고, 내 소리만 들어 보는 시간.",
-        "무엇을 더 할지보다, 무엇이 나와 안 맞는지가 먼저 들리기도 합니다.",
-        "ENOCH 수강생은 운영시간 안에 **연습실을 자유롭게** 이용할 수 있어요."
-      ]
+      "body": "다른 소리를 잠시 끄고, 내 소리만 들어 보는 시간. 무엇을 더 할지보다, **무엇이 나와 안 맞는지가 먼저 들리기도 합니다.**"
     },
     {
       "layout": "point",
