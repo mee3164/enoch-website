@@ -158,6 +158,7 @@
 - PNG 출력: `npm run cardnews:render -- output/<주제 폴더>` (처음 한 번 `npm install && npx playwright install chromium`)
 - 레이아웃 종류와 문구 필드: `templates/SLIDES_SCHEMA.md`
 - 확정본과 나란히 비교: `node scripts/compare.mjs output/<주제 폴더>` → `output/<주제 폴더>/compare/`
+- 피드 미리보기: `node scripts/grid_preview.mjs <출력.png> <올릴 폴더> ... <이미 올린 폴더>` — 인스타 프로필처럼 3칸(3:4로 잘린 모양)으로 붙여 결을 확인한다. 왼쪽 위가 최신. 수강생 사진이 든 미리보기는 저장소에 올리지 않는다.
 - 모바일 홈페이지: `site/` (`python3 site/build.py` → `site/dist/`). 강사 추가·상담 링크는 `site/README.md`
 
 ## 10. 기준 디자인 (확정본)
