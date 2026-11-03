@@ -1,0 +1,65 @@
+{
+  "title": "ENOCH NOTE — 연습법은 이제, 누구나 압니다",
+  "masthead": "ENOCH NOTE — AFTER INFORMATION",
+  "footer": "정보 다음의 실력",
+  "ticker": "ENOCH NOTE — AFTER INFORMATION",
+  "theme": "ivory",
+  "slides": [
+    {
+      "layout": "photo",
+      "image": "images/공간/미디룸_02.jpg",
+      "imagePosition": "40% 55%",
+      "imageHeight": 760,
+      "title": "연습법은 이제,\n누구나 압니다.",
+      "body": "그다음을 만드는 건, 다른 힘입니다."
+    },
+    {
+      "layout": "point",
+      "kicker": "Then & Now",
+      "title": "예전엔, 아는 사람이\n앞서갔습니다.",
+      "body": [
+        "좋은 교본, 연주 영상, 연습법은 쉽게 구할 수 없었습니다.",
+        "지금은 검색 한 번이면 악보와 레슨 영상이 나와요.",
+        "**정보의 차이는 거의 사라졌습니다.**"
+      ]
+    },
+    {
+      "layout": "point",
+      "theme": "sage",
+      "kicker": "Choosing",
+      "title": "고르는 힘.",
+      "body": [
+        "정보가 많을수록, 무엇부터 할지 정하기는 더 어렵습니다.",
+        "지금 내 소리에 필요한 연습은, 하나일 때가 많거든요.",
+        "**진도보다 이해를 먼저 봅니다.**"
+      ]
+    },
+    {
+      "layout": "point",
+      "kicker": "Letting Go",
+      "title": "욕심을\n내려놓는 힘.",
+      "body": [
+        "빠른 곡, 어려운 곡부터 하고 싶은 마음.",
+        "느린 박에서 맞춘 기본이, 결국 빠른 곡을 받쳐 줍니다.",
+        "**기본은 건너뛰지 않습니다.**"
+      ]
+    },
+    {
+      "layout": "point",
+      "kicker": "Staying",
+      "title": "오래 하는 힘.",
+      "body": [
+        "실력이 멈춘 것 같은 시기는 누구에게나 옵니다.",
+        "원하는 실력에 닿는 사람은, 그 시기를 지나 계속한 사람이에요.",
+        "**그만두지 않는 것도 실력입니다.**"
+      ]
+    },
+    {
+      "layout": "closing",
+      "theme": "black",
+      "ghost": "ENOCH",
+      "principle": "무엇을 연습할지는,\n사람마다 다릅니다.",
+      "principleEn": "모든 과정, 1:1 레슨입니다."
+    }
+  ]
+}
