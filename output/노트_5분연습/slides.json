@@ -7,7 +7,7 @@
   "slides": [
     {
       "layout": "photo",
-      "image": "images/공간/피아노룸_01.jpg",
+      "image": "output/노트_5분연습/src/cover_bw.jpg",
       "imageHeight": 760,
       "title": "연습은,\n5분이면 시작됩니다.",
       "body": "시작의 기준을 낮추는 것도 실력입니다."
@@ -32,7 +32,16 @@
         "어제 고친 곳을 다시 한 번.",
         "**짧아도, 오늘 악기에 닿았다는 것.**"
       ],
-      "doodles": [{ "name": "note", "x": 820, "y": 900, "size": 150, "rotate": 10, "fill": "cream" }]
+      "doodles": [
+        {
+          "name": "note",
+          "x": 820,
+          "y": 900,
+          "size": 150,
+          "rotate": 10,
+          "fill": "cream"
+        }
+      ]
     },
     {
       "layout": "point",
