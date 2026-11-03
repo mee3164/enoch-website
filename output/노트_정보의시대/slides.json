@@ -24,15 +24,12 @@
       ]
     },
     {
-      "layout": "point",
-      "theme": "sage",
-      "kicker": "Choosing",
+      "layout": "photo",
+      "image": "output/노트_정보의시대/src/guitar_bw.jpg",
+      "imagePosition": "40% 60%",
+      "imageHeight": 620,
       "title": "고르는 힘.",
-      "body": [
-        "정보가 많을수록, 무엇부터 할지 정하기는 더 어렵습니다.",
-        "지금 내 소리에 필요한 연습은, 하나일 때가 많거든요.",
-        "**진도보다 이해를 먼저 봅니다.**"
-      ]
+      "body": "정보가 많을수록, 무엇부터 할지 정하기는 더 어렵습니다. 지금 내 소리에 필요한 연습은, 하나일 때가 많거든요. **진도보다 이해를 먼저 봅니다.**"
     },
     {
       "layout": "photo",
