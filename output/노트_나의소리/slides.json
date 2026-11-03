@@ -1,0 +1,73 @@
+{
+  "title": "ENOCH NOTE — 내가 정말 좋아하는 소리",
+  "masthead": "ENOCH NOTE — YOUR OWN SOUND",
+  "footer": "나의 소리",
+  "ticker": "ENOCH NOTE — YOUR OWN SOUND",
+  "theme": "ivory",
+  "slides": [
+    {
+      "layout": "photo",
+      "image": "output/노트_나의소리/src/booth_bw.jpg",
+      "imagePosition": "50% 50%",
+      "imageHeight": 760,
+      "title": "내가 정말 좋아하는 소리는,\n무엇인가요?",
+      "body": "생각보다 어려운 질문입니다."
+    },
+    {
+      "layout": "point",
+      "kicker": "Borrowed Taste",
+      "title": "좋아한다고\n믿게 된 소리.",
+      "body": [
+        "매일 수많은 음악과 평가를 보고 듣습니다.",
+        "그러다 보면 남들이 좋다는 소리를, 내 취향으로 여기게 되기도 해요.",
+        "**내가 좋아하는 걸까, 다들 좋다니 좋아진 걸까.**"
+      ]
+    },
+    {
+      "layout": "point",
+      "kicker": "Not for Show",
+      "title": "잘해 보이는 곡보다,\n나에게 맞는 곡.",
+      "body": [
+        "이 정도는 불러야 할 것 같은 곡, 다들 연습하는 곡.",
+        "부를 때 목소리가 편해지고, 자꾸 다시 듣게 되는 곡은 따로 있습니다.",
+        "**그 곡이 내 소리의 단서예요.**"
+      ]
+    },
+    {
+      "layout": "point",
+      "theme": "sage",
+      "kicker": "Quiet Time",
+      "title": "내 소리를 듣는,\n조용한 시간.",
+      "body": [
+        "다른 소리를 잠시 끄고, 내 소리만 들어 보는 시간.",
+        "무엇을 더 할지보다, 무엇이 나와 안 맞는지가 먼저 들리기도 합니다.",
+        "ENOCH 수강생은 운영시간 안에 **연습실을 자유롭게** 이용할 수 있어요."
+      ]
+    },
+    {
+      "layout": "point",
+      "kicker": "Choosing Yourself",
+      "title": "내 소리를\n고른다는 것.",
+      "body": [
+        "당장 잘되는 길을 고르는 일과는 다릅니다.",
+        "남의 눈 때문에, 내 소리를 접지 않는 것.",
+        "**그 선택이 쌓이면, 소리도 조금씩 나다워집니다.**"
+      ]
+    },
+    {
+      "layout": "point",
+      "kicker": "The ENOCH Way",
+      "title": "같은 곡도,\n사람마다 다르게.",
+      "body": [
+        "좋아하는 소리도, 편한 음역도, 걸리는 자리도 사람마다 다릅니다.",
+        "그래서 ENOCH은 모든 과정을 **1:1 레슨**으로 진행합니다."
+      ]
+    },
+    {
+      "layout": "closing",
+      "theme": "black",
+      "ghost": "ENOCH",
+      "principle": "나만의 진짜 소리를\n찾는 곳."
+    }
+  ]
+}
