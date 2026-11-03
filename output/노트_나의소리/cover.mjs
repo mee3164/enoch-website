@@ -19,7 +19,7 @@ h1{position:absolute;left:96px;bottom:250px;font-size:72px;line-height:1.22;font
 p{position:absolute;left:96px;bottom:180px;font-size:36px;font-weight:300;color:#ddd}
 </style></head><body><section class="c"><img src="src/piano_bw.jpg"><div class="shade"></div>
 <div class="hd"><span>ENOCH MUSIC ACADEMY</span><span>ENOCH NOTE — YOUR OWN SOUND</span></div>
-<h1>내가 정말 좋아하는 소리는,<br>무엇인가요?</h1><p>생각보다 어려운 질문입니다.</p>
+<h1>남들이 좋다는 소리 말고,<br>내 소리 찾는 법</h1><p>조용히 해 보는 세 가지</p>
 <div class="ft"><span>나의 소리</span><span>01 / 07</span></div></section></body></html>`;
 writeFileSync(path.join(dir, "cover.html"), html);
 const { chromium } = require("playwright");
