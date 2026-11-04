@@ -55,7 +55,7 @@ for k, (name, a, b) in enumerate(TEXTS):
     fc += f"[{last}][t{k}]overlay=0:0:eof_action=pass[v{k+1}];"; last = f'v{k+1}'
 fc += f"[{last}]fade=in:st=0:d=0.4,fade=out:st={TOTAL-0.6:.2f}:d=0.6[out]"
 subprocess.run(['ffmpeg', '-y', '-loglevel', 'error'] + inputs + ['-filter_complex', fc, '-map', '[out]', '-t', f'{TOTAL:.2f}',
-                '-c:v', 'libx264', '-crf', '17', '-preset', 'slow', '-pix_fmt', 'yuv420p', '-movflags', '+faststart',
+                '-c:v', 'libx264', '-crf', '22', '-preset', 'slow', '-maxrate', '12M', '-bufsize', '24M', '-pix_fmt', 'yuv420p', '-movflags', '+faststart',
                 os.path.join(HERE, 'film.mp4')], check=True)
 shutil.rmtree(TMP)
 print('film.mp4', f'{TOTAL:.1f}s')
