@@ -38,7 +38,7 @@ S.append(f'''<section class="sc" style="--s:0s;--d:2.85s;background:#F1EDE4;colo
   <div class="abs k" style="top:300px;color:#6E6A64">ENOCH Listening · Korean Classics</div>
   <div class="abs" style="top:370px;font-size:104px;font-weight:700;letter-spacing:-5px;line-height:1.15">가을이<br>지나가기 전에,</div>
   <div class="abs" style="top:620px;font-size:104px;font-weight:300;letter-spacing:-5px;line-height:1.15">들어야 할<br>국내 명반 7장</div>
-  <div class="abs r" style="top:1540px;font-size:32px;color:#55524D;text-align:center;--t:1.2s">평론가와 음악 관계자들이 꼽은 앨범들</div>
+  <div class="abs r k" style="top:1540px;font-size:26px;color:#55524D;text-align:center;--t:1.2s">ENOCH MUSIC ACADEMY</div>
   {fan}
 </section>''')
 for i, a in enumerate(A):
