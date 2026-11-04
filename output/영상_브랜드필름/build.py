@@ -14,7 +14,7 @@ def vid(name):
 # (종류, 소스, 시작, 길이, 옵션) — 원본에 실제로 있는 장면만
 CUTS = [
   ('photo', 'images/공간/피아노방_01.jpg', 'crop=1330:2364:0:212', 3.0),   # 오른쪽 달력·에어컨은 잘라냄
-  ('photo', 'images/공간/복도_03.jpg',     'crop=1400:2489:0:87', 1.5),     # 오른쪽 CCTV는 잘라냄
+  ('video', 'IMG_2733', 5.45, 1.4),  # 아치 복도 원근
   ('video', 'IMG_2727', 0.3, 1.5),   # 믹서·드럼 스틱
   ('video', 'IMG_2727', 1.9, 1.5),   # KORG 건반
   ('photo', 'images/공간/기타랙_01.jpg',   'crop=1449:2576:322:0', 2.0),
@@ -43,7 +43,7 @@ subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-f', 'concat', '-safe', '
 TOTAL = float(subprocess.check_output(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', base]))
 
 # 문구 (필요한 순간에만) — (파일, 시작, 끝)
-TEXTS = [('t_enoch', 1.0, 2.8), ('t_space', 4.7, 7.3), ('t_detail', 7.7, 9.3), ('t_way', 13.7, 16.1), ('t_end', 17.0, TOTAL)]
+TEXTS = [('t_enoch', 1.0, 2.8), ('t_space', 4.6, 7.2), ('t_way', 13.6, 16.0), ('t_end', 16.9, TOTAL)]
 subprocess.run(['node', os.path.join(HERE, 'texts.mjs')], check=True)
 inputs = ['-i', base]; fc = "[0:v]eq=saturation=0.9:contrast=1.03:gamma=0.98,noise=alls=4:allf=t,format=yuv420p[v0];"
 last = 'v0'
