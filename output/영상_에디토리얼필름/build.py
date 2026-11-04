@@ -15,6 +15,7 @@ def src(p): return p if os.path.isabs(p) else os.path.join(ROOT, p)
 # (이름, 소스, 시점|None, 자르기 box|None, 박 수, 움직임?)
 SHOTS = [
   ('A 녹음 부스',     'images/공간/보컬부스_01.jpg', None, None, 2, False),
+  ('Q 드럼(영상)',    'IMG_2728', 0.0, (0, 0, 2160, 3840), 2, True),
   ('B 건반',         'images/공간/피아노방_01.jpg', None, (60, 1225, 820, 2576), 2, False),
   ('O 보컬 손',       'eafeea67-image.png',         None, (150, 500, 794, 1645), 2, False),
   ('C 아치 복도',     'IMG_2733', 6.767, None, 2, False),
@@ -76,8 +77,8 @@ subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-f', 'concat', '-safe', '
 
 # 타이포 상태 — 컷에 맞춰 툭 나타나고 툭 사라진다
 S = starts
-STATES = [('music', S[1], S[3]), ('space', S[3], S[5]), ('creation', S[5], S[6]), ('practice', S[9], S[10]),
-          ('per1', S[12], S[13]), ('per2', S[13], S[14]), ('per3', S[14], S[14] + 2 * B), ('enoch', S[14] + 2 * B + 0.5, TOTAL)]
+STATES = [('music', S[2], S[4]), ('space', S[4], S[6]), ('creation', S[6], S[7]), ('practice', S[10], S[11]),
+          ('per1', S[13], S[14]), ('per2', S[14], S[15]), ('per3', S[15], S[15] + 2 * B), ('enoch', S[15] + 2 * B + 0.5, TOTAL)]
 subprocess.run(['node', os.path.join(HERE, 'type.mjs')], check=True)
 inputs = ['-i', base]; fc = '[0:v]noise=alls=3:allf=t,format=yuv420p[v0];'; last = 'v0'
 for k, (name, a, b) in enumerate(STATES):
