@@ -32,14 +32,14 @@ SHOTS = [
 ]
 
 def grade(im):
+    # 기준: 원장님이 보내주신 피아노 방 사진 (따뜻한 호박빛, 깊은 검정, 자연스러운 채도)
     a = np.asarray(im.convert('RGB')).astype(np.float32) / 255
-    m = a.reshape(-1, 3).mean(0); a = a * (1 + 0.5 * (m.mean() / m - 1))
+    m = a.reshape(-1, 3).mean(0); a = a * (1 + 0.35 * (m.mean() / m - 1))           # 형광등 색만 살짝 정리
+    a = a * np.array([1.05, 1.0, 0.86])                                               # 호박빛
     lum = (a * [0.299, 0.587, 0.114]).sum(-1, keepdims=True)
     c = float((np.clip(a, 0, 1).max(-1) - np.clip(a, 0, 1).min(-1)).mean())
-    k = 0.88 * min(1.0, (0.085 / max(c, 1e-6)) ** 0.5)      # 채도 낮춤, 채도 높은 장면은 조금 더
-    a = lum + (a - lum) * k
-    a = 0.035 + a * (0.95 - 0.035); a = np.clip(a, 0, 1) ** 1.04; a = 0.5 + (a - 0.5) * 1.05
-    a = a + (1 - a) * np.array([0.014, 0.007, -0.010]) + a * np.array([0.012, 0.005, -0.014])   # 따뜻한 크림 톤
+    a = lum + (a - lum) * min(1.05, 1.05 * (0.13 / max(c, 1e-6)) ** 0.5)             # 채도는 자연스럽게, 튀는 장면만 눌러 줌
+    a = np.clip(a, 0, 1) ** 1.12; a = 0.5 + (a - 0.5) * 1.10                           # 깊은 검정, 단단한 대비
     return Image.fromarray((np.clip(a, 0, 1) * 255).astype(np.uint8))
 
 def frame(name, s, at, box):
