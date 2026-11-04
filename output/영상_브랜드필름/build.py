@@ -14,16 +14,16 @@ def vid(name):
 
 # (소스, 시점 또는 자르기, 길이) — 원본에 실제로 있는 장면만
 SHOTS = [
-  ('images/공간/피아노방_01.jpg', (0, 212, 1330, 2576), 3.0),  # 오른쪽 달력·에어컨 제외
+  ('images/공간/피아노방_01.jpg', (0, 212, 1330, 2576), 3.0),  # MUSIC — 달력·에어컨 제외
   ('IMG_2733', 6.767, 1.8),   # 아치 복도
-  ('IMG_2723', 0.75, 2.0),    # 스탠드 조명의 작은 방 (사람이 보이기 전)
-  ('IMG_2727', 0.783, 1.8),   # 믹서·드럼 스틱
-  ('IMG_2727', 2.883, 1.8),   # KORG 건반 너머 무대
-  ('images/공간/기타랙_01.jpg', (322, 0, 1771, 2576), 2.0),
-  ('IMG_2728', 0.0, 1.8),     # 드럼 정면
-  ('IMG_2730', 0.917, 2.0),   # 앰프·헤링본 마루
-  ('IMG_2730', 6.2, 2.6),     # 식물 그림자·기타·피아노
-  ('IMG_2727', 4.067, 3.8),   # 무대 와이드 (마지막)
+  ('IMG_2723', 0.75, 1.8),    # 스탠드 조명의 작은 방
+  ('IMG_2727', 0.783, 2.2),   # CREATE — 믹서·드럼 스틱
+  ('IMG_2727', 2.883, 1.8),   # KORG 건반
+  ('IMG_2730', 0.917, 1.8),   # 앰프·헤링본 마루
+  ('IMG_2730', 6.2, 2.4),     # PRACTICE — 식물 그림자·기타·피아노
+  ('images/공간/기타랙_01.jpg', (322, 0, 1771, 2576), 1.8),
+  ('IMG_2728', 0.0, 2.4),     # PERFORM — 무대 위 드럼
+  ('IMG_2727', 4.067, 3.8),   # ENOCH — 무대 와이드 (마지막)
 ]
 
 def grade(im):
@@ -70,7 +70,7 @@ subprocess.run(['ffmpeg', '-y', '-loglevel', 'error'] + inputs + ['-filter_compl
 
 # 문구 — 샷 시작 기준
 S = starts
-TEXTS = [('t_enoch', S[0] + 1.0, S[1]), ('t_space', S[3] + 0.4, S[5]), ('t_way', S[8] + 0.4, S[9]), ('t_end', S[9] + 0.8, TOTAL)]
+TEXTS = [('w_music', S[0] + 0.9, S[1]), ('w_create', S[3] + 0.4, S[4]), ('w_practice', S[6] + 0.4, S[7]), ('w_perform', S[8] + 0.4, S[9]), ('w_enoch', S[9] + 0.7, TOTAL)]
 subprocess.run(['node', os.path.join(HERE, 'texts.mjs')], check=True)
 inputs = ['-i', base]; fc = "[0:v]noise=alls=3:allf=t,format=yuv420p[v0];"; last = 'v0'
 for k, (name, a, b) in enumerate(TEXTS):
