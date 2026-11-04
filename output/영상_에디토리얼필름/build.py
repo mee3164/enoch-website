@@ -14,14 +14,14 @@ def src(p): return p if os.path.isabs(p) else os.path.join(ROOT, p)
 
 # (이름, 소스, 시점|None, 자르기 box|None, 박 수, 움직임?)
 SHOTS = [
-  ('A 피아노 방',     'images/공간/피아노방_01.jpg', None, (0, 212, 1330, 2576), 2, False),
+  ('A 녹음 부스',     'images/공간/보컬부스_01.jpg', None, None, 2, False),
   ('B 건반',         'images/공간/피아노방_01.jpg', None, (60, 1225, 820, 2576), 2, False),
   ('O 보컬 손',       'eafeea67-image.png',         None, (150, 500, 794, 1645), 2, False),
   ('C 아치 복도',     'IMG_2733', 6.767, None, 2, False),
-  ('L 보컬부스',      'images/공간/보컬부스_03.jpg', None, (300, 600, 1450, 2645), 2, False),
+  ('L 강의실',        'IMG_2729', 0.42, None, 2, False),
   ('D 피아노(2층)',    'IMG_2729', 5.08, None, 2, False),
   ('E KORG',        'IMG_2727', 2.883, None, 1, False),
-  ('G 케이블',       'images/공간/기타랙_01.jpg', None, (1080, 1530, 1490, 2259), 1, False),
+  ('G 휴게실',        'IMG_2723', 0.75, None, 2, False),
   ('F 기타 랙',       'images/공간/기타랙_01.jpg', None, (322, 0, 1771, 2576), 2, False),
   ('M 베이스 레슨',   '4172C8F8-5C89-48CF-B562-068D95E996D5', 2.0, (278, 990, 801, 1920), 3, True),
   ('I 상담실',        'IMG_2724', 3.08, None, 2, False),
