@@ -2,8 +2,7 @@
 
 ## 업로드 메모
 - 영상: `reel.mp4` (1080×1920, 31초). 음악은 앱의 로열티 프리 음원을 낮게 넣는다 (영상에는 음악 없음).
-- 커버: `images/앨범/`에 아래 파일명으로 넣고 `python3 gen.py && node record.mjs`를 다시 돌리면 커버로 바뀐다.
-  kr_deulgukhwa_1.jpg · kr_eotteonnal_1.jpg · kr_yoojaeha.jpg · kr_hanyoungae_2.jpg · kr_kimhyunchul_1.jpg · kr_kimkwangseok_re2.jpg · kr_leesora_6.jpg
+- 커버: `images/앨범/kr_*.jpg` (원장님이 보내 준 화면 캡처에서 잘라 냄). 바꾸려면 같은 파일명으로 덮어쓰고 `python3 gen.py && node record.mjs`.
 
 ## 캡션
 
@@ -32,5 +31,6 @@
 경기도 시흥시 은행로 157 2층 · 010 3949 3666
 
 선정 참고: 경향신문·가슴네트워크 한국대중음악 100대 명반(2007) · 한겨레·멜론 한국 대중음악 명반 100(2018) · 얼루어 100장의 우리 가요(2011)
+앨범 아트워크의 저작권은 각 음반사에 있습니다.
 
 #에녹실용음악학원 #시흥실용음악학원 #음악추천 #앨범추천 #명반추천 #가을노래 #유재하 #김광석 #이소라 #들국화
