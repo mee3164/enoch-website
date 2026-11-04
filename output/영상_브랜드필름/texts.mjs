@@ -21,7 +21,7 @@ const css = `@font-face{font-family:P;src:url(${pathToFileURL(path.join(dir, "..
 const b = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
 const p = await b.newPage({ viewport: { width: 1080, height: 1920 } });
 for (const [k, [a, s]] of Object.entries(T)) {
-  writeFileSync(path.join(dir, "_tmp", "t.html"), `<!doctype html><meta charset="utf-8"><style>${css}</style>${s ? '<div class="sh"></div>' : ""}<div class="w"><div class="a">${a}</div>${s ? `<div class="b">${s}</div>` : ""}</div>`);
+  writeFileSync(path.join(dir, "_tmp", "t.html"), `<!doctype html><meta charset="utf-8"><style>${css}</style><div class="sh"></div><div class="w"><div class="a">${a}</div>${s ? `<div class="b">${s}</div>` : ""}</div>`);
   await p.goto(pathToFileURL(path.join(dir, "_tmp", "t.html")).href);
   await p.evaluate(() => document.fonts.ready); await p.waitForTimeout(150);
   await p.screenshot({ path: path.join(dir, "_tmp", k + ".png"), omitBackground: true });
