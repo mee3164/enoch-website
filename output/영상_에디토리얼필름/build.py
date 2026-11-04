@@ -34,9 +34,12 @@ SHOTS = [
 def grade(im):
     a = np.asarray(im.convert('RGB')).astype(np.float32) / 255
     m = a.reshape(-1, 3).mean(0); a = a * (1 + 0.5 * (m.mean() / m - 1))
-    lum = (a * [0.299, 0.587, 0.114]).sum(-1, keepdims=True); a = lum + (a - lum) * 0.80
-    a = 0.035 + a * (0.95 - 0.035); a = np.clip(a, 0, 1) ** 1.04; a = 0.5 + (a - 0.5) * 1.08
-    a = a + (1 - a) * np.array([0.012, 0.006, -0.010]) + a * np.array([0.010, 0.004, -0.012])
+    lum = (a * [0.299, 0.587, 0.114]).sum(-1, keepdims=True)
+    c = float((np.clip(a, 0, 1).max(-1) - np.clip(a, 0, 1).min(-1)).mean())
+    k = 0.72 * min(1.0, (0.06 / max(c, 1e-6)) ** 0.5)      # 채도 낮춤, 채도 높은 장면은 조금 더
+    a = lum + (a - lum) * k
+    a = 0.035 + a * (0.95 - 0.035); a = np.clip(a, 0, 1) ** 1.04; a = 0.5 + (a - 0.5) * 1.05
+    a = a + (1 - a) * np.array([0.014, 0.007, -0.010]) + a * np.array([0.012, 0.005, -0.014])   # 따뜻한 크림 톤
     return Image.fromarray((np.clip(a, 0, 1) * 255).astype(np.uint8))
 
 def frame(name, s, at, box):
