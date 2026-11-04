@@ -51,6 +51,7 @@ for i, a in enumerate(A):
   <div class="abs r" style="top:1195px;font-weight:700;font-size:76px;letter-spacing:-2.5px;line-height:1.1;--t:{s+.55:.2f}s">{e(a[1])} <span style="font-weight:300;font-size:44px;color:{mut}">{a[2]}</span></div>
   <div class="abs r" style="top:1330px;font-size:34px;--t:{s+.8:.2f}s"><span class="k" style="color:{mut};margin-right:18px">Track</span>{e(a[4])}</div>
   <div class="abs r" style="top:1410px;font-size:26px;color:{mut};--t:{s+1.0:.2f}s">{e(a[5])}</div>
+  <div class="abs" style="top:1500px;font-size:20px;color:{mut};opacity:.7">앨범 아트워크의 저작권은 각 음반사에 있습니다.</div>
 </section>''')
 s = T0 + STEP * len(A)
 S.append(f'''<section class="sc" style="--s:{s:.2f}s;--d:3.4s;background:#111;color:#F1EDE4;animation-name:fin">
