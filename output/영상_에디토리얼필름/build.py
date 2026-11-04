@@ -26,9 +26,9 @@ SHOTS = [
   ('M 베이스 레슨',   '4172C8F8-5C89-48CF-B562-068D95E996D5', 2.0, (278, 990, 801, 1920), 3, True),
   ('I 상담실',        'IMG_2724', 3.08, None, 2, False),
   ('J 식물 그림자',   'IMG_2730', 6.2, None, 2, False),
-  ('N 드럼 레슨 손',  'images/학생/드럼레슨_01.jpg', None, (480, 1290, 1180, 2534), 1, False),
-  ('H 드럼 정면',     'IMG_2728', 0.0, None, 1, False),
-  ('K 무대',         'IMG_2727', 4.067, None, 9, False),
+  ('N 피아노 연주 손', 'images/학생/피아노연주_01.jpg', None, None, 1, False),
+  ('H 기타 연주(촬영)', 'images/학생/기타연주_01.jpg', None, None, 2, False),
+  ('K 작곡실',        'images/공간/작곡실_01.jpg', None, (241, 0, 1690, 2576), 8, False),
 ]
 
 def grade(im):
