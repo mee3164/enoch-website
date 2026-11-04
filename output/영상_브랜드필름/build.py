@@ -1,5 +1,5 @@
 # ENOCH MUSIC ACADEMY — Brand Film (1080×1920, 약 20초, 무음)
-# 흔들림 없이: 원본 영상에서 가장 선명한 프레임을 골라 정지 컷으로 쓰고, 아주 느린 확대 + 짧은 디졸브로 잇는다.
+# 흔들림 없이: 원본 영상에서 가장 선명한 프레임을 골라 멈춘 화면으로 쓰고, 짧은 디졸브로 잇는다.
 # python3 build.py <원본 영상 폴더>   → film.mp4   (Pillow·numpy 필요)
 import os, sys, subprocess, shutil
 import numpy as np
@@ -14,15 +14,16 @@ def vid(name):
 
 # (소스, 시점 또는 자르기, 길이) — 원본에 실제로 있는 장면만
 SHOTS = [
-  ('images/공간/피아노방_01.jpg', (0, 212, 1330, 2576), 3.2),  # 오른쪽 달력·에어컨 제외
-  ('IMG_2733', 6.767, 2.0),   # 아치 복도
-  ('IMG_2727', 0.783, 2.0),   # 믹서·드럼 스틱
-  ('IMG_2727', 2.883, 2.0),   # KORG 건반 너머 무대
-  ('images/공간/기타랙_01.jpg', (322, 0, 1771, 2576), 2.2),
-  ('IMG_2728', 0.0, 2.0),     # 드럼 정면
-  ('IMG_2730', 0.917, 2.2),   # 앰프·헤링본 마루
+  ('images/공간/피아노방_01.jpg', (0, 212, 1330, 2576), 3.0),  # 오른쪽 달력·에어컨 제외
+  ('IMG_2733', 6.767, 1.8),   # 아치 복도
+  ('IMG_2723', 0.75, 2.0),    # 스탠드 조명의 작은 방 (사람이 보이기 전)
+  ('IMG_2727', 0.783, 1.8),   # 믹서·드럼 스틱
+  ('IMG_2727', 2.883, 1.8),   # KORG 건반 너머 무대
+  ('images/공간/기타랙_01.jpg', (322, 0, 1771, 2576), 2.0),
+  ('IMG_2728', 0.0, 1.8),     # 드럼 정면
+  ('IMG_2730', 0.917, 2.0),   # 앰프·헤링본 마루
   ('IMG_2730', 6.2, 2.6),     # 식물 그림자·기타·피아노
-  ('IMG_2727', 4.067, 4.0),   # 무대 와이드 (마지막)
+  ('IMG_2727', 4.067, 3.8),   # 무대 와이드 (마지막)
 ]
 
 def grade(im):
@@ -50,7 +51,7 @@ for i, (src, at, dur) in enumerate(SHOTS):
     im = ImageOps.fit(im, (2160, 3840), Image.LANCZOS)
     grade(im).save(still, quality=95)
     n = int(dur * FPS); out = os.path.join(TMP, f'c{i}.mp4'); clips.append((out, dur))
-    vf = (f"zoompan=z='1+0.03*on/{n}':x='iw/2-iw/zoom/2':y='ih/2-ih/zoom/2':d={n}:s=1080x1920:fps={FPS},setsar=1")
+    vf = f"scale=1080:1920,fps={FPS},setsar=1"   # 완전히 멈춘 화면
     subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-loop', '1', '-i', still, '-vf', vf, '-frames:v', str(n),
                     '-c:v', 'libx264', '-crf', '12', '-pix_fmt', 'yuv420p', out], check=True)
 
@@ -69,7 +70,7 @@ subprocess.run(['ffmpeg', '-y', '-loglevel', 'error'] + inputs + ['-filter_compl
 
 # 문구 — 샷 시작 기준
 S = starts
-TEXTS = [('t_enoch', S[0] + 1.0, S[1]), ('t_space', S[2] + 0.4, S[4]), ('t_way', S[7] + 0.4, S[8]), ('t_end', S[8] + 0.8, TOTAL)]
+TEXTS = [('t_enoch', S[0] + 1.0, S[1]), ('t_space', S[3] + 0.4, S[5]), ('t_way', S[8] + 0.4, S[9]), ('t_end', S[9] + 0.8, TOTAL)]
 subprocess.run(['node', os.path.join(HERE, 'texts.mjs')], check=True)
 inputs = ['-i', base]; fc = "[0:v]noise=alls=3:allf=t,format=yuv420p[v0];"; last = 'v0'
 for k, (name, a, b) in enumerate(TEXTS):
