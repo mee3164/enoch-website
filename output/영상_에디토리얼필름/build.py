@@ -20,7 +20,7 @@ SHOTS = [
   ('O 보컬 손',        'eafeea67-image.png', None, (150, 500, 794, 1645), 2, False),
   ('V 강의실',         'IMG_2729', 0.0, None, 2, True),
   ('D 피아노 방',      'images/공간/피아노방_02.jpg', None, (180, 0, 1318, 2023), 2, False),
-  ('V 합주실 건반',     'IMG_2727', 1.3, None, 2, True),
+  ('M 미디룸 작업',     'images/공간/미디룸_01.jpg', None, None, 2, False),
   ('V 휴게실',         'IMG_2723', 0.3, None, 2, True),
   ('V 기타·식물 그림자', 'IMG_2730', 4.3, None, 3, True),
   ('V 베이스 레슨',     '4172C8F8-5C89-48CF-B562-068D95E996D5', 2.0, (278, 990, 801, 1920), 3, True),
