@@ -7,12 +7,12 @@ const dir = path.dirname(fileURLToPath(import.meta.url));
 const require = createRequire(path.join(dir, "../../package.json"));
 const { chromium } = require("playwright");
 const F = (w) => pathToFileURL(path.join(dir, `../../templates/fonts/Pretendard-${w}.woff2`)).href;
-const css = `@font-face{font-family:B;src:url(${F("Bold")})}@font-face{font-family:M;src:url(${F("Medium")})}
+const css = `@font-face{font-family:B;src:url(${F("Regular")})}@font-face{font-family:M;src:url(${F("Medium")})}
 *{margin:0}html,body{width:1080px;height:1920px;background:transparent;overflow:hidden}
 .t{position:absolute;font-family:B;color:#F1EDE4;line-height:.86;letter-spacing:-.035em}
 .s{position:absolute;font-family:M;color:#F1EDE4;font-size:34px;letter-spacing:.32em}`;
 const MUSIC = `<div class="t" style="left:64px;top:230px;font-size:262px">MUSIC</div>`;
-const PER = (n) => `<div class="t" style="left:64px;top:1080px;font-size:250px">${["PER", "FOR", "MANCE"].slice(0, n).join("<br>")}</div>`;
+const PER = (n) => `<div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 45%,rgba(0,0,0,.30) 75%,transparent)"></div><div class="t" style="left:64px;top:1080px;font-size:250px">${["PER", "FOR", "MANCE"].slice(0, n).join("<br>")}</div>`;
 const S = {
   music: MUSIC,
   space: `<div class="s" style="left:72px;top:176px">A SPACE FOR</div>` + MUSIC,
