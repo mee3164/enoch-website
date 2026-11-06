@@ -17,7 +17,7 @@
 Camila Cabello — Photo: Michael Hicks / CC BY 2.0 (creativecommons.org/licenses/by/2.0)
 Kelly Clarkson — Photo: Chamber of Fear / CC BY-SA 2.0 (creativecommons.org/licenses/by-sa/2.0)
 Ellie Goulding — Photo: Tore Sætre / CC BY-SA 4.0 (creativecommons.org/licenses/by-sa/4.0)
-Adele — Photo: Egghead06 / Wikimedia Commons / CC BY-SA [버전 확인 후 표기·주소 기재]
+Adele — Photo: Egghead06 / Wikimedia Commons / CC BY-SA 4.0 (creativecommons.org/licenses/by-sa/4.0)
 사진은 흑백 보정·자르기를 했습니다.
 
 인용 출처
