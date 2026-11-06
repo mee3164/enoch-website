@@ -105,6 +105,18 @@
 - B안: 확인 가능한 다른 가수로 바꾼다. 후보 Adele — Rolling Stone 2011 인터뷰 "I'm scared of audiences." / 암스테르담 공연에서 너무 긴장해 비상구로 빠져나간 적이 있다 ("One show in Amsterdam, I was so nervous I escaped out the fire exit.") 근거: GRAMMY.com "Musicians who fear the stage" https://www.grammy.com/news/feature-musicians-who-fear-the-stage/ , Rolling Stone https://www.rollingstone.com/music/news/adele-opens-up-about-her-inspirations-looks-and-stage-fright-20120210 (웹 게재 2012-02, 원 기사 2011 — 연도 표기 대조 필요). 단, 아델은 "내향·수줍음"보다 "무대 공포" 사례라 결이 조금 다르고, 사진이 없다(요청 필요).
 - 권장: B안(제목 유지). 사용자가 다른 후보를 주면 같은 방식으로 확인.
 
+### 5. Adele — 교체 확정 (2026-11-06 사용자·프로듀서, B안)
+| 주장 | 결과 | 출처 · 원문 |
+|---|---|---|
+| 관객이 무섭다 | 확인(2차 인용) | Rolling Stone 2011 인터뷰 "I'm scared of audiences." — 웹 게재본 https://www.rollingstone.com/music/news/adele-opens-up-about-her-inspirations-looks-and-stage-fright-20120210 (2012-02 게재, 원 기사 2011 — 연도 대조 필요), 2차 인용 GRAMMY.com https://www.grammy.com/news/feature-musicians-who-fear-the-stage/ |
+| 암스테르담 공연에서 긴장해 비상구로 빠져나감 | 확인(2차 인용) | 같은 출처: "One show in Amsterdam, I was so nervous I escaped out the fire exit." — Rolling Stone 원문에 있는 문장인지 대조 필요 |
+
+카드 인용: "I'm scared of audiences." / 저는 관객이 무서워요. — Rolling Stone, 2011 (6장, 사진 없이 글자형)
+
+### 사진 확정 (2026-11-06 사용자·프로듀서)
+- 위 Getty·매체 사진 대신 CC 라이선스 사진 3장만 쓴다: Camila `src/camila.jpg` (Photo: Michael Hicks / CC BY 2.0), Kelly `src/kelly.jpg` (Photo: Chamber of Fear / CC BY-SA 2.0), Ellie `src/ellie.jpg` (Photo: Tore Sætre / CC BY-SA 4.0).
+- Iris·Adele 장은 사진 없이 큰 영문 이름 + 인용문(글자형).
+
 ## 저작권 · 사진 메모
 - **출처 표기는 사용 허가가 아니다.** Getty Images(Camila, Kelly, Ellie) 사진은 유료 에디토리얼 라이선스 대상이고, Visit St. Augustine · This is the Coast 사진도 각 매체 소유. 상업 계정(학원 홍보)에 올리는 것은 출처를 적어도 침해 소지가 있다. **게시 전 원장님 판단 필요.** 이번 사용은 사용자 지시에 따른 예외이며, CLAUDE.md 5번(우리 실제 사진만)과 다르다.
 - 받은 파일은 AI 앱 화면 스크린샷이다. 사진 위에 도메인 칩(왼쪽 아래), 북마크 버튼(오른쪽 위), 둥근 모서리가 박혀 있어 잘라 내야 하고, 자르면 사진 영역이 가로 약 1000px 남짓이라 전면 배치에는 해상도가 부족하다. 상단 사진(높이 560 내외)으로만 쓴다. 표지에 가수 사진을 쓰지 않는 이유 중 하나.
