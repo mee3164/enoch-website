@@ -13,6 +13,7 @@
 #취미보컬 #성인보컬 #보컬레슨 #시흥보컬학원 #노래배우기 #무대공포증 #시흥실용음악학원 #은행동 #대야역 #에녹실용음악학원
 
 사진 출처
+표지 Adele — Photo: Christopher Macsurak / CC BY 2.0 (creativecommons.org/licenses/by/2.0)
 Camila Cabello — Photo: Michael Hicks / CC BY 2.0 (creativecommons.org/licenses/by/2.0)
 Kelly Clarkson — Photo: Chamber of Fear / CC BY-SA 2.0 (creativecommons.org/licenses/by-sa/2.0)
 Ellie Goulding — Photo: Tore Sætre / CC BY-SA 4.0 (creativecommons.org/licenses/by-sa/4.0)
