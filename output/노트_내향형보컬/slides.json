@@ -1,0 +1,93 @@
+{
+  "title": "ENOCH NOTE — 남 앞에서 노래하는 게 어색한 사람이, 보컬을 배우면",
+  "masthead": "ENOCH NOTE — QUIET VOICE",
+  "footer": "조용한 목소리",
+  "ticker": "ENOCH NOTE — QUIET VOICE — 조용한 목소리",
+  "theme": "ivory",
+  "slides": [
+    {
+      "layout": "photo",
+      "image": "output/노트_내향형보컬/src/silhouette_bw.jpg",
+      "imagePosition": "50% 50%",
+      "imageHeight": 760,
+      "title": "남 앞에서 노래하는 게 어색한 사람도,\n노래를 배울 수 있을까요?",
+      "body": "스스로 내향형이라고 말하는 분들께."
+    },
+    {
+      "layout": "point",
+      "kicker": "Small Voice",
+      "title": "혼자일 땐\n잘 나오던 소리.",
+      "body": [
+        "운전할 때, 샤워할 때는 끝까지 부르던 노래.",
+        "누가 듣고 있으면 목소리가 반쯤 작아집니다.",
+        "노래방에서는 마이크가 오기 전에, 슬쩍 옆 사람에게 넘기게 되고요.",
+        "**소리는 그대로, 듣는 사람이 한 명 생겼을 뿐.**"
+      ],
+      "doodles": [
+        {
+          "name": "mic",
+          "x": 820,
+          "y": 190,
+          "size": 150,
+          "rotate": -12
+        }
+      ]
+    },
+    {
+      "layout": "point",
+      "theme": "sage",
+      "kicker": "Different Start",
+      "title": "어색함은,\n출발점의 차이입니다.",
+      "body": [
+        "처음부터 크게 부르는 사람도,\n작게 흥얼거리며 시작하는 사람도 있어요.",
+        "어디서 출발하든, 배우는 노래는 같습니다.",
+        "**작게 시작하는 것도, 시작이거든요.**"
+      ]
+    },
+    {
+      "layout": "photo",
+      "image": "output/노트_내향형보컬/src/booth01_bw.jpg",
+      "imagePosition": "50% 50%",
+      "imageHeight": 620,
+      "title": "혼자 소리 내 보는 시간.",
+      "body": "혼자 불러 보는 시간도 연습입니다. ENOCH 수강생은 운영시간 안에 **연습실을 자유롭게** 이용할 수 있어요."
+    },
+    {
+      "layout": "steps",
+      "theme": "black",
+      "kicker": "Try Alone",
+      "title": "혼자 해 보는\n세 가지.",
+      "lead": "순서는 상관없어요. 편한 것 하나만 골라 보세요.",
+      "items": [
+        {
+          "head": "작게, 한 소절",
+          "text": "입에 익은 노래 한 소절을 작게 불러 봅니다.\n\"오늘 하루도 수고했어\"처럼, 자주 흥얼거리던 가사면 돼요."
+        },
+        {
+          "head": "녹음해서 한 번 듣기",
+          "text": "휴대폰으로 녹음하고, 한 번 들어 보세요.\n낯설게 들리는 게 보통입니다."
+        },
+        {
+          "head": "한 사람 앞에서",
+          "text": "편한 사람 한 명 앞에서, 딱 한 소절. 끝까지 부르지 않아도 됩니다."
+        }
+      ]
+    },
+    {
+      "layout": "point",
+      "kicker": "The ENOCH Way",
+      "title": "처음 소리를 내는 자리,\n듣는 사람은 한 명.",
+      "body": [
+        "ENOCH은 모든 과정을 **1:1 레슨**으로 진행해요.",
+        "같은 곡도, 사람마다 다르게 가르칩니다.",
+        "진도보다 이해를 먼저 봅니다."
+      ]
+    },
+    {
+      "layout": "closing",
+      "theme": "black",
+      "ghost": "ENOCH",
+      "principle": "작은 소리도,\n내 소리입니다."
+    }
+  ]
+}
