@@ -24,7 +24,7 @@ Adele — Photo: Egghead06 / Wikimedia Commons / CC BY-SA 4.0 (creativecommons.o
 Camila Cabello — Marie Claire, 2018 · Contactmusic, 2018 · Instagram, 2019
 Kelly Clarkson — ABC, 2018
 Ellie Goulding — BBC Later… with Jools Holland · PA, 2020
-Adele — Rolling Stone
+Adele — Rolling Stone, 2011
 
 ## 해시태그 (10개)
 #취미보컬 #성인보컬 #보컬레슨 #시흥보컬학원 #노래배우기 #무대공포증 #시흥실용음악학원 #은행동 #대야역 #에녹실용음악학원
@@ -34,7 +34,7 @@ Adele — Rolling Stone
 2. 카밀라 카베요 사진 아래 "I'm an introvert." 인용과 "저는 내향적인 사람이에요."라는 번역, 헤어·메이크업 스태프까지 있던 촬영장에서 얼어붙은 적이 있다는 글.
 3. 켈리 클락슨 사진 아래 아레사 프랭클린 덕분에 덜 수줍어졌다는 인용과, 노래하기 전에 글을 쓰기 시작했다는 글.
 4. 엘리 굴딩 사진 아래 "I was painfully shy." 인용과 첫 오픈 마이크에서 몹시 긴장했다는 글.
-5. 아델 사진과 "I'm scared of audiences." 인용, "저는 관객이 무서워요."라는 번역.
+5. 아델 사진과 "I'm scared of audiences." 인용, "저는 관객이 무서워요."라는 번역, 암스테르담 공연에서 긴장해 비상구로 빠져나간 적이 있다는 글.
 6. 미스트색 바탕에 "무대가 아니어도 괜찮습니다."라는 제목과 모든 과정 1:1 레슨, 운영시간 안 연습실 자유 이용 안내.
 7. 검은 바탕에 큰 ENOCH 글자와 "편한 자리에서, 내 소리부터." 문장, 학원 주소와 전화번호.
 
