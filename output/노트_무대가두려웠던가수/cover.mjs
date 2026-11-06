@@ -19,15 +19,15 @@ const html = `<!doctype html><html lang="ko"><head><meta charset="utf-8"><style>
 .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;filter:grayscale(1) sepia(.18) contrast(1.05)}
 .cr{position:absolute;right:96px;top:836px;font-size:15px;letter-spacing:1px;color:#8A8A8A}
 .k{position:absolute;left:96px;top:890px;font-size:19px;letter-spacing:2.4px;color:#8A8A8A}
-h1{position:absolute;left:96px;top:940px;font-size:68px;line-height:1.24;font-weight:700;letter-spacing:-2px}
-p{position:absolute;left:96px;top:1124px;font-size:32px;font-weight:300;color:#555}
+h1{position:absolute;left:96px;top:942px;font-size:60px;line-height:1.24;font-weight:700;letter-spacing:-2px}
+p{position:absolute;left:96px;top:1112px;font-size:32px;font-weight:300;color:#555}
 </style></head><body><section class="c">
 <div class="hd mono"><span>ENOCH MUSIC ACADEMY</span><span>ENOCH NOTE — SHY SINGERS</span></div>
 <div class="ph"><img src="src/cover_adele.jpg"></div>
 <div class="cr mono">Photo: Christopher Macsurak / CC BY 2.0</div>
 <div class="k mono">CAMILA CABELLO · KELLY CLARKSON · ELLIE GOULDING · ADELE</div>
-<h1>무대가 두려웠던 가수,<br>네 명의 이야기.</h1>
-<p>노래는 좋은데, 사람들 앞은 어려운 분들께.</p>
+<h1>그래미 받은 가수가<br>“관객이 무서워요”라고 했습니다.</h1>
+<p>무대가 두려웠던 가수, 네 명의 이야기.</p>
 <div class="ft mono"><span>무대가 두려웠던 가수</span><span>01 / 07</span></div></section></body></html>`;
 writeFileSync(path.join(dir, "cover.html"), html);
 const { chromium } = require("playwright");
