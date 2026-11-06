@@ -1,5 +1,5 @@
 {
-  "title": "ENOCH NOTE — 무대가 두려웠던 가수, 다섯 명의 이야기",
+  "title": "ENOCH NOTE — 무대가 두려웠던 가수, 네 명의 이야기",
   "masthead": "ENOCH NOTE — SHY SINGERS",
   "footer": "무대가 두려웠던 가수",
   "ticker": "ENOCH NOTE — SHY SINGERS — 무대가 두려웠던 가수",
@@ -10,13 +10,12 @@
       "kicker": "Shy Singers",
       "index": [
         "CAMILA CABELLO",
-        "IRIS DEMENT",
         "KELLY CLARKSON",
         "ELLIE GOULDING",
         "ADELE"
       ],
       "en": "SHY\nSINGERS",
-      "title": "무대가 두려웠던 가수,\n다섯 명의 이야기.",
+      "title": "무대가 두려웠던 가수,\n네 명의 이야기.",
       "sub": "노래는 좋은데, 사람들 앞은 어려운 분들께.",
       "enSize": 120
     },
@@ -37,23 +36,8 @@
       "source": "— Marie Claire, 2018 · Contactmusic, 2018 · Instagram, 2019"
     },
     {
-      "layout": "point",
-      "kicker": "Shy Singer 02",
-      "nameEn": "IRIS DEMENT",
-      "nameKo": "아이리스 디먼트",
-      "quoteEn": "\"…my most least desirable spot in life, which is in the spotlight.\"",
-      "title": "제 인생에서 가장 있고 싶지 않은 자리,\n스포트라이트.",
-      "body": [
-        "스스로를 수줍음이 많은 사람이라고 말하는 싱어송라이터입니다.",
-        "노래가 떠오르기 시작하자, 숨거나 피할 수만은 없었다고 해요."
-      ],
-      "source": "— NPR Fresh Air, 2015",
-      "quoteBreak": "…my most least desirable\nspot in life, which is\nin the spotlight.",
-      "quoteSize": 66
-    },
-    {
       "layout": "photo",
-      "kicker": "Shy Singer 03",
+      "kicker": "Shy Singer 02",
       "image": "output/노트_무대가두려웠던가수/src/kelly.jpg",
       "imageHeight": 560,
       "credit": "Photo: Chamber of Fear / CC BY-SA 2.0",
@@ -69,7 +53,7 @@
     },
     {
       "layout": "photo",
-      "kicker": "Shy Singer 04",
+      "kicker": "Shy Singer 03",
       "image": "output/노트_무대가두려웠던가수/src/ellie.jpg",
       "imageHeight": 560,
       "credit": "Photo: Tore Sætre / CC BY-SA 4.0",
@@ -83,8 +67,11 @@
       "source": "— BBC Later… with Jools Holland, 2020"
     },
     {
-      "layout": "point",
-      "kicker": "Shy Singer 05",
+      "layout": "photo",
+      "kicker": "Shy Singer 04",
+      "image": "output/노트_무대가두려웠던가수/src/adele.jpg",
+      "imageHeight": 560,
+      "credit": "Photo: Egghead06 / Wikimedia Commons / CC BY-SA",
       "nameEn": "ADELE",
       "nameKo": "아델",
       "quoteEn": "\"I'm scared of audiences.\"",
@@ -92,9 +79,7 @@
       "body": [
         "암스테르담 공연에서는 너무 긴장한 나머지,\n비상구로 빠져나간 적도 있다고 합니다."
       ],
-      "source": "— Rolling Stone, 2011",
-      "quoteBreak": "I’m scared\nof audiences.",
-      "quoteSize": 104
+      "source": "— Rolling Stone, 2011"
     },
     {
       "layout": "point",
