@@ -19,12 +19,12 @@
   - Kelly: Chamber of Fear / CC BY-SA 2.0 — creativecommons.org/licenses/by-sa/2.0
   - Ellie: Tore Sætre / CC BY-SA 4.0 — creativecommons.org/licenses/by-sa/4.0
   - Adele: Egghead06 / Wikimedia Commons / CC BY-SA 4.0 (확인됨, 2026-11-06)
-- 출처 표기: Ellie `— BBC Later… with Jools Holland · PA, 2020`. Adele `— Rolling Stone` (연도 미확정이라 연도 없이).
+- 출처 표기: Ellie `— BBC Later… with Jools Holland · PA, 2020`. Adele `— Rolling Stone, 2011`.
 
 ### 확인할 것 (최종 구성 기준)
 - [ ] 아델 사진 라이선스 버전: Wikimedia Commons 파일 페이지에서 확인 → 5장 credit·캡션 사진 출처에 `CC BY-SA x.x`와 주소를 채운다. 확인 전 게시 보류.
-- [ ] 아델 Rolling Stone 인터뷰 연도: 원 기사 2011 / 웹 게재 2012-02. 원문 확인 후 연도를 붙인다(확인 못 하면 `— Rolling Stone (via GRAMMY.com)` 검토).
-- [ ] 아델 비상구 일화("One show in Amsterdam…"): Rolling Stone 원문에서 문장을 확인하면 다시 넣을 수 있음. 확인 전에는 쓰지 않는다.
+- [x] (2026-11-06 원장님 확인: Rolling Stone 2011, "Best of Rock" 2011-05-03 호. 비상구 일화도 같은 인터뷰) 아델 Rolling Stone 인터뷰 연도: 원 기사 2011 / 웹 게재 2012-02. 원문 확인 후 연도를 붙인다(확인 못 하면 `— Rolling Stone (via GRAMMY.com)` 검토).
+- [x] (2026-11-06 원장님 확인 → 5장에 다시 넣음) 아델 비상구 일화("One show in Amsterdam…"): Rolling Stone 원문에서 문장을 확인하면 다시 넣을 수 있음. 확인 전에는 쓰지 않는다.
 - [ ] 인용 원문 대조: Marie Claire 2018, Express & Star(PA) 2020, Rolling Stone(아델).
 - [ ] 외부 CC 사진·실존 가수 인용을 학원 계정에 쓰는 것 — 원장님 판단 (CLAUDE.md 5번 예외).
 
