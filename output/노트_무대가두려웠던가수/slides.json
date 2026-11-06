@@ -1,0 +1,102 @@
+{
+  "title": "ENOCH NOTE — 무대가 두려웠던 가수, 네 명의 이야기",
+  "masthead": "ENOCH NOTE — SHY SINGERS",
+  "footer": "무대가 두려웠던 가수",
+  "ticker": "ENOCH NOTE — SHY SINGERS — 무대가 두려웠던 가수",
+  "theme": "ivory",
+  "slides": [
+    {
+      "layout": "typecover",
+      "kicker": "Four Singers",
+      "index": [
+        "CAMILA CABELLO",
+        "KELLY CLARKSON",
+        "ELLIE GOULDING",
+        "ADELE"
+      ],
+      "en": "SHY\nSINGERS",
+      "title": "무대가 두려웠던 가수,\n네 명의 이야기.",
+      "sub": "노래는 좋은데, 사람들 앞은 어려운 분들께.",
+      "enSize": 120
+    },
+    {
+      "layout": "photo",
+      "kicker": "Shy Singer 01",
+      "image": "output/노트_무대가두려웠던가수/src/camila.jpg",
+      "imageHeight": 560,
+      "credit": "Photo: Michael Hicks / CC BY 2.0",
+      "nameEn": "CAMILA CABELLO",
+      "nameKo": "카밀라 카베요",
+      "quoteEn": "\"I'm an introvert.\"",
+      "title": "저는 내향적인 사람이에요.",
+      "body": [
+        "인터뷰 촬영 중, 헤어·메이크업 스태프까지 있던 방에서 얼어붙은 적이 있다고 합니다.",
+        "사람들의 시선이 모이면, 압도되는 기분이었다는 고백."
+      ],
+      "source": "— Marie Claire, 2018 · Contactmusic, 2018 · Instagram, 2019"
+    },
+    {
+      "layout": "photo",
+      "kicker": "Shy Singer 02",
+      "image": "output/노트_무대가두려웠던가수/src/kelly.jpg",
+      "imageHeight": 560,
+      "credit": "Photo: Chamber of Fear / CC BY-SA 2.0",
+      "nameEn": "KELLY CLARKSON",
+      "nameKo": "켈리 클락슨",
+      "quoteEn": "\"I feel like she's the reason why I'm not so shy.\"",
+      "title": "아레사 덕분에, 제가 덜 수줍어진 것 같아요.",
+      "body": [
+        "아레사 프랭클린을 추모하며 꺼낸 이야기.",
+        "어린 시절엔 마음을 말로 전하는 게 어려워서,\n노래하기도 전에 글을 쓰기 시작했다고 합니다."
+      ],
+      "source": "— ABC, 2018"
+    },
+    {
+      "layout": "photo",
+      "kicker": "Shy Singer 03",
+      "image": "output/노트_무대가두려웠던가수/src/ellie.jpg",
+      "imageHeight": 560,
+      "credit": "Photo: Tore Sætre / CC BY-SA 4.0",
+      "nameEn": "ELLIE GOULDING",
+      "nameKo": "엘리 굴딩",
+      "quoteEn": "\"I was painfully shy.\"",
+      "title": "저는 지독하게 수줍은 사람이었어요.",
+      "body": [
+        "첫 오픈 마이크 무대에서는 긴장으로 엉망이었다고 돌아봅니다."
+      ],
+      "source": "— BBC Later… with Jools Holland · PA, 2020"
+    },
+    {
+      "layout": "photo",
+      "kicker": "Shy Singer 04",
+      "image": "output/노트_무대가두려웠던가수/src/adele.jpg",
+      "imageHeight": 560,
+      "credit": "Photo: Egghead06 / Wikimedia Commons / CC BY-SA",
+      "nameEn": "ADELE",
+      "nameKo": "아델",
+      "quoteEn": "\"I'm scared of audiences.\"",
+      "title": "저는 관객이 무서워요.",
+      "body": [
+        "한 인터뷰에서, 관객이 무섭다고 털어놓았습니다."
+      ],
+      "source": "— Rolling Stone"
+    },
+    {
+      "layout": "point",
+      "theme": "mist",
+      "kicker": "The ENOCH Way",
+      "title": "무대가 아니어도\n괜찮습니다.",
+      "body": [
+        "소리를 내는 자리엔, 선생님 한 사람.",
+        "ENOCH은 모든 과정을 **1:1 레슨**으로 진행하고, 수강생은 운영시간 안에 연습실을 자유롭게 쓸 수 있어요.",
+        "같은 곡도, 사람마다 다르게 가르칩니다."
+      ]
+    },
+    {
+      "layout": "closing",
+      "theme": "black",
+      "ghost": "ENOCH",
+      "principle": "편한 자리에서,\n내 소리부터."
+    }
+  ]
+}
