@@ -139,7 +139,7 @@ body { font-family: var(--ko); word-break: keep-all; -webkit-font-smoothing: ant
 .layout-numbers .r { grid-template-columns: 312px 1fr; min-height: 244px; align-items: center; }
 .num { font-family: var(--en); font-size: 192px; font-weight: 800; line-height: .8; letter-spacing: -8px; }
 .r .h { font-size: 34px; font-weight: 800; letter-spacing: -1px; }
-.r .t { margin-top: 14px; font-size: 25px; font-weight: 300; line-height: 1.68; color: var(--body); }
+.r .t { margin-top: 14px; font-size: 25px; font-weight: 300; line-height: 1.68; color: var(--body); white-space: pre-line; }
 
 /* ── keyboard (DIAGRAM) ─────────────────────── */
 .layout-keyboard, .layout-beats { padding-top: 162px; }
