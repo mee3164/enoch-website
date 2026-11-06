@@ -1,4 +1,36 @@
-# 구성안: 무대가 두려웠던 가수, 다섯 명의 이야기.
+# 구성안: 무대가 두려웠던 가수, 네 명의 이야기.
+
+## 최종 구성 (2026-11-06) — 이 절이 기준. 아래 초안 중 다른 내용은 이 절을 따른다
+- 네 명(Camila · Kelly · Ellie · Adele), 7장. Iris DeMent 장은 **제외**, Nicola Mills는 확인 불가로 제외(아델로 교체).
+- 꼬리말 `0x / 07`. 1장 kicker `Four Singers` (머리말·큰 영문·띠의 SHY SINGERS 반복을 줄임).
+
+| 장 | 역할 | 레이아웃 | 사진 |
+|---|---|---|---|
+| 1 | 표지 | typecover (이름 목록 CAMILA CABELLO / KELLY CLARKSON / ELLIE GOULDING / ADELE) | 없음 |
+| 2 | Camila Cabello — "I'm an introvert." / 헤어·메이크업 스태프까지 있던 방에서 얼어붙음 | photo | CC (`src/camila.jpg`) |
+| 3 | Kelly Clarkson — "I feel like she's the reason why I'm not so shy." | photo | CC (`src/kelly.jpg`) |
+| 4 | Ellie Goulding — "I was painfully shy." / 첫 오픈 마이크 nervous wreck (PA 보도 부제 기준) | photo | CC (`src/ellie.jpg`) |
+| 5 | Adele — "I'm scared of audiences." (비상구 일화는 원문 미대조라 뺌) | photo | CC (`src/adele.jpg`) |
+| 6 | ENOCH의 방식 — 1:1 레슨 · 운영시간 내 연습실 자유 이용 · 원칙 2 | point, mist | 없음 |
+| 7 | 마무리 — 편한 자리에서, 내 소리부터. | closing, black | 없음 |
+
+- 사진 4장 모두 CC 라이선스, 흑백 보정·자르기(변경 사항으로 캡션에 표기):
+  - Camila: Michael Hicks / CC BY 2.0 — creativecommons.org/licenses/by/2.0
+  - Kelly: Chamber of Fear / CC BY-SA 2.0 — creativecommons.org/licenses/by-sa/2.0
+  - Ellie: Tore Sætre / CC BY-SA 4.0 — creativecommons.org/licenses/by-sa/4.0
+  - Adele: Egghead06 / Wikimedia Commons / CC BY-SA **버전 미확인**
+- 출처 표기: Ellie `— BBC Later… with Jools Holland · PA, 2020`. Adele `— Rolling Stone` (연도 미확정이라 연도 없이).
+
+### 확인할 것 (최종 구성 기준)
+- [ ] 아델 사진 라이선스 버전: Wikimedia Commons 파일 페이지에서 확인 → 5장 credit·캡션 사진 출처에 `CC BY-SA x.x`와 주소를 채운다. 확인 전 게시 보류.
+- [ ] 아델 Rolling Stone 인터뷰 연도: 원 기사 2011 / 웹 게재 2012-02. 원문 확인 후 연도를 붙인다(확인 못 하면 `— Rolling Stone (via GRAMMY.com)` 검토).
+- [ ] 아델 비상구 일화("One show in Amsterdam…"): Rolling Stone 원문에서 문장을 확인하면 다시 넣을 수 있음. 확인 전에는 쓰지 않는다.
+- [ ] 인용 원문 대조: Marie Claire 2018, Express & Star(PA) 2020, Rolling Stone(아델).
+- [ ] 외부 CC 사진·실존 가수 인용을 학원 계정에 쓰는 것 — 원장님 판단 (CLAUDE.md 5번 예외).
+
+---
+
+## 초안 (기록용)
 
 - 분류: ENOCH NOTE (노트 시리즈 · 인스타 카드뉴스, 블로그 요청 없음)
 - 하이라이트: LESSON
@@ -114,8 +146,8 @@
 카드 인용: "I'm scared of audiences." / 저는 관객이 무서워요. — Rolling Stone, 2011 (6장, 사진 없이 글자형)
 
 ### 사진 확정 (2026-11-06 사용자·프로듀서)
-- 위 Getty·매체 사진 대신 CC 라이선스 사진 3장만 쓴다: Camila `src/camila.jpg` (Photo: Michael Hicks / CC BY 2.0), Kelly `src/kelly.jpg` (Photo: Chamber of Fear / CC BY-SA 2.0), Ellie `src/ellie.jpg` (Photo: Tore Sætre / CC BY-SA 4.0).
-- Iris·Adele 장은 사진 없이 큰 영문 이름 + 인용문(글자형).
+- 위 Getty·매체 사진 대신 CC 라이선스 사진 4장을 쓴다: Camila `src/camila.jpg` (Photo: Michael Hicks / CC BY 2.0), Kelly `src/kelly.jpg` (Photo: Chamber of Fear / CC BY-SA 2.0), Ellie `src/ellie.jpg` (Photo: Tore Sætre / CC BY-SA 4.0), Adele `src/adele.jpg` (Photo: Egghead06 / Wikimedia Commons / CC BY-SA, 버전 미확인).
+- (초기 메모 "Iris·Adele 글자형"은 폐기 — Iris 제외, Adele 사진 사용.)
 
 ## 저작권 · 사진 메모
 - **출처 표기는 사용 허가가 아니다.** Getty Images(Camila, Kelly, Ellie) 사진은 유료 에디토리얼 라이선스 대상이고, Visit St. Augustine · This is the Coast 사진도 각 매체 소유. 상업 계정(학원 홍보)에 올리는 것은 출처를 적어도 침해 소지가 있다. **게시 전 원장님 판단 필요.** 이번 사용은 사용자 지시에 따른 예외이며, CLAUDE.md 5번(우리 실제 사진만)과 다르다.
