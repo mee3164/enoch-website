@@ -14,7 +14,7 @@ const html = `<!doctype html><html lang="ko"><head><meta charset="utf-8"><style>
 .c{width:1080px;height:1350px;position:relative;overflow:hidden;background:#F1EDE4;color:#111;font-family:P,sans-serif;word-break:keep-all}
 .mono{font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace}
 .hd,.ft{position:absolute;left:96px;right:96px;display:flex;justify-content:space-between;font-size:20px;letter-spacing:2.4px}
-.hd{top:64px;padding-bottom:18px;border-bottom:2px solid #111}.ft{bottom:64px;padding-top:18px;border-top:2px solid #111}
+.hd{top:76px;padding-bottom:18px;border-bottom:2px solid #111}.ft{bottom:76px;padding-top:18px;border-top:2px solid #111}
 .ph{position:absolute;left:96px;top:150px;width:888px;height:676px;overflow:hidden}
 .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;filter:grayscale(1) sepia(.18) contrast(1.05)}
 .cr{position:absolute;right:96px;top:836px;font-size:15px;letter-spacing:1px;color:#8A8A8A}

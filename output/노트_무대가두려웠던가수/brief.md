@@ -18,7 +18,7 @@
   - Camila: Michael Hicks / CC BY 2.0 — creativecommons.org/licenses/by/2.0
   - Kelly: Chamber of Fear / CC BY-SA 2.0 — creativecommons.org/licenses/by-sa/2.0
   - Ellie: Tore Sætre / CC BY-SA 4.0 — creativecommons.org/licenses/by-sa/4.0
-  - Adele: Egghead06 / Wikimedia Commons / CC BY-SA **버전 미확인**
+  - Adele: Egghead06 / Wikimedia Commons / CC BY-SA 4.0 (확인됨, 2026-11-06)
 - 출처 표기: Ellie `— BBC Later… with Jools Holland · PA, 2020`. Adele `— Rolling Stone` (연도 미확정이라 연도 없이).
 
 ### 확인할 것 (최종 구성 기준)
@@ -146,7 +146,7 @@
 카드 인용: "I'm scared of audiences." / 저는 관객이 무서워요. — Rolling Stone, 2011 (6장, 사진 없이 글자형)
 
 ### 사진 확정 (2026-11-06 사용자·프로듀서)
-- 위 Getty·매체 사진 대신 CC 라이선스 사진 4장을 쓴다: Camila `src/camila.jpg` (Photo: Michael Hicks / CC BY 2.0), Kelly `src/kelly.jpg` (Photo: Chamber of Fear / CC BY-SA 2.0), Ellie `src/ellie.jpg` (Photo: Tore Sætre / CC BY-SA 4.0), Adele `src/adele.jpg` (Photo: Egghead06 / Wikimedia Commons / CC BY-SA, 버전 미확인).
+- 위 Getty·매체 사진 대신 CC 라이선스 사진 4장을 쓴다: Camila `src/camila.jpg` (Photo: Michael Hicks / CC BY 2.0), Kelly `src/kelly.jpg` (Photo: Chamber of Fear / CC BY-SA 2.0), Ellie `src/ellie.jpg` (Photo: Tore Sætre / CC BY-SA 4.0), Adele `src/adele.jpg` (Photo: Egghead06 / Wikimedia Commons / CC BY-SA 4.0).
 - (초기 메모 "Iris·Adele 글자형"은 폐기 — Iris 제외, Adele 사진 사용.)
 
 ## 저작권 · 사진 메모
