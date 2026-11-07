@@ -142,7 +142,7 @@ ld = {
     "name": B['name'], "alternateName": [B['nameEn'], "에녹실용음악학원"],
     "description": "경기도 시흥시 대야역 인근 실용음악학원. 보컬·기타·드럼·베이스·피아노·미디·작곡, 입시·취미·성인·전문 과정 모두 1:1 레슨.",
     "slogan": B['signature'],
-    "telephone": "+82-10-3949-3666",
+    "telephone": "+82-31-315-3666",
     "address": {"@type": "PostalAddress", "streetAddress": "은행로 157 2층", "addressLocality": "시흥시",
                 "addressRegion": "경기도", "addressCountry": "KR"},
     "openingHoursSpecification": [
