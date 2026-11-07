@@ -25,10 +25,10 @@ p{position:absolute;left:96px;top:1112px;font-size:32px;font-weight:300;color:#5
 <div class="hd mono"><span>ENOCH MUSIC ACADEMY</span><span>ENOCH NOTE — SHY SINGERS</span></div>
 <div class="ph"><img src="src/cover_adele.jpg"></div>
 <div class="cr mono">Photo: Christopher Macsurak / CC BY 2.0</div>
-<div class="k mono">CAMILA CABELLO · KELLY CLARKSON · ELLIE GOULDING · ADELE</div>
+<div class="k mono">ADELE · ELLIE GOULDING · CAMILA CABELLO · KELLY CLARKSON</div>
 <h1>그래미 받은 가수가<br>“관객이 무서워요”라고 했습니다.</h1>
 <p>무대가 두려웠던 가수, 네 명의 이야기.</p>
-<div class="ft mono"><span>무대가 두려웠던 가수</span><span>01 / 07</span></div></section></body></html>`;
+<div class="ft mono"><span>무대가 두려웠던 가수</span><span>01 / 08</span></div></section></body></html>`;
 writeFileSync(path.join(dir, "cover.html"), html);
 const { chromium } = require("playwright");
 const b = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});

@@ -9,10 +9,10 @@
       "layout": "typecover",
       "kicker": "Four Singers",
       "index": [
-        "CAMILA CABELLO",
-        "KELLY CLARKSON",
+        "ADELE",
         "ELLIE GOULDING",
-        "ADELE"
+        "CAMILA CABELLO",
+        "KELLY CLARKSON"
       ],
       "en": "SHY\nSINGERS",
       "title": "그래미 받은 가수가\n“관객이 무서워요”라고 했습니다.",
@@ -22,6 +22,37 @@
     {
       "layout": "photo",
       "kicker": "Shy Singer 01",
+      "image": "output/노트_무대가두려웠던가수/src/adele.jpg",
+      "imageHeight": 560,
+      "credit": "Photo: Egghead06 / Wikimedia Commons / CC BY-SA 4.0",
+      "nameEn": "ADELE",
+      "nameKo": "아델",
+      "quoteEn": "\"I'm scared of audiences.\"",
+      "title": "저는 관객이 무서워요.",
+      "body": [
+        "2011년 인터뷰에서, 관객이 무섭다고 털어놓았습니다.",
+        "암스테르담 공연에서는 너무 긴장한 나머지\n비상구로 빠져나간 적도 있다고 해요."
+      ],
+      "source": "— Rolling Stone, 2011"
+    },
+    {
+      "layout": "photo",
+      "kicker": "Shy Singer 02",
+      "image": "output/노트_무대가두려웠던가수/src/ellie.jpg",
+      "imageHeight": 560,
+      "credit": "Photo: Tore Sætre / CC BY-SA 4.0",
+      "nameEn": "ELLIE GOULDING",
+      "nameKo": "엘리 굴딩",
+      "quoteEn": "\"I was painfully shy.\"",
+      "title": "저는 지독하게 수줍은 사람이었어요.",
+      "body": [
+        "첫 오픈 마이크 무대에서는 긴장으로 엉망이었다고 돌아봅니다."
+      ],
+      "source": "— BBC Later… with Jools Holland · PA, 2020"
+    },
+    {
+      "layout": "photo",
+      "kicker": "Shy Singer 03",
       "image": "output/노트_무대가두려웠던가수/src/camila.jpg",
       "imageHeight": 560,
       "credit": "Photo: Michael Hicks / CC BY 2.0",
@@ -37,50 +68,30 @@
     },
     {
       "layout": "photo",
-      "kicker": "Shy Singer 02",
+      "kicker": "Shy Singer 04",
       "image": "output/노트_무대가두려웠던가수/src/kelly.jpg",
       "imageHeight": 560,
       "credit": "Photo: Chamber of Fear / CC BY-SA 2.0",
       "nameEn": "KELLY CLARKSON",
       "nameKo": "켈리 클락슨",
-      "quoteEn": "\"I feel like she's the reason why I'm not so shy.\"",
-      "title": "아레사 덕분에, 제가 덜 수줍어진 것 같아요.",
+      "quoteEn": "\"I was afraid to do anything because I was afraid to be embarrassed.\"",
+      "title": "창피할까 봐, 아무것도 못 하던\n사람이었어요.",
       "body": [
-        "아레사 프랭클린을 추모하며 꺼낸 이야기.",
-        "어린 시절엔 마음을 말로 전하는 게 어려워서,\n노래하기도 전에 글을 쓰기 시작했다고 합니다."
+        "어린 시절 지독하게 수줍었다고 돌아봅니다.",
+        "그 사람이 2002년, 생방송 오디션 「아메리칸 아이돌」의\n첫 우승자가 됐습니다."
       ],
       "source": "— ABC, 2018"
     },
     {
-      "layout": "photo",
-      "kicker": "Shy Singer 03",
-      "image": "output/노트_무대가두려웠던가수/src/ellie.jpg",
-      "imageHeight": 560,
-      "credit": "Photo: Tore Sætre / CC BY-SA 4.0",
-      "nameEn": "ELLIE GOULDING",
-      "nameKo": "엘리 굴딩",
-      "quoteEn": "\"I was painfully shy.\"",
-      "title": "저는 지독하게 수줍은 사람이었어요.",
+      "layout": "point",
+      "theme": "sage",
+      "kicker": "What They Share",
+      "title": "두려움이 사라진 다음에\n부른 게 아니었습니다.",
       "body": [
-        "첫 오픈 마이크 무대에서는 긴장으로 엉망이었다고 돌아봅니다."
-      ],
-      "source": "— BBC Later… with Jools Holland · PA, 2020"
-    },
-    {
-      "layout": "photo",
-      "kicker": "Shy Singer 04",
-      "image": "output/노트_무대가두려웠던가수/src/adele.jpg",
-      "imageHeight": 560,
-      "credit": "Photo: Egghead06 / Wikimedia Commons / CC BY-SA 4.0",
-      "nameEn": "ADELE",
-      "nameKo": "아델",
-      "quoteEn": "\"I'm scared of audiences.\"",
-      "title": "저는 관객이 무서워요.",
-      "body": [
-        "2011년 인터뷰에서, 관객이 무섭다고 털어놓았습니다.",
-        "암스테르담 공연에서는 너무 긴장한 나머지\n비상구로 빠져나간 적도 있다고 해요."
-      ],
-      "source": "— Rolling Stone, 2011"
+        "엘리 굴딩은 긴장으로 엉망이던 첫 무대에 섰고,",
+        "아델은 관객이 무섭다면서도 공연을 이어 갔어요.",
+        "**두려운 채로, 불렀습니다.**"
+      ]
     },
     {
       "layout": "point",
