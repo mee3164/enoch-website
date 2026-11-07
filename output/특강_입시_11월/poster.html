@@ -1,0 +1,59 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<!-- 입시 특강 안내 포스터 (1080×1350) — node render.mjs → poster.png -->
+<style>
+@font-face{font-family:P;src:url(../../templates/fonts/Pretendard-Light.woff2);font-weight:300}
+@font-face{font-family:P;src:url(../../templates/fonts/Pretendard-Regular.woff2);font-weight:400}
+@font-face{font-family:P;src:url(../../templates/fonts/Pretendard-SemiBold.woff2);font-weight:600}
+@font-face{font-family:P;src:url(../../templates/fonts/Pretendard-Bold.woff2);font-weight:700}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1080px;height:1350px}
+.c{width:1080px;height:1350px;position:relative;overflow:hidden;background:#F1EDE4;color:#111;font-family:P,sans-serif;word-break:keep-all}
+.mono{font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace}
+.hd,.ft{position:absolute;left:72px;right:72px;display:flex;justify-content:space-between;font-size:18px;letter-spacing:2.4px}
+.hd{top:56px;padding-bottom:16px;border-bottom:2px solid #111}
+.ft{bottom:52px;padding-top:16px;border-top:2px solid #111;font-size:17px;letter-spacing:1.2px}
+.en{position:absolute;left:72px;top:120px;font-weight:700;font-size:92px;line-height:.9;letter-spacing:-3px}
+.ttl{position:absolute;right:72px;top:126px;text-align:right}
+.ttl b{display:block;font-size:44px;font-weight:700;letter-spacing:-1px}
+.ttl span{display:block;margin-top:12px;font-size:22px;font-weight:300;color:#555}
+.lead{position:absolute;left:72px;right:72px;top:318px;font-size:22px;font-weight:400;color:#333;padding:16px 0;border-top:1px solid #111;border-bottom:1px solid #111;display:flex;justify-content:space-between}
+.lead em{font-style:normal;color:#8A8A8A}
+table{position:absolute;left:72px;right:72px;top:392px;width:936px;border-collapse:collapse}
+td{vertical-align:top;padding:15px 0;border-bottom:1px solid #c9c3b8}
+td.n{width:56px;font-size:17px;color:#8A8A8A;padding-top:20px}
+.nm{font-size:27px;font-weight:700;letter-spacing:-.5px}
+.nm small{font-size:18px;font-weight:400;color:#8A8A8A;margin-left:8px;letter-spacing:0}
+.ds{margin-top:6px;font-size:18.5px;font-weight:300;color:#444;line-height:1.45}
+td.m{width:290px;padding-left:20px;font-size:17.5px;line-height:1.55;color:#333}
+td.m i{font-style:normal;color:#8A8A8A;display:inline-block;width:44px;font-size:15px;letter-spacing:1px}
+td.m b{font-weight:600}
+.info{position:absolute;left:72px;right:72px;top:1150px;display:flex;gap:28px;font-size:18px;line-height:1.55}
+.info div{flex:1}
+.info .k{font-size:14px;letter-spacing:2px;color:#8A8A8A;margin-bottom:6px}
+.info b{font-weight:600}
+</style></head><body><section class="c">
+<div class="hd mono"><span>ENOCH MUSIC ACADEMY</span><span>ADMISSION — SPECIAL CLASS</span></div>
+<div class="en">SPECIAL<br>CLASS</div>
+<div class="ttl"><b>입시 특강 안내</b><span>화성학과 앙상블, 입시의 기본기를 다집니다.</span></div>
+<div class="lead"><span>실용음악 입시 수험생 · 예비 수험생</span><em>단체 수업 · 선착순 접수</em></div>
+<table>
+<tr><td class="n mono">01</td><td><div class="nm">전통 화성학<small>8주</small></div><div class="ds">2차 시험 실기·필기 대비</div></td>
+<td class="m"><i>대상</i>모든 전공 입시생<br><i>기간</i>8주 · 주 1회 (총 8회)<br><i>시작</i><b>11월 16일</b></td></tr>
+<tr><td class="n mono">02</td><td><div class="nm">보컬 앙상블<small>4주</small></div><div class="ds">블렌딩 · 시창 · 다성부 코러스 · 무대 매너</div></td>
+<td class="m"><i>대상</i>보컬 · 싱어송라이터 전공<br><i>기간</i>4주 · 주 1회 (총 4회)<br><i>시작</i><b>11월 16일</b></td></tr>
+<tr><td class="n mono">03</td><td><div class="nm">악기 앙상블<small>합주 · 4주</small></div><div class="ds">리듬 섹션 간의 호흡, 장르별 실전 초견 합주<br>(Jazz · Pop · Funk)</div></td>
+<td class="m"><i>대상</i>기악 · 보컬 · 싱어송라이터 전공<br><i>기간</i>4주 · 주 1회 (총 4회)<br><i>시작</i>추후 공지</td></tr>
+<tr><td class="n mono">04</td><td><div class="nm">잼<small>즉흥연주 · 4주</small></div><div class="ds">즉흥 · 반주 섹션 간의 호흡, 장르별 실전 초견 합주<br>기타 · 드럼 · 베이스 · 건반</div></td>
+<td class="m"><i>대상</i>기악 전공<br><i>기간</i>4주 · 주 1회 (총 4회)<br><i>시작</i>추후 공지</td></tr>
+<tr><td class="n mono">05</td><td><div class="nm">악보 제작<small>채보 · 사보 · 4주</small></div><div class="ds">장르별 악보 제작, 입시곡 악보 제작</div></td>
+<td class="m"><i>대상</i>기악 · 보컬 · 싱어송라이터 전공<br><i>기간</i>4주 · 주 1회 (총 4회)<br><i>시작</i>추후 공지</td></tr>
+<tr><td class="n mono">06</td><td><div class="nm">미디 기초<small>시퀀싱 · 4주</small></div><div class="ds">미디 기초와 베이직 다지기<br>개인 노트북 지참 또는 단체실 이용 (노트북 없어도 가능)</div></td>
+<td class="m"><i>대상</i>작곡에 관심 있는 누구나<br><i>기간</i>4주 · 주 1회 (총 4회)<br><i>시작</i>추후 공지</td></tr>
+</table>
+<div class="info">
+<div><div class="k mono">APPLY</div><b>사무실 방문 접수</b><br>상시 접수 · 선착순</div>
+<div><div class="k mono">NOTE</div>단체 수업으로 진행되어<br>결석 시 보강이 어렵습니다.</div>
+<div><div class="k mono">CONTACT</div><b>010 3949 3666</b><br>경기도 시흥시 은행로 157 2층</div>
+</div>
+<div class="ft mono"><span>에녹실용음악학원 시흥점</span><span>평일 13:00–22:00 · 토 10:00–18:00</span></div>
+</section></body></html>
