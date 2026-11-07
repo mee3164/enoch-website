@@ -1,4 +1,4 @@
-// 블로그 이미지: blog.html의 각 section → blog_01.png ~
+// 블로그 이미지(시설 사진 + 짧은 문구): blog.html의 각 section → blog_01.png ~
 // CHROMIUM_PATH=... node output/블로그_내향형보컬/blog.mjs
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
