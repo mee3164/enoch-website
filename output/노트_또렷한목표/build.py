@@ -15,14 +15,14 @@ def ft(i):
 wave = ''.join(f'<i style="height:{int(30 + 70 * abs(__import__("math").sin(k * 0.73) * __import__("math").cos(k * 0.21)))}%"></i>' for k in range(60))
 wave2 = ''.join(f'<i style="height:{int(25 + 60 * abs(__import__("math").sin(k * 0.61 + 1) * __import__("math").cos(k * 0.17)))}%"></i>' for k in range(60))
 
-rows = [("노래 잘하고 싶다", "이 곡을 원키로, 후렴까지 음정 흔들리지 않고"),
-        ("기타 잘 치고 싶다", "이 곡 코드 전환을, 박자 놓치지 않고 끝까지"),
-        ("드럼 빠르게 치고 싶다", "16분음표를 BPM 100에서, 고르게 1분"),
-        ("피아노로 반주하고 싶다", "코드 악보만 보고, 이 노래 반주 한 바퀴")]
+rows = [("잘하고 싶다", "좋아하는 곡 한 곡을,<br>처음부터 끝까지 멈추지 않고"),
+        ("실력이 늘고 싶다", "3개월 전 녹음보다,<br>한 구간이라도 나아지기"),
+        ("자신감을 갖고 싶다", "편한 사람 한 명 앞에서,<br>한 곡 끝까지"),
+        ("감성 있게 하고 싶다", "좋아하는 연주의 끝음 처리 하나,<br>그대로 따라 하기")]
 tbl = ''.join(f'<div class="row" data-k="{k}"><span class="a">{a}</span><span class="arr">→</span><span class="b">{b}</span></div>' for k, (a, b) in enumerate(rows))
 
 parts = [("소리", "밝은지, 어두운지, 숨이 섞였는지"), ("음정 · 리듬", "정확해서인지, 일부러 밀고 당겨서인지"),
-         ("표현", "세게 · 여리게, 끝음, 쉼"), ("기술", "고음, 빠른 패시지, 특정 주법")]
+         ("표현", "세게 · 여리게, 끝음, 쉼"), ("기술", "빠르기, 음역, 특정한 연주법")]
 ptbl = ''.join(f'<div class="pr" data-k="{k}"><b>{a}</b><span>{b}</span></div>' for k, (a, b) in enumerate(parts))
 
 html = f'''<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>ENOCH NOTE — 또렷한 목표</title><style>
@@ -71,7 +71,7 @@ body{{width:1080px;height:1350px;overflow:hidden;background:#F1EDE4}}
 .dark .wv i{{background:#F1EDE4}}
 .diff{{position:absolute;width:64px;height:64px;border-radius:50%;background:#DDE37C;color:#111;font-size:30px;font-weight:700;display:flex;align-items:center;justify-content:center}}
 /* 6 추상 → 구체 */
-.row{{position:absolute;left:96px;right:96px;display:grid;grid-template-columns:300px 60px 1fr;align-items:start;padding:30px 0;border-top:1px solid rgba(17,17,17,.25)}}
+.row{{position:absolute;left:96px;right:96px;display:grid;grid-template-columns:280px 60px 1fr;align-items:start;padding:30px 0;border-top:1px solid rgba(17,17,17,.25)}}
 .row .a{{font-size:28px;color:#8A8A8A;font-weight:400}}
 .row .arr{{font-size:30px;color:#111}}
 .row .b{{font-size:30px;font-weight:600;line-height:1.4;letter-spacing:-.6px}}
@@ -89,7 +89,7 @@ body{{width:1080px;height:1350px;overflow:hidden;background:#F1EDE4}}
 <section class="c" id="c2">{hd()}<div class="k mono">VAGUE TO CLEAR</div>
   <div class="h" id="h2">"잘하고 싶다"는<br>방향이지, 목표가 아니에요.</div>
   <div class="blurw" id="bw">잘하고 싶다</div>
-  <div class="sharp" id="sp"><u id="u2">이 곡 후렴을, 처음부터 끝까지<br>흔들리지 않고 부르기</u></div>
+  <div class="sharp" id="sp"><u id="u2">이 곡 후렴을, 처음부터 끝까지<br>흔들리지 않고</u></div>
   <div class="p" style="top:1000px" id="p2">목표가 구체적이어야, 오늘 할 연습도 구체적이 됩니다.</div>{ft(2)}</section>
 
 <section class="c" id="c3">{hd()}<div class="k mono">STEP 01 — REFERENCE</div>
@@ -101,7 +101,7 @@ body{{width:1080px;height:1350px;overflow:hidden;background:#F1EDE4}}
 <section class="c" id="c4">{hd()}<div class="k mono">STEP 02 — WHY</div>
   <div class="h" id="h4">"좋다"를<br>단어로 쪼개 보세요.</div>
   <div id="pt4">{ptbl}</div>
-  <div class="p" style="top:1110px" id="p4">"멋있다"가 "고음에서 힘이 안 들어간 소리"가 됩니다.</div>{ft(4)}</section>
+  <div class="p" style="top:1110px" id="p4">"멋있다"가 "끝음까지 힘이 남아 있는 소리"가 됩니다.</div>{ft(4)}</section>
 
 <section class="c dark" id="c5">{hd()}<div class="k mono">STEP 03 — COMPARE</div>
   <div class="h" id="h5">내 녹음과<br>나란히 들어 보세요.</div>
