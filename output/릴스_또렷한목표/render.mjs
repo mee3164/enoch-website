@@ -1,4 +1,4 @@
-// reel.html을 프레임별로 찍어 reel.mp4(18.5초, 30fps, 1080×1920, 무음)로 만든다
+// reel.html을 프레임별로 찍어 reel.mp4(길이는 reel.html의 TOTAL, 30fps, 1080×1920, 무음)로 만든다
 // CHROMIUM_PATH=... node output/릴스_또렷한목표/render.mjs [미리보기 시점들...]
 import path from "node:path";
 import { mkdirSync, rmSync } from "node:fs";
@@ -7,11 +7,13 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 import { createRequire } from "node:module";
 const dir = path.dirname(fileURLToPath(import.meta.url));
 const { chromium } = createRequire(path.join(dir, "../../package.json"))("playwright");
-const FPS = 30, DUR = 18.5;
+const FPS = 30;
 const b = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
 const p = await b.newPage({ viewport: { width: 1080, height: 1920 } });
 await p.goto(pathToFileURL(path.join(dir, "reel.html")).href);
 await p.evaluate(() => document.fonts.ready); await p.waitForTimeout(400);
+const DUR = Math.ceil((await p.evaluate(() => TOTAL)) * 10) / 10;
+console.log("길이", DUR, "초");
 const peek = process.argv.slice(2).map(Number);
 if (peek.length) {
   for (const t of peek) { await p.evaluate((t) => setT(t), t); await p.screenshot({ path: path.join(dir, `_peek_${t}.png`) }); }

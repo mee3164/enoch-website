@@ -89,7 +89,7 @@ body{{width:1080px;height:1350px;overflow:hidden;background:#F1EDE4}}
 <section class="c" id="c2">{hd()}<div class="k mono">VAGUE TO CLEAR</div>
   <div class="h" id="h2">"잘하고 싶다"는<br>방향이지, 목표가 아니에요.</div>
   <div class="blurw" id="bw">잘하고 싶다</div>
-  <div class="sharp" id="sp"><u id="u2">이 곡 후렴을, 처음부터 끝까지<br>흔들리지 않고</u></div>
+  <div class="sharp" id="sp"><u id="u2">가장 자신 없는 한 소절을,<br>이번 주 안에.</u></div>
   <div class="p" style="top:1000px" id="p2">목표가 구체적이어야, 오늘 할 연습도 구체적이 됩니다.</div>{ft(2)}</section>
 
 <section class="c" id="c3">{hd()}<div class="k mono">STEP 01 — REFERENCE</div>

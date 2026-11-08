@@ -1,4 +1,4 @@
-# 릴스 "원하는 실력, 먼저 또렷하게" — 17.5초, 1080×1920, 모션 그래픽 + 시설 사진 (노트_또렷한목표 카드뉴스의 릴스 버전)
+# 릴스 "몇 달째 제자리라면" — 제목은 올라오고 나머지 글은 타이핑, 길이는 글자 수에 맞춰 자동 계산, 1080×1920, 모션 그래픽 + 시설 사진 (노트_또렷한목표 카드뉴스의 릴스 버전)
 # python3 output/릴스_또렷한목표/build.py → reel.html → node output/릴스_또렷한목표/render.mjs → reel.mp4
 import os, math
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -48,7 +48,7 @@ u{{text-decoration:none;background:linear-gradient(transparent 62%,#DDE37C 62%) 
   <div class="hd mono"><span>ENOCH MUSIC ACADEMY</span><span>VAGUE → CLEAR</span></div>
   <div class="t" id="t2" style="top:420px;font-size:80px">"잘하고 싶다"는<br>방향이지,<br>목표가 아니에요.</div>
   <div class="t" id="bw" style="top:930px;font-size:120px;color:#8A8A8A">잘하고 싶다</div>
-  <div class="t" id="sp" style="top:1160px;font-size:64px;line-height:1.35"><u id="u2">좋아하는 곡 한 곡을,<br>처음부터 끝까지<br>멈추지 않고.</u></div>
+  <div class="t" id="sp" style="top:1160px;font-size:64px;line-height:1.35"><u id="u2">가장 자신 없는 한 소절을,<br>이번 주 안에.</u></div>
 </section>
 
 <section class="sc" id="s3">{photo('보컬부스_03.jpg', '50% 50%', .45)}
@@ -91,26 +91,60 @@ u{{text-decoration:none;background:linear-gradient(transparent 62%,#DDE37C 62%) 
 </section>
 
 <script>
-const D=2.5, S=["s1","s2","s3","s4","s5","s6","s7"];
+const SPEED=16, S=["s1","s2","s3","s4","s5","s6","s7"];
 const $=id=>document.getElementById(id);
 const cl=x=>Math.max(0,Math.min(1,x)), ease=x=>1-Math.pow(1-cl(x),3);
 const back=x=>{{x=cl(x);const c=1.7;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2);}};
 function up(el,p,dy=40){{el.style.opacity=ease(p);el.style.transform=`translateY(${{(1-ease(p))*dy}}px)`;}}
+// 타이핑: 태그(<br>, <u>)는 그대로 두고 글자만 하나씩. 끝에 깜빡이는 커서
+const FULL={{}};
+function tok(id){{if(!FULL[id]) FULL[id]=$(id).innerHTML.split(/(<[^>]+>)/).flatMap(x=>x.startsWith("<")?[x]:[...x]); return FULL[id];}}
+function len(id){{return tok(id).filter(x=>!x.startsWith("<")).length/SPEED;}}
+function typeT(id,u,cursor=true){{const el=$(id), tk=tok(id), chars=tk.filter(x=>!x.startsWith("<")).length, n=Math.floor(cl(u*SPEED/chars)*chars);
+  let c=0,out="";for(const x of tk){{if(x.startsWith("<")){{out+=x;continue;}} if(c<n){{out+=x;c++;}}}}
+  const show=cursor&&u>=0&&((n<chars&&u<chars/SPEED)||(u<chars/SPEED+0.6&&Math.floor(u*2.4)%2===0));
+  el.innerHTML=out+`<span style="display:inline-block;width:.06em;height:.9em;margin-left:.06em;vertical-align:-.08em;background:currentColor;opacity:${{show?1:0}}"></span>`;
+  el.style.opacity=u<0?0:1; return chars/SPEED;}}
+// 장면 길이: 글자 수에 맞춰 계산
+const G=0.2, HOLD=1.1;
+const PLAN={{
+ s1:()=>0.8+len("s1s")+HOLD,
+ s2:()=>len("t2")+G+len("bw")+0.6+len("sp")+0.8+HOLD,
+ s3:()=>len("t3")+0.9+len("tc3")+G+len("s3s")+HOLD,
+ s4:()=>len("t4")+G+["w0","w1","w2","w3"].reduce((a,w)=>a+len(w)+0.15,0)+HOLD,
+ s5:()=>len("t5")+1.4+len("s5s")+HOLD,
+ s6:()=>len("t6")+1.4+len("s6s")+HOLD,
+ s7:()=>len("t7")+G+len("s7s")+HOLD+0.8}};
+const START={{}}; let acc=0; S.forEach(id=>{{START[id]=acc; acc+=PLAN[id]();}}); window.TOTAL=acc;
 window.setT=function(t){{
-  S.forEach((id,k)=>{{const a=k*D, b=(k+1)*D+(k===S.length-1?1:0); const on=t>=a&&t<b; const el=$(id); el.style.opacity=on?1:0;
-    const ph=el.querySelector(".ph"); if(ph) ph.style.transform=`scale(${{1.06-0.06*cl((t-a)/D)}})`;}});
-  let u=t; up($("t1"),(u-0.2)/0.6); up($("s1s"),(u-0.7)/0.6);
-  u=t-D; up($("t2"),u/0.4); const bw=$("bw"); bw.style.opacity=cl((u-0.4)/0.2)*(1-0.7*cl((u-1.1)/0.4)); bw.style.filter=`blur(${{8*ease((u-0.5)/0.6)}}px)`;
-  up($("sp"),(u-1.1)/0.4); $("u2").style.setProperty("--u",(100*ease((u-1.5)/0.7))+"%");
-  u=t-2*D; up($("t3"),u/0.4); const bars=$("wv3").querySelectorAll("i"), s0=Math.floor(bars.length*.44), s1=Math.floor(bars.length*.6), w=ease((u-0.7)/0.6);
-  $("sel3").style.width=(16*w)+"%"; bars.forEach((b,k)=>{{b.classList.toggle("hl",k>=s0&&k<s0+(s1-s0)*w); b.style.transform=`scaleY(${{0.25+0.75*ease((u-0.2-k*0.008)/0.4)}})`;}});
-  up($("tc3"),(u-1.2)/0.3); up($("s3s"),(u-1.5)/0.4);
-  u=t-3*D; up($("t4"),u/0.4); [0,1,2,3].forEach(k=>{{const el=$("w"+k),p=(u-0.6-k*0.3)/0.3; el.style.opacity=cl(p*2); el.style.transform=`translateX(${{(1-back(p))*-80}}px)`;}});
-  u=t-4*D; up($("t5"),u/0.4); ["wa","wb"].forEach((id,j)=>$(id).querySelectorAll("i").forEach((b,k)=>{{b.style.opacity=.85;b.style.transform=`scaleY(${{0.2+0.8*ease((u-0.3-j*0.3-k*0.008)/0.4)}})`;}}));
-  [1,2,3].forEach(k=>{{const d=$("d"+k),p=cl((u-1.1-k*0.22)/0.25); d.style.opacity=p; d.style.transform=`scale(${{0.5+0.5*ease(p)+0.15*Math.sin(Math.PI*p)}})`;}}); up($("s5s"),(u-1.8)/0.4);
-  u=t-5*D; up($("t6"),u/0.4); [0,1,2,3].forEach(k=>{{const el=$("c"+k),p=cl((u-0.5-k*0.25)/0.3); el.style.opacity=p; el.style.transform=`translateY(${{(1-ease(p))*40}}px) rotate(${{(k%2?-1:1)*3*(1-ease(p))}}deg)`;
-    if(k===3){{el.style.background=p>=1?"#DDE37C":"rgba(17,17,17,.55)"; el.style.color=p>=1?"#111":"#F1EDE4"; el.style.borderColor=p>=1?"#DDE37C":"#F1EDE4";}}}}); up($("s6s"),(u-1.7)/0.4);
-  u=t-6*D; up($("t7"),u/0.5); up($("s7s"),(u-0.5)/0.5);
+  S.forEach((id,k)=>{{const a=START[id], b=a+PLAN[id](); const on=t>=a&&(t<b||k===S.length-1); const el=$(id); el.style.opacity=on?1:0;
+    const ph=el.querySelector(".ph"); if(ph) ph.style.transform=`scale(${{1.06-0.06*cl((t-a)/(b-a))}})`;}});
+  // 1: 제목은 올라오기, 설명은 타이핑
+  let u=t-START.s1; up($("t1"),(u-0.1)/0.6); typeT("s1s",u-0.8);
+  // 2
+  u=t-START.s2; let c=0; typeT("t2",u-c); c+=len("t2")+G;
+  const bw=$("bw"); typeT("bw",u-c,false); bw.style.filter=`blur(${{8*ease((u-c-len("bw")-0.1)/0.5)}}px)`; bw.style.opacity=(u<c?0:1)*(1-0.7*cl((u-c-len("bw")-0.1)/0.5)); c+=len("bw")+0.6;
+  typeT("sp",u-c); c+=len("sp"); $("u2").style.setProperty("--u",(100*ease((u-c)/0.7))+"%");
+  // 3
+  u=t-START.s3; c=0; typeT("t3",u); c+=len("t3");
+  const bars=$("wv3").querySelectorAll("i"), s0=Math.floor(bars.length*.44), s1=Math.floor(bars.length*.6), w=ease((u-c-0.3)/0.6);
+  $("sel3").style.width=(16*w)+"%"; bars.forEach((b,k)=>{{b.classList.toggle("hl",k>=s0&&k<s0+(s1-s0)*w); b.style.transform=`scaleY(${{0.25+0.75*ease((u-c+0.2-k*0.008)/0.4)}})`;}});
+  c+=0.9; typeT("tc3",u-c,false); c+=len("tc3")+G; typeT("s3s",u-c);
+  // 4
+  u=t-START.s4; c=0; typeT("t4",u); c+=len("t4")+G;
+  ["w0","w1","w2","w3"].forEach(id=>{{typeT(id,u-c,false); c+=len(id)+0.15;}});
+  // 5
+  u=t-START.s5; c=0; typeT("t5",u); c+=len("t5");
+  ["wa","wb"].forEach((id,j)=>$(id).querySelectorAll("i").forEach((b,k)=>{{b.style.opacity=.85;b.style.transform=`scaleY(${{0.2+0.8*ease((u-c+0.1-j*0.3-k*0.008)/0.4)}})`;}}));
+  [1,2,3].forEach(k=>{{const dd=$("d"+k),p=cl((u-c-0.5-k*0.22)/0.25); dd.style.opacity=p; dd.style.transform=`scale(${{0.5+0.5*ease(p)+0.15*Math.sin(Math.PI*p)}})`;}});
+  c+=1.4; typeT("s5s",u-c);
+  // 6
+  u=t-START.s6; c=0; typeT("t6",u); c+=len("t6");
+  [0,1,2,3].forEach(k=>{{const el=$("c"+k),p=cl((u-c-0.1-k*0.25)/0.3); el.style.opacity=p; el.style.transform=`translateY(${{(1-ease(p))*40}}px) rotate(${{(k%2?-1:1)*3*(1-ease(p))}}deg)`;
+    if(k===3){{el.style.background=p>=1?"#DDE37C":"rgba(17,17,17,.55)"; el.style.color=p>=1?"#111":"#F1EDE4"; el.style.borderColor=p>=1?"#DDE37C":"#F1EDE4";}}}});
+  c+=1.4; typeT("s6s",u-c);
+  // 7
+  u=t-START.s7; c=0; typeT("t7",u); c+=len("t7")+G; typeT("s7s",u-c);
 }};
 setT(0);
 </script></body></html>
