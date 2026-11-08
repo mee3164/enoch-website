@@ -40,7 +40,7 @@ u{{text-decoration:none;background:linear-gradient(transparent 62%,#DDE37C 62%) 
 
 <section class="sc" id="s1">{photo('피아노_01.jpg', '40% 50%', .55)}
   <div class="hd mono"><span>ENOCH MUSIC ACADEMY</span><span>ENOCH NOTE</span></div>
-  <div class="t" id="t1" style="top:1180px;font-size:104px">원하는 실력,<br>먼저 또렷하게.</div>
+  <div class="t" id="t1" style="top:1020px;font-size:96px">몇 달째 제자리라면,<br>이걸 먼저<br>확인해 보세요.</div>
   <div class="s" id="s1s" style="top:1460px">막연한 목표를, 연습할 수 있는 한 문장으로.</div>
 </section>
 
