@@ -134,5 +134,7 @@ window.setT=function(t){
   // 7
   u=t-START.s7; c=0; up($("t7"),u/F); c+=F+G; typeT("s7s",u-c);
 };
+// 전체 속도: 원래 타이밍을 20초 안팎으로 압축
+const SPEEDUP=TOTAL/20; const _set=window.setT; window.setT=t=>_set(t*SPEEDUP); window.TOTAL=TOTAL/SPEEDUP;
 setT(0);
 </script></body></html>
