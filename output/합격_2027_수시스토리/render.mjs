@@ -8,4 +8,6 @@ const p = await b.newPage({ viewport: { width: 1080, height: 1920 } });
 await p.goto(pathToFileURL(path.join(dir, "story.html")).href); await p.evaluate(() => document.fonts.ready); await p.waitForTimeout(300);
 await p.screenshot({ path: path.join(dir, "story.png") });
 await p.goto(pathToFileURL(path.join(dir, "collage.html")).href); await p.evaluate(() => document.fonts.ready); await p.waitForTimeout(300);
-await p.screenshot({ path: path.join(dir, "collage.png") }); await b.close();
+await p.screenshot({ path: path.join(dir, "collage.png") });
+await p.goto(pathToFileURL(path.join(dir, "collage_white.html")).href); await p.evaluate(() => document.fonts.ready); await p.waitForTimeout(300);
+await p.screenshot({ path: path.join(dir, "collage_white.png") }); await b.close();
