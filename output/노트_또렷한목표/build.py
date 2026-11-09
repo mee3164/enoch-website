@@ -96,7 +96,7 @@ body{{width:1080px;height:1350px;overflow:hidden;background:#F1EDE4}}
   <div class="h" id="h3">좋아하는 곡을,<br>"구간"까지 좁혀요.</div>
   <div class="wv" id="wv3" style="top:640px">{wave}<div class="sel" id="sel3" style="left:44%;width:0"></div></div>
   <div class="tc mono" id="tc3" style="top:900px;left:96px">1:12 — 1:25</div>
-  <div class="p" style="top:980px" id="p3">"이 사람이 좋다"에서 "이 8마디가 좋다"로.<br>목표가 손에 잡히기 시작합니다.</div>{ft(3)}</section>
+  <div class="p" style="top:980px" id="p3">"이 곡이 좋다"에서 "이 8마디가 좋다"로.<br>목표가 손에 잡히기 시작합니다.</div>{ft(3)}</section>
 
 <section class="c" id="c4">{hd()}<div class="k mono">STEP 02 — WHY</div>
   <div class="h" id="h4">"좋다"를<br>단어로 쪼개 보세요.</div>
