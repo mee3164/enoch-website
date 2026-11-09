@@ -56,7 +56,7 @@ u{{text-decoration:none;background:linear-gradient(transparent 62%,#DDE37C 62%) 
   <div class="t" id="t3" style="top:420px;font-size:84px">좋아하는 곡을,<br>"구간"까지 좁혀요.</div>
   <div class="wv" id="wv3" style="top:900px">{bars(0)}<div class="sel" id="sel3" style="left:44%;width:0"></div></div>
   <div class="mono" id="tc3" style="position:absolute;left:84px;top:1200px;font-size:30px">1:12 — 1:25</div>
-  <div class="s" id="s3s" style="top:1300px">"이 사람이 좋다"에서<br>"이 8마디가 좋다"로.</div>
+  <div class="s" id="s3s" style="top:1300px">"이 곡이 좋다"에서<br>"이 8마디가 좋다"로.</div>
 </section>
 
 <section class="sc" id="s4">{photo('기타존_01.jpg', '50% 50%', .42)}
