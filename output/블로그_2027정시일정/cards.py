@@ -89,7 +89,7 @@ def card(i, r):
 <div class="dl"><em></em>원서접수 마감 {ap.split("~")[1].strip()}</div>
 <div class="band" style="top:428px;height:530px"></div>
 <table style="top:462px">{tr}</table>
-<div class="pt" style="top:992px"><div class="k">실기 핵심</div><ul>{li}</ul></div>
+<div class="pt" style="top:992px"><div class="k">실기 준비 포인트</div><ul>{li}</ul></div>
 <div class="nt"><span>{NOTE}</span><span class="pg">{i:02d} / {N:02d}</span></div>
 </section>"""
 
@@ -100,7 +100,7 @@ def cover(sq=False):
 <h1 class="t" style="top:230px;font-size:112px">2027학년도<br>실용음악과 정시<br>실기 한눈에 보기</h1>
 <div class="band" style="top:690px;height:250px"></div>
 <div class="sum" style="top:740px;font-size:40px;font-weight:700">10개 대학</div>
-<div class="sum" style="top:810px;font-weight:400;color:#55524D">원서접수 · 실기 일정 · 선발 비율 · 실기 핵심</div>
+<div class="sum" style="top:810px;font-weight:400;color:#55524D">원서접수 · 실기 일정 · 선발 비율 · 실기 준비 포인트</div>
 <div class="nt"><span>ENOCH MUSIC ACADEMY · 031 315 3666</span><span></span></div></section>"""
     cells = ''.join(f'<div><i>{n+1:02d}</i><b>{r[1]}</b><span>{SHORT[r[1]]}</span></div>' for n, r in enumerate(D))
     return f"""<section>{HD}
@@ -108,7 +108,7 @@ def cover(sq=False):
 <h1 class="t" style="top:176px;font-size:96px">2027학년도<br>실용음악과 정시<br>실기 한눈에 보기</h1>
 <div class="band" style="top:540px;height:640px"></div>
 <div class="grid" style="top:574px">{cells}</div>
-<div class="sum" style="top:1196px">전형 · 일정 · 선발 비율 · 실기 핵심</div>
+<div class="sum" style="top:1196px">전형 · 일정 · 선발 비율 · 실기 준비 포인트</div>
 <div class="nt"><span>{NOTE}</span><span class="pg">01 / {N:02d}</span></div>
 </section>"""
 
