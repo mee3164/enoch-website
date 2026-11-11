@@ -13,3 +13,10 @@ const ss = await p.$$("section");
 for (const [i, s] of ss.entries()) await s.screenshot({ path: path.join(dir, `blog_${String(i + 1).padStart(2, "0")}.png`) });
 await b.close(); console.log(ss.length, "장");
 
+// 썸네일 1:1: thumb.html → thumb.png
+{
+  const b2 = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
+  const q = await b2.newPage({ viewport: { width: 1080, height: 1080 } });
+  await q.goto(pathToFileURL(path.join(dir, "thumb.html")).href); await q.evaluate(() => document.fonts.ready); await q.waitForTimeout(300);
+  await (await q.$("section")).screenshot({ path: path.join(dir, "thumb.png") }); await b2.close();
+}
