@@ -13,7 +13,7 @@ const ss = await p.$$("section");
 for (const [i, s] of ss.entries()) await s.screenshot({ path: path.join(dir, `blog_${String(i + 1).padStart(2, "0")}.png`) });
 await b.close(); console.log(ss.length, "장");
 
-// 썸네일 1:1: thumb.html → thumb.png
+// 썸네일 1:1: thumb.html → thumb.png (표지 1:1, 검정 버전은 thumb_dark.html)
 {
   const b2 = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
   const q = await b2.newPage({ viewport: { width: 1080, height: 1080 } });
