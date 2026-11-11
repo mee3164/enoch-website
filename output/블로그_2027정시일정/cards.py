@@ -115,6 +115,5 @@ def cover(sq=False):
 html = f'<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>2027 정시 학교별 카드</title><style>{CSS}</style></head><body>\n'
 html += cover() + ''.join(card(i + 2, r) for i, r in enumerate(D)) + '</body></html>\n'
 open(os.path.join(HERE, 'blog.html'), 'w', encoding='utf-8').write(html)
-open(os.path.join(HERE, 'thumb.html'), 'w', encoding='utf-8').write(
-    f'<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>2027 정시 썸네일</title><style>{CSS}</style></head><body>{cover(True)}</body></html>\n')
+# thumb.html은 별도 파일(눈에 띄는 1:1 썸네일)로 관리
 print('blog.html', N, '장 + thumb.html')
