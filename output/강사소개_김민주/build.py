@@ -83,3 +83,34 @@ story = f'''</style></head><body>
 '''
 open(os.path.join(HERE, 'story.html'), 'w', encoding='utf-8').write(sh + story)
 print('feed.html, story.html')
+
+# ---------- story 한 장 버전 (story_one.html → story_one.png) ----------
+one_css = sh.split('<style>')[1] if '<style>' in sh else ''
+one = sh.split('</title>')[0] + '</title><style>' + one_css + '''
+#O .top{position:absolute;left:80px;right:80px;top:230px;display:flex;justify-content:space-between;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.22)}
+#O .ph{position:absolute;right:80px;top:310px;width:460px;height:560px;background:url(../../images/강사/김민주_01.jpg) no-repeat;background-size:cover;background-position:50% 22%}
+#O .en{position:absolute;left:76px;top:640px;font-size:96px;font-weight:700;line-height:.92;letter-spacing:-3px}
+#O .ko{position:absolute;left:82px;top:830px;font-size:30px;letter-spacing:12px;color:#8C8C8C}
+#O .sb{position:absolute;left:82px;top:330px;font-size:26px;line-height:1.6;color:#B9B4AA}
+#O .hl{position:absolute;left:80px;right:80px;top:910px}
+#O .hl div{padding:22px 0;border-top:1px solid rgba(255,255,255,.22)}
+#O .hl b{display:block;font-size:46px;font-weight:700;letter-spacing:-1.5px;line-height:1.2}
+#O .hl span{display:block;font-size:26px;color:#B9B4AA;margin-top:8px}
+#O .body{position:absolute;left:80px;right:80px;top:1150px;border-top:1px solid rgba(255,255,255,.22)}
+#O .sec{grid-template-columns:200px 1fr;padding:18px 0}
+#O .sec li{font-size:26px;line-height:1.5}
+#O .bt{position:absolute;left:80px;right:80px;top:1680px;padding-top:20px;display:flex;justify-content:space-between;font-size:22px;border-top:1px solid rgba(255,255,255,.22)}
+</style></head><body>
+<section class="s" id="O">
+  <div class="top"><span class="lab g">ENOCH TEACHERS</span><span class="lab">COMPOSITION · SINGER-SONGWRITER</span></div>
+  <div class="sb">작곡<br>싱어송라이터<br>1:1 Lesson</div>
+  <div class="ph"></div>
+  <div class="en">KIM<br>MIN JU</div>
+  <div class="ko">김민주</div>
+  <div class="hl"><div><b>서울예술대학교 실용음악과 졸업</b></div><div><b>이무진 「과제곡」 편곡</b><span>유튜브 「과제곡」 영상 오르간 세션 · 코러스 참여</span></div></div>
+  <div class="body">''' + sec("EDUCATION", EDU_S, "lab g") + sec("WORKS", WORK_S, "lab g") + sec("LIVE", LIVE, "lab g") + sec("TEACHING", TEACH, "lab g") + '''</div>
+  <div class="bt"><span><span class="lime">●</span>&nbsp; Composition · Singer-Songwriter</span><span class="g">나만의 진짜 소리를 찾는 곳</span></div>
+</section></body></html>
+'''
+open(os.path.join(HERE, 'story_one.html'), 'w', encoding='utf-8').write(one)
+print('story_one.html')
