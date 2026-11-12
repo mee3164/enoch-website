@@ -76,7 +76,7 @@ story = f'''</style></head><body>
   <div class="top"><span class="lab g">ENOCH TEACHERS — COMPOSITION</span><span class="lab g">CAREER</span></div>
   <div class="nm">KIM MIN JU<small>김민주</small></div>
   <div class="hl"><div><b>서울예술대학교 실용음악과 졸업</b></div><div><b>이무진 「과제곡」 편곡</b><span>유튜브 「과제곡」 영상 오르간 세션 · 코러스 참여</span></div></div>
-  <div class="body">{sec("EDUCATION", EDU_S, "lab g")}{sec("WORKS", WORK_S, "lab g")}{sec("LIVE", LIVE, "lab g")}{sec("TEACHING", TEACH, "lab g")}</div>
+  <div class="body">{sec("EDUCATION", EDU_S, "lab g")}{sec("WORKS", WORK_S, "lab g")}{sec("LIVE", LIVE, "lab g")}</div>
   <div class="bt"><span><span class="lime">●</span>&nbsp; Composition · Singer-Songwriter</span><span class="g">나만의 진짜 소리를 찾는 곳</span></div>
 </section>
 </body></html>
@@ -108,7 +108,7 @@ one = sh.split('</title>')[0] + '</title><style>' + one_css + '''
   <div class="en">KIM<br>MIN JU</div>
   <div class="ko">김민주</div>
   <div class="hl"><div><b>서울예술대학교 실용음악과 졸업</b></div><div><b>이무진 「과제곡」 편곡</b><span>유튜브 「과제곡」 영상 오르간 세션 · 코러스 참여</span></div></div>
-  <div class="body">''' + sec("EDUCATION", EDU_S, "lab g") + sec("WORKS", WORK_S, "lab g") + sec("LIVE", LIVE, "lab g") + sec("TEACHING", TEACH, "lab g") + '''</div>
+  <div class="body">''' + sec("EDUCATION", EDU_S, "lab g") + sec("WORKS", WORK_S, "lab g") + sec("LIVE", LIVE, "lab g") + '''</div>
   <div class="bt"><span><span class="lime">●</span>&nbsp; Composition · Singer-Songwriter</span><span class="g">나만의 진짜 소리를 찾는 곳</span></div>
 </section></body></html>
 '''
