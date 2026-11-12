@@ -1,0 +1,18 @@
+// feed.html → feed_01~03.png (1080×1350), story.html → story_01~02.png (1080×1920)
+// CHROMIUM_PATH=... node output/강사소개_김민주/render.mjs
+import path from "node:path";
+import { fileURLToPath, pathToFileURL } from "node:url";
+import { createRequire } from "node:module";
+const dir = path.dirname(fileURLToPath(import.meta.url));
+const { chromium } = createRequire(path.join(dir, "../../package.json"))("playwright");
+const b = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
+for (const [file, pre, w, h] of [["feed.html", "feed", 1080, 1350], ["story.html", "story", 1080, 1920]]) {
+  const p = await b.newPage({ viewport: { width: w, height: h } });
+  await p.goto(pathToFileURL(path.join(dir, file)).href);
+  await p.evaluate(() => document.fonts.ready);
+  await p.waitForTimeout(300);
+  for (const [i, s] of (await p.$$("section")).entries()) await s.screenshot({ path: path.join(dir, `${pre}_0${i + 1}.png`) });
+  await p.close();
+}
+await b.close();
+console.log("done");
