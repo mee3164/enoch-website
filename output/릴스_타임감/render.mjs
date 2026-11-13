@@ -1,4 +1,4 @@
-// reel.html을 프레임별로 찍어 reel.mp4(24초, 30fps, 1080×1920, 무음)로 만든다
+// reel.html을 프레임별로 찍어 reel.mp4(31초, 30fps, 1080×1920, 무음)로 만든다
 // CHROMIUM_PATH=... node output/릴스_타임감/render.mjs [미리보기 시점들...]
 import path from "node:path";
 import { mkdirSync, rmSync } from "node:fs";
@@ -7,7 +7,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 import { createRequire } from "node:module";
 const dir = path.dirname(fileURLToPath(import.meta.url));
 const { chromium } = createRequire(path.join(dir, "../../package.json"))("playwright");
-const FPS = 30, DUR = 24;
+const FPS = 30, DUR = 31.2;
 const b = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
 const p = await b.newPage({ viewport: { width: 1080, height: 1920 } });
 await p.goto(pathToFileURL(path.join(dir, "reel.html")).href);
