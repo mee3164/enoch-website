@@ -6,7 +6,7 @@ BASE = os.path.join(HERE, '..', '강사소개_한상희')
 
 EDU = ['호원대학교 <i>실용음악학과 졸업</i>']
 WORK = ['에피톤 프로젝트 「미움」 · 「회전목마」 <i>보컬 (앨범 「각자의 밤」)</i>', '홍광호 · 1041 <i>등 다수 아티스트 앨범 작업 · 공연</i>']
-LIVE = ['유희열의 스케치북 <i>출연 · 다수 방송 · 콘서트 참여</i>']
+LIVE = ['유희열의 스케치북 <i>출연 · 다수 방송 · 콘서트 출연</i>']
 ART = ['싱어송라이터 ‘손주희’ <i>개인 음악 활동 중</i>']
 REL = ['「나의 내일에게」 <i>2025.12</i>', '「Hope」 <i>「품」 · 「우리의 사랑을」 · 「그 눈을 한 때 내가 좋아했었다」 · 2024.01</i>', '「수많은, 어떤 날」 <i>2022.10</i>', '「가끔 그때가 그리워」 <i>2021.06</i>', '「서성이다」 <i>2020.02</i>']
 TEACH = []
@@ -35,7 +35,7 @@ feed = f'''</style></head><body>
   <div class="col">
     <div class="cell"><div class="k">Subject</div><div class="v">Vocal</div></div>
     <div class="cell"><div class="k">Lesson</div><div class="v">1:1</div></div>
-    <div class="cell"><div class="k">Career</div><div class="t"><p>호원대학교 <i>실용음악학과 졸업</i></p><p>유희열의 스케치북 <i>출연 · 다수 방송 · 콘서트 참여</i></p><p>에피톤 프로젝트 「미움」 · 「회전목마」 <i>보컬</i></p><p>홍광호 · 1041 <i>등 다수 아티스트 앨범 작업 · 공연</i></p><p>싱어송라이터 ‘손주희’ <i>개인 음악 활동 중</i></p></div></div>
+    <div class="cell"><div class="k">Career</div><div class="t"><p>호원대학교 <i>실용음악학과 졸업</i></p><p>유희열의 스케치북 <i>출연 · 다수 방송 · 콘서트 출연</i></p><p>에피톤 프로젝트 「미움」 · 「회전목마」 <i>보컬</i></p><p>홍광호 · 1041 <i>등 다수 아티스트 앨범 작업 · 공연</i></p><p>싱어송라이터 ‘손주희’ <i>개인 음악 활동 중</i></p></div></div>
   </div>
   <div class="en">SON JU HUI</div>
   <div class="ko">손주희<span>보컬</span></div>
@@ -77,7 +77,7 @@ story = f'''</style></head><body>
 <section class="s dt" id="D">
   <div class="top"><span class="lab g">ENOCH TEACHERS — VOCAL</span><span class="lab g">CAREER</span></div>
   <div class="nm">SON JU HUI<small>손주희</small></div>
-  <div class="hl"><div><b>호원대학교 실용음악학과 졸업</b></div><div><b>유희열의 스케치북 출연</b><span>그 외 다수 방송 · 콘서트</span></div></div>
+  <div class="hl"><div><b>호원대학교 실용음악학과 졸업</b></div><div><b>유희열의 스케치북 출연</b><span>그 외 다수 방송 · 콘서트 출연</span></div></div>
   <div class="body">{sec("WORKS", WORK_S, "lab g")}{sec("ARTIST", ART, "lab g")}{sec("RELEASES", REL, "lab g")}</div>
   <div class="bt"><span><span class="lime">●</span>&nbsp; Vocal</span><span class="g">나만의 진짜 소리를 찾는 곳</span></div>
 </section>
@@ -109,7 +109,7 @@ one = sh.split('</title>')[0] + '</title><style>' + one_css + '''
   <div class="ph"></div>
   <div class="en">SON<br>JU HUI</div>
   <div class="ko">손주희</div>
-  <div class="hl"><div><b>호원대학교 실용음악학과 졸업</b></div><div><b>유희열의 스케치북 출연</b><span>그 외 다수 방송 · 콘서트</span></div></div>
+  <div class="hl"><div><b>호원대학교 실용음악학과 졸업</b></div><div><b>유희열의 스케치북 출연</b><span>그 외 다수 방송 · 콘서트 출연</span></div></div>
   <div class="body">''' + sec("WORKS", WORK_S, "lab g") + sec("ARTIST", ART, "lab g") + sec("RELEASES", REL, "lab g") + '''</div>
   <div class="bt"><span><span class="lime">●</span>&nbsp; Vocal</span><span class="g">나만의 진짜 소리를 찾는 곳</span></div>
 </section></body></html>
@@ -156,7 +156,7 @@ iv = fh + '''
   <div class="col">
     <div class="cell"><div class="k">Subject</div><div class="v">Vocal</div></div>
     <div class="cell"><div class="k">Lesson</div><div class="v">1:1</div></div>
-    <div class="cell"><div class="k">Career</div><div class="t"><p>호원대학교 <i>실용음악학과 졸업</i></p><p>유희열의 스케치북 <i>출연 · 다수 방송 · 콘서트 참여</i></p><p>에피톤 프로젝트 「미움」 · 「회전목마」 <i>보컬</i></p><p>홍광호 · 1041 <i>등 다수 아티스트 앨범 작업 · 공연</i></p><p>싱어송라이터 ‘손주희’ <i>개인 음악 활동 중</i></p></div></div>
+    <div class="cell"><div class="k">Career</div><div class="t"><p>호원대학교 <i>실용음악학과 졸업</i></p><p>유희열의 스케치북 <i>출연 · 다수 방송 · 콘서트 출연</i></p><p>에피톤 프로젝트 「미움」 · 「회전목마」 <i>보컬</i></p><p>홍광호 · 1041 <i>등 다수 아티스트 앨범 작업 · 공연</i></p><p>싱어송라이터 ‘손주희’ <i>개인 음악 활동 중</i></p></div></div>
   </div>
   <div class="en">SON JU HUI</div>
   <div class="ko">손주희<span>보컬</span></div>
@@ -166,3 +166,13 @@ iv = fh + '''
 '''
 open(os.path.join(HERE, 'story_ivory.html'), 'w', encoding='utf-8').write(iv)
 print('story_ivory.html')
+
+
+# ---------- 스토리 두 장 아이보리 (색만 바꿈) -> story_iv.html -> story_iv_01~02.png ----------
+def to_ivory(h):
+    h = h.replace('background:#0B0B0B;color:#F3F1EC', 'background:#F1EDE4;color:#111')
+    h = h.replace('rgba(255,255,255,.22)', 'rgba(17,17,17,.35)').replace('rgba(255,255,255,.14)', 'rgba(17,17,17,.18)')
+    h = h.replace('#B9B4AA', '#55524D').replace('.sec li i{font-style:normal;color:#8C8C8C', '.sec li i{font-style:normal;color:#7A766F')
+    return h.replace('font-weight:700;color:#F3F1EC', 'font-weight:700;color:#111')
+open(os.path.join(HERE, 'story_iv.html'), 'w', encoding='utf-8').write(to_ivory(sh + story))
+print('story_iv.html')

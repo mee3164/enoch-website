@@ -37,3 +37,12 @@ console.log("done");
   await q.goto(pathToFileURL(path.join(dir, "story_one_ivory.html")).href); await q.evaluate(() => document.fonts.ready); await q.waitForTimeout(300);
   await (await q.$("section")).screenshot({ path: path.join(dir, "story_one_ivory.png") }); await b2.close();
 }
+// 스토리 두 장 아이보리: story_iv.html -> story_iv_01~02.png
+{
+  const b2 = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
+  const q = await b2.newPage({ viewport: { width: 1080, height: 1920 } });
+  await q.goto(pathToFileURL(path.join(dir, "story_iv.html")).href); await q.evaluate(() => document.fonts.ready); await q.waitForTimeout(300);
+  const ss = await q.$$("section");
+  for (const [i, s] of ss.entries()) await s.screenshot({ path: path.join(dir, `story_iv_${String(i + 1).padStart(2, "0")}.png`) });
+  await b2.close();
+}
