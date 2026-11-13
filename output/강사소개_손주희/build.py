@@ -34,7 +34,7 @@ feed = f'''</style></head><body>
   <div class="col">
     <div class="cell"><div class="k">Subject</div><div class="v">Vocal</div></div>
     <div class="cell"><div class="k">Lesson</div><div class="v">1:1</div></div>
-    <div class="cell"><div class="k">Career</div><div class="t">호원대 실용음악학과 졸업<br>유희열의 스케치북 등 방송 · 콘서트<br>에피톤 프로젝트 · 홍광호 · 1041<br>싱어송라이터 ‘손주희’ 활동</div></div>
+    <div class="cell"><div class="k">Career</div><div class="t"><p>호원대학교 <i>실용음악학과 졸업</i></p><p>유희열의 스케치북 <i>및 다수 방송 · 콘서트 참여</i></p><p>에피톤 프로젝트 · 홍광호 · 1041 <i>등 다수 아티스트 앨범 작업 · 공연</i></p><p>싱어송라이터 ‘손주희’ <i>개인 음악 활동 중</i></p></div></div>
   </div>
   <div class="en">SON JU HUI</div>
   <div class="ko">손주희<span>보컬</span></div>
@@ -121,12 +121,18 @@ fh = (head + feed).split('</style>')[0]
 iv = fh + '''
 #S{height:1920px}
 #S .hd{top:230px}
-#S .ph{position:absolute;left:96px;top:310px;width:540px;height:760px;background:url(../../images/강사/손주희_01.jpg) 60% 30%/cover;filter:grayscale(1) sepia(.16) contrast(1.05)}
-#S .col{position:absolute;left:672px;right:96px;top:310px;height:760px;border-top:1.5px solid var(--bk);border-bottom:1.5px solid var(--bk)}
+#S .ph{position:absolute;right:96px;top:310px;width:440px;height:760px;background:url(../../images/강사/손주희_01.jpg) 60% 30%/cover;filter:grayscale(1) sepia(.16) contrast(1.05)}
+#S .col{position:absolute;left:96px;width:416px;top:310px;height:760px;border-top:1.5px solid var(--bk);border-bottom:1.5px solid var(--bk)}
 #S .cell{padding:22px 0;border-bottom:1px solid var(--hair)}
 #S .cell:last-child{border-bottom:0}
 #S .cell .v{margin-top:8px;font-size:30px;font-weight:600;letter-spacing:-.6px}
-#S .cell .t{margin-top:10px;font-size:22px;line-height:1.6;color:var(--b);letter-spacing:-.4px}
+#S .cell .t{margin-top:10px;font-size:24px;line-height:1.55;color:var(--bk);letter-spacing:-.5px}
+#S .cell .t p{margin-bottom:14px}
+#S .cell .t i{font-style:normal;color:var(--g);font-weight:300}
+#S .cl{position:absolute;left:96px;right:96px;top:1380px;border-top:1.5px solid var(--bk);padding-top:40px}
+#S .cl h3{font-size:52px;font-weight:700;letter-spacing:-1.5px;line-height:1.25}
+#S .cl h3 em{font-style:normal;font-weight:300}
+#S .cl p{margin-top:22px;font-size:24px;color:var(--b);line-height:1.6}
 #S .en{position:absolute;left:90px;top:1110px;font-family:var(--en);font-weight:700;font-size:124px;letter-spacing:-4px;line-height:.95}
 #S .ko{position:absolute;left:96px;top:1270px;font-size:34px;font-weight:500;letter-spacing:12px}
 #S .ko span{color:var(--g);font-weight:300;letter-spacing:4px;margin-left:16px;font-size:28px}
@@ -142,11 +148,11 @@ iv = fh + '''
   <div class="col">
     <div class="cell"><div class="k">Subject</div><div class="v">Vocal</div></div>
     <div class="cell"><div class="k">Lesson</div><div class="v">1:1</div></div>
-    <div class="cell"><div class="k">Career</div><div class="t">호원대 실용음악학과 졸업<br>유희열의 스케치북 등 방송 · 콘서트<br>에피톤 프로젝트 · 홍광호 · 1041<br>싱어송라이터 ‘손주희’ 활동</div></div>
+    <div class="cell"><div class="k">Career</div><div class="t"><p>호원대학교 <i>실용음악학과 졸업</i></p><p>유희열의 스케치북 <i>및 다수 방송 · 콘서트 참여</i></p><p>에피톤 프로젝트 · 홍광호 · 1041 <i>등 다수 아티스트 앨범 작업 · 공연</i></p><p>싱어송라이터 ‘손주희’ <i>개인 음악 활동 중</i></p></div></div>
   </div>
   <div class="en">SON JU HUI</div>
   <div class="ko">손주희<span>보컬</span></div>
-  <div class="tbl">''' + sec("Education", EDU) + sec("Broadcast", LIVE) + sec("Works", WORK) + sec("Artist", ART) + f'''</div>
+  <div class="cl"><h3>무대에서 다듬은 목소리를,<br><em>1:1로.</em></h3><p>에녹실용음악학원 시흥점 · 경기도 시흥시 은행로 157 2층 · 031 315 3666</p></div>''' + f'''
   <div class="band"><span>{band}</span></div>
 </section></body></html>
 '''
