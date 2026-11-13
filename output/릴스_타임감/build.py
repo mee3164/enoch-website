@@ -1,4 +1,4 @@
-# 릴스 "틀린 음보다 더 티 나는 것" (타임감과 그루브) — ENOCH 릴스 엔진(scripts/reel_kinetic.py) 사용
+# 릴스 "화려하게 쳐도 아마추어처럼 들리는 이유" (타임감과 그루브) — ENOCH 릴스 엔진(scripts/reel_kinetic.py) 사용
 # 훅 카드 → 왼쪽 정렬 큰 문장 + 오른쪽 아래 일러스트 → 아래 박 줄 → 검정 마무리. 형광펜 없음, 한국어만.
 # python3 output/릴스_타임감/build.py → reel.html → CHROMIUM_PATH=... node output/릴스_타임감/render.mjs
 import os, sys
@@ -55,11 +55,17 @@ SCENES = [
   "for(let k=1;k<=3;k++){pop($('ic'+k),(u-0.3-0.25*(k-1))/0.45); $('ic'+k).style.background=(u>1.2&&(u*2)%1<0.25)?'#DCE2D3':'#FFFDF7';}", 'iv', 2.4),
  ("그루브가 있으면<br>몸이 먼저<br>반응해요", f'<div id="c7">{ch("happy", "up")}</div>',
   "$('c7').style.transform=`translateY(${-Math.abs(Math.sin(u*6))*34}px) rotate(${Math.sin(u*6)*5}deg)`;", 'iv', 2.0),
+ ("음이 많아도<br>그루브가 없으면<br>금방 지루해지고", '<svg viewBox="0 0 640 300" width="640" height="300"><g id="many" opacity=".55">' + ''.join(note(40+i*76, 220) for i in range(8)) + '</g></svg>',
+  "$('many').style.transform=`translateX(${-u*14}px)`;", 'iv', 2.4),
+ ("음이 적어도<br>그루브가 있으면<br>귀가 따라옵니다", f'''<svg viewBox="0 0 640 320" width="640" height="320"><path d="M20 200 C 90 110, 170 110, 240 200 S 390 290, 460 200 S 580 110, 620 170" stroke="#B9B4AA" stroke-width="5" fill="none"/><g id="few1">{note(0,0,1.1)}</g><g id="few2">{note(0,0,1.1)}</g><g id="few3">{note(0,0,1.1)}</g></svg>''',
+  "[['few1',140],['few2',330],['few3',520]].forEach(([id,x],k)=>{const y=200-Math.abs(Math.sin(u*Math.PI*2+k*2.1))*70;$(id).setAttribute('transform',`translate(${x},${y})`);});", 'iv', 2.4),
+ ("고개를 끄덕이게 만드는 힘,<br>그게 그루브입니다", f'<div id="c9n">{ch("happy", "wave")}</div>',
+  "$('c9n').style.transform=`rotate(${Math.sin(u*Math.PI*2*1.0)*8}deg) translateY(${Math.abs(Math.sin(u*Math.PI*2))*14}px)`;$('c9n').style.transformOrigin='50% 90%';", 'iv', 2.4),
  ("정확함은<br>믿음을 만들고", circles('y'), beatjs('y'), 'bk', 2.0),
  ("그루브는 음악을<br>살아 있게 만듭니다", WAVE,
   "$('wave').style.strokeDashoffset=1-ease((u-0.4)/1.1); $('flat').style.opacity=1-ease((u-0.4)/1.1)*0.7;", 'iv', 2.1),
 ]
 END = "화려한 음 하나보다,<br>흔들리지 않는 한 박."
 DUR = round(2.4 + sum(s[4] for s in SCENES) + 2.6, 2)
-T = build(os.path.join(HERE, 'reel.html'), ('PRACTICE NOTE — TIMING', '틀린 음보다<br>더 티 나는 것'), SCENES, END, DUR, topic='TIMING · GROOVE')
+T = build(os.path.join(HERE, 'reel.html'), ('PRACTICE NOTE — TIMING · GROOVE', '화려하게 쳐도<br>아마추어처럼<br>들리는 이유'), SCENES, END, DUR, topic='TIMING · GROOVE')
 print('reel.html', DUR, 's', T)
