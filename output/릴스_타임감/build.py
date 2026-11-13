@@ -74,7 +74,7 @@ body{{width:1080px;height:1920px;overflow:hidden;background:#F1EDE4;color:#111;f
 .ft{{position:absolute;left:84px;right:84px;top:1650px;display:flex;justify-content:space-between;font-size:22px;color:#8A8A8A;padding-top:16px;border-top:1px solid #C9C3B8}}
 </style></head><body>
 <div class="hd mono"><span>ENOCH MUSIC ACADEMY</span><span>PRACTICE NOTE</span></div>
-<div class="tt">같은 곡인데,<br>왜 <mark>다르게</mark> 들릴까</div>
+<div class="tt">같은 곡인데,<br>왜 다르게 들릴까</div>
 {secs}
 <div class="ft"><span>에녹실용음악학원 시흥점</span><span class="mono">031 315 3666</span></div>
 <script>
