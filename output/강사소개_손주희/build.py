@@ -43,7 +43,7 @@ feed = f'''</style></head><body>
 <section class="s" id="f2">
   <div class="hd"><span>ENOCH MUSIC ACADEMY</span><span>ENOCH TEACHERS — VOCAL</span></div>
   <div class="nm">SON JU HUI<small>손주희</small></div>
-  <div class="tbl">{sec("Education", EDU)}{sec("Broadcast · Live", LIVE)}{sec("Works", WORK)}{sec("Artist", ART)}</div>
+  <div class="tbl">{sec("Education", EDU)}{sec("Broadcast", LIVE)}{sec("Works", WORK)}{sec("Artist", ART)}</div>
   <div class="ft"><span>강사 소개 — 손주희</span><span>02 / 03</span></div>
 </section>
 <section class="s dark" id="f4">
@@ -115,3 +115,40 @@ one = sh.split('</title>')[0] + '</title><style>' + one_css + '''
 '''
 open(os.path.join(HERE, 'story_one.html'), 'w', encoding='utf-8').write(one)
 print('story_one.html')
+
+# ---------- 아이보리 스토리 한 장 (피드 디자인을 1080×1920으로) → story_ivory.html ----------
+fh = (head + feed).split('</style>')[0]
+iv = fh + '''
+#S{height:1920px}
+#S .hd{top:230px}
+#S .ph{position:absolute;left:96px;top:310px;width:540px;height:760px;background:url(../../images/강사/손주희_01.jpg) 60% 30%/cover;filter:grayscale(1) sepia(.16) contrast(1.05)}
+#S .col{position:absolute;left:672px;right:96px;top:310px;height:760px;border-top:1.5px solid var(--bk);border-bottom:1.5px solid var(--bk)}
+#S .cell{padding:22px 0;border-bottom:1px solid var(--hair)}
+#S .cell:last-child{border-bottom:0}
+#S .cell .v{margin-top:8px;font-size:30px;font-weight:600;letter-spacing:-.6px}
+#S .cell .t{margin-top:10px;font-size:22px;line-height:1.6;color:var(--b);letter-spacing:-.4px}
+#S .en{position:absolute;left:90px;top:1110px;font-family:var(--en);font-weight:700;font-size:124px;letter-spacing:-4px;line-height:.95}
+#S .ko{position:absolute;left:96px;top:1270px;font-size:34px;font-weight:500;letter-spacing:12px}
+#S .ko span{color:var(--g);font-weight:300;letter-spacing:4px;margin-left:16px;font-size:28px}
+#S .tbl{position:absolute;left:96px;right:96px;top:1350px;border-top:1.5px solid var(--bk)}
+#S .sec{padding:20px 0;grid-template-columns:200px 1fr}
+#S .sec li{font-size:25px;line-height:1.5}
+#S .band{position:absolute;left:0;right:0;top:1700px;height:64px;background:var(--bk);color:var(--iv);font-family:var(--mono);font-size:20px;letter-spacing:4px;white-space:nowrap;display:flex;align-items:center}
+#S .band span{padding-left:30px}
+</style></head><body>
+<section class="s" id="S">
+  <div class="hd"><span>ENOCH MUSIC ACADEMY</span><span>ENOCH TEACHERS — VOCAL</span></div>
+  <div class="ph"></div>
+  <div class="col">
+    <div class="cell"><div class="k">Subject</div><div class="v">Vocal</div></div>
+    <div class="cell"><div class="k">Lesson</div><div class="v">1:1</div></div>
+    <div class="cell"><div class="k">Career</div><div class="t">호원대 실용음악학과 졸업<br>유희열의 스케치북 등 방송 · 콘서트<br>에피톤 프로젝트 · 홍광호 · 1041<br>싱어송라이터 ‘손주희’ 활동</div></div>
+  </div>
+  <div class="en">SON JU HUI</div>
+  <div class="ko">손주희<span>보컬</span></div>
+  <div class="tbl">''' + sec("Education", EDU) + sec("Broadcast", LIVE) + sec("Works", WORK) + sec("Artist", ART) + f'''</div>
+  <div class="band"><span>{band}</span></div>
+</section></body></html>
+'''
+open(os.path.join(HERE, 'story_ivory.html'), 'w', encoding='utf-8').write(iv)
+print('story_ivory.html')
