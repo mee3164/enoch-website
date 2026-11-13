@@ -19,7 +19,8 @@ def note(x, y, s=1, ink=INK):
 
 
 def lines(text):
-    return ''.join(f'<span class="ln"><span>{l}</span></span>' for l in text.split('<br>'))
+    # 타이핑: 글자마다 span.c (공백 포함), 줄은 .ln
+    return ''.join('<span class="ln">' + ''.join(f'<i class="c">{c}</i>' for c in l) + '</span>' for l in text.split('<br>'))
 
 
 def build(path, hook, scenes, end, dur, topic='PRACTICE NOTE'):
@@ -47,8 +48,10 @@ body{{width:1080px;height:1920px;overflow:hidden;font-family:P,sans-serif;word-b
 .sc{{position:absolute;inset:0;opacity:0}}
 .iv{{background:#F1EDE4;color:#111}}
 .bk{{background:#111;color:#F1EDE4}}
-.ln{{display:block;overflow:hidden;padding-bottom:6px}}
-.ln>span{{display:inline-block}}
+.ln{{display:block;padding-bottom:6px;white-space:pre-wrap}}
+.c{{font-style:normal;opacity:0}}
+.c.on{{opacity:1}}
+.c.last::after{{content:'';display:inline-block;width:.08em;height:.9em;background:currentColor;margin-left:.06em;vertical-align:-.08em;opacity:var(--blink,1)}}
 #s0 .lab{{position:absolute;left:84px;top:300px;font-size:24px;color:#9A958C}}
 #s0 .big{{position:absolute;left:80px;right:60px;top:380px;font-size:132px;font-weight:700;letter-spacing:-6px;line-height:1.08}}
 #s0 .cue{{position:absolute;left:84px;bottom:300px;font-size:22px;color:#9A958C}}
@@ -77,10 +80,12 @@ const cl=x=>Math.max(0,Math.min(1,x));
 const ease=x=>1-Math.pow(1-cl(x),3);
 const back=x=>{{x=cl(x);const c=1.7;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2);}};
 function pop(el,p,extra=""){{if(!el)return;el.style.opacity=cl(p*3);el.style.transform=`scale(${{0.3+0.7*back(p)}}) ${{extra}}`;}}
-function rise(sec,u){{sec.querySelectorAll('.ln>span').forEach((s,k)=>{{const p=ease((u-0.08*k)/0.45);s.style.transform=`translateY(${{(1-p)*110}}%)`;}});}}
+function rise(sec,u,d){{const cs=sec.querySelectorAll('.c');const n=cs.length;const span=Math.max(0.8,Math.min(1.5,d*0.62));const shown=Math.floor(cl((u-0.12)/span)*n+(u>0.12?1:0));
+  cs.forEach((c,k)=>{{c.classList.toggle('on',k<shown);c.classList.toggle('last',k===Math.min(shown,n)-1);}});
+  sec.style.setProperty('--blink',(shown>=n&&Math.floor(u*2.5)%2)?0:1);}}
 const N={n};
 window.setT=function(t){{
-  let cur=0; for(let i=0;i<=N+1;i++){{const s=$('s'+i);const on=t>=T[i]&&t<T[i+1];s.style.opacity=on?1:0;if(on){{cur=i;rise(s,t-T[i]);}}}}
+  let cur=0; for(let i=0;i<=N+1;i++){{const s=$('s'+i);const on=t>=T[i]&&t<T[i+1];s.style.opacity=on?1:0;if(on){{cur=i;rise(s,t-T[i],T[i+1]-T[i]);}}}}
   const bt=$('beat'); bt.style.display=(cur===0||cur===N+1)?'none':'block';
   bt.style.color=$('s'+cur).classList.contains('bk')?'#F1EDE4':'#111';
   const bp=(t*2)%4; const k=Math.floor(bp), f=bp-k; $('bd').style.left=(Math.min(k+ease(f/0.35),3)*33.33)+'%';
