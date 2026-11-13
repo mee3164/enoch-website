@@ -114,3 +114,10 @@ one = sh.split('</title>')[0] + '</title><style>' + one_css + '''
 '''
 open(os.path.join(HERE, 'story_one.html'), 'w', encoding='utf-8').write(one)
 print('story_one.html')
+
+# ---------- 한 장 버전 아이보리 (색만 바꿈, 글은 그대로) → story_one_ivory.html ----------
+ivo = one.replace('background:#0B0B0B;color:#F3F1EC', 'background:#F1EDE4;color:#111')
+ivo = ivo.replace('rgba(255,255,255,.22)', 'rgba(17,17,17,.35)').replace('rgba(255,255,255,.14)', 'rgba(17,17,17,.18)')
+ivo = ivo.replace('#B9B4AA', '#55524D').replace('.sec li i{font-style:normal;color:#8C8C8C', '.sec li i{font-style:normal;color:#7A766F')
+open(os.path.join(HERE, 'story_one_ivory.html'), 'w', encoding='utf-8').write(ivo)
+print('story_one_ivory.html')
