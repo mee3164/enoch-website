@@ -1,0 +1,46 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>C</title><style>@font-face{font-family:P;src:url(../../../templates/fonts/Pretendard-Light.woff2);font-weight:300}@font-face{font-family:P;src:url(../../../templates/fonts/Pretendard-Regular.woff2);font-weight:400}@font-face{font-family:P;src:url(../../../templates/fonts/Pretendard-SemiBold.woff2);font-weight:600}@font-face{font-family:P;src:url(../../../templates/fonts/Pretendard-Bold.woff2);font-weight:700}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1080px;height:1920px;overflow:hidden;font-family:P,sans-serif;word-break:keep-all;position:relative;background:#F1EDE4;color:#111}
+.mono{font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace;letter-spacing:3px}
+.sc{position:absolute;inset:0;opacity:0}
+.cnt{position:absolute;left:84px;right:84px;top:250px;font-size:24px;display:flex;gap:6px;align-items:baseline;padding-bottom:18px;border-bottom:1.5px solid currentColor}
+.cnt b{font-weight:600} .cnt span{margin-left:auto;opacity:.6}
+.guide{position:absolute;left:200px;top:520px;height:960px;width:1.5px;background:#111;opacity:.18}
+.row{position:absolute;left:84px;right:84px;height:200px;border-bottom:1px solid rgba(17,17,17,.12)}
+.bn{position:absolute;left:0;top:70px;font-size:26px;color:#B9B4AA}
+.bn.now{color:#111;font-weight:600}
+.w{position:absolute;left:116px;top:0;font-size:164px;font-weight:700;letter-spacing:-7px;line-height:1;opacity:0;transform-origin:0 80%;white-space:nowrap}
+.dv{position:absolute;right:0;top:-34px;font-size:22px;color:#9A958C;opacity:0}
+.beat{position:absolute;left:84px;right:84px;top:1600px;height:40px}
+.beat .ln0{position:absolute;left:0;right:0;top:19px;height:2px;background:#111;opacity:.25}
+.beat .tk{position:absolute;top:8px;width:2px;height:24px;background:#111;opacity:.5}
+.beat .dot{position:absolute;top:6px;width:28px;height:28px;margin-left:-14px;border-radius:50%;background:#111}
+</style></head><body>
+<section class="sc" id="sA"><div class="cnt mono"><b>02</b> / 09<span>TIMING · GROOVE</span></div><div class="guide"></div><div class="row" style="top:560px"><span class="bn mono">1</span><span class="w" data-x="0" data-y="0" data-r="0">누가</span><span class="dv mono"></span></div><div class="row" style="top:790px"><span class="bn mono">2</span><span class="w" data-x="0" data-y="0" data-r="0">치면</span><span class="dv mono"></span></div><div class="row" style="top:1020px"><span class="bn mono">3</span><span class="w" data-x="0" data-y="0" data-r="0">듣기</span><span class="dv mono"></span></div><div class="row" style="top:1250px"><span class="bn mono">4</span><span class="w" data-x="0" data-y="0" data-r="0">좋고</span><span class="dv mono"></span></div></section>
+<section class="sc" id="sB"><div class="cnt mono"><b>03</b> / 09<span>TIMING · GROOVE</span></div><div class="guide"></div><div class="row" style="top:560px"><span class="bn mono">1</span><span class="w" data-x="-26" data-y="14" data-r="-2.5">누가</span><span class="dv mono">−0.09s</span></div><div class="row" style="top:790px"><span class="bn mono">2</span><span class="w" data-x="34" data-y="-10" data-r="1.8">치면</span><span class="dv mono">+0.14s</span></div><div class="row" style="top:1020px"><span class="bn mono">3</span><span class="w" data-x="-12" data-y="22" data-r="-1.2">어딘가</span><span class="dv mono">−0.07s</span></div><div class="row" style="top:1250px"><span class="bn mono">4</span><span class="w" data-x="22" data-y="6" data-r="2.2">불안합니다</span><span class="dv mono">+0.19s</span></div></section>
+<div class="beat"><div class="ln0"></div><div class="tk" style="left:12.5%"></div><div class="tk" style="left:37.5%"></div><div class="tk" style="left:62.5%"></div><div class="tk" style="left:87.5%"></div><div class="dot" id="bd"></div></div>
+<script>const $=id=>document.getElementById(id);
+const cl=x=>Math.max(0,Math.min(1,x));
+const ease=x=>1-Math.pow(1-cl(x),3);
+const back=x=>{x=cl(x);const c=1.7;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2);};
+const SC=3.0, BEATS=[0.5, 1.0, 1.5, 2.0], HITS={sA:[0.5, 1.0, 1.5, 2.0],sB:[0.41, 1.14, 1.43, 2.19]};
+window.setT=function(t){
+  ['sA','sB'].forEach((id,si)=>{
+    const s=$(id), u=t-si*SC, on=u>=0&&u<SC; s.style.opacity=on?1:0; if(!on)return;
+    const hits=HITS[id], bad=id==='sB';
+    const nb=BEATS.findIndex(b=>u>=b&&u<b+0.5);
+    s.querySelectorAll('.bn').forEach((b,k)=>b.classList.toggle('now',k===nb));
+    s.querySelectorAll('.w').forEach((w,k)=>{
+      const d=u-hits[k]; if(d<0){w.style.opacity=0;return;}
+      const p=cl(d/0.12), x=+w.dataset.x, y=+w.dataset.y, r=+w.dataset.r;
+      const jit=bad?Math.sin(u*23+k*3)*3*cl(d-0.3):0;          // 어긋난 단어는 자리를 못 잡고 계속 흔들림
+      w.style.opacity=p; w.style.transform=`translate(${x+jit}px,${y+(1-p)*-60}px) rotate(${r}deg) scale(${1+0.12*(1-ease(d/0.2))})`;
+    });
+    s.querySelectorAll('.dv').forEach((v,k)=>v.style.opacity=cl((u-hits[k]-0.2)*4));
+  });
+  const u=(t%SC), bp=Math.min(3.999,Math.max(0,(u-0.5)*2)); const k=Math.floor(bp), f=bp-k;
+  $('bd').style.left=((k+0.5)*25)+'%'; $('bd').style.transform=`scale(${u>=0.5&&u<2.5?1+0.4*Math.max(0,1-f*5):1})`;
+  $('bd').style.opacity=u>=0.5&&u<2.5?1:0.3;
+};
+setT(0);
+</script></body></html>
