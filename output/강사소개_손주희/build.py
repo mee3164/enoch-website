@@ -8,6 +8,7 @@ EDU = ['호원대학교 <i>실용음악학과 졸업</i>']
 WORK = ['에피톤 프로젝트 · 홍광호 · 1041 <i>등 다수 아티스트 앨범 작업 · 공연</i>']
 LIVE = ['유희열의 스케치북 <i>및 다수 방송 · 콘서트 참여</i>']
 ART = ['싱어송라이터 ‘손주희’ <i>개인 음악 활동 중</i>']
+REL = ['「나의 내일에게」 <i>2025.12</i>', '「Hope」 <i>「품」 · 「우리의 사랑을」 · 「그 눈을 한 때 내가 좋아했었다」 · 2024.01</i>', '「수많은, 어떤 날」 <i>2022.10</i>', '「가끔 그때가 그리워」 <i>2021.06</i>', '「서성이다」 <i>2020.02</i>']
 TEACH = []
 EDU_S = EDU
 WORK_S = WORK
@@ -43,7 +44,7 @@ feed = f'''</style></head><body>
 <section class="s" id="f2">
   <div class="hd"><span>ENOCH MUSIC ACADEMY</span><span>ENOCH TEACHERS — VOCAL</span></div>
   <div class="nm">SON JU HUI<small>손주희</small></div>
-  <div class="tbl">{sec("Education", EDU)}{sec("Broadcast", LIVE)}{sec("Works", WORK)}{sec("Artist", ART)}</div>
+  <div class="tbl">{sec("Education", EDU)}{sec("Broadcast", LIVE)}{sec("Works", WORK)}{sec("Artist", ART)}{sec("Releases", REL)}</div>
   <div class="ft"><span>강사 소개 — 손주희</span><span>02 / 03</span></div>
 </section>
 <section class="s dark" id="f4">
@@ -77,7 +78,7 @@ story = f'''</style></head><body>
   <div class="top"><span class="lab g">ENOCH TEACHERS — VOCAL</span><span class="lab g">CAREER</span></div>
   <div class="nm">SON JU HUI<small>손주희</small></div>
   <div class="hl"><div><b>호원대학교 실용음악학과 졸업</b></div><div><b>유희열의 스케치북 참여</b><span>그 외 다수 방송 · 콘서트</span></div></div>
-  <div class="body">{sec("WORKS", WORK_S, "lab g")}{sec("ARTIST", ART, "lab g")}</div>
+  <div class="body">{sec("WORKS", WORK_S, "lab g")}{sec("ARTIST", ART, "lab g")}{sec("RELEASES", REL, "lab g")}</div>
   <div class="bt"><span><span class="lime">●</span>&nbsp; Vocal</span><span class="g">나만의 진짜 소리를 찾는 곳</span></div>
 </section>
 </body></html>
@@ -109,7 +110,7 @@ one = sh.split('</title>')[0] + '</title><style>' + one_css + '''
   <div class="en">SON<br>JU HUI</div>
   <div class="ko">손주희</div>
   <div class="hl"><div><b>호원대학교 실용음악학과 졸업</b></div><div><b>유희열의 스케치북 참여</b><span>그 외 다수 방송 · 콘서트</span></div></div>
-  <div class="body">''' + sec("WORKS", WORK_S, "lab g") + sec("ARTIST", ART, "lab g") + '''</div>
+  <div class="body">''' + sec("WORKS", WORK_S, "lab g") + sec("ARTIST", ART, "lab g") + sec("RELEASES", REL, "lab g") + '''</div>
   <div class="bt"><span><span class="lime">●</span>&nbsp; Vocal</span><span class="g">나만의 진짜 소리를 찾는 곳</span></div>
 </section></body></html>
 '''
