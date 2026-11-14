@@ -1,20 +1,20 @@
-# 릴스 "비 오는 날의 연습" — 브이로그형: 글 사이 대괄호 안에 실제 사진이 열리는 구성 (아이보리 · 블랙 · Pretendard)
+# 릴스 "비 오는 날의 연습" — 브이로그형: 글 사이에 실제 사진이 가운데서 열리는 구성 (카드뉴스와 같은 순서) (아이보리 · 블랙 · Pretendard)
 # python3 output/릴스_비오는날/build.py → reel.html → CHROMIUM_PATH=... node output/릴스_비오는날/render.mjs
 import os
 HERE = os.path.dirname(os.path.abspath(__file__))
 
 # 화면: (글 조각들 [(html, x, y)], 사진들 [(파일, x, y, w, h, 초점)])
 SCREENS = [
-    ([('우산 하나,', 120, 640), ('텀블러 하나.', 300, 1090)],
-     [('rain', 560, 560, 340, 440, '50% 40%')]),
-    ([('습도가 높은 날은', 120, 600), ('목이 덜<br>건조합니다', 620, 860)],
-     [('plant', 140, 760, 420, 340, '30% 50%')]),
+    ([('우산 하나에 텀블러 챙겨서,', 120, 560), ('연습실 가는 길.', 120, 1320)],
+     [('coffee', 300, 700, 480, 540, '22% 50%')]),
+    ([('습도가 높은 날은', 120, 600), ('목이 덜<br>건조합니다', 600, 1080)],
+     [('rain', 140, 740, 380, 480, '50% 35%')]),
     ([('빗소리는<br>일정해서', 120, 640), ('다른 소음이<br>덜 들려요', 400, 1070)],
      [('guitarroom', 560, 600, 380, 400, '55% 50%')]),
-    ([('커피가 반쯤<br>줄어드는 동안', 120, 580), ('같은 소절을<br>몇 번 더.', 120, 1300)],
-     [('coffee', 500, 820, 420, 420, '40% 50%')]),
-    ([('오늘은 내 소리가', 120, 420), ('조금 더 잘<br>들리는 날.', 120, 1060)],
-     [('rack', 120, 600, 300, 320, '50% 70%'), ('stage', 590, 760, 370, 420, '50% 40%')]),
+    ([('텀블러 속 커피가<br>반쯤 줄어드는 동안', 120, 560), ('같은 소절을<br>몇 번 더.', 120, 1300)],
+     [('rack', 500, 780, 440, 440, '50% 70%')]),
+    ([('오늘은 내 소리가', 120, 520), ('조금 더 잘<br>들리는 날.', 120, 1100)],
+     [('stage', 460, 660, 500, 520, '50% 40%')]),
 ]
 D_TITLE, D_SC, D_END = 2.0, 2.5, 2.4
 DUR = round(D_TITLE + D_SC * len(SCREENS) + D_END, 2)
@@ -38,7 +38,6 @@ for i, (texts, photos) in enumerate(SCREENS, 1):
         n += 1
         h.append(f'<div class="lab mono pl" style="left:{x}px;top:{y-58}px">{n:02d}</div>')
         h.append(f'<div class="ph" style="left:{x}px;top:{y}px;width:{w}px;height:{hh}px" data-cx="{x + w/2}"><img src="src/{src}.jpg" style="object-position:{pos}"></div>')
-        h.append(f'<div class="brs" data-cx="{x + w/2}">{bracket(x, y, w, hh)}</div>')
     secs.append(f'<section class="sc" id="s{i}">{"".join(h)}</section>')
 secs.append(f'<section class="sc" id="s{len(SCREENS)+1}"><div class="lab mono" style="left:124px;top:760px">ENOCH MUSIC ACADEMY</div>'
             '<div class="tx t0" style="left:120px;top:810px;font-weight:600">에녹실용음악학원 시흥점</div>'
@@ -55,9 +54,9 @@ body{{width:1080px;height:1920px;overflow:hidden;background:#F1EDE4;color:#111;f
 .mono{{font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace;letter-spacing:3px}}
 .sc{{position:absolute;inset:0;opacity:0}}
 .lab{{position:absolute;font-size:22px;color:#8A8A8A}}
-.title{{position:absolute;font-size:112px;font-weight:600;letter-spacing:-5px;line-height:1.1}}
+.title{{position:absolute;font-size:88px;font-weight:600;letter-spacing:-4px;line-height:1.1}}
 .title .ln{{display:block}}
-.tx{{position:absolute;font-size:76px;font-weight:400;letter-spacing:-3px;line-height:1.18;white-space:nowrap}}
+.tx{{position:absolute;font-size:56px;font-weight:400;letter-spacing:-2px;line-height:1.18;white-space:nowrap}}
 .ph{{position:absolute;overflow:hidden;background:#E4DFD4}}
 .ph img{{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.82) contrast(1.02)}}
 .br{{position:absolute;overflow:visible}}
