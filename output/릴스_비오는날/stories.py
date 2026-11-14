@@ -1,28 +1,29 @@
-# 스토리 2장 "비 오는 날의 연습" (1080×1920) — 카드뉴스·릴스와 같은 브이로그형 (아이보리 · 블랙 · Pretendard, 사진 테두리 없음)
+# 스토리 2장 "비 오는 날의 연습" (1080×1920) — 작은 글자가 사진 사이로 흘러가는 브이로그 배치 (아이보리 · 블랙 · Pretendard)
 # python3 output/릴스_비오는날/stories.py → stories.html → CHROMIUM_PATH=... node output/릴스_비오는날/stories.mjs → story_01.png, story_02.png
 import os
 HERE = os.path.dirname(os.path.abspath(__file__))
 
 
-def photo(n, src, x, y, w, h, pos):
-    return (f'<div class="lab mono" style="left:{x}px;top:{y-48}px">{n:02d}</div>'
+def t(s, x, y, cls=''):
+    return f'<div class="t {cls}" style="left:{x}px;top:{y}px">{s}</div>'
+
+
+def photo(n, src, x, y, w, h, pos, below=False):
+    ly = y + h + 14 if below else y - 40
+    return (f'<div class="lab mono" style="left:{x}px;top:{ly}px">{n:02d}</div>'
             f'<div class="ph" style="left:{x}px;top:{y}px;width:{w}px;height:{h}px"><img src="src/{src}.jpg" style="object-position:{pos}"></div>')
 
 
-def story(i, body):
-    return (f'<section><div class="hd mono"><span>ENOCH MUSIC ACADEMY</span><span>RAINY DAY {i:02d} / 02</span></div>{body}'
-            '<div class="ft"><span>에녹실용음악학원 시흥점</span><span class="mono">031 315 3666</span></div></section>')
-
+FOOT = '<div class="ft mono">ENOCH MUSIC ACADEMY — RAINY DAY</div>'
 
 S = [
-    story(1, '<div class="sub" style="left:100px;top:330px">우산과 텀블러 하나 챙겨서 연습실로,</div>'
-             '<div class="ttl" style="left:96px;top:400px">비 오는 날의<br>연습</div>'
-             + photo(1, 'rain', 100, 720, 480, 640, '50% 35%')
-             + photo(2, 'coffee', 620, 980, 360, 420, '22% 50%')),
-    story(2, '<div class="hl" style="left:100px;top:330px">비 오는 날은<br>내 소리에 집중하기 좋습니다.</div>'
-             '<div class="sub" style="left:100px;top:510px;line-height:1.55">목이 덜 건조해서 소리 내기 편하고,<br>빗소리는 일정해서 다른 소음이 덜 들려요.</div>'
-             + photo(3, 'stage', 100, 760, 520, 560, '50% 40%')
-             + photo(4, 'plant', 660, 1000, 320, 420, '22% 50%')),
+    # 1: 우산과 텀블러 (비 오는 창문) 하나 챙겨서 / 연습실로, — 비 오는 날의 연습 (피아노 위 텀블러)
+    t('우산과 텀블러', 110, 700) + photo(1, 'rain', 420, 560, 270, 360, '50% 35%') + t('하나 챙겨서', 720, 700) + t('연습실로,', 820, 760)
+    + t('비 오는 날의', 150, 1150, 'b') + t('연습', 330, 1210, 'b') + photo(2, 'coffee', 600, 1010, 330, 400, '22% 50%', below=True) + FOOT,
+    # 2: 비 오는 날은 (무대) 내 소리에 / 집중하기 좋습니다. — 목이 덜 건조해서 … (창가 식물)
+    t('비 오는 날은', 110, 680, 'b') + photo(3, 'stage', 420, 540, 280, 340, '50% 40%') + t('내 소리에', 730, 680, 'b') + t('집중하기 좋습니다.', 640, 900, 'b')
+    + t('목이 덜 건조해서', 110, 1110) + t('소리 내기 편하고,', 110, 1170) + photo(4, 'plant', 620, 1040, 300, 380, '22% 50%', below=True)
+    + t('빗소리는 일정해서', 110, 1330) + t('다른 소음이 덜 들려요.', 180, 1390) + FOOT,
 ]
 
 html = f'''<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>stories</title><style>
@@ -30,18 +31,15 @@ html = f'''<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>sto
 @font-face{{font-family:P;src:url(../../templates/fonts/Pretendard-SemiBold.woff2);font-weight:600}}
 *{{margin:0;padding:0;box-sizing:border-box}}
 body{{background:#ccc;font-family:P,sans-serif;word-break:keep-all}}
-.mono{{font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace;letter-spacing:3px}}
-section{{position:relative;width:1080px;height:1920px;background:#F1EDE4;color:#111;overflow:hidden;margin-bottom:20px}}
+.mono{{font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace;letter-spacing:2px}}
+section{{position:relative;width:1080px;height:1920px;background:#F4F1EA;color:#111;overflow:hidden;margin-bottom:20px}}
 section>div{{position:absolute}}
-.hd{{left:100px;right:100px;top:220px;display:flex;justify-content:space-between;font-size:20px;padding-bottom:16px;border-bottom:1.5px solid #111}}
-.ft{{left:100px;right:100px;top:1560px;display:flex;justify-content:space-between;font-size:24px;color:#8A8A8A;padding-top:18px;border-top:1px solid #C9C3B8}}
-.ft .mono{{font-size:22px;color:#111}}
-.sub{{font-size:40px;color:#555;letter-spacing:-1.5px;white-space:nowrap}}
-.ttl{{font-size:96px;font-weight:600;letter-spacing:-4.5px;line-height:1.1}}
-.hl{{font-size:60px;font-weight:600;letter-spacing:-2.5px;line-height:1.25;white-space:nowrap}}
+.t{{font-size:40px;font-weight:400;letter-spacing:-1px;white-space:nowrap}}
+.t.b{{font-weight:600}}
 .lab{{font-size:20px;color:#8A8A8A}}
 .ph{{overflow:hidden;background:#E4DFD4}}
 .ph img{{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.82) contrast(1.02)}}
-</style></head><body>{''.join(S)}</body></html>'''
+.ft{{left:0;right:0;top:1600px;text-align:center;font-size:20px;color:#8A8A8A}}
+</style></head><body>{''.join(f'<section>{s}</section>' for s in S)}</body></html>'''
 open(os.path.join(HERE, 'stories.html'), 'w', encoding='utf-8').write(html)
 print('stories.html')
