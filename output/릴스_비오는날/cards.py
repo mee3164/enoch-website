@@ -17,7 +17,7 @@ def bracket(x, y, w, h):
 def photo(n, src, x, y, w, h, pos):
     return (f'<div class="lab mono" style="left:{x}px;top:{y-56}px">{n:02d}</div>'
             f'<div class="ph" style="left:{x}px;top:{y}px;width:{w}px;height:{h}px"><img src="src/{src}.jpg" style="object-position:{pos}"></div>'
-            + bracket(x, y, w, h))
+            )
 
 
 def tx(t, x, y, cls=''):
@@ -63,16 +63,16 @@ section.dk{{background:#111;color:#F1EDE4}}
 .hd{{position:absolute;left:84px;right:84px;top:72px;display:flex;justify-content:space-between;font-size:20px;padding-bottom:16px;border-bottom:1.5px solid currentColor}}
 .ft{{position:absolute;left:84px;right:84px;bottom:64px;display:flex;justify-content:space-between;font-size:22px;color:#8A8A8A}}
 .ft .mono{{font-size:20px}}
-.tx{{position:absolute;font-size:76px;font-weight:400;letter-spacing:-3px;line-height:1.18;white-space:nowrap}}
-.tx.ttl{{font-size:120px;font-weight:600;letter-spacing:-6px;line-height:1.08}}
-.tx.sm{{font-size:52px;letter-spacing:-2px;color:#555}}
+.tx{{position:absolute;font-size:56px;font-weight:400;letter-spacing:-2px;line-height:1.18;white-space:nowrap}}
+.tx.ttl{{font-size:88px;font-weight:600;letter-spacing:-4px;line-height:1.08}}
+.tx.sm{{font-size:40px;letter-spacing:-1.5px;color:#555}}
 .lab{{position:absolute;font-size:22px;color:#8A8A8A}}
 .ph{{position:absolute;overflow:hidden;background:#E4DFD4}}
 .ph img{{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.82) contrast(1.02)}}
 .br{{position:absolute;overflow:visible}}
 .br path{{fill:none;stroke:#111;stroke-width:3}}
 .ghost{{position:absolute;left:60px;top:170px;font-size:270px;font-weight:700;letter-spacing:-12px;color:#262421}}
-.sig{{position:absolute;left:84px;top:560px;font-size:64px;font-weight:600;letter-spacing:-2.5px}}
+.sig{{position:absolute;left:84px;top:560px;font-size:52px;font-weight:600;letter-spacing:-2.5px}}
 .info{{position:absolute;left:84px;right:84px;top:820px;font-size:24px;line-height:1.9;color:#B9B4AA;border-top:1px solid #444;padding-top:24px}}
 .info b{{display:inline-block;width:90px;font-weight:600;color:#F1EDE4}}
 </style></head><body>{''.join(C)}</body></html>'''
