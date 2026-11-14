@@ -5,18 +5,17 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 
 # 화면: (글 조각들 [(html, x, y)], 사진들 [(파일, x, y, w, h, 초점)])
 SCREENS = [
-    ([('우산 하나에 텀블러 챙겨서,', 120, 560), ('연습실 가는 길.', 120, 1320)],
-     [('coffee', 300, 700, 480, 540, '22% 50%')]),
-    ([('습도가 높은 날은', 120, 600), ('목이 덜<br>건조합니다', 600, 1080)],
-     [('rain', 140, 740, 380, 480, '50% 35%')]),
-    ([('빗소리는<br>일정해서', 120, 640), ('다른 소음이<br>덜 들려요', 400, 1070)],
+    ([('비 오는 날은<br>습도가 높습니다.', 120, 560), ('목이 덜 건조해서<br>소리 내기가 편합니다.', 120, 1120)],
+     [('rain', 600, 540, 360, 460, '50% 35%')]),
+    ([('빗소리는<br>일정해서', 120, 640), ('다른 소음이<br>덜 들려요.', 400, 1070)],
      [('guitarroom', 560, 600, 380, 400, '55% 50%')]),
-    ([('텀블러 속 커피가<br>반쯤 줄어드는 동안', 120, 560), ('같은 소절을<br>몇 번 더.', 120, 1300)],
-     [('rack', 500, 780, 440, 440, '50% 70%')]),
-    ([('오늘은 내 소리가', 120, 520), ('조금 더 잘<br>들리는 날.', 120, 1100)],
-     [('stage', 460, 660, 500, 520, '50% 40%')]),
+    ([('그래서 내 소리에', 120, 560), ('집중하기 좋습니다.', 120, 1300)],
+     [('rack', 440, 700, 500, 500, '50% 70%')]),
+    ([('비 오는 날,', 120, 520), ('평소보다 한 번 더<br>연습해 보세요.', 120, 1240)],
+     [('stage', 460, 640, 500, 520, '50% 40%')]),
 ]
-D_TITLE, D_SC, D_END = 2.0, 2.5, 2.4
+# 표지 사진: src/cover.jpg (우산 사진을 받으면 이 파일만 바꾼다. 지금은 임시로 피아노 위 텀블러 사진)
+D_TITLE, D_SC, D_END = 3.0, 2.6, 2.6
 DUR = round(D_TITLE + D_SC * len(SCREENS) + D_END, 2)
 
 
@@ -27,9 +26,11 @@ def bracket(x, y, w, h):
             f'<svg class="br R" style="left:{x+w+g}px;top:{top}px" width="{t+2}" height="{bot-top}"><path d="M0 1 H {t+1} V {bot-top-1} H 0"/></svg>')
 
 
-secs = ['<section class="sc" id="s0"><div class="lab mono" style="left:124px;top:700px">PRACTICE NOTE — RAINY DAY</div>'
-        '<div class="title" style="left:120px;top:760px"><span class="ln">비 오는 날의</span><span class="ln">연습</span></div></section>']
-n = 0
+secs = ['<section class="sc" id="s0"><div class="tx t0 sub" style="left:120px;top:470px">우산과 텀블러 하나 챙겨서 연습실로,</div>'
+        '<div class="title" style="left:116px;top:550px"><span class="ln">비 오는 날의</span><span class="ln">연습</span></div>'
+        '<div class="lab mono" style="left:300px;top:802px">01</div>'
+        '<div class="ph" style="left:300px;top:860px;width:480px;height:600px"><img src="src/cover.jpg" style="object-position:22% 50%"></div></section>']
+n = 1
 for i, (texts, photos) in enumerate(SCREENS, 1):
     h = []
     for k, (t, x, y) in enumerate(texts):
@@ -42,7 +43,8 @@ for i, (texts, photos) in enumerate(SCREENS, 1):
 secs.append(f'<section class="sc" id="s{len(SCREENS)+1}"><div class="lab mono" style="left:124px;top:760px">ENOCH MUSIC ACADEMY</div>'
             '<div class="tx t0" style="left:120px;top:810px;font-weight:600">에녹실용음악학원 시흥점</div>'
             '<div class="tx t1 mono" style="left:124px;top:930px;font-size:34px;letter-spacing:2px">031 315 3666</div>'
-            '<div class="tx t1" style="left:124px;top:1000px;font-size:30px;color:#8A8A8A;letter-spacing:-.5px">체험수업 · 네이버 플레이스 예약</div></section>')
+            '<div class="tx t1" style="left:124px;top:1000px;font-size:30px;color:#8A8A8A;letter-spacing:-.5px">경기도 시흥시 은행로 157 2층</div>'
+            '<div class="tx t1" style="left:124px;top:1050px;font-size:30px;color:#8A8A8A;letter-spacing:-.5px">체험수업 · 네이버 플레이스 예약</div></section>')
 
 T = [0, D_TITLE] + [round(D_TITLE + D_SC * k, 2) for k in range(1, len(SCREENS) + 1)] + [DUR + 0.01]
 
@@ -56,6 +58,7 @@ body{{width:1080px;height:1920px;overflow:hidden;background:#F1EDE4;color:#111;f
 .lab{{position:absolute;font-size:22px;color:#8A8A8A}}
 .title{{position:absolute;font-size:88px;font-weight:600;letter-spacing:-4px;line-height:1.1}}
 .title .ln{{display:block}}
+.tx.sub{{font-size:40px;color:#555;letter-spacing:-1.5px}}
 .tx{{position:absolute;font-size:56px;font-weight:400;letter-spacing:-2px;line-height:1.18;white-space:nowrap}}
 .ph{{position:absolute;overflow:hidden;background:#E4DFD4}}
 .ph img{{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.82) contrast(1.02)}}
