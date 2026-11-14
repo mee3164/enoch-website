@@ -1,4 +1,4 @@
-// stories.html → story_01.png ~ (1080×1350). CHROMIUM_PATH=... node output/릴스_비오는날/cards.mjs
+// stories.html → section마다 data-name.png (1080×1920). CHROMIUM_PATH=... node output/릴스_비오는날/stories.mjs
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { createRequire } from "node:module";
@@ -9,5 +9,5 @@ const p = await b.newPage({ viewport: { width: 1080, height: 1920 } });
 await p.goto(pathToFileURL(path.join(dir, "stories.html")).href);
 await p.evaluate(() => document.fonts.ready); await p.waitForTimeout(400);
 const ss = await p.$$("section");
-for (let i = 0; i < ss.length; i++) await ss[i].screenshot({ path: path.join(dir, `story_${String(i + 1).padStart(2, "0")}.png`) });
+for (let i = 0; i < ss.length; i++) await ss[i].screenshot({ path: path.join(dir, (await ss[i].getAttribute("data-name")) + ".png") });
 await b.close(); console.log(ss.length, "stories");
