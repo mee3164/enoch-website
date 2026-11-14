@@ -1,5 +1,5 @@
 # 스토리 2장 "비 오는 날의 연습" (1080×1920) — 작은 글자가 사진 사이로 흘러가는 브이로그 배치 (아이보리 · 블랙 · Pretendard)
-# python3 output/릴스_비오는날/stories.py → stories.html → CHROMIUM_PATH=... node output/릴스_비오는날/stories.mjs → story_01.png, story_02.png (+ 괄호 버전 story_0N_괄호.png)
+# python3 output/릴스_비오는날/stories.py → stories.html → CHROMIUM_PATH=... node output/릴스_비오는날/stories.mjs → story_01.png, story_02.png
 import os
 HERE = os.path.dirname(os.path.abspath(__file__))
 
@@ -22,24 +22,18 @@ def photo(n, src, x, y, w, h, pos, below=False, paren=False):
 FOOT = '<div class="ft mono">ENOCH MUSIC ACADEMY</div>'
 
 
-def stories(p):
-    # 글은 사진의 세로 가운데에 맞추고, 둘째 줄은 조금씩 밀어 흐름을 만든다. p=True면 괄호 자리만큼 글을 벌린다
-    d = 36 if p else 0
-    sx = -30 if p else 0   # 2장 무대 사진을 괄호 자리만큼 왼쪽으로
-    return [
-        # 1: 우산과 텀블러 (비 오는 창문) 하나 챙겨서 / 연습실로, — 비 오는 날의 / 연습 (피아노 위 텀블러)
-        t('우산과 텀블러', 176 - d, 700) + photo(1, 'rain', 400, 520, 300, 400, '50% 35%', paren=p) + t('하나 챙겨서', 732 + d, 700) + t('연습실로,', 800 + d, 746)
-        + t('비 오는 날의', 176 - d, 1226, 'b') + t('연습', 440 - d, 1272, 'b') + photo(2, 'coffee', 560, 1020, 400, 480, '22% 50%', below=True, paren=p) + FOOT,
-        # 2: 비 오는 날, (무대) 내 목소리에 / 집중하기 좋은 이유. — 덜 건조한 목 … 몰입하기 좋은 차분한 분위기 (창가 식물)  [명사형 끝맺음]
-        t('비 오는 날,', 200 - d, 676, 'b') + photo(3, 'stage', 400 + sx, 500, 300, 380, '50% 40%', paren=p)
-        + t('내 목소리에', 732 + sx + d, 652, 'b') + t('집중하기 좋은 이유.', 732 + sx + d, 698, 'b')
-        + t('덜 건조한 목,', 176, 1140) + t('편하게 나오는 소리.', 176, 1186) + photo(4, 'plant', 620, 1000, 340, 440, '22% 50%', below=True, paren=p)
-        + t('몰입하기 좋은', 236, 1296) + t('차분한 분위기.', 296, 1342) + FOOT,
-    ]
-
-
-NAMES = ['story_01', 'story_02', 'story_01_괄호', 'story_02_괄호']
-S = stories(False) + stories(True)
+# 괄호는 첫 사진(비 오는 창문)에만. 괄호 자리만큼 그 줄의 글을 벌린다
+d = 36
+S = [
+    # 1: 우산과 텀블러 ( 비 오는 창문 ) 하나 챙겨서 / 연습실로, — 비 오는 날의 / 연습 (피아노 위 텀블러)
+    t('우산과 텀블러', 176 - d, 700) + photo(1, 'rain', 400, 520, 300, 400, '50% 35%', paren=True) + t('하나 챙겨서', 732 + d, 700) + t('연습실로,', 800 + d, 746)
+    + t('비 오는 날의', 176, 1226, 'b') + t('연습', 440, 1272, 'b') + photo(2, 'coffee', 560, 1020, 400, 480, '22% 50%', below=True) + FOOT,
+    # 2: 오늘 같은 날, (무대) 내 목소리에 / 집중하기 좋은 이유. — 덜 건조한 목 … 몰입하기 좋은 차분한 분위기 (창가 식물)  [명사형 끝맺음]
+    t('오늘 같은 날,', 176, 676, 'b') + photo(3, 'stage', 400, 500, 300, 380, '50% 40%') + t('내 목소리에', 732, 652, 'b') + t('집중하기 좋은 이유.', 732, 698, 'b')
+    + t('덜 건조한 목,', 176, 1140) + t('편하게 나오는 소리.', 176, 1186) + photo(4, 'plant', 620, 1000, 340, 440, '22% 50%', below=True)
+    + t('몰입하기 좋은', 236, 1296) + t('차분한 분위기.', 296, 1342) + FOOT,
+]
+NAMES = ['story_01', 'story_02']
 
 html = f'''<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>stories</title><style>
 @font-face{{font-family:P;src:url(../../templates/fonts/Pretendard-Regular.woff2);font-weight:400}}
