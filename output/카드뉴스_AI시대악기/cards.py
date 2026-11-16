@@ -1,5 +1,5 @@
 # 카드뉴스 "AI가 곡을 만드는 시대, 악기를 배우는 것이 더 중요한 이유" (1080×1350, 8장)
-# 공간 사진만 사용 (01 · 03 · 04 · 06). 05 · 08은 검정, 02 · 07은 글만.
+# 01 메인은 연주 사진(얼굴 아래로 자름, src/main.jpg — 인물 사진이라 저장소에 올리지 않음), 03 · 04 · 06은 공간 사진. 05 · 08은 검정, 02 · 07은 글만.
 # python3 output/카드뉴스_AI시대악기/cards.py → cards.html → CHROMIUM_PATH=... node output/카드뉴스_AI시대악기/cards.mjs → 01.png ~ 08.png
 import os
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -7,8 +7,9 @@ N = 8
 TOPIC = 'AI 시대, 악기를 배우는 이유'
 
 
-def ph(src, x, y, w, h, pos='50% 50%'):
-    return f'<div class="ph" style="left:{x}px;top:{y}px;width:{w}px;height:{h}px"><img src="../../images/공간/{src}" style="object-position:{pos}"></div>'
+def ph(src, x, y, w, h, pos='50% 50%', extra=''):
+    path = src if '/' in src else f'../../images/공간/{src}'
+    return f'<div class="ph" style="left:{x}px;top:{y}px;width:{w}px;height:{h}px"><img src="{path}" style="object-position:{pos};{extra}"></div>'
 
 
 def card(i, body, dark=False):
@@ -23,7 +24,7 @@ def reason(n, title, photo, body, body_top):
 
 
 C = [
-    card(1, ph('피아노_03.jpg', 84, 150, 912, 760, '50% 60%')
+    card(1, ph('src/main.jpg', 84, 150, 912, 760, '50% 40%', 'filter:saturate(.8) sepia(.06) brightness(1.18)')
          + '<div class="sub" style="top:968px">AI가 곡을 만드는 시대,</div>'
          + '<div class="h1" style="top:1020px">악기를 배우는 것이<br>더 중요한 이유</div>'),
     card(2, '<div class="p big" style="top:330px">버튼 몇 번이면<br>노래 한 곡이 완성되는 요즘.</div>'
