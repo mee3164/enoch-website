@@ -1,6 +1,6 @@
 # 릴스 "AI가 곡을 만드는 시대, 악기를 배우는 것이 더 중요한 이유" (1080×1920) — 카드뉴스 8장과 같은 글 · 같은 사진
-# 글은 줄마다 차례로 올라오고, 사진은 가운데서 양옆으로 열리며 천천히 줌아웃. 05 · 마무리는 검정.
-# python3 output/카드뉴스_AI시대악기/reel.py → reel.html → CHROMIUM_PATH=... node output/카드뉴스_AI시대악기/render.mjs reel.html 27.8 reel.mp4
+# 글은 줄마다 차례로 올라오고, 사진은 가운데서 양옆으로 열리며 천천히 줌아웃. 마무리는 검정.
+# python3 output/카드뉴스_AI시대악기/reel.py → reel.html → CHROMIUM_PATH=... node output/카드뉴스_AI시대악기/render.mjs reel.html 28.0 reel.mp4
 import os
 HERE = os.path.dirname(os.path.abspath(__file__))
 
@@ -29,7 +29,7 @@ SC = [
     (3.8, False, a('REASON 02', 340, 'lab mono', 0.0) + a('나만의 소리는<br>대신 정해 줄 수 없어요', 384, 'h2', 0.15)
      + ph('보컬부스_01.jpg', 600, 600, 0.4, '50% 45%')
      + a('같은 곡도 연주하는 사람마다 다르게 들립니다.<br>어디서 숨을 쉬고, 어디에 힘을 줄지.<br>그 선택이 쌓여 내 소리가 됩니다.', 1260, 'p', 1.0)),
-    (2.8, True, a('REASON 03', 760, 'lab mono', 0.0) + a('과정이<br>사람을 바꿉니다', 810, 'h0', 0.25)),
+    (3.0, False, a('REASON 03', 380, 'lab mono', 0.0) + a('대신 해 줄 수<br>없는 시간이<br>있습니다', 430, 'h0', 0.25)),
     (4.0, False, a('어제 안 되던 소절이<br>오늘은 조금 되는 날.<br>그런 날이 쌓이면<br><b>음악만큼, 나도 달라집니다.</b>', 360, 'p lg', 0.1)
      + ph('피아노방_01.jpg', 760, 560, 0.8, '50% 62%')
      + a('결과는 대신 만들어 줄 수 있어도<br>그 시간까지 대신 겪어 줄 수는 없거든요.', 1380, 'p lg', 1.8)),
@@ -61,7 +61,7 @@ body{{width:1080px;height:1920px;overflow:hidden;background:#F1EDE4;font-family:
 .sub{{font-size:38px;color:#555;letter-spacing:-1px}}
 .h1{{font-size:72px;font-weight:600;letter-spacing:-3px;line-height:1.2}}
 .h2{{font-size:56px;font-weight:600;letter-spacing:-2px;line-height:1.22}}
-.h0{{font-size:104px;font-weight:600;letter-spacing:-4px;line-height:1.15}}
+.h0{{font-size:112px;font-weight:700;letter-spacing:-4px;line-height:1.25}}
 .p{{right:84px;font-size:34px;color:#333;letter-spacing:-.8px;line-height:1.6}}
 .p.lg{{font-size:40px;letter-spacing:-1.2px}}
 .big{{right:84px;font-size:46px;letter-spacing:-1.6px;line-height:1.45}}
