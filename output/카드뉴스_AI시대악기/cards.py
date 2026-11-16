@@ -1,5 +1,5 @@
 # 카드뉴스 "AI가 곡을 만드는 시대, 악기를 배우는 것이 더 중요한 이유" (1080×1350, 8장)
-# 01 메인은 연주 사진(얼굴 아래로 자름, src/main.jpg — 인물 사진이라 저장소에 올리지 않음), 03 · 04 · 06은 공간 사진. 05 · 08은 검정, 02 · 07은 글만.
+# 01 메인은 연주 사진(얼굴 아래로 자름, src/main.jpg — 인물 사진이라 저장소에 올리지 않음), 03 · 04 · 06은 공간 사진. 08은 검정, 02 · 07은 글만.
 # python3 output/카드뉴스_AI시대악기/cards.py → cards.html → CHROMIUM_PATH=... node output/카드뉴스_AI시대악기/cards.mjs → 01.png ~ 08.png
 import os
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -34,8 +34,8 @@ C = [
                    '직접 연주해 본 사람은 음악을 다르게 듣습니다.<br>좋아하던 노래를 다시 들었을 때,<br>처음 듣는 소리가 들리는 것.<br>그건 직접 해 본 사람만 얻는 귀예요.', 940)),
     card(4, reason(2, '나만의 소리는<br>대신 정해 줄 수 없어요', ph('보컬부스_01.jpg', 84, 410, 912, 520, '50% 45%'),
                    '같은 곡도 연주하는 사람마다 다르게 들립니다.<br>어디서 숨을 쉬고, 어디에 힘을 줄지.<br>그 선택이 쌓여 내 소리가 됩니다.', 980)),
-    card(5, '<div class="lab mono" style="top:470px;color:#8A8A8A">REASON 03</div>'
-         '<div class="h0" style="top:520px">과정이<br>사람을 바꿉니다</div>', dark=True),
+    card(5, '<div class="lab mono" style="top:220px">REASON 03</div>'
+         '<div class="h0" style="top:270px">대신 해 줄 수<br>없는 시간이<br>있습니다</div>'),
     card(6, '<div class="p" style="top:200px">어제 안 되던 소절이<br>오늘은 조금 되는 날.<br>그런 날이 쌓이면<br><b>음악만큼, 나도 달라집니다.</b></div>'
          + ph('피아노방_01.jpg', 84, 520, 912, 480, '50% 62%')
          + '<div class="p" style="top:1050px">결과는 대신 만들어 줄 수 있어도<br>그 시간까지 대신 겪어 줄 수는 없거든요.</div>'),
@@ -68,7 +68,7 @@ section>div{{position:absolute;left:84px}}
 .sub{{font-size:34px;color:#555;letter-spacing:-1px}}
 .h1{{font-size:64px;font-weight:600;letter-spacing:-2.5px;line-height:1.2}}
 .h2{{font-size:52px;font-weight:600;letter-spacing:-2px;line-height:1.22}}
-.h0{{font-size:96px;font-weight:600;letter-spacing:-4px;line-height:1.15}}
+.h0{{font-size:104px;font-weight:700;letter-spacing:-4px;line-height:1.25}}
 .p{{right:84px;font-size:32px;font-weight:400;color:#333;letter-spacing:-.8px;line-height:1.6}}
 .p.big{{font-size:42px;color:#111;letter-spacing:-1.5px;line-height:1.45}}
 .p b{{font-weight:600;color:#111}}
