@@ -38,7 +38,7 @@ C = [
          '<div class="h0" style="top:270px">대신 해 줄 수<br>없는 시간이<br>있습니다</div>'),
     card(6, '<div class="p" style="top:200px">어제 안 되던 소절이<br>오늘은 조금 되는 날.<br>그런 날이 쌓이면<br><b>음악만큼, 나도 달라집니다.</b></div>'
          + ph('피아노방_01.jpg', 84, 520, 912, 480, '50% 62%')
-         + '<div class="p" style="top:1050px">결과는 대신 만들어 줄 수 있어도<br>그 시간까지 대신 겪어 줄 수는 없거든요.</div>'),
+         + '<div class="p" style="top:1050px">그래서 배움에는<br>지름길이 없습니다.</div>'),
     card(7, '<div class="p big" style="top:470px">누구나 결과를 가질 수 있는 시대일수록,<br><b>직접 소리를 낼 수 있는 사람의 가치는<br>더 커집니다.</b></div>'),
     card(8, '<div class="ghost">ENOCH</div>'
          '<div class="sig">같은 곡도, 사람마다 다르게.<br>나만의 진짜 소리를 찾는 곳.</div>'
