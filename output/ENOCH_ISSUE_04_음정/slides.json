@@ -7,8 +7,8 @@
  "slides": [
   {
    "layout": "cover",
-   "image": "images/기타/악보손_01.jpg",
-   "imagePosition": "center 45%",
+   "image": "output/ENOCH_ISSUE_04_음정/src/cover.jpg",
+   "imagePosition": "center 30%",
    "en": "Interval",
    "ko": "음정",
    "sub": "두 음 사이의 거리",
