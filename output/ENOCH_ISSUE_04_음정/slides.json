@@ -8,11 +8,12 @@
   {
    "layout": "cover",
    "image": "output/ENOCH_ISSUE_04_음정/src/cover.jpg",
-   "imagePosition": "center 30%",
+   "imagePosition": "center 22%",
    "en": "Interval",
    "ko": "음정",
    "sub": "두 음 사이의 거리",
-   "issue": "ISSUE\nNo.04"
+   "issue": "ISSUE\nNo.04",
+   "imageSize": "130%"
   },
   {
    "layout": "note",
