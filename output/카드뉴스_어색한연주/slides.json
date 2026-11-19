@@ -17,9 +17,11 @@
    "full": true
   },
   {
-   "layout": "point",
+   "layout": "photo",
+   "image": "output/카드뉴스_어색한연주/img/keys.jpg",
+   "imageHeight": 500,
    "kicker": "Something's Off",
-   "title": "틀린 데는\n없어요.",
+   "title": "틀린 데는 없어요.",
    "body": [
     "박도 정확하고, 코드에도 맞게 쳤습니다.",
     "그런데 이상하게 곡이 덜 흐르는 느낌. 듣는 사람도 이유는 모르겠는데,",
@@ -27,7 +29,9 @@
    ]
   },
   {
-   "layout": "point",
+   "layout": "photo",
+   "image": "output/카드뉴스_어색한연주/img/studio.jpg",
+   "imageHeight": 500,
    "kicker": "Like a Sentence",
    "title": "연주에도 말처럼\n문장이 있습니다.",
    "body": [
@@ -58,7 +62,9 @@
    ]
   },
   {
-   "layout": "point",
+   "layout": "photo",
+   "image": "output/카드뉴스_어색한연주/img/drumroom.jpg",
+   "imageHeight": 500,
    "kicker": "Why",
    "title": "늘 치던 문장만\n나오는 이유",
    "body": [
@@ -67,7 +73,9 @@
    ]
   },
   {
-   "layout": "point",
+   "layout": "photo",
+   "image": "output/카드뉴스_어색한연주/img/field.jpg",
+   "imageHeight": 500,
    "kicker": "How",
    "title": "문장은\n이렇게 생깁니다",
    "body": [
