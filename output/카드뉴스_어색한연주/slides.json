@@ -8,12 +8,13 @@
   {
    "layout": "cover",
    "image": "images/공간/무대드럼_02.jpg",
-   "imagePosition": "35% 70%",
+   "imagePosition": "35% 60%",
    "en": "연주가 어색한\n진짜 이유",
    "ko": "음이 아니라, 말투의 문제",
    "sub": "",
    "ticker": false,
-   "enSize": 88
+   "enSize": 88,
+   "full": true
   },
   {
    "layout": "point",

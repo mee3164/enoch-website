@@ -63,6 +63,15 @@ body { font-family: var(--ko); word-break: keep-all; -webkit-font-smoothing: ant
 .layout-cover { padding: 165px 96px 0; }
 .cover-photo { width: 888px; height: 790px; background-size: cover; background-position: center; filter: grayscale(1) sepia(.18) contrast(1.02); }
 .cover-photo.photo-missing { filter: none; }
+/* 표지 전체 사진 (cover `full: true`) — 사진이 카드 전체를 덮고, 아래 그라데이션 위에 흰 글자 */
+.cover-full { padding-bottom: 104px; color: #F1EDE4; }
+.cover-full .cover-photo { position: absolute; inset: 0; width: auto; height: auto; z-index: 0; }
+.cover-full::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(17,17,17,.5) 0%, rgba(17,17,17,0) 20%, rgba(17,17,17,0) 45%, rgba(17,17,17,.78) 72%, rgba(17,17,17,.92) 100%); }
+.cover-full .masthead { z-index: 2; color: #F1EDE4; border-bottom-color: rgba(241,237,228,.75); }
+.cover-full .cover-en { position: relative; z-index: 2; margin-top: auto !important; color: #F1EDE4; }
+.cover-full .cover-sub { position: relative; z-index: 2; }
+.cover-full .cover-sub .ko, .cover-full .cover-sub .ko b { color: #F1EDE4; }
+.cover-full .cover-sub .ko { opacity: .88; }
 .cover-en { margin-top: 56px; font-family: var(--en); font-size: 162px; font-weight: 700; line-height: .86; letter-spacing: -3px; text-transform: uppercase; white-space: nowrap; }
 .cover-sub { margin-top: 40px; display: flex; justify-content: space-between; align-items: flex-end; }
 .cover-sub .ko { font-size: 40px; font-weight: 300; color: var(--sub); letter-spacing: -1px; }

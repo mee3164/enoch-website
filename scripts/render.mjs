@@ -298,7 +298,7 @@ for (const [i, s] of deck.slides.entries()) {
     (s.layout === "way" && (nItems > 3 || s.compact)) ||
     (s.layout === "steps" && s.compact)
       ? " compact"
-      : "";
+      : s.layout === "cover" && s.full ? " cover-full" : "";
   const head = s.layout === "instructor" ? "" : `<div class="masthead"><span>${esc(brand.nameEn)}</span><span>${esc(deck.masthead || "")}</span></div>`;
   const foot = s.layout === "cover" || s.layout === "typecover" ? "" : `<div class="colophon"><span>${esc(deck.footer || "")}</span><span class="page">${two(i + 1)} / ${two(total)}</span></div>`;
   cards.push(`<section class="card layout-${s.layout}${extra} theme-${theme}" id="card-${i + 1}">
