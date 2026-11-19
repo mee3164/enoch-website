@@ -12,7 +12,8 @@
    "en": "Feel",
    "ko": "왜 어색할까",
    "sub": "박도, 코드도 맞는데",
-   "issue": "NOTE"
+   "issue": "NOTE",
+   "ticker": false
   },
   {
    "layout": "point",
