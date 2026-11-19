@@ -116,7 +116,7 @@ const layouts = {
     const tick = s.ticker || deck.ticker || `${brand.nameEn}`;
     return `
     ${s.image ? (await photo(i, s.image, "cover-photo", s.imagePosition, s.imageSize)).replace('class="photo-missing"', 'class="photo-missing cover-photo"') : ""}
-    <div class="cover-en">${esc(s.en)}</div>
+    <div class="cover-en"${s.enSize || String(s.en).includes("\n") || /[가-힣]/.test(String(s.en)) ? ` style="${s.enSize ? `font-size:${s.enSize}px;` : ""}${String(s.en).includes("\n") ? "line-height:1.12;" : ""}${/[가-힣]/.test(String(s.en)) ? "font-family:var(--ko);font-weight:800;letter-spacing:-4px;text-transform:none;margin-top:36px;" : ""}"` : ""}>${esc(s.en).replace(/\n/g, "<br>")}</div>
     <div class="cover-sub"><div class="ko"><b>${esc(s.ko || "")}</b>${s.sub ? ` — ${esc(s.sub)}` : ""}</div>
       ${s.issue ? `<div class="issue">${esc(s.issue).replace(/\n/g, "<br>")}</div>` : ""}</div>
     ${s.ticker === false ? "" : `<div class="ticker">${Array(6).fill(esc(tick)).join(" — ")}</div>`}`;

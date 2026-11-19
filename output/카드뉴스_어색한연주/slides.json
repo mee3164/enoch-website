@@ -1,6 +1,6 @@
 {
  "title": "박도 맞고 코드도 맞는데, 왜 어딘가 어색할까",
- "masthead": "PRACTICE NOTE — FEEL",
+ "masthead": "PRACTICE NOTE",
  "footer": "어울리는 연주",
  "ticker": "ENOCH PRACTICE NOTE — FEEL — 어울리는 연주",
  "theme": "ivory",
@@ -9,11 +9,11 @@
    "layout": "cover",
    "image": "images/공간/무대드럼_02.jpg",
    "imagePosition": "35% 70%",
-   "en": "Feel",
-   "ko": "왜 어색할까",
-   "sub": "박도, 코드도 맞는데",
-   "issue": "NOTE",
-   "ticker": false
+   "en": "연주가 어색한\n진짜 이유",
+   "ko": "음이 아니라, 말투의 문제",
+   "sub": "",
+   "ticker": false,
+   "enSize": 88
   },
   {
    "layout": "point",
