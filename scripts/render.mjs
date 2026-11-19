@@ -119,7 +119,7 @@ const layouts = {
     <div class="cover-en">${esc(s.en)}</div>
     <div class="cover-sub"><div class="ko"><b>${esc(s.ko || "")}</b>${s.sub ? ` — ${esc(s.sub)}` : ""}</div>
       ${s.issue ? `<div class="issue">${esc(s.issue).replace(/\n/g, "<br>")}</div>` : ""}</div>
-    <div class="ticker">${Array(6).fill(esc(tick)).join(" — ")}</div>`;
+    ${s.ticker === false ? "" : `<div class="ticker">${Array(6).fill(esc(tick)).join(" — ")}</div>`}`;
   },
 
   // 사진 없는 표지 (정보형·철학 편): 키커 + 큰 영문 + 굵은 한글 제목 + 부제 + 하단 반복 띠
