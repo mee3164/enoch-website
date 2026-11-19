@@ -1,31 +1,76 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><title>수험생 할인 이벤트 포스터</title>
-<!-- 수험생 할인 이벤트 포스터 1080×1350 — 사진이 주인공, 필요한 글만 왼쪽 아래 (2026-11-19 원장님)
-     금액은 쓰지 않음, 등록 시 수험표 제시, 기한 11/30. 배경: images/공간/무대로고_01.jpg
-     CHROMIUM_PATH=... node poster.mjs → poster.png -->
+<!-- 수험생 할인 이벤트 2장 (1080×1350) — 2026-11-19 원장님
+     01: 사진 메인 + 짧은 문구 (배경 images/공간/무대로고_01.jpg)
+     02: 아이보리, 할인 받는 방법 + 수업 안내 (금액은 쓰지 않음, 등록 시 수험표 제시, 기한 11/30)
+     CHROMIUM_PATH=... node poster.mjs → poster_01.png, poster_02.png -->
 <style>
+@font-face{font-family:P;src:url(../../templates/fonts/Pretendard-Light.woff2);font-weight:300}
 @font-face{font-family:P;src:url(../../templates/fonts/Pretendard-Regular.woff2);font-weight:400}
 @font-face{font-family:P;src:url(../../templates/fonts/Pretendard-SemiBold.woff2);font-weight:600}
 @font-face{font-family:P;src:url(../../templates/fonts/Pretendard-Bold.woff2);font-weight:700}
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#ccc}
-section{width:1080px;height:1350px;position:relative;overflow:hidden;background:#111 url(../../images/공간/무대로고_01.jpg) 50% 50%/cover;color:#F4F1EA;font-family:P,sans-serif;word-break:keep-all}
-/* 사진은 그대로 보이게 — 위는 머리말만 읽힐 만큼, 아래쪽만 글자를 위해 어둡게 */
-section::before{content:"";position:absolute;inset:0;background:
-  linear-gradient(180deg,rgba(17,17,17,.38) 0%,rgba(17,17,17,0) 14%,rgba(17,17,17,0) 52%,rgba(17,17,17,.55) 76%,rgba(17,17,17,.85) 100%)}
-section>div{position:absolute;left:80px}
+section{width:1080px;height:1350px;position:relative;overflow:hidden;font-family:P,sans-serif;word-break:keep-all;margin-bottom:20px}
+section>div{position:absolute;left:80px;right:80px}
 .mono{font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace}
-.hd{top:60px;right:80px;display:flex;justify-content:space-between;font-size:18px;letter-spacing:2.4px;padding-bottom:14px;border-bottom:1.5px solid rgba(244,241,234,.8)}
-.lab{top:930px;font-size:20px;letter-spacing:3px;color:#E4DFD6}
-.ttl{top:972px;font-size:84px;font-weight:700;letter-spacing:-3.5px;line-height:1.1}
-.sub{top:1080px;font-size:36px;font-weight:600;letter-spacing:-1px}
-.due{top:1140px;font-size:26px;letter-spacing:1.5px;color:#E4DFD6}
-.ft{top:1250px;right:80px;display:flex;justify-content:space-between;font-size:19px;letter-spacing:1px;padding-top:16px;border-top:1.5px solid rgba(244,241,234,.6);color:#E4DFD6}
-.ft span:first-child{font-family:P,sans-serif;letter-spacing:0;font-size:21px}
-</style></head><body><section>
+
+/* 01 사진 메인 */
+#p1{background:#111 url(../../images/공간/무대로고_01.jpg) 50% 50%/cover;color:#F4F1EA}
+#p1::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(17,17,17,.38) 0%,rgba(17,17,17,0) 14%,rgba(17,17,17,0) 44%,rgba(17,17,17,.62) 66%,rgba(17,17,17,.88) 100%)}
+#p1 .hd{top:60px;display:flex;justify-content:space-between;font-size:18px;letter-spacing:2.4px;padding-bottom:14px;border-bottom:1.5px solid rgba(244,241,234,.8)}
+#p1 .lab{top:836px;font-size:20px;letter-spacing:3px;color:#E4DFD6}
+#p1 .ttl{top:878px;font-size:96px;font-weight:700;letter-spacing:-4px;line-height:1.08}
+#p1 .sub{top:1124px;font-size:34px;font-weight:600;letter-spacing:-1px;display:flex;gap:22px;align-items:baseline}
+#p1 .sub .due{font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace;font-size:26px;font-weight:400;color:#E4DFD6;letter-spacing:1.5px}
+#p1 .ft{top:1250px;display:flex;justify-content:space-between;font-size:19px;letter-spacing:1px;padding-top:16px;border-top:1.5px solid rgba(244,241,234,.6);color:#E4DFD6}
+#p1 .ft span:first-child{font-family:P,sans-serif;letter-spacing:0;font-size:21px}
+
+/* 02 아이보리 상세 */
+#p2{background:#F1EDE4;color:#111}
+#p2 .hd{top:60px;display:flex;justify-content:space-between;font-size:18px;letter-spacing:2.4px;padding-bottom:14px;border-bottom:2px solid #111}
+#p2 .lab{top:140px;font-size:20px;letter-spacing:3px;color:#8A8A8A}
+#p2 .ttl{top:180px;font-size:68px;font-weight:700;letter-spacing:-2.5px;line-height:1.15;display:flex;justify-content:space-between;align-items:baseline}
+#p2 .ttl .due{font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace;font-size:26px;font-weight:400;letter-spacing:1.5px;color:#111}
+#p2 .steps{top:300px;border-top:1.5px solid #111}
+#p2 .st{display:grid;grid-template-columns:90px 1fr;padding:26px 0;border-bottom:1px solid #C9C3B8}
+#p2 .st i{font-style:normal;font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace;font-size:22px;color:#8A8A8A;letter-spacing:2px;padding-top:6px}
+#p2 .st b{display:block;font-size:34px;font-weight:700;letter-spacing:-1px;margin-bottom:8px}
+#p2 .st span{font-size:24px;color:#555;letter-spacing:-.4px;line-height:1.55}
+#p2 .lab2{top:790px;font-size:20px;letter-spacing:3px;color:#8A8A8A}
+#p2 .cls{top:830px;border-top:1.5px solid #111}
+#p2 .row{display:grid;grid-template-columns:150px 1fr;padding:20px 0;border-bottom:1px solid #C9C3B8;font-size:26px;letter-spacing:-.6px;line-height:1.5}
+#p2 .row b{font-weight:600}
+#p2 .row span{color:#333}
+#p2 .note{top:1170px;font-size:22px;color:#8A8A8A;letter-spacing:-.3px}
+#p2 .ft{top:1250px;display:flex;justify-content:space-between;font-size:19px;letter-spacing:1px;padding-top:16px;border-top:2px solid #111}
+#p2 .ft span:first-child{font-family:P,sans-serif;letter-spacing:0;font-size:21px}
+</style></head><body>
+
+<section id="p1" data-name="poster_01">
 <div class="hd mono"><span>ENOCH MUSIC ACADEMY</span><span>EVENT</span></div>
 <div class="lab mono">FOR STUDENTS</div>
-<div class="ttl">수험생 할인 이벤트</div>
-<div class="sub">등록 시 수험표를 보여 주세요</div>
-<div class="due mono">~ 11.30</div>
+<div class="ttl">수험표,<br>버리지 마세요</div>
+<div class="sub">수험생 할인 이벤트<span class="due">~ 11.30</span></div>
 <div class="ft mono"><span>에녹실용음악학원 시흥점</span><span>031 315 3666</span></div>
-</section></body></html>
+</section>
+
+<section id="p2" data-name="poster_02">
+<div class="hd mono"><span>ENOCH MUSIC ACADEMY</span><span>EVENT — HOW TO</span></div>
+<div class="lab mono">수험생 할인 이벤트</div>
+<div class="ttl">할인 받는 방법<span class="due">~ 11.30</span></div>
+<div class="steps">
+ <div class="st"><i>01</i><div><b>수험표 챙기기</b><span>시험이 끝나도 수험표는 버리지 말고 챙겨 두세요.</span></div></div>
+ <div class="st"><i>02</i><div><b>상담 · 체험수업 예약</b><span>방문 상담은 네이버 톡톡 · 카카오톡 채널 · 전화로,<br>체험수업은 네이버 플레이스에서 예약할 수 있어요.</span></div></div>
+ <div class="st"><i>03</i><div><b>등록할 때 수험표 제시</b><span>등록하실 때 수험표를 보여 주시면 수험생 할인이 적용됩니다.</span></div></div>
+</div>
+<div class="lab2 mono">CLASSES</div>
+<div class="cls">
+ <div class="row"><b>과목</b><span>Vocal · Guitar · Drum · Bass · Piano · MIDI · 작곡</span></div>
+ <div class="row"><b>과정</b><span>입시 · 취미 · 성인 · 전문, 모든 과정 1:1 레슨</span></div>
+ <div class="row"><b>연습실</b><span>수강생은 운영시간 안에 자유롭게 이용할 수 있습니다</span></div>
+ <div class="row"><b>운영</b><span>평일 13:00–22:00 · 토 10:00–18:00 · 일요일 휴무</span></div>
+</div>
+<div class="note">할인 내용은 상담할 때 자세히 안내해 드립니다.</div>
+<div class="ft mono"><span>에녹실용음악학원 시흥점 · 경기도 시흥시 은행로 157 2층</span><span>031 315 3666</span></div>
+</section>
+</body></html>
