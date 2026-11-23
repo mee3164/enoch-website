@@ -1,0 +1,104 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>릴스 — 다시 배우는 이유</title>
+<!-- 릴스 1080×1920, 15초. node render.mjs reel.html 15 reel.mp4 / 미리보기: node render.mjs reel.html peek 1 5 8 11 14
+     장면: 질문(0–2.4) → 1도 선 모션(2.4–9.4) → 공간 사진 흑백(9.4–12.8, 피아노룸_01) → 마무리(12.8–15) -->
+<link rel="stylesheet" href="../../templates/card.css">
+<style>
+html,body{background:#555}
+#R{position:relative;width:1080px;height:1920px;overflow:hidden;background:#F1EDE4;color:#111;font-family:var(--ko);word-break:keep-all}
+.sc{position:absolute;inset:0;opacity:0}
+.hd{position:absolute;left:96px;right:96px;top:150px;display:flex;justify-content:space-between;font-family:var(--mono);font-size:22px;letter-spacing:2.4px;padding-bottom:16px;border-bottom:1.5px solid #111}
+.big{position:absolute;left:96px;right:96px;font-size:84px;font-weight:800;letter-spacing:-3px;line-height:1.28}
+.mid{position:absolute;left:96px;right:96px;font-size:56px;font-weight:700;letter-spacing:-2px;line-height:1.35}
+.sm{font-size:30px;font-weight:400;color:#6E6A64;letter-spacing:-.5px;margin-top:22px;line-height:1.6}
+.cap{transition:none}
+svg{position:absolute;left:96px;top:560px;width:888px;height:600px;overflow:visible}
+.lb{font-family:var(--ko);font-size:25px;letter-spacing:-.3px;fill:#6E6A64}
+.st{font-family:var(--mono);font-size:22px;letter-spacing:1.5px;fill:#6E6A64}
+.lbk{font-family:var(--ko);font-size:30px;font-weight:600;letter-spacing:-.5px}
+.deg{font-family:var(--en);font-size:44px;font-weight:700;fill:#111}
+#s3{background:#111}
+#ph{position:absolute;inset:0;background:url(img/room.jpg) 78% 50%/cover}
+#s3::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(17,17,17,.35) 0%,rgba(17,17,17,0) 18%,rgba(17,17,17,0) 45%,rgba(17,17,17,.8) 72%,rgba(17,17,17,.92) 100%)}
+#s3 .hd{z-index:2;color:#F1EDE4;border-color:rgba(241,237,228,.7)}
+#s3 .mid{z-index:2;color:#F1EDE4;top:1260px}
+#s3 .sm{color:#D9D4CA}
+#s4{background:#111;color:#F1EDE4}
+#s4 .hd{border-color:rgba(241,237,228,.7)}
+#s4 .ghost{position:absolute;left:90px;top:520px;font-family:var(--en);font-size:250px;font-weight:700;letter-spacing:-8px;color:#2A2825}
+#s4 .mid{top:860px}
+#s4 .ft{position:absolute;left:96px;right:96px;top:1460px;padding-top:20px;border-top:1.5px solid rgba(241,237,228,.6);display:flex;justify-content:space-between;font-size:26px;color:#C9C4BB}
+#s4 .ft span:last-child{font-family:var(--mono);letter-spacing:1px}
+</style></head><body>
+<div id="R">
+ <div class="sc" id="s1">
+  <div class="hd"><span>ENOCH MUSIC ACADEMY</span><span>PRACTICE NOTE</span></div>
+  <div class="big" style="top:760px">열심히 했는데,<br>왜 다시<br>배워야 할까</div>
+ </div>
+ <div class="sc" id="s2">
+  <div class="hd"><span>ENOCH MUSIC ACADEMY</span><span>PRACTICE NOTE</span></div>
+  <div class="mid cap" id="c1" style="top:330px">출발할 때 1도 차이는<br>잘 보이지 않습니다.</div>
+  <div class="mid cap" id="c2" style="top:330px;opacity:0">연습할수록, 그 차이까지<br>몸에 익어요.</div>
+  <svg viewBox="0 0 888 600">
+   <g id="brk"></g>
+   <line id="la" x1="40" y1="470" x2="40" y2="470" stroke="#8A8A8A" stroke-width="3.5" stroke-dasharray="11 10"/>
+   <line id="lb" x1="40" y1="470" x2="40" y2="470" stroke="#111" stroke-width="5" stroke-linecap="round"/>
+   <circle cx="40" cy="470" r="10" fill="#111"/>
+   <text class="st" x="40" y="520" text-anchor="middle">START</text>
+   <g id="arc" opacity="0"><path id="arcp" fill="none" stroke="#111" stroke-width="2.2"/><text class="deg" id="degt">1°</text></g>
+   <circle id="da" r="9" fill="#8A8A8A" opacity="0"/><circle id="db" r="10" fill="#111" opacity="0"/>
+   <text id="ta" class="lbk" fill="#8A8A8A" text-anchor="end" opacity="0">가려던 곳</text>
+   <text id="tb" class="lbk" fill="#111" text-anchor="end" opacity="0">도착한 곳</text>
+  </svg>
+  <div class="mid cap" id="c3" style="top:1330px;font-size:44px;opacity:0">그래서 다시 배우는 게<br>더 오래 걸립니다.</div>
+ </div>
+ <div class="sc" id="s3">
+  <div id="ph"></div>
+  <div class="hd"><span>ENOCH MUSIC ACADEMY</span><span>1:1 LESSON</span></div>
+  <div class="mid">작은 차이는, 곁에서 듣는<br>사람에게 먼저 들립니다.<div class="sm">한 사람의 소리만 듣는 1:1 레슨.</div></div>
+ </div>
+ <div class="sc" id="s4">
+  <div class="hd"><span>ENOCH MUSIC ACADEMY</span><span>PRACTICE NOTE</span></div>
+  <div class="ghost">ENOCH</div>
+  <div class="mid">빨리 가는 것보다,<br>바른 방향으로.<div class="sm" style="color:#C9C4BB">기본은 건너뛰지 않습니다.</div></div>
+  <div class="ft"><span>에녹실용음악학원 시흥점</span><span>031 315 3666</span></div>
+ </div>
+</div>
+<script>
+const $=id=>document.getElementById(id), NS="http://www.w3.org/2000/svg";
+const cl=u=>Math.max(0,Math.min(1,u)), ez=u=>{u=cl(u);return u<.5?2*u*u:1-Math.pow(-2*u+2,2)/2};
+const fade=(t,a,b,d=.35)=>Math.min(cl((t-a)/d), b==null?1:cl((b-t)/d));
+const O={x:40,y:470}, L=808, ANG=15*Math.PI/180;
+const marks=[{f:.3,t:"처음"},{f:.64,t:"몇 달 뒤"},{f:1,t:"몇 년 뒤"}];
+marks.forEach((m,i)=>{const g=document.createElementNS(NS,"g");g.id="m"+i;
+ g.innerHTML=`<line stroke="#111" stroke-width="1.8"/><line stroke="#111" stroke-width="1.8"/><line stroke="#111" stroke-width="1.8"/><text class="lb" text-anchor="middle">${m.t}</text>`;$("brk").appendChild(g);});
+const pt=(f,a)=>({x:O.x+L*f*Math.cos(a),y:O.y-L*f*Math.sin(a)});
+function inv(f){let lo=0,hi=1;for(let j=0;j<30;j++){const m=(lo+hi)/2;ez(m)<f?lo=m:hi=m}return lo}
+const T0=2.9, TD=3.6;                      // 선 그리기 시작 · 길이
+function setT(t){
+ $("s1").style.opacity=fade(t,-1,2.4);
+ $("s2").style.opacity=fade(t,2.4,9.4);
+ $("s3").style.opacity=fade(t,9.4,12.8);
+ $("s4").style.opacity=fade(t,12.8,null);
+ $("ph").style.transform=`scale(${1.04+0.06*cl((t-9.4)/3.8)})`;
+ // 문구 교체
+ $("c1").style.opacity=fade(t,2.4,5.2,.3); $("c2").style.opacity=fade(t,5.4,null,.3);
+ $("c3").style.opacity=fade(t,7.4,null,.4);
+ const p=ez((t-T0)/TD), a=pt(p,0), b=pt(p,ANG);
+ $("la").setAttribute("x2",a.x);$("la").setAttribute("y2",a.y);
+ $("lb").setAttribute("x2",b.x);$("lb").setAttribute("y2",b.y);
+ const r=150,e=pt(r/L,ANG); $("arc").setAttribute("opacity",cl((t-2.7)/.5));
+ $("arcp").setAttribute("d",`M${O.x+r} ${O.y} A${r} ${r} 0 0 0 ${e.x} ${e.y}`);
+ $("degt").setAttribute("x",O.x+r+16);$("degt").setAttribute("y",O.y-2);
+ marks.forEach((m,i)=>{const g=$("m"+i),k=ez((t-(T0+TD*inv(m.f)))/.45);
+  const A=pt(m.f,0),B=pt(m.f,ANG),yb=A.y+(B.y-A.y)*k,x=A.x,[v,c1,c2,tx]=g.children;
+  v.setAttribute("x1",x);v.setAttribute("y1",A.y);v.setAttribute("x2",x);v.setAttribute("y2",yb);
+  for(const [c,y] of [[c1,A.y],[c2,yb]]){c.setAttribute("x1",x-9);c.setAttribute("x2",x+9);c.setAttribute("y1",y);c.setAttribute("y2",y);}
+  tx.setAttribute("x",i==2?x-40:x);tx.setAttribute("y",A.y+50);g.setAttribute("opacity",k>0?1:0);});
+ const eo=cl((t-(T0+TD))/.5),A=pt(1,0),B=pt(1,ANG);
+ for(const [id,P] of [["da",A],["db",B]]){$(id).setAttribute("cx",P.x);$(id).setAttribute("cy",P.y);$(id).setAttribute("opacity",eo);}
+ $("ta").setAttribute("x",A.x-26);$("ta").setAttribute("y",A.y-18);$("ta").setAttribute("opacity",eo);
+ $("tb").setAttribute("x",B.x-26);$("tb").setAttribute("y",B.y-22);$("tb").setAttribute("opacity",eo);
+}
+window.setT=setT; setT(7);
+</script>
+</body></html>
