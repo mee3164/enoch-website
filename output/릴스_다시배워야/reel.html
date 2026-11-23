@@ -1,6 +1,6 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><title>릴스 — 처음 배울 때가 가장 중요한 이유</title>
-<!-- 릴스 1080×1920, 15초. node render.mjs reel.html 15 reel.mp4 / 미리보기: node render.mjs reel.html peek 1 5 8 11 14
-     장면: 표지 사진 src/main.jpg(업로드 인물 사진 흑백, 저장소 제외) + 제목(0–2.4) → 1도 선 모션(2.4–9.4) → 공간 사진 흑백(9.4–12.8, 피아노룸_01) → 마무리(12.8–15) -->
+<!-- 릴스 1080×1920, 18초. node render.mjs reel.html 18 reel.mp4 / 미리보기: node render.mjs reel.html peek 1 5 8 11 14
+     장면: 표지 사진 src/main.jpg(업로드 인물 사진 흑백, 저장소 제외) + 제목(0–2.4) → 1도 선 모션(2.4–9.4) → 공간 사진 흑백 + 곁에서 듣는 사람 문구(9.4–15.6, 피아노룸_01) → 마무리(15.6–18) -->
 <link rel="stylesheet" href="../../templates/card.css">
 <style>
 html,body{background:#555}
@@ -21,9 +21,10 @@ svg{position:absolute;left:96px;top:560px;width:888px;height:600px;overflow:visi
 #s1::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(17,17,17,.35) 0%,rgba(17,17,17,0) 16%,rgba(17,17,17,0) 42%,rgba(17,17,17,.78) 62%,rgba(17,17,17,.92) 100%)}
 #s3{background:#111}
 #ph{position:absolute;inset:0;background:url(img/room.jpg) 78% 50%/cover}
-#s3::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(17,17,17,.35) 0%,rgba(17,17,17,0) 18%,rgba(17,17,17,0) 45%,rgba(17,17,17,.8) 72%,rgba(17,17,17,.92) 100%)}
+#s3::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(17,17,17,.35) 0%,rgba(17,17,17,0) 18%,rgba(17,17,17,0) 26%,rgba(17,17,17,.88) 47%,rgba(17,17,17,.93) 100%)}
 #s3 .hd{z-index:2;color:#F1EDE4;border-color:rgba(241,237,228,.7)}
-#s3 .mid{z-index:2;color:#F1EDE4;top:1260px}
+#s3 .mid{z-index:2;color:#F1EDE4;top:1020px}
+#s3 .q{font-size:29px;margin-top:20px}
 #s3 .sm{color:#D9D4CA}
 #s4{background:#111;color:#F1EDE4}
 #s4 .hd{border-color:rgba(241,237,228,.7)}
@@ -58,7 +59,10 @@ svg{position:absolute;left:96px;top:560px;width:888px;height:600px;overflow:visi
  <div class="sc" id="s3">
   <div id="ph"></div>
   <div class="hd"><span>ENOCH MUSIC ACADEMY</span><span>1:1 LESSON</span></div>
-  <div class="mid">작은 차이는, 곁에서 듣는<br>사람에게 먼저 들립니다.<div class="sm">한 사람의 소리만 듣는 1:1 레슨.</div></div>
+  <div class="mid" style="font-size:52px">작은 차이는 내가 아니라,<br>곁에서 듣는 사람에게<br>먼저 들립니다.
+   <div class="sm q" id="q1">무엇이 어긋났는지, 왜 그런지까지 말해 줄 수 있는 사람.</div>
+   <div class="sm q" id="q2">고칠 곳을 알려 주는 것보다, 이해시켜 주는 쪽이 오래 남거든요.</div>
+   <div class="sm q" id="q3" style="color:#F1EDE4;font-weight:600">한 사람의 소리만 듣는 1:1 레슨.</div></div>
  </div>
  <div class="sc" id="s4">
   <div class="hd"><span>ENOCH MUSIC ACADEMY</span><span>PRACTICE NOTE</span></div>
@@ -81,10 +85,11 @@ const T0=2.9, TD=3.6;                      // 선 그리기 시작 · 길이
 function setT(t){
  $("s1").style.opacity=fade(t,-1,2.4);
  $("s2").style.opacity=fade(t,2.4,9.4);
- $("s3").style.opacity=fade(t,9.4,12.8);
- $("s4").style.opacity=fade(t,12.8,null);
+ $("s3").style.opacity=fade(t,9.4,15.6);
+ $("s4").style.opacity=fade(t,15.6,null);
+ $("q1").style.opacity=fade(t,10.9,null,.4); $("q2").style.opacity=fade(t,12.4,null,.4); $("q3").style.opacity=fade(t,13.9,null,.4);
  $("mp").style.transform=`scale(${1.03+0.05*cl(t/2.4)})`;
- $("ph").style.transform=`scale(${1.04+0.06*cl((t-9.4)/3.8)})`;
+ $("ph").style.transform=`scale(${1.04+0.06*cl((t-9.4)/6.6)})`;
  // 문구 교체
  $("c1").style.opacity=fade(t,2.4,5.2,.3); $("c2").style.opacity=fade(t,5.4,null,.3);
  $("c3").style.opacity=fade(t,7.4,null,.4);
