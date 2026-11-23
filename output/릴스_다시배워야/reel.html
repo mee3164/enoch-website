@@ -1,6 +1,6 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>릴스 — 다시 배우는 이유</title>
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>릴스 — 처음 배울 때가 가장 중요한 이유</title>
 <!-- 릴스 1080×1920, 15초. node render.mjs reel.html 15 reel.mp4 / 미리보기: node render.mjs reel.html peek 1 5 8 11 14
-     장면: 질문(0–2.4) → 1도 선 모션(2.4–9.4) → 공간 사진 흑백(9.4–12.8, 피아노룸_01) → 마무리(12.8–15) -->
+     장면: 표지 사진 src/main.jpg(업로드 인물 사진 흑백, 저장소 제외) + 제목(0–2.4) → 1도 선 모션(2.4–9.4) → 공간 사진 흑백(9.4–12.8, 피아노룸_01) → 마무리(12.8–15) -->
 <link rel="stylesheet" href="../../templates/card.css">
 <style>
 html,body{background:#555}
@@ -16,6 +16,9 @@ svg{position:absolute;left:96px;top:560px;width:888px;height:600px;overflow:visi
 .st{font-family:var(--mono);font-size:22px;letter-spacing:1.5px;fill:#6E6A64}
 .lbk{font-family:var(--ko);font-size:30px;font-weight:600;letter-spacing:-.5px}
 .deg{font-family:var(--en);font-size:44px;font-weight:700;fill:#111}
+#s1{background:#111}
+#mp{position:absolute;inset:0;background:url(src/main.jpg) 62% 50%/cover}
+#s1::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(17,17,17,.35) 0%,rgba(17,17,17,0) 16%,rgba(17,17,17,0) 42%,rgba(17,17,17,.78) 62%,rgba(17,17,17,.92) 100%)}
 #s3{background:#111}
 #ph{position:absolute;inset:0;background:url(img/room.jpg) 78% 50%/cover}
 #s3::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(17,17,17,.35) 0%,rgba(17,17,17,0) 18%,rgba(17,17,17,0) 45%,rgba(17,17,17,.8) 72%,rgba(17,17,17,.92) 100%)}
@@ -31,8 +34,9 @@ svg{position:absolute;left:96px;top:560px;width:888px;height:600px;overflow:visi
 </style></head><body>
 <div id="R">
  <div class="sc" id="s1">
-  <div class="hd"><span>ENOCH MUSIC ACADEMY</span><span>PRACTICE NOTE</span></div>
-  <div class="big" style="top:760px">열심히 했는데,<br>왜 다시<br>배워야 할까</div>
+  <div class="hd" style="z-index:2;color:#F1EDE4;border-color:rgba(241,237,228,.7)"><span>ENOCH MUSIC ACADEMY</span><span>PRACTICE NOTE</span></div>
+  <div id="mp"></div>
+  <div class="big" style="top:1180px;color:#F1EDE4;z-index:2">처음 배울 때가<br>가장 중요한 이유</div>
  </div>
  <div class="sc" id="s2">
   <div class="hd"><span>ENOCH MUSIC ACADEMY</span><span>PRACTICE NOTE</span></div>
@@ -79,6 +83,7 @@ function setT(t){
  $("s2").style.opacity=fade(t,2.4,9.4);
  $("s3").style.opacity=fade(t,9.4,12.8);
  $("s4").style.opacity=fade(t,12.8,null);
+ $("mp").style.transform=`scale(${1.03+0.05*cl(t/2.4)})`;
  $("ph").style.transform=`scale(${1.04+0.06*cl((t-9.4)/3.8)})`;
  // 문구 교체
  $("c1").style.opacity=fade(t,2.4,5.2,.3); $("c2").style.opacity=fade(t,5.4,null,.3);
