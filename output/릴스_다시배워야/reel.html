@@ -1,6 +1,6 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><title>릴스 — 처음 배울 때가 가장 중요한 이유</title>
-<!-- 릴스 1080×1920, 13.5초 (3초 이탈 대응: 첫 프레임부터 글자·움직임, 짧은 컷). node render.mjs reel.html 13.5 reel.mp4 / 미리보기: node render.mjs reel.html peek 1 5 8 11 14
-     장면: 표지 사진 src/main.jpg(업로드 인물 사진 흑백, 저장소 제외) + 훅 문구(0–1.7) → 1도 선 모션(1.7–6.6) → 공간 사진 흑백 + 곁에서 듣는 사람 문구(6.6–11.8, 피아노룸_01) → 마무리(11.8–13.5) -->
+<!-- 릴스 1080×1920, 12.7초 (3초 이탈 대응: 첫 프레임부터 글자·움직임, 짧은 컷, 빠른 모션). node render.mjs reel.html 12.7 reel.mp4 / 미리보기: node render.mjs reel.html peek 1 5 8 11 14
+     장면: 표지 사진 src/main.jpg(업로드 인물 사진 흑백, 저장소 제외) + 훅 문구(0–1.7) → 1도 선 모션(1.7–5.8) → 공간 사진 흑백 + 곁에서 듣는 사람 문구(5.8–11.0, 피아노룸_01) → 마무리(11.0–12.7) -->
 <link rel="stylesheet" href="../../templates/card.css">
 <style>
 html,body{background:#555}
@@ -81,32 +81,32 @@ marks.forEach((m,i)=>{const g=document.createElementNS(NS,"g");g.id="m"+i;
  g.innerHTML=`<line stroke="#111" stroke-width="1.8"/><line stroke="#111" stroke-width="1.8"/><line stroke="#111" stroke-width="1.8"/><text class="lb" text-anchor="middle">${m.t}</text>`;$("brk").appendChild(g);});
 const pt=(f,a)=>({x:O.x+L*f*Math.cos(a),y:O.y-L*f*Math.sin(a)});
 function inv(f){let lo=0,hi=1;for(let j=0;j<30;j++){const m=(lo+hi)/2;ez(m)<f?lo=m:hi=m}return lo}
-const T0=1.9, TD=2.3;                      // 선 그리기 시작 · 길이
+const T0=1.8, TD=1.5;                      // 선 그리기 시작 · 길이
 function setT(t){
  $("s1").style.opacity=fade(t,-1,1.7,.1);
- $("s2").style.opacity=fade(t,1.7,6.6,.1);
- $("s3").style.opacity=fade(t,6.6,11.8,.1);
- $("s4").style.opacity=fade(t,11.8,null,.1);
- $("q1").style.opacity=fade(t,7.5,null,.25); $("q2").style.opacity=fade(t,8.6,null,.25); $("q3").style.opacity=fade(t,9.8,null,.25);
+ $("s2").style.opacity=fade(t,1.7,5.8,.1);
+ $("s3").style.opacity=fade(t,5.8,11.0,.1);
+ $("s4").style.opacity=fade(t,11.0,null,.1);
+ $("q1").style.opacity=fade(t,6.7,null,.2); $("q2").style.opacity=fade(t,7.8,null,.2); $("q3").style.opacity=fade(t,9.0,null,.2);
  // 첫 프레임부터 움직임: 확대에서 빠르게 당겨지는 줌 + 둘째 줄 0.45초 뒤 강조
- const z=1-Math.pow(1-cl(t/.6),3); $("mp").style.transform=`scale(${1.22-0.16*z+0.03*cl(t/1.7)})`;
- $("h2").style.opacity=t<0.45?0.25:1;
- $("ph").style.transform=`scale(${1.04+0.06*cl((t-6.6)/5.2)})`;
+ const z=1-Math.pow(1-cl(t/.4),3); $("mp").style.transform=`scale(${1.22-0.16*z+0.03*cl(t/1.7)})`;
+ $("h2").style.opacity=t<0.35?0.25:1;
+ $("ph").style.transform=`scale(${1.03+0.09*cl((t-5.8)/5.2)})`;
  // 문구 교체
- $("c1").style.opacity=fade(t,1.7,3.3,.15); $("c2").style.opacity=fade(t,3.4,null,.15);
- $("c3").style.opacity=fade(t,4.8,null,.25);
+ $("c1").style.opacity=fade(t,1.7,2.9,.12); $("c2").style.opacity=fade(t,3.0,null,.12);
+ $("c3").style.opacity=fade(t,4.0,null,.2);
  const p=ez((t-T0)/TD), a=pt(p,0), b=pt(p,ANG);
  $("la").setAttribute("x2",a.x);$("la").setAttribute("y2",a.y);
  $("lb").setAttribute("x2",b.x);$("lb").setAttribute("y2",b.y);
- const r=150,e=pt(r/L,ANG); $("arc").setAttribute("opacity",cl((t-1.8)/.3));
+ const r=150,e=pt(r/L,ANG); $("arc").setAttribute("opacity",cl((t-1.75)/.2));
  $("arcp").setAttribute("d",`M${O.x+r} ${O.y} A${r} ${r} 0 0 0 ${e.x} ${e.y}`);
  $("degt").setAttribute("x",O.x+r+16);$("degt").setAttribute("y",O.y-2);
- marks.forEach((m,i)=>{const g=$("m"+i),k=ez((t-(T0+TD*inv(m.f)))/.3);
+ marks.forEach((m,i)=>{const g=$("m"+i),k=ez((t-(T0+TD*inv(m.f)))/.2);
   const A=pt(m.f,0),B=pt(m.f,ANG),yb=A.y+(B.y-A.y)*k,x=A.x,[v,c1,c2,tx]=g.children;
   v.setAttribute("x1",x);v.setAttribute("y1",A.y);v.setAttribute("x2",x);v.setAttribute("y2",yb);
   for(const [c,y] of [[c1,A.y],[c2,yb]]){c.setAttribute("x1",x-9);c.setAttribute("x2",x+9);c.setAttribute("y1",y);c.setAttribute("y2",y);}
   tx.setAttribute("x",i==2?x-40:x);tx.setAttribute("y",A.y+50);g.setAttribute("opacity",k>0?1:0);});
- const eo=cl((t-(T0+TD))/.3),A=pt(1,0),B=pt(1,ANG);
+ const eo=cl((t-(T0+TD))/.2),A=pt(1,0),B=pt(1,ANG);
  for(const [id,P] of [["da",A],["db",B]]){$(id).setAttribute("cx",P.x);$(id).setAttribute("cy",P.y);$(id).setAttribute("opacity",eo);}
  $("ta").setAttribute("x",A.x-26);$("ta").setAttribute("y",A.y-18);$("ta").setAttribute("opacity",eo);
  $("tb").setAttribute("x",B.x-26);$("tb").setAttribute("y",B.y-22);$("tb").setAttribute("opacity",eo);
