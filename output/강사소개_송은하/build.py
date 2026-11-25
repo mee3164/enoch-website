@@ -6,7 +6,7 @@ BASE = os.path.join(HERE, '..', '강사소개_한상희')
 
 EDU = ['서울예술대학교 실용음악과 <i>작곡 전공 졸업</i>', '백석예술대학교 실용음악과 <i>피아노 전공 졸업</i>']
 WK = ['김다빈 EP 「별빛 달빛 그리움」', 'BOYEH 「그래, 천천히 안녕」', '<i>음원 세션 및 작 · 편곡 참여</i>']
-CH = ['왕성교회 대예배 반주 <i>9년 차</i>', '주안장로교회 대예배 반주 <i>(전) 4년</i>']
+CH = ['왕성교회 Sunday Main Service <i>· 9 yrs</i>', '주안장로교회 Sunday Main Service <i>· (전) 4 yrs</i>']
 
 
 def sec(k, items, cls='k'):
@@ -29,7 +29,7 @@ feed = f'''</style></head><body>
   <div class="col">
     <div class="cell"><div class="k">Subject</div><div class="v">Piano · 작곡 · 화성학</div></div>
     <div class="cell"><div class="k">Lesson</div><div class="v">1:1</div></div>
-    <div class="cell"><div class="k">Career</div><div class="t">서울예대 실용음악과 작곡 전공<br>백석예대 실용음악과 피아노 전공<br>김다빈 · BOYEH 세션 · 작편곡<br>교회 대예배 반주 9년 차</div></div>
+    <div class="cell"><div class="k">Career</div><div class="t">서울예대 실용음악과 작곡 전공<br>백석예대 실용음악과 피아노 전공<br>김다빈 · BOYEH 세션 · 작편곡<br>Worship Pianist | 왕성교회 · 9 yrs</div></div>
   </div>
   <div class="en">SONG EUN HA</div>
   <div class="ko">송은하<span>피아노 · 작곡 · 화성학</span></div>
@@ -38,7 +38,7 @@ feed = f'''</style></head><body>
 <section class="s" id="f2">
   <div class="hd"><span>ENOCH MUSIC ACADEMY</span><span>ENOCH TEACHERS — PIANO</span></div>
   <div class="nm">SONG EUN HA<small>송은하</small></div>
-  <div class="tbl">{sec("Education", EDU)}{sec("Works", WK)}{sec("Accompanist", CH)}</div>
+  <div class="tbl">{sec("Education", EDU)}{sec("Works", WK)}{sec("Worship Pianist", CH)}</div>
   <div class="ft"><span>강사 소개 — 송은하</span><span>02 / 03</span></div>
 </section>
 <section class="s dark" id="f4">
@@ -65,13 +65,13 @@ story = f'''</style></head><body>
   <div class="ph"></div>
   <div class="en">SONG<br>EUN HA</div>
   <div class="ko g">송은하</div>
-  <div class="cv"><span class="lab g">CAREER</span>서울예대 실용음악과 (작곡 전공)<br>백석예대 실용음악과 (피아노 전공)<br>김다빈 · BOYEH 음원 세션 · 작편곡<br>왕성교회 대예배 반주 9년 차</div>
+  <div class="cv"><span class="lab g">CAREER</span>서울예대 실용음악과 (작곡 전공)<br>백석예대 실용음악과 (피아노 전공)<br>김다빈 · BOYEH 음원 세션 · 작편곡<br>Worship Pianist | 왕성교회 · 9 yrs</div>
   <div class="bt"><span><span class="lime">●</span>&nbsp; Piano · 작곡 · 화성학</span><span class="g">1:1 Lesson</span><span class="g">나만의 진짜 소리를 찾는 곳</span></div>
 </section>
 <section class="s dt" id="D">
   <div class="top"><span class="lab g">ENOCH TEACHERS — PIANO</span><span class="lab g">CAREER</span></div>
   <div class="nm">SONG EUN HA<small>송은하</small></div>
-  <div class="body">{sec("EDUCATION", EDU, "lab g")}{sec("WORKS", WK, "lab g")}{sec("ACCOMPANIST", CH, "lab g")}</div>
+  <div class="body">{sec("EDUCATION", EDU, "lab g")}{sec("WORKS", WK, "lab g")}{sec("WORSHIP PIANIST", CH, "lab g")}</div>
   <div class="bt"><span><span class="lime">●</span>&nbsp; Piano · 작곡 · 화성학</span><span class="g">나만의 진짜 소리를 찾는 곳</span></div>
 </section>
 </body></html>
