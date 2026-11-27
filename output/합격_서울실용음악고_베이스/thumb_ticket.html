@@ -1,0 +1,92 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>합격 블로그 썸네일 — 티켓형</title>
+<!-- 블로그 썸네일 1:1 (1080×1080), story2_B(티켓형)와 같은 디자인. CHROMIUM_PATH=... node thumb_ticket.mjs → thumb_ticket.png
+     원본 설명: 인스타 스토리 1080×1920 입체 · 감각 시안 2가지 (2026-11-27 원장님 "입체적이고 감각적인")
+     A 베이스 현: 블랙 바탕, 베이스 네 줄이 큰 '합격' 위를 지나감, 기울어진 학교 로고 카드
+     B 합격 티켓: 아이보리 바탕, 기울어진 입장권 두 장이 겹친 종이 질감
+     CHROMIUM_PATH=... node story2.mjs → story2_A.png, story2_B.png -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+@font-face{font-family:PL;src:url(../../templates/fonts/Pretendard-Bold.woff2);font-weight:700}
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--red:#D2322D;--bk:#0E0E0E;--iv:#F1EDE4;--mono:"IBM Plex Mono","DejaVu Sans Mono",monospace}
+body{background:#777}
+.s{position:relative;overflow:hidden;width:1080px;height:1920px;font-family:Pretendard,PL,sans-serif;word-break:keep-all;margin-bottom:20px}
+.s>*{position:absolute}
+.hd{left:80px;right:80px;top:230px;display:flex;justify-content:space-between;font-family:var(--mono);font-size:22px;letter-spacing:2.6px;padding-bottom:16px;border-bottom:2px solid currentColor}
+
+/* A — 베이스 현 */
+#A{background:radial-gradient(120% 70% at 50% 42%,#2A1716 0%,#140E0E 45%,#0B0B0B 100%);color:var(--iv)}
+#A .lab{left:80px;top:330px;font-family:var(--mono);font-size:30px;letter-spacing:6px;color:#E46A63}
+#A .sch{left:80px;top:380px;font-size:96px;font-weight:900;letter-spacing:-3px;line-height:1.08}
+#A .pass{left:40px;top:640px;font-size:420px;font-weight:900;letter-spacing:-22px;line-height:.9;
+  background:linear-gradient(180deg,#F0524B 0%,#D2322D 55%,#8E1E1A 100%);-webkit-background-clip:text;color:transparent;
+  filter:drop-shadow(0 30px 40px rgba(0,0,0,.55))}
+#A .str{left:0;top:0}
+#A .card{left:690px;top:1120px;width:250px;height:250px;transform:rotate(-8deg);box-shadow:0 30px 60px rgba(0,0,0,.6),0 0 0 8px #fff}
+#A .card img{width:100%;height:100%;object-fit:cover;display:block}
+#A .who{left:80px;top:1180px;font-size:56px;font-weight:800;letter-spacing:-2px}
+#A .who small{display:block;margin-top:14px;font-size:34px;font-weight:500;color:#BDB7AD;letter-spacing:-.3px}
+#A .crown{left:600px;top:560px;transform:rotate(12deg)}
+#A .ft{left:80px;right:80px;top:1500px;padding-top:22px;border-top:1.5px solid rgba(241,237,228,.5);display:flex;justify-content:space-between;font-size:34px;font-weight:800}
+#A .ft span{font-family:var(--mono);font-size:22px;font-weight:400;letter-spacing:3px;color:#BDB7AD;align-self:center}
+
+/* B — 합격 티켓 */
+#B{background:#EDE8DE;color:#111}
+#B .hd{color:#111}
+#B .t2{left:150px;top:470px;width:780px;height:1060px;background:var(--red);transform:rotate(6deg);border-radius:6px;box-shadow:0 40px 70px rgba(60,30,20,.28)}
+#B .t1{left:150px;top:420px;width:780px;height:1060px;background:#FBF9F4;transform:rotate(-3deg);border-radius:6px;box-shadow:0 30px 60px rgba(60,40,20,.25),0 2px 0 rgba(0,0,0,.04)}
+#B .t1>*{position:absolute}
+#B .t1 .k{left:64px;top:62px;font-family:var(--mono);font-size:24px;letter-spacing:5px;color:var(--red)}
+#B .t1 .no{right:64px;top:62px;font-family:var(--mono);font-size:24px;letter-spacing:3px;color:#8A8A8A}
+#B .t1 .sch{left:60px;top:130px;font-size:104px;font-weight:900;letter-spacing:-4px;line-height:1.05}
+#B .t1 .pass{left:56px;top:370px;font-size:300px;font-weight:900;letter-spacing:-16px;line-height:.9;color:var(--red)}
+#B .t1 .crown{left:600px;top:360px}
+#B .t1 .perf{left:0;right:0;top:700px;height:0;border-top:4px dashed #CFC8BB}
+#B .t1 .hole{top:676px;width:52px;height:52px;border-radius:50%;background:#EDE8DE;box-shadow:inset 0 3px 6px rgba(0,0,0,.12)}
+#B .t1 .row{left:64px;right:64px;top:760px;display:grid;grid-template-columns:1fr 1fr;row-gap:30px}
+#B .t1 .row div{font-family:var(--mono);font-size:20px;letter-spacing:3px;color:#8A8A8A}
+#B .t1 .row b{display:block;margin-top:8px;font-family:Pretendard,PL,sans-serif;font-size:42px;font-weight:800;letter-spacing:-1px;color:#111}
+#B .t1 .logo{right:64px;top:930px;width:100px;height:100px}
+#B .t1 .logo img{width:100%;height:100%;object-fit:cover;display:block}
+#B .msg{left:80px;right:80px;top:1580px;display:flex;justify-content:space-between;align-items:flex-end}
+#B .msg b{font-size:44px;font-weight:800;letter-spacing:-1px}
+#B .msg span{font-family:var(--mono);font-size:22px;letter-spacing:3px;color:#6E6A64}
+
+#B.sq{height:1080px}
+#B.sq .hd{top:56px}
+#B.sq .t2{left:170px;top:178px;width:740px;height:780px}
+#B.sq .t1{left:170px;top:150px;width:740px;height:780px}
+#B.sq .t1 .k{top:46px;left:56px}#B.sq .t1 .no{top:46px;right:56px}
+#B.sq .t1 .sch{left:52px;top:96px;font-size:90px}
+#B.sq .t1 .pass{left:48px;top:300px;font-size:220px;letter-spacing:-12px}
+#B.sq .t1 .crown{left:540px;top:300px}
+#B.sq .t1 .perf{top:540px}#B.sq .t1 .hole{top:516px}
+#B.sq .t1 .row{left:56px;right:56px;top:580px;row-gap:18px}
+#B.sq .t1 .row b{font-size:36px;margin-top:4px}
+#B.sq .t1 .logo{right:56px;top:654px;width:84px;height:84px}
+#B.sq .msg{top:984px}
+#B.sq .msg b{font-size:36px}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs>
+ <symbol id="crown" viewBox="-84 -76 168 114"><g fill="none" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"><path d="M-62 20 L-70 -40 L-34 -10 L0 -56 L34 -10 L70 -40 L62 20 Z"/><path d="M-60 32 Q0 24 60 32"/><circle cx="-70" cy="-50" r="7"/><circle cx="0" cy="-66" r="7"/><circle cx="70" cy="-50" r="7"/></g></symbol>
+ <linearGradient id="steel" x1="0" x2="1"><stop offset="0" stop-color="#6E6A64"/><stop offset=".45" stop-color="#F4F1EA"/><stop offset="1" stop-color="#5A5650"/></linearGradient>
+</defs></svg>
+
+<section class="s sq" id="B" data-name="thumb_ticket">
+ <div class="hd"><span>ENOCH MUSIC ACADEMY</span><span>CONGRATULATIONS</span></div>
+ <div class="t2"></div>
+ <div class="t1">
+  <div class="k">ADMISSION · 2027</div><div class="no">No. BASS</div>
+  <div class="sch">서울실용음악<br>고등학교</div>
+  <div class="pass">합격</div>
+  <svg class="crown" width="130" height="90" style="stroke:#D2322D"><use href="#crown" stroke="#D2322D"/></svg>
+  <div class="perf"></div><div class="hole" style="left:-26px"></div><div class="hole" style="right:-26px"></div>
+  <div class="row">
+   <div>MAJOR<b>베이스</b></div><div>NAME<b>정○현</b></div>
+   <div>YEAR<b>2027</b></div><div>FROM<b>에녹 시흥점</b></div>
+  </div>
+  <div class="logo"><img src="src/서울실용음악고_로고.jpg"></div>
+ </div>
+ <div class="msg"><b>합격을 축하합니다.</b><span>031 315 3666</span></div>
+</section>
+</body></html>
