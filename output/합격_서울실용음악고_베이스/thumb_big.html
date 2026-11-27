@@ -1,0 +1,50 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>합격 썸네일 크게 — 서울실용음악고 베이스</title>
+<!-- 썸네일 1:1 (1080×1080). 학교 이름과 '합격'을 크게 (2026-11-27 원장님, 타 학원 합격 썸네일을 레퍼런스로 크기감만 참고).
+     강조색은 학교 로고의 빨강. 두 가지: #A 아이보리, #B 블랙. CHROMIUM_PATH=... node thumb_big.mjs → thumb_big_A.png, thumb_big_B.png -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+@font-face{font-family:PL;src:url(../../templates/fonts/Pretendard-Bold.woff2);font-weight:700}
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--iv:#F1EDE4;--bk:#0B0B0B;--g:#8A8A8A;--red:#D2322D;--mono:"IBM Plex Mono","DejaVu Sans Mono",monospace}
+body{background:#777}
+.s{position:relative;overflow:hidden;width:1080px;height:1080px;background:var(--iv);color:var(--bk);font-family:Pretendard,PL,sans-serif;word-break:keep-all;margin-bottom:20px}
+.s>div,.s>svg{position:absolute}
+.hd{left:80px;right:80px;top:62px;display:flex;justify-content:space-between;align-items:flex-end;font-family:var(--mono);font-size:21px;letter-spacing:2.6px;padding-bottom:16px;border-bottom:2px solid currentColor}
+.yr{left:80px;top:142px;display:flex;align-items:center;gap:18px;font-size:44px;font-weight:800;letter-spacing:-1px}
+.yr i{display:block;width:8px;height:44px;background:var(--red)}
+.sch{left:72px;top:200px;font-size:150px;font-weight:900;letter-spacing:-7px;line-height:1.02}
+.pass{left:72px;top:520px;display:flex;align-items:flex-end;gap:26px}
+.pass b{font-size:250px;font-weight:900;letter-spacing:-10px;line-height:.9;color:var(--red)}
+.crown{left:530px;top:590px;color:var(--red)}
+.who{left:80px;top:790px;display:flex;align-items:center;gap:18px;font-size:44px;font-weight:800;letter-spacing:-1.5px}
+.who i{display:block;width:8px;height:44px;background:var(--red)}
+.who span{font-weight:500;color:#55524D;font-size:38px;letter-spacing:2px}
+.msg{left:106px;top:852px;font-size:30px;font-weight:500;color:#55524D;letter-spacing:-.3px}
+.logo{right:80px;top:770px;width:150px;height:150px}
+.logo img{width:150px;height:150px;object-fit:cover;display:block}
+.ft{left:0;right:0;bottom:0;height:96px;background:var(--bk);color:var(--iv);display:flex;align-items:center;justify-content:space-between;padding:0 80px;font-size:30px;font-weight:700;letter-spacing:1px}
+.ft span:last-child{font-family:var(--mono);font-size:24px;font-weight:400;letter-spacing:2px;color:#C9C4BB}
+/* B: 블랙 */
+#B{background:var(--bk);color:var(--iv)}
+#B .who span,#B .msg{color:#C9C4BB}
+#B .ft{background:var(--red);color:#fff}
+#B .ft span:last-child{color:#fff}
+</style></head><body>
+<template id="T">
+ <div class="hd"><span>ENOCH MUSIC ACADEMY</span><span>CONGRATULATIONS</span></div>
+ <div class="yr"><i></i>2027</div>
+ <div class="sch">서울실용음악<br>고등학교</div>
+ <svg class="crown" width="220" height="150" viewBox="-84 -76 168 114" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+  <path d="M-62 20 L-70 -40 L-34 -10 L0 -56 L34 -10 L70 -40 L62 20 Z"/><path d="M-60 30 Q0 22 60 30"/>
+  <circle cx="-70" cy="-48" r="6"/><circle cx="0" cy="-64" r="6"/><circle cx="70" cy="-48" r="6"/>
+ </svg>
+ <div class="pass"><b>합격</b></div>
+ <div class="who"><i></i>베이스 전공<span>정○현</span></div>
+ <div class="msg">합격을 축하합니다.</div>
+ <div class="logo"><img src="src/서울실용음악고_로고.jpg"></div>
+ <div class="ft"><span>에녹실용음악학원 시흥점</span><span>031 315 3666</span></div>
+</template>
+<section class="s" id="A" data-name="thumb_big_A"></section>
+<section class="s" id="B" data-name="thumb_big_B"></section>
+<script>for(const id of ["A","B"]) document.getElementById(id).append(document.getElementById("T").content.cloneNode(true));</script>
+</body></html>
