@@ -17,6 +17,7 @@ f = open(os.path.join(BASE, 'feed.html'), encoding='utf-8').read()
 head = f[:f.index('</style>')]
 head = head.replace('강사 소개 한상희 피드', '강사 소개 이지은 피드').replace('한상희_01.jpg) 50% 28%', '이지은_01.jpg) 50% 22%')
 head += '\n#f2 .sec{padding:36px 0}\n#f2 .sec li{font-size:28px}\n'
+head += '#f1 .ph{left:169px;width:394px;background-size:cover;background-position:50% 50%;filter:none}\n'  # 전신 · 컬러 (2026-11-28 원장님)
 info = ('<div class="info"><span>에녹실용음악학원 시흥점<br><span style="color:#9A958C">경기도 시흥시 은행로 157 2층</span></span>'
         '<span style="text-align:right;font-family:var(--mono)">031 315 3666<br><span style="color:#9A958C;font-family:P,sans-serif;font-size:19px">'
         'Vocal · Guitar · Drum · Bass · Piano · MIDI · 작곡</span></span></div>')
